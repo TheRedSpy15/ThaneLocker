@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.34791666666666665" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.34791666666666665" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.34791666666666665" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.35642570281124497" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.416015625" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/activity_board.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/activity_main.xml" value="0.490036231884058" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling.xml" value="0.5061787072243346" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling_board.xml" value="0.4174833398667189" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_boards.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_dashboard.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_home.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33177083333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
