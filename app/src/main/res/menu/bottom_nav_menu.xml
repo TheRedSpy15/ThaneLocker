@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/navigation_sessions"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_whatshot_24"
         android:title="Sessions" />
 
     <item
         android:id="@+id/navigation_news"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_rss_feed_24"
         android:title="News" />
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:title="Settings" />
 
 </menu>

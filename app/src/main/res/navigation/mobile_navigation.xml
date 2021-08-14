@@ -9,7 +9,17 @@
         android:id="@+id/navigation_boards"
         android:name="com.theredspy15.thanelocker.ui.boards.BoardsFragment"
         android:label="Boards"
-        tools:layout="@layout/fragment_boards" />
+        tools:layout="@layout/fragment_boards" >
+        <action
+            android:id="@+id/action_navigation_boards_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_boards_to_navigation_news"
+            app:destination="@id/navigation_news" />
+        <action
+            android:id="@+id/action_navigation_boards_to_navigation_sessions"
+            app:destination="@id/navigation_sessions" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_sessions"
