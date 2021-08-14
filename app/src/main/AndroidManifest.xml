@@ -15,6 +15,11 @@
             android:label="@string/title_activity_board"
             android:theme="@style/Theme.ThaneLocker.NoActionBar" />
         <activity
+            android:name="com.theredspy15.thanelocker.NewBoardActivity"
+            android:exported="true"
+            android:label="New Board"
+            android:theme="@style/Theme.ThaneLocker.NoActionBar" />
+        <activity
             android:name="com.theredspy15.thanelocker.MainActivity"
             android:exported="true"
             android:label="@string/app_name">

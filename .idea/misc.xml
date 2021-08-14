@@ -10,12 +10,20 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.416015625" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/activity_board.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/activity_main.xml" value="0.490036231884058" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/activity_new_board.xml" value="0.33469202898550726" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_new_board.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling.xml" value="0.5061787072243346" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling_board.xml" value="0.4174833398667189" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_boards.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_dashboard.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_first.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_home.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_news.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_second.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_sessions.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_settings.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/menu_board.xml" value="0.5546875" />
       </map>
     </option>
   </component>

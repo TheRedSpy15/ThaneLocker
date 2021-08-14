@@ -1,4 +1,4 @@
-package com.example.thanelocker;
+package com.theredspy15.thanelocker;
 
 import org.junit.Test;
 

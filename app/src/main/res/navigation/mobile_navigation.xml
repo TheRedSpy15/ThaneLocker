@@ -17,4 +17,16 @@
         android:label="Sessions"
         tools:layout="@layout/fragment_sessions" />
 
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.theredspy15.thanelocker.ui.news.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.theredspy15.thanelocker.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
 </navigation>

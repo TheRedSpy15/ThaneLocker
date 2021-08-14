@@ -1,7 +1,6 @@
 package com.theredspy15.thanelocker;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
