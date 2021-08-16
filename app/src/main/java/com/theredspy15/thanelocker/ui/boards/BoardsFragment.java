@@ -64,7 +64,7 @@ public class BoardsFragment extends Fragment {
             }
         }
 
-        // create add board button
+        // create add board button -- maybe keep just this rounded and the rest square for thumbnails?
         Button button = new Button(getContext());
         button.setText("Add Board");
         button.setTextSize(18);
