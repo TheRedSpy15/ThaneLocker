@@ -113,8 +113,6 @@ public class NewBoardActivity extends AppCompatActivity {
 
         MainActivity.savedBoards.add(board);
         MainActivity.saveData(this);
-        Toast.makeText(this, ""+MainActivity.savedBoards.size(), Toast.LENGTH_LONG).show();
-        System.out.println(MainActivity.savedBoards.get(0).getDescription());
     }
 
     private BitmapDataObject uriToBitmap(Uri selectedFileUri) {

@@ -10,7 +10,7 @@ public class SessionsViewModel extends ViewModel {
 
     public SessionsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is sessions fragment");
+        mText.setValue("Coming Soon!");
     }
 
     public LiveData<String> getText() {

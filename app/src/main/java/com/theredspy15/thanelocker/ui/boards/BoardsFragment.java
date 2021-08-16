@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.ui.boards;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,7 +35,8 @@ public class BoardsFragment extends Fragment {
         loadBoards();
         return root;
     }
-    
+
+    @SuppressLint("SetTextI18n")
     public void loadBoards() {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
@@ -42,15 +44,20 @@ public class BoardsFragment extends Fragment {
         if (MainActivity.savedBoards != null) {
             for (Board board: MainActivity.savedBoards) {
                 Button button = new Button(getContext());
-                button.setText(board.getName());
+                button.setText(board.getName()+" #"+board.getId());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setPadding(50,50,50,50);
+                button.setOnClickListener(v->{
+                    Intent myIntent = new Intent(getContext(), NewBoardActivity.class);
+                    myIntent.putExtra("board",MainActivity.savedBoards.get(MainActivity.savedBoards.indexOf(board)));
+                    startActivity(myIntent);
+                });
                 binding.boardLayout.addView(button,layout);
             }
         }
 
-        // create new button
+        // create add board button
         Button button = new Button(getContext());
         button.setText("Add Board");
         button.setTextSize(18);
