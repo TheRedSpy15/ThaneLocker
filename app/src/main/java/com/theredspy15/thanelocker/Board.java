@@ -1,28 +1,33 @@
 package com.theredspy15.thanelocker;
 
-import android.media.Image;
-
 import com.google.android.material.chip.Chip;
 
 import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Board implements Serializable {
-    private short id; // (incrementing) number
+    private short id; // random number
     private String name; //default: board + id
     private LinkedList<Chip> tags;
-    private Image image;
+    private BitmapDataObject image;
     private String description;
     private String trucks;
     private byte rearAngle=50;
     private byte frontAngle=50;
-    private String rd_bushing="Stock";
-    private String bd_bushings="Stock";
+    private String rd_bushing="Stock Bushings"; // Brand, formula, shape, color
+    private String bd_bushings="Stock Bushings";
     private String wheels;
-    private String bearings;
+    private String bearings="Standard ABEC Bearings";
+    private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
     private double riserHt=0.0;
-    private String gripTp="Standard";
+    private String gripTp="Standard Griptape";
     private LinkedList<Session> sessions;
+
+    Board() {
+        Random random = new Random();
+        id = (short) random.nextInt(Short.MAX_VALUE + 1);
+    }
 
     public short getId() {
         return id;
@@ -48,11 +53,11 @@ public class Board implements Serializable {
         this.tags = tags;
     }
 
-    public Image getImage() {
+    public BitmapDataObject getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(BitmapDataObject image) {
         this.image = image;
     }
 
@@ -142,5 +147,13 @@ public class Board implements Serializable {
 
     public void setSessions(LinkedList<Session> sessions) {
         this.sessions = sessions;
+    }
+
+    public String getPivot() {
+        return pivot;
+    }
+
+    public void setPivot(String pivot) {
+        this.pivot = pivot;
     }
 }

@@ -3,8 +3,15 @@
     package="com.example.thanelocker">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -18,8 +25,9 @@
         <activity
             android:name="com.theredspy15.thanelocker.NewBoardActivity"
             android:exported="true"
+            android:parentActivityName="com.theredspy15.thanelocker.MainActivity"
             android:label="New Board"
-            android:theme="@style/Theme.ThaneLocker.NoActionBar" />
+            android:theme="@style/Theme.ThaneLocker" />
         <activity
             android:name="com.theredspy15.thanelocker.MainActivity"
             android:exported="true"

@@ -1,8 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.theredspy15.thanelocker.NewBoardActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.theredspy15.thanelocker.NewBoardActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/feed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="0dp"
+                android:maxWidth="0dp"
+                android:minWidth="200dp"
+                android:minHeight="200dp"
+                app:srcCompat="@drawable/ic_baseline_image_24" />
+
+            <Button
+                android:id="@+id/buttonCamera"
+                android:onClick="fromCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add image (camera)" />
+
+            <Button
+                android:id="@+id/buttonGallery"
+                android:onClick="fromGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add image (gallery)" />
+
+            <EditText
+                android:id="@+id/editTextBoardName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Description"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/editTextRiser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Riser Height"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/editTextRAngle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Rear Angle"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextFAngle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Front Angle"
+                android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/spinnerWheels"
+                android:entries="@array/wheels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog" />
+
+            <Spinner
+                android:id="@+id/spinnerBearings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/bearings"
+                android:spinnerMode="dialog" />
+
+            <Spinner
+                android:id="@+id/spinnerTrucks"
+                android:entries="@array/trucks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerGriptapes"
+                android:entries="@array/grip_tapes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerRdBushings"
+                android:entries="@array/bushings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerBdBushings"
+                android:entries="@array/bushings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerPivot"
+                android:entries="@array/pivots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonCreate"
+                android:onClick="create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
