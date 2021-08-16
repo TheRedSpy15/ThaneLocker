@@ -6,12 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.Board;
 import com.theredspy15.thanelocker.MainActivity;
@@ -31,26 +32,32 @@ public class BoardsFragment extends Fragment {
         View root = binding.getRoot();
 
         loadBoards();
-
-        final TextView textView = binding.textBoards;
-        boardsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
     
     public void loadBoards() {
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(0,20,0,20);
+
         if (MainActivity.savedBoards != null) {
             for (Board board: MainActivity.savedBoards) {
                 Button button = new Button(getContext());
                 button.setText(board.getName());
-                binding.boardLayout.addView(button);
+                button.setTextSize(18);
+                button.setBackgroundColor(getResources().getColor(R.color.grey));
+                button.setPadding(50,50,50,50);
+                binding.boardLayout.addView(button,layout);
             }
         }
 
         // create new button
         Button button = new Button(getContext());
         button.setText("Add Board");
+        button.setTextSize(18);
+        button.setPadding(50,50,50,50);
+        button.setBackgroundColor(getResources().getColor(R.color.grey));
         button.setOnClickListener(this::loadCreateBoard);
-        binding.boardLayout.addView(button);
+        binding.boardLayout.addView(button, layout);
     }
 
     public void loadCreateBoard(View view) {

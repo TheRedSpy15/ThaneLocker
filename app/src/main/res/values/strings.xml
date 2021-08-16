@@ -109,10 +109,6 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
     </string-array>
-    <!-- Built-in buhsing choices -->
-    <string-array name="bushings">
-        <item>Venom 85a barrel</item>
-    </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
         <item>Snakes</item>
@@ -124,7 +120,24 @@
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard</item>
+        <item>Standard Griptape</item>
         <item>Lokton</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Dance</item>
+        <item>LDP</item>
+        <item>Downhill</item>
+        <item>Freeride</item>
+        <item>Slalom</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Riptide Barrel WPS 88a</item>
+        <item>Venom Barrel 85a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Riptide cup</item>
     </string-array>
 </resources>

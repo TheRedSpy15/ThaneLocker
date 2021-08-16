@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
@@ -20,7 +19,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.preferences);
+        //addPreferencesFromResource(R.xml.preferences);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
