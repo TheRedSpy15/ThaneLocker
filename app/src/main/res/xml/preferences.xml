@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference android:title="donate"
-        android:key="donate"
-        app:iconSpaceReserved="false"
-        android:summary="donate to meh">
-        <intent android:action="android.intent.action.VIEW"
-            android:data="https://www.paypal.me/theredspy15" />
-    </Preference>
+
+    <PreferenceCategory android:title="Links to other awesome places">
+        <Preference android:title="Longboard Shop"
+            android:key="shop"
+            app:iconSpaceReserved="true"
+            android:icon="@drawable/ic_baseline_store_24"
+            android:summary="Go to Muirskate.com the best place to order anything for Longboarding">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://www.Muirksate.com" />
+        </Preference>
+        <Preference android:title="Longboarding Family Discord"
+            android:key="discord"
+            app:iconSpaceReserved="true"
+            android:icon="@drawable/ic_baseline_discord_24"
+            android:summary="Join the longboarding family discord server, the best community to meet others">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://discord.gg/2EJ2CzAHTZ" />
+        </Preference>
+    </PreferenceCategory>
 </androidx.preference.PreferenceScreen>

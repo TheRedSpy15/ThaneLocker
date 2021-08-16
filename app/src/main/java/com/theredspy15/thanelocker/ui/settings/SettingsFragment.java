@@ -6,21 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSettingsBinding;
 
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends Fragment {
 
     private SettingsViewModel settingsViewModel;
     private FragmentSettingsBinding binding;
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        //addPreferencesFromResource(R.xml.preferences);
-    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,18 +26,30 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        return root;
-    }
+        getChildFragmentManager().beginTransaction().replace(R.id.settingsLayout, new MyPreferenceFragment()).commit();
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.setHasOptionsMenu(true);
+        return root;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public static class MyPreferenceFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreate(final Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            this.setHasOptionsMenu(true);
+        }
+
+        /**
+         * Inflate Preferences
+         */
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            addPreferencesFromResource(R.xml.preferences);
+        }
     }
 }
