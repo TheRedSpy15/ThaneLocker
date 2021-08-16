@@ -44,7 +44,7 @@ public class BoardsFragment extends Fragment {
         if (MainActivity.savedBoards != null) {
             for (Board board: MainActivity.savedBoards) {
                 Button button = new Button(getContext());
-                button.setText(board.getName()+" #"+board.getId());
+                button.setText(board.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setPadding(50,50,50,50);

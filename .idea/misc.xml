@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_discord_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.3055555555555556" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_rss_feed_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.5708333333333333" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_whatshot_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.34791666666666665" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.34791666666666665" />
@@ -28,7 +30,7 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_settings.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/menu_board.xml" value="0.5546875" />
-        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/xml/preferences.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/xml/preferences.xml" value="0.4290484140233723" />
       </map>
     </option>
   </component>
