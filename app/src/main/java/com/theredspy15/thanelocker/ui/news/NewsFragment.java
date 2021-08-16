@@ -1,6 +1,7 @@
 package com.theredspy15.thanelocker.ui.news;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -64,10 +65,13 @@ public class NewsFragment extends Fragment {
                 button.setText(entry.getTitle());
                 button.setTextSize(18);
                 button.setPadding(50,50,50,50);
-                button.setBackgroundColor(getResources().getColor(R.color.grey));
+                //button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getUri()))));
                 LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 layout.setMargins(0,20,0,20);
+                button.setBackgroundResource(R.drawable.rounded_corners);
+                GradientDrawable drawable = (GradientDrawable) button.getBackground();
+                drawable.setColor(getResources().getColor(R.color.grey));
                 binding.feedLayout.addView(button, layout);
             }
         }

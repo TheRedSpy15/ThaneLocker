@@ -2,6 +2,7 @@ package com.theredspy15.thanelocker.ui.boards;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,9 @@ public class BoardsFragment extends Fragment {
                     myIntent.putExtra("board",MainActivity.savedBoards.get(MainActivity.savedBoards.indexOf(board)));
                     startActivity(myIntent);
                 });
+                button.setBackgroundResource(R.drawable.rounded_corners);
+                GradientDrawable drawable = (GradientDrawable) button.getBackground();
+                drawable.setColor(getResources().getColor(R.color.grey));
                 binding.boardLayout.addView(button,layout);
             }
         }
@@ -64,6 +68,9 @@ public class BoardsFragment extends Fragment {
         button.setPadding(50,50,50,50);
         button.setBackgroundColor(getResources().getColor(R.color.grey));
         button.setOnClickListener(this::loadCreateBoard);
+        button.setBackgroundResource(R.drawable.rounded_corners);
+        GradientDrawable drawable = (GradientDrawable) button.getBackground();
+        drawable.setColor(getResources().getColor(R.color.design_default_color_primary));
         binding.boardLayout.addView(button, layout);
     }
 
