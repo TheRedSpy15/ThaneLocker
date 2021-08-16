@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class SerializableManager {
 
@@ -19,6 +20,14 @@ public class SerializableManager {
      * @param fileName The name of the file.
      * @param <T> The type of the object.
      */
+
+    public static LinkedList<Board> savedBoards = new LinkedList<>();
+    public static LinkedList<Session> savedSessions = new LinkedList<>();
+    public static LinkedList<String> savedTrucks = new LinkedList<>();
+    public static LinkedList<String> savedBushings = new LinkedList<>();
+    public static LinkedList<String> savedWheels = new LinkedList<>();
+    public static LinkedList<String> savedBearings = new LinkedList<>();
+    public static LinkedList<String> savedGriptape = new LinkedList<>();
 
     public static <T extends Serializable> void saveSerializable(Context context, T objectToSave, String fileName) {
         try {
@@ -70,6 +79,26 @@ public class SerializableManager {
 
     public static void removeSerializable(Context context, String filename) {
         context.deleteFile(filename);
+    }
+
+    public static void loadSavedData(Context context) {
+        savedBoards = SerializableManager.readSerializable(context,"savedBoards");
+        savedSessions = SerializableManager.readSerializable(context,"savedSessions");
+        savedTrucks = SerializableManager.readSerializable(context,"savedTrucks");
+        savedBushings = SerializableManager.readSerializable(context,"savedBushings");
+        savedWheels = SerializableManager.readSerializable(context,"savedWheels");
+        savedBearings = SerializableManager.readSerializable(context,"savedBearings");
+        savedGriptape = SerializableManager.readSerializable(context,"savedGriptape");
+    }
+
+    public static void saveData(Context context) {
+        SerializableManager.saveSerializable(context,savedBoards,"savedBoards");
+        SerializableManager.saveSerializable(context,savedSessions,"savedSessions");
+        SerializableManager.saveSerializable(context,savedTrucks,"savedTrucks");
+        SerializableManager.saveSerializable(context,savedBushings,"savedBushings");
+        SerializableManager.saveSerializable(context,savedWheels,"savedWheels");
+        SerializableManager.saveSerializable(context,savedBearings,"savedBearings");
+        SerializableManager.saveSerializable(context,savedGriptape,"savedGriptape");
     }
 
 }

@@ -97,7 +97,6 @@ public class NewBoardActivity extends AppCompatActivity {
     public void create(View view) {
         Board board = new Board();
         board.setName(nameEditText.getText().toString());
-        //board.setTags();
         board.setImage(uriToBitmap(imageUri));
         board.setDescription(descriptionEditText.getText().toString());
         board.setTrucks(truckSpinner.getSelectedItem().toString());
@@ -111,8 +110,11 @@ public class NewBoardActivity extends AppCompatActivity {
         board.setRiserHt(Double.parseDouble(riserEditText.getText().toString()));
         board.setGripTp(griptapeSpinner.getSelectedItem().toString());
 
-        MainActivity.savedBoards.add(board);
-        MainActivity.saveData(this);
+        SerializableManager.savedBoards.add(board);
+        SerializableManager.saveData(this);
+
+        Intent myIntent = new Intent(this, MainActivity.class);
+        startActivity(myIntent);
     }
 
     private BitmapDataObject uriToBitmap(Uri selectedFileUri) {

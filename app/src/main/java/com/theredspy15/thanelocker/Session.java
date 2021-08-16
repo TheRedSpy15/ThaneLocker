@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Session implements Serializable {
+    private static final long serialVersionUID = 1234568L;
     private short board_id;
     private String description;
     private String time_start;

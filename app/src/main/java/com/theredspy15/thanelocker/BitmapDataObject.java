@@ -14,13 +14,13 @@ public class BitmapDataObject implements Serializable {
 
     public BitmapDataObject(Bitmap bitmap)
     {
-        currentImage = bitmap;
+        setCurrentImage(bitmap);
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws IOException {
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        currentImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        getCurrentImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
 
         byte[] byteArray = stream.toByteArray();
 
@@ -30,7 +30,6 @@ public class BitmapDataObject implements Serializable {
     }
 
     private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
-
 
         int bufferLength = in.readInt();
 
@@ -48,7 +47,15 @@ public class BitmapDataObject implements Serializable {
 
         } while (pos < bufferLength);
 
-        currentImage = BitmapFactory.decodeByteArray(byteArray, 0, bufferLength);
+        setCurrentImage(BitmapFactory.decodeByteArray(byteArray, 0, bufferLength));
 
+    }
+
+    public Bitmap getCurrentImage() {
+        return currentImage;
+    }
+
+    public void setCurrentImage(Bitmap currentImage) {
+        this.currentImage = currentImage;
     }
 }
