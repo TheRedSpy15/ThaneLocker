@@ -7,9 +7,9 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-    <uses-feature android:name="android.hardware.camera" android:required="false"/>
-    <uses-feature android:name="android.hardware.location" android:required="false"/>
-    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.location" android:required="true"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="true"/>
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +21,7 @@
             android:name="com.theredspy15.thanelocker.BoardActivity"
             android:exported="true"
             android:label="@string/title_activity_board"
+            android:parentActivityName="com.theredspy15.thanelocker.MainActivity"
             android:theme="@style/Theme.ThaneLocker.NoActionBar" />
         <activity
             android:name="com.theredspy15.thanelocker.NewBoardActivity"

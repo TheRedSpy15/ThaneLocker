@@ -1,7 +1,6 @@
 package com.theredspy15.thanelocker;
 
 import android.Manifest;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -16,27 +15,16 @@ import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.LinkedList;
-
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
-    public static LinkedList<Board> savedBoards;
-    public static LinkedList<Session> savedSessions;
-    public static LinkedList<String> savedTrucks;
-    public static LinkedList<String> savedBushings;
-    public static LinkedList<String> savedWheels;
-    public static LinkedList<String> savedBearings;
-    public static LinkedList<String> savedGriptape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         checkPermissions();
-        savedBoards = new LinkedList<>();
-        //loadSavedData(this);
+        SerializableManager.loadSavedData(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -50,26 +38,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-    }
-
-    public static void loadSavedData(Context context) {
-        savedBoards = SerializableManager.readSerializable(context,"savedBoards");
-        savedSessions = SerializableManager.readSerializable(context,"savedSessions");
-        savedTrucks = SerializableManager.readSerializable(context,"savedTrucks");
-        savedBushings = SerializableManager.readSerializable(context,"savedBushings");
-        savedWheels = SerializableManager.readSerializable(context,"savedWheels");
-        savedBearings = SerializableManager.readSerializable(context,"savedBearings");
-        savedGriptape = SerializableManager.readSerializable(context,"savedGriptape");
-    }
-
-    public static void saveData(Context context) {
-        SerializableManager.saveSerializable(context,savedBoards,"savedBoards");
-        SerializableManager.saveSerializable(context,savedSessions,"savedSessions");
-        SerializableManager.saveSerializable(context,savedTrucks,"savedTrucks");
-        SerializableManager.saveSerializable(context,savedBushings,"savedBushings");
-        SerializableManager.saveSerializable(context,savedWheels,"savedWheels");
-        SerializableManager.saveSerializable(context,savedBearings,"savedBearings");
-        SerializableManager.saveSerializable(context,savedGriptape,"savedGriptape");
     }
 
     private void checkPermissions() {

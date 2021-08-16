@@ -1,15 +1,13 @@
 package com.theredspy15.thanelocker;
 
-import com.google.android.material.chip.Chip;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class Board implements Serializable {
+    private static final long serialVersionUID = 1234567L;
     private short id; // random number
     private String name; //default: board + id
-    private LinkedList<Chip> tags;
     private BitmapDataObject image;
     private String description;
     private String trucks;
@@ -43,14 +41,6 @@ public class Board implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public LinkedList<Chip> getTags() {
-        return tags;
-    }
-
-    public void setTags(LinkedList<Chip> tags) {
-        this.tags = tags;
     }
 
     public BitmapDataObject getImage() {

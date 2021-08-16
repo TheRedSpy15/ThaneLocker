@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_baseline_store_24"
             android:summary="Go to Muirskate.com the best place to order anything for Longboarding">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://www.Muirksate.com" />
+                android:data="https://www.muirskate.com" />
         </Preference>
         <Preference android:title="Longboarding Family Discord"
             android:key="discord"
