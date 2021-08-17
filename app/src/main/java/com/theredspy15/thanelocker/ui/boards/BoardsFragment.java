@@ -49,7 +49,8 @@ public class BoardsFragment extends Fragment {
                 button.setText(board.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
-                button.setPadding(50,50,50,50);
+                button.setPadding(50,150,50,150);
+                button.setAllCaps(false);
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(getContext(), BoardActivity.class);
                     myIntent.putExtra("board",SerializableManager.savedBoards.get(SerializableManager.savedBoards.indexOf(board)));
@@ -57,14 +58,10 @@ public class BoardsFragment extends Fragment {
                 });
                 //Drawable mDrawable = new BitmapDrawable(getResources(), board.getImage().getCurrentImage()); // Thumbnails
                 //button.setCompoundDrawables(mDrawable,null,null,null);
-                button.setBackgroundResource(R.drawable.rounded_corners);
-                GradientDrawable drawable = (GradientDrawable) button.getBackground();
-                drawable.setColor(getResources().getColor(R.color.grey));
                 binding.boardLayout.addView(button,layout);
             }
         }
-
-        // create add board button -- maybe keep just this rounded and the rest square for thumbnails?
+        // TODO: move to xml
         Button button = new Button(getContext());
         button.setText("Add Board");
         button.setTextSize(18);

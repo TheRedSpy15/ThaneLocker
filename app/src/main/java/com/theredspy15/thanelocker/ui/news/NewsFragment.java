@@ -64,6 +64,7 @@ public class NewsFragment extends Fragment {
                 Button button = new Button(getContext());
                 button.setText(entry.getTitle());
                 button.setTextSize(18);
+                button.setAllCaps(false);
                 button.setPadding(50,50,50,50);
                 //button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getUri()))));
