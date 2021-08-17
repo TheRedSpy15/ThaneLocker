@@ -2,6 +2,7 @@ package com.theredspy15.thanelocker;
 
 import android.content.Context;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,11 +24,6 @@ public class SerializableManager {
 
     public static LinkedList<Board> savedBoards = new LinkedList<>();
     public static LinkedList<Session> savedSessions = new LinkedList<>();
-    public static LinkedList<String> savedTrucks = new LinkedList<>();
-    public static LinkedList<String> savedBushings = new LinkedList<>();
-    public static LinkedList<String> savedWheels = new LinkedList<>();
-    public static LinkedList<String> savedBearings = new LinkedList<>();
-    public static LinkedList<String> savedGriptape = new LinkedList<>();
 
     public static <T extends Serializable> void saveSerializable(Context context, T objectToSave, String fileName) {
         try {
@@ -82,23 +78,18 @@ public class SerializableManager {
     }
 
     public static void loadSavedData(Context context) {
-        savedBoards = SerializableManager.readSerializable(context,"savedBoards");
-        savedSessions = SerializableManager.readSerializable(context,"savedSessions");
-        savedTrucks = SerializableManager.readSerializable(context,"savedTrucks");
-        savedBushings = SerializableManager.readSerializable(context,"savedBushings");
-        savedWheels = SerializableManager.readSerializable(context,"savedWheels");
-        savedBearings = SerializableManager.readSerializable(context,"savedBearings");
-        savedGriptape = SerializableManager.readSerializable(context,"savedGriptape");
+        savedBoards = SerializableManager.readSerializable(context,"savedBoards.thanel");
+        savedSessions = SerializableManager.readSerializable(context,"savedSessions.thanel");
+
+        if (new File("savedBoards.thanel").exists())
+            savedBoards = SerializableManager.readSerializable(context,"savedBoards.thanel");
+        if (new File("savedSessions.thanel").exists())
+            savedBoards = SerializableManager.readSerializable(context,"savedSessions.thanel");
     }
 
     public static void saveData(Context context) {
         SerializableManager.saveSerializable(context,savedBoards,"savedBoards");
         SerializableManager.saveSerializable(context,savedSessions,"savedSessions");
-        SerializableManager.saveSerializable(context,savedTrucks,"savedTrucks");
-        SerializableManager.saveSerializable(context,savedBushings,"savedBushings");
-        SerializableManager.saveSerializable(context,savedWheels,"savedWheels");
-        SerializableManager.saveSerializable(context,savedBearings,"savedBearings");
-        SerializableManager.saveSerializable(context,savedGriptape,"savedGriptape");
     }
 
 }
