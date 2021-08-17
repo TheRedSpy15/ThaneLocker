@@ -78,9 +78,6 @@ public class SerializableManager {
     }
 
     public static void loadSavedData(Context context) {
-        savedBoards = SerializableManager.readSerializable(context,"savedBoards.thanel");
-        savedSessions = SerializableManager.readSerializable(context,"savedSessions.thanel");
-
         if (new File("savedBoards.thanel").exists())
             savedBoards = SerializableManager.readSerializable(context,"savedBoards.thanel");
         if (new File("savedSessions.thanel").exists())
