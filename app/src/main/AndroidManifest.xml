@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThaneLocker">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCb_87wr_GLh0iXz-Y5ZOZoVtqp7U_AUuc"/>
         <activity
             android:name="com.theredspy15.thanelocker.BoardActivity"
             android:exported="true"
