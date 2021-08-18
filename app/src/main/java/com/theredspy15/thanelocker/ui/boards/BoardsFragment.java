@@ -1,7 +1,8 @@
 package com.theredspy15.thanelocker.ui.boards;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -38,7 +39,6 @@ public class BoardsFragment extends Fragment {
         return root;
     }
 
-    @SuppressLint("SetTextI18n")
     public void loadBoards() {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
@@ -56,12 +56,12 @@ public class BoardsFragment extends Fragment {
                     myIntent.putExtra("board", SavedDataManager.savedBoards.get(SavedDataManager.savedBoards.indexOf(board)));
                     startActivity(myIntent);
                 });
-                //Drawable mDrawable = new BitmapDrawable(getResources(), board.getImage().getCurrentImage()); // Thumbnails
-                //button.setCompoundDrawables(mDrawable,null,null,null);
+                Drawable mDrawable = new BitmapDrawable(getResources(), board.getImage()); // Thumbnails
+                button.setCompoundDrawables(mDrawable,null,null,null);
                 binding.boardLayout.addView(button,layout);
             }
         }
-        // TODO: move to xml
+        // TODO: move to xml and see what it looks like if it doesn't stretch the entire screen
         Button button = new Button(getContext());
         button.setText("Add Board");
         button.setTextSize(18);
