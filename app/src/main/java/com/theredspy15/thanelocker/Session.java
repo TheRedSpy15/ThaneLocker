@@ -1,18 +1,22 @@
 package com.theredspy15.thanelocker;
 
+import android.location.Location;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Session implements Serializable {
     private static final long serialVersionUID = 1234568L;
     private short board_id;
-    private String description;
-    private String time_start;
-    private String time_end;
-    private String duration;
-    private String date;
+    private String description = "";
+    private String time_start = "";
+    private String time_end = "";
+    private String duration = "";
+    private String date = "";
     private String name; // location + date
-    private LinkedList<String> tags;
+    private String cityName = "";
+    private LinkedList<Location> locations = new LinkedList<>();
+    private LinkedList<String> tags = new LinkedList<>();
 
     public short getBoard_id() {
         return board_id;
@@ -76,5 +80,21 @@ public class Session implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LinkedList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(LinkedList<Location> locations) {
+        this.locations = locations;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 }

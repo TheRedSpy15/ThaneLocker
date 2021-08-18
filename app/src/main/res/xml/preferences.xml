@@ -20,4 +20,20 @@
                 android:data="https://discord.gg/2EJ2CzAHTZ" />
         </Preference>
     </PreferenceCategory>
+    <PreferenceCategory android:title="New Sources">
+        <CheckBoxPreference
+            app:iconSpaceReserved="false"
+            android:defaultValue="true"
+            android:key="downhill254"
+            android:persistent="true"
+            android:title="DownHill254" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Other">
+        <SwitchPreference
+            app:icon="@drawable/ic_baseline_dark_mode_24"
+            android:defaultValue="false"
+            android:key="forcedark"
+            android:persistent="true"
+            android:title="Force Dark Theme" />
+    </PreferenceCategory>
 </androidx.preference.PreferenceScreen>
