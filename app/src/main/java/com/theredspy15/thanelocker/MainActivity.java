@@ -1,6 +1,7 @@
 package com.theredspy15.thanelocker;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityMainBinding;
@@ -19,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    static SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
         checkPermissions();
-        SerializableManager.loadSavedData(this);
+        SavedDataManager.loadSavedData();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

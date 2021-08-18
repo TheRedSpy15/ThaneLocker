@@ -1,5 +1,7 @@
 package com.theredspy15.thanelocker;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Random;
@@ -8,7 +10,7 @@ public class Board implements Serializable {
     private static final long serialVersionUID = 1234567L;
     private short id; // random number
     private String name; //default: board + id
-    private BitmapDataObject image;
+    private Bitmap image;
     private String description;
     private String trucks;
     private byte rearAngle=50;
@@ -43,11 +45,11 @@ public class Board implements Serializable {
         this.name = name;
     }
 
-    public BitmapDataObject getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(BitmapDataObject image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 

@@ -1,7 +1,5 @@
 package com.theredspy15.thanelocker;
 
-import com.google.android.material.chip.Chip;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 
@@ -12,7 +10,7 @@ public class Session implements Serializable {
     private String time_start;
     private String time_end;
     private String duration;
-    private LinkedList<Chip> tags;
+    private LinkedList<String> tags;
 
     public short getBoard_id() {
         return board_id;
@@ -54,11 +52,11 @@ public class Session implements Serializable {
         this.duration = duration;
     }
 
-    public LinkedList<Chip> getTags() {
+    public LinkedList<String> getTags() {
         return tags;
     }
 
-    public void setTags(LinkedList<Chip> tags) {
+    public void setTags(LinkedList<String> tags) {
         this.tags = tags;
     }
 }
