@@ -19,7 +19,7 @@ import com.example.thanelocker.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.Board;
 import com.theredspy15.thanelocker.BoardActivity;
 import com.theredspy15.thanelocker.NewBoardActivity;
-import com.theredspy15.thanelocker.SerializableManager;
+import com.theredspy15.thanelocker.SavedDataManager;
 
 public class BoardsFragment extends Fragment {
 
@@ -43,8 +43,8 @@ public class BoardsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
-        if (SerializableManager.savedBoards != null) {
-            for (Board board: SerializableManager.savedBoards) {
+        if (SavedDataManager.savedBoards != null) {
+            for (Board board: SavedDataManager.savedBoards) {
                 Button button = new Button(getContext());
                 button.setText(board.getName());
                 button.setTextSize(18);
@@ -53,7 +53,7 @@ public class BoardsFragment extends Fragment {
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(getContext(), BoardActivity.class);
-                    myIntent.putExtra("board",SerializableManager.savedBoards.get(SerializableManager.savedBoards.indexOf(board)));
+                    myIntent.putExtra("board", SavedDataManager.savedBoards.get(SavedDataManager.savedBoards.indexOf(board)));
                     startActivity(myIntent);
                 });
                 //Drawable mDrawable = new BitmapDrawable(getResources(), board.getImage().getCurrentImage()); // Thumbnails

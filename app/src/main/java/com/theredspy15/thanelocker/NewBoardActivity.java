@@ -110,16 +110,15 @@ public class NewBoardActivity extends AppCompatActivity {
         board.setRiserHt(Double.parseDouble(riserEditText.getText().toString()));
         board.setGripTp(griptapeSpinner.getSelectedItem().toString());
 
-        SerializableManager.savedBoards.add(board);
-        SerializableManager.saveData(this);
+        SavedDataManager.savedBoards.add(board);
+        SavedDataManager.saveData();
 
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
     }
 
-    private BitmapDataObject uriToBitmap(Uri selectedFileUri) {
-        final Bitmap[] image = {null};
-        final BitmapDataObject[] bitmapDataObject = {null};
+    private Bitmap uriToBitmap(Uri selectedFileUri) {
+        final Bitmap[] image = new Bitmap[1];
         Thread thread = new Thread(() -> {
             ParcelFileDescriptor parcelFileDescriptor =
                     null;
@@ -137,8 +136,7 @@ public class NewBoardActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            bitmapDataObject[0] = new BitmapDataObject(image[0]);
         });thread.start();
-        return bitmapDataObject[0];
+        return image[0];
     }
 }
