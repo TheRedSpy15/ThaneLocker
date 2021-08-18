@@ -3,15 +3,23 @@
     package="com.example.thanelocker">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
-    <uses-feature android:name="android.hardware.location" android:required="true"/>
-    <uses-feature android:name="android.hardware.location.gps" android:required="true"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +27,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThaneLocker">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCb_87wr_GLh0iXz-Y5ZOZoVtqp7U_AUuc"/>
+        <activity
+            android:name="com.theredspy15.thanelocker.SessionActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCb_87wr_GLh0iXz-Y5ZOZoVtqp7U_AUuc" />
+
         <activity
             android:name="com.theredspy15.thanelocker.BoardActivity"
             android:exported="true"
@@ -29,8 +44,8 @@
         <activity
             android:name="com.theredspy15.thanelocker.NewBoardActivity"
             android:exported="true"
-            android:parentActivityName="com.theredspy15.thanelocker.MainActivity"
             android:label="New Board"
+            android:parentActivityName="com.theredspy15.thanelocker.MainActivity"
             android:theme="@style/Theme.ThaneLocker" />
         <activity
             android:name="com.theredspy15.thanelocker.MainActivity"

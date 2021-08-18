@@ -10,6 +10,8 @@ public class Session implements Serializable {
     private String time_start;
     private String time_end;
     private String duration;
+    private String date;
+    private String name; // location + date
     private LinkedList<String> tags;
 
     public short getBoard_id() {
@@ -58,5 +60,21 @@ public class Session implements Serializable {
 
     public void setTags(LinkedList<String> tags) {
         this.tags = tags;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
