@@ -1,13 +1,10 @@
 package com.theredspy15.thanelocker.ui.sessions;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +13,13 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
+import com.theredspy15.thanelocker.LocationService;
 import com.theredspy15.thanelocker.SavedDataManager;
 import com.theredspy15.thanelocker.Session;
 import com.theredspy15.thanelocker.SessionActivity;
@@ -30,7 +29,7 @@ public class SessionsFragment extends Fragment {
     private SessionsViewModel sessionsViewModel;
     private FragmentSessionsBinding binding;
 
-    static Session newSession = new Session();
+    public static Session newSession = new Session();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class SessionsFragment extends Fragment {
         binding.sessionsLayout.addView(button, layout);
     }
 
-    @SuppressLint("MissingPermission")
     public void loadStartSession(View view) {
         // maybe just a modal popup that shows duration and a stop button
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
@@ -91,31 +89,31 @@ public class SessionsFragment extends Fragment {
         alertDialog.setMessage("Alert message to be shown");
         alertDialog.setCancelable(false);
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "STOP",
-                (dialog, which) -> dialog.dismiss());
+                (dialog, which) -> {
+                    stopService();
+                    dialog.dismiss();
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
+                (dialog, which) -> {
+                    PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
+                    PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                            "MyApp::MyWakelockTag");
+                    wakeLock.acquire(60*60*1000L /*60 minutes*/);
+
+                    startService();
+                });
         alertDialog.show();
 
-        LocationManager locationManager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new MyLocationListener();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 1, locationListener);
     }
 
-    /*---------- Listener class to get coordinates ------------- */
-    class MyLocationListener implements LocationListener {
-
-        @Override
-        public void onLocationChanged(Location loc) {
-            System.out.println("still running");
-            SessionsFragment.newSession.getLocations().add(loc);
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {}
-
-        @Override
-        public void onProviderEnabled(String provider) {}
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
+    public void startService() {
+        Intent serviceIntent = new Intent(requireContext(), LocationService.class);
+        serviceIntent.putExtra("inputExtra", "Foreground Service Example in Android"); // maybe send list this way?
+        ContextCompat.startForegroundService(requireContext(), serviceIntent);
+    }
+    public void stopService() {
+        Intent serviceIntent = new Intent(requireContext(), LocationService.class);
+        requireContext().stopService(serviceIntent);
     }
 
 }
