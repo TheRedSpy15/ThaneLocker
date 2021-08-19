@@ -23,6 +23,8 @@ import com.theredspy15.thanelocker.ui.sessions.SessionsFragment;
 
 public class LocationService extends Service {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
+    LocationManager locationManager;
+    LocationListener locationListener;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,14 +45,15 @@ public class LocationService extends Service {
                 .build();
         startForeground(1, notification);
 
-        LocationManager locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new MyLocationListener();
+        locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
+        locationListener = new MyLocationListener();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
 
         return START_NOT_STICKY;
     }
     @Override
     public void onDestroy() {
+        locationManager.removeUpdates(locationListener);
         super.onDestroy();
     }
     @Nullable
