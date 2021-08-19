@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.theredspy15.thanelocker"
-        minSdk 21
+        minSdk 23
         targetSdk 30
         versionCode 1
         versionName "1.0"
@@ -39,6 +39,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.work:work-runtime:2.5.0'
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'com.rometools:rome:1.16.0'

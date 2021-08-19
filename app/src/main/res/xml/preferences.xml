@@ -20,7 +20,7 @@
                 android:data="https://discord.gg/2EJ2CzAHTZ" />
         </Preference>
     </PreferenceCategory>
-    <PreferenceCategory android:title="New Sources">
+    <PreferenceCategory android:title="News Sources">
         <CheckBoxPreference
             app:iconSpaceReserved="false"
             android:defaultValue="true"
