@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.Manifest;
 import android.content.SharedPreferences;
@@ -16,12 +16,13 @@ import androidx.preference.PreferenceManager;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    static SharedPreferences preferences;
+    public static SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

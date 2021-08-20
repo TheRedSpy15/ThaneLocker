@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +17,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thanelocker.R;
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;

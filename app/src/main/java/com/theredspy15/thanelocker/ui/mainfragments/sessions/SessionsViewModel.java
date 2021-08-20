@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.sessions;
+package com.theredspy15.thanelocker.ui.mainfragments.sessions;
 
 import androidx.lifecycle.ViewModel;
 

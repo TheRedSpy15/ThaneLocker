@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.utils;
 
 import android.app.Application;
 import android.content.Context;

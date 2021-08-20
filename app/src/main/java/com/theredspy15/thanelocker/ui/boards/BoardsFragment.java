@@ -17,10 +17,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentBoardsBinding;
-import com.theredspy15.thanelocker.Board;
-import com.theredspy15.thanelocker.BoardActivity;
-import com.theredspy15.thanelocker.NewBoardActivity;
-import com.theredspy15.thanelocker.SavedDataManager;
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
+import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
+import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 public class BoardsFragment extends Fragment {
 

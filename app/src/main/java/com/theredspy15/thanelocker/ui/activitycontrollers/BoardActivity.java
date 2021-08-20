@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -11,6 +11,7 @@ import com.example.thanelocker.databinding.ActivityBoardBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.theredspy15.thanelocker.models.Board;
 
 public class BoardActivity extends AppCompatActivity {
 

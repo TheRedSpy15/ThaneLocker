@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.news;
+package com.theredspy15.thanelocker.ui.mainfragments.news;
 
 import androidx.lifecycle.ViewModel;
 

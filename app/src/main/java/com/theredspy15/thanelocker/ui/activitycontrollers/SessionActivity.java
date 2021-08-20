@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.os.Bundle;
 

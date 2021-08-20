@@ -26,25 +26,25 @@
 
     <fragment
         android:id="@+id/navigation_sessions"
-        android:name="com.theredspy15.thanelocker.ui.sessions.SessionsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment"
         android:label="Sessions"
         tools:layout="@layout/fragment_sessions" />
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="com.theredspy15.thanelocker.ui.news.NewsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.news.NewsFragment"
         android:label="News"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.theredspy15.thanelocker.ui.settings.SettingsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_skatemap"
-        android:name="com.theredspy15.thanelocker.ui.skatemap.SkateMapFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.skatemap.SkateMapFragment"
         android:label="Map"
         tools:layout="@layout/fragment_skatemap" />
 

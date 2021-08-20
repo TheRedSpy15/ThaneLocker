@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -19,7 +19,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.example.thanelocker.R;
-import com.theredspy15.thanelocker.ui.sessions.SessionsFragment;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment;
 
 public class LocationService extends Service {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";

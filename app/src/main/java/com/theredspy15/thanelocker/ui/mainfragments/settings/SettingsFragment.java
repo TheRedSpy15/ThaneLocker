@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.settings;
+package com.theredspy15.thanelocker.ui.mainfragments.settings;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

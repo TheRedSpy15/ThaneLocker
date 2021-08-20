@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.news;
+package com.theredspy15.thanelocker.ui.mainfragments.news;
 
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
