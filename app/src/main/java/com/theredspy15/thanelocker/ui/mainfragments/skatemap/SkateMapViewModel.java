@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.skatemap;
+package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
 import androidx.lifecycle.ViewModel;
 

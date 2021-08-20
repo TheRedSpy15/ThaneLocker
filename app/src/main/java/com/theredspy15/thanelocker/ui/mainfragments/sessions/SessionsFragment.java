@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.sessions;
+package com.theredspy15.thanelocker.ui.mainfragments.sessions;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +19,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
-import com.theredspy15.thanelocker.LocationService;
-import com.theredspy15.thanelocker.MainActivity;
-import com.theredspy15.thanelocker.SavedDataManager;
-import com.theredspy15.thanelocker.Session;
-import com.theredspy15.thanelocker.SessionActivity;
+import com.theredspy15.thanelocker.utils.LocationService;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.theredspy15.thanelocker.utils.SavedDataManager;
+import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

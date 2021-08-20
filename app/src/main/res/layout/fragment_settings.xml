@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     android:id="@+id/settingsLayout"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.theredspy15.thanelocker.ui.settings.SettingsFragment">
+    tools:context="com.theredspy15.thanelocker.ui.mainfragments.settings.SettingsFragment">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

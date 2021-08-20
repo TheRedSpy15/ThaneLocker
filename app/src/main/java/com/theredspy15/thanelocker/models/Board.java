@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.models;
 
 import android.graphics.Bitmap;
 
@@ -28,7 +28,7 @@ public class Board implements Serializable {
     private String gripTp="Standard Griptape";
     private LinkedList<Session> sessions;
 
-    Board() {
+    public Board() {
         Random random = new Random();
         id = (short) random.nextInt(Short.MAX_VALUE + 1);
     }

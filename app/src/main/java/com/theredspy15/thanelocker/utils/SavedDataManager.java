@@ -1,9 +1,12 @@
-package com.theredspy15.thanelocker;
+package com.theredspy15.thanelocker.utils;
 
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Session;
 
 import java.util.LinkedList;
 
