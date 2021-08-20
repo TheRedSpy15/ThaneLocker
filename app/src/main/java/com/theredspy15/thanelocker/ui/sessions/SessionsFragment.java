@@ -20,9 +20,14 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
 import com.theredspy15.thanelocker.LocationService;
+import com.theredspy15.thanelocker.MainActivity;
 import com.theredspy15.thanelocker.SavedDataManager;
 import com.theredspy15.thanelocker.Session;
 import com.theredspy15.thanelocker.SessionActivity;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class SessionsFragment extends Fragment {
 
@@ -59,7 +64,7 @@ public class SessionsFragment extends Fragment {
                 button.setText(session.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
-                button.setPadding(50, 150, 50, 150);
+                button.setPadding(50, 50, 50, 50);
                 button.setAllCaps(false);
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);
@@ -83,12 +88,11 @@ public class SessionsFragment extends Fragment {
     }
 
     public void loadStartSession(View view) {
-        // maybe just a modal popup that shows duration and a stop button
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("Recording Session");
-        alertDialog.setMessage("Alert message to be shown");
+        alertDialog.setTitle("Start Session?");
+        alertDialog.setMessage("You're GPS data will be used");
         alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "STOP",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                 (dialog, which) -> {
                     stopService();
                     dialog.dismiss();
@@ -101,19 +105,44 @@ public class SessionsFragment extends Fragment {
                     wakeLock.acquire(60*60*1000L /*60 minutes*/);
 
                     startService();
+                    loadStopSession();
                 });
         alertDialog.show();
+    }
 
+    void loadStopSession() {
+        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+        alertDialog.setTitle("Recording Session");
+        alertDialog.setMessage("Session is now being recorded. Turn off you screen and ride! press stop when done");
+        alertDialog.setCancelable(false);
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "STOP",
+                (dialog, which) -> stopService());
+        alertDialog.show();
+
+        binding.sessionsLayout.removeAllViews();
+        loadSessions();
     }
 
     public void startService() {
+        prepareSession();
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
-        serviceIntent.putExtra("inputExtra", "Foreground Service Example in Android"); // maybe send list this way?
+        serviceIntent.putExtra("description", "Recording your data for you to later view"); // maybe send list this way?
         ContextCompat.startForegroundService(requireContext(), serviceIntent);
     }
     public void stopService() {
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         requireContext().stopService(serviceIntent);
+        SavedDataManager.savedSessions.add(newSession);
+
+        Intent myIntent = new Intent(requireContext(), MainActivity.class);
+        startActivity(myIntent);
+    }
+
+    void prepareSession() {
+        DateFormat df = new SimpleDateFormat("EEE, MMM d");
+        String date = df.format(Calendar.getInstance().getTime());
+
+        newSession.setCityName("date");
     }
 
 }

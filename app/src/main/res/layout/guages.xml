@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        app:indicatorColor="@color/black"
+        app:trackColor="@color/design_default_color_primary_dark"
+        app:indicatorSize="64dp"
+        android:progress="50"
+        android:max="100"
+        android:min="0"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="141dp"
+        android:layout_height="129dp"
+        android:layout_gravity="center"
+        android:max="100"
+        android:min="0"
+        android:progress="50"
+        app:indicatorColor="@color/black"
+        app:indicatorSize="64dp"
+        app:trackColor="@color/design_default_color_primary_dark" />
+
+</LinearLayout>
