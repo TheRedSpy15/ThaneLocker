@@ -1,10 +1,12 @@
 package com.theredspy15.thanelocker;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityBoardBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,6 +26,7 @@ public class BoardActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         board = (Board) getIntent().getSerializableExtra("board");
+        populateViews(board);
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
@@ -33,5 +36,11 @@ public class BoardActivity extends AppCompatActivity {
         FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
+    }
+
+    void populateViews(Board board) {
+        binding.imageView.setImageBitmap(board.getImage());
+        TextView textView = binding.getRoot().findViewById(R.id.thisdingus);
+        textView.setText(board.getDescription());
     }
 }

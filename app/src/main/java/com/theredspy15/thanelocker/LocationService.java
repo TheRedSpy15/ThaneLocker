@@ -29,25 +29,22 @@ public class LocationService extends Service {
     public void onCreate() {
         super.onCreate();
     }
-    @SuppressLint("MissingPermission")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        String input = intent.getStringExtra("inputExtra");
+        String input = intent.getStringExtra("description");
         createNotificationChannel();
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Foreground Service")
+                .setContentTitle("Recording Session")
                 .setContentText(input)
                 .setSmallIcon(R.drawable.ic_baseline_location_on_24)
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);
 
-        locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
-        locationListener = new MyLocationListener();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
+        startTracker();
 
         return START_NOT_STICKY;
     }
@@ -74,11 +71,17 @@ public class LocationService extends Service {
         }
     }
 
-    static class MyLocationListener implements LocationListener {
+    @SuppressLint("MissingPermission")
+    void startTracker() {
+        locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
+        locationListener = new SessionLocationListener();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
+    }
+
+    static class SessionLocationListener implements LocationListener {
 
         @Override
         public void onLocationChanged(Location loc) {
-            System.out.println("still running"+loc.getLatitude());
             SessionsFragment.newSession.getLocations().add(loc);
         }
 

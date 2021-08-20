@@ -8,10 +8,34 @@
     tools:context="com.theredspy15.thanelocker.BoardActivity"
     tools:showIn="@layout/activity_board">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/board_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/thisdingus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            app:indicatorColor="@color/black"
+            app:trackColor="@color/design_default_color_primary_dark"
+            app:indicatorSize="64dp"
+            android:progress="50"
+            android:max="100"
+            android:min="0"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <include
+            layout="@layout/guages"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
