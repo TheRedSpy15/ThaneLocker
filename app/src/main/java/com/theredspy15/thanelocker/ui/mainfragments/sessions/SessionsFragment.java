@@ -19,11 +19,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
-import com.theredspy15.thanelocker.utils.LocationService;
-import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
+import com.theredspy15.thanelocker.utils.LocationService;
+import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -94,7 +93,6 @@ public class SessionsFragment extends Fragment {
         alertDialog.setCancelable(false);
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                 (dialog, which) -> {
-                    stopService();
                     dialog.dismiss();
                 });
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
@@ -135,8 +133,9 @@ public class SessionsFragment extends Fragment {
         SavedDataManager.savedSessions.add(newSession);
         SavedDataManager.saveData();
 
-        Intent myIntent = new Intent(requireContext(), MainActivity.class);
-        startActivity(myIntent);
+        // reload view
+        binding.sessionsLayout.removeAllViews();
+        loadSessions();
     }
 
     void prepareSession() {
