@@ -142,7 +142,7 @@ public class SessionsFragment extends Fragment {
         DateFormat df = new SimpleDateFormat("EEE, MMM d");
         String date = df.format(Calendar.getInstance().getTime());
 
-        newSession.setCityName(date);
+        newSession.setName(date);
     }
 
 }
