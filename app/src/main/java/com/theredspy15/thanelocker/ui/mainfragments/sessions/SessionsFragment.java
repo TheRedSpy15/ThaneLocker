@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -65,6 +66,9 @@ public class SessionsFragment extends Fragment {
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setPadding(50, 50, 50, 50);
                 button.setAllCaps(false);
+                button.setBackgroundResource(R.drawable.rounded_corners);
+                GradientDrawable drawable = (GradientDrawable) button.getBackground();
+                drawable.setColor(getResources().getColor(R.color.grey));
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);
                     myIntent.putExtra("session", SavedDataManager.savedSessions.indexOf(session));
@@ -73,6 +77,7 @@ public class SessionsFragment extends Fragment {
                 binding.sessionsLayout.addView(button, layout);
             }
         }
+
         // TODO: move to xml and see what it looks like if it doesn't stretch the entire screen
         Button button = new Button(getContext());
         button.setText("Record Session");
@@ -111,7 +116,7 @@ public class SessionsFragment extends Fragment {
     void loadStopSession() {
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
         alertDialog.setTitle("Recording Session");
-        alertDialog.setMessage("Session is now being recorded. Turn off you screen and ride! press stop when done");
+        alertDialog.setMessage("Session is now being recorded. Turn off your screen and ride! press stop when done");
         alertDialog.setCancelable(false);
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "STOP",
                 (dialog, which) -> stopService());
@@ -130,8 +135,12 @@ public class SessionsFragment extends Fragment {
     public void stopService() {
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         requireContext().stopService(serviceIntent);
-        SavedDataManager.savedSessions.add(newSession);
-        SavedDataManager.saveData();
+
+        if (newSession.getLocations().size() > 0) {
+            SavedDataManager.savedSessions.add(newSession);
+            SavedDataManager.saveData();
+        } else
+            Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();
 
         // reload view
         binding.sessionsLayout.removeAllViews();
@@ -139,7 +148,7 @@ public class SessionsFragment extends Fragment {
     }
 
     void prepareSession() {
-        DateFormat df = new SimpleDateFormat("EEE, MMM d");
+        DateFormat df = new SimpleDateFormat("EEE, MMM d (hh:mm a)");
         String date = df.format(Calendar.getInstance().getTime());
 
         newSession.setName(date);
