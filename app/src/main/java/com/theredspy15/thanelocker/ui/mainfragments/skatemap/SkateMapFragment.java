@@ -17,6 +17,7 @@ import com.example.thanelocker.databinding.FragmentSkatemapBinding;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
 public class SkateMapFragment extends Fragment {
@@ -49,6 +50,8 @@ public class SkateMapFragment extends Fragment {
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
         mapController.setZoom(5.0);
+        GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
+        mapController.setCenter(startPoint);
 
         return root;
     }

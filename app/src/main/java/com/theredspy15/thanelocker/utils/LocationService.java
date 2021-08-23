@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.example.thanelocker.R;
+import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment;
 
@@ -83,7 +84,12 @@ public class LocationService extends Service {
 
         @Override
         public void onLocationChanged(Location loc) {
-            SessionsFragment.newSession.getLocations().add(loc);
+            SessionLocationPoint point = new SessionLocationPoint();
+            point.setAltitude(loc.getAltitude());
+            point.setLongitude(loc.getLongitude());
+            point.setLatitude(loc.getLatitude());
+            point.setSpeed(loc.getSpeed());
+            SessionsFragment.newSession.getLocations().add(point);
         }
 
         @Override

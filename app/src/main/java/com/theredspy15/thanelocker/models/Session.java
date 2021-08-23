@@ -1,13 +1,13 @@
 package com.theredspy15.thanelocker.models;
 
-import android.location.Location;
-
 import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.Random;
 
-public class Session implements Serializable {
+public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
     private short board_id;
+    private short id = 0;
     private String description = "";
     private String time_start = "";
     private String time_end = "";
@@ -15,8 +15,13 @@ public class Session implements Serializable {
     private String date = "";
     private String name; // location + date
     private String cityName = "";
-    private LinkedList<Location> locations = new LinkedList<>();
+    private LinkedList<SessionLocationPoint> locations = new LinkedList<>(); // TODO: save lat/long/speed/etc in seperate lists
     private LinkedList<String> tags = new LinkedList<>();
+
+    public Session() {
+        Random random = new Random();
+        setId((short) random.nextInt(Short.MAX_VALUE + 1));
+    }
 
     public short getBoard_id() {
         return board_id;
@@ -82,11 +87,11 @@ public class Session implements Serializable {
         this.name = name;
     }
 
-    public LinkedList<Location> getLocations() {
+    public LinkedList<SessionLocationPoint> getLocations() {
         return locations;
     }
 
-    public void setLocations(LinkedList<Location> locations) {
+    public void setLocations(LinkedList<SessionLocationPoint> locations) {
         this.locations = locations;
     }
 
@@ -96,5 +101,13 @@ public class Session implements Serializable {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    public short getId() {
+        return id;
+    }
+
+    public void setId(short id) {
+        this.id = id;
     }
 }

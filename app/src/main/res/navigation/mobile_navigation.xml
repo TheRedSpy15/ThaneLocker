@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_boards"
-        android:name="com.theredspy15.thanelocker.ui.boards.BoardsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.boards.BoardsFragment"
         android:label="Boards"
         tools:layout="@layout/fragment_boards" >
         <action
