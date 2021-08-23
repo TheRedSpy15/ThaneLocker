@@ -19,6 +19,14 @@
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://discord.gg/2EJ2CzAHTZ" />
         </Preference>
+        <Preference android:title="Source Code on GitHub"
+            android:key="github"
+            app:iconSpaceReserved="true"
+            android:icon="@drawable/ic_baseline_code_24"
+            android:summary="View the source code to the app hosted on GitHub, and maybe even contribute!">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/TheRedSpy15/ThaneLocker" />
+        </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="News Sources">
         <CheckBoxPreference

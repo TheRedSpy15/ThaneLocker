@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
-    private short id; // random number
-    private String name; //default: board + id
-    private byte[] image; // TODO: save uri instead
+    private short id;
+    private String name;
+    private byte[] image;
     private String description;
     private String trucks;
     private double totalDistance =0.0;
