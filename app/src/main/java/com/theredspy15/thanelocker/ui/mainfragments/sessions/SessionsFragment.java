@@ -68,7 +68,7 @@ public class SessionsFragment extends Fragment {
                 button.setAllCaps(false);
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);
-                    myIntent.putExtra("session", SavedDataManager.savedSessions.get(SavedDataManager.savedSessions.indexOf(session)));
+                    myIntent.putExtra("session", SavedDataManager.savedSessions.indexOf(session));
                     startActivity(myIntent);
                 });
                 binding.sessionsLayout.addView(button, layout);
@@ -133,6 +133,7 @@ public class SessionsFragment extends Fragment {
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         requireContext().stopService(serviceIntent);
         SavedDataManager.savedSessions.add(newSession);
+        SavedDataManager.saveData();
 
         Intent myIntent = new Intent(requireContext(), MainActivity.class);
         startActivity(myIntent);
@@ -142,7 +143,7 @@ public class SessionsFragment extends Fragment {
         DateFormat df = new SimpleDateFormat("EEE, MMM d");
         String date = df.format(Calendar.getInstance().getTime());
 
-        newSession.setCityName("date");
+        newSession.setCityName(date);
     }
 
 }

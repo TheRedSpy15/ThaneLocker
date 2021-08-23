@@ -1,6 +1,8 @@
-package com.theredspy15.thanelocker.ui.boards;
+package com.theredspy15.thanelocker.ui.mainfragments.boards;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -22,6 +24,8 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 import com.theredspy15.thanelocker.utils.SavedDataManager;
 
+import java.io.FileNotFoundException;
+
 public class BoardsFragment extends Fragment {
 
     private BoardsViewModel boardsViewModel;
@@ -35,11 +39,15 @@ public class BoardsFragment extends Fragment {
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        loadBoards();
+        try {
+            loadBoards();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return root;
     }
 
-    public void loadBoards() {
+    public void loadBoards() throws FileNotFoundException {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
@@ -53,11 +61,12 @@ public class BoardsFragment extends Fragment {
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(getContext(), BoardActivity.class);
-                    myIntent.putExtra("board", SavedDataManager.savedBoards.get(SavedDataManager.savedBoards.indexOf(board)));
+                    myIntent.putExtra("board", board);
                     startActivity(myIntent);
                 });
-                Drawable mDrawable = new BitmapDrawable(getResources(), board.getImage()); // Thumbnails
-                button.setCompoundDrawables(mDrawable,null,null,null);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                Drawable drawable = new BitmapDrawable(this.getResources(),bitmap);
+                button.setCompoundDrawables(drawable,null,null,null);
                 binding.boardLayout.addView(button,layout);
             }
         }

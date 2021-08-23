@@ -1,16 +1,14 @@
 package com.theredspy15.thanelocker.models;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Board implements Serializable {
+public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
     private short id; // random number
     private String name; //default: board + id
-    private Bitmap image;
+    private byte[] image; // TODO: save uri instead
     private String description;
     private String trucks;
     private double totalDistance =0.0;
@@ -49,11 +47,11 @@ public class Board implements Serializable {
         this.name = name;
     }
 
-    public Bitmap getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

@@ -1,6 +1,9 @@
 package com.theredspy15.thanelocker.ui.activitycontrollers;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,8 +43,12 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     void populateViews(Board board) {
-        binding.imageView.setImageBitmap(board.getImage());
-        TextView textView = binding.getRoot().findViewById(R.id.thisdingus);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+
+        binding.imageView.setImageBitmap(bitmap);
+        TextView textView = binding.getRoot().findViewById(R.id.descriptionView);
         textView.setText(board.getDescription());
+        ImageView imageView2 = binding.getRoot().findViewById(R.id.imageView2);
+        imageView2.setImageBitmap(bitmap);
     }
 }

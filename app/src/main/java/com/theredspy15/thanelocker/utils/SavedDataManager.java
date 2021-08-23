@@ -17,6 +17,7 @@ public class SavedDataManager {
 
     public static void loadSavedData() {
         Gson gson = new Gson();
+
         String json = MainActivity.preferences.getString("savedBoards", null);
         if (json != null) savedBoards = gson.fromJson(json, new TypeToken<LinkedList<Board>>() {}.getType());
         else savedBoards = new LinkedList<>();
@@ -29,8 +30,10 @@ public class SavedDataManager {
     public static void saveData() {
         SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
         Gson gson = new Gson();
+
         String json = gson.toJson(savedBoards);
         prefsEditor.putString("savedBoards", json);
+
         json = gson.toJson(savedSessions);
         prefsEditor.putString("savedSessions", json);
         prefsEditor.apply();

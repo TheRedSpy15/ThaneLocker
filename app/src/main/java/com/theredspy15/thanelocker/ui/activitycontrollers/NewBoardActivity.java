@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ import com.example.thanelocker.R;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.utils.SavedDataManager;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -42,6 +44,7 @@ public class NewBoardActivity extends AppCompatActivity {
     ImageView imageView;
 
     Uri imageUri;
+    byte[] imageBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,15 @@ public class NewBoardActivity extends AppCompatActivity {
             uri -> {
                 imageView.setImageURI(uri);
                 imageUri = uri;
+
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                    ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baoStream);
+                    imageBytes = baoStream.toByteArray();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             });
 
     public void fromGallery(View view) {
@@ -99,7 +111,7 @@ public class NewBoardActivity extends AppCompatActivity {
     public void create(View view) {
         Board board = new Board();
         board.setName(nameEditText.getText().toString());
-        board.setImage(uriToBitmap(imageUri));
+        board.setImage(imageBytes);
         board.setDescription(descriptionEditText.getText().toString());
         board.setTrucks(truckSpinner.getSelectedItem().toString());
         board.setRearAngle(Byte.parseByte(rAngleEditText.getText().toString()));

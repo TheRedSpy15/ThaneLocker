@@ -13,12 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:id="@+id/thisdingus"
+            android:id="@+id/descriptionView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text" />
+            android:text="description" />
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             app:indicatorColor="@color/black"
@@ -31,11 +32,17 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:src="@tools:sample/avatars" />
+
         <include
             layout="@layout/guages"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
