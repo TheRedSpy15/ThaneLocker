@@ -70,7 +70,7 @@ public class BoardsFragment extends Fragment {
                 binding.boardLayout.addView(button,layout);
             }
         }
-        // TODO: move to xml and see what it looks like if it doesn't stretch the entire screen
+        // TODO: move to xml and attach to bottom of screen
         Button button = new Button(getContext());
         button.setText("Add Board");
         button.setTextSize(18);

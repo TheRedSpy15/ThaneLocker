@@ -40,8 +40,10 @@
         <activity
             android:screenOrientation="portrait"
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
-            android:exported="true" />
-
+            android:exported="true"
+            android:label="SessionActivity"
+            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:theme="@style/Theme.ThaneLocker.NoActionBar" />
         <activity
             android:screenOrientation="portrait"
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity"
