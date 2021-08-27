@@ -78,7 +78,7 @@ public class SessionsFragment extends Fragment {
             }
         }
 
-        // TODO: move to xml and see what it looks like if it doesn't stretch the entire screen
+        // TODO: move to xml and attach to bottom of screen
         Button button = new Button(getContext());
         button.setText("Record Session");
         button.setTextSize(18);

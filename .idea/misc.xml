@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/circle_progress.xml" value="0.5708333333333333" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/circular_progress_background.xml" value="0.5708333333333333" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/clip_progress.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_code_24.xml" value="0.2935185185185185" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_dark_mode_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_baseline_discord_24.xml" value="0.5708333333333333" />
@@ -28,6 +31,7 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_new_board.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling.xml" value="0.5061787072243346" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling_board.xml" value="0.30275665399239543" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/content_scrolling_session.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_boards.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_dashboard.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_first.xml" value="0.5546875" />
@@ -38,6 +42,7 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_settings.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_skatemap.xml" value="0.26975683890577506" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/guages.xml" value="0.2758152173913043" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/map.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/menu/menu_board.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.34791666666666665" />
