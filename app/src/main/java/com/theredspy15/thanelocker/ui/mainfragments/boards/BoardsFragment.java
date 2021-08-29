@@ -57,7 +57,7 @@ public class BoardsFragment extends Fragment {
                 button.setText(board.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
-                button.setPadding(50,150,50,150);
+                button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(getContext(), BoardActivity.class);
@@ -65,8 +65,8 @@ public class BoardsFragment extends Fragment {
                     startActivity(myIntent);
                 });
                 Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),bitmap);
-                button.setCompoundDrawables(drawable,null,null,null);
+                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, true));
+                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                 binding.boardLayout.addView(button,layout);
             }
         }
