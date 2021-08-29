@@ -42,6 +42,8 @@
                 android:layout_height="wrap_content" />
         </com.google.android.material.chip.ChipGroup>
 
+        <include layout="@layout/big_stat_view" android:id="@+id/big_stat_content"/>
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
