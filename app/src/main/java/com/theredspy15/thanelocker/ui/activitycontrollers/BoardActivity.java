@@ -3,7 +3,6 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +36,7 @@ public class BoardActivity extends AppCompatActivity {
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getTitle());
+        toolBarLayout.setTitle(board.getName());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -52,7 +51,5 @@ public class BoardActivity extends AppCompatActivity {
         binding.imageView.setImageBitmap(bitmap);
         TextView textView = binding.getRoot().findViewById(R.id.descriptionView);
         textView.setText(board.getDescription());
-        ImageView imageView2 = binding.getRoot().findViewById(R.id.imageView2);
-        imageView2.setImageBitmap(bitmap);
     }
 }

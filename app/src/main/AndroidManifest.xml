@@ -55,7 +55,7 @@
             android:screenOrientation="portrait"
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity"
             android:exported="true"
-            android:label="New Board"
+            android:label="Create Board"
             android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:theme="@style/Theme.ThaneLocker" />
         <activity

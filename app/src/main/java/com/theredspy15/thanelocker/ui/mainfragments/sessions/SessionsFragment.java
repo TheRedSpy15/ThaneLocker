@@ -97,9 +97,7 @@ public class SessionsFragment extends Fragment {
         alertDialog.setMessage("You're GPS data will be used");
         alertDialog.setCancelable(false);
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                (dialog, which) -> {
-                    dialog.dismiss();
-                });
+                (dialog, which) -> dialog.dismiss());
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
                 (dialog, which) -> {
                     PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
@@ -133,6 +131,10 @@ public class SessionsFragment extends Fragment {
         ContextCompat.startForegroundService(requireContext(), serviceIntent);
     }
     public void stopService() {
+        DateFormat df = new SimpleDateFormat("hh:mm a");
+        String date = df.format(Calendar.getInstance().getTime());
+        newSession.setTime_end(date);
+
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         requireContext().stopService(serviceIntent);
 
@@ -141,17 +143,16 @@ public class SessionsFragment extends Fragment {
             SavedDataManager.saveData();
         } else
             Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();
-
-        // reload view
-        binding.sessionsLayout.removeAllViews();
-        loadSessions();
     }
 
     void prepareSession() {
         DateFormat df = new SimpleDateFormat("EEE, MMM d (hh:mm a)");
         String date = df.format(Calendar.getInstance().getTime());
-
         newSession.setName(date);
+
+        df = new SimpleDateFormat("hh:mm a");
+        date = df.format(Calendar.getInstance().getTime());
+        newSession.setTime_start(date);
     }
 
 }
