@@ -32,35 +32,10 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/Theme.ThaneLocker.PopupOverlay" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:srcCompat="@tools:sample/avatars" />
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_scrolling_session" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/app_bar"
-        app:layout_anchorGravity="start|bottom">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip1"
-            android:text="chip 1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip2"
-            android:text="chip 2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.chip.ChipGroup>
+    <include layout="@layout/content_scrolling_session" android:id="@+id/session_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

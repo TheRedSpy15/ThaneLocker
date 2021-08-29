@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:viewBindingIgnore="true"
+    android:id="@+id/session_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
     tools:showIn="@layout/activity_session">
@@ -19,23 +21,68 @@
             android:layout_width="match_parent"
             android:layout_height="199dp" />
 
-        <TextView
-            android:id="@+id/descriptionView"
+        <com.google.android.material.chip.ChipGroup
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="description" />
+            app:layout_anchor="@+id/app_bar"
+            app:layout_anchorGravity="start|bottom">
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            app:indicatorColor="@color/black"
-            app:trackColor="@color/design_default_color_primary_dark"
-            app:indicatorSize="64dp"
-            android:progress="50"
-            android:max="100"
-            android:min="0"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip1"
+                android:text="Dance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2"
+                android:text="Cruising"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/descriptionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="description" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

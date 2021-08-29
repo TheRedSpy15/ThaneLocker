@@ -67,8 +67,6 @@ public class SessionActivity extends AppCompatActivity {
 
     void loadPoints() {
         Polyline line = new Polyline(map);
-        //line.setTitle("Central Park, NYC");
-        //line.setSubDescription(Polyline.class.getCanonicalName());
         line.setWidth(20f);
         line.setColor(getResources().getColor(R.color.purple_500));
         List<GeoPoint> pts = new ArrayList<>();
@@ -79,7 +77,7 @@ public class SessionActivity extends AppCompatActivity {
 
         map.getOverlays().add(line);
         line.setPoints(pts);
-        line.setOnClickListener(null); // don't want the line to be interactive. in the future maybe to see speed at each point?
+        line.setOnClickListener(null); // TODO: maybe to see speed at each point?
         mapController.setCenter(pts.get(0));
     }
 
