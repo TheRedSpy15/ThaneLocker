@@ -12,6 +12,7 @@ import com.example.thanelocker.databinding.ActivitySessionBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
+import com.theredspy15.thanelocker.utils.MapThemes;
 import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import org.osmdroid.api.IMapController;
@@ -61,6 +62,7 @@ public class SessionActivity extends AppCompatActivity {
         mapController.setZoom(17.0);
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
+        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         loadPoints();
     }

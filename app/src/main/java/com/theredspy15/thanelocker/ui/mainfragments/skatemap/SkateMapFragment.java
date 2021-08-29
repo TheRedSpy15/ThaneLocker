@@ -13,6 +13,7 @@ import androidx.preference.PreferenceManager;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSkatemapBinding;
+import com.theredspy15.thanelocker.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -52,6 +53,7 @@ public class SkateMapFragment extends Fragment {
         mapController.setZoom(5.0);
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
+        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         return root;
     }
@@ -81,4 +83,5 @@ public class SkateMapFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }
