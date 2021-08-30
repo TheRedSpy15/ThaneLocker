@@ -138,6 +138,7 @@ public class SessionsFragment extends Fragment {
         DateFormat df = new SimpleDateFormat("hh:mm a");
         String date = df.format(Calendar.getInstance().getTime());
         newSession.setTime_end(date);
+        newSession.setEnd_millis(Calendar.getInstance().getTimeInMillis());
 
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         requireContext().stopService(serviceIntent);
@@ -157,6 +158,11 @@ public class SessionsFragment extends Fragment {
         df = new SimpleDateFormat("hh:mm a");
         date = df.format(Calendar.getInstance().getTime());
         newSession.setTime_start(date);
+        newSession.setStart_millis(Calendar.getInstance().getTimeInMillis());
+
+        df = new SimpleDateFormat("MMM d");
+        date = df.format(Calendar.getInstance().getTime());
+        newSession.setDate(date);
     }
 
 }
