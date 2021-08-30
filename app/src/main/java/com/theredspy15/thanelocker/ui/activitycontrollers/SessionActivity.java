@@ -2,9 +2,13 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
@@ -12,6 +16,7 @@ import androidx.preference.PreferenceManager;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivitySessionBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.theredspy15.thanelocker.customviews.PriorityMapView;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.MapThemes;
@@ -21,7 +26,7 @@ import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
+import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
@@ -33,7 +38,7 @@ import java.util.regex.Pattern;
 public class SessionActivity extends AppCompatActivity {
 
     private ActivitySessionBinding binding;
-    private MapView map = null;
+    private PriorityMapView map = null;
     IMapController mapController;
 
     Session session;
@@ -65,6 +70,7 @@ public class SessionActivity extends AppCompatActivity {
         mapController.setZoom(17.0);
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
+        map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         loadPoints();
@@ -74,10 +80,13 @@ public class SessionActivity extends AppCompatActivity {
     @SuppressLint({"DefaultLocale"})
     void loadData() {
         TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
-        avgSpeedView.setText(String.format("%.1f", session.getAvgSpeed()));
+        avgSpeedView.setText(session.getAvgSpeed());
 
         TextView totalDistanceView = binding.sessionLayout.findViewById(R.id.textViewTotalDistance);
-        totalDistanceView.setText(String.format("%.1f", session.getTotalDistance()));
+        totalDistanceView.setText(session.getTotalDistance());
+
+        Button deleteButton = binding.sessionLayout.findViewById(R.id.deleteSessionButton);
+        deleteButton.setOnClickListener(this::deleteSession);
     }
 
     void loadPoints() {
@@ -108,6 +117,23 @@ public class SessionActivity extends AppCompatActivity {
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         finishMarker.setTextIcon("Finish");
         map.getOverlays().add(finishMarker);
+    }
+
+    public void deleteSession(View view) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Delete Session");
+        alertDialog.setMessage("Are you sure?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    SavedDataManager.savedSessions.remove(session);
+                    SavedDataManager.saveData();
+                    Intent myIntent = new Intent(this, MainActivity.class);
+                    startActivity(myIntent);
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                (dialog, which) -> dialog.dismiss());
+        alertDialog.show();
     }
 
     @Override

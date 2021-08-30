@@ -1,24 +1,29 @@
 package com.theredspy15.thanelocker.models;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
     private short board_id;
     private short id = 0;
-    private String description = "";
     private String time_start = "";
     private String time_end = "";
-    private String duration = "";
+    private long start_millis = 0;
+    private long end_millis = 0;
     private String date = "";
     private String name; // location + date
-    private String cityName = "";
-    private LinkedList<SessionLocationPoint> locations = new LinkedList<>(); // TODO: save lat/long/speed/etc in seperate lists
+    private LinkedList<SessionLocationPoint> locations = new LinkedList<>(); // TODO: save lat/long/speed/etc in separate lists
     private LinkedList<String> tags = new LinkedList<>();
 
     public Session() {
@@ -26,7 +31,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
         setId((short) random.nextInt(Short.MAX_VALUE + 1));
     }
 
-    public double getTotalDistance() {
+    public String getTotalDistance() { // returns string because I'm using it in only one spot
         double total = 0.0;
 
         for (int i = 0; i<getLocations().size(); i++) {
@@ -43,20 +48,24 @@ public class Session implements Serializable { // TODO: parcelable in the future
             }
         }
 
-        return total*0.000621371192;
+        String totalString = String.format("%.1f", total*0.000621371192);
+        if (total*0.000621371192 < 10) return "0"+totalString;
+        return totalString;
     }
 
-    public double getTopSpeed() {
+    public String getTopSpeed() { // returns string because I'm using it in only one spot
         double top = 0.0;
 
         for (SessionLocationPoint point : getLocations()) {
             if (point.getSpeed() > top) top = point.getSpeed();
         }
 
-        return top;
+        String topString = String.format("%.1f", top);
+        if (top < 10) return "0"+topString;
+        return topString;
     }
 
-    public double getAvgSpeed() {
+    public String getAvgSpeed() { // returns string because I'm using it in only one spot
         double avg = 0.0;
 
         for (SessionLocationPoint point : getLocations()) {
@@ -64,7 +73,9 @@ public class Session implements Serializable { // TODO: parcelable in the future
         }
         avg = avg / getLocations().size();
 
-        return avg;
+        String avgString = String.format("%.1f", avg);
+        if (avg < 10) return "0"+avgString;
+        return avgString;
     }
 
     public short getBoard_id() {
@@ -73,14 +84,6 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setBoard_id(short board_id) {
         this.board_id = board_id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getTime_start() {
@@ -99,12 +102,9 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.time_end = time_end;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public long getDuration() {
+        long duration = start_millis - end_millis;
+        return duration / (60 * 1000);
     }
 
     public LinkedList<String> getTags() {
@@ -139,12 +139,15 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.locations = locations;
     }
 
-    public String getCityName() {
-        return cityName;
-    }
+    public String getCityName(Context context) throws IOException {
+        String cityName = "";
+        SessionLocationPoint point = getLocations().get(0);
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+        List<Address> addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
+        cityName = addresses.get(0).getAddressLine(0);
+
+        return cityName;
     }
 
     public short getId() {
@@ -153,5 +156,21 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setId(short id) {
         this.id = id;
+    }
+
+    public long getStart_millis() {
+        return start_millis;
+    }
+
+    public void setStart_millis(long start_millis) {
+        this.start_millis = start_millis;
+    }
+
+    public long getEnd_millis() {
+        return end_millis;
+    }
+
+    public void setEnd_millis(long end_millis) {
+        this.end_millis = end_millis;
     }
 }
