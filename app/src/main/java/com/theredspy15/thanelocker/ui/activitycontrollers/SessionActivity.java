@@ -22,6 +22,7 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
 import java.util.ArrayList;
@@ -93,6 +94,20 @@ public class SessionActivity extends AppCompatActivity {
         line.setPoints(pts);
         line.setOnClickListener(null); // TODO: maybe to see speed at each point?
         mapController.setCenter(pts.get(0));
+
+        // start marker
+        Marker startMarker = new Marker(map);
+        startMarker.setPosition(pts.get(0));
+        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        startMarker.setTextIcon("Start");
+        map.getOverlays().add(startMarker);
+
+        // finish marker
+        Marker finishMarker = new Marker(map);
+        finishMarker.setPosition(pts.get(pts.size()-1));
+        finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        finishMarker.setTextIcon("Finish");
+        map.getOverlays().add(finishMarker);
     }
 
     @Override
