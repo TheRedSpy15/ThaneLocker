@@ -5,13 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -39,6 +39,8 @@ public class BoardsFragment extends Fragment {
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
+
         try {
             loadBoards();
         } catch (FileNotFoundException e) {
@@ -51,7 +53,7 @@ public class BoardsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
-        if (SavedDataManager.savedBoards != null) {
+        if (SavedDataManager.savedBoards != null) { // add boards
             for (Board board: SavedDataManager.savedBoards) {
                 Button button = new Button(getContext());
                 button.setText(board.getName());
@@ -65,22 +67,18 @@ public class BoardsFragment extends Fragment {
                     startActivity(myIntent);
                 });
                 Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, true));
+                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                 binding.boardLayout.addView(button,layout);
             }
         }
-        // TODO: move to xml and attach to bottom of screen
-        Button button = new Button(getContext());
-        button.setText("Add Board");
-        button.setTextSize(18);
-        button.setPadding(50,50,50,50);
-        button.setBackgroundColor(getResources().getColor(R.color.grey));
-        button.setOnClickListener(this::loadCreateBoard);
-        button.setBackgroundResource(R.drawable.rounded_corners);
-        GradientDrawable drawable = (GradientDrawable) button.getBackground();
-        drawable.setColor(getResources().getColor(R.color.design_default_color_primary));
-        binding.boardLayout.addView(button, layout);
+        if (SavedDataManager.savedBoards.isEmpty()) { // no boards
+            TextView textView = new TextView(requireContext());
+            textView.setText("No Boards Saved");
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setTextSize(18);
+            binding.boardLayout.addView(textView,layout);
+        }
     }
 
     public void loadCreateBoard(View view) {
