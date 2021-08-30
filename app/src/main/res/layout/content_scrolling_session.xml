@@ -30,19 +30,18 @@
             app:layout_anchorGravity="start|bottom">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip1"
-                android:text="Dance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip2"
-                android:text="Cruising"
+                android:id="@+id/chipAddTag"
+                android:text="+"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </com.google.android.material.chip.ChipGroup>
 
-        <include layout="@layout/big_stat_view" android:id="@+id/big_stat_content"/>
+        <include
+            android:id="@+id/big_stat_content"
+            layout="@layout/big_stat_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -84,6 +83,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </TableLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Delete"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="20dp"
+            android:textColor="#FF0000"
+            app:strokeColor="#FF0000"
+            app:strokeWidth="2dp" />
 
     </LinearLayout>
 

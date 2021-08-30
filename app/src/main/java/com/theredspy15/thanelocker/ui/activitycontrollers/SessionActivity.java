@@ -1,7 +1,9 @@
 package com.theredspy15.thanelocker.ui.activitycontrollers;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -65,6 +67,16 @@ public class SessionActivity extends AppCompatActivity {
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         loadPoints();
+        loadData();
+    }
+
+    @SuppressLint({"DefaultLocale"})
+    void loadData() {
+        TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
+        avgSpeedView.setText(String.format("%.1f", session.getAvgSpeed()));
+
+        TextView totalDistanceView = binding.sessionLayout.findViewById(R.id.textViewTotalDistance);
+        totalDistanceView.setText(String.format("%.1f", session.getTotalDistance()));
     }
 
     void loadPoints() {

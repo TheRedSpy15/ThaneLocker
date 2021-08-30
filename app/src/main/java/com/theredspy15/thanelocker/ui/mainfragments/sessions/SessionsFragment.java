@@ -97,7 +97,10 @@ public class SessionsFragment extends Fragment {
         alertDialog.setMessage("You're GPS data will be used");
         alertDialog.setCancelable(false);
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                (dialog, which) -> dialog.dismiss());
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    stopService();
+                });
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
                 (dialog, which) -> {
                     PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
@@ -130,6 +133,7 @@ public class SessionsFragment extends Fragment {
         serviceIntent.putExtra("description", "Recording your data for you to later view"); // maybe send list this way?
         ContextCompat.startForegroundService(requireContext(), serviceIntent);
     }
+
     public void stopService() {
         DateFormat df = new SimpleDateFormat("hh:mm a");
         String date = df.format(Calendar.getInstance().getTime());
