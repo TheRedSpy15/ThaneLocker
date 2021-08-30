@@ -67,7 +67,7 @@ public class SessionActivity extends AppCompatActivity {
         // setup map
         Context ctx = this;
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
-        map = binding.sessionLayout.findViewById(R.id.mapView);
+        map = binding.mapView;
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
         mapController = map.getController();

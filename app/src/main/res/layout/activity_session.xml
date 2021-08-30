@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="350dp"
         android:fitsSystemWindows="true"
         android:theme="@style/Theme.ThaneLocker.AppBarOverlay">
 
@@ -24,6 +24,11 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
+
+            <com.theredspy15.thanelocker.customviews.PriorityMapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
