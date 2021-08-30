@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +15,8 @@ import androidx.preference.PreferenceManager;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivitySessionBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
@@ -30,6 +31,7 @@ import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -54,6 +56,7 @@ public class SessionActivity extends AppCompatActivity {
         binding = ActivitySessionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // setup toolbar
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
@@ -61,6 +64,7 @@ public class SessionActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        // setup map
         Context ctx = this;
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         map = binding.sessionLayout.findViewById(R.id.mapView);
@@ -74,19 +78,45 @@ public class SessionActivity extends AppCompatActivity {
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         loadPoints();
-        loadData();
+        try {
+            loadData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressLint({"DefaultLocale"})
-    void loadData() {
+    void loadData() throws IOException {
         TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
         avgSpeedView.setText(session.getAvgSpeed());
 
         TextView totalDistanceView = binding.sessionLayout.findViewById(R.id.textViewTotalDistance);
         totalDistanceView.setText(session.getTotalDistance());
 
-        Button deleteButton = binding.sessionLayout.findViewById(R.id.deleteSessionButton);
-        deleteButton.setOnClickListener(this::deleteSession);
+        TextView cityView = binding.sessionLayout.findViewById(R.id.cityView);
+        cityView.setText(session.getCityName(this));
+
+        TextView topSpeedView = binding.sessionLayout.findViewById(R.id.topSpeedView);
+        topSpeedView.setText(session.getTopSpeed());
+
+        TextView durationView = binding.sessionLayout.findViewById(R.id.durationView);
+        durationView.setText(""+session.getDuration());
+
+        TextView timeStartView = binding.sessionLayout.findViewById(R.id.timeStartView);
+        timeStartView.setText(session.getTime_start());
+
+        TextView timeEndView = binding.sessionLayout.findViewById(R.id.timeEndView);
+        timeEndView.setText(session.getTime_end());
+
+        binding.sessionLayout.findViewById(R.id.deleteSessionButton).setOnClickListener(this::deleteSession);
+        binding.sessionLayout.findViewById(R.id.chipAddTag).setOnClickListener(this::addTag);
+
+        for (String tag : session.getTags()) {
+            Chip chip = new Chip(this);
+            chip.setText(tag);
+            ChipGroup group = binding.sessionLayout.findViewById(R.id.tagGroup);
+            group.addView(chip);
+        }
     }
 
     void loadPoints() {
@@ -134,6 +164,25 @@ public class SessionActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
+    }
+
+    public void addTag(View view) {
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle("Add Tag");
+        String[] types = getResources().getStringArray(R.array.tags);
+        b.setItems(types, (dialog, which) -> {
+            dialog.dismiss();
+            session.getTags().add(types[which]);
+
+            Chip chip = new Chip(this);
+            chip.setText(types[which]);
+            try {
+                loadData();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        b.show();
     }
 
     @Override
