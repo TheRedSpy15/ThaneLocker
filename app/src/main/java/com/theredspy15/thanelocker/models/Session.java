@@ -104,7 +104,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public long getDuration() {
         long duration = start_millis - end_millis;
-        return duration / (60 * 1000);
+        return duration / (60 * 1000); //returns minutes
     }
 
     public LinkedList<String> getTags() {
@@ -140,14 +140,14 @@ public class Session implements Serializable { // TODO: parcelable in the future
     }
 
     public String getCityName(Context context) throws IOException {
-        String cityName = "";
+        String cityName;
         SessionLocationPoint point = getLocations().get(0);
 
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
         List<Address> addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
-        cityName = addresses.get(0).getAddressLine(0);
+        cityName = addresses.get(0).getLocality();
 
-        return cityName;
+        return cityName.trim();
     }
 
     public short getId() {
