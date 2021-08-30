@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,8 @@ public class SessionsFragment extends Fragment {
         binding = FragmentSessionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.newSessionButton.setOnClickListener(this::loadStartSession);
+
         loadSessions();
         return root;
     }
@@ -77,18 +80,13 @@ public class SessionsFragment extends Fragment {
                 binding.sessionsLayout.addView(button, layout);
             }
         }
-
-        // TODO: move to xml and attach to bottom of screen
-        Button button = new Button(getContext());
-        button.setText("Record Session");
-        button.setTextSize(18);
-        button.setPadding(50, 50, 50, 50);
-        button.setBackgroundColor(getResources().getColor(R.color.grey));
-        button.setOnClickListener(this::loadStartSession);
-        button.setBackgroundResource(R.drawable.rounded_corners);
-        GradientDrawable drawable = (GradientDrawable) button.getBackground();
-        drawable.setColor(getResources().getColor(R.color.design_default_color_primary));
-        binding.sessionsLayout.addView(button, layout);
+        if (SavedDataManager.savedSessions.isEmpty()) { // no boards
+            TextView textView = new TextView(requireContext());
+            textView.setText("No Session Recorded");
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setTextSize(18);
+            binding.sessionsLayout.addView(textView,layout);
+        }
     }
 
     public void loadStartSession(View view) {

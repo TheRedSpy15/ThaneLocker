@@ -93,7 +93,7 @@ public class NewBoardActivity extends AppCompatActivity {
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baoStream);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 40, baoStream);
                     imageBytes = baoStream.toByteArray();
                 } catch (IOException e) {
                     e.printStackTrace();
