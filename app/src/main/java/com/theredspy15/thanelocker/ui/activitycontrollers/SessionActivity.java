@@ -43,7 +43,8 @@ public class SessionActivity extends AppCompatActivity {
     private PriorityMapView map = null;
     IMapController mapController;
 
-    Session session;
+    Session session = new Session();
+    int sessionListLocation = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class SessionActivity extends AppCompatActivity {
 
         // doesn't count as serializable like Board objects do
         session = SavedDataManager.savedSessions.get(getIntent().getIntExtra("session",0));
+        sessionListLocation = SavedDataManager.savedSessions.indexOf(session);
 
         binding = ActivitySessionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -87,6 +89,7 @@ public class SessionActivity extends AppCompatActivity {
 
     @SuppressLint({"DefaultLocale"})
     void loadData() throws IOException {
+        // stats
         TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
         avgSpeedView.setText(session.getAvgSpeed());
 
@@ -108,15 +111,29 @@ public class SessionActivity extends AppCompatActivity {
         TextView timeEndView = binding.sessionLayout.findViewById(R.id.timeEndView);
         timeEndView.setText(session.getTime_end());
 
+        // set on clicks
         binding.sessionLayout.findViewById(R.id.deleteSessionButton).setOnClickListener(this::deleteSession);
-        binding.sessionLayout.findViewById(R.id.chipAddTag).setOnClickListener(this::addTag);
+
+        // tags
+        ChipGroup group = binding.sessionLayout.findViewById(R.id.tagGroup);
+        group.removeAllViews();
 
         for (String tag : session.getTags()) {
             Chip chip = new Chip(this);
             chip.setText(tag);
-            ChipGroup group = binding.sessionLayout.findViewById(R.id.tagGroup);
+            chip.setOnClickListener(v -> {
+                chip.setVisibility(View.GONE);
+                session.getTags().remove(chip.getText());
+                SavedDataManager.savedSessions.get(sessionListLocation).setTags(session.getTags());
+                SavedDataManager.saveData();
+            });
             group.addView(chip);
         }
+
+        Chip addChip = new Chip(this);
+        addChip.setText("+");
+        addChip.setOnClickListener(this::addTag);
+        group.addView(addChip);
     }
 
     void loadPoints() {
@@ -173,6 +190,8 @@ public class SessionActivity extends AppCompatActivity {
         b.setItems(types, (dialog, which) -> {
             dialog.dismiss();
             session.getTags().add(types[which]);
+            SavedDataManager.savedSessions.get(sessionListLocation).setTags(session.getTags());
+            SavedDataManager.saveData();
 
             Chip chip = new Chip(this);
             chip.setText(types[which]);
