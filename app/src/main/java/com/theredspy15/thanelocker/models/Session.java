@@ -1,5 +1,8 @@
 package com.theredspy15.thanelocker.models;
 
+import android.location.Location;
+import android.location.LocationManager;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Random;
@@ -21,6 +24,47 @@ public class Session implements Serializable { // TODO: parcelable in the future
     public Session() {
         Random random = new Random();
         setId((short) random.nextInt(Short.MAX_VALUE + 1));
+    }
+
+    public double getTotalDistance() {
+        double total = 0.0;
+
+        for (int i = 0; i<getLocations().size(); i++) {
+            if (i != getLocations().size()-1) {
+                Location location = new Location(LocationManager.GPS_PROVIDER);
+                location.setLongitude(getLocations().get(i).getLongitude());
+                location.setLatitude(getLocations().get(i).getLatitude());
+
+                Location location2 = new Location(LocationManager.GPS_PROVIDER);
+                location2.setLongitude(getLocations().get(i+1).getLongitude());
+                location2.setLatitude(getLocations().get(i+1).getLatitude());
+
+                total += location.distanceTo(location2);
+            }
+        }
+
+        return total*0.000621371192;
+    }
+
+    public double getTopSpeed() {
+        double top = 0.0;
+
+        for (SessionLocationPoint point : getLocations()) {
+            if (point.getSpeed() > top) top = point.getSpeed();
+        }
+
+        return top;
+    }
+
+    public double getAvgSpeed() {
+        double avg = 0.0;
+
+        for (SessionLocationPoint point : getLocations()) {
+            avg += point.getSpeed();
+        }
+        avg = avg / getLocations().size();
+
+        return avg;
     }
 
     public short getBoard_id() {

@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Avg Speed"
+        android:text="Avg MPH"
         app:layout_constraintBottom_toTopOf="@+id/textViewAvgSpeed"
         app:layout_constraintEnd_toEndOf="@+id/textViewAvgSpeed"
         app:layout_constraintHorizontal_bias="0.562"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="00"
+        android:text="00.0"
         android:textSize="80sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,9 +39,20 @@
         android:id="@+id/textViewTotalDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="00"
+        android:layout_marginTop="28dp"
+        android:text="00.0"
         android:textSize="80sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewAvgSpeed"
-        app:layout_constraintStart_toEndOf="@+id/textViewAvgSpeed" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="132dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTotalDistance"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewAvgSpeed"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
