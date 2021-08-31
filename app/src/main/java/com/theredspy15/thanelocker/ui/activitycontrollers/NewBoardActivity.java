@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thanelocker.R;
 import com.theredspy15.thanelocker.models.Board;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
@@ -124,8 +123,9 @@ public class NewBoardActivity extends AppCompatActivity {
         board.setRiserHt(Double.parseDouble(riserEditText.getText().toString()));
         board.setGripTp(griptapeSpinner.getSelectedItem().toString());
 
-        SavedDataManager.savedBoards.add(board);
-        SavedDataManager.saveData();
+        Board.savedBoards.put(board.getId(), board);
+        Board.savedBoardIds.add(board.getId());
+        Board.save();
 
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);

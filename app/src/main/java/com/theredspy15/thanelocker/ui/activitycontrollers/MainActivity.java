@@ -16,7 +16,8 @@ import androidx.preference.PreferenceManager;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Session;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         checkPermissions();
-        SavedDataManager.loadSavedData();
+        Board.load();
+        Session.load();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

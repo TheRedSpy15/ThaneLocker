@@ -24,7 +24,6 @@ import com.example.thanelocker.databinding.FragmentSessionsBinding;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 import com.theredspy15.thanelocker.utils.LocationService;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -61,8 +60,9 @@ public class SessionsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
-        if (SavedDataManager.savedSessions != null) {
-            for (Session session : SavedDataManager.savedSessions) {
+        if (Session.savedSessions != null) {
+            for (short session_id : Session.savedSessionIds) {
+                Session session = Session.savedSessions.get(session_id);
                 Button button = new Button(getContext());
                 button.setText(session.getName());
                 button.setTextSize(18);
@@ -74,13 +74,13 @@ public class SessionsFragment extends Fragment {
                 drawable.setColor(getResources().getColor(R.color.grey));
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);
-                    myIntent.putExtra("session", SavedDataManager.savedSessions.indexOf(session));
+                    myIntent.putExtra("session_id", session.getId());
                     startActivity(myIntent);
                 });
                 binding.sessionsLayout.addView(button, layout);
             }
         }
-        if (SavedDataManager.savedSessions.isEmpty()) { // no boards
+        if (Session.savedSessions.isEmpty()) { // no boards
             TextView textView = new TextView(requireContext());
             textView.setText("No Session Recorded");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -142,8 +142,9 @@ public class SessionsFragment extends Fragment {
         requireContext().stopService(serviceIntent);
 
         if (newSession.getLocations().size() > 0) {
-            SavedDataManager.savedSessions.add(newSession);
-            SavedDataManager.saveData();
+            Session.savedSessions.put(newSession.getId(),newSession);
+            Session.savedSessionIds.add(newSession.getId());
+            Session.save();
         } else
             Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();
     }

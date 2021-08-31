@@ -3,8 +3,15 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,10 +25,10 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
+import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.MapThemes;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -44,7 +51,6 @@ public class SessionActivity extends AppCompatActivity {
     IMapController mapController;
 
     Session session = new Session();
-    int sessionListLocation = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +58,7 @@ public class SessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_session);
 
         // doesn't count as serializable like Board objects do
-        session = SavedDataManager.savedSessions.get(getIntent().getIntExtra("session",0));
-        sessionListLocation = SavedDataManager.savedSessions.indexOf(session);
+        session = Session.savedSessions.get(getIntent().getShortExtra("session_id", (short) 0));
 
         binding = ActivitySessionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -100,10 +105,10 @@ public class SessionActivity extends AppCompatActivity {
         cityView.setText(session.getCityName(this));
 
         TextView topSpeedView = binding.sessionLayout.findViewById(R.id.topSpeedView);
-        topSpeedView.setText(session.getTopSpeed());
+        topSpeedView.setText(session.getTopSpeed()+" MPH");
 
         TextView durationView = binding.sessionLayout.findViewById(R.id.durationView);
-        durationView.setText(""+session.getDuration());
+        durationView.setText(session.getDuration()+" Minutes");
 
         TextView timeStartView = binding.sessionLayout.findViewById(R.id.timeStartView);
         timeStartView.setText(session.getTime_start());
@@ -113,6 +118,7 @@ public class SessionActivity extends AppCompatActivity {
 
         // set on clicks
         binding.sessionLayout.findViewById(R.id.deleteSessionButton).setOnClickListener(this::deleteSession);
+        binding.sessionLayout.findViewById(R.id.addBoardUsedButton).setOnClickListener(this::addUsedBoard);
 
         // tags
         ChipGroup group = binding.sessionLayout.findViewById(R.id.tagGroup);
@@ -124,8 +130,8 @@ public class SessionActivity extends AppCompatActivity {
             chip.setOnClickListener(v -> {
                 chip.setVisibility(View.GONE);
                 session.getTags().remove(chip.getText());
-                SavedDataManager.savedSessions.get(sessionListLocation).setTags(session.getTags());
-                SavedDataManager.saveData();
+                Objects.requireNonNull(Session.savedSessions.get(session.getId())).setTags(session.getTags());
+                Session.save();
             });
             group.addView(chip);
         }
@@ -134,6 +140,57 @@ public class SessionActivity extends AppCompatActivity {
         addChip.setText("+");
         addChip.setOnClickListener(this::addTag);
         group.addView(addChip);
+
+        if (!session.getBoard_ids().isEmpty()) loadBoardsUsed();
+    }
+
+    public void loadBoardsUsed() {
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(0,0,0,50);
+        for (short board_id : Board.savedBoardIds) {
+            Board board = Board.savedBoards.get(board_id);
+            Button button = new Button(this);
+            button.setText(board.getName());
+            button.setTextSize(18);
+            button.setBackgroundColor(getResources().getColor(R.color.grey));
+            button.setPadding(0,0,0,0);
+            button.setAllCaps(false);
+            button.setOnClickListener(v->{
+                Intent myIntent = new Intent(this, BoardActivity.class);
+                myIntent.putExtra("board", board);
+                startActivity(myIntent);
+            });
+            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+            Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
+            button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+            LinearLayout linearLayout = binding.sessionLayout.findViewById(R.id.session_board_layout);
+            linearLayout.addView(button,layout);
+        }
+    }
+
+    public void addUsedBoard(View view) {
+        String[] boards = new String[Board.savedBoards.size()];
+        int i = 0;
+        for (short board_id : Board.savedBoardIds) {
+            Board board = Board.savedBoards.get(board_id);
+            boards[i] = board.getName();
+            i+=1;
+        }
+
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle("Add Board");
+        b.setItems(boards, (dialog, which) -> {
+            dialog.dismiss();
+            session.getBoard_ids().add(Board.BoardNameToId(boards[which]));
+            Session.save();
+
+            try {
+                loadData();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        b.show();
     }
 
     void loadPoints() {
@@ -173,8 +230,9 @@ public class SessionActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
                 (dialog, which) -> {
                     dialog.dismiss();
-                    SavedDataManager.savedSessions.remove(session);
-                    SavedDataManager.saveData();
+                    Session.savedSessions.remove(session.getId());
+                    Session.savedSessionIds.remove(session.getId());
+                    Session.save();
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
                 });
@@ -190,11 +248,9 @@ public class SessionActivity extends AppCompatActivity {
         b.setItems(types, (dialog, which) -> {
             dialog.dismiss();
             session.getTags().add(types[which]);
-            SavedDataManager.savedSessions.get(sessionListLocation).setTags(session.getTags());
-            SavedDataManager.saveData();
+            Session.savedSessions.get(session.getId()).setTags(session.getTags());
+            Session.save();
 
-            Chip chip = new Chip(this);
-            chip.setText(types[which]);
             try {
                 loadData();
             } catch (IOException e) {

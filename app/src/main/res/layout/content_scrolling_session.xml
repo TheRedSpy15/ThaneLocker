@@ -40,6 +40,32 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <LinearLayout
+                android:id="@+id/session_board_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addBoardUsedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cornerRadius="20dp"
+                    app:backgroundTint="@android:color/transparent"
+                    android:textColor="@color/purple_500"
+                    app:strokeColor="@color/purple_500"
+                    app:strokeWidth="2dp"
+                    android:text="Add Board" />
+            </LinearLayout>
+        </ScrollView>
+
         <TableLayout
             android:layout_width="200dp"
             android:layout_height="match_parent"
