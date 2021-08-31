@@ -22,7 +22,6 @@ import com.example.thanelocker.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
-import com.theredspy15.thanelocker.utils.SavedDataManager;
 
 import java.io.FileNotFoundException;
 
@@ -53,8 +52,9 @@ public class BoardsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
-        if (SavedDataManager.savedBoards != null) { // add boards
-            for (Board board: SavedDataManager.savedBoards) {
+        if (Board.savedBoards != null) { // add boards
+            for (short board_id : Board.savedBoardIds) {
+                Board board = Board.savedBoards.get(board_id);
                 Button button = new Button(getContext());
                 button.setText(board.getName());
                 button.setTextSize(18);
@@ -72,7 +72,7 @@ public class BoardsFragment extends Fragment {
                 binding.boardLayout.addView(button,layout);
             }
         }
-        if (SavedDataManager.savedBoards.isEmpty()) { // no boards
+        if (Board.savedBoardIds.isEmpty()) { // no boards
             TextView textView = new TextView(requireContext());
             textView.setText("No Boards Saved");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);

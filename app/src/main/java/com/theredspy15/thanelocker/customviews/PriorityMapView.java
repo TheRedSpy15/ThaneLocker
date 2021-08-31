@@ -14,11 +14,9 @@ public class PriorityMapView extends MapView {
     public boolean dispatchTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
-                System.out.println("unlocked");
                 this.getParent().requestDisallowInterceptTouchEvent(false);
                 break;
             case MotionEvent.ACTION_DOWN:
-                System.out.println("locked");
                 this.getParent().requestDisallowInterceptTouchEvent(true);
                 break;
         }

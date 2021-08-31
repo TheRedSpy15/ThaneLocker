@@ -1,13 +1,19 @@
 package com.theredspy15.thanelocker.models;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -15,20 +21,48 @@ import java.util.Random;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
-    private short board_id;
+    private LinkedList<Short> board_ids = new LinkedList<>();
     private short id = 0;
     private String time_start = "";
     private String time_end = "";
     private long start_millis = 0;
     private long end_millis = 0;
     private String date = "";
-    private String name; // location + date
-    private LinkedList<SessionLocationPoint> locations = new LinkedList<>(); // TODO: save lat/long/speed/etc in separate lists
+    private String name = ""; // location + date
+    private LinkedList<SessionLocationPoint> locations = new LinkedList<>();
     private LinkedList<String> tags = new LinkedList<>();
+
+    public static HashMap<Short,Session> savedSessions = new HashMap<>();
+    public static LinkedList<Short> savedSessionIds = new LinkedList<>();
 
     public Session() {
         Random random = new Random();
         setId((short) random.nextInt(Short.MAX_VALUE + 1));
+    }
+
+    public static void load() {
+        Gson gson = new Gson();
+
+        String json = MainActivity.preferences.getString("savedSessions", null);
+        if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Short,Session>>() {}.getType());
+        else savedSessions = new HashMap<>();
+
+        json = MainActivity.preferences.getString("savedSessionIds", null);
+        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<LinkedList<Short>>() {}.getType());
+        else savedSessionIds = new LinkedList<>();
+    }
+
+    public static void save() {
+        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
+        Gson gson = new Gson();
+
+        String json = gson.toJson(savedSessions);
+        prefsEditor.putString("savedSessions", json);
+
+        json = gson.toJson(savedSessionIds);
+        prefsEditor.putString("savedSessionIds", json);
+
+        prefsEditor.apply();
     }
 
     public String getTotalDistance() { // returns string because I'm using it in only one spot
@@ -78,14 +112,6 @@ public class Session implements Serializable { // TODO: parcelable in the future
         return avgString;
     }
 
-    public short getBoard_id() {
-        return board_id;
-    }
-
-    public void setBoard_id(short board_id) {
-        this.board_id = board_id;
-    }
-
     public String getTime_start() {
         return time_start;
     }
@@ -103,7 +129,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     }
 
     public long getDuration() {
-        long duration = start_millis - end_millis;
+        long duration = getStart_millis() - getEnd_millis();
         return duration / (60 * 1000); //returns minutes
     }
 
@@ -133,10 +159,6 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public LinkedList<SessionLocationPoint> getLocations() {
         return locations;
-    }
-
-    public void setLocations(LinkedList<SessionLocationPoint> locations) {
-        this.locations = locations;
     }
 
     public String getCityName(Context context) throws IOException {
@@ -172,5 +194,13 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setEnd_millis(long end_millis) {
         this.end_millis = end_millis;
+    }
+
+    public LinkedList<Short> getBoard_ids() {
+        return board_ids;
+    }
+
+    public void setBoard_ids(LinkedList<Short> board_ids) {
+        this.board_ids = board_ids;
     }
 }
