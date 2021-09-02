@@ -75,6 +75,11 @@ public class SessionActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        // set on clicks
+        binding.sessionLayout.findViewById(R.id.deleteSessionButton).setOnClickListener(this::deleteSession);
+        binding.sessionLayout.findViewById(R.id.addBoardUsedButton).setOnClickListener(this::addUsedBoard);
+        binding.fullscreenButton.setOnClickListener(this::toggleFullscreen);
+
         // setup map
         Context ctx = this;
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
@@ -119,11 +124,6 @@ public class SessionActivity extends AppCompatActivity {
 
         TextView timeEndView = binding.sessionLayout.findViewById(R.id.timeEndView);
         timeEndView.setText(session.getTime_end());
-
-        // set on clicks
-        binding.sessionLayout.findViewById(R.id.deleteSessionButton).setOnClickListener(this::deleteSession);
-        binding.sessionLayout.findViewById(R.id.addBoardUsedButton).setOnClickListener(this::addUsedBoard);
-        binding.fullscreenButton.setOnClickListener(this::toggleFullscreen);
 
         loadTags();
         loadBoardsUsed();
@@ -312,11 +312,7 @@ public class SessionActivity extends AppCompatActivity {
             Session.savedSessions.get(session.getId()).setTags(session.getTags());
             Session.save();
 
-            try {
-                loadData();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            loadTags();
         });
         b.show();
     }

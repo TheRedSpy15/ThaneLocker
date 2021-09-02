@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="350dp"
         android:fitsSystemWindows="true"
         android:theme="@style/Theme.ThaneLocker.AppBarOverlay">
 
@@ -43,14 +43,5 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_scrolling_board" android:id="@+id/board_content"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

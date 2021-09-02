@@ -1,6 +1,9 @@
 package com.theredspy15.thanelocker.models;
 
-public class SessionLocationPoint {
+import java.io.Serializable;
+
+public class SessionLocationPoint implements Serializable { // TODO: parcelable in the future
+    private static final long serialVersionUID = 1234569L;
     private float speed;
     private double latitude;
     private double longitude;

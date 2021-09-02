@@ -30,6 +30,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String bearings="Standard ABEC Bearings";
     private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
     private double riserHt=0.0;
+    private LinkedList<String> tags = new LinkedList<>();
     private String gripTp="Standard Griptape";
     private LinkedList<Session> sessions;
 
@@ -231,5 +232,13 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setAvgDistance(double avgDistance) {
         this.avgDistance = avgDistance;
+    }
+
+    public LinkedList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(LinkedList<String> tags) {
+        this.tags = tags;
     }
 }
