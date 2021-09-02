@@ -36,6 +36,8 @@ public class SessionsFragment extends Fragment {
 
     public static Session newSession = new Session();
 
+    private boolean isRecording = false;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         sessionsViewModel =
@@ -47,6 +49,7 @@ public class SessionsFragment extends Fragment {
         binding.newSessionButton.setOnClickListener(this::loadStartSession);
 
         loadSessions();
+        loadRecordingButtonIndicator();
         return root;
     }
 
@@ -107,25 +110,24 @@ public class SessionsFragment extends Fragment {
                     wakeLock.acquire(60*60*1000L /*60 minutes*/);
 
                     startService();
-                    loadStopSession();
                 });
         alertDialog.show();
     }
 
-    void loadStopSession() {
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("Recording Session");
-        alertDialog.setMessage("Session is now being recorded. Turn off your screen and ride! press stop when done");
-        alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "STOP",
-                (dialog, which) -> stopService());
-        alertDialog.show();
-
-        binding.sessionsLayout.removeAllViews();
-        loadSessions();
+    /** sets record button text and color depending on whether or not a session is being recorded actively **/
+    void loadRecordingButtonIndicator() {
+        if (isRecording) {
+            binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.recording_session));
+            binding.newSessionButton.setText("Click here to stop recording");
+        } else {
+            binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
+            binding.newSessionButton.setText("Record Session");
+        }
     }
 
     public void startService() {
+        isRecording = true;
+        loadRecordingButtonIndicator();
         prepareSession();
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
         serviceIntent.putExtra("description", "Recording your data for you to later view"); // maybe send list this way?
@@ -133,6 +135,9 @@ public class SessionsFragment extends Fragment {
     }
 
     public void stopService() {
+        isRecording = false;
+        loadRecordingButtonIndicator();
+
         DateFormat df = new SimpleDateFormat("hh:mm a");
         String date = df.format(Calendar.getInstance().getTime());
         newSession.setTime_end(date);

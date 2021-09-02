@@ -35,7 +35,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.ThaneLocker.PopupOverlay" />
+                app:popupTheme="@style/Theme.ThaneLocker.PopupOverlay" >
+                <Button
+                    android:id="@+id/fullscreenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:layout_gravity="end"
+                    style="?android:attr/borderlessButtonStyle"
+                    app:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/ic_baseline_open_in_full_24" />
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
