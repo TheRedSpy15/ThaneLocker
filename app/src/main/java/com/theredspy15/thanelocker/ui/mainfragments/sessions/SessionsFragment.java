@@ -60,6 +60,7 @@ public class SessionsFragment extends Fragment {
     }
 
     public void loadSessions() {
+        binding.sessionsLayout.removeAllViews();
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
@@ -83,7 +84,7 @@ public class SessionsFragment extends Fragment {
                 binding.sessionsLayout.addView(button, layout);
             }
         }
-        if (Session.savedSessions.isEmpty()) { // no boards
+        if (Session.savedSessions.isEmpty()) { // no sessions
             TextView textView = new TextView(requireContext());
             textView.setText("No Session Recorded");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -149,6 +150,7 @@ public class SessionsFragment extends Fragment {
         if (newSession.getLocations().size() > 0) {
             Session.savedSessions.put(newSession.getId(),newSession);
             Session.savedSessionIds.add(newSession.getId());
+            loadSessions();
             Session.save();
         } else
             Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();

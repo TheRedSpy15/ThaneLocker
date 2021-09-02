@@ -34,6 +34,7 @@
             android:defaultValue="true"
             android:key="downhill254"
             android:persistent="true"
+            app:icon="@drawable/ic_baseline_article_24"
             android:title="DownHill254" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">

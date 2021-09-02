@@ -48,20 +48,14 @@
             android:text="Boards Used:"
             android:textStyle="bold" />
 
-        <ScrollView
+        <LinearLayout
+            android:id="@+id/session_board_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
-
-            <LinearLayout
-                android:id="@+id/session_board_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
-        </ScrollView>
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addBoardUsedButton"
@@ -79,7 +73,7 @@
 
         <TableLayout
             android:layout_width="200dp"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"

@@ -66,6 +66,18 @@ public class Session implements Serializable { // TODO: parcelable in the future
         prefsEditor.apply();
     }
 
+    public static LinkedList<Session> sessionsWithBoard(short board_id) {
+        LinkedList<Session> sessionsWithBoard = new LinkedList<>();
+
+        for (short session_id : Session.savedSessionIds) {
+            Session session = Session.savedSessions.get(session_id);
+
+            if (session.getBoard_ids().contains(board_id)) sessionsWithBoard.add(session);
+        }
+
+        return sessionsWithBoard;
+    }
+
     public String getTotalDistance() { // returns string because I'm using it in only one spot
         double total = 0.0;
 

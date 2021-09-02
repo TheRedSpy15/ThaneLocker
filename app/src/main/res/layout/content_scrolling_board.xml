@@ -15,11 +15,34 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/descriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recent Sessions "
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/sessions_with_board_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteBoardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="description" />
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:text="Delete Board"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="20dp"
+            android:textColor="#FF0000"
+            app:strokeColor="#FF0000"
+            app:strokeWidth="2dp" />
 
     </LinearLayout>
 
