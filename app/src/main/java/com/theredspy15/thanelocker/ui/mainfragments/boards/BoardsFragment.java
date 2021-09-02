@@ -52,13 +52,14 @@ public class BoardsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
-        if (Board.savedBoards != null) { // add boards
+        if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
             for (short board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
                 Button button = new Button(getContext());
                 button.setText(board.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(getResources().getColor(R.color.grey));
+                button.getBackground().setAlpha(64);
                 button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{

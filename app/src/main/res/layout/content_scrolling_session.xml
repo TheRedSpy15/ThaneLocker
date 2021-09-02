@@ -40,6 +40,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="Boards Used:"
+            android:textStyle="bold" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -52,26 +60,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addBoardUsedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:cornerRadius="20dp"
-                    app:backgroundTint="@android:color/transparent"
-                    android:textColor="@color/purple_500"
-                    app:strokeColor="@color/purple_500"
-                    app:strokeWidth="2dp"
-                    android:text="Add Board" />
             </LinearLayout>
         </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addBoardUsedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cornerRadius="20dp"
+            app:backgroundTint="@android:color/transparent"
+            android:textColor="@color/purple_500"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp"
+            android:text="Add Board" />
 
         <TableLayout
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:showDividers="middle"
             android:shrinkColumns="0"
@@ -167,8 +178,10 @@
             android:id="@+id/deleteSessionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_gravity="center"
-            android:text="Delete"
+            android:text="Delete Session"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"
             android:textColor="#FF0000"
