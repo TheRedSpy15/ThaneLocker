@@ -61,9 +61,11 @@ public class BoardActivity extends AppCompatActivity {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
+        byte sessionCount = 0;
         if (!Session.sessionsWithBoard(board.getId()).isEmpty()) { // TODO: remove redundant code from SessionsFragment. maybe just simplify button creation?
             for (short session_id : Session.savedSessionIds) {
                 Session session = Session.savedSessions.get(session_id);
+                sessionCount++;
                 Button button = new Button(this);
                 button.setText(session.getName());
                 button.setTextSize(18);
@@ -79,11 +81,13 @@ public class BoardActivity extends AppCompatActivity {
                     startActivity(myIntent);
                 });
                 binding.boardContent.sessionsWithBoardLayout.addView(button, layout);
+
+                if (sessionCount == 3) break;
             }
         }
         if (Session.savedSessions.isEmpty()) { // no sessions
             TextView textView = new TextView(this);
-            textView.setText("No sessions used with this board");
+            textView.setText("No Sessions");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             binding.boardContent.sessionsWithBoardLayout.addView(textView,layout);
