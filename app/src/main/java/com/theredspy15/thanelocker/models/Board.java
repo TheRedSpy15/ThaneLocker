@@ -18,6 +18,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private byte[] image;
     private String description;
     private String trucks;
+    private String deck="Zenit Mini Marble";
     private double totalDistance =0.0;
     private double avgDistance=0.0;
     private double avgSpeed=0.0;
@@ -240,5 +241,13 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setTags(LinkedList<String> tags) {
         this.tags = tags;
+    }
+
+    public String getDeck() {
+        return deck;
+    }
+
+    public void setDeck(String deck) {
+        this.deck = deck;
     }
 }

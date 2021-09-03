@@ -15,10 +15,28 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/descriptionView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recent Sessions "
-            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Description"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Description" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Sessions"
+            android:layout_gravity="center"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -27,14 +45,222 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Parts"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:showDividers="middle"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:text="Deck:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/deckView"
+                    android:text="Zenit Mini Marble"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:text="Grip:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/gripView"
+                    android:text="Lokton"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Trucks:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/trucksView"
+                    android:text="Paris V3"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Angle (front):"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/angleFView"
+                    android:text="50&#xb0;"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Angle (rear):"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/angleRView"
+                    android:text="50&#xb0;"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Bushings (board):"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/bushingsBdView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Bushings (road):"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/bushingsRdView"
+                    android:text="0.0 hours"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:text="Pivot:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/pivotView"
+                    android:text="0.0 hours"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Wheels:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/wheelsView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:text="Bearings:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/bearingsView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Statistics"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:showDividers="middle"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:text="Distance Riden:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/cityView"
+                    android:text="Fort Myers"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Average Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgDistanceView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Furthest Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/longestDistanceView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Top Speed:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/topSpeedView"
+                    android:text="20 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Average Speed:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/durationView"
+                    android:text="0.0 hours"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+        </TableLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/deleteBoardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
             android:text="Delete Board"

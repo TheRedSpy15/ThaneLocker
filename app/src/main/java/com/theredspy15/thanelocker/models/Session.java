@@ -23,7 +23,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
     private LinkedList<Short> board_ids = new LinkedList<>();
     private short id = 0;
-    String notes = "was very lame hill and too hot..."; // TODO: implement this!
+    private String notes = "was very lame hill and too hot..."; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
     private long start_millis = 0;
@@ -215,5 +215,13 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setBoard_ids(LinkedList<Short> board_ids) {
         this.board_ids = board_ids;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }
