@@ -25,7 +25,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private double topSpeed=0.0;
     private byte rearAngle=50;
     private byte frontAngle=50;
-    private String rd_bushing="Stock Bushings"; // Brand, formula, shape, color
+    private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
     private String bd_bushings="Stock Bushings";
     private String wheels;
     private String bearings="Standard ABEC Bearings";
