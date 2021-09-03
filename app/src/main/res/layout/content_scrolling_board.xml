@@ -131,7 +131,7 @@
 
                 <TextView
                     android:id="@+id/bushingsBdView"
-                    android:text="20 MPH"
+                    android:text="Riptide 88a WPS Barrel"
                     android:textAlignment="textEnd" />
             </TableRow>
 
