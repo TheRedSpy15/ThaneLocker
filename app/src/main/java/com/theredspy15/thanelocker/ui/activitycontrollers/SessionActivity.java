@@ -224,7 +224,7 @@ public class SessionActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
                 (dialog, which) -> {
                     dialog.dismiss();
-                    session.getBoard_ids().remove(Board.BoardNameToId((String) button.getText())); // removing by object doesn't work
+                    session.getBoard_ids().remove(session.getBoard_ids().indexOf(Board.BoardNameToId((String) button.getText()))); // removing by object doesn't work
                     Session.save();
                     loadBoardsUsed();
                 });
@@ -294,7 +294,7 @@ public class SessionActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     Session.savedSessions.remove(session.getId());
-                    Session.savedSessionIds.remove(session.getId()); // removing by object doesn't work
+                    Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
                     Session.save();
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

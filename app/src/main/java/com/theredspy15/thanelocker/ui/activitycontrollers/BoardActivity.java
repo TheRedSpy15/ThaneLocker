@@ -63,8 +63,7 @@ public class BoardActivity extends AppCompatActivity {
 
         byte sessionCount = 0;
         if (!Session.sessionsWithBoard(board.getId()).isEmpty()) { // TODO: remove redundant code from SessionsFragment. maybe just simplify button creation?
-            for (short session_id : Session.savedSessionIds) {
-                Session session = Session.savedSessions.get(session_id);
+            for (Session session : Session.sessionsWithBoard(board.getId())) {
                 sessionCount++;
                 Button button = new Button(this);
                 button.setText(session.getName());
@@ -84,15 +83,8 @@ public class BoardActivity extends AppCompatActivity {
 
                 if (sessionCount == 3) break;
             }
-            if (sessionCount == 0) { // no sessions with this board // TODO: serious duplication here!
-                TextView textView = new TextView(this);
-                textView.setText("No sessions with this board");
-                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                textView.setTextSize(18);
-                binding.boardContent.sessionsWithBoardLayout.addView(textView,layout);
-            }
         }
-        else if (Session.savedSessions.isEmpty()) { // no sessions at all
+        else { // no sessions
             TextView textView = new TextView(this);
             textView.setText("No Sessions");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -109,7 +101,7 @@ public class BoardActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     Board.savedBoards.remove(board.getId());
-                    Board.savedBoardIds.remove(board.getId()); // removing by object doesn't work
+                    Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
                     Board.save();
 
                     for (Session session : Session.sessionsWithBoard(board.getId()))

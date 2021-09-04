@@ -93,7 +93,7 @@ public class SessionsFragment extends Fragment {
                             (dialog, which) -> {
                                 dialog.dismiss();
                                 Session.savedSessions.remove(session.getId());
-                                Session.savedSessionIds.remove(session.getId()); // removing by object doesn't work
+                                Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
                                 Session.save();
                                 sessionThread = new Thread(this::loadSessions);
                                 sessionThread.start();
@@ -180,6 +180,7 @@ public class SessionsFragment extends Fragment {
         if (newSession.getLocations().size() > 0) {
             Session.savedSessions.put(newSession.getId(),newSession);
             Session.savedSessionIds.add(newSession.getId());
+            sessionThread = new Thread(this::loadSessions);
             sessionThread.start();
             Session.save();
         } else
