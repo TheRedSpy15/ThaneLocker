@@ -84,8 +84,15 @@ public class BoardActivity extends AppCompatActivity {
 
                 if (sessionCount == 3) break;
             }
+            if (sessionCount == 0) { // no sessions with this board // TODO: serious duplication here!
+                TextView textView = new TextView(this);
+                textView.setText("No sessions with this board");
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextSize(18);
+                binding.boardContent.sessionsWithBoardLayout.addView(textView,layout);
+            }
         }
-        if (Session.savedSessions.isEmpty()) { // no sessions
+        else if (Session.savedSessions.isEmpty()) { // no sessions at all
             TextView textView = new TextView(this);
             textView.setText("No Sessions");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -102,7 +109,7 @@ public class BoardActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     Board.savedBoards.remove(board.getId());
-                    Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
+                    Board.savedBoardIds.remove(board.getId()); // removing by object doesn't work
                     Board.save();
 
                     for (Session session : Session.sessionsWithBoard(board.getId()))

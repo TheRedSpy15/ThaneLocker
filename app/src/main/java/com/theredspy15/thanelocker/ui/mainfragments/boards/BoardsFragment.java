@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -48,7 +49,8 @@ public class BoardsFragment extends Fragment {
         return root;
     }
 
-    public void loadBoards() throws FileNotFoundException {
+    public void loadBoards() throws FileNotFoundException {// TODO: lazy load
+        binding.boardLayout.removeAllViews();
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
@@ -62,14 +64,38 @@ public class BoardsFragment extends Fragment {
                 button.getBackground().setAlpha(64);
                 button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
+                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(getContext(), BoardActivity.class);
                     myIntent.putExtra("board", board);
                     startActivity(myIntent);
                 });
-                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
-                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+
+                button.setOnLongClickListener(v->{
+                    AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+                    alertDialog.setTitle("Remove board from session");
+                    alertDialog.setMessage("Are you sure?");
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                            (dialog, which) -> {
+                                dialog.dismiss();
+                                Board.savedBoards.remove(board.getId());
+                                Board.savedBoardIds.remove(board.getId()); // removing by object doesn't work
+                                Board.save();
+                                try {
+                                    loadBoards();
+                                } catch (FileNotFoundException e) {
+                                    e.printStackTrace();
+                                }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.show();
+                    return false;
+                });
+
                 binding.boardLayout.addView(button,layout);
             }
         }
@@ -80,6 +106,12 @@ public class BoardsFragment extends Fragment {
             textView.setTextSize(18);
             binding.boardLayout.addView(textView,layout);
         }
+    }
+
+    public boolean removeBoard(View view) {
+
+
+        return true;
     }
 
     public void loadCreateBoard(View view) {

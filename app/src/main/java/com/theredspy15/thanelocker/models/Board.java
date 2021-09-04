@@ -19,10 +19,6 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String description;
     private String trucks;
     private String deck="Zenit Mini Marble";
-    private double totalDistance =0.0;
-    private double avgDistance=0.0;
-    private double avgSpeed=0.0;
-    private double topSpeed=0.0;
     private byte rearAngle=50;
     private byte frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
@@ -201,38 +197,6 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setPivot(String pivot) {
         this.pivot = pivot;
-    }
-
-    public double getTotalDistance() {
-        return totalDistance;
-    }
-
-    public void setTotalDistance(double totalDistance) {
-        this.totalDistance = totalDistance;
-    }
-
-    public double getAvgSpeed() {
-        return avgSpeed;
-    }
-
-    public void setAvgSpeed(double avgSpeed) {
-        this.avgSpeed = avgSpeed;
-    }
-
-    public double getTopSpeed() {
-        return topSpeed;
-    }
-
-    public void setTopSpeed(double topSpeed) {
-        this.topSpeed = topSpeed;
-    }
-
-    public double getAvgDistance() {
-        return avgDistance;
-    }
-
-    public void setAvgDistance(double avgDistance) {
-        this.avgDistance = avgDistance;
     }
 
     public LinkedList<String> getTags() {

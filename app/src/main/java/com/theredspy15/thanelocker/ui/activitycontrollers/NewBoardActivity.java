@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +21,6 @@ import com.example.thanelocker.R;
 import com.theredspy15.thanelocker.models.Board;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -92,7 +91,11 @@ public class NewBoardActivity extends AppCompatActivity {
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 40, baoStream);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                        bitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
+                    } else {
+                        bitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+                    }
                     imageBytes = baoStream.toByteArray();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -129,28 +132,5 @@ public class NewBoardActivity extends AppCompatActivity {
 
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
-    }
-
-    private Bitmap uriToBitmap(Uri selectedFileUri) {
-        final Bitmap[] image = new Bitmap[1];
-        Thread thread = new Thread(() -> {
-            ParcelFileDescriptor parcelFileDescriptor =
-                    null;
-            try {
-                parcelFileDescriptor = getContentResolver().openFileDescriptor(selectedFileUri, "r");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            assert parcelFileDescriptor != null;
-            FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
-            image[0] = BitmapFactory.decodeFileDescriptor(fileDescriptor);
-
-            try {
-                parcelFileDescriptor.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });thread.start();
-        return image[0];
     }
 }

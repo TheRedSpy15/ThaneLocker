@@ -115,14 +115,21 @@ public class SessionsFragment extends Fragment {
         alertDialog.show();
     }
 
+    public void stopSession(View view) {
+        stopService();
+        loadRecordingButtonIndicator();
+    }
+
     /** sets record button text and color depending on whether or not a session is being recorded actively **/
     void loadRecordingButtonIndicator() {
         if (isRecording) {
             binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.recording_session));
             binding.newSessionButton.setText("Click here to stop recording");
+            binding.newSessionButton.setOnClickListener(this::stopSession);
         } else {
             binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
             binding.newSessionButton.setText("Record Session");
+            binding.newSessionButton.setOnClickListener(this::loadStartSession);
         }
     }
 
