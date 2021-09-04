@@ -24,12 +24,12 @@ import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 
-import java.io.FileNotFoundException;
-
 public class BoardsFragment extends Fragment {
 
     private BoardsViewModel boardsViewModel;
     private FragmentBoardsBinding binding;
+
+    Thread boardThread;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,16 +41,13 @@ public class BoardsFragment extends Fragment {
 
         binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
 
-        try {
-            loadBoards();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        boardThread = new Thread(this::loadBoards);
+        boardThread.start();
         return root;
     }
 
-    public void loadBoards() throws FileNotFoundException {// TODO: lazy load
-        binding.boardLayout.removeAllViews();
+    public void loadBoards() {// TODO: lazy load
+        requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
@@ -65,7 +62,7 @@ public class BoardsFragment extends Fragment {
                 button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
+                Drawable drawable = new BitmapDrawable(requireContext().getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
 
                 button.setOnClickListener(v->{
@@ -84,11 +81,8 @@ public class BoardsFragment extends Fragment {
                                 Board.savedBoards.remove(board.getId());
                                 Board.savedBoardIds.remove(board.getId()); // removing by object doesn't work
                                 Board.save();
-                                try {
-                                    loadBoards();
-                                } catch (FileNotFoundException e) {
-                                    e.printStackTrace();
-                                }
+                                boardThread = new Thread(this::loadBoards);
+                                boardThread.start();
                             });
                     alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                             (dialog, which) -> dialog.dismiss());
@@ -96,7 +90,8 @@ public class BoardsFragment extends Fragment {
                     return false;
                 });
 
-                binding.boardLayout.addView(button,layout);
+                // throws null exception if changing fragments before finished loading all boards
+                requireActivity().runOnUiThread(()->binding.boardLayout.addView(button,layout));
             }
         }
         if (Board.savedBoardIds.isEmpty()) { // no boards
@@ -104,14 +99,8 @@ public class BoardsFragment extends Fragment {
             textView.setText("No Boards Saved");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
-            binding.boardLayout.addView(textView,layout);
+            requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
         }
-    }
-
-    public boolean removeBoard(View view) {
-
-
-        return true;
     }
 
     public void loadCreateBoard(View view) {

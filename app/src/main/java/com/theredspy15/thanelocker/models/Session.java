@@ -30,7 +30,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private long end_millis = 0;
     private String date = "";
     private String name = ""; // location + date
-    private LinkedList<SessionLocationPoint> locations = new LinkedList<>();
+    private final LinkedList<SessionLocationPoint> locations = new LinkedList<>();
     private LinkedList<String> tags = new LinkedList<>();
 
     public static HashMap<Short,Session> savedSessions = new HashMap<>();
@@ -38,7 +38,9 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public Session() {
         Random random = new Random();
-        setId((short) random.nextInt(Short.MAX_VALUE + 1));
+        short randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        if (!savedSessionIds.contains(randId)) setId(randId);
+        else while (savedSessionIds.contains(randId)) randId = (short) random.nextInt(Short.MAX_VALUE + 1);
     }
 
     public static void load() {

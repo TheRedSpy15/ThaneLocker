@@ -191,25 +191,27 @@ public class SessionActivity extends AppCompatActivity {
         linearLayout.removeAllViews();
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,0,0,50);
-        for (short board_id : session.getBoard_ids()) {
+        for (short board_id : session.getBoard_ids()) { // TODO: verify board exists, if not delete record of it
             Board board = Board.savedBoards.get(board_id);
-            Button button = new Button(this);
-            button.setText(board.getName());
-            button.setTextSize(18);
-            button.setBackgroundColor(getResources().getColor(R.color.grey));
-            button.getBackground().setAlpha(64);
-            button.setPadding(0,0,0,0);
-            button.setAllCaps(false);
-            button.setOnClickListener(v->{
-                Intent myIntent = new Intent(this, BoardActivity.class);
-                myIntent.putExtra("board", board);
-                startActivity(myIntent);
-            });
-            button.setOnLongClickListener(this::removeUsedBoard);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-            Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
-            button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
-            linearLayout.addView(button,layout);
+            if (board != null) {
+                Button button = new Button(this);
+                button.setText(board.getName());
+                button.setTextSize(18);
+                button.setBackgroundColor(getResources().getColor(R.color.grey));
+                button.getBackground().setAlpha(64);
+                button.setPadding(0,0,0,0);
+                button.setAllCaps(false);
+                button.setOnClickListener(v->{
+                    Intent myIntent = new Intent(this, BoardActivity.class);
+                    myIntent.putExtra("board", board);
+                    startActivity(myIntent);
+                });
+                button.setOnLongClickListener(this::removeUsedBoard);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
+                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+                linearLayout.addView(button,layout);
+            }
         }
     }
 

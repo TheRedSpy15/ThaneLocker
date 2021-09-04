@@ -37,6 +37,7 @@ public class SessionsFragment extends Fragment {
     public static Session newSession = new Session();
 
     private boolean isRecording = false;
+    Thread sessionThread;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -48,7 +49,8 @@ public class SessionsFragment extends Fragment {
 
         binding.newSessionButton.setOnClickListener(this::loadStartSession);
 
-        loadSessions();
+        sessionThread = new Thread(this::loadSessions);
+        sessionThread.start();
         loadRecordingButtonIndicator();
         return root;
     }
@@ -60,7 +62,7 @@ public class SessionsFragment extends Fragment {
     }
 
     public void loadSessions() {
-        binding.sessionsLayout.removeAllViews();
+        requireActivity().runOnUiThread(()->binding.sessionsLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
@@ -76,12 +78,33 @@ public class SessionsFragment extends Fragment {
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(getResources().getColor(R.color.grey));
+
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);
                     myIntent.putExtra("session_id", session.getId());
                     startActivity(myIntent);
                 });
-                binding.sessionsLayout.addView(button, layout);
+
+                button.setOnLongClickListener(v->{
+                    AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+                    alertDialog.setTitle("Delete Session");
+                    alertDialog.setMessage("Are you sure?");
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                            (dialog, which) -> {
+                                dialog.dismiss();
+                                Session.savedSessions.remove(session.getId());
+                                Session.savedSessionIds.remove(session.getId()); // removing by object doesn't work
+                                Session.save();
+                                sessionThread = new Thread(this::loadSessions);
+                                sessionThread.start();
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.show();
+                    return false;
+                });
+
+                requireActivity().runOnUiThread(()->binding.sessionsLayout.addView(button, layout));
             }
         }
         if (Session.savedSessions.isEmpty()) { // no sessions
@@ -89,7 +112,7 @@ public class SessionsFragment extends Fragment {
             textView.setText("No Session Recorded");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
-            binding.sessionsLayout.addView(textView,layout);
+            requireActivity().runOnUiThread(()->binding.sessionsLayout.addView(textView,layout));
         }
     }
 
@@ -157,7 +180,7 @@ public class SessionsFragment extends Fragment {
         if (newSession.getLocations().size() > 0) {
             Session.savedSessions.put(newSession.getId(),newSession);
             Session.savedSessionIds.add(newSession.getId());
-            loadSessions();
+            sessionThread.start();
             Session.save();
         } else
             Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();

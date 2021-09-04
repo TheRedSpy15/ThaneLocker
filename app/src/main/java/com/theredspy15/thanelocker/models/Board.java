@@ -36,7 +36,9 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public Board() {
         Random random = new Random();
-        id = (short) random.nextInt(Short.MAX_VALUE + 1);
+        short randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        if (!savedBoardIds.contains(randId)) setId(randId);
+        else while (savedBoardIds.contains(randId)) randId = (short) random.nextInt(Short.MAX_VALUE + 1);
     }
 
     public static void load() {
