@@ -46,7 +46,7 @@ public class BoardsFragment extends Fragment {
         return root;
     }
 
-    public void loadBoards() {// TODO: lazy load
+    public void loadBoards() {
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);

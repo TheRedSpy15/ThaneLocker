@@ -47,6 +47,7 @@ public class NewsFragment extends Fragment {
                 List<SyndEntry> entries;
                 entries=getFeed();
                 NewsFragment.entries=entries;
+                while (!isAdded()) {} // fixes a rare occurrence of crash when switching fragments too fast
                 requireActivity().runOnUiThread(()->displayEntries(entries));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -66,7 +67,6 @@ public class NewsFragment extends Fragment {
                 button.setTextSize(18);
                 button.setAllCaps(false);
                 button.setPadding(50,50,50,50);
-                //button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getUri()))));
                 LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 layout.setMargins(0,20,0,20);
