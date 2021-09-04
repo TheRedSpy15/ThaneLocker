@@ -74,11 +74,14 @@ public class BoardActivity extends AppCompatActivity {
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(getResources().getColor(R.color.grey));
+                drawable.setAlpha(64);
+
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(this, SessionActivity.class);
                     myIntent.putExtra("session_id", session.getId());
                     startActivity(myIntent);
                 });
+
                 binding.boardContent.sessionsWithBoardLayout.addView(button, layout);
 
                 if (sessionCount == 3) break;

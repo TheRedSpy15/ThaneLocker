@@ -72,12 +72,12 @@ public class SessionsFragment extends Fragment {
                 Button button = new Button(getContext());
                 button.setText(session.getName());
                 button.setTextSize(18);
-                button.setBackgroundColor(getResources().getColor(R.color.grey));
                 button.setPadding(50, 50, 50, 50);
                 button.setAllCaps(false);
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(getResources().getColor(R.color.grey));
+                drawable.setAlpha(64);
 
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(getContext(), SessionActivity.class);

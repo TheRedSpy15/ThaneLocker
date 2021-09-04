@@ -47,6 +47,7 @@ public class BoardsFragment extends Fragment {
     }
 
     public void loadBoards() {
+        while (!isAdded()) {} // fixes a rare occurrence of crash when switching fragments too fast
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
