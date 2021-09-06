@@ -8,7 +8,7 @@ import android.util.DisplayMetrics;
 public class App extends Application {
 
     @SuppressLint("StaticFieldLeak")
-    private static Context mContext;
+    private static Context mContext; // TODO: find an alternative to this. doesn't seem to cause leak using profiler however
 
     @Override
     public void onCreate() {

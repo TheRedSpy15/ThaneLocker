@@ -10,7 +10,7 @@ public class SessionLocationPoint implements Serializable { // TODO: parcelable 
     private double altitude;
 
     public float getSpeed() {
-        return speed;
+        return (float) (speed * 2.2369362920544);
     }
 
     public void setSpeed(float speed) {

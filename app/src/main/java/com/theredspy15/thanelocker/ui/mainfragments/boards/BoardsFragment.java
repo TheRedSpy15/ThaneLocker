@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.ui.mainfragments.boards;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,6 +24,7 @@ import com.example.thanelocker.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
+import com.theredspy15.thanelocker.utils.App;
 
 public class BoardsFragment extends Fragment {
 
@@ -41,13 +43,12 @@ public class BoardsFragment extends Fragment {
 
         binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
 
-        boardThread = new Thread(this::loadBoards);
+        boardThread = new Thread(() -> loadBoards(App.getContext()));
         boardThread.start();
         return root;
     }
 
-    public void loadBoards() {
-        while (!isAdded()) {} // fixes a rare occurrence of crash when switching fragments too fast
+    public void loadBoards(Context context) {
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
@@ -55,48 +56,50 @@ public class BoardsFragment extends Fragment {
         if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
             for (short board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
-                Button button = new Button(getContext());
-                button.setText(board.getName());
-                button.setTextSize(18);
-                button.setBackgroundColor(getResources().getColor(R.color.grey));
-                button.getBackground().setAlpha(64);
-                button.setPadding(0,0,0,0);
-                button.setAllCaps(false);
-                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(requireContext().getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
-                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+                if (board != null) {
+                    Button button = new Button(context);
+                    button.setText(board.getName());
+                    button.setTextSize(18);
+                    button.setBackgroundColor(context.getColor(R.color.grey));
+                    button.getBackground().setAlpha(64);
+                    button.setPadding(0,0,0,0);
+                    button.setAllCaps(false);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                    Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
+                    button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
 
-                button.setOnClickListener(v->{
-                    Intent myIntent = new Intent(getContext(), BoardActivity.class);
-                    myIntent.putExtra("board", board);
-                    startActivity(myIntent);
-                });
+                    button.setOnClickListener(v->{
+                        Intent myIntent = new Intent(context, BoardActivity.class);
+                        myIntent.putExtra("board", board);
+                        startActivity(myIntent);
+                    });
 
-                button.setOnLongClickListener(v->{
-                    AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-                    alertDialog.setTitle("Remove board from session");
-                    alertDialog.setMessage("Are you sure?");
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
-                            (dialog, which) -> {
-                                dialog.dismiss();
-                                Board.savedBoards.remove(board.getId());
-                                Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
-                                Board.save();
-                                boardThread = new Thread(this::loadBoards);
-                                boardThread.start();
-                            });
-                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                            (dialog, which) -> dialog.dismiss());
-                    alertDialog.show();
-                    return false;
-                });
+                    button.setOnLongClickListener(v->{
+                        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+                        alertDialog.setTitle("Remove board from session");
+                        alertDialog.setMessage("Are you sure?");
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                                (dialog, which) -> {
+                                    dialog.dismiss();
+                                    Board.savedBoards.remove(board.getId());
+                                    Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
+                                    Board.save();
+                                    boardThread = new Thread(() -> loadBoards(App.getContext()));
+                                    boardThread.start();
+                                });
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                                (dialog, which) -> dialog.dismiss());
+                        alertDialog.show();
+                        return false;
+                    });
 
-                // throws null exception if changing fragments before finished loading all boards
-                requireActivity().runOnUiThread(()->binding.boardLayout.addView(button,layout));
+                    // throws null exception if changing fragments before finished loading all boards
+                    if (isAdded() && !isDetached() && isVisible()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(button,layout));
+                }
             }
         }
         if (Board.savedBoardIds.isEmpty()) { // no boards
-            TextView textView = new TextView(requireContext());
+            TextView textView = new TextView(context);
             textView.setText("No Boards Saved");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);

@@ -3,10 +3,10 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.DashPathEffect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -20,10 +20,18 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.PreferenceManager;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivitySessionBinding;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IFillFormatter;
+import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -81,8 +89,7 @@ public class SessionActivity extends AppCompatActivity {
         binding.fullscreenButton.setOnClickListener(this::toggleFullscreen);
 
         // setup map
-        Context ctx = this;
-        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
+        Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
         map = binding.mapView;
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
@@ -91,7 +98,6 @@ public class SessionActivity extends AppCompatActivity {
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
-        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         loadPoints();
         try {
@@ -127,6 +133,7 @@ public class SessionActivity extends AppCompatActivity {
 
         loadTags();
         loadBoardsUsed();
+        loadChart();
     }
 
     private void loadTags() {
@@ -197,7 +204,7 @@ public class SessionActivity extends AppCompatActivity {
                 Button button = new Button(this);
                 button.setText(board.getName());
                 button.setTextSize(18);
-                button.setBackgroundColor(getResources().getColor(R.color.grey));
+                button.setBackgroundColor(this.getColor(R.color.grey));
                 button.getBackground().setAlpha(64);
                 button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
@@ -259,7 +266,7 @@ public class SessionActivity extends AppCompatActivity {
     void loadPoints() {
         Polyline line = new Polyline(map);
         line.setWidth(20f);
-        line.setColor(getResources().getColor(R.color.purple_500));
+        line.setColor(this.getColor(R.color.purple_500));
         List<GeoPoint> pts = new ArrayList<>();
 
         for (SessionLocationPoint point : session.getLocations()) {
@@ -284,6 +291,9 @@ public class SessionActivity extends AppCompatActivity {
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         finishMarker.setTextIcon("Finish");
         map.getOverlays().add(finishMarker);
+
+        // determine theme TODO: day/night support
+        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
     }
 
     public void deleteSession(View view) {
@@ -301,7 +311,6 @@ public class SessionActivity extends AppCompatActivity {
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                 (dialog, which) -> dialog.dismiss());
-        alertDialog.show();
     }
 
     public void addTag(View view) {
@@ -337,6 +346,76 @@ public class SessionActivity extends AppCompatActivity {
         //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         //Configuration.getInstance().save(this, prefs);
         map.onPause();  //needed for compass, my location overlays, v6.0.0 and up
+    }
+
+    private void loadChart() {
+        LineChart chart = binding.sessionLayout.findViewById(R.id.speedChart);
+
+        ArrayList<Entry> values = new ArrayList<>();
+
+        for (int i = 0; i < session.getLocations().size(); i++) {
+            values.add(new Entry(i, session.getLocations().get(i).getSpeed(), ResourcesCompat.getDrawable(getResources(),R.drawable.ic_baseline_discord_24,null)));
+        }
+
+        LineDataSet set1;
+
+        if (chart.getData() != null &&
+                chart.getData().getDataSetCount() > 0) {
+            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            set1.notifyDataSetChanged();
+            chart.getData().notifyDataChanged();
+            chart.notifyDataSetChanged();
+        } else {
+            // create a dataset and give it a type
+            set1 = new LineDataSet(values, "Speed");
+
+            set1.setDrawIcons(false);
+
+            // draw dashed line
+            set1.enableDashedLine(10f, 5f, 0f);
+
+            // black lines and points
+            set1.setColor(this.getColor(R.color.purple_500));
+            set1.setCircleColor(this.getColor(R.color.purple_500));
+
+            // line thickness and point size
+            set1.setLineWidth(1f);
+            set1.setCircleRadius(3f);
+
+            // draw points as solid circles
+            set1.setDrawCircleHole(false);
+
+            // customize legend entry
+            set1.setFormLineWidth(1f);
+            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            set1.setFormSize(15.f);
+
+            // text size of values
+            set1.setValueTextSize(9f);
+
+            // draw selection line as dashed
+            set1.enableDashedHighlightLine(10f, 5f, 0f);
+
+            // set the filled area
+            set1.setDrawFilled(true);
+            set1.setFillFormatter(new IFillFormatter() {
+                @Override
+                public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
+                    return chart.getAxisLeft().getAxisMinimum();
+                }
+            });
+            set1.setFillColor(this.getColor(R.color.purple_500));
+
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1); // add the data sets
+
+            // create a data object with the data sets
+            LineData data = new LineData(dataSets);
+
+            // set data
+            chart.setData(data);
+        }
     }
 
 }

@@ -69,42 +69,44 @@ public class SessionsFragment extends Fragment {
         if (Session.savedSessions != null) {
             for (short session_id : Session.savedSessionIds) {
                 Session session = Session.savedSessions.get(session_id);
-                Button button = new Button(getContext());
-                button.setText(session.getName());
-                button.setTextSize(18);
-                button.setPadding(50, 50, 50, 50);
-                button.setAllCaps(false);
-                button.setBackgroundResource(R.drawable.rounded_corners);
-                GradientDrawable drawable = (GradientDrawable) button.getBackground();
-                drawable.setColor(getResources().getColor(R.color.grey));
-                drawable.setAlpha(64);
+                if (session != null) {
+                    Button button = new Button(getContext());
+                    button.setText(session.getName());
+                    button.setTextSize(18);
+                    button.setPadding(50, 50, 50, 50);
+                    button.setAllCaps(false);
+                    button.setBackgroundResource(R.drawable.rounded_corners);
+                    GradientDrawable drawable = (GradientDrawable) button.getBackground();
+                    drawable.setColor(requireContext().getColor(R.color.grey));
+                    drawable.setAlpha(64);
 
-                button.setOnClickListener(v -> {
-                    Intent myIntent = new Intent(getContext(), SessionActivity.class);
-                    myIntent.putExtra("session_id", session.getId());
-                    startActivity(myIntent);
-                });
+                    button.setOnClickListener(v -> {
+                        Intent myIntent = new Intent(getContext(), SessionActivity.class);
+                        myIntent.putExtra("session_id", session.getId());
+                        startActivity(myIntent);
+                    });
 
-                button.setOnLongClickListener(v->{
-                    AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-                    alertDialog.setTitle("Delete Session");
-                    alertDialog.setMessage("Are you sure?");
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
-                            (dialog, which) -> {
-                                dialog.dismiss();
-                                Session.savedSessions.remove(session.getId());
-                                Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
-                                Session.save();
-                                sessionThread = new Thread(this::loadSessions);
-                                sessionThread.start();
-                            });
-                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                            (dialog, which) -> dialog.dismiss());
-                    alertDialog.show();
-                    return false;
-                });
+                    button.setOnLongClickListener(v->{
+                        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+                        alertDialog.setTitle("Delete Session");
+                        alertDialog.setMessage("Are you sure?");
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                                (dialog, which) -> {
+                                    dialog.dismiss();
+                                    Session.savedSessions.remove(session.getId());
+                                    Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
+                                    Session.save();
+                                    sessionThread = new Thread(this::loadSessions);
+                                    sessionThread.start();
+                                });
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                                (dialog, which) -> dialog.dismiss());
+                        alertDialog.show();
+                        return false;
+                    });
 
-                requireActivity().runOnUiThread(()->binding.sessionsLayout.addView(button, layout));
+                    requireActivity().runOnUiThread(()->binding.sessionsLayout.addView(button, layout));
+                }
             }
         }
         if (Session.savedSessions.isEmpty()) { // no sessions
@@ -146,11 +148,11 @@ public class SessionsFragment extends Fragment {
     /** sets record button text and color depending on whether or not a session is being recorded actively **/
     void loadRecordingButtonIndicator() {
         if (isRecording) {
-            binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.recording_session));
+            binding.newSessionButton.setBackgroundColor(requireContext().getColor(R.color.recording_session));
             binding.newSessionButton.setText("Click here to stop recording");
             binding.newSessionButton.setOnClickListener(this::stopSession);
         } else {
-            binding.newSessionButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
+            binding.newSessionButton.setBackgroundColor(requireContext().getColor(R.color.purple_500));
             binding.newSessionButton.setText("Record Session");
             binding.newSessionButton.setOnClickListener(this::loadStartSession);
         }

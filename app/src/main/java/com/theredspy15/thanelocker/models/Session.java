@@ -105,24 +105,23 @@ public class Session implements Serializable { // TODO: parcelable in the future
     public String getTopSpeed() { // returns string because I'm using it in only one spot
         double top = 0.0;
 
-        for (SessionLocationPoint point : getLocations()) {
-            if (point.getSpeed() > top) top = point.getSpeed();
-        }
+        for (SessionLocationPoint point : getLocations())
+            if ((point.getSpeed() * 2.2369362920544) > top)
+                top = point.getSpeed() * 2.2369362920544;
 
         String topString = String.format("%.1f", top);
-        if (top < 10) return "0"+topString;
+        if (top < 10) return "0"+topString; // keep formatting
         return topString;
     }
 
     public String getAvgSpeed() { // returns string because I'm using it in only one spot
         double avg = 0.0;
 
-        for (SessionLocationPoint point : getLocations()) {
-            avg += point.getSpeed();
-        }
+        for (SessionLocationPoint point : getLocations())
+            if ((point.getSpeed() * 2.2369362920544) > 5) avg += point.getSpeed() * 2.2369362920544;
         avg = avg / getLocations().size();
 
-        String avgString = String.format("%.1f", avg);
+        String avgString = String.format("%.1f", avg); // keep formatting
         if (avg < 10) return "0"+avgString;
         return avgString;
     }
