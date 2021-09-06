@@ -97,13 +97,13 @@ public class BoardsFragment extends Fragment {
                     if (isAdded() && !isDetached() && isVisible()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(button,layout));
                 }
             }
-        }
-        if (Board.savedBoardIds.isEmpty()) { // no boards
-            TextView textView = new TextView(context);
-            textView.setText("No Boards Saved");
-            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            textView.setTextSize(18);
-            requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
+            if (Board.savedBoardIds.isEmpty()) { // no boards
+                TextView textView = new TextView(context);
+                textView.setText("No Boards Saved");
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextSize(18);
+                requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
+            }
         }
     }
 
