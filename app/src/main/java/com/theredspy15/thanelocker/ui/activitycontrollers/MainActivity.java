@@ -18,6 +18,7 @@ import com.example.thanelocker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.utils.App;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         checkPermissions();
         Board.load();
         Session.load();
+
+        App.setContext(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

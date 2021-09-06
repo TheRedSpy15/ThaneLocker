@@ -97,7 +97,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
             }
         }
 
-        String totalString = String.format("%.1f", total*0.000621371192);
+        String totalString = String.format("%.1f", total*0.000621371192); // converts to miles
         if (total*0.000621371192 < 10) return "0"+totalString;
         return totalString;
     }
@@ -106,8 +106,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         double top = 0.0;
 
         for (SessionLocationPoint point : getLocations())
-            if ((point.getSpeed() * 2.2369362920544) > top)
-                top = point.getSpeed() * 2.2369362920544;
+            if (point.getSpeed() > top)
+                top = point.getSpeed();
 
         String topString = String.format("%.1f", top);
         if (top < 10) return "0"+topString; // keep formatting
@@ -118,7 +118,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
         double avg = 0.0;
 
         for (SessionLocationPoint point : getLocations())
-            if ((point.getSpeed() * 2.2369362920544) > 5) avg += point.getSpeed() * 2.2369362920544;
+            if (point.getSpeed() > 5) avg += point.getSpeed();
         avg = avg / getLocations().size();
 
         String avgString = String.format("%.1f", avg); // keep formatting

@@ -36,7 +36,7 @@ public class SessionsFragment extends Fragment {
 
     public static Session newSession = new Session();
 
-    private boolean isRecording = false;
+    private static boolean isRecording = false;
     Thread sessionThread;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

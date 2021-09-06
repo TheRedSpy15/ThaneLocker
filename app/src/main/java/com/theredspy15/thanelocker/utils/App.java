@@ -10,10 +10,18 @@ public class App extends Application {
     @SuppressLint("StaticFieldLeak")
     private static Context mContext; // TODO: find an alternative to this. doesn't seem to cause leak using profiler however
 
+    public static Context getContext() {
+        return mContext;
+    }
+
+    public static void setContext(Context mContext) {
+        App.mContext = mContext;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = this;
+        setContext(this);
     }
 
     /**
@@ -38,7 +46,4 @@ public class App extends Application {
         return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
-    public static Context getContext(){
-        return mContext;
-    }
 }
