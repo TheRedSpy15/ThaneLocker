@@ -74,7 +74,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         for (short session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
 
-            if (session.getBoard_ids().contains(board_id)) sessionsWithBoard.add(session);
+            if (session != null && session.getBoard_ids().contains(board_id))
+                sessionsWithBoard.add(session);
         }
 
         return sessionsWithBoard;
