@@ -15,7 +15,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/descriptionView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -24,6 +23,8 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/descriptionView"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -31,23 +32,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:text="Description" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recent Sessions"
-            android:layout_gravity="center"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:id="@+id/sessions_with_board_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical">
-        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,7 +64,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="6dp">
                 <TextView
                     android:text="Grip:"
                     android:textAlignment="textStart" />
@@ -147,7 +131,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="6dp">
                 <TextView
                     android:text="Pivot:"
                     android:textAlignment="textStart" />
@@ -256,17 +240,33 @@
             </TableRow>
         </TableLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Recent Sessions"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/sessions_with_board_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"></LinearLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/deleteBoardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
-            android:layout_gravity="center"
             android:text="Delete Board"
+            android:textColor="#FF0000"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"
-            android:textColor="#FF0000"
             app:strokeColor="#FF0000"
             app:strokeWidth="2dp" />
 

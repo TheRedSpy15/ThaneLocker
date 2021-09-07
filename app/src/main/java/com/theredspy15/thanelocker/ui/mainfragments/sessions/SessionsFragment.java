@@ -109,12 +109,12 @@ public class SessionsFragment extends Fragment {
                 }
             }
         }
-        if (Session.savedSessions.isEmpty()) { // no sessions
+        if (Session.savedSessions != null && Session.savedSessions.isEmpty()) { // no sessions
             TextView textView = new TextView(requireContext());
             textView.setText("No Session Recorded");
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
-            requireActivity().runOnUiThread(()->binding.sessionsLayout.addView(textView,layout));
+            requireActivity().runOnUiThread(() -> binding.sessionsLayout.addView(textView, layout));
         }
     }
 

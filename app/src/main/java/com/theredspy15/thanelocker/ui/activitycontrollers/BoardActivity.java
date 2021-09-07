@@ -53,6 +53,18 @@ public class BoardActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
         binding.imageView.setImageBitmap(bitmap);
 
+        binding.boardContent.descriptionView.setText(board.getDescription());
+        binding.boardContent.deckView.setText(board.getDeck());
+        binding.boardContent.gripView.setText(board.getGripTp());
+        binding.boardContent.trucksView.setText(board.getTrucks());
+        binding.boardContent.angleFView.setText(board.getFrontAngle()+"\u00B0");
+        binding.boardContent.angleRView.setText(board.getRearAngle()+"\u00B0");
+        binding.boardContent.bushingsBdView.setText(board.getBd_bushings());
+        binding.boardContent.bushingsRdView.setText(board.getRd_bushing());
+        binding.boardContent.pivotView.setText(board.getPivot());
+        binding.boardContent.wheelsView.setText(board.getWheels());
+        binding.boardContent.bearingsView.setText(board.getBearings());
+
         loadSessions();
     }
 
