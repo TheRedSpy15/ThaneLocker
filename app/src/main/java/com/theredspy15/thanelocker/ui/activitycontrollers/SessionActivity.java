@@ -311,6 +311,7 @@ public class SessionActivity extends AppCompatActivity {
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                 (dialog, which) -> dialog.dismiss());
+        alertDialog.show();
     }
 
     public void addTag(View view) {

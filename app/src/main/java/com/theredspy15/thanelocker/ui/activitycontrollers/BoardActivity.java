@@ -98,7 +98,7 @@ public class BoardActivity extends AppCompatActivity {
 
     public void deleteBoard(View view) {
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Delete Session");
+        alertDialog.setTitle("Delete Board");
         alertDialog.setMessage("Are you sure?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
                 (dialog, which) -> {
