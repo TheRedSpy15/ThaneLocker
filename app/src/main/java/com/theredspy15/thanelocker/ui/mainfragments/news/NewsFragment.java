@@ -73,6 +73,7 @@ public class NewsFragment extends Fragment {
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(requireContext().getColor(R.color.grey));
+                drawable.setAlpha(64);
                 binding.progressLoader.setVisibility(View.GONE);
                 binding.feedLayout.addView(button, layout);
             }
