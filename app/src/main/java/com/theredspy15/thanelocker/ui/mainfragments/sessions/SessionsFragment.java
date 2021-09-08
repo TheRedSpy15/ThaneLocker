@@ -61,13 +61,13 @@ public class SessionsFragment extends Fragment {
         binding = null;
     }
 
-    public void loadSessions() {
+    public void loadSessions() { // TODO: invert order to newest first
         requireActivity().runOnUiThread(()->binding.sessionsLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
         if (Session.savedSessions != null) {
-            for (short session_id : Session.savedSessionIds) {
+            for (int session_id : Session.savedSessionIds) {
                 Session session = Session.savedSessions.get(session_id);
                 if (session != null) {
                     Button button = new Button(getContext());
@@ -136,6 +136,7 @@ public class SessionsFragment extends Fragment {
                     wakeLock.acquire(60*60*1000L /*60 minutes*/);
 
                     startService();
+                    dialog.dismiss();
                 });
         alertDialog.show();
     }

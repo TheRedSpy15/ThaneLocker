@@ -3,32 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_boards">
+    app:startDestination="@+id/navigation_profile">
 
     <fragment
         android:id="@+id/navigation_boards"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.boards.BoardsFragment"
         android:label="Boards"
-        tools:layout="@layout/fragment_boards" >
-        <action
-            android:id="@+id/action_navigation_boards_to_navigation_settings"
-            app:destination="@id/navigation_settings" />
-        <action
-            android:id="@+id/action_navigation_boards_to_navigation_news"
-            app:destination="@id/navigation_news" />
-        <action
-            android:id="@+id/action_navigation_boards_to_navigation_sessions"
-            app:destination="@id/navigation_sessions" />
-        <action
-            android:id="@+id/action_navigation_boards_to_navigation_skatemap"
-            app:destination="@id/navigation_skatemap" />
-    </fragment>
+        tools:layout="@layout/fragment_boards" />
 
     <fragment
         android:id="@+id/navigation_sessions"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment"
         android:label="Sessions"
         tools:layout="@layout/fragment_sessions" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_boards"
+            app:destination="@id/navigation_boards" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_news"
+            app:destination="@id/navigation_news" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_sessions"
+            app:destination="@id/navigation_sessions" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_skatemap"
+            app:destination="@id/navigation_skatemap" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_news"

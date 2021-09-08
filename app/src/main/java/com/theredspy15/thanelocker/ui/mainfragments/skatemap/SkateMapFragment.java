@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceManager;
@@ -54,6 +55,15 @@ public class SkateMapFragment extends Fragment {
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+
+        // WIP disclaimer dialog
+        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+        alertDialog.setTitle("This section is not finished");
+        alertDialog.setMessage("Will be added in a future update, but enjoy the rest of what the app has to offer!");
+        alertDialog.setCancelable(false);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                (dialog, which) -> dialog.dismiss());
+        alertDialog.show();
 
         return root;
     }

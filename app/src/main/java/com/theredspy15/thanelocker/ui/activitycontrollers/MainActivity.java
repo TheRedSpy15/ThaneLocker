@@ -17,6 +17,7 @@ import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         checkPermissions();
         Board.load();
         Session.load();
+        Profile.load();
 
         App.setContext(this);
 
@@ -44,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_boards, R.id.navigation_sessions, R.id.navigation_news, R.id.navigation_settings, R.id.navigation_skatemap)
+                R.id.navigation_profile, R.id.navigation_boards, R.id.navigation_sessions, R.id.navigation_news, R.id.navigation_settings, R.id.navigation_skatemap)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    private void checkPermissions() {
+    private void checkPermissions() { // TODO properly do this
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA,

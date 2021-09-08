@@ -9,11 +9,12 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
-    private short id;
+    private int id;
+    private int user_id = 0;
     private String name;
     private byte[] image;
     private String description;
@@ -31,25 +32,24 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String gripTp="Standard Griptape";
     private LinkedList<Session> sessions;
 
-    public static HashMap<Short,Board> savedBoards = new HashMap<>();
-    public static LinkedList<Short> savedBoardIds = new LinkedList<>();
+    public static HashMap<Integer,Board> savedBoards = new HashMap<>();
+    public static LinkedList<Integer> savedBoardIds = new LinkedList<>();
 
     public Board() {
-        Random random = new Random();
-        short randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
         if (!savedBoardIds.contains(randId)) setId(randId);
-        else while (savedBoardIds.contains(randId)) randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        else while (savedBoardIds.contains(randId)) ThreadLocalRandom.current().nextInt();
     }
 
     public static void load() {
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("savedBoards", null);
-        if (json != null) savedBoards = gson.fromJson(json, new TypeToken<HashMap<Short,Board>>() {}.getType());
+        if (json != null) savedBoards = gson.fromJson(json, new TypeToken<HashMap<Integer,Board>>() {}.getType());
         else savedBoards = new HashMap<>();
 
         json = MainActivity.preferences.getString("savedBoardIds", null);
-        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<LinkedList<Short>>() {}.getType());
+        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<LinkedList<Integer>>() {}.getType());
         else savedBoardIds = new LinkedList<>();
     }
 
@@ -66,10 +66,10 @@ public class Board implements Serializable { // TODO: parcelable in the future
         prefsEditor.apply();
     }
 
-    public static short BoardNameToId(String name) {
+    public static int BoardNameToId(String name) {
         LinkedList<Board> boards = new LinkedList<>();
         Board foundBoard = new Board();
-        for (short id : savedBoardIds) {
+        for (int id : savedBoardIds) {
             boards.add(savedBoards.get(id));
         }
         for (Board board : boards) {
@@ -81,11 +81,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         return foundBoard.getId();
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -215,5 +215,13 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setDeck(String deck) {
         this.deck = deck;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

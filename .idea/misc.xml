@@ -27,6 +27,7 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.34791666666666665" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.5708333333333333" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_outline_inventory_2_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_outline_map_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_outline_person_24.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/drawable/ic_outline_settings_24.xml" value="0.5708333333333333" />
@@ -50,6 +51,7 @@
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_first.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_home.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_news.xml" value="0.5546875" />
+        <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_profile.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_second.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_sessions.xml" value="0.5546875" />
         <entry key="..\:/Users/hjada/AndroidStudioProjects/ThaneLocker/app/src/main/res/layout/fragment_settings.xml" value="0.5546875" />

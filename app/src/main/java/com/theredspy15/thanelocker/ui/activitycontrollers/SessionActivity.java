@@ -29,8 +29,6 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IFillFormatter;
-import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
@@ -70,7 +68,7 @@ public class SessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_session);
 
         // doesn't count as serializable like Board objects do
-        session = Session.savedSessions.get(getIntent().getShortExtra("session_id", (short) 0));
+        session = Session.savedSessions.get(getIntent().getIntExtra("session_id", 0));
 
         binding = ActivitySessionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -198,7 +196,7 @@ public class SessionActivity extends AppCompatActivity {
         linearLayout.removeAllViews();
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,0,0,50);
-        for (short board_id : session.getBoard_ids()) { // TODO: verify board exists, if not delete record of it
+        for (int board_id : session.getBoard_ids()) { // TODO: verify board exists, if not delete record of it. same with sessions!
             Board board = Board.savedBoards.get(board_id);
             if (board != null) {
                 Button button = new Button(this);
@@ -245,7 +243,7 @@ public class SessionActivity extends AppCompatActivity {
     public void addUsedBoard(View view) {
         String[] boards = new String[Board.savedBoards.size()];
         int i = 0;
-        for (short board_id : Board.savedBoardIds) {
+        for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id);
             boards[i] = board.getName();
             i+=1;
@@ -355,7 +353,7 @@ public class SessionActivity extends AppCompatActivity {
         ArrayList<Entry> values = new ArrayList<>();
 
         for (int i = 0; i < session.getLocations().size(); i++) {
-            values.add(new Entry(i, session.getLocations().get(i).getSpeed(), ResourcesCompat.getDrawable(getResources(),R.drawable.ic_baseline_discord_24,null)));
+            values.add(new Entry(i, session.getLocations().get(i).getSpeed(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
         LineDataSet set1;
@@ -400,12 +398,7 @@ public class SessionActivity extends AppCompatActivity {
 
             // set the filled area
             set1.setDrawFilled(true);
-            set1.setFillFormatter(new IFillFormatter() {
-                @Override
-                public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
-                    return chart.getAxisLeft().getAxisMinimum();
-                }
-            });
+            set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
             set1.setFillColor(this.getColor(R.color.purple_500));
 
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();

@@ -43,7 +43,7 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/speedChart"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="300dp"
             android:layout_gravity="center" />
 
         <TextView

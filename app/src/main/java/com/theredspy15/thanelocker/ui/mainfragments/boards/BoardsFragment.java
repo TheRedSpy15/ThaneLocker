@@ -54,7 +54,7 @@ public class BoardsFragment extends Fragment {
         layout.setMargins(0,20,0,20);
 
         if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
-            for (short board_id : Board.savedBoardIds) {
+            for (int board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
                 if (board != null) {
                     Button button = new Button(context);

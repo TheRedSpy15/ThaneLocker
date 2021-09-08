@@ -17,12 +17,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
-    private LinkedList<Short> board_ids = new LinkedList<>();
-    private short id = 0;
+    private LinkedList<Integer> board_ids = new LinkedList<>();
+    private int id = 0;
+    private int user_id = 0;
     private String notes = "was very lame hill and too hot..."; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
@@ -33,25 +34,24 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private final LinkedList<SessionLocationPoint> locations = new LinkedList<>();
     private LinkedList<String> tags = new LinkedList<>();
 
-    public static HashMap<Short,Session> savedSessions = new HashMap<>();
-    public static LinkedList<Short> savedSessionIds = new LinkedList<>();
+    public static HashMap<Integer,Session> savedSessions = new HashMap<>();
+    public static LinkedList<Integer> savedSessionIds = new LinkedList<>();
 
     public Session() {
-        Random random = new Random();
-        short randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
         if (!savedSessionIds.contains(randId)) setId(randId);
-        else while (savedSessionIds.contains(randId)) randId = (short) random.nextInt(Short.MAX_VALUE + 1);
+        else while (savedSessionIds.contains(randId)) randId = ThreadLocalRandom.current().nextInt();
     }
 
     public static void load() {
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("savedSessions", null);
-        if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Short,Session>>() {}.getType());
+        if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Integer,Session>>() {}.getType());
         else savedSessions = new HashMap<>();
 
         json = MainActivity.preferences.getString("savedSessionIds", null);
-        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<LinkedList<Short>>() {}.getType());
+        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<LinkedList<Integer>>() {}.getType());
         else savedSessionIds = new LinkedList<>();
     }
 
@@ -68,10 +68,10 @@ public class Session implements Serializable { // TODO: parcelable in the future
         prefsEditor.apply();
     }
 
-    public static LinkedList<Session> sessionsWithBoard(short board_id) {
+    public static LinkedList<Session> sessionsWithBoard(int board_id) {
         LinkedList<Session> sessionsWithBoard = new LinkedList<>();
 
-        for (short session_id : Session.savedSessionIds) {
+        for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
 
             if (session != null && session.getBoard_ids().contains(board_id))
@@ -187,11 +187,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         return cityName.trim();
     }
 
-    public short getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -211,11 +211,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.end_millis = end_millis;
     }
 
-    public LinkedList<Short> getBoard_ids() {
+    public LinkedList<Integer> getBoard_ids() {
         return board_ids;
     }
 
-    public void setBoard_ids(LinkedList<Short> board_ids) {
+    public void setBoard_ids(LinkedList<Integer> board_ids) {
         this.board_ids = board_ids;
     }
 
@@ -225,5 +225,13 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }
