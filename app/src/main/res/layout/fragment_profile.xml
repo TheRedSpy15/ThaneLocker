@@ -14,14 +14,14 @@
         android:orientation="vertical" >
 
         <com.google.android.material.imageview.ShapeableImageView
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
             android:id="@+id/profilePictureView"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/ic_outline_person_24"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,6 +37,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Just another awesome Skater" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:text="Edit Profie"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="20dp"
+            android:textColor="@color/purple_500"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp" />
 
         <TextView
             android:layout_marginTop="20dp"

@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         checkPermissions();
+        Profile.load();
         Board.load();
         Session.load();
-        Profile.load();
 
         App.setContext(this);
 

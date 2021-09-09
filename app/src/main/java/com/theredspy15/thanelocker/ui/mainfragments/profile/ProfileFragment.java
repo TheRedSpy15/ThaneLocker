@@ -84,7 +84,7 @@ public class ProfileFragment extends Fragment {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
             Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
             button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
-            linearLayout.addView(button,4,layout);
+            linearLayout.addView(button,5,layout);
         }
     }
 

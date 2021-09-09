@@ -28,6 +28,7 @@ import com.theredspy15.thanelocker.utils.LocationService;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
 
 public class SessionsFragment extends Fragment {
 
@@ -66,6 +67,7 @@ public class SessionsFragment extends Fragment {
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
+        Collections.reverse(Session.savedSessionIds);
         if (Session.savedSessions != null) {
             for (int session_id : Session.savedSessionIds) {
                 Session session = Session.savedSessions.get(session_id);
@@ -109,6 +111,8 @@ public class SessionsFragment extends Fragment {
                 }
             }
         }
+        Collections.reverse(Session.savedSessionIds);
+
         if (Session.savedSessions != null && Session.savedSessions.isEmpty()) { // no sessions
             TextView textView = new TextView(requireContext());
             textView.setText("No Session Recorded");

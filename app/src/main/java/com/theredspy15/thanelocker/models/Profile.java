@@ -13,6 +13,8 @@ import java.util.LinkedList;
 public class Profile {
     public static Profile localProfile;
     private int id = 0;
+    private int level = 1;
+    private int level_xp = 0; // 0-100 for all levels
     private String name = "John Doe";
     private byte age = 18;
     private String description = "just another awesome skater";
@@ -135,5 +137,21 @@ public class Profile {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getLevel_xp() {
+        return level_xp;
+    }
+
+    public void setLevel_xp(int level_xp) {
+        this.level_xp = level_xp;
     }
 }

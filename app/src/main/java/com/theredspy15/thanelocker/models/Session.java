@@ -41,6 +41,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
         if (!savedSessionIds.contains(randId)) setId(randId);
         else while (savedSessionIds.contains(randId)) randId = ThreadLocalRandom.current().nextInt();
+
+        setUser_id(Profile.localProfile.getId());
     }
 
     public static void load() {

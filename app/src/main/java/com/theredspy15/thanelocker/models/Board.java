@@ -39,6 +39,8 @@ public class Board implements Serializable { // TODO: parcelable in the future
         int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
         if (!savedBoardIds.contains(randId)) setId(randId);
         else while (savedBoardIds.contains(randId)) ThreadLocalRandom.current().nextInt();
+
+        setUser_id(Profile.localProfile.getId());
     }
 
     public static void load() {
