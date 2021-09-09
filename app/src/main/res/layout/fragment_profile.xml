@@ -55,7 +55,7 @@
                     android:textAlignment="textStart" />
 
                 <TextView
-                    android:id="@+id/deckView"
+                    android:id="@+id/topSpeedView"
                     android:text="00.0 MPH"
                     android:textAlignment="textEnd" />
             </TableRow>
@@ -66,7 +66,7 @@
                     android:textAlignment="textStart" />
 
                 <TextView
-                    android:id="@+id/gripView"
+                    android:id="@+id/furthestDistanceView"
                     android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>

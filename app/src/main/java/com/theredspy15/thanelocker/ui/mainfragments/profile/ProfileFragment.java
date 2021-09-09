@@ -60,6 +60,21 @@ public class ProfileFragment extends Fragment {
         loadTopSpeedsChart();
         loadDistancesChart();
         loadDurationsChart();
+        loadTextViewStats();
+    }
+
+    private void loadTextViewStats() {
+        for (Session session : sessions) {
+            // fastest speed
+            float top = 0;
+            if (Float.parseFloat(session.getTopSpeed()) > top) top = Float.parseFloat(session.getTopSpeed());
+            binding.topSpeedView.setText(top+" MPH");
+
+            // furthest distance
+            top = 0;
+            if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
+            binding.furthestDistanceView.setText(top+" Miles");
+        }
     }
 
     private void loadFavoriteBoard() {
