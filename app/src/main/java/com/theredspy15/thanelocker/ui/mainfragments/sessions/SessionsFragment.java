@@ -62,7 +62,7 @@ public class SessionsFragment extends Fragment {
         binding = null;
     }
 
-    public void loadSessions() { // TODO: invert order to newest first
+    public void loadSessions() {
         requireActivity().runOnUiThread(()->binding.sessionsLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);

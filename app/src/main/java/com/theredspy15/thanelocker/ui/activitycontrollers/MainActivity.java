@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         Board.load();
         Session.load();
 
+        if (preferences.getBoolean("firstTime",true)) firstTime();
+
         App.setContext(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -66,6 +69,20 @@ public class MainActivity extends AppCompatActivity {
                             Manifest.permission.READ_EXTERNAL_STORAGE,
                             Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
+    }
+
+    private void firstTime() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Disclaimer");
+        alertDialog.setMessage("Thank you for downloading the app! But this app is still in it's early stages and please note many more features are to come!");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
+                    prefsEditor.putBoolean("firstTime",false);
+                    prefsEditor.apply();
+                });
+        alertDialog.show();
     }
 
 }
