@@ -59,6 +59,7 @@ public class ProfileFragment extends Fragment {
         loadSpeedsChart();
         loadTopSpeedsChart();
         loadDistancesChart();
+        loadDurationsChart();
     }
 
     private void loadFavoriteBoard() {
@@ -84,7 +85,7 @@ public class ProfileFragment extends Fragment {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
             Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
             button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
-            linearLayout.addView(button,5,layout);
+            linearLayout.addView(button,6,layout);
         }
     }
 
@@ -202,6 +203,71 @@ public class ProfileFragment extends Fragment {
 
         for (int i = 0; i < sessions.size(); i++) {
             values.add(new Entry(i, Float.parseFloat(sessions.get(i).getTotalDistance()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
+        }
+
+        LineDataSet set1;
+
+        if (chart.getData() != null &&
+                chart.getData().getDataSetCount() > 0) {
+            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            set1.notifyDataSetChanged();
+            chart.getData().notifyDataChanged();
+            chart.notifyDataSetChanged();
+        } else {
+            // create a dataset and give it a type
+            set1 = new LineDataSet(values, "Speed");
+
+            set1.setDrawIcons(false);
+
+            // draw dashed line
+            set1.enableDashedLine(10f, 5f, 0f);
+
+            // black lines and points
+            set1.setColor(requireContext().getColor(R.color.purple_500));
+            set1.setCircleColor(requireContext().getColor(R.color.purple_500));
+
+            // line thickness and point size
+            set1.setLineWidth(1f);
+            set1.setCircleRadius(3f);
+
+            // draw points as solid circles
+            set1.setDrawCircleHole(false);
+
+            // customize legend entry
+            set1.setFormLineWidth(1f);
+            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            set1.setFormSize(15.f);
+
+            // text size of values
+            set1.setValueTextSize(9f);
+
+            // draw selection line as dashed
+            set1.enableDashedHighlightLine(10f, 5f, 0f);
+
+            // set the filled area
+            set1.setDrawFilled(true);
+            set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
+            set1.setFillColor(requireContext().getColor(R.color.purple_500));
+
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1); // add the data sets
+
+            // create a data object with the data sets
+            LineData data = new LineData(dataSets);
+
+            // set data
+            chart.setData(data);
+        }
+    }
+
+    private void loadDurationsChart() {
+        LineChart chart = binding.durationsChart;
+
+        ArrayList<Entry> values = new ArrayList<>();
+
+        for (int i = 0; i < sessions.size(); i++) {
+            values.add(new Entry(i, sessions.get(i).getDuration(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
         LineDataSet set1;

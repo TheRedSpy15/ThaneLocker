@@ -38,6 +38,41 @@
             android:layout_gravity="center"
             android:text="Just another awesome Skater" />
 
+        <TableLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:showDividers="middle"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:text="Fastest Speed:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/deckView"
+                    android:text="00.0 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="Furthest Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/gripView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+        </TableLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/editProfileButton"
             android:layout_width="wrap_content"
@@ -99,6 +134,20 @@
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/distancesChart"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Durations"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/durationsChart"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center" />
