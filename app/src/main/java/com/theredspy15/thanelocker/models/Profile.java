@@ -7,10 +7,11 @@ import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class Profile {
+public class Profile implements Serializable {
     public static Profile localProfile;
     private int id = 0;
     private int level = 1;
@@ -20,6 +21,7 @@ public class Profile {
     private String description = "just another awesome skater";
     private String state = "California";
     private String country = "United States";
+    private LinkedList<Integer> friend_ids = new LinkedList<>();
     private byte[] image;
 
     public Profile() {
@@ -153,5 +155,13 @@ public class Profile {
 
     public void setLevel_xp(int level_xp) {
         this.level_xp = level_xp;
+    }
+
+    public LinkedList<Integer> getFriend_ids() {
+        return friend_ids;
+    }
+
+    public void setFriend_ids(LinkedList<Integer> friend_ids) {
+        this.friend_ids = friend_ids;
     }
 }
