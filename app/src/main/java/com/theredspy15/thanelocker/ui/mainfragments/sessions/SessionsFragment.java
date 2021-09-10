@@ -23,6 +23,7 @@ import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
+import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.LocationService;
 
 import java.text.DateFormat;
@@ -63,6 +64,8 @@ public class SessionsFragment extends Fragment {
     }
 
     public void loadSessions() {
+        App.cleanSessions();
+
         requireActivity().runOnUiThread(()->binding.sessionsLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);

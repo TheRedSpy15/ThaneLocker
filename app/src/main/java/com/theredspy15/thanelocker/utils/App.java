@@ -5,7 +5,11 @@ import android.app.Application;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Session;
+
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -66,6 +70,26 @@ public class App extends Application {
         }
 
         return max.getKey();
+    }
+
+    public static synchronized void cleanBoards() { // TODO: clean hashmap
+        LinkedList<Integer> list = new LinkedList<>(); // ids
+        for (int id : Board.savedBoardIds) {
+            if (Board.savedBoards.get(id) == null) {
+                list.add(id);
+            }
+        }
+        for (int id : list) Board.savedBoardIds.remove((Integer) id);
+    }
+
+    public static synchronized void cleanSessions() { // TODO: clean hashmap
+        LinkedList<Integer> list = new LinkedList<>(); // ids
+        for (int id : Session.savedSessionIds) {
+            if (Session.savedSessions.get(id) == null) {
+                list.add(id);
+            }
+        }
+        for (int id : list) Session.savedSessionIds.remove((Integer) id);
     }
 
 }

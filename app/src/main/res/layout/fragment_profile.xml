@@ -59,7 +59,16 @@
                     android:text="00.0 MPH"
                     android:textAlignment="textEnd" />
             </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Average Speed:"
+                    android:textAlignment="textStart" />
 
+                <TextView
+                    android:id="@+id/avgSpeedView"
+                    android:text="00.0 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
             <TableRow>
                 <TextView
                     android:text="Furthest Distance:"
@@ -70,7 +79,16 @@
                     android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Total Distance:"
+                    android:textAlignment="textStart" />
 
+                <TextView
+                    android:id="@+id/totalDistanceView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
         </TableLayout>
 
         <com.google.android.material.button.MaterialButton

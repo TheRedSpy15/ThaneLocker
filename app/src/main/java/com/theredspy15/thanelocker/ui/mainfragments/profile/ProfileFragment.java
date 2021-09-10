@@ -54,7 +54,7 @@ public class ProfileFragment extends Fragment {
         return root;
     }
 
-    private void loadCharts() {
+    private synchronized void loadCharts() {
         loadFavoriteBoard();
         loadSpeedsChart();
         loadTopSpeedsChart();
@@ -63,7 +63,10 @@ public class ProfileFragment extends Fragment {
         loadTextViewStats();
     }
 
-    private void loadTextViewStats() {
+    private synchronized void loadTextViewStats() {
+        float tDistance = 0;
+        float tAvgSpeed = 0;
+
         for (Session session : sessions) {
             // fastest speed
             float top = 0;
@@ -74,10 +77,19 @@ public class ProfileFragment extends Fragment {
             top = 0;
             if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
             binding.furthestDistanceView.setText(top+" Miles");
+
+           tDistance += Float.parseFloat(session.getAvgSpeed());
+           tAvgSpeed += Float.parseFloat(session.getTotalDistance());
         }
+
+        tDistance = tDistance / sessions.size();
+        tAvgSpeed = tAvgSpeed / sessions.size();
+
+        binding.totalDistanceView.setText(tDistance+" Miles");
+        binding.avgSpeedView.setText(tAvgSpeed+" MPH");
     }
 
-    private void loadFavoriteBoard() {
+    private synchronized void loadFavoriteBoard() {
         LinearLayout linearLayout = binding.statisticsLayout;
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(80,0,80,0);
@@ -104,7 +116,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private void loadSpeedsChart() {
+    private synchronized void loadSpeedsChart() {
         LineChart chart = binding.speedsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -157,7 +169,7 @@ public class ProfileFragment extends Fragment {
         chart.setData(data);
     }
 
-    private void loadTopSpeedsChart() {
+    private synchronized void loadTopSpeedsChart() {
         LineChart chart = binding.topSpeedsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -211,7 +223,7 @@ public class ProfileFragment extends Fragment {
         chart.setData(data);
     }
 
-    private void loadDistancesChart() {
+    private synchronized void loadDistancesChart() {
         LineChart chart = binding.distancesChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -276,7 +288,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private void loadDurationsChart() {
+    private synchronized void loadDurationsChart() {
         LineChart chart = binding.durationsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
