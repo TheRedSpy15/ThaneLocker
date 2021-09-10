@@ -112,49 +112,101 @@
                 android:hint="Front Angle (Default: 50)"
                 android:inputType="number" />
 
-            <Spinner
-                android:id="@+id/spinnerWheels"
-                android:entries="@array/wheels"
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:spinnerMode="dialog" />
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:showDividers="middle"
+                android:shrinkColumns="0"
+                android:stretchColumns="1">
+                <TableRow>
+                    <TextView
+                        android:text="Wheels:"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerBearings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/bearings"
-                android:spinnerMode="dialog" />
+                    <Spinner
+                        android:id="@+id/spinnerWheels"
+                        android:entries="@array/wheels"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Bearings:"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerTrucks"
-                android:entries="@array/trucks"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/spinnerBearings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/bearings"
+                        android:spinnerMode="dialog" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Trucks:"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerGriptapes"
-                android:entries="@array/grip_tapes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/spinnerTrucks"
+                        android:entries="@array/trucks"
+                        android:spinnerMode="dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Griptape:"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerRdBushings"
-                android:entries="@array/bushings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/spinnerGriptapes"
+                        android:entries="@array/grip_tapes"
+                        android:spinnerMode="dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Bushings (Road):"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerBdBushings"
-                android:entries="@array/bushings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/spinnerRdBushings"
+                        android:entries="@array/bushings"
+                        android:spinnerMode="dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Bushings (Board):"
+                        android:textAlignment="textStart" />
 
-            <Spinner
-                android:id="@+id/spinnerPivot"
-                android:entries="@array/pivots"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/spinnerBdBushings"
+                        android:entries="@array/bushings"
+                        android:spinnerMode="dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="Pivot:"
+                        android:textAlignment="textStart" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPivot"
+                        android:entries="@array/pivots"
+                        android:spinnerMode="dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+            </TableLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonCreate"
