@@ -33,9 +33,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThaneLocker">
-        <activity
-            android:name="com.theredspy15.thanelocker.EditProfileActivity"
-            android:exported="true" />
 
         <service
             android:name="com.theredspy15.thanelocker.utils.LocationService"
@@ -43,6 +40,13 @@
             android:exported="false"
             android:foregroundServiceType="location" />
 
+        <activity
+            android:name="com.theredspy15.thanelocker.EditProfileActivity"
+            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:label="Edit Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThaneLocker"
+            android:exported="true" />
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
             android:exported="true"

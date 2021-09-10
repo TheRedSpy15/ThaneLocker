@@ -25,6 +25,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.theredspy15.thanelocker.EditProfileActivity;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -55,12 +56,19 @@ public class ProfileFragment extends Fragment {
     }
 
     private synchronized void loadCharts() {
+        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+
         loadFavoriteBoard();
         loadSpeedsChart();
         loadTopSpeedsChart();
         loadDistancesChart();
         loadDurationsChart();
         loadTextViewStats();
+    }
+
+    public void loadEditProfile(View view) {
+        Intent myIntent = new Intent(requireContext(), EditProfileActivity.class);
+        startActivity(myIntent);
     }
 
     private synchronized void loadTextViewStats() {

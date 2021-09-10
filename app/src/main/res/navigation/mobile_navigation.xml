@@ -9,13 +9,24 @@
         android:id="@+id/navigation_boards"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.boards.BoardsFragment"
         android:label="Boards"
-        tools:layout="@layout/fragment_boards" />
+        tools:layout="@layout/fragment_boards" >
+        <action
+            android:id="@+id/action_navigation_boards_to_newBoardActivity"
+            app:destination="@id/newBoardActivity" />
+        <action
+            android:id="@+id/action_navigation_boards_to_boardActivity"
+            app:destination="@id/boardActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_sessions"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment"
         android:label="Sessions"
-        tools:layout="@layout/fragment_sessions" />
+        tools:layout="@layout/fragment_sessions" >
+        <action
+            android:id="@+id/action_navigation_sessions_to_sessionActivity"
+            app:destination="@id/sessionActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -37,6 +48,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_navigation_skatemap"
             app:destination="@id/navigation_skatemap" />
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileActivity"
+            app:destination="@id/editProfileActivity" />
     </fragment>
 
     <fragment
@@ -56,5 +70,25 @@
         android:name="com.theredspy15.thanelocker.ui.mainfragments.skatemap.SkateMapFragment"
         android:label="Map"
         tools:layout="@layout/fragment_skatemap" />
+    <activity
+        android:id="@+id/editProfileActivity"
+        android:name="com.theredspy15.thanelocker.EditProfileActivity"
+        android:label="activity_edit_profile"
+        tools:layout="@layout/activity_edit_profile" />
+    <activity
+        android:id="@+id/sessionActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
+        android:label="activity_session"
+        tools:layout="@layout/activity_session" />
+    <activity
+        android:id="@+id/newBoardActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity"
+        android:label="activity_new_board"
+        tools:layout="@layout/activity_new_board" />
+    <activity
+        android:id="@+id/boardActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity"
+        android:label="content_scrolling_board"
+        tools:layout="@layout/content_scrolling_board" />
 
 </navigation>

@@ -8,14 +8,52 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="boardActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="5" />
+                            <option name="y" value="-237" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="editProfileActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1178" />
+                            <option name="y" value="405" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="navigation_boards">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-631" />
-                            <option name="y" value="-319" />
+                            <option name="x" value="-522" />
+                            <option name="y" value="-321" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_navigation_boards_to_boardActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_navigation_boards_to_newBoardActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -25,8 +63,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-882" />
-                            <option name="y" value="-442" />
+                            <option name="x" value="-516" />
+                            <option name="y" value="-609" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -37,12 +75,17 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1105" />
-                            <option name="y" value="33" />
+                            <option name="x" value="-1387" />
+                            <option name="y" value="13" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_navigation_profile_to_editProfileActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_navigation_profile_to_navigation_boards">
                               <value>
                                 <LayoutPositions />
@@ -82,6 +125,15 @@
                             <option name="y" value="-23" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_navigation_sessions_to_sessionActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -90,8 +142,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-671" />
-                            <option name="y" value="325" />
+                            <option name="x" value="-522" />
+                            <option name="y" value="279" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -102,8 +154,32 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-896" />
-                            <option name="y" value="471" />
+                            <option name="x" value="-523" />
+                            <option name="y" value="570" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="newBoardActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="2" />
+                            <option name="y" value="-526" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="sessionActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-267" />
+                            <option name="y" value="-20" />
                           </Point>
                         </option>
                       </LayoutPositions>
