@@ -27,6 +27,8 @@ import java.io.InputStream;
 
 public class NewBoardActivity extends AppCompatActivity {
 
+    private static final int TAKE_PICTURE = 1;
+
     EditText nameEditText;
     Spinner truckSpinner;
     Spinner wheelsSpinner;
@@ -42,6 +44,7 @@ public class NewBoardActivity extends AppCompatActivity {
     ImageView imageView;
 
     Uri imageUri;
+    Bitmap imageBitmap;
     byte[] imageBytes;
 
     @Override
@@ -49,7 +52,7 @@ public class NewBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_board);
 
-        nameEditText = findViewById(R.id.editTextBoardName);
+        nameEditText = findViewById(R.id.editTextBoardName); // TODO: use view binding instead
         truckSpinner = findViewById(R.id.spinnerTrucks);
         rAngleEditText = findViewById(R.id.editTextRAngle);
         fAngleEditText = findViewById(R.id.editTextFAngle);
@@ -69,14 +72,18 @@ public class NewBoardActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-            try {
-                final Uri imageUri = data.getData();
-                final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                imageView.setImageBitmap(selectedImage);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+            if (imageBitmap != null) {
+                try {
+                    final Uri imageUri = data.getData();
+                    final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    imageView.setImageBitmap(selectedImage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                imageView.setImageBitmap(imageBitmap);
             }
         }else {
             Toast.makeText(this, "You haven't picked Image", Toast.LENGTH_LONG).show();
@@ -102,12 +109,24 @@ public class NewBoardActivity extends AppCompatActivity {
                 }
             });
 
+    ActivityResultLauncher<Void> mGetCamera = registerForActivityResult(new ActivityResultContracts.TakePicturePreview(),
+            bitmap -> {
+                imageBitmap = bitmap;
+                ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    imageBitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
+                } else {
+                    imageBitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+                }
+                imageBytes = baoStream.toByteArray();
+            });
+
     public void fromGallery(View view) {
         mGetContent.launch("image/*");
     }
 
     public void fromCamera(View view) {
-
+        mGetCamera.launch(null);
     }
 
     public void create(View view) {

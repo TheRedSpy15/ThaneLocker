@@ -1,33 +1,73 @@
 <resources>
     <string name="app_name">Thane Locker</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_activity_board">BoardActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_new_board">NewBoardActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
     <!-- Built-in truck choices -->
     <string-array name="trucks">
         <item>Paris V3</item>
         <item>Paris Savants</item>
+        <item>Bear Gen6</item>
+        <item>Valkyries</item>
+        <item>Caliber 2</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Sidewinders</item>
+        <item>Seismic Aeon</item>
+        <item>Arsenals</item>
+        <item>Amazon Brand</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
+        <item>"Amazon Brand"</item>
         <item>Snakes</item>
+        <item>G Slides</item>
+        <item>BO Smokes</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Fatty Hawgs</item>
+        <item>Chubby Hawgs</item>
+        <item>Supreme Hawgs</item>
+        <item>Biggie Hawgs</item>
+        <item>Speed Vents</item>
+        <item>EZ Hawgs</item>
+        <item>Markers</item>
+        <item>Nine Balls</item>
+        <item>PHAT BOYZ</item>
+        <item>4President</item>
+        <item>Fat Free</item>
+        <item>Stimulus</item>
+        <item>Skiffs</item>
+        <item>Fat Frees</item>
+        <item>Kegels</item>
+        <item>Caguama</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
+        <item>Generic</item>
+        <item>Bones Reds</item>
+        <item>Beasto</item>
+        <item>Oust</item>
+        <item>Space Balls</item>
+        <item>Juhu V2</item>
         <item>Zealous</item>
         <item>Zealous (Ceramic)</item>
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard Griptape</item>
+        <item>Standard Jessip</item>
         <item>Lokton</item>
+        <item>Gangster</item>
+        <item>Mob Grip</item>
+        <item>Hardcore</item>
+        <item>Vicious</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>None</item>
+        <item>Komotion</item>
+        <item>PSD IN-side</item>
+        <item>PSD MINI I/O</item>
+        <item>PSD OUT-side</item>
     </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
@@ -37,14 +77,40 @@
         <item>Freeride</item>
         <item>Slalom</item>
         <item>Cruise</item>
+        <item>Freestyle</item>
+        <item>Randomness</item>
     </string-array>
     <!-- Built-in bushings choices -->
     <string-array name="bushings">
-        <item>Riptide Barrel WPS 88a</item>
-        <item>Venom Barrel 85a</item>
+        <item>Stock</item>
+        <item>Barrel WFB 78a</item>
+        <item>Barrel WFB 83a</item>
+        <item>Barrel WFB 88a</item>
+        <item>Barrel WFB 93a</item>
+        <item>Barrel WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>Barrel APS 70a</item>
+        <item>Barrel APS 75a</item>
+        <item>Barrel APS 80a</item>
+        <item>Barrel APS 85a</item>
+        <item>Barrel APS 90a</item>
+        <item>Barrel APS 92.5a</item>
+        <item>Barrel APS 95a</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
+        <item>Stock</item>
         <item>Riptide cup</item>
     </string-array>
 </resources>

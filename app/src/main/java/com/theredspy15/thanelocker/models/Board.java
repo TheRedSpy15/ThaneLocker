@@ -19,6 +19,8 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private byte[] image;
     private String description;
     private String trucks;
+    private int truckWidth = 180; // TODO
+    private String footStop = "None"; // i.e type of footstop if present
     private String deck="Zenit Mini Marble";
     private byte rearAngle=50;
     private byte frontAngle=50;
@@ -225,5 +227,21 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public int getTruckWidth() {
+        return truckWidth;
+    }
+
+    public void setTruckWidth(int truckWidth) {
+        this.truckWidth = truckWidth;
+    }
+
+    public String getFootStop() {
+        return footStop;
+    }
+
+    public void setFootStop(String footStop) {
+        this.footStop = footStop;
     }
 }

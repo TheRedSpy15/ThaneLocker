@@ -45,6 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="From Camera"
+                    android:onClick="fromCamera"
                     android:textColor="@color/purple_500"
                     app:backgroundTint="@android:color/transparent"
                     app:cornerRadius="20dp"
@@ -52,7 +53,8 @@
                     app:strokeWidth="2dp" />
 
                 <Space
-                    android:layout_width="10dp"
+                    android:layout_width="0dp"
+                    android:layout_marginHorizontal="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
@@ -216,6 +218,7 @@
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
                 android:text="Create Board"
+                android:onClick="create"
                 app:backgroundTint="@android:color/transparent"
                 app:cornerRadius="20dp"
                 android:textColor="@color/purple_500"
