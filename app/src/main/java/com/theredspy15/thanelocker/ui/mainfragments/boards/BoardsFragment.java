@@ -78,7 +78,7 @@ public class BoardsFragment extends Fragment {
 
                     button.setOnLongClickListener(v->{
                         AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-                        alertDialog.setTitle("Remove board from session");
+                        alertDialog.setTitle("Delete Board");
                         alertDialog.setMessage("Are you sure?");
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
                                 (dialog, which) -> {
