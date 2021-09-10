@@ -24,24 +24,51 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="300dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="169dp"
                 android:scaleType="centerCrop"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/ic_baseline_image_24" />
 
-            <Button
-                android:id="@+id/buttonCamera"
-                android:onClick="fromCamera"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add image (camera)" />
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonGallery"
-                android:onClick="fromGallery"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add image (gallery)" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From Camera"
+                    android:textColor="@color/purple_500"
+                    app:backgroundTint="@android:color/transparent"
+                    app:cornerRadius="20dp"
+                    app:strokeColor="@color/purple_500"
+                    app:strokeWidth="2dp" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:onClick="fromGallery"
+                    android:text="From Gallery"
+                    android:textColor="@color/purple_500"
+                    app:backgroundTint="@android:color/transparent"
+                    app:cornerRadius="20dp"
+                    app:strokeColor="@color/purple_500"
+                    app:strokeWidth="2dp" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/editTextBoardName"
@@ -74,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Rear Angle"
+                android:hint="Rear Angle (Default: 50)"
                 android:inputType="number" />
 
             <EditText
@@ -82,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Front Angle"
+                android:hint="Front Angle (Default: 50)"
                 android:inputType="number" />
 
             <Spinner
@@ -129,12 +156,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonCreate"
-                android:onClick="create"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:text="Create Board"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="20dp"
+                android:textColor="@color/purple_500"
+                app:strokeColor="@color/purple_500"
+                app:strokeWidth="2dp" />
         </LinearLayout>
     </ScrollView>
 
