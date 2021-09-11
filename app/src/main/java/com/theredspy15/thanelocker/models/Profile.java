@@ -8,7 +8,6 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Profile implements Serializable {
@@ -17,7 +16,7 @@ public class Profile implements Serializable {
     private int level = 1;
     private int level_xp = 0; // 0-100 for all levels
     private String name = "John Doe";
-    private byte age = 18;
+    private int age = 18;
     private String description = "just another awesome skater";
     private String state = "California";
     private String country = "United States";
@@ -37,7 +36,7 @@ public class Profile implements Serializable {
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("localProfile", null);
-        if (json != null) localProfile = gson.fromJson(json, new TypeToken<HashMap<Integer,Board>>() {}.getType());
+        if (json != null) localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
         else localProfile = new Profile();
     }
 
@@ -61,8 +60,6 @@ public class Profile implements Serializable {
                 sessionsWithLocalProfile.add(session);
         }
 
-        //if (sessionsWithLocalProfile.isEmpty()) sessionsWithLocalProfile().add(new Session());
-
         return sessionsWithLocalProfile;
     }
 
@@ -75,8 +72,6 @@ public class Profile implements Serializable {
             if (board != null && board.getUser_id() == localProfile.getId())
                 boardsWithLocalProfile.add(board);
         }
-
-        if (boardsWithLocalProfile.isEmpty()) boardsWithLocalProfile.add(new Board());
 
         return boardsWithLocalProfile;
     }
@@ -107,14 +102,6 @@ public class Profile implements Serializable {
         this.name = name;
     }
 
-    public byte getAge() {
-        return age;
-    }
-
-    public void setAge(byte age) {
-        this.age = age;
-    }
-
     public byte[] getImage() {
         return image;
     }
@@ -137,6 +124,14 @@ public class Profile implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getCountry() {

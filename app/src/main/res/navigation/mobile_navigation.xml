@@ -72,7 +72,7 @@
         tools:layout="@layout/fragment_skatemap" />
     <activity
         android:id="@+id/editProfileActivity"
-        android:name="com.theredspy15.thanelocker.EditProfileActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity"
         android:label="activity_edit_profile"
         tools:layout="@layout/activity_edit_profile" />
     <activity

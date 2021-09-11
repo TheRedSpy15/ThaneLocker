@@ -25,11 +25,11 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.theredspy15.thanelocker.EditProfileActivity;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
+import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -57,6 +57,13 @@ public class ProfileFragment extends Fragment {
 
     private synchronized void loadCharts() {
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+        binding.nameText.setText(Profile.localProfile.getName());
+        binding.descriptionView.setText(Profile.localProfile.getDescription());
+
+        if (Profile.localProfile.getImage() != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(Profile.localProfile.getImage(), 0, Profile.localProfile.getImage().length);
+            binding.profilePictureView.setImageBitmap(bitmap);
+        }
 
         loadFavoriteBoard();
         loadSpeedsChart();

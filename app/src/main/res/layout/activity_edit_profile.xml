@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.theredspy15.thanelocker.EditProfileActivity">
+    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profilePictureView"

@@ -27,8 +27,6 @@ import java.io.InputStream;
 
 public class NewBoardActivity extends AppCompatActivity {
 
-    private static final int TAKE_PICTURE = 1;
-
     EditText nameEditText;
     Spinner truckSpinner;
     Spinner wheelsSpinner;

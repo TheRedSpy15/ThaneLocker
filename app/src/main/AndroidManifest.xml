@@ -41,7 +41,7 @@
             android:foregroundServiceType="location" />
 
         <activity
-            android:name="com.theredspy15.thanelocker.EditProfileActivity"
+            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity"
             android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:label="Edit Profile"
             android:screenOrientation="portrait"
