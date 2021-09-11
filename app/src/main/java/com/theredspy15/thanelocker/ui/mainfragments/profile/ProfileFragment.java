@@ -50,12 +50,12 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        loadCharts();
+        loadAllData();
 
         return root;
     }
 
-    private synchronized void loadCharts() {
+    private synchronized void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         binding.nameText.setText(Profile.localProfile.getName());
         binding.descriptionView.setText(Profile.localProfile.getDescription());
@@ -80,6 +80,7 @@ public class ProfileFragment extends Fragment {
 
     private synchronized void loadTextViewStats() {
         float tDistance = 0;
+        float tAvgDistance = 0;
         float tAvgSpeed = 0;
 
         for (Session session : sessions) {
@@ -96,11 +97,14 @@ public class ProfileFragment extends Fragment {
             System.out.println(session.getTotalDistance());
 
            tDistance += Float.parseFloat(session.getTotalDistance());
+           tAvgDistance += Float.parseFloat(session.getTotalDistance());
            tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
         }
         tAvgSpeed = tAvgSpeed / sessions.size();
+        tAvgDistance = tAvgDistance / sessions.size();
 
         binding.totalDistanceView.setText(tDistance+" Miles");
+        binding.avgDistanceView.setText(tAvgDistance+" Miles");
         binding.avgSpeedView.setText(tAvgSpeed+" MPH");
     }
 

@@ -126,7 +126,7 @@ public class SessionsFragment extends Fragment {
         }
     }
 
-    private boolean checkPermission() {
+    private boolean checkPermission() { // TODO: check that gps is even on
         if (!PermissionChecker.checkPermissionLocation(requireContext())) PermissionChecker.requestPermissionLocation(requireContext(),requireActivity());
 
         return PermissionChecker.checkPermissionLocation(requireContext());

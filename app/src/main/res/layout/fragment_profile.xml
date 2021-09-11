@@ -90,6 +90,16 @@
                     android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Average Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgDistanceView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
         </TableLayout>
 
         <com.google.android.material.button.MaterialButton
