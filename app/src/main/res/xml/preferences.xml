@@ -30,12 +30,19 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="News Sources">
         <CheckBoxPreference
-            app:iconSpaceReserved="false"
+            app:iconSpaceReserved="true"
             android:defaultValue="true"
             android:key="downhill254"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
             android:title="DownHill254" />
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="false"
+            android:key="longboardbrand"
+            android:persistent="true"
+            app:icon="@drawable/ic_baseline_article_24"
+            android:title="LongboardBrand Blog" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
         <SwitchPreference
