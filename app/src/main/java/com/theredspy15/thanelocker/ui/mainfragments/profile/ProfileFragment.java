@@ -39,8 +39,8 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel profileViewModel;
     private FragmentProfileBinding binding;
 
-    private final LinkedList<Session> sessions = Profile.sessionsWithProfile();
-    private final LinkedList<Board> boards = Profile.boardsWithProfile();
+    private final LinkedList<Session> sessions = Profile.sessionsWithLocalProfile();
+    private final LinkedList<Board> boards = Profile.boardsWithLocalProfile();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -120,6 +120,15 @@ public class ProfileFragment extends Fragment {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
             Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
             button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+            linearLayout.addView(button,6,layout);
+        } else {
+            Button button = new Button(requireContext());
+            button.setText("No Favorite");
+            button.setTextSize(18);
+            button.setBackgroundColor(requireContext().getColor(R.color.grey));
+            button.getBackground().setAlpha(64);
+            button.setPadding(0,0,0,0);
+            button.setAllCaps(false);
             linearLayout.addView(button,6,layout);
         }
     }

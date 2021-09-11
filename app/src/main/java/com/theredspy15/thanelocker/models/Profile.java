@@ -51,38 +51,44 @@ public class Profile implements Serializable {
         prefsEditor.apply();
     }
 
-    public static LinkedList<Session> sessionsWithProfile() { // TODO: overload later on to loading from database when thats created
-        LinkedList<Session> sessionsWithBoard = new LinkedList<>();
+    public static LinkedList<Session> sessionsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+        LinkedList<Session> sessionsWithLocalProfile = new LinkedList<>();
 
         for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
 
             if (session != null && session.getUser_id() == localProfile.getId())
-                sessionsWithBoard.add(session);
+                sessionsWithLocalProfile.add(session);
         }
 
-        return sessionsWithBoard;
+        //if (sessionsWithLocalProfile.isEmpty()) sessionsWithLocalProfile().add(new Session());
+
+        return sessionsWithLocalProfile;
     }
 
-    public static LinkedList<Board> boardsWithProfile() { // TODO: overload later on to loading from database when thats created
-        LinkedList<Board> sessionsWithBoard = new LinkedList<>();
+    public static LinkedList<Board> boardsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+        LinkedList<Board> boardsWithLocalProfile = new LinkedList<>();
 
         for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id);
 
             if (board != null && board.getUser_id() == localProfile.getId())
-                sessionsWithBoard.add(board);
+                boardsWithLocalProfile.add(board);
         }
 
-        return sessionsWithBoard;
+        if (boardsWithLocalProfile.isEmpty()) boardsWithLocalProfile.add(new Board());
+
+        return boardsWithLocalProfile;
     }
 
     public static Board favoriteBoard() {
         LinkedList<Integer> boardsFromSessions = new LinkedList<>();
-        for (Session session : sessionsWithProfile())
-            for (int board_id : session.getBoard_ids()) boardsFromSessions.add(board_id);
+        for (Session session : sessionsWithLocalProfile())
+            boardsFromSessions.addAll(session.getBoard_ids());
 
-        return Board.savedBoards.get(App.mostCommon(boardsFromSessions));
+        if (!boardsFromSessions.isEmpty())
+            return Board.savedBoards.get(App.mostCommon(boardsFromSessions));
+        return null;
     }
 
     public int getId() {

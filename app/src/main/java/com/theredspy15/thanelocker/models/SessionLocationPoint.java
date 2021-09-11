@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class SessionLocationPoint implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234569L;
-    private float speed;
-    private double latitude;
-    private double longitude;
-    private double altitude;
+    private float speed = 0;
+    private double latitude = 0.0;
+    private double longitude = 0.0;
+    private double altitude = 0.0;
 
     public float getSpeed() {
         return speed;

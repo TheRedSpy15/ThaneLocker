@@ -13,12 +13,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
-    private int id;
+    private int id = 0;
     private int user_id = 0;
-    private String name;
+    private String name = "board";
     private byte[] image;
-    private String description;
-    private String trucks;
+    private String description = "";
+    private String trucks = "";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
     private String deck="Zenit Mini Marble";
@@ -26,7 +26,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private byte frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
     private String bd_bushings="Stock Bushings";
-    private String wheels;
+    private String wheels = "";
     private String bearings="Standard ABEC Bearings";
     private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
     private double riserHt=0.0;
