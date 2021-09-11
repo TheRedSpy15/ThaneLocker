@@ -141,4 +141,9 @@
         <item>Stock</item>
         <item>Riptide cup</item>
     </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Stock</item>
+        <item>Riptide cup</item>
+    </string-array>
 </resources>

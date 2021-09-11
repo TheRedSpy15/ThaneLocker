@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thanelocker.databinding.ActivityEditProfileBinding;
 import com.theredspy15.thanelocker.models.Profile;
+import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -87,7 +88,13 @@ public class EditProfileActivity extends AppCompatActivity {
             });
 
     public void changePicture(View view) {
-        mGetContent.launch("image/*");
+        if (checkPermission()) mGetContent.launch("image/*");
+    }
+
+    private boolean checkPermission() {
+        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(this,EditProfileActivity.this);
+
+        return PermissionChecker.checkPermissionGallery(this);
     }
 
     public void save(View view) {

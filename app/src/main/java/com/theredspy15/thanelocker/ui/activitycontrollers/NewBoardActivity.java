@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thanelocker.R;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -119,12 +120,24 @@ public class NewBoardActivity extends AppCompatActivity {
                 imageBytes = baoStream.toByteArray();
             });
 
+    private boolean checkPermissionGallery() {
+        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(this,NewBoardActivity.this);
+
+        return PermissionChecker.checkPermissionGallery(this);
+    }
+
+    private boolean checkPermissionCamera() {
+        if (!PermissionChecker.checkPermissionCamera(this)) PermissionChecker.requestPermissionCamera(this,NewBoardActivity.this);
+
+        return PermissionChecker.checkPermissionCamera(this);
+    }
+
     public void fromGallery(View view) {
-        mGetContent.launch("image/*");
+        if (checkPermissionGallery()) mGetContent.launch("image/*");
     }
 
     public void fromCamera(View view) {
-        mGetCamera.launch(null);
+        if (checkPermissionCamera()) mGetCamera.launch(null);
     }
 
     public void create(View view) {
@@ -140,7 +153,7 @@ public class NewBoardActivity extends AppCompatActivity {
         board.setWheels(wheelsSpinner.getSelectedItem().toString());
         board.setBearings(bearingsSpinner.getSelectedItem().toString());
         board.setPivot(pivotSpinner.getSelectedItem().toString());
-        board.setRiserHt(Double.parseDouble(riserEditText.getText().toString()));
+        board.setRiserHt(riserEditText.getText().toString());
         board.setGripTp(griptapeSpinner.getSelectedItem().toString());
 
         Board.savedBoards.put(board.getId(), board);

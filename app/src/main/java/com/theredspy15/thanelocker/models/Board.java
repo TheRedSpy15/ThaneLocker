@@ -29,7 +29,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String wheels = "";
     private String bearings="Standard ABEC Bearings";
     private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
-    private double riserHt=0.0;
+    private String riserHt="1/16";
     private LinkedList<String> tags = new LinkedList<>();
     private String gripTp="Standard Griptape";
     private LinkedList<Session> sessions;
@@ -173,11 +173,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.bearings = bearings;
     }
 
-    public double getRiserHt() {
+    public String getRiserHt() {
         return riserHt;
     }
 
-    public void setRiserHt(double riserHt) {
+    public void setRiserHt(String riserHt) {
         this.riserHt = riserHt;
     }
 

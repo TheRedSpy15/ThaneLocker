@@ -25,6 +25,7 @@ import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.LocationService;
+import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -125,27 +126,34 @@ public class SessionsFragment extends Fragment {
         }
     }
 
-    public void loadStartSession(View view) {
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("Start Session?");
-        alertDialog.setMessage("You're GPS data will be used");
-        alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                (dialog, which) -> {
-                    dialog.dismiss();
-                    stopService();
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
-                (dialog, which) -> {
-                    PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
-                    PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                            "MyApp::MyWakelockTag");
-                    wakeLock.acquire(60*60*1000L /*60 minutes*/);
+    private boolean checkPermission() {
+        if (!PermissionChecker.checkPermissionLocation(requireContext())) PermissionChecker.requestPermissionLocation(requireContext(),requireActivity());
 
-                    startService();
-                    dialog.dismiss();
-                });
-        alertDialog.show();
+        return PermissionChecker.checkPermissionLocation(requireContext());
+    }
+
+    public void loadStartSession(View view) {
+        if (checkPermission()) {
+            AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+            alertDialog.setTitle("Start Session?");
+            alertDialog.setMessage("You're GPS data will be used");
+            alertDialog.setCancelable(false);
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                    (dialog, which) -> {
+                        dialog.dismiss();
+                    });
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
+                    (dialog, which) -> {
+                        PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
+                        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                                "MyApp::MyWakelockTag");
+                        wakeLock.acquire(60*60*1000L /*60 minutes*/);
+
+                        startService();
+                        dialog.dismiss();
+                    });
+            alertDialog.show();
+        }
     }
 
     public void stopSession(View view) {
