@@ -144,7 +144,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private synchronized void loadSpeedsChart() { // TODO: maybe chart animationx here? have to try with more data
+    private synchronized void loadSpeedsChart() {
         LineChart chart = binding.speedsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
