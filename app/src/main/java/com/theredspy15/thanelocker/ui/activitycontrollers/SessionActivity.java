@@ -409,6 +409,7 @@ public class SessionActivity extends AppCompatActivity {
 
             // set data
             chart.setData(data);
+            chart.animateX(3000);
         }
     }
 
