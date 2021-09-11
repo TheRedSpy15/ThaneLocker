@@ -183,59 +183,49 @@
             android:showDividers="middle"
             android:shrinkColumns="0"
             android:stretchColumns="1">
-
             <TableRow>
                 <TextView
                     android:text="Distance Riden:"
                     android:textAlignment="textStart" />
-
                 <TextView
-                    android:id="@+id/cityView"
-                    android:text="Fort Myers"
+                    android:id="@+id/totalDistanceView"
+                    android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>
-
             <TableRow>
                 <TextView
                     android:text="Average Distance:"
                     android:textAlignment="textStart" />
-
                 <TextView
                     android:id="@+id/avgDistanceView"
-                    android:text="20 MPH"
+                    android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>
-
             <TableRow>
                 <TextView
                     android:text="Furthest Distance:"
                     android:textAlignment="textStart" />
-
                 <TextView
                     android:id="@+id/longestDistanceView"
-                    android:text="20 MPH"
+                    android:text="00.0 Miles"
                     android:textAlignment="textEnd" />
             </TableRow>
-
             <TableRow>
                 <TextView
                     android:text="Top Speed:"
                     android:textAlignment="textStart" />
-
                 <TextView
                     android:id="@+id/topSpeedView"
-                    android:text="20 MPH"
+                    android:text="00.0 MPH"
                     android:textAlignment="textEnd" />
             </TableRow>
-
             <TableRow>
                 <TextView
                     android:text="Average Speed:"
                     android:textAlignment="textStart" />
-
                 <TextView
-                    android:id="@+id/durationView"
-                    android:text="0.0 hours"
+                    android:id="@+id/avgSpeedView"
+                    android:text="00.0 MPH"
                     android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
@@ -254,7 +244,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/deleteBoardButton"

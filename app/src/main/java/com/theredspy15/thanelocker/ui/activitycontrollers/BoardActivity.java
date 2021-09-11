@@ -65,6 +65,14 @@ public class BoardActivity extends AppCompatActivity {
         binding.boardContent.wheelsView.setText(board.getWheels());
         binding.boardContent.bearingsView.setText(board.getBearings());
 
+        if (!Session.sessionsWithBoard(board.getId()).isEmpty()) {
+            binding.boardContent.totalDistanceView.setText(board.totalDistance()+" Miles");
+            binding.boardContent.avgDistanceView.setText(board.avgDistance()+" Miles");
+            binding.boardContent.longestDistanceView.setText(board.furthestDistance()+" Miles");
+            binding.boardContent.topSpeedView.setText(board.fastestSpeed()+" MPH");
+            binding.boardContent.avgSpeedView.setText(board.avgSpeed()+" MPH");
+        }
+
         loadSessions();
     }
 

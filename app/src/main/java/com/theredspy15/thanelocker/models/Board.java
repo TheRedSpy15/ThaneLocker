@@ -70,6 +70,45 @@ public class Board implements Serializable { // TODO: parcelable in the future
         prefsEditor.apply();
     }
 
+    public float fastestSpeed() {
+        float fastest = 0;
+        for (Session session : Session.sessionsWithBoard(getId()))
+            if (Float.parseFloat(session.getTopSpeed()) > fastest)
+                fastest = Float.parseFloat(session.getTopSpeed());
+        return fastest;
+    }
+
+    public float avgSpeed() {
+        float avg = 0;
+        for (Session session : Session.sessionsWithBoard(getId()))
+            avg += Float.parseFloat(session.getAvgSpeed());
+        avg = avg / Session.sessionsWithBoard(getId()).size();
+        return avg;
+    }
+
+    public float furthestDistance() {
+        float furthest = 0;
+        for (Session session : Session.sessionsWithBoard(getId()))
+            if (Float.parseFloat(session.getTotalDistance()) > furthest)
+                furthest = Float.parseFloat(session.getTotalDistance());
+        return furthest;
+    }
+
+    public float totalDistance() {
+        float total = 0;
+        for (Session session : Session.sessionsWithBoard(getId()))
+            total += Float.parseFloat(session.getTotalDistance());
+        return total;
+    }
+
+    public float avgDistance() {
+        float avg = 0;
+        for (Session session : Session.sessionsWithBoard(getId()))
+            avg += Float.parseFloat(session.getTotalDistance());
+        avg = avg / Session.sessionsWithBoard(getId()).size();
+        return avg;
+    }
+
     public static int BoardNameToId(String name) {
         LinkedList<Board> boards = new LinkedList<>();
         Board foundBoard = new Board();

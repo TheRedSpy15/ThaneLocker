@@ -94,8 +94,6 @@ public class ProfileFragment extends Fragment {
             if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
             binding.furthestDistanceView.setText(top+" Miles");
 
-            System.out.println(session.getTotalDistance());
-
            tDistance += Float.parseFloat(session.getTotalDistance());
            tAvgDistance += Float.parseFloat(session.getTotalDistance());
            tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
