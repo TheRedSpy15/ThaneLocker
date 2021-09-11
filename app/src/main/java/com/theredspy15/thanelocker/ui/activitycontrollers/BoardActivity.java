@@ -40,6 +40,7 @@ public class BoardActivity extends AppCompatActivity {
         populateViews(board);
 
         binding.boardContent.deleteBoardButton.setOnClickListener(this::deleteBoard);
+        binding.boardContent.editButton.setOnClickListener(this::editBoard);
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
@@ -74,6 +75,12 @@ public class BoardActivity extends AppCompatActivity {
         }
 
         loadSessions();
+    }
+
+    void editBoard(View view) {
+        Intent myIntent = new Intent(this, NewBoardActivity.class);
+        myIntent.putExtra("board", board);
+        startActivity(myIntent);
     }
 
     void loadSessions() {
