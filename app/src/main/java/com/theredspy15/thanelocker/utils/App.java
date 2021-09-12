@@ -3,10 +3,14 @@ package com.theredspy15.thanelocker.utils;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.example.thanelocker.R;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -98,6 +102,15 @@ public class App extends Application {
     public static void updateTheme() {
         if (MainActivity.preferences.getBoolean("forcedark", false))
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+    }
+
+    // for charts
+    public static int getThemeTextColor(Context context) {
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.colorOnSecondary, typedValue, true);
+        @ColorInt int color = typedValue.data;
+        return color;
     }
 
 }

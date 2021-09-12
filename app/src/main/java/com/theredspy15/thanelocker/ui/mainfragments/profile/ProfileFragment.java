@@ -30,6 +30,7 @@ import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
+import com.theredspy15.thanelocker.utils.App;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -193,6 +194,14 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
+
+        int color = App.getThemeTextColor(requireContext());
+        chart.getData().setValueTextColor(color);
+        chart.getData().setValueTextColor(color);
+        chart.getXAxis().setTextColor(color);
+        chart.getAxisLeft().setTextColor(color);
+        chart.getAxisRight().setTextColor(color);
+        chart.getLegend().setTextColor(color);
     }
 
     private synchronized void loadTopSpeedsChart() {
@@ -247,6 +256,14 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
+
+        int color = App.getThemeTextColor(requireContext());
+        chart.getData().setValueTextColor(color);
+        chart.getData().setValueTextColor(color);
+        chart.getXAxis().setTextColor(color);
+        chart.getAxisLeft().setTextColor(color);
+        chart.getAxisRight().setTextColor(color);
+        chart.getLegend().setTextColor(color);
     }
 
     private synchronized void loadDistancesChart() {
@@ -311,6 +328,14 @@ public class ProfileFragment extends Fragment {
 
             // set data
             chart.setData(data);
+
+            int color = App.getThemeTextColor(requireContext());
+            chart.getData().setValueTextColor(color);
+            chart.getData().setValueTextColor(color);
+            chart.getXAxis().setTextColor(color);
+            chart.getAxisLeft().setTextColor(color);
+            chart.getAxisRight().setTextColor(color);
+            chart.getLegend().setTextColor(color);
         }
     }
 
@@ -376,6 +401,14 @@ public class ProfileFragment extends Fragment {
 
             // set data
             chart.setData(data);
+
+            int color = App.getThemeTextColor(requireContext());
+            chart.getData().setValueTextColor(color);
+            chart.getData().setValueTextColor(color);
+            chart.getXAxis().setTextColor(color);
+            chart.getAxisLeft().setTextColor(color);
+            chart.getAxisRight().setTextColor(color);
+            chart.getLegend().setTextColor(color);
         }
     }
 }

@@ -410,6 +410,14 @@ public class SessionActivity extends AppCompatActivity {
             // set data
             chart.setData(data);
             chart.animateX(3000);
+
+            int color = App.getThemeTextColor(this);
+            chart.getData().setValueTextColor(color);
+            chart.getData().setValueTextColor(color);
+            chart.getXAxis().setTextColor(color);
+            chart.getAxisLeft().setTextColor(color);
+            chart.getAxisRight().setTextColor(color);
+            chart.getLegend().setTextColor(color);
         }
     }
 
