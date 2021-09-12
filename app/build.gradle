@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.theredspy15.thanelocker"
-        minSdk 23
+        minSdk 24
         targetSdk 30
         versionCode 1
         versionName "1.0"

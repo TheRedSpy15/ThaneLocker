@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.theredspy15.thanelocker.ui.mainfragments.calculator.CalculatorFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Bushing Calculator"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Weight (lbs)"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cruising" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Freeride/Downhill" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:text="Calculate"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="20dp"
+        android:textColor="@color/purple_500"
+        app:strokeColor="@color/purple_500"
+        app:strokeWidth="2dp" />
+
+    <TextView
+        android:id="@+id/recommendedTextView"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+</LinearLayout>
