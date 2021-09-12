@@ -108,7 +108,8 @@ public class NewsFragment extends Fragment {
             feed = input.build(new XmlReader(new URL(url)));
         }
 
-        return feed.getEntries();
+        if (feed != null) return feed.getEntries();
+        return null;
     }
 
     @Override
