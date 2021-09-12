@@ -49,6 +49,7 @@
             app:icon="@drawable/ic_baseline_dark_mode_24"
             android:defaultValue="false"
             android:key="forcedark"
+            android:summary="Restart app to take effect"
             android:persistent="true"
             android:title="Force Dark Theme" />
     </PreferenceCategory>

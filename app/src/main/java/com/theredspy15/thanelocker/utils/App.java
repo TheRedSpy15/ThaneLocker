@@ -5,8 +5,11 @@ import android.app.Application;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -90,6 +93,11 @@ public class App extends Application {
             }
         }
         for (int id : list) Session.savedSessionIds.remove((Integer) id);
+    }
+
+    public static void updateTheme() {
+        if (MainActivity.preferences.getBoolean("forcedark", false))
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 
 }

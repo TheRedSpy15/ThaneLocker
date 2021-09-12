@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        App.updateTheme();
+
         Profile.load();
         Board.load();
         Session.load();
