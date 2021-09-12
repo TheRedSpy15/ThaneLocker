@@ -84,6 +84,7 @@ public class NewsFragment extends Fragment {
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
                 requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+                binding.progressLoader.setVisibility(View.GONE);
             }
         } else {
             TextView textView = new TextView(requireContext()); // no news feeds selected
@@ -91,6 +92,7 @@ public class NewsFragment extends Fragment {
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+            binding.progressLoader.setVisibility(View.GONE);
         }
     }
 
