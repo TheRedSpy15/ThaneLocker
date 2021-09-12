@@ -1,14 +1,13 @@
 package com.theredspy15.thanelocker.ui.mainfragments.news;
 
-import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,6 +20,7 @@ import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,8 +41,7 @@ public class NewsFragment extends Fragment {
         binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        if (entries == null) {
-            Thread thread = new Thread(() -> {
+        Thread thread = new Thread(() -> {
             try  {
                 List<SyndEntry> entries;
                 entries=getFeed();
@@ -52,14 +51,17 @@ public class NewsFragment extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            });
-            thread.start();
-        } else displayEntries(entries);
+        });
+        thread.start();
 
         return root;
     }
 
     public void displayEntries(List<SyndEntry> entries) {
+        binding.feedLayout.removeAllViews();
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(0, 20, 0, 20);
+
         if (entries != null) {
             for (SyndEntry entry: entries) {
                 Button button = new Button(getContext());
@@ -67,8 +69,6 @@ public class NewsFragment extends Fragment {
                 button.setTextSize(18);
                 button.setAllCaps(false);
                 button.setPadding(50,50,50,50);
-                button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getUri()))));
-                LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 layout.setMargins(0,20,0,20);
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
@@ -77,12 +77,37 @@ public class NewsFragment extends Fragment {
                 binding.progressLoader.setVisibility(View.GONE);
                 binding.feedLayout.addView(button, layout);
             }
+
+            if (entries.isEmpty()) {
+                TextView textView = new TextView(requireContext()); // no news feeds selected
+                textView.setText("No news");
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextSize(18);
+                requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+            }
+        } else {
+            TextView textView = new TextView(requireContext()); // no news feeds selected
+            textView.setText("No news");
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setTextSize(18);
+            requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
         }
     }
 
     public List<SyndEntry> getFeed() throws IOException, FeedException {
-        String url = "https://downhill254.com/blog/feed";
-        SyndFeed feed = new SyndFeedInput().build(new XmlReader(new URL(url)));
+        SyndFeedInput input = new SyndFeedInput();
+        SyndFeed feed = null;
+
+        if (MainActivity.preferences.getBoolean("downhill254",true)) {
+            String url = "https://downhill254.com/blog/feed";
+            feed = input.build(new XmlReader(new URL(url)));
+        }
+
+        if (MainActivity.preferences.getBoolean("longboardbrand",false)) {
+            String url = "https://longboardbrand.com/blog/feed";
+            feed = input.build(new XmlReader(new URL(url)));
+        }
+
         return feed.getEntries();
     }
 

@@ -51,9 +51,5 @@
             android:key="forcedark"
             android:persistent="true"
             android:title="Force Dark Theme" />
-        <Preference
-            app:icon="@drawable/ic_baseline_book_24"
-            android:title="Glossary"
-            android:summary="Terms and basic concepts for longboarding" />
     </PreferenceCategory>
 </androidx.preference.PreferenceScreen>
