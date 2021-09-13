@@ -1,11 +1,14 @@
 package com.theredspy15.thanelocker.ui.mainfragments.calculator;
 
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -37,12 +40,31 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
     }
 
     public void calculate(View view) {
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(30, 20, 30, 20);
+
         if (!TextUtils.isEmpty(binding.editTextWeight.getText().toString())) { // TODO: reset color
             int weight = (int) (Integer.parseInt(binding.editTextWeight.getText().toString())/2.2046226218);
 
-            String duro = weightToDuro(weight,true);
-            binding.recommendedTextView.setText(duro);
+            String duro = weightToDuro(weight,false);
+            binding.recommendedTextView.setText("Recommended Durometer: "+duro);
             binding.recommendedTextView.setVisibility(View.VISIBLE);
+            binding.basedOnTextView.setVisibility(View.VISIBLE);
+            binding.tipTextView.setVisibility(View.VISIBLE);
+
+            // radio buttons (shape)
+            String recommendedShape = "";
+            if (binding.radioButtonCruise.isChecked()) recommendedShape = "Cone/Cone, Cone/Barrel";
+            else if (binding.radioButtonFreeride.isChecked()) recommendedShape = "Barrel/Barrel";
+
+            if (!recommendedShape.equals("")) { // TODO: fix not changing after already being calculated with different radio button
+                TextView textView = new TextView(requireContext());
+                textView.setText("Recommended Shape: "+recommendedShape);
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextSize(20);
+                textView.setTypeface(null, Typeface.BOLD);
+                binding.calculatorLayout.addView(textView, layout);
+            }
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
@@ -51,6 +73,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
         }
     }
 
+    // based on: https://github.com/Widdershin/BushingPicker/blob/master/bushings.py
     private String weightToDuro(int weight, boolean boardside) {
         LinkedList<Integer> bushings = new LinkedList<>();
         bushings.add(78);
@@ -73,6 +96,6 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
         Optional<Integer> duro = bushings.stream()
                 .min(Comparator.comparingDouble(i -> Math.abs(i - approx_duro)));
 
-        return String.valueOf(duro.get() + "a");
+        return duro.get() + "a";
     }
 }
