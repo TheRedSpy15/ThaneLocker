@@ -206,6 +206,8 @@ public class SessionsFragment extends Fragment {
     }
 
     void prepareSession() {
+        newSession = new Session();
+
         DateFormat df = new SimpleDateFormat("EEE, MMM d (hh:mm a)");
         String date = df.format(Calendar.getInstance().getTime());
         newSession.setName(date);
