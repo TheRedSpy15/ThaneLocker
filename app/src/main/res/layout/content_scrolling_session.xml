@@ -28,7 +28,7 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAddTag"
-                android:text="+"
+                android:text="@string/plus_sign"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </com.google.android.material.chip.ChipGroup>
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
-            android:text="Boards Used:"
+            android:text="@string/boards_used"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -76,7 +76,7 @@
             android:textColor="@color/purple_500"
             app:strokeColor="@color/purple_500"
             app:strokeWidth="2dp"
-            android:text="Add Board" />
+            android:text="@string/add_board" />
 
         <TableLayout
             android:layout_width="300dp"
@@ -91,56 +91,56 @@
 
             <TableRow>
                 <TextView
-                    android:text="City:"
+                    android:text="@string/city"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/cityView"
-                    android:text="Fort Myers"
+                    android:text="@string/fort_myers"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Top Speed:"
+                    android:text="@string/top_speed"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/topSpeedView"
-                    android:text="20 MPH"
+                    android:text="@string/_20_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Duration:"
+                    android:text="@string/duration"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/durationView"
-                    android:text="0.0 hours"
+                    android:text="@string/_0_0_hours"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Start Time:"
+                    android:text="@string/start_time"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/timeStartView"
-                    android:text="12:00pm"
+                    android:text="@string/_12_00pm"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="End Time:"
+                    android:text="@string/end_time"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/timeEndView"
-                    android:text="12:00pm"
+                    android:text="@string/_12_00pm"
                     android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
@@ -152,7 +152,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
-            android:text="Delete Session"
+            android:text="@string/delete_session"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"
             android:textColor="#FF0000"

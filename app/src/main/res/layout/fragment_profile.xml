@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="John Doe"
+            android:text="@string/john_doe"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -37,11 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Just another awesome Skater" />
+            android:text="@string/just_another_awesome_skater" />
 
         <TableLayout
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -52,52 +52,52 @@
 
             <TableRow>
                 <TextView
-                    android:text="Fastest Speed:"
+                    android:text="@string/fastest_speed"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/topSpeedView"
-                    android:text="00.0 MPH"
+                    android:text="@string/_00_0_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Average Speed:"
+                    android:text="@string/average_speed"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/avgSpeedView"
-                    android:text="00.0 MPH"
+                    android:text="@string/_00_0_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Furthest Distance:"
+                    android:text="@string/furthest_distance"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/furthestDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Total Distance:"
+                    android:text="@string/total_distance"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/totalDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Average Distance:"
+                    android:text="@string/average_distance"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/avgDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
@@ -109,7 +109,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
-            android:text="Edit Profie"
+            android:text="@string/edit_profile"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"
             android:textColor="@color/purple_500"
@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:text="Favorite Board"
+            android:text="@string/favorite_board"
             android:textStyle="bold" />
 
         <TextView
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Average Speeds"
+            android:text="@string/average_speeds"
             android:textStyle="bold" />
 
         <com.github.mikephil.charting.charts.LineChart
@@ -144,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Top Speeds"
+            android:text="@string/top_speeds"
             android:textStyle="bold" />
 
         <com.github.mikephil.charting.charts.LineChart
@@ -158,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Distances"
+            android:text="@string/distances"
             android:textStyle="bold" />
 
         <com.github.mikephil.charting.charts.LineChart
@@ -172,7 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Durations"
+            android:text="@string/durations"
             android:textStyle="bold" />
 
         <com.github.mikephil.charting.charts.LineChart

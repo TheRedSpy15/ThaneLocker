@@ -3,54 +3,54 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="Links to other awesome places">
-        <Preference android:title="Longboard Shop"
+        <Preference android:title="@string/muirskate_title"
             android:key="shop"
             app:iconSpaceReserved="true"
             android:icon="@drawable/ic_baseline_store_24"
-            android:summary="Go to Muirskate.com the best place to order anything for Longboarding">
+            android:summary="@string/muirskate_sum">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://www.muirskate.com" />
         </Preference>
-        <Preference android:title="Longboarding Family Discord"
+        <Preference android:title="@string/discord_title"
             android:key="discord"
             app:iconSpaceReserved="true"
             android:icon="@drawable/ic_baseline_discord_24"
-            android:summary="Join the longboarding family discord server, the best community to meet others">
+            android:summary="@string/discord_sum">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://discord.gg/2EJ2CzAHTZ" />
         </Preference>
-        <Preference android:title="Source Code on GitHub"
+        <Preference android:title="@string/github_title"
             android:key="github"
             app:iconSpaceReserved="true"
             android:icon="@drawable/ic_baseline_code_24"
-            android:summary="View the source code to the app hosted on GitHub, and maybe even contribute!">
+            android:summary="@string/github_sum">
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://github.com/TheRedSpy15/ThaneLocker" />
         </Preference>
     </PreferenceCategory>
-    <PreferenceCategory android:title="News Sources">
+    <PreferenceCategory android:title="@string/sources_title">
         <CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="true"
             android:key="downhill254"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
-            android:title="DownHill254" />
+            android:title="@string/downhill254_title" />
         <CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="false"
             android:key="longboardbrand"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
-            android:title="LongboardBrand Blog" />
+            android:title="@string/longboardbrand_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
         <SwitchPreference
             app:icon="@drawable/ic_baseline_dark_mode_24"
             android:defaultValue="false"
             android:key="forcedark"
-            android:summary="Will otherwise follow system settings. Restart app to take effect"
+            android:summary="@string/darktheme_sum"
             android:persistent="true"
-            android:title="Force Dark Theme" />
+            android:title="@string/darktheme_title" />
     </PreferenceCategory>
 </androidx.preference.PreferenceScreen>

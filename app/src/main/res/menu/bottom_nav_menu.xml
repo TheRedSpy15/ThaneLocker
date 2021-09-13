@@ -4,26 +4,26 @@
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_outline_person_24"
-        android:title="Profile" />
+        android:title="@string/profile" />
 
     <item
         android:id="@+id/navigation_boards"
         android:icon="@drawable/ic_outline_inventory_2_24"
-        android:title="Boards" />
+        android:title="@string/boards" />
 
     <item
         android:id="@+id/navigation_sessions"
         android:icon="@drawable/ic_outline_whatshot_24"
-        android:title="Sessions" />
+        android:title="@string/sessions" />
 
     <item
         android:id="@+id/navigation_news"
         android:icon="@drawable/ic_outline_subtitles_24"
-        android:title="News" />
+        android:title="@string/news" />
 
     <item
         android:id="@+id/navigation_skatemap"
         android:icon="@drawable/ic_outline_map_24"
-        android:title="Map" />
+        android:title="@string/map" />
 
 </menu>

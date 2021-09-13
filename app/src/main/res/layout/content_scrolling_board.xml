@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Description"
+            android:text="@string/description"
             android:textStyle="bold" />
 
         <TextView
@@ -31,13 +31,13 @@
             android:layout_marginBottom="15dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:text="Description" />
+            android:text="@string/description" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Statistics"
+            android:text="@string/statistics"
             android:textStyle="bold" />
 
         <TableLayout
@@ -54,60 +54,60 @@
             <TableRow>
 
                 <TextView
-                    android:text="Distance Riden:"
+                    android:text="@string/distance_ridden"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/totalDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:text="Average Distance:"
+                    android:text="@string/average_distance"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/avgDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:text="Furthest Distance:"
+                    android:text="@string/furthest_distance"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/longestDistanceView"
-                    android:text="00.0 Miles"
+                    android:text="@string/_00_0_miles"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:text="Top Speed:"
+                    android:text="@string/top_speed"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/topSpeedView"
-                    android:text="00.0 MPH"
+                    android:text="@string/_00_0_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:text="Average Speed:"
+                    android:text="@string/average_speed"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/avgSpeedView"
-                    android:text="00.0 MPH"
+                    android:text="@string/_00_0_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Parts"
+            android:text="@string/parts"
             android:textStyle="bold" />
 
         <TableLayout
@@ -135,114 +135,114 @@
 
             <TableRow>
                 <TextView
-                    android:text="Deck:"
+                    android:text="@string/deck"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/deckView"
-                    android:text="Zenit Mini Marble"
+                    android:text="@string/zenit_mini_marble"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="6dp">
                 <TextView
-                    android:text="Grip:"
+                    android:text="@string/grip"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/gripView"
-                    android:text="Lokton"
+                    android:text="@string/lokton"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Trucks:"
+                    android:text="@string/trucks"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/trucksView"
-                    android:text="Paris V3"
+                    android:text="@string/paris_v3"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Angle (front):"
+                    android:text="@string/angle_front"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/angleFView"
-                    android:text="50&#xb0;"
+                    android:text="@string/_50_xb0"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Angle (rear):"
+                    android:text="@string/angle_rear"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/angleRView"
-                    android:text="50&#xb0;"
+                    android:text="@string/_50_xb0"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Bushings (board):"
+                    android:text="@string/bushings_board"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/bushingsBdView"
-                    android:text="Riptide 88a WPS Barrel"
+                    android:text="@string/riptide_88a_wps_barrel"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Bushings (road):"
+                    android:text="@string/bushings_road"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/bushingsRdView"
-                    android:text="0.0 hours"
+                    android:text="@string/_0_0_hours"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="6dp">
                 <TextView
-                    android:text="Pivot:"
+                    android:text="@string/pivot"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/pivotView"
-                    android:text="0.0 hours"
+                    android:text="@string/_0_0_hours"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Wheels:"
+                    android:text="@string/wheels"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/wheelsView"
-                    android:text="20 MPH"
+                    android:text="@string/_20_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="5dp">
                 <TextView
-                    android:text="Bearings:"
+                    android:text="@string/bearings"
                     android:textAlignment="textStart" />
 
                 <TextView
                     android:id="@+id/bearingsView"
-                    android:text="20 MPH"
+                    android:text="@string/_20_mph"
                     android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
@@ -253,7 +253,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-            android:text="Edit Setup"
+            android:text="@string/edit_setup"
             android:textColor="@color/purple_500"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"
@@ -264,7 +264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Recent Sessions"
+            android:text="@string/recent_sessions"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -283,7 +283,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
-            android:text="Delete Board"
+            android:text="@string/delete_board"
             android:textColor="#FF0000"
             app:backgroundTint="@android:color/transparent"
             app:cornerRadius="20dp"

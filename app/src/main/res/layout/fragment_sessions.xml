@@ -28,7 +28,7 @@
         android:id="@+id/newSessionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Record Session"
+        android:text="@string/record_session"
         android:paddingTop="5dp"
         android:paddingBottom="10dp"
         android:layout_marginEnd="-5dp"

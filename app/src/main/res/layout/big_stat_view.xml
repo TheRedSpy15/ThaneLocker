@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Avg MPH"
+        android:text="@string/avg_mph"
         app:layout_constraintBottom_toTopOf="@+id/textViewAvgSpeed"
         app:layout_constraintEnd_toEndOf="@+id/textViewAvgSpeed"
         app:layout_constraintHorizontal_bias="0.562"
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Miles"
+        android:text="@string/total_miles"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textViewTotalDistance"
         app:layout_constraintEnd_toEndOf="@+id/textViewTotalDistance"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="00.0"
+        android:text="@string/_00_0"
         android:textSize="80sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="00.0"
+        android:text="@string/_00_0"
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

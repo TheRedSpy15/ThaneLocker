@@ -24,7 +24,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:text="Change"
+        android:text="@string/change"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="20dp"
         android:textColor="@color/purple_500"
@@ -39,7 +39,7 @@
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="John Doe" />
+        android:text="@string/john_doe" />
 
     <EditText
         android:id="@+id/editTextDescription"
@@ -48,7 +48,7 @@
         android:ems="10"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Description"
+        android:hint="@string/description"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
 
@@ -59,7 +59,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:text="Save"
+        android:text="@string/save"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="20dp"
         android:textColor="@color/purple_500"

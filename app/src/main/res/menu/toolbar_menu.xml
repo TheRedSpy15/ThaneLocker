@@ -2,10 +2,10 @@
 
     <item
         android:id="@+id/navigation_settings"
-        android:title="Settings" />
+        android:title="@string/settings" />
 
     <item
         android:id="@+id/navigation_calculator"
-        android:title="Calculator" />
+        android:title="@string/calculator" />
 
 </menu>

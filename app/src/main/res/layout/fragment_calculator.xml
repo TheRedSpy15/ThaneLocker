@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Bushing Calculator"
+        android:text="@string/bushing_calculator"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/editTextWeight"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:hint="Weight (lbs)"
+        android:hint="@string/weight_lbs"
         android:layout_height="wrap_content"
         android:ems="5"
         android:inputType="number" />
@@ -37,13 +37,13 @@
             android:id="@+id/radioButtonCruise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cruising" />
+            android:text="@string/cruising" />
 
         <RadioButton
             android:id="@+id/radioButtonFreeride"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Freeride/Downhill" />
+            android:text="@string/freeride_downhill" />
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
@@ -53,7 +53,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:text="Calculate"
+        android:text="@string/calculate"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="20dp"
         android:textColor="@color/purple_500"
@@ -68,7 +68,7 @@
         android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recommended Durometer: 00a" />
+        android:text="@string/recommended_durometer_00a" />
 
     <TextView
         android:id="@+id/basedOnTextView"
@@ -76,7 +76,7 @@
         android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Based on Venom HPF Formula" />
+        android:text="@string/based_on_venom_hpf_formula" />
 
     <TextView
         android:id="@+id/tipTextView"
@@ -86,7 +86,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
-        android:text="Go a step softer roadside for better carving. Or go a step up boardside for less slop"
+        android:text="@string/go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop"
         android:textAlignment="center"
         android:visibility="invisible" />
 </LinearLayout>

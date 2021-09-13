@@ -44,7 +44,7 @@
                     android:id="@+id/buttonCamera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="From Camera"
+                    android:text="@string/from_camera"
                     android:onClick="fromCamera"
                     android:textColor="@color/purple_500"
                     app:backgroundTint="@android:color/transparent"
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
                     android:onClick="fromGallery"
-                    android:text="From Gallery"
+                    android:text="@string/from_gallery"
                     android:textColor="@color/purple_500"
                     app:backgroundTint="@android:color/transparent"
                     app:cornerRadius="20dp"
@@ -77,16 +77,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="@string/name"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="@string/name" />
 
             <EditText
                 android:id="@+id/editTextDeck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Deck"
+                android:hint="@string/deck"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Description"
+                android:hint="@string/description"
                 android:gravity="start|top"
                 android:inputType="textMultiLine" />
 
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Advance Mode" />
+                android:text="@string/advance_mode" />
 
             <TableLayout
                 android:id="@+id/advanceTable"
@@ -123,7 +123,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Trucks:"
+                        android:text="@string/trucks"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -139,7 +139,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Front Angle:"
+                        android:text="@string/front_angle"
                         android:textAlignment="textStart" />
 
                     <EditText
@@ -147,8 +147,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="5"
-                        android:text="50"
-                        android:hint="Default: 50"
+                        android:text="@string/_50"
+                        android:hint="@string/default_50"
                         android:inputType="number" />
 
                 </TableRow>
@@ -158,7 +158,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Rear Angle:"
+                        android:text="@string/rear_angle"
                         android:textAlignment="textStart" />
 
                     <EditText
@@ -166,8 +166,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="5"
-                        android:text="50"
-                        android:hint="Default: 50"
+                        android:text="@string/_50"
+                        android:hint="@string/default_50"
                         android:inputType="number" />
                 </TableRow>
 
@@ -176,7 +176,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Bushings (Board):"
+                        android:text="@string/bushings_board"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -192,7 +192,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Bushings (Road):"
+                        android:text="@string/bushings_road"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -208,7 +208,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Pivot:"
+                        android:text="@string/pivot"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -221,7 +221,7 @@
 
                 <TableRow>
                     <TextView
-                        android:text="Wheels:"
+                        android:text="@string/wheels"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -233,7 +233,7 @@
                 </TableRow>
                 <TableRow>
                     <TextView
-                        android:text="Bearings:"
+                        android:text="@string/bearings"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -249,7 +249,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Griptape:"
+                        android:text="@string/griptape"
                         android:textAlignment="textStart" />
 
                     <Spinner
@@ -269,7 +269,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:text="Create Board"
+                android:text="@string/create_board"
                 android:onClick="create"
                 app:backgroundTint="@android:color/transparent"
                 app:cornerRadius="20dp"
