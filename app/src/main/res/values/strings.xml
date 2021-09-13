@@ -5,6 +5,7 @@
 
     <!-- Built-in truck choices -->
     <string-array name="trucks">
+        <item>Generic</item>
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bear Gen6</item>
@@ -15,11 +16,10 @@
         <item>Sidewinders</item>
         <item>Seismic Aeon</item>
         <item>Arsenals</item>
-        <item>Amazon Brand</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
-        <item>"Amazon Brand"</item>
+        <item>Generic</item>
         <item>Snakes</item>
         <item>G Slides</item>
         <item>BO Smokes</item>
