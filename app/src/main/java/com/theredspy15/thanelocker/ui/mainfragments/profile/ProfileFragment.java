@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentProfileBinding;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -67,11 +68,16 @@ public class ProfileFragment extends Fragment {
         }
 
         loadFavoriteBoard();
-        loadSpeedsChart();
-        loadTopSpeedsChart();
-        loadDistancesChart();
-        loadDurationsChart();
-        loadTextViewStats();
+
+        if (sessions.isEmpty()) {
+            binding.chartsLayout.setVisibility(View.GONE);
+        } else {
+            loadSpeedsChart();
+            loadTopSpeedsChart();
+            loadDistancesChart();
+            loadDurationsChart();
+            loadTextViewStats();
+        }
     }
 
     public void loadEditProfile(View view) {
@@ -197,6 +203,10 @@ public class ProfileFragment extends Fragment {
         // set data
         chart.setData(data);
 
+        Description description = new Description();
+        description.setText("");
+        chart.setDescription(description);
+
         int color = App.getThemeTextColor(requireContext());
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
@@ -259,6 +269,10 @@ public class ProfileFragment extends Fragment {
         // set data
         chart.setData(data);
 
+        Description description = new Description();
+        description.setText("");
+        chart.setDescription(description);
+
         int color = App.getThemeTextColor(requireContext());
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
@@ -288,7 +302,7 @@ public class ProfileFragment extends Fragment {
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "Speed");
+            set1 = new LineDataSet(values, "Distance");
 
             set1.setDrawIcons(false);
 
@@ -330,6 +344,10 @@ public class ProfileFragment extends Fragment {
 
             // set data
             chart.setData(data);
+
+            Description description = new Description();
+            description.setText("");
+            chart.setDescription(description);
 
             int color = App.getThemeTextColor(requireContext());
             chart.getData().setValueTextColor(color);
@@ -361,7 +379,7 @@ public class ProfileFragment extends Fragment {
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "Speed");
+            set1 = new LineDataSet(values, "Duration");
 
             set1.setDrawIcons(false);
 
@@ -403,6 +421,9 @@ public class ProfileFragment extends Fragment {
 
             // set data
             chart.setData(data);
+            Description description = new Description();
+            description.setText("");
+            chart.setDescription(description);
 
             int color = App.getThemeTextColor(requireContext());
             chart.getData().setValueTextColor(color);
