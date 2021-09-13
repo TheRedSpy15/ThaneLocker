@@ -82,6 +82,14 @@
                 android:text="Name" />
 
             <EditText
+                android:id="@+id/editTextDeck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Deck"
+                android:inputType="textPersonName" />
+
+            <EditText
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,31 +98,15 @@
                 android:gravity="start|top"
                 android:inputType="textMultiLine" />
 
-            <EditText
-                android:id="@+id/editTextRiser"
-                android:layout_width="match_parent"
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/advanceSwitch"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Riser Height"
-                android:inputType="numberDecimal" />
-
-            <EditText
-                android:id="@+id/editTextRAngle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Rear Angle (Default: 50)"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editTextFAngle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Front Angle (Default: 50)"
-                android:inputType="number" />
+                android:layout_gravity="center"
+                android:text="Advance Mode" />
 
             <TableLayout
+                android:id="@+id/advanceTable"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
@@ -123,6 +115,7 @@
                 android:layout_gravity="center"
                 android:showDividers="middle"
                 android:shrinkColumns="0"
+                android:visibility="gone"
                 android:stretchColumns="1">
 
                 <TableRow
@@ -139,6 +132,43 @@
                         android:layout_height="wrap_content"
                         android:entries="@array/trucks"
                         android:spinnerMode="dialog" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Front Angle:"
+                        android:textAlignment="textStart" />
+
+                    <EditText
+                        android:id="@+id/editTextFAngle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:text="50"
+                        android:hint="Default: 50"
+                        android:inputType="number" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Rear Angle:"
+                        android:textAlignment="textStart" />
+
+                    <EditText
+                        android:id="@+id/editTextRAngle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:text="50"
+                        android:hint="Default: 50"
+                        android:inputType="number" />
                 </TableRow>
 
                 <TableRow
@@ -246,6 +276,7 @@
                 android:textColor="@color/purple_500"
                 app:strokeColor="@color/purple_500"
                 app:strokeWidth="2dp" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -79,8 +79,8 @@ public class App extends Application {
         return max.getKey();
     }
 
-    public static synchronized void cleanBoards() { // TODO: clean hashmap
-        LinkedList<Integer> list = new LinkedList<>(); // ids
+    public static synchronized void cleanBoards() { // TODO: clean hashmap, duplicates
+        LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
         for (int id : Board.savedBoardIds) {
             if (Board.savedBoards.get(id) == null) {
                 list.add(id);
@@ -89,8 +89,8 @@ public class App extends Application {
         for (int id : list) Board.savedBoardIds.remove((Integer) id);
     }
 
-    public static synchronized void cleanSessions() { // TODO: clean hashmap
-        LinkedList<Integer> list = new LinkedList<>(); // ids
+    public static synchronized void cleanSessions() { // TODO: clean hashmap, duplicates
+        LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
         for (int id : Session.savedSessionIds) {
             if (Session.savedSessions.get(id) == null) {
                 list.add(id);

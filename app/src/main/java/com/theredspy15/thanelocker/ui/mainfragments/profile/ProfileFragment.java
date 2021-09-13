@@ -114,8 +114,8 @@ public class ProfileFragment extends Fragment {
 
         Board board = Profile.favoriteBoard();
 
+        Button button = new Button(requireContext());
         if (board != null) {
-            Button button = new Button(requireContext());
             button.setText(board.getName());
             button.setTextSize(18);
             button.setBackgroundColor(requireContext().getColor(R.color.grey));
@@ -127,20 +127,22 @@ public class ProfileFragment extends Fragment {
                 myIntent.putExtra("board", board);
                 startActivity(myIntent);
             });
-            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-            Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
-            button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
-            linearLayout.addView(button,6,layout);
+
+            if (board.getImage() != null) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
+                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+            }
+
         } else {
-            Button button = new Button(requireContext());
             button.setText("No Favorite");
             button.setTextSize(18);
             button.setBackgroundColor(requireContext().getColor(R.color.grey));
             button.getBackground().setAlpha(64);
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
-            linearLayout.addView(button,6,layout);
         }
+        linearLayout.addView(button,6,layout);
     }
 
     private synchronized void loadSpeedsChart() {

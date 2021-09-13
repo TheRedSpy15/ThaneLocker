@@ -212,9 +212,13 @@ public class SessionActivity extends AppCompatActivity {
                     startActivity(myIntent);
                 });
                 button.setOnLongClickListener(this::removeUsedBoard);
-                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
-                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+
+                if (board.getImage() != null) {
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                    Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
+                    button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+                }
+
                 linearLayout.addView(button,layout);
             }
         }

@@ -139,9 +139,7 @@ public class SessionsFragment extends Fragment {
             alertDialog.setMessage("You're GPS data will be used");
             alertDialog.setCancelable(false);
             alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
-                    (dialog, which) -> {
-                        dialog.dismiss();
-                    });
+                    (dialog, which) -> dialog.dismiss());
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
                     (dialog, which) -> {
                         PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);

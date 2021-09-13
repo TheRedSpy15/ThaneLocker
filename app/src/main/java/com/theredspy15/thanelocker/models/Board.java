@@ -14,19 +14,20 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
+    private boolean advanceMode = false;
     private int user_id = 0;
     private String name = "board";
     private byte[] image;
-    private String description = "";
-    private String trucks = "";
+    private String description = "No Description";
+    private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
-    private String deck="Zenit Mini Marble";
+    private String deck="Generic Deck";
     private byte rearAngle=50;
     private byte frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
     private String bd_bushings="Stock Bushings";
-    private String wheels = "";
+    private String wheels = "Generic Wheels";
     private String bearings="Standard ABEC Bearings";
     private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
     private String riserHt="1/16";
@@ -282,5 +283,13 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setFootStop(String footStop) {
         this.footStop = footStop;
+    }
+
+    public boolean isAdvanceMode() {
+        return advanceMode;
+    }
+
+    public void setAdvanceMode(boolean proMode) {
+        this.advanceMode = proMode;
     }
 }

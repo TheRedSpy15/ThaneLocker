@@ -51,8 +51,14 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     void populateViews(Board board) {
-        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-        binding.imageView.setImageBitmap(bitmap);
+        if (board.getImage() != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+            binding.imageView.setImageBitmap(bitmap);
+        } else {
+            binding.imageView.setVisibility(View.GONE);
+        }
+
+        if (! board.isAdvanceMode()) binding.boardContent.advanceTable.setVisibility(View.GONE);
 
         binding.boardContent.descriptionView.setText(board.getDescription());
         binding.boardContent.deckView.setText(board.getDeck());

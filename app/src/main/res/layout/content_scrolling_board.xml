@@ -37,12 +37,93 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="Statistics"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:showDividers="middle"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    android:text="Distance Riden:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/totalDistanceView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:text="Average Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgDistanceView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:text="Furthest Distance:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/longestDistanceView"
+                    android:text="00.0 Miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:text="Top Speed:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/topSpeedView"
+                    android:text="00.0 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:text="Average Speed:"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgSpeedView"
+                    android:text="00.0 MPH"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/partsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="Parts"
             android:textStyle="bold" />
 
         <TableLayout
-            android:layout_width="300dp"
+            android:id="@+id/advanceTable"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -178,70 +259,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="@color/purple_500"
             app:strokeWidth="2dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Statistics"
-            android:textStyle="bold" />
-
-        <TableLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:showDividers="middle"
-            android:shrinkColumns="0"
-            android:stretchColumns="1">
-            <TableRow>
-                <TextView
-                    android:text="Distance Riden:"
-                    android:textAlignment="textStart" />
-                <TextView
-                    android:id="@+id/totalDistanceView"
-                    android:text="00.0 Miles"
-                    android:textAlignment="textEnd" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:text="Average Distance:"
-                    android:textAlignment="textStart" />
-                <TextView
-                    android:id="@+id/avgDistanceView"
-                    android:text="00.0 Miles"
-                    android:textAlignment="textEnd" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:text="Furthest Distance:"
-                    android:textAlignment="textStart" />
-                <TextView
-                    android:id="@+id/longestDistanceView"
-                    android:text="00.0 Miles"
-                    android:textAlignment="textEnd" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:text="Top Speed:"
-                    android:textAlignment="textStart" />
-                <TextView
-                    android:id="@+id/topSpeedView"
-                    android:text="00.0 MPH"
-                    android:textAlignment="textEnd" />
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:text="Average Speed:"
-                    android:textAlignment="textStart" />
-                <TextView
-                    android:id="@+id/avgSpeedView"
-                    android:text="00.0 MPH"
-                    android:textAlignment="textEnd" />
-            </TableRow>
-        </TableLayout>
 
         <TextView
             android:layout_width="wrap_content"

@@ -66,9 +66,12 @@ public class BoardsFragment extends Fragment {
                     button.getBackground().setAlpha(64);
                     button.setPadding(0,0,0,0);
                     button.setAllCaps(false);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                    Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
-                    button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+
+                    if (board.getImage() != null) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                        Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
+                        button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+                    }
 
                     button.setOnClickListener(v->{
                         Intent myIntent = new Intent(context, BoardActivity.class);
