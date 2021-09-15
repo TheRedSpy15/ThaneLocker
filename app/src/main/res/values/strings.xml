@@ -98,7 +98,7 @@
     <string name="distance">Distance</string>
     <string name="miles">\" Miles\"</string>
     <string name="mph">\" MPH\"</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
     <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
     <!-- Strings used for fragments for navigation -->
 
