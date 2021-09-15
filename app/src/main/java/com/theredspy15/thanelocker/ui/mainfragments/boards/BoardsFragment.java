@@ -75,7 +75,7 @@ public class BoardsFragment extends Fragment {
 
                     button.setOnClickListener(v->{
                         Intent myIntent = new Intent(context, BoardActivity.class);
-                        myIntent.putExtra("board", board);
+                        myIntent.putExtra("board_id", board.getId());
                         startActivity(myIntent);
                     });
 

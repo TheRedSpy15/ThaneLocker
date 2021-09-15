@@ -160,7 +160,7 @@ public class NewBoardActivity extends AppCompatActivity {
     // used only for when finished editing an existing board
     public void loadBoardActivity(View view) {
         Intent myIntent = new Intent(this, BoardActivity.class);
-        myIntent.putExtra("board", board);
+        myIntent.putExtra("board_id", board.getId());
         startActivity(myIntent);
     }
 

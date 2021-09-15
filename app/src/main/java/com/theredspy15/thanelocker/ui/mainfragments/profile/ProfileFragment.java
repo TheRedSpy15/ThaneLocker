@@ -130,7 +130,7 @@ public class ProfileFragment extends Fragment {
             button.setAllCaps(false);
             button.setOnClickListener(v->{
                 Intent myIntent = new Intent(requireContext(), BoardActivity.class);
-                myIntent.putExtra("board", board);
+                myIntent.putExtra("board_id", board.getId());
                 startActivity(myIntent);
             });
 
@@ -141,7 +141,7 @@ public class ProfileFragment extends Fragment {
             }
 
         } else {
-            button.setText("No Favorite");
+            button.setText(R.string.no_favorite);
             button.setTextSize(18);
             button.setBackgroundColor(requireContext().getColor(R.color.grey));
             button.getBackground().setAlpha(64);
@@ -161,7 +161,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(values, "Speed"); // TODO: shrink set1 from all 3 graph function into 1, and just change values
+        LineDataSet set1 = new LineDataSet(values, getString(R.string.speed)); // TODO: shrink set1 from all 3 graph function into 1, and just change values
         set1.setDrawIcons(false);
 
         // draw dashed line
@@ -226,7 +226,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(values, "Speed");
+        LineDataSet set1 = new LineDataSet(values, getString(R.string.speed));
 
         set1.setDrawIcons(false);
 
@@ -302,7 +302,7 @@ public class ProfileFragment extends Fragment {
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "Distance");
+            set1 = new LineDataSet(values, getString(R.string.distance));
 
             set1.setDrawIcons(false);
 
@@ -379,7 +379,7 @@ public class ProfileFragment extends Fragment {
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "Duration");
+            set1 = new LineDataSet(values, getString(R.string.duration));
 
             set1.setDrawIcons(false);
 

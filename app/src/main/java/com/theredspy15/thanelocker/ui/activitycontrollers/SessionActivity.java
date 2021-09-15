@@ -208,7 +208,7 @@ public class SessionActivity extends AppCompatActivity {
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{
                     Intent myIntent = new Intent(this, BoardActivity.class);
-                    myIntent.putExtra("board", board);
+                    myIntent.putExtra("board_id", board.getId());
                     startActivity(myIntent);
                 });
                 button.setOnLongClickListener(this::removeUsedBoard);

@@ -93,6 +93,11 @@
     <string name="github_sum">View the source code to the app hosted on GitHub, and maybe even contribute!</string>
     <string name="discord_sum">Join the longboarding family discord server, the best community to meet others</string>
     <string name="muirskate_sum">Go to Muirskate.com the best place to order anything for Longboarding</string>
+    <string name="no_favorite">No Favorite</string>
+    <string name="speed">Speed</string>
+    <string name="distance">Distance</string>
+    <string name="miles">\" Miles\"</string>
+    <string name="mph">\" MPH\"</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

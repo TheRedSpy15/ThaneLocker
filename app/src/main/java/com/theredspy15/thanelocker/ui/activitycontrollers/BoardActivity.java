@@ -36,8 +36,8 @@ public class BoardActivity extends AppCompatActivity {
         binding = ActivityBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        board = (Board) getIntent().getSerializableExtra("board");
-        populateViews(board);
+        board = Board.savedBoards.get(getIntent().getIntExtra("board_id", 0));
+        if (board != null) populateViews(board);
 
         binding.boardContent.deleteBoardButton.setOnClickListener(this::deleteBoard);
         binding.boardContent.editButton.setOnClickListener(this::editBoard);
@@ -73,11 +73,11 @@ public class BoardActivity extends AppCompatActivity {
         binding.boardContent.bearingsView.setText(board.getBearings());
 
         if (!Session.sessionsWithBoard(board.getId()).isEmpty()) {
-            binding.boardContent.totalDistanceView.setText(board.totalDistance()+" Miles");
-            binding.boardContent.avgDistanceView.setText(board.avgDistance()+" Miles");
-            binding.boardContent.longestDistanceView.setText(board.furthestDistance()+" Miles");
-            binding.boardContent.topSpeedView.setText(board.fastestSpeed()+" MPH");
-            binding.boardContent.avgSpeedView.setText(board.avgSpeed()+" MPH");
+            binding.boardContent.totalDistanceView.setText(board.totalDistance()+getString(R.string.miles));
+            binding.boardContent.avgDistanceView.setText(board.avgDistance()+getString(R.string.miles));
+            binding.boardContent.longestDistanceView.setText(board.furthestDistance()+getString(R.string.miles));
+            binding.boardContent.topSpeedView.setText(board.fastestSpeed()+getString(R.string.mph));
+            binding.boardContent.avgSpeedView.setText(board.avgSpeed()+getString(R.string.mph));
         }
 
         loadSessions();
