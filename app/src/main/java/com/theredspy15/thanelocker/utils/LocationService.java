@@ -77,7 +77,7 @@ public class LocationService extends Service {
     void startTracker() {
         locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
         locationListener = new SessionLocationListener();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MainActivity.preferences.getInt("pollrate",2500), 1, locationListener);
     }
 
     static class SessionLocationListener implements LocationListener {

@@ -255,18 +255,18 @@ public class NewBoardActivity extends AppCompatActivity {
 
         Intent myIntent;
         if (isEditing) {
-            myIntent = new Intent(this, BoardActivity.class);
-            myIntent.putExtra("board",board);
-
             Board.savedBoards.put(board.getId(),board);
             Board.save();
+
+            myIntent = new Intent(this, BoardActivity.class);
+            myIntent.putExtra("board_id",board.getId());
         } else {
             Board.savedBoards.put(board.getId(), board);
             Board.savedBoardIds.add(board.getId());
             Board.save();
 
             myIntent = new Intent(this, BoardActivity.class);
-            myIntent.putExtra("board",board);
+            myIntent.putExtra("board_id",board.getId());
         }
         startActivity(myIntent);
     }

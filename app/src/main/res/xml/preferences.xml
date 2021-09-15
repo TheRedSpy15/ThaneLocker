@@ -28,6 +28,18 @@
                 android:data="https://github.com/TheRedSpy15/ThaneLocker" />
         </Preference>
     </PreferenceCategory>
+    <PreferenceCategory app:title="Session Settings">
+        <SeekBarPreference
+            app:title="@string/poll_rate_title"
+            android:key="pollrate"
+            android:persistent="true"
+            android:defaultValue="2500"
+            android:max="10000"
+            app:showSeekBarValue="true"
+            app:min="1500"
+            android:summary="@string/poll_rate_sum"
+            app:icon="@drawable/ic_outline_speed_24" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/sources_title">
         <CheckBoxPreference
             app:iconSpaceReserved="true"
