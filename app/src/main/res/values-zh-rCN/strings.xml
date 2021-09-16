@@ -1,278 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thane Locker</string>
+    <string name="app_name">Thane 储物柜</string>
     <string name="title_activity_board">BoardActivity</string>
-    <string name="change">Change</string>
-    <string name="description">Description</string>
-    <string name="save">Save</string>
-    <string name="griptape">Griptape:</string>
-    <string name="bushings_road">Bushings (Road):</string>
-    <string name="bushings_board">Bushings (Board):</string>
-    <string name="default_50">Default: 50</string>
+    <string name="change">更改</string>
+    <string name="description">描述</string>
+    <string name="save">保存</string>
+    <string name="griptape">Gripptape:</string>
+    <string name="bushings_road">套管 (道路 ) :</string>
+    <string name="bushings_board">衬套 (板 ) :</string>
+    <string name="default_50">缺省值 : 50</string>
     <string name="_50">50</string>
-    <string name="rear_angle">Rear Angle:</string>
-    <string name="front_angle">Front Angle:</string>
-    <string name="advance_mode">Advance Mode</string>
-    <string name="deck">Deck</string>
-    <string name="name">Name</string>
-    <string name="from_gallery">From Gallery</string>
-    <string name="from_camera">From Camera</string>
-    <string name="avg_mph">Avg MPH</string>
-    <string name="total_miles">Total Miles</string>
+    <string name="rear_angle">后角:</string>
+    <string name="front_angle">前角:</string>
+    <string name="advance_mode">前进方式</string>
+    <string name="deck">甲板</string>
+    <string name="name">名称</string>
+    <string name="from_gallery">从库</string>
+    <string name="from_camera">从摄像头</string>
+    <string name="avg_mph">平均 MPH</string>
+    <string name="total_miles">总里程数</string>
     <string name="_00_0">00.0</string>
-    <string name="statistics">Statistics</string>
-    <string name="distance_ridden">Distance Ridden:</string>
-    <string name="parts">Parts</string>
-    <string name="zenit_mini_marble">Zenit Mini Marble</string>
-    <string name="grip">Grip:</string>
-    <string name="lokton">Lokton</string>
-    <string name="trucks">Trucks:</string>
-    <string name="paris_v3">Paris V3</string>
-    <string name="angle_front">Angle (front):</string>
-    <string name="angle_rear">Angle (rear):</string>
-    <string name="_50_xb0">50°</string>
-    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
-    <string name="pivot">Pivot:</string>
-    <string name="wheels">Wheels:</string>
-    <string name="bearings">Bearings:</string>
-    <string name="edit_setup">Edit Setup</string>
-    <string name="recent_sessions">Recent Sessions</string>
-    <string name="delete_board">Delete Board</string>
-    <string name="record_session">Record Session</string>
-    <string name="durations">Durations</string>
-    <string name="distances">Distances</string>
-    <string name="top_speeds">Top Speeds</string>
-    <string name="average_speeds">Average Speeds</string>
-    <string name="favorite_board">Favorite Board</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="average_distance">Average Distance:</string>
-    <string name="total_distance">Total Distance:</string>
-    <string name="_00_0_miles">00.0 Miles</string>
-    <string name="furthest_distance">Furthest Distance:</string>
-    <string name="average_speed">Average Speed:</string>
+    <string name="statistics">统计</string>
+    <string name="distance_ridden">已骑距离 :</string>
+    <string name="parts">部分</string>
+    <string name="zenit_mini_marble">Zenit 迷你大理石</string>
+    <string name="grip">把手 :</string>
+    <string name="lokton">洛克顿</string>
+    <string name="trucks">卡车 :</string>
+    <string name="paris_v3">巴黎 V3</string>
+    <string name="angle_front">角度 (前部 ) :</string>
+    <string name="angle_rear">角度 (后部 ) :</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">88a WPS Barrel</string>
+    <string name="pivot">枢纽:</string>
+    <string name="wheels">轮子 :</string>
+    <string name="bearings">轴承 :</string>
+    <string name="edit_setup">编辑设置</string>
+    <string name="recent_sessions">最近会话数</string>
+    <string name="delete_board">删除板</string>
+    <string name="record_session">记录会话</string>
+    <string name="durations">杜尔 ations</string>
+    <string name="distances">距离</string>
+    <string name="top_speeds">最高速度</string>
+    <string name="average_speeds">平均速度</string>
+    <string name="favorite_board">收藏板</string>
+    <string name="edit_profile">编辑概要文件</string>
+    <string name="average_distance">平均距离:</string>
+    <string name="total_distance">总距离:</string>
+    <string name="_00_0_miles">00.0 00.0 英里</string>
+    <string name="furthest_distance">最远距离 :</string>
+    <string name="average_speed">平均速度:</string>
     <string name="_00_0_mph">00.0 MPH</string>
-    <string name="fastest_speed">Fastest Speed:</string>
-    <string name="just_another_awesome_skater">Just another awesome Skater</string>
-    <string name="john_doe">John Doe</string>
-    <string name="bushing_calculator">Bushing Calculator</string>
-    <string name="weight_lbs">Weight (lbs)</string>
-    <string name="cruising">Cruising</string>
+    <string name="fastest_speed">最快速度 :</string>
+    <string name="just_another_awesome_skater">还有一个超棒的 Skater</string>
+    <string name="john_doe">约翰 - 多伊</string>
+    <string name="bushing_calculator">套管计算器</string>
+    <string name="weight_lbs">重量 (磅)</string>
+    <string name="cruising">克鲁辛</string>
     <string name="freeride_downhill">Freeride/Downhill</string>
-    <string name="calculate">Calculate</string>
-    <string name="recommended_durometer_00a">Recommended Durometer: 00a</string>
-    <string name="based_on_venom_hpf_formula">Based on Venom HPF Formula</string>
-    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Go a step softer roadside for better carving. Or go a step up boardside for less slop</string>
-    <string name="create_board">Create Board</string>
+    <string name="calculate">计算</string>
+    <string name="recommended_durometer_00a">推荐的 Duroeter: 00a</string>
+    <string name="based_on_venom_hpf_formula">基于 Venom HPF 公式</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">去一个更柔和的路边做更好的雕刻 或者去上船舷边</string>
+    <string name="create_board">创建板</string>
     <string name="plus_sign">+</string>
-    <string name="boards_used">Boards Used:</string>
-    <string name="add_board">Add Board</string>
-    <string name="city">City:</string>
-    <string name="fort_myers">Fort Myers</string>
-    <string name="top_speed">Top Speed:</string>
+    <string name="boards_used">使用的板 :</string>
+    <string name="add_board">添加板</string>
+    <string name="city">城市 :</string>
+    <string name="fort_myers">迈尔斯堡</string>
+    <string name="top_speed">顶部速度:</string>
     <string name="_20_mph">20 MPH</string>
-    <string name="duration">Duration:</string>
-    <string name="_0_0_hours">0.0 hours</string>
-    <string name="start_time">Start Time:</string>
-    <string name="end_time">End Time:</string>
-    <string name="_12_00pm">12:00pm</string>
-    <string name="delete_session">Delete Session</string>
-    <string name="profile">Profile</string>
-    <string name="boards">Boards</string>
-    <string name="sessions">Sessions</string>
-    <string name="news">News</string>
-    <string name="map">Map</string>
-    <string name="calculator">Calculator</string>
-    <string name="settings">Settings</string>
-    <string name="muirskate_title">Longboard Shop</string>
-    <string name="discord_title">Longboarding Family Discord</string>
-    <string name="github_title">Source Code on GitHub</string>
-    <string name="sources_title">News Sources</string>
+    <string name="duration">持续时间 :</string>
+    <string name="_0_0_hours">0.0 小时</string>
+    <string name="start_time">开始时间:</string>
+    <string name="end_time">结束时间:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">删除会话</string>
+    <string name="profile">个人档案</string>
+    <string name="boards">板</string>
+    <string name="sessions">会话</string>
+    <string name="news">新闻</string>
+    <string name="map">地图</string>
+    <string name="calculator">计算器</string>
+    <string name="settings">设置</string>
+    <string name="muirskate_title">龙板店</string>
+    <string name="discord_title">Long寄宿家庭不和</string>
+    <string name="github_title">GitHub 上的源代码</string>
+    <string name="sources_title">新闻来源</string>
     <string name="downhill254_title">DownHill254</string>
-    <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Force Dark Theme</string>
-    <string name="darktheme_sum">Will otherwise follow system settings. Restart app to take effect</string>
-    <string name="github_sum">View the source code to the app hosted on GitHub, and maybe even contribute!</string>
-    <string name="discord_sum">Join the longboarding family discord server, the best community to meet others</string>
-    <string name="muirskate_sum">Go to Muirskate.com the best place to order anything for Longboarding</string>
-    <string name="no_favorite">No Favorite</string>
-    <string name="speed">Speed</string>
-    <string name="distance">Distance</string>
-    <string name="miles"> Miles</string>
+    <string name="longboardbrand_title">LongboardBrand 博客</string>
+    <string name="darktheme_title">强制暗主题</string>
+    <string name="darktheme_sum">否则将遵循系统设置。 重新启动应用程序以生效</string>
+    <string name="github_sum">将源代码查看到 GitHub 上托管的应用程序，甚至可能提供帮助 !</string>
+    <string name="discord_sum">加入龙寄宿家庭不和服务器，最好的社区与他人见面</string>
+    <string name="muirskate_sum">请访问 Muirskate.com 为 Longboarding 订购任何内容的最佳场所</string>
+    <string name="no_favorite">无收藏夹</string>
+    <string name="speed">速度</string>
+    <string name="distance">距离</string>
+    <string name="miles"> 迈尔斯</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
-    <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
-    <string name="recording_session">Recording Session</string>
-    <string name="not_added_disclaimer">Will be added in a future update, but enjoy the rest of what the app has to offer!</string>
-    <string name="not_added_title">This section is not finished</string>
-    <string name="no_news">No news</string>
-    <string name="recommended_durometer">Recommended Durometer: </string>
-    <string name="recommended_shape">Recommended Shape: </string>
-    <string name="need_weight">Please input a weight</string>
-    <string name="ok">OK</string>
-    <string name="delete_session_title">Delete Session</string>
-    <string name="delete_session_dialog">Are you sure?</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="no_sessions">No Sessions Recorded</string>
-    <string name="click_to_stop">Click here to stop recording</string>
+    <string name="poll_rate_sum">记录会话时应更新位置的速度。 更低的速度更快，但更省电。 建议 2500</string>
+    <string name="poll_rate_title">位置轮询速率 (毫秒)</string>
+    <string name="recording_session">记录会话</string>
+    <string name="not_added_disclaimer">将在将来的更新中添加，但享受应用程序要提供的其他内容 !</string>
+    <string name="not_added_title">此部分未完成</string>
+    <string name="no_news">没有新闻</string>
+    <string name="recommended_durometer">建议的 Duroeter: </string>
+    <string name="recommended_shape">建议的形状: </string>
+    <string name="need_weight">请输入权重</string>
+    <string name="ok">好的</string>
+    <string name="delete_session_title">删除会话</string>
+    <string name="delete_session_dialog">你确定吗</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="no_sessions">未记录会话</string>
+    <string name="click_to_stop">单击此处停止记录</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
-    <string name="record_dialog_title">Start Session?</string>
-    <string name="not_enough_data">Not enough data recorded to save</string>
-    <string name="notification_description">Recording your data for you to later view</string>
-    <string name="failed_news">Failed to load News</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="add_tag">Add Tag</string>
-    <string name="finish">Finish</string>
-    <string name="no_boards">No Boards Saved</string>
-    <string name="thank_you_content">Thank you for downloading the app! But this app is still in it\'s early stages and please note many more features are to come!</string>
-    <string name="thank_you_title">Thank You!</string>
-    <string name="went_wrong">Something went wrong</string>
-    <string name="no_image_selected">You didn\'t select an image</string>
-    <string name="minutes">" Minutes"</string>
-    <string name="remove_board_from_session">Remove board from session</string>
+    <string name="recording_disclaimer">你是 GPS 数据</string>
+    <string name="record_dialog_title">启动会话?</string>
+    <string name="not_enough_data">记录的数据不足，无法保存</string>
+    <string name="notification_description">将您的数据记录到以后查看</string>
+    <string name="failed_news">未能装入新闻</string>
+    <string name="are_you_sure">你确定吗</string>
+    <string name="add_tag">添加标记</string>
+    <string name="finish">完成</string>
+    <string name="no_boards">未保存委员会</string>
+    <string name="thank_you_content">感谢您下载应用 ! 但这个应用还处于初期阶段，请注意更多的功能要来!</string>
+    <string name="thank_you_title">谢谢你</string>
+    <string name="went_wrong">出什么事了</string>
+    <string name="no_image_selected">您没有选择图像</string>
+    <string name="minutes">" 分钟"</string>
+    <string name="remove_board_from_session">从会话中除去板</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
-        <item>Generic</item>
-        <item>Paris V3</item>
-        <item>Paris Savants</item>
-        <item>Bear Gen6</item>
-        <item>Valkyries</item>
-        <item>Caliber 2</item>
+        <item>通用</item>
+        <item>巴黎 V3</item>
+        <item>巴黎 Savants</item>
+        <item>熊 Gen6</item>
+        <item>瓦尔基里斯</item>
+        <item>口径 2</item>
         <item>Roja 2020s</item>
-        <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>兰德尔斯</item>
+        <item>西德温德</item>
+        <item>地震 Aeon</item>
+        <item>武库</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
-        <item>Generic</item>
-        <item>Snakes</item>
-        <item>G Slides</item>
-        <item>BO Smokes</item>
+        <item>通用</item>
+        <item>斯内克斯</item>
+        <item>G 幻灯片</item>
+        <item>BO 烟雾</item>
         <item>BO Liam Morgan Pro</item>
-        <item>Fatty Hawgs</item>
+        <item>胖鹰</item>
         <item>Chubby Hawgs</item>
-        <item>Supreme Hawgs</item>
+        <item>高鹰</item>
         <item>Biggie Hawgs</item>
-        <item>Speed Vents</item>
+        <item>速度通风口</item>
         <item>EZ Hawgs</item>
-        <item>Markers</item>
-        <item>Nine Balls</item>
+        <item>标记</item>
+        <item>九球</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>Fat Free</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
+        <item>可用脂肪</item>
+        <item>刺激</item>
+        <item>斯基夫斯</item>
         <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
+        <item>凯格尔斯</item>
+        <item>卡瓜马</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
-        <item>Generic</item>
-        <item>Bones Reds</item>
-        <item>Beasto</item>
-        <item>Oust</item>
-        <item>Space Balls</item>
-        <item>Juhu V2</item>
-        <item>Zealous</item>
-        <item>Zealous (Ceramic)</item>
+        <item>通用</item>
+        <item>骨头</item>
+        <item>贝阿斯特</item>
+        <item>乌斯特</item>
+        <item>太空球</item>
+        <item>Juu V2</item>
+        <item>泽亚卢斯</item>
+        <item>Zealous ( 陶瓷)</item>
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard Jessip</item>
-        <item>Lokton</item>
-        <item>Gangster</item>
-        <item>Mob Grip</item>
-        <item>Hardcore</item>
-        <item>Vicious</item>
+        <item>标准 Jessip</item>
+        <item>洛克顿</item>
+        <item>冈斯特</item>
+        <item>暴民控制</item>
+        <item>哈德核心</item>
+        <item>恶毒</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <string-array name="foot_stops">
-        <item>None</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
+        <item>没有</item>
+        <item>科莫蒂翁</item>
+        <item>PSD IN 端</item>
         <item>PSD MINI I/O</item>
-        <item>PSD OUT-side</item>
+        <item>PSD OUT-端</item>
     </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
-        <item>Dance</item>
-        <item>LDP</item>
-        <item>Downhill</item>
-        <item>Freeride</item>
-        <item>Slalom</item>
-        <item>Cruise</item>
-        <item>Freestyle</item>
-        <item>Randomness</item>
+        <item>舞蹈</item>
+        <item>自民党</item>
+        <item>唐希尔</item>
+        <item>弗雷里德</item>
+        <item>斯拉洛姆</item>
+        <item>巡航</item>
+        <item>自由泳</item>
+        <item>随机性</item>
     </string-array>
     <!-- Built-in bushings choices -->
     <string-array name="bushings">
-        <item>Stock</item>
-        <item>Barrel WFB 78a</item>
-        <item>Barrel WFB 83a</item>
-        <item>Barrel WFB 88a</item>
-        <item>Barrel WFB 93a</item>
-        <item>Barrel WFB 95.5a</item>
+        <item>施托克</item>
+        <item>桶 WFB 78a</item>
+        <item>桶 WFB 83a</item>
+        <item>桶 WFB 88a</item>
+        <item>桶 WFB 93a</item>
+        <item>桶 WFB 95.5a</item>
         <item>Cone WFB 78a</item>
         <item>Cone WFB 83a</item>
         <item>Cone WFB 88a</item>
         <item>Cone WFB 93a</item>
         <item>Cone WFB 95.5a</item>
-        <item>Barrel APS 70a</item>
-        <item>Barrel APS 75a</item>
-        <item>Barrel APS 80a</item>
-        <item>Barrel APS 85a</item>
-        <item>Barrel APS 90a</item>
-        <item>Barrel APS 92.5a</item>
-        <item>Barrel APS 95a</item>
-        <item>Cone APS 75a</item>
-        <item>Cone APS 70a</item>
-        <item>Cone APS 80a</item>
-        <item>Cone APS 85a</item>
-        <item>Cone APS 90a</item>
-        <item>Cone APS 92.5a</item>
-        <item>Cone APS 95a</item>
-        <item>Barrel HPF 78a</item>
-        <item>Barrel HPF 81a</item>
-        <item>Barrel HPF 85a</item>
-        <item>Barrel HPF 87a</item>
-        <item>Barrel HPF 90a</item>
-        <item>Barrel HPF 93a</item>
-        <item>Barrel HPF 95a</item>
-        <item>Barrel HPF 97a</item>
-        <item>Cone HPF 78a</item>
-        <item>Cone HPF 81a</item>
-        <item>Cone HPF 85a</item>
-        <item>Cone HPF 87a</item>
-        <item>Cone HPF 90a</item>
-        <item>Cone HPF 93a</item>
-        <item>Cone HPF 95a</item>
-        <item>Cone HPF 97a</item>
-        <item>Barrel SHR 80a</item>
-        <item>Barrel SHR 91a</item>
-        <item>Barrel SHR 83a</item>
-        <item>Barrel SHR 86a</item>
-        <item>Barrel SHR 88a</item>
-        <item>Barrel SHR 95a</item>
-        <item>Cone SHR 80a</item>
-        <item>Cone SHR 91a</item>
-        <item>Cone SHR 83a</item>
-        <item>Cone SHR 86a</item>
-        <item>Cone SHR 88a</item>
-        <item>Cone SHR 95a</item>
+        <item>桶 APS 70a</item>
+        <item>桶 APS 75a</item>
+        <item>桶 APS 80a</item>
+        <item>桶 APS 85a</item>
+        <item>桶 APS 90a</item>
+        <item>桶 APS 92.5a</item>
+        <item>桶 APS 95a</item>
+        <item>锥体 APS 75a</item>
+        <item>锥体 APS 70a</item>
+        <item>锥体 APS 80a</item>
+        <item>锥体 APS 85a</item>
+        <item>锥体 APS 90a</item>
+        <item>锥体 APS 92.5a</item>
+        <item>锥体 APS 95a</item>
+        <item>桶 HPF 78a</item>
+        <item>桶 HPF 81a</item>
+        <item>桶 HPF 85a</item>
+        <item>桶 HPF 87a</item>
+        <item>桶 HPF 90a</item>
+        <item>桶 HPF 93a</item>
+        <item>桶 HPF 95a</item>
+        <item>桶 HPF 97a</item>
+        <item>锥体 HPF 78a</item>
+        <item>锥体 HPF 81a</item>
+        <item>锥体 HPF 85a</item>
+        <item>锥体 HPF 87a</item>
+        <item>锥体 HPF 90a</item>
+        <item>锥体 HPF 93a</item>
+        <item>锥体 HPF 95a</item>
+        <item>锥体 HPF 97a</item>
+        <item>桶 SHR 80a</item>
+        <item>桶 SHR 91a</item>
+        <item>桶 SHR 83a</item>
+        <item>桶 SHR 86a</item>
+        <item>桶 SHR 88a</item>
+        <item>桶 SHR 95a</item>
+        <item>锥形 SHR 80a</item>
+        <item>锥形 SHR 91a</item>
+        <item>锥形 SHR 83a</item>
+        <item>锥形 SHR 86a</item>
+        <item>锥形 SHR 88a</item>
+        <item>锥形 SHR 95a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>施托克</item>
+        <item>波纹杯</item>
     </string-array>
     <!-- Built-in riser heights choices -->
     <string-array name="risers">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>施托克</item>
+        <item>波纹杯</item>
     </string-array>
 </resources>
