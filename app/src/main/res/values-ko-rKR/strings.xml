@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">테인 로커</string>
+    <string name="title_activity_board">보드활동</string>
+    <string name="change">변경</string>
+    <string name="description">설명</string>
+    <string name="save">저장</string>
+    <string name="griptape">그립테이프:</string>
+    <string name="bushings_road">부싱 (도로):</string>
+    <string name="bushings_board">부싱 (보드):</string>
+    <string name="default_50">기본값: 50</string>
+    <string name="_50">도면 5</string>
+    <string name="rear_angle">뒷면:</string>
+    <string name="front_angle">프런트 앵글:</string>
+    <string name="advance_mode">진전 모드</string>
+    <string name="deck">덱</string>
+    <string name="name">이름</string>
+    <string name="from_gallery">갤러리에서</string>
+    <string name="from_camera">카메라</string>
+    <string name="avg_mph">평균 MPH</string>
+    <string name="total_miles">총 마일즈</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">통계</string>
+    <string name="distance_ridden">래든 거리:</string>
+    <string name="parts">부품</string>
+    <string name="zenit_mini_marble">제니트 미니 마블</string>
+    <string name="grip">그림:</string>
+    <string name="lokton">로크톤</string>
+    <string name="trucks">트럭:</string>
+    <string name="paris_v3">파리 V3</string>
+    <string name="angle_front">각도 (앞면):</string>
+    <string name="angle_rear">각도 (뒷면):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Pivot:</string>
+    <string name="wheels">휠스:</string>
+    <string name="bearings">베어링:</string>
+    <string name="edit_setup">설정 편집</string>
+    <string name="recent_sessions">최근 세션</string>
+    <string name="delete_board">삭제 보드</string>
+    <string name="record_session">레코드 세션</string>
+    <string name="durations">듀레이션</string>
+    <string name="distances">거리</string>
+    <string name="top_speeds">최고 속도</string>
+    <string name="average_speeds">평균 속도</string>
+    <string name="favorite_board">즐겨찾기 보드</string>
+    <string name="edit_profile">프로필 편집</string>
+    <string name="average_distance">평균 거리:</string>
+    <string name="total_distance">총 거리:</string>
+    <string name="_00_0_miles">00.0 마일즈</string>
+    <string name="furthest_distance">가장 먼 거리:</string>
+    <string name="average_speed">평균 속도:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">빠른 속도:</string>
+    <string name="just_another_awesome_skater">또 다른 멋진 스케이트 선수</string>
+    <string name="john_doe">존 도우</string>
+    <string name="bushing_calculator">부싱 계산기</string>
+    <string name="weight_lbs">무게 (lbs)</string>
+    <string name="cruising">크루징</string>
+    <string name="freeride_downhill">프리우스/다운힐</string>
+    <string name="calculate">계산</string>
+    <string name="recommended_durometer_00a">권장 Durometer: 00a</string>
+    <string name="based_on_venom_hpf_formula">Venom HPF 공식에 기초하여</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">보다 나은 조각을 위해서 한 걸음 더 부드러운 길가로 가세요. 아니면 경사가 덜해서 한 걸음씩 나아가다.</string>
+    <string name="create_board">보드 작성</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">사용된 병:</string>
+    <string name="add_board">보드 추가</string>
+    <string name="city">도시:</string>
+    <string name="fort_myers">포트 마이어스</string>
+    <string name="top_speed">최고 속도:</string>
+    <string name="_20_mph">20MPH</string>
+    <string name="duration">기간:</string>
+    <string name="_0_0_hours">0.0 시간</string>
+    <string name="start_time">시작 시간:</string>
+    <string name="end_time">종료 시간:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">세션 삭제</string>
+    <string name="profile">프로파일</string>
+    <string name="boards">보병</string>
+    <string name="sessions">세션</string>
+    <string name="news">뉴스</string>
+    <string name="map">지도</string>
+    <string name="calculator">계산기</string>
+    <string name="settings">설정</string>
+    <string name="muirskate_title">롱보드샵</string>
+    <string name="discord_title">롱보딩 패밀리 디스크</string>
+    <string name="github_title">GitHub의 소스 코드</string>
+    <string name="sources_title">뉴스 소스</string>
+    <string name="downhill254_title">다운힐스</string>
+    <string name="longboardbrand_title">LongboardBrand 블로그</string>
+    <string name="darktheme_title">다크 테마 포스</string>
+    <string name="darktheme_sum">그렇지 않으면 시스템 설정을 따를 것입니다. 앱을 다시 시작하여 적용</string>
+    <string name="github_sum">GitHub 에서 호스팅되는 앱에 대한 소스 코드를 보고, 아마도 기여할 수 있을 것이다.</string>
+    <string name="discord_sum">소지품 불협화서버, 다른 사람들을 만나는 최고의 커뮤니티에 가입하세요.</string>
+    <string name="muirskate_sum">롱보딩을 주문하기에 가장 좋은 곳을 Muirskate.com로 이동하십시오.</string>
+    <string name="no_favorite">즐겨찾기 없음</string>
+    <string name="speed">속도</string>
+    <string name="distance">거리</string>
+    <string name="miles"> 마일스</string>
+    <string name="mph"> 모프</string>
+    <string name="poll_rate_sum">세션을 기록할 때 위치를 얼마나 빨리 업데이트해야 합니까? 더 낮은 것은 더 빠르지만 더 많은 전력 소모입니다. 권장 2500</string>
+    <string name="poll_rate_title">위치 폴링 비율 (밀리초)</string>
+    <string name="recording_session">레코딩 세션</string>
+    <string name="not_added_disclaimer">향후 업데이트에 추가될 것이지만, 앱이 제공해야 하는 나머지 부분을 즐길 수 있습니다!</string>
+    <string name="not_added_title">이 섹션은 완료되지 않았습니다.</string>
+    <string name="no_news">뉴스 없음</string>
+    <string name="recommended_durometer">권장 Durometer: </string>
+    <string name="recommended_shape">권장 형태: </string>
+    <string name="need_weight">무게를 입력하세요</string>
+    <string name="ok">알았다</string>
+    <string name="delete_session_title">세션 삭제</string>
+    <string name="delete_session_dialog">확실해요?</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
+    <string name="no_sessions">기록된 세션이 없음</string>
+    <string name="click_to_stop">레코딩을 중지하려면 여기를 클릭</string>
+    <string name="start">시작</string>
+    <string name="recording_disclaimer">GPS 데이터가 사용될 것이다</string>
+    <string name="record_dialog_title">세션 시작?</string>
+    <string name="not_enough_data">저장할 데이터가 충분하지 않음</string>
+    <string name="notification_description">나중에 볼 수 있도록 데이터 기록</string>
+    <string name="failed_news">뉴스 로드 실패</string>
+    <string name="are_you_sure">확실해요?</string>
+    <string name="add_tag">태그 추가</string>
+    <string name="finish">완료</string>
+    <string name="no_boards">Boards가 저장되지 않음</string>
+    <string name="thank_you_content">앱을 다운로드해 주셔서 감사합니다! 하지만 이 앱은 아직 초기 단계에 있으며 앞으로 더 많은 기능을 제공할 수 있습니다.</string>
+    <string name="thank_you_title">감사합니다!</string>
+    <string name="went_wrong">뭔가 잘못됐어</string>
+    <string name="no_image_selected">이미지를 선택하지 않았습니다</string>
+    <string name="minutes">" 분"</string>
+    <string name="remove_board_from_session">세션에서 보드를 제거합니다.</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>일반</item>
+        <item>파리 V3</item>
+        <item>파리 새츠</item>
+        <item>베어 젠6</item>
+        <item>발키리</item>
+        <item>칼리버 2</item>
+        <item>로자 2020</item>
+        <item>랜달스</item>
+        <item>사이드와인더</item>
+        <item>지진아</item>
+        <item>비소</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>일반</item>
+        <item>뱀</item>
+        <item>G 슬라이드</item>
+        <item>BO 연기</item>
+        <item>BO 리암 모건 프로</item>
+        <item>패티 호그</item>
+        <item>통브비 호그</item>
+        <item>최고의 호그</item>
+        <item>비기 호그</item>
+        <item>속도 Vents</item>
+        <item>EZ 호그</item>
+        <item>마커</item>
+        <item>9개의 발스</item>
+        <item>PHAT 보이즈</item>
+        <item>4대 대통령</item>
+        <item>자유로운 자유</item>
+        <item>자극</item>
+        <item>건너뜀</item>
+        <item>Fat Frees</item>
+        <item>케겔</item>
+        <item>재규어</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>일반</item>
+        <item>본즈 리드</item>
+        <item>베스토</item>
+        <item>오스트</item>
+        <item>스페이스 볼스</item>
+        <item>주후 V2</item>
+        <item>자조</item>
+        <item>자조 (Ceramic)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>표준 제시</item>
+        <item>로크톤</item>
+        <item>강스터</item>
+        <item>Mob Grip</item>
+        <item>하드코어</item>
+        <item>사악한</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>없음</item>
+        <item>운동</item>
+        <item>PSD IN-사이드</item>
+        <item>PSD 미니 I/O</item>
+        <item>PSD OUT-사이드</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>춤</item>
+        <item>LDP</item>
+        <item>다운힐</item>
+        <item>프리우스</item>
+        <item>슬라롬</item>
+        <item>크루즈</item>
+        <item>프리스타일</item>
+        <item>랜덤도</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>주식</item>
+        <item>배럴 WFB 78a</item>
+        <item>바렐 WFB 83a</item>
+        <item>바렐 WFB 88a</item>
+        <item>배럴 WFB 93a</item>
+        <item>배럴 WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>배럴 APS 70a</item>
+        <item>배럴 APS 75a</item>
+        <item>배럴 APS 80a</item>
+        <item>배럴 APS 85a</item>
+        <item>배럴 APS 90a</item>
+        <item>배럴 APS 92.5a</item>
+        <item>배럴 APS (95a)</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
+        <item>배럴 HPF 78a</item>
+        <item>배럴 HPF 81a</item>
+        <item>배럴 HPF 85a</item>
+        <item>배럴 HPF 87a</item>
+        <item>배럴 HPF 90a</item>
+        <item>배럴 HPF 93a</item>
+        <item>배럴 HPF 95a</item>
+        <item>배럴 HPF 97a</item>
+        <item>Cone HPF 78a</item>
+        <item>콘 HPF 81a</item>
+        <item>Cone HPF 85a</item>
+        <item>Cone HPF 87a</item>
+        <item>Cone HPF 90a</item>
+        <item>Cone HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>Cone HPF 97a</item>
+        <item>배럴 SHR 80a</item>
+        <item>배럴 SHR 91a</item>
+        <item>Barrel SHR 83a</item>
+        <item>Barrel SHR 86a</item>
+        <item>배럴 SHR 88a</item>
+        <item>배럴 SHR 95a</item>
+        <item>콘 SHR 80a</item>
+        <item>콘 SHR 91a</item>
+        <item>콘 SHR 83a</item>
+        <item>콘 SHR 86a</item>
+        <item>Cone SHR 88a</item>
+        <item>콘 SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>주식</item>
+        <item>리프티드 컵</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>주식</item>
+        <item>리프티드 컵</item>
+    </string-array>
+</resources>

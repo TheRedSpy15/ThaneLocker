@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тайн-шкафчик</string>
+    <string name="title_activity_board">Активность</string>
+    <string name="change">Изменение</string>
+    <string name="description">Описание</string>
+    <string name="save">Сохранить</string>
+    <string name="griptape">Гриплента:</string>
+    <string name="bushings_road">Bushings (Road):</string>
+    <string name="bushings_board">Втушки (доска):</string>
+    <string name="default_50">Значение по умолчанию: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Задний угол:</string>
+    <string name="front_angle">Лицевой угол:</string>
+    <string name="advance_mode">Режим аванса</string>
+    <string name="deck">Палуба</string>
+    <string name="name">Имя</string>
+    <string name="from_gallery">Из галереи</string>
+    <string name="from_camera">С камеры</string>
+    <string name="avg_mph">Среднее MPH</string>
+    <string name="total_miles">Всего мили</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">Статистика</string>
+    <string name="distance_ridden">Дистанционное расстояние:</string>
+    <string name="parts">Части</string>
+    <string name="zenit_mini_marble">Мини-Мрамор</string>
+    <string name="grip">Хватка:</string>
+    <string name="lokton">Локтон</string>
+    <string name="trucks">Грузовики:</string>
+    <string name="paris_v3">Париж V3</string>
+    <string name="angle_front">Угол (спереди):</string>
+    <string name="angle_rear">Угол (задний):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Поворот:</string>
+    <string name="wheels">Колеса:</string>
+    <string name="bearings">Подшип</string>
+    <string name="edit_setup">Изменить конфигурацию</string>
+    <string name="recent_sessions">Последние сеансы</string>
+    <string name="delete_board">Удалить совет</string>
+    <string name="record_session">Записать сеанс</string>
+    <string name="durations">Продолжительность</string>
+    <string name="distances">Расстояния</string>
+    <string name="top_speeds">Первые скорости</string>
+    <string name="average_speeds">Средние скорости</string>
+    <string name="favorite_board">Любимый совет</string>
+    <string name="edit_profile">Изменить профиль</string>
+    <string name="average_distance">Среднее расстояние:</string>
+    <string name="total_distance">Общее расстояние:</string>
+    <string name="_00_0_miles">00,0 мили</string>
+    <string name="furthest_distance">Расстояние между Дальней Расстояния:</string>
+    <string name="average_speed">Средняя скорость:</string>
+    <string name="_00_0_mph">00,0 MPH</string>
+    <string name="fastest_speed">Самая быстрая Скорость:</string>
+    <string name="just_another_awesome_skater">Просто еще один потрясающий Скатер.</string>
+    <string name="john_doe">Джон Доу</string>
+    <string name="bushing_calculator">Калькулятор</string>
+    <string name="weight_lbs">Вес (lbs)</string>
+    <string name="cruising">Крейсерский</string>
+    <string name="freeride_downhill">Freeride/Downhill</string>
+    <string name="calculate">Вычислить</string>
+    <string name="recommended_durometer_00a">Рекомендуемый Дюрометр: 00а</string>
+    <string name="based_on_venom_hpf_formula">На основе формулы Веном HPF</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Иди на шаг мягче придорожание для лучшей резьбы. Или пойти на шаг вверх по бодрке за меньщевато</string>
+    <string name="create_board">Создать совет</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Используемые платы:</string>
+    <string name="add_board">Добавить совет</string>
+    <string name="city">Город:</string>
+    <string name="fort_myers">Форт Майерс</string>
+    <string name="top_speed">Максимальная скорость:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Продолжительность:</string>
+    <string name="_0_0_hours">0,0 часа</string>
+    <string name="start_time">Время начала:</string>
+    <string name="end_time">Время окончания:</string>
+    <string name="_12_00pm">12 час. 00 мин.</string>
+    <string name="delete_session">Удалить сеанс</string>
+    <string name="profile">Профиль</string>
+    <string name="boards">Доски</string>
+    <string name="sessions">Сеансы</string>
+    <string name="news">Новости</string>
+    <string name="map">Карта</string>
+    <string name="calculator">калькулятор</string>
+    <string name="settings">Параметры</string>
+    <string name="muirskate_title">Лонгборд</string>
+    <string name="discord_title">Давнишний семейный раздор</string>
+    <string name="github_title">Исходный код в GitHub</string>
+    <string name="sources_title">Источники новостей</string>
+    <string name="downhill254_title">Лив_254</string>
+    <string name="longboardbrand_title">Блог longboardBrand</string>
+    <string name="darktheme_title">Сила темной темы</string>
+    <string name="darktheme_sum">В противном случае последуют параметры системы. Перезапустить приложение, чтобы выполнить действие</string>
+    <string name="github_sum">Просмотрите исходный код приложения на GitHub и, возможно, даже внесете свой вклад!</string>
+    <string name="discord_sum">Присоедините к серверу раздора в семье, чтобы познакомиться с другими</string>
+    <string name="muirskate_sum">Перейдите по адресу Muirskate.com лучшее место, чтобы заказать что-либо для Лонгборда</string>
+    <string name="no_favorite">Нет избранного</string>
+    <string name="speed">Скорость</string>
+    <string name="distance">Расстояние</string>
+    <string name="miles"> Майлз</string>
+    <string name="mph"> MPH</string>
+    <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Нижний-это быстрее, но больше энергии рисуется. Рекомендуется: 2500</string>
+    <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
+    <string name="recording_session">Запись сеанса</string>
+    <string name="not_added_disclaimer">Будет добавлен в будущее обновление, но насладитесь оставшейся части того, что приложение должно предложить!</string>
+    <string name="not_added_title">Этот раздел не завершен</string>
+    <string name="no_news">Нет новостей</string>
+    <string name="recommended_durometer">Рекомендуемый дурометр: </string>
+    <string name="recommended_shape">Рекомендуемая форма: </string>
+    <string name="need_weight">Введите вес</string>
+    <string name="ok">OK</string>
+    <string name="delete_session_title">Удалить сеанс</string>
+    <string name="delete_session_dialog">Вы уверены?</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="no_sessions">Число записанных сеансов</string>
+    <string name="click_to_stop">Щелкните здесь, чтобы остановить запись</string>
+    <string name="start">НАЧАЛО</string>
+    <string name="recording_disclaimer">Вы будете использовать данные GPS</string>
+    <string name="record_dialog_title">Запустить сеанс?</string>
+    <string name="not_enough_data">Недостаточно данных, записанных для сохранения</string>
+    <string name="notification_description">Запись данных для последующего просмотра</string>
+    <string name="failed_news">Не удалось загрузить новости</string>
+    <string name="are_you_sure">Вы уверены?</string>
+    <string name="add_tag">Добавить тег</string>
+    <string name="finish">Готово</string>
+    <string name="no_boards">Нет сохраненных советов</string>
+    <string name="thank_you_content">Спасибо за загрузку приложения! Но это приложение все еще находится на ранней стадии и, пожалуйста, обратите внимание на множество дополнительных возможностей!</string>
+    <string name="thank_you_title">Спасибо!</string>
+    <string name="went_wrong">Что-то не так</string>
+    <string name="no_image_selected">Вы не выбрали изображение</string>
+    <string name="minutes">" Минуты"</string>
+    <string name="remove_board_from_session">Удалить совет из сеанса</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Общий</item>
+        <item>Париж V3</item>
+        <item>Парижский саванц</item>
+        <item>Медведь Gen6</item>
+        <item>Валькирии</item>
+        <item>Калибр 2</item>
+        <item>Roja 2020</item>
+        <item>Рэндалс</item>
+        <item>Боковины</item>
+        <item>Сейсмический аон</item>
+        <item>Арсеналы</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Общий</item>
+        <item>Змеи</item>
+        <item>G-слайды</item>
+        <item>Смокс, Бо</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Жирные ястребы</item>
+        <item>Чубби Хокс</item>
+        <item>Верховные ястребы</item>
+        <item>Бигги Хогз</item>
+        <item>Vents скорости</item>
+        <item>Ястребы Эз</item>
+        <item>Маркеры</item>
+        <item>Девять мячей</item>
+        <item>PHAT BOYZ</item>
+        <item>4Президент</item>
+        <item>Без жира</item>
+        <item>Стимул</item>
+        <item>Лыжники</item>
+        <item>Толстые фрезы</item>
+        <item>Кегельс</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Общий</item>
+        <item>Косточки</item>
+        <item>Beasto</item>
+        <item>Уст</item>
+        <item>Космические шары</item>
+        <item>Juhu V2</item>
+        <item>Ревностный</item>
+        <item>Ревностный (Керамический)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>Стандартный Джессип</item>
+        <item>Локтон</item>
+        <item>Гангстер</item>
+        <item>Мафиози</item>
+        <item>Хардкор</item>
+        <item>Порочный</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Нет</item>
+        <item>Komotion</item>
+        <item>PSD В стороне</item>
+        <item>Ввод-вывод MINI PSD</item>
+        <item>PSD OUT-side</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Танец</item>
+        <item>LDP</item>
+        <item>Вниз</item>
+        <item>Фрирайд</item>
+        <item>Слалом</item>
+        <item>Круиз</item>
+        <item>Вольная</item>
+        <item>Случайность</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Запасы</item>
+        <item>WFB 78a</item>
+        <item>Баррель WFB 83a</item>
+        <item>WFB 88a</item>
+        <item>Баррель WFB 93a</item>
+        <item>Баррель WFB 95,5a</item>
+        <item>Конус WFB 78a</item>
+        <item>Конус WFB 83a</item>
+        <item>Конус WFB 88a</item>
+        <item>Конус WFB 93a</item>
+        <item>WFB 95,5a</item>
+        <item>Баррель APS 70a</item>
+        <item>Бочка APS 75a</item>
+        <item>Бочка АПС 80а</item>
+        <item>Бочка АПС 85а</item>
+        <item>Бочка АПС 90а</item>
+        <item>Бочка APS 92,5a</item>
+        <item>Бочка APS 95a</item>
+        <item>Конус APS 75a</item>
+        <item>Конус APS 70a</item>
+        <item>Конус APS 80a</item>
+        <item>Конус APS 85a</item>
+        <item>Конус APS 90a</item>
+        <item>Конус APS 92.5a</item>
+        <item>Конус APS 95a</item>
+        <item>Бочка HPF 78a</item>
+        <item>Ствола HPF 81a</item>
+        <item>Бочка HPF 85a</item>
+        <item>Бочка HPF 87a</item>
+        <item>Ствола HPF 90a</item>
+        <item>&lt; &lt;Бочка HPF 93a</item>
+        <item>Бочка HPF 95a</item>
+        <item>&lt; &lt;Боч&gt; &gt;</item>
+        <item>Конус HPF 78a</item>
+        <item>Конус HPF 81a</item>
+        <item>Конус HPF 85a</item>
+        <item>Конус HPF 87a</item>
+        <item>Конус HPF 90a</item>
+        <item>Конус HPF 93a</item>
+        <item>Конус HPF 95a</item>
+        <item>Конус HPF 97a</item>
+        <item>SHR 80a</item>
+        <item>SHR 91a</item>
+        <item>Бочка SHR 83a</item>
+        <item>Бочка SHR 86a</item>
+        <item>Бочка SHR 88а</item>
+        <item>SHR 95a</item>
+        <item>Конус SHR 80a</item>
+        <item>Конус SHR 91a</item>
+        <item>Конус SHR 83a</item>
+        <item>Конус SHR 86a</item>
+        <item>Конус SHR 88а</item>
+        <item>Конус SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Запасы</item>
+        <item>Рябный кубок</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Запасы</item>
+        <item>Рябный кубок</item>
+    </string-array>
+</resources>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">לוקר Thane</string>
+    <string name="title_activity_board">פעילות BoardActivity</string>
+    <string name="change">שינוי</string>
+    <string name="description">תיאור</string>
+    <string name="save">שמירה</string>
+    <string name="griptape">קלטת:</string>
+    <string name="bushings_road">תקלות (כביש):</string>
+    <string name="bushings_board">תקלות (לוח):</string>
+    <string name="default_50">ברירת מחדל: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">זווית אחורית:</string>
+    <string name="front_angle">זווית ראשונה:</string>
+    <string name="advance_mode">מצב התקדמות</string>
+    <string name="deck">דק</string>
+    <string name="name">שם</string>
+    <string name="from_gallery">מהגלריה</string>
+    <string name="from_camera">מ-מצלמה</string>
+    <string name="avg_mph">אבג MPH</string>
+    <string name="total_miles">סך הכל מיילס</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">סטטיסטיקה</string>
+    <string name="distance_ridden">מרחק רידן:</string>
+    <string name="parts">חלקים</string>
+    <string name="zenit_mini_marble">Zenit מיני Marble</string>
+    <string name="grip">גריפ:</string>
+    <string name="lokton">לנקטון</string>
+    <string name="trucks">משאיות:</string>
+    <string name="paris_v3">פריז V3</string>
+    <string name="angle_front">זווית (חזית):</string>
+    <string name="angle_rear">זווית (אחוריים):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">ריקרד 88א. נ. ב.</string>
+    <string name="pivot">ציר:</string>
+    <string name="wheels">גלגלים:</string>
+    <string name="bearings">בישויות:</string>
+    <string name="edit_setup">עריכת הגדרות</string>
+    <string name="recent_sessions">מהלכי עבודה אחרונים</string>
+    <string name="delete_board">מחיקת לוח</string>
+    <string name="record_session">מהלך עבודה של רשומה</string>
+    <string name="durations">משכי זמן</string>
+    <string name="distances">נסיבות</string>
+    <string name="top_speeds">ספידים למעלה</string>
+    <string name="average_speeds">ספידים ממוצעים</string>
+    <string name="favorite_board">לוח מועדף</string>
+    <string name="edit_profile">עריכת פרופיל</string>
+    <string name="average_distance">מרחק ממוצע:</string>
+    <string name="total_distance">מרחק כולל:</string>
+    <string name="_00_0_miles">00.0 מיילים</string>
+    <string name="furthest_distance">מרחק מרבי:</string>
+    <string name="average_speed">מהירות ממוצעת:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">מהירות מהירה:</string>
+    <string name="just_another_awesome_skater">רק עוד \"מחליק על הקרח\".</string>
+    <string name="john_doe">John Doe</string>
+    <string name="bushing_calculator">חישוב חישוב</string>
+    <string name="weight_lbs">משקל (ליברות)</string>
+    <string name="cruising">ריסוק</string>
+    <string name="freeride_downhill">פרידה/הורדה</string>
+    <string name="calculate">חישוב</string>
+    <string name="recommended_durometer_00a">מד דומטר מומלץ: 00A</string>
+    <string name="based_on_venom_hpf_formula">מבוסס על נוסחה של Venom HPF</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">ללכת צעד רך יותר עבור גילוף טוב יותר. או ללכת צעד למעלה בטיילת עבור פחות עצלנות.</string>
+    <string name="create_board">יצירת לוח</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">לוחות בשימוש:</string>
+    <string name="add_board">הוספת לוח</string>
+    <string name="city">עיר:</string>
+    <string name="fort_myers">פורט מאיירס</string>
+    <string name="top_speed">מהירות עליונה:</string>
+    <string name="_20_mph">20MPH</string>
+    <string name="duration">משך זמן:</string>
+    <string name="_0_0_hours">0.0 שעות</string>
+    <string name="start_time">שעת התחלה:</string>
+    <string name="end_time">שעת סיום:</string>
+    <string name="_12_00pm">12 :00:00</string>
+    <string name="delete_session">מחיקת מהלך עבודה</string>
+    <string name="profile">פרופיל</string>
+    <string name="boards">כרזים</string>
+    <string name="sessions">מהלכי עבודה</string>
+    <string name="news">חדשות</string>
+    <string name="map">מפה</string>
+    <string name="calculator">חישוב</string>
+    <string name="settings">הגדרות</string>
+    <string name="muirskate_title">חנות Longboard</string>
+    <string name="discord_title">ניקור משפחתי של Longboarding</string>
+    <string name="github_title">קוד מקור על GitHub</string>
+    <string name="sources_title">מקורות חדשות</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">בלוג של Longישיבות</string>
+    <string name="darktheme_title">אכיפת נושא כהה</string>
+    <string name="darktheme_sum">במקרים אחרים, בצעו את הגדרות המערכת. הפעלה מחדש של יישום לביצוע</string>
+    <string name="github_sum">הצג את קוד המקור לאפליקציה המתארח ב GitHub, ואולי אפילו לתרום!</string>
+    <string name="discord_sum">הצטרפו לשרת המחלוקת הוותיק, הקהילה הטובה ביותר כדי לפגוש אחרים</string>
+    <string name="muirskate_sum">בקרו בכתובת Muirskate.com. המקום הטוב ביותר להזמין כל דבר עבור Longboarding</string>
+    <string name="no_favorite">אין מועדף</string>
+    <string name="speed">מהירות</string>
+    <string name="distance">מרחק</string>
+    <string name="miles"> מיילס</string>
+    <string name="mph"> מפ</string>
+    <string name="poll_rate_sum">באיזו מהירות יש לעדכן את המיקום בעת הקלטת מהלך עבודה. נמוך יותר הוא מהיר יותר אבל יותר כוח לצייר. מומלץ הוא 2500</string>
+    <string name="poll_rate_title">שיעור סקר מיקום (אלפיות שניה)</string>
+    <string name="recording_session">הקלטת מהלך עבודה</string>
+    <string name="not_added_disclaimer">יתווסף לעדכון עתידי, אך תהנו מכל מה שיש לאפליקציה להציע!</string>
+    <string name="not_added_title">סעיף זה לא הסתיים.</string>
+    <string name="no_news">אין חדשות</string>
+    <string name="recommended_durometer">מד דומטר מומלץ: </string>
+    <string name="recommended_shape">צורה מומלצת: </string>
+    <string name="need_weight">נא לציין משקל</string>
+    <string name="ok">אוקי</string>
+    <string name="delete_session_title">מחיקת מהלך עבודה</string>
+    <string name="delete_session_dialog">אתה בטוח?</string>
+    <string name="cancel">ביטול</string>
+    <string name="delete">מחיקה</string>
+    <string name="no_sessions">אין מהלכי עבודה מוקלטים</string>
+    <string name="click_to_stop">לחצו כאן כדי לעצור את ההקלטה.</string>
+    <string name="start">התחלה</string>
+    <string name="recording_disclaimer">נעשה שימוש בנתוני ה-GPS</string>
+    <string name="record_dialog_title">להתחיל מהלך עבודה?</string>
+    <string name="not_enough_data">אין מספיק נתונים שנרשמו לשמירה</string>
+    <string name="notification_description">הקלטת הנתונים שלכם כדי שתוכלו לראות אותה מאוחר יותר.</string>
+    <string name="failed_news">כשל בטעינת החדשות</string>
+    <string name="are_you_sure">אתה בטוח?</string>
+    <string name="add_tag">הוספת תג</string>
+    <string name="finish">סיום</string>
+    <string name="no_boards">לא נשמר Boards</string>
+    <string name="thank_you_content">תודה על הורדת האפליקציה! אבל האפליקציה הזאת עדיין בשלבים המוקדמים של זה ואנא שימו לב למאפיינים רבים יותר הם לבוא!</string>
+    <string name="thank_you_title">תודה לכם!</string>
+    <string name="went_wrong">משהו השתבש.</string>
+    <string name="no_image_selected">לא בחרתם תמונה.</string>
+    <string name="minutes">" דקות"</string>
+    <string name="remove_board_from_session">סילוק לוח ממהלך העבודה</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>גנרי</item>
+        <item>פריז V3</item>
+        <item>שוברי פריז</item>
+        <item>דוב ג \' 6</item>
+        <item>ואלקיריות</item>
+        <item>קליבר 2</item>
+        <item>רוג \' ה 20-20</item>
+        <item>רנדלס</item>
+        <item>נוסעי צד</item>
+        <item>סביבה סבימית</item>
+        <item>ארסנל</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>גנרי</item>
+        <item>נחשים</item>
+        <item>G שקופיות</item>
+        <item>מעשן BO</item>
+        <item>BO ליאם מורגן Pro</item>
+        <item>חזירים שמנים</item>
+        <item>צ \' אבי הוס</item>
+        <item>הוקס העליון</item>
+        <item>ביגי הוגים</item>
+        <item>מהירות Vents</item>
+        <item>EZ הוגים</item>
+        <item>מרקרים</item>
+        <item>תשע כדורים</item>
+        <item>בויץ \'</item>
+        <item>4בנשיא</item>
+        <item>שומן חופשי</item>
+        <item>Stimulus</item>
+        <item>מדפים</item>
+        <item>פרסות שמנות</item>
+        <item>Kegels</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>גנרי</item>
+        <item>אדומים</item>
+        <item>ביסטו</item>
+        <item>אוסט</item>
+        <item>כדורי חלל</item>
+        <item>Juhu V2</item>
+        <item>קנאי</item>
+        <item>קנאי (Ceramic)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>ג \' סיפ רגיל</item>
+        <item>לנקטון</item>
+        <item>Gangster</item>
+        <item>Grip מאפיה</item>
+        <item>הארדקור</item>
+        <item>Vicious</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>ללא</item>
+        <item>בקשה</item>
+        <item>PSD-בצד</item>
+        <item>מיני I/O של PSD</item>
+        <item>PSD-צד</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>דאנס</item>
+        <item>LDP</item>
+        <item>במורד הגבעה</item>
+        <item>פרידות</item>
+        <item>עבדות</item>
+        <item>שייט</item>
+        <item>סגנון חופשי</item>
+        <item>ריומיות</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>מניות</item>
+        <item>חבית WFB 78a</item>
+        <item>Barrel WFB 83a</item>
+        <item>חבית WFB 88a</item>
+        <item>Barrel WFB 93a</item>
+        <item>בארל WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>Barrel APS 70a</item>
+        <item>Barrel APS 75a</item>
+        <item>Barrel APS 80a</item>
+        <item>Barrel APS 85a</item>
+        <item>Barrel APS 90a</item>
+        <item>בארל APS 92.5a</item>
+        <item>בארל APS 95a</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
+        <item>בארל HPF 78a</item>
+        <item>חבית HPF 81a</item>
+        <item>חבית HPF 85a</item>
+        <item>חבית HPF 87a</item>
+        <item>חבית HPF 90a</item>
+        <item>חבית HPF 93a</item>
+        <item>חבית HPF 95a</item>
+        <item>חבית HPF 97a</item>
+        <item>Cone HPF 78a</item>
+        <item>Cone HPF 81a</item>
+        <item>Cone HPF 85a</item>
+        <item>Cone HPF 87a</item>
+        <item>Cone HPF 90a</item>
+        <item>Cone HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>97a של Cone HPF</item>
+        <item>Barrel SHR 80a</item>
+        <item>Barrel SHR 91a</item>
+        <item>Barrel SHR 83a</item>
+        <item>Barrel SHR 86a</item>
+        <item>Barrel SHR 88a</item>
+        <item>Barrel SHR 95a</item>
+        <item>Cone SHR 80a</item>
+        <item>Cone SHR 91a</item>
+        <item>Cone SHR 83a</item>
+        <item>Cone SHR 86a</item>
+        <item>Cone SHR 88a</item>
+        <item>Cone SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>מניות</item>
+        <item>כוס ריקרד</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>מניות</item>
+        <item>כוס ריקרד</item>
+    </string-array>
+</resources>

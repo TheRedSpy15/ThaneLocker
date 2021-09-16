@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thane Locker</string>
+    <string name="title_activity_board">Aktivita BoardActivity</string>
+    <string name="change">Změna</string>
+    <string name="description">Popis</string>
+    <string name="save">Uložit</string>
+    <string name="griptape">Griptape:</string>
+    <string name="bushings_road">Bushings (Road):</string>
+    <string name="bushings_board">Houby (Rada):</string>
+    <string name="default_50">Předvolba: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Zadní úhel:</string>
+    <string name="front_angle">Přední úhel:</string>
+    <string name="advance_mode">Režim rozšířené</string>
+    <string name="deck">Plocha</string>
+    <string name="name">Název</string>
+    <string name="from_gallery">Z galerie</string>
+    <string name="from_camera">Z fotoaparátu</string>
+    <string name="avg_mph">Průměrná MPH</string>
+    <string name="total_miles">Celkem kilometrů</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">Statistika</string>
+    <string name="distance_ridden">Vzdálenost Ridden:</string>
+    <string name="parts">Díly</string>
+    <string name="zenit_mini_marble">Zenit Mini Marble</string>
+    <string name="grip">Grip:</string>
+    <string name="lokton">LoktonCity</string>
+    <string name="trucks">Zásobníky:</string>
+    <string name="paris_v3">Paříž V3</string>
+    <string name="angle_front">Úhel (přední):</string>
+    <string name="angle_rear">Úhel (zadní):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Kontingenční tabulka:</string>
+    <string name="wheels">Kola:</string>
+    <string name="bearings">Ložiska:</string>
+    <string name="edit_setup">Upravit nastavení</string>
+    <string name="recent_sessions">Nedávné relace</string>
+    <string name="delete_board">Odstranit radu</string>
+    <string name="record_session">Relace záznamu</string>
+    <string name="durations">Doby trvání</string>
+    <string name="distances">Vzdálenosti</string>
+    <string name="top_speeds">Špičková rychlost</string>
+    <string name="average_speeds">Průměrná rychlost</string>
+    <string name="favorite_board">Oblíbená deska</string>
+    <string name="edit_profile">Upravit profil</string>
+    <string name="average_distance">Průměrná vzdálenost:</string>
+    <string name="total_distance">Celková vzdálenost:</string>
+    <string name="_00_0_miles">00.0 míle</string>
+    <string name="furthest_distance">Nejvzdálenější vzdálenost:</string>
+    <string name="average_speed">Průměrná rychlost:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">Nejrychlejší rychlost:</string>
+    <string name="just_another_awesome_skater">Jen další úžasný Skater.</string>
+    <string name="john_doe">Josef Novák</string>
+    <string name="bushing_calculator">Vyprazdňování</string>
+    <string name="weight_lbs">Váha (lbs)</string>
+    <string name="cruising">Plavby</string>
+    <string name="freeride_downhill">Freeride/Downhill</string>
+    <string name="calculate">Vypočítat</string>
+    <string name="recommended_durometer_00a">Doporučené Durometer: 00a</string>
+    <string name="based_on_venom_hpf_formula">Založeno na vzorci Venom HPF</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Přejít na krok měkčí silnici pro lepší řezbářství. Nebo jít nahoru na nástěnky pro méně slop</string>
+    <string name="create_board">Vytvořit radu</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Použité desky:</string>
+    <string name="add_board">Přidat radu</string>
+    <string name="city">Město:</string>
+    <string name="fort_myers">Fort Myers</string>
+    <string name="top_speed">Horní otáčky:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Doba trvání:</string>
+    <string name="_0_0_hours">0,0 hodin</string>
+    <string name="start_time">Čas zahájení:</string>
+    <string name="end_time">Koncový čas:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">Odstranit relaci</string>
+    <string name="profile">profil</string>
+    <string name="boards">Rozvaděče</string>
+    <string name="sessions">relace</string>
+    <string name="news">Diskuse</string>
+    <string name="map">Mapa</string>
+    <string name="calculator">Kalkulátor</string>
+    <string name="settings">NastaveníComment</string>
+    <string name="muirskate_title">Longboard Shop</string>
+    <string name="discord_title">Longboarding Family Discord</string>
+    <string name="github_title">Zdrojový kód v GitHub</string>
+    <string name="sources_title">Zdroje novinek</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">Blog LongboardBrand</string>
+    <string name="darktheme_title">Vynutit tmavý motiv</string>
+    <string name="darktheme_sum">V opačném případě se řiďte systémovými nastaveními. Restartujte aplikaci, aby se projevila</string>
+    <string name="github_sum">Prohlédněte si zdrojový kód aplikace hostované na GitHub, a možná i přispějte!</string>
+    <string name="discord_sum">Připojte se k dlouholetým kabelovým serverům pro dlouhé stravování, nejlepší komunitě pro schůzku s ostatními uživateli.</string>
+    <string name="muirskate_sum">Přejít na Muirskate.com nejlepší místo k objednání cokoliv pro Longboarding</string>
+    <string name="no_favorite">Žádná oblíbená položka</string>
+    <string name="speed">linky</string>
+    <string name="distance">Vzdálenost</string>
+    <string name="miles"> Míle</string>
+    <string name="mph"> MPH</string>
+    <string name="poll_rate_sum">Jak rychle by se mělo umístění aktualizovat při záznamu relace. Nižší je rychlejší, ale vyšší spotřeba energie. Doporučeno je 2500</string>
+    <string name="poll_rate_title">Rychlost výzev lokality (milisekundy)</string>
+    <string name="recording_session">Relace záznamu</string>
+    <string name="not_added_disclaimer">Bude přidána do budoucí aktualizace, ale užijte si zbytek toho, co má aplikace nabídnout!</string>
+    <string name="not_added_title">Tato sekce není dokončena</string>
+    <string name="no_news">Žádné zprávy</string>
+    <string name="recommended_durometer">Doporučené Durometer: </string>
+    <string name="recommended_shape">Doporučený tvar: </string>
+    <string name="need_weight">Vložte, prosím, váhu</string>
+    <string name="ok">OK.</string>
+    <string name="delete_session_title">Odstranit relaci</string>
+    <string name="delete_session_dialog">Jsi si jistý?</string>
+    <string name="cancel">Storno</string>
+    <string name="delete">Odstranit</string>
+    <string name="no_sessions">Nebyly zaznamenány žádné relace</string>
+    <string name="click_to_stop">Klepnutím sem zastavíte záznam</string>
+    <string name="start">ZAČÁTEK</string>
+    <string name="recording_disclaimer">Budete používat GPS data.</string>
+    <string name="record_dialog_title">Spustit relaci?</string>
+    <string name="not_enough_data">Nebyl zaznamenán dostatek dat k uložení</string>
+    <string name="notification_description">Záznam dat pro pozdější zobrazení</string>
+    <string name="failed_news">Načtení novinek se nezdařilo</string>
+    <string name="are_you_sure">Jsi si jistý?</string>
+    <string name="add_tag">Přidat značku</string>
+    <string name="finish">Dokončit</string>
+    <string name="no_boards">Nebyly uloženy žádné desky</string>
+    <string name="thank_you_content">Děkujeme za stažení aplikace! Ale tato aplikace je stále v rané fázi a prosím, povšimněte si mnoho dalších funkcí, které mají přijít!</string>
+    <string name="thank_you_title">Díky!</string>
+    <string name="went_wrong">Něco se pokazilo</string>
+    <string name="no_image_selected">Nevybrali jste obrázek</string>
+    <string name="minutes">" Minuty"</string>
+    <string name="remove_board_from_session">Odebrat nástěnku z relace</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Generická</item>
+        <item>Paříž V3</item>
+        <item>Pařížské Savanty</item>
+        <item>Medvědí Gen6</item>
+        <item>Valkýry</item>
+        <item>Kaliber 2</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Boční vítr</item>
+        <item>Seismický aónek</item>
+        <item>Arsen</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Generická</item>
+        <item>hadi</item>
+        <item>Snímky typu G</item>
+        <item>Okouny BO</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Mastné jest</item>
+        <item>Chubby Hawkes</item>
+        <item>Nejvyšší Hawgs</item>
+        <item>Biggie Hawgs.</item>
+        <item>Rychlostní Venty</item>
+        <item>EZ Hawgs</item>
+        <item>Značkovače</item>
+        <item>Devět balls</item>
+        <item>PLAT BOYZ</item>
+        <item>4Prezident</item>
+        <item>Volný tuk</item>
+        <item>Stimulus</item>
+        <item>Skify</item>
+        <item>Tlusté frehy</item>
+        <item>Kegely</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Generická</item>
+        <item>Kosti Reds</item>
+        <item>Beasto</item>
+        <item>Ousta</item>
+        <item>Mezery v prostoru</item>
+        <item>Juhu V2</item>
+        <item>Zealous</item>
+        <item>Zealous (Keramika)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>Standardní Jessip</item>
+        <item>LoktonCity</item>
+        <item>GangsterCity</item>
+        <item>Grip Mob</item>
+        <item>Pevně</item>
+        <item>Vhodný</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Žádná položka</item>
+        <item>Komotion</item>
+        <item>PSD IN-side</item>
+        <item>PSD MINI/O</item>
+        <item>PSD LIMIT</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Tanec</item>
+        <item>PLP</item>
+        <item>Downhill</item>
+        <item>Freeride</item>
+        <item>Slalom</item>
+        <item>Plavba</item>
+        <item>Volný styl</item>
+        <item>Náhodně</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Burzovní</item>
+        <item>Barrel WFB 78a</item>
+        <item>Barrel WFB 83a</item>
+        <item>Barrel WFB 88a</item>
+        <item>Barrel WFB 93a</item>
+        <item>Barrel WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>Barrel APS 70a</item>
+        <item>Barrel APS 75a</item>
+        <item>Barrel APS 80a</item>
+        <item>Barrel APS 85a</item>
+        <item>Barel APS 90a</item>
+        <item>Barel APS 92.5a</item>
+        <item>Barrel APS 95a</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
+        <item>Barrel HPF 78a</item>
+        <item>Barrel HPF 81a</item>
+        <item>Barrel HPF 85a</item>
+        <item>Barrel HPF 87a</item>
+        <item>Barrel HPF 90a</item>
+        <item>Barrel HPF 93a</item>
+        <item>Barrel HPF 951</item>
+        <item>Barrel HPF 97a</item>
+        <item>Cone HPF 78a</item>
+        <item>Cone HPF 81a</item>
+        <item>Cone HPF 85a</item>
+        <item>Cone HPF 87a</item>
+        <item>Cone HPF 90a</item>
+        <item>Cone HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>Cone HPF 97a</item>
+        <item>Barrel SHR 80a</item>
+        <item>Barrel SHR 91a</item>
+        <item>Barrel SHR 83a</item>
+        <item>Barrel SHR 86a</item>
+        <item>Barrel SHR 88a</item>
+        <item>Barrel SHR 95a</item>
+        <item>Cone SHR 80a</item>
+        <item>Cone SHR 91a</item>
+        <item>Cone SHR 83a</item>
+        <item>Cone SHR 86a</item>
+        <item>Cone SHR 88a</item>
+        <item>Cone SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Burzovní</item>
+        <item>Vlk ripti</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Burzovní</item>
+        <item>Vlk ripti</item>
+    </string-array>
+</resources>
