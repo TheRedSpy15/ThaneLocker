@@ -46,8 +46,10 @@ public class NewBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_board);
 
         binding = ActivityNewBoardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         binding.advanceSwitch.setOnCheckedChangeListener(this::toggleAdvanceMode);
+        binding.buttonCreate.setOnClickListener(this::create);
 
         board = (Board) getIntent().getSerializableExtra("board");
 
@@ -55,7 +57,7 @@ public class NewBoardActivity extends AppCompatActivity {
             isEditing = true;
             loadForEdit();
             Button button = findViewById(R.id.buttonCreate);
-            button.setText("Apply");
+            button.setText(R.string.apply);
         } else board = new Board();
 
         checkAdvanceMode(board.isAdvanceMode());
