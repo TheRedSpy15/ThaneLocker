@@ -85,7 +85,7 @@ public class ProfileFragment extends Fragment {
 
     void loadXpBar() {
         binding.xpView.setProgress((int) profile.getLevel_xp());
-        binding.levelView.setText("Level:"+" "+profile.getLevel());
+        binding.levelView.setText(getString(R.string.level)+" "+profile.getLevel());
     }
 
     public void loadEditProfile(View view) {
