@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Låsskåp</string>
+    <string name="title_activity_board">BoardActivity</string>
+    <string name="change">Förändring</string>
+    <string name="description">Beskrivning</string>
+    <string name="save">Spara</string>
+    <string name="griptape">Griptape:</string>
+    <string name="bushings_road">Bushings (väg):</string>
+    <string name="bushings_board">Bushings (Board):</string>
+    <string name="default_50">Standard: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Bakre vinkel:</string>
+    <string name="front_angle">Främre vinkeln:</string>
+    <string name="advance_mode">Advance-läge</string>
+    <string name="deck">Däck</string>
+    <string name="name">NamnName</string>
+    <string name="from_gallery">Från galleri</string>
+    <string name="from_camera">Från Kamera</string>
+    <string name="avg_mph">Avg MPH</string>
+    <string name="total_miles">Totalt antal kilometer</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">Statistik</string>
+    <string name="distance_ridden">Distance Ridden:</string>
+    <string name="parts">Delar</string>
+    <string name="zenit_mini_marble">Zenit Mini Marble</string>
+    <string name="grip">Grip:</string>
+    <string name="lokton">Loktonn</string>
+    <string name="trucks">Lastbilar:</string>
+    <string name="paris_v3">Paris V3</string>
+    <string name="angle_front">Vinkel (framtill):</string>
+    <string name="angle_rear">Vinkel (baksidan):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Pivot:</string>
+    <string name="wheels">Hjul:</string>
+    <string name="bearings">Bearingar:</string>
+    <string name="edit_setup">Redigera konfiguration</string>
+    <string name="recent_sessions">Senaste sessioner</string>
+    <string name="delete_board">Ta bort b</string>
+    <string name="record_session">Postsession</string>
+    <string name="durations">Varaktighet</string>
+    <string name="distances">Avstånd</string>
+    <string name="top_speeds">Översta tal</string>
+    <string name="average_speeds">Medeltal</string>
+    <string name="favorite_board">Favorit Board</string>
+    <string name="edit_profile">Redigera profil</string>
+    <string name="average_distance">Genomsnittlig Avstånd:</string>
+    <string name="total_distance">Total avståndstagande:</string>
+    <string name="_00_0_miles">00.0 Miles</string>
+    <string name="furthest_distance">Furstaste avståndstagande:</string>
+    <string name="average_speed">Medelhastighet:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">Snabbaste hastighet:</string>
+    <string name="just_another_awesome_skater">Ännu en grym Skater.</string>
+    <string name="john_doe">John Doe</string>
+    <string name="bushing_calculator">BushberäkningDescription</string>
+    <string name="weight_lbs">Vikt (lbs)</string>
+    <string name="cruising">Kryssning</string>
+    <string name="freeride_downhill">Freeride / Downhill</string>
+    <string name="calculate">Beräkna</string>
+    <string name="recommended_durometer_00a">Rekommenderad Durometer: 00a</string>
+    <string name="based_on_venom_hpf_formula">Baserat på venom HPF-formel</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Gå ett steg mjukare vägkant för bättre snickning. Eller gå en trappa upp boardside för mindre slafta</string>
+    <string name="create_board">Skapa bräde</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Använda kort:</string>
+    <string name="add_board">Lägg till</string>
+    <string name="city">Ort:</string>
+    <string name="fort_myers">Fort Myers</string>
+    <string name="top_speed">Topphastighet:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Varaktighet:</string>
+    <string name="_0_0_hours">0, 0 timmar</string>
+    <string name="start_time">Starttid:</string>
+    <string name="end_time">Sluttid:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">Ta bort session</string>
+    <string name="profile">Profil</string>
+    <string name="boards">Kort</string>
+    <string name="sessions">Sessioner</string>
+    <string name="news">Nyheter</string>
+    <string name="map">Karta</string>
+    <string name="calculator">Kalkylator</string>
+    <string name="settings">Inställningar</string>
+    <string name="muirskate_title">Longboard Shop</string>
+    <string name="discord_title">Longboarding Family Discord</string>
+    <string name="github_title">Källkod för GitHub</string>
+    <string name="sources_title">Nyhetskällor</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">LongboardBrand Blog</string>
+    <string name="darktheme_title">Tvinga mörktema</string>
+    <string name="darktheme_sum">Kommer annars att följa systeminställningarna. Starta om app för att få effekt</string>
+    <string name="github_sum">Visa källkoden till appen som är värd för GitHub, och kanske till och med bidra!</string>
+    <string name="discord_sum">Gå med i den långbänkta familjen-disackordsservern, den bästa gemenskapen att träffa andra</string>
+    <string name="muirskate_sum">Gå till Muirskate.com den bästa platsen att beställa något för Longboarding</string>
+    <string name="no_favorite">Ingen favorit</string>
+    <string name="speed">Hastighet</string>
+    <string name="distance">Avstånd</string>
+    <string name="miles"> Miles.</string>
+    <string name="mph"> MF</string>
+    <string name="poll_rate_sum">Hur snabbt bör platsen uppdateras vid inspelning av en session. Lägre är snabbare, men mer kraft oavgjort. Rekommenderat är 2500</string>
+    <string name="poll_rate_title">Placeringspollningsvärde (millisekunder)</string>
+    <string name="recording_session">Inspelningssession</string>
+    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering, men njut av resten av det som appen har att erbjuda!</string>
+    <string name="not_added_title">Det här avsnittet är inte klart</string>
+    <string name="no_news">Inga nyheter</string>
+    <string name="recommended_durometer">Rekommenderad Durometer: </string>
+    <string name="recommended_shape">Rekommenderad form: </string>
+    <string name="need_weight">Ange en vikt</string>
+    <string name="ok">OKEJ.</string>
+    <string name="delete_session_title">Ta bort session</string>
+    <string name="delete_session_dialog">Är du säker på det?</string>
+    <string name="cancel">Avbryt</string>
+    <string name="delete">Radera</string>
+    <string name="no_sessions">Inga sessioner har formulerats</string>
+    <string name="click_to_stop">Klicka här för att stoppa inspelningen</string>
+    <string name="start">START</string>
+    <string name="recording_disclaimer">Du är GPS-data kommer att användas.</string>
+    <string name="record_dialog_title">Starta session?</string>
+    <string name="not_enough_data">Inte tillräckligt med data inspelade för att spara</string>
+    <string name="notification_description">Registrera data för dig till senare vy</string>
+    <string name="failed_news">Misslyckades ladda nyheter</string>
+    <string name="are_you_sure">Är du säker på det?</string>
+    <string name="add_tag">Lägg till etikett</string>
+    <string name="finish">Slutför</string>
+    <string name="no_boards">Inga avkort sparades</string>
+    <string name="thank_you_content">Tack för att du laddar ner appen! Men den här appen är fortfarande i ett tidigt skede och notera att många fler funktioner kommer!</string>
+    <string name="thank_you_title">Tack!</string>
+    <string name="went_wrong">Något gick fel</string>
+    <string name="no_image_selected">Du valde inte någon bild</string>
+    <string name="minutes">" Minuter"</string>
+    <string name="remove_board_from_session">Ta bort bräde från session</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Generisk</item>
+        <item>Paris V3</item>
+        <item>Paris Savants</item>
+        <item>Bear Gen6</item>
+        <item>Valkyrior</item>
+        <item>Caliber 2</item>
+        <item>Roja 2020:</item>
+        <item>Randalls</item>
+        <item>Sidovindrare</item>
+        <item>Seismisk Aeon</item>
+        <item>Arsenaler</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Generisk</item>
+        <item>Ormar</item>
+        <item>G Presentationsbilder</item>
+        <item>BO Smokes</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Fatty Hawgs</item>
+        <item>Chubby Hawgs</item>
+        <item>Högste Hawgs</item>
+        <item>Biggie Hawgs</item>
+        <item>Varvtal</item>
+        <item>EZ Hawgs</item>
+        <item>Markeringar</item>
+        <item>Nio Ballar</item>
+        <item>PHAT BOYZ</item>
+        <item>4Ordförande</item>
+        <item>Fettfri</item>
+        <item>Stimulus</item>
+        <item>Skiffar</item>
+        <item>Fettfreoner</item>
+        <item>Kegel</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Generisk</item>
+        <item>Bones Reds</item>
+        <item>Beasto</item>
+        <item>Oust</item>
+        <item>Mellanslag Ballar</item>
+        <item>Juhu V2</item>
+        <item>Svartsjuk</item>
+        <item>Zeniös (keramik)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>StandardJessip</item>
+        <item>Loktonn</item>
+        <item>Gangster</item>
+        <item>Mob Grip</item>
+        <item>Hardcore</item>
+        <item>Utsökt</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Ingen-</item>
+        <item>Komotion</item>
+        <item>PSD IN-sidan</item>
+        <item>PSD MINI I/O</item>
+        <item>PSD OUT-sidan</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Dansa</item>
+        <item>LDP</item>
+        <item>Nedåt</item>
+        <item>Freerid</item>
+        <item>Slalom</item>
+        <item>Kryssning</item>
+        <item>Freestyle</item>
+        <item>Slumpmässig</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Bestånd</item>
+        <item>Barrel WFB 78a</item>
+        <item>Barrel WFB 83a</item>
+        <item>Barrel WFB 88a</item>
+        <item>Barrel WFB 93a</item>
+        <item>Barrel WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>Barrel APS 70a</item>
+        <item>Barrel APS 75a</item>
+        <item>Barrel APS 80a</item>
+        <item>Barrel APS 85a</item>
+        <item>Barrel APS 90a</item>
+        <item>Barrel APS 92.5a</item>
+        <item>Barrel APS 95a</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
+        <item>Barrel HPF 78a</item>
+        <item>Barrel HPF 81a</item>
+        <item>Barrel HPF 85a</item>
+        <item>Barrel HPF 87a</item>
+        <item>Barrel HPF 90a</item>
+        <item>Barrel HPF 93a</item>
+        <item>Barrel HPF 95a</item>
+        <item>Barrel HPF 97a</item>
+        <item>Cone HPF 78a</item>
+        <item>Cone HPF 81a</item>
+        <item>Cone HPF 85a</item>
+        <item>Cone HPF 87a</item>
+        <item>Cone HPF 90a</item>
+        <item>Cone HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>Cone HPF 97a</item>
+        <item>Barrel SHR 80a</item>
+        <item>Barrel SHR 91a</item>
+        <item>Barrel SHR 83a</item>
+        <item>Barrel SHR 86a</item>
+        <item>Barrel SHR 88a</item>
+        <item>Barrel SHR 95a</item>
+        <item>Cone SHR 80a</item>
+        <item>Cone SHR 91a</item>
+        <item>Cone SHR 83a</item>
+        <item>Cone SHR 86a</item>
+        <item>Cone SHR 88a</item>
+        <item>Cone SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Bestånd</item>
+        <item>Riptidbägare</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Bestånd</item>
+        <item>Riptidbägare</item>
+    </string-array>
+</resources>

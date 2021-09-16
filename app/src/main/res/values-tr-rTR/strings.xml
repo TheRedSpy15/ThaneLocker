@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thane Dolabı</string>
+    <string name="title_activity_board">Toplantı Etkinliği</string>
+    <string name="change">Değişiklik</string>
+    <string name="description">Açıklama</string>
+    <string name="save">Kaydet</string>
+    <string name="griptape">Griptape:</string>
+    <string name="bushings_road">Bushings (Yol):</string>
+    <string name="bushings_board">Bushings (Yönetim Kurulu):</string>
+    <string name="default_50">Varsayılan değer: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Arka Açı:</string>
+    <string name="front_angle">Ön Açı:</string>
+    <string name="advance_mode">Avans Kipi</string>
+    <string name="deck">Güverte</string>
+    <string name="name">Ad</string>
+    <string name="from_gallery">Kaynak Galeriden</string>
+    <string name="from_camera">Kameradan</string>
+    <string name="avg_mph">Avg MPH</string>
+    <string name="total_miles">Toplam Mil</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">İstatistikler</string>
+    <string name="distance_ridden">Mesafe Dolu:</string>
+    <string name="parts">Parçalar</string>
+    <string name="zenit_mini_marble">Zenit Mini Mermer</string>
+    <string name="grip">Kavrama:</string>
+    <string name="lokton">Lokton</string>
+    <string name="trucks">Kamyonlar:</string>
+    <string name="paris_v3">Paris V3</string>
+    <string name="angle_front">Açı (ön):</string>
+    <string name="angle_rear">Açı (arka):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Özet:</string>
+    <string name="wheels">Tekerlekler:</string>
+    <string name="bearings">Rulmanlar:</string>
+    <string name="edit_setup">Kurulumu Düzenle</string>
+    <string name="recent_sessions">Son Oturumlar</string>
+    <string name="delete_board">Panoyu Sil</string>
+    <string name="record_session">Kayıt Oturumu</string>
+    <string name="durations">Süreler</string>
+    <string name="distances">Uzaklıklar</string>
+    <string name="top_speeds">En Yüksek Hızlar</string>
+    <string name="average_speeds">Ortalama Hızlar</string>
+    <string name="favorite_board">Sık Kullanılan Pano</string>
+    <string name="edit_profile">Profili Düzenle</string>
+    <string name="average_distance">Ortalama Mesafe:</string>
+    <string name="total_distance">Toplam Mesafe:</string>
+    <string name="_00_0_miles">00.0 Miles</string>
+    <string name="furthest_distance">En Uzak Mesafe:</string>
+    <string name="average_speed">Ortalama Hız:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">En Hızlı Hız:</string>
+    <string name="just_another_awesome_skater">Bir başka harika Skater daha.</string>
+    <string name="john_doe">Kimliği belirsiz</string>
+    <string name="bushing_calculator">Bushing Hesap Makinesi</string>
+    <string name="weight_lbs">Ağırlık (lbs)</string>
+    <string name="cruising">Geziniyor</string>
+    <string name="freeride_downhill">Freeride/Downhill</string>
+    <string name="calculate">Hesapla</string>
+    <string name="recommended_durometer_00a">Önerilen Durometre: 00a</string>
+    <string name="based_on_venom_hpf_formula">Venom HPF formülünü temel alır</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Daha iyi oymak için bir adım daha yumuşak bir yol. Ya da daha az tembellik için bir adım daha yukarı çık.</string>
+    <string name="create_board">Pano Yarat</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Kullanılan Tahtalar:</string>
+    <string name="add_board">Pano Ekle</string>
+    <string name="city">İlçe:</string>
+    <string name="fort_myers">Fort Myers</string>
+    <string name="top_speed">En Yüksek Hız:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Süre:</string>
+    <string name="_0_0_hours">0,0 saat</string>
+    <string name="start_time">Başlangıç Saati:</string>
+    <string name="end_time">Bitiş Saati:</string>
+    <string name="_12_00pm">12:00</string>
+    <string name="delete_session">Oturumu Sil</string>
+    <string name="profile">Profil</string>
+    <string name="boards">Panolar</string>
+    <string name="sessions">Oturumlar</string>
+    <string name="news">Haberler</string>
+    <string name="map">Eşle</string>
+    <string name="calculator">Hesap makinesi</string>
+    <string name="settings">Ayarlar</string>
+    <string name="muirskate_title">Uzun Tahta Mağazası</string>
+    <string name="discord_title">Uzun Süreli Aile Diski</string>
+    <string name="github_title">GitHub üzerinde Kaynak Kodu</string>
+    <string name="sources_title">Haber Kaynakları</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">LongboardBrand</string>
+    <string name="darktheme_title">Koyu Temayı Zorla</string>
+    <string name="darktheme_sum">Tersi durumda, sistem ayarları da izlenecektir. Etkiyi yürürlüğe almak için uygulamayı yeniden başlat</string>
+    <string name="github_sum">GitHub \'da barındırılan uygulama için kaynak kodu görüntüleyin ve hatta katkıda bulunun!</string>
+    <string name="discord_sum">longboarding family discord sunucusuna katılın, diğer kişileri karşılamak için en iyi topluluk</string>
+    <string name="muirskate_sum">Longboarding için herhangi bir şey sipariş etmek için en iyi yer Muirskate.com adresine gidin</string>
+    <string name="no_favorite">Sık Kullanılan Yok</string>
+    <string name="speed">Hız</string>
+    <string name="distance">Mesafe</string>
+    <string name="miles"> Mil</string>
+    <string name="mph"> MPH</string>
+    <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük, daha hızlı ama daha çok güç çiziyor. Önerilen 2500</string>
+    <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
+    <string name="recording_session">Kayıt Oturumu</string>
+    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek, ancak uygulamanın sunacağı geri kalan şeyin keyfini çıkarın!</string>
+    <string name="not_added_title">Bu bölüm bitirilmedi</string>
+    <string name="no_news">Haber yok</string>
+    <string name="recommended_durometer">Önerilen Durometre: </string>
+    <string name="recommended_shape">Önerilen Şekil: </string>
+    <string name="need_weight">Lütfen bir ağırlık girin</string>
+    <string name="ok">Tamam</string>
+    <string name="delete_session_title">Oturumu Sil</string>
+    <string name="delete_session_dialog">Emin misin?</string>
+    <string name="cancel">İptal</string>
+    <string name="delete">Sil</string>
+    <string name="no_sessions">Herhangi Bir Oturum Kaydedilmedi</string>
+    <string name="click_to_stop">Kaydı durdurmak için burayı tıklatın</string>
+    <string name="start">BAŞLA</string>
+    <string name="recording_disclaimer">GPS verileri kullanılırmış.</string>
+    <string name="record_dialog_title">Oturum başlatılsın mı?</string>
+    <string name="not_enough_data">Saklanacak kadar veri kaydedilmedi</string>
+    <string name="notification_description">Verilerinizin daha sonra görüntülenmek üzere kaydedilmesi</string>
+    <string name="failed_news">Haberler yüklenemedi</string>
+    <string name="are_you_sure">Emin misin?</string>
+    <string name="add_tag">Etiket Ekle</string>
+    <string name="finish">Son</string>
+    <string name="no_boards">Hiçbir Pano Kaydedilmedi</string>
+    <string name="thank_you_content">Uygulamayı karşıdan yüklediğiniz için teşekkür ederiz! Ama bu uygulama hala daha ilk aşamalarda ve lütfen daha fazla özellik gelmeniz gerektiğini unutmayın!</string>
+    <string name="thank_you_title">Teşekkür Ederim!</string>
+    <string name="went_wrong">Bir şeyler ters gitti.</string>
+    <string name="no_image_selected">Resim seçmediniz</string>
+    <string name="minutes">" Dakika"</string>
+    <string name="remove_board_from_session">Panoyu oturumdan kaldır</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Genel</item>
+        <item>Paris V3</item>
+        <item>Paris Savants</item>
+        <item>Bear Gen6</item>
+        <item>Valkyries</item>
+        <item>Kalibre 2</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Kaldırıcılar</item>
+        <item>Sismik Aeon</item>
+        <item>Arsenal</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Genel</item>
+        <item>Yılanlar</item>
+        <item>G Slaytları</item>
+        <item>BO Sigara İçer.</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Şişko Hawgs</item>
+        <item>Tombul Hawgs</item>
+        <item>Yüce Şahinler</item>
+        <item>Biggie Hawgs</item>
+        <item>Hız Delikleri</item>
+        <item>EZ Hawgs</item>
+        <item>İşaretçiler</item>
+        <item>Dokuz Top</item>
+        <item>PHAT BOYZ</item>
+        <item>4Başkan</item>
+        <item>Ücretsiz Yağ</item>
+        <item>Uyarıcılar</item>
+        <item>Skips</item>
+        <item>Şişko Frees</item>
+        <item>Kegeller</item>
+        <item>Caguyama.</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Genel</item>
+        <item>Bones Reds</item>
+        <item>Beasto</item>
+        <item>En Ust</item>
+        <item>Uzay Topları</item>
+        <item>Juhu V2</item>
+        <item>Çok kıskanç</item>
+        <item>Zamlı (Ceramic)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>Standart Jessip</item>
+        <item>Lokton</item>
+        <item>Gangster</item>
+        <item>Mob Kavrama</item>
+        <item>Hardcore</item>
+        <item>Kısır</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Yok</item>
+        <item>Komotion</item>
+        <item>PSD \' de yan yana</item>
+        <item>PSD MINI G/Ç</item>
+        <item>PSD Dışı TARAF</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Dans</item>
+        <item>LDP</item>
+        <item>Yokuş</item>
+        <item>Freeride</item>
+        <item>Slalom</item>
+        <item>Seyahat</item>
+        <item>Serbest stil</item>
+        <item>Rastgelelik</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Hisse senedi</item>
+        <item>Varil WFB 78a</item>
+        <item>Varil WFB 83a</item>
+        <item>Varil WFB 88a</item>
+        <item>Varil WFB 93a</item>
+        <item>Varil WFB 95,5a</item>
+        <item>Koni WFB 78a</item>
+        <item>Koni WFB 83a</item>
+        <item>Koni WFB 88a</item>
+        <item>Koni WFB 93a</item>
+        <item>Koni WFB 95,5a</item>
+        <item>Varil APS 70a</item>
+        <item>Namlu APS 75a</item>
+        <item>Varil APS 80a</item>
+        <item>Varil APS 85a</item>
+        <item>Varil APS 90a</item>
+        <item>Varil APS 92,5a</item>
+        <item>Varil APS 95a</item>
+        <item>Koni APS 75a</item>
+        <item>Koni APS 70a</item>
+        <item>Koni APS 80a</item>
+        <item>Koni APS 85a</item>
+        <item>Koni APS 90a</item>
+        <item>Koni APS 92.5a</item>
+        <item>Koni APS 95a</item>
+        <item>Varil HPF 78a</item>
+        <item>Varil HPF 81a</item>
+        <item>Varil HPF 85a</item>
+        <item>Varil HPF 87a</item>
+        <item>Varil HPF 90a</item>
+        <item>Varil HPF 93a</item>
+        <item>Varil HPF 95a</item>
+        <item>Varil HPF 97a</item>
+        <item>Koni HPF 78a</item>
+        <item>Cone HPF 81a</item>
+        <item>Koni HPF 85a</item>
+        <item>Koni HPF 87a</item>
+        <item>Koni HPF 90a</item>
+        <item>Koni HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>Cone HPF 97a</item>
+        <item>Varil SHR 80a</item>
+        <item>Varil SHR 91a</item>
+        <item>Varil SHR 83a</item>
+        <item>Varil SHR 86a</item>
+        <item>Varil SHR 88a</item>
+        <item>Varil SHR 95a</item>
+        <item>Koni SHR 80a</item>
+        <item>Koni SHR 91a</item>
+        <item>Koni SHR 83a</item>
+        <item>Koni SHR 86a</item>
+        <item>Koni SHR 88a</item>
+        <item>Koni SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Hisse senedi</item>
+        <item>Riptid kabı</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Hisse senedi</item>
+        <item>Riptid kabı</item>
+    </string-array>
+</resources>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thane Locker</string>
+    <string name="title_activity_board">Działanie boardActivity</string>
+    <string name="change">Zmień</string>
+    <string name="description">Opis</string>
+    <string name="save">Zapisz</string>
+    <string name="griptape">Griptape:</string>
+    <string name="bushings_road">Bushings (Road):</string>
+    <string name="bushings_board">Bushingi (Board):</string>
+    <string name="default_50">Wartość domyślna: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Kąt tylny:</string>
+    <string name="front_angle">Kąt przedni:</string>
+    <string name="advance_mode">Tryb zaliczki</string>
+    <string name="deck">Pokład</string>
+    <string name="name">Nazwa</string>
+    <string name="from_gallery">Z galerii</string>
+    <string name="from_camera">Z kamery</string>
+    <string name="avg_mph">Śr. MPH</string>
+    <string name="total_miles">Łącznie mil</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">Statystyki</string>
+    <string name="distance_ridden">Odległość pokonana:</string>
+    <string name="parts">Części</string>
+    <string name="zenit_mini_marble">Zenit Mini Marble</string>
+    <string name="grip">Chwyt:</string>
+    <string name="lokton">Lokton</string>
+    <string name="trucks">Ciężarówki:</string>
+    <string name="paris_v3">Paryż V3</string>
+    <string name="angle_front">Kąt (przód):</string>
+    <string name="angle_rear">Kąt (tył):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Przestaw:</string>
+    <string name="wheels">Koła:</string>
+    <string name="bearings">Łożyska:</string>
+    <string name="edit_setup">Edytuj konfigurację</string>
+    <string name="recent_sessions">Ostatnie sesje</string>
+    <string name="delete_board">Usuwanie płyty</string>
+    <string name="record_session">Rejestrowanie sesji</string>
+    <string name="durations">Przedziały czasu</string>
+    <string name="distances">Odległości</string>
+    <string name="top_speeds">Maksymalna prędkość</string>
+    <string name="average_speeds">Średnie prędkości</string>
+    <string name="favorite_board">Ulubiona płyta</string>
+    <string name="edit_profile">Edytuj profil</string>
+    <string name="average_distance">Średnia odległość:</string>
+    <string name="total_distance">Całkowita odległość:</string>
+    <string name="_00_0_miles">00.0 Miles</string>
+    <string name="furthest_distance">Najdalej oddalona odległość:</string>
+    <string name="average_speed">Średnia szybkość:</string>
+    <string name="_00_0_mph">00.0 MPH</string>
+    <string name="fastest_speed">Najszybsza szybkość:</string>
+    <string name="just_another_awesome_skater">Jeszcze jeden niesamowity Skater</string>
+    <string name="john_doe">John Doe</string>
+    <string name="bushing_calculator">Kalkulator uderzeń</string>
+    <string name="weight_lbs">Waga (lbs)</string>
+    <string name="cruising">Rejsy</string>
+    <string name="freeride_downhill">Freeride/Downhill</string>
+    <string name="calculate">Oblicz</string>
+    <string name="recommended_durometer_00a">Rekomendowany Durometr: 00a</string>
+    <string name="based_on_venom_hpf_formula">W oparciu o Venom HPF Formula</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Idź krok łagodniejszy przydrożny dla lepszego rzeźby. Albo iść krok w górę promenada dla mniej slop</string>
+    <string name="create_board">Tworzenie płyty</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Używane tablice:</string>
+    <string name="add_board">Dodaj Radę</string>
+    <string name="city">Miasto:</string>
+    <string name="fort_myers">Fort Myers</string>
+    <string name="top_speed">Maksymalna szybkość:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Czas trwania:</string>
+    <string name="_0_0_hours">0, 0</string>
+    <string name="start_time">Godzina rozpoczęcia:</string>
+    <string name="end_time">Czas zakończenia:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">Usuń sesję</string>
+    <string name="profile">Profil</string>
+    <string name="boards">Tablice</string>
+    <string name="sessions">Sesje</string>
+    <string name="news">Wiadomości</string>
+    <string name="map">Mapa</string>
+    <string name="calculator">Kalkulator</string>
+    <string name="settings">Ustawienia</string>
+    <string name="muirskate_title">Longboard Shop</string>
+    <string name="discord_title">Longboarding Family Discord</string>
+    <string name="github_title">Kod źródłowy na GitHub</string>
+    <string name="sources_title">Źródła wiadomości</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">Blog longboardBrand</string>
+    <string name="darktheme_title">Wymuszenie ciemnej kompozycji</string>
+    <string name="darktheme_sum">W przeciwnym razie będą następować ustawienia systemowe. Zrestartuj aplikację, aby rozpocząć działanie</string>
+    <string name="github_sum">Zobacz kod źródłowy do aplikacji udostępnianej na GitHub, a może nawet przyczyniaj się!</string>
+    <string name="discord_sum">Dołącz do rodzinnego serwera dyskursowego longboardingu, najlepszej społeczności, aby poznać innych</string>
+    <string name="muirskate_sum">Przejdź do Muirskate.com najlepsze miejsce, aby zamówić wszystko dla Longboarding</string>
+    <string name="no_favorite">Brak ulubionych</string>
+    <string name="speed">Szybkość</string>
+    <string name="distance">Odległość</string>
+    <string name="miles"> Mile</string>
+    <string name="mph"> MH</string>
+    <string name="poll_rate_sum">Jak szybko położenie powinno być aktualizowane podczas rejestrowania sesji. Mniejsza jest szybsza, ale większa moc. Zalecany jest 2500</string>
+    <string name="poll_rate_title">Częstotliwość odpytywania lokalizacji (milisekundy)</string>
+    <string name="recording_session">Sesja rejestrowania</string>
+    <string name="not_added_disclaimer">Zostanie dodany w przyszłej aktualizacji, ale ciesz się resztą tego, co aplikacja ma do zaoferowania!</string>
+    <string name="not_added_title">Ta sekcja nie jest zakończona</string>
+    <string name="no_news">Brak wiadomości</string>
+    <string name="recommended_durometer">Zalecany durometr: </string>
+    <string name="recommended_shape">Kształt zalecany: </string>
+    <string name="need_weight">Wprowadź wagę</string>
+    <string name="ok">OK</string>
+    <string name="delete_session_title">Usuń sesję</string>
+    <string name="delete_session_dialog">Czy na pewno?</string>
+    <string name="cancel">Anuluj</string>
+    <string name="delete">Usuń</string>
+    <string name="no_sessions">Nie zarejestrowano żadnych sesji</string>
+    <string name="click_to_stop">Kliknij tutaj, aby zatrzymać rejestrowanie</string>
+    <string name="start">URUCHOM</string>
+    <string name="recording_disclaimer">Są dane GPS będą używane</string>
+    <string name="record_dialog_title">Czy uruchomić sesję?</string>
+    <string name="not_enough_data">Brak wystarczającej ilości danych do zapisania</string>
+    <string name="notification_description">Zapisywanie danych w celu późniejszego wyświetlenia</string>
+    <string name="failed_news">Ładowanie wiadomości nie powiodło się</string>
+    <string name="are_you_sure">Czy na pewno?</string>
+    <string name="add_tag">Dodaj znacznik</string>
+    <string name="finish">Zakończ</string>
+    <string name="no_boards">Nie zapisano żadnych tablic</string>
+    <string name="thank_you_content">Dziękujemy za pobranie aplikacji! Ale ta aplikacja jest wciąż na wczesnym etapie i należy pamiętać o wiele więcej funkcji ma przyjść!</string>
+    <string name="thank_you_title">Dziękujemy!</string>
+    <string name="went_wrong">Coś poszło nie tak</string>
+    <string name="no_image_selected">Nie wybrano obrazu</string>
+    <string name="minutes">" Minuty"</string>
+    <string name="remove_board_from_session">Usuń tablicę z sesji</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Ogólny</item>
+        <item>Paryż V3</item>
+        <item>Paryskie Savants</item>
+        <item>Niedźwiedź Gen6</item>
+        <item>Valkyries</item>
+        <item>Kaliber 2</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Chodniki boczne</item>
+        <item>Seismic Aeon</item>
+        <item>Arsenały</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Ogólny</item>
+        <item>Węże</item>
+        <item>G Slajdy</item>
+        <item>BO Smokes</item>
+        <item>BO Liam Morgan Pro</item>
+        <item>Jastrzębska</item>
+        <item>Chubby Hawgs</item>
+        <item>Najwyższe Hawgs</item>
+        <item>Biggie Hawgs</item>
+        <item>Otwory wentylacyjne</item>
+        <item>EZ Jastrzębie</item>
+        <item>Znaczniki</item>
+        <item>Dziewięć kulek</item>
+        <item>PHAT BOYZ</item>
+        <item>4przewodniczący</item>
+        <item>Wolne tłuszcze</item>
+        <item>Stymulator</item>
+        <item>Skify</item>
+        <item>Tłuszcz Frees</item>
+        <item>Kegels</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Ogólny</item>
+        <item>Kości Reds</item>
+        <item>Beasto</item>
+        <item>Oust</item>
+        <item>Kule kosmiczne</item>
+        <item>Juhu V2</item>
+        <item>Gorliwy</item>
+        <item>Gorliwy (Ceramiczny)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>Standardowy Jessip</item>
+        <item>Lokton</item>
+        <item>Gangster</item>
+        <item>Uchwyt mob</item>
+        <item>Hardcore</item>
+        <item>Błędne</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Brak</item>
+        <item>Komotion</item>
+        <item>PSD IN-side</item>
+        <item>We/wy PSD MINI</item>
+        <item>PSD OUT-bok</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Taniec</item>
+        <item>LDP</item>
+        <item>Zjazd</item>
+        <item>Freeride</item>
+        <item>Slalom</item>
+        <item>Rejs</item>
+        <item>Freestyle</item>
+        <item>Losowość</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Stado</item>
+        <item>Beczka WFB 78a</item>
+        <item>Beczka WFB 83a</item>
+        <item>Beczka WFB 88a</item>
+        <item>Beczka WFB 93a</item>
+        <item>Beczka WFB 95.5a</item>
+        <item>Stożek WFB 78a</item>
+        <item>Stożek WFB 83a</item>
+        <item>Stożek WFB 88a</item>
+        <item>Stożek WFB 93a</item>
+        <item>Stożek WFB 95.5a</item>
+        <item>Beczka APS 70a</item>
+        <item>Beczka APS 75a</item>
+        <item>Beczka APS 80a</item>
+        <item>Beczka APS 85a</item>
+        <item>Beczka APS 90a</item>
+        <item>Beczka APS 92.5a</item>
+        <item>Beczka APS 95a</item>
+        <item>Stożek APS 75a</item>
+        <item>Stożek APS 70a</item>
+        <item>Stożek APS 80a</item>
+        <item>Stożek APS 85a</item>
+        <item>Stożek APS 90a</item>
+        <item>Stożek APS 92.5a</item>
+        <item>Stożek APS 95a</item>
+        <item>Beczka HPF 78a</item>
+        <item>Beczka HPF 81a</item>
+        <item>Beczka HPF 85a</item>
+        <item>Beczka HPF 87a</item>
+        <item>Beczka HPF 90a</item>
+        <item>Beczka HPF 93a</item>
+        <item>Beczka HPF 95a</item>
+        <item>Beczka HPF 97a</item>
+        <item>Stożek HPF 78a</item>
+        <item>Stożek HPF 81a</item>
+        <item>Stożek HPF 85a</item>
+        <item>Stożek HPF 87a</item>
+        <item>Stożek HPF 90a</item>
+        <item>Stożek HPF 93a</item>
+        <item>Stożek HPF 95a</item>
+        <item>Stożek HPF 97a</item>
+        <item>Beczka SHR 80a</item>
+        <item>Beczka SHR 91a</item>
+        <item>Beczka SHR 83a</item>
+        <item>Beczka SHR 86a</item>
+        <item>Beczka SHR 88a</item>
+        <item>Beczka SHR 95a</item>
+        <item>Stożek SHR 80a</item>
+        <item>Stożek SHR 91a</item>
+        <item>Stożek SHR 83a</item>
+        <item>Stożek SHR 86a</item>
+        <item>Stożek SHR 88a</item>
+        <item>Stożek SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Stado</item>
+        <item>Puchar Riptide</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Stado</item>
+        <item>Puchar Riptide</item>
+    </string-array>
+</resources>

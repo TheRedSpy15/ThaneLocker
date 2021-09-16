@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thane Locker</string>
+    <string name="title_activity_board">Boardaktiviteetti</string>
+    <string name="change">Muutos</string>
+    <string name="description">Kuvaus</string>
+    <string name="save">Tallenna</string>
+    <string name="griptape">Nauha:</string>
+    <string name="bushings_road">Bushingit (Road):</string>
+    <string name="bushings_board">Bushings (Board):</string>
+    <string name="default_50">Oletusarvo: 50</string>
+    <string name="_50">50</string>
+    <string name="rear_angle">Kulkukulma:</string>
+    <string name="front_angle">Etukulma:</string>
+    <string name="advance_mode">Ennakkotila</string>
+    <string name="deck">Kansi</string>
+    <string name="name">Nimi</string>
+    <string name="from_gallery">Galleriasta</string>
+    <string name="from_camera">Kamerasta</string>
+    <string name="avg_mph">Avg MPH</string>
+    <string name="total_miles">Yhteensä Miles</string>
+    <string name="_00_0">00.0</string>
+    <string name="statistics">Tilastot</string>
+    <string name="distance_ridden">Etäisyys Ridden:</string>
+    <string name="parts">Osat</string>
+    <string name="zenit_mini_marble">Zenit Mini Marmori</string>
+    <string name="grip">Suru:</string>
+    <string name="lokton">Lokton</string>
+    <string name="trucks">Rekat:</string>
+    <string name="paris_v3">Pariisi V3</string>
+    <string name="angle_front">Kulma (etuosa):</string>
+    <string name="angle_rear">Kulma (taaksepäin):</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
+    <string name="pivot">Pivot:</string>
+    <string name="wheels">Pyörät:</string>
+    <string name="bearings">Korvaukset:</string>
+    <string name="edit_setup">Muokkaa asetuksia</string>
+    <string name="recent_sessions">Viimeaikaiset istunnot</string>
+    <string name="delete_board">Poista lautakunta</string>
+    <string name="record_session">Tallenna istunto</string>
+    <string name="durations">Kesto</string>
+    <string name="distances">Etäisyydet</string>
+    <string name="top_speeds">Top Speedit</string>
+    <string name="average_speeds">Keskiarvot</string>
+    <string name="favorite_board">Suosikkihallitus</string>
+    <string name="edit_profile">Muokkaa profiilia</string>
+    <string name="average_distance">Keskimääräinen etäisyys:</string>
+    <string name="total_distance">Kokonaisetäisyys:</string>
+    <string name="_00_0_miles">00.0 Miles</string>
+    <string name="furthest_distance">Furthestin etäisyys:</string>
+    <string name="average_speed">Keskimääräinen nopeus:</string>
+    <string name="_00_0_mph">0.0 MPH</string>
+    <string name="fastest_speed">Nopein nopeus:</string>
+    <string name="just_another_awesome_skater">Taas yksi mahtava Skater.</string>
+    <string name="john_doe">John Doe</string>
+    <string name="bushing_calculator">Laskettava laskuri</string>
+    <string name="weight_lbs">Paino (lbs)</string>
+    <string name="cruising">Risteily</string>
+    <string name="freeride_downhill">Freeride/Downhill</string>
+    <string name="calculate">Lasketaan</string>
+    <string name="recommended_durometer_00a">Suositeltu Durmittari: 00a</string>
+    <string name="based_on_venom_hpf_formula">Perustuu Venom HPF -kaavaan</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Mene askel pehmeämpään suuntaan. Tai mene askeleelta vartalolta vähemmän.</string>
+    <string name="create_board">Luo johtokunta</string>
+    <string name="plus_sign">+</string>
+    <string name="boards_used">Käytetyt kortit:</string>
+    <string name="add_board">Lisää hallitus</string>
+    <string name="city">Kaupunki:</string>
+    <string name="fort_myers">Fort Myers</string>
+    <string name="top_speed">Nopeus:</string>
+    <string name="_20_mph">20 MPH</string>
+    <string name="duration">Kesto:</string>
+    <string name="_0_0_hours">0, 0 tuntia</string>
+    <string name="start_time">Aloitusaika:</string>
+    <string name="end_time">Loppuaika:</string>
+    <string name="_12_00pm">12 :s.</string>
+    <string name="delete_session">Poista istunto</string>
+    <string name="profile">Profiili</string>
+    <string name="boards">Boards</string>
+    <string name="sessions">Tunnustukset</string>
+    <string name="news">Uutiset</string>
+    <string name="map">Kartta</string>
+    <string name="calculator">Laskelmat</string>
+    <string name="settings">Asetukset</string>
+    <string name="muirskate_title">Longboard Shop</string>
+    <string name="discord_title">Longboarding Family Discord</string>
+    <string name="github_title">GitHubin lähdekoodi</string>
+    <string name="sources_title">Uutislähteet</string>
+    <string name="downhill254_title">DownHill254</string>
+    <string name="longboardbrand_title">LongboardBrand Blog</string>
+    <string name="darktheme_title">Dark Theme.</string>
+    <string name="darktheme_sum">Muussa tapauksessa seuraa järjestelmän asetuksia. Aloita sovellus uudelleen</string>
+    <string name="github_sum">Näytä sovelluspalvelimen lähdekoodi GitHubissa ja ehkä jopa myötävaikuttaa siihen!</string>
+    <string name="discord_sum">Liity pitkäsiimaperheeseen hajaannuspalvelimeen, paras yhteisö tapaamaan muita</string>
+    <string name="muirskate_sum">Mene osoitteeseen Muirskate.com paras paikka tilata mitään Longboarding</string>
+    <string name="no_favorite">Ei suosikkia</string>
+    <string name="speed">Nopeus</string>
+    <string name="distance">Etäisyys</string>
+    <string name="miles"> Miles.</string>
+    <string name="mph"> MPH</string>
+    <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa. Suositeltava on 2500</string>
+    <string name="poll_rate_title">Sijainnin Polling Rate (Millisekuntia)</string>
+    <string name="recording_session">Tallennusistunto</string>
+    <string name="not_added_disclaimer">Will lisätään myöhemmin päivittää, mutta nauti loput mitä sovellus on tarjota!</string>
+    <string name="not_added_title">Tämä osa ei ole valmis</string>
+    <string name="no_news">Ei uutisia</string>
+    <string name="recommended_durometer">Suositeltava Durometri: </string>
+    <string name="recommended_shape">Suositeltu Shape: </string>
+    <string name="need_weight">Anna paino</string>
+    <string name="ok">OK</string>
+    <string name="delete_session_title">Poista istunto</string>
+    <string name="delete_session_dialog">Oletko varma?</string>
+    <string name="cancel">Peruuta</string>
+    <string name="delete">Poista</string>
+    <string name="no_sessions">Ei tunnustettuja tunnustuksia</string>
+    <string name="click_to_stop">Lopeta tallennus napsauttamalla tätä</string>
+    <string name="start">ALOITA</string>
+    <string name="recording_disclaimer">Olet GPS-datan käytössä</string>
+    <string name="record_dialog_title">Aloita istunto?</string>
+    <string name="not_enough_data">Ei riittävästi tallennettuja tietoja</string>
+    <string name="notification_description">Tietojesi tallentaminen myöhempään tarkasteluun</string>
+    <string name="failed_news">Uutisten lataus ei onnistunut</string>
+    <string name="are_you_sure">Oletko varma?</string>
+    <string name="add_tag">Lisää tunniste</string>
+    <string name="finish">Lopeta</string>
+    <string name="no_boards">Ei veneitä</string>
+    <string name="thank_you_content">Kiitos sovelluksen lataamisesta! Mutta tämä sovellus on vielä alkuvaiheessa ja pyydän huomioimaan monia muita ominaisuuksia on tulossa!</string>
+    <string name="thank_you_title">Kiitos!</string>
+    <string name="went_wrong">Jokin meni vikaan.</string>
+    <string name="no_image_selected">Et valinnut imagoa</string>
+    <string name="minutes">" Pöytäkirja"</string>
+    <string name="remove_board_from_session">Poista taulu istunnosta</string>
+    <!-- Strings used for fragments for navigation -->
+    <!-- Built-in truck choices -->
+    <string-array name="trucks">
+        <item>Yleinen:</item>
+        <item>Pariisi V3</item>
+        <item>Pariisin säästö</item>
+        <item>Bear Gen6</item>
+        <item>Valkyyriat</item>
+        <item>Kaliber 2</item>
+        <item>Roja 2020</item>
+        <item>Randallit</item>
+        <item>Tuulettimet</item>
+        <item>Seisminen Aeon</item>
+        <item>Arsenaali</item>
+    </string-array>
+    <!-- Built-in wheel choices -->
+    <string-array name="wheels">
+        <item>Yleinen:</item>
+        <item>Käärmeet</item>
+        <item>G Slidit</item>
+        <item>BO-savukkeet</item>
+        <item>Liam Morgan Pro.</item>
+        <item>Fatty Hawgs</item>
+        <item>Chubby Hawgs.</item>
+        <item>Korkein Hawgs</item>
+        <item>Biggie Hawgs.</item>
+        <item>NopeusVentit</item>
+        <item>EZ-Hawgs</item>
+        <item>Markerit</item>
+        <item>Yhdeksän munaa.</item>
+        <item>PHAT BOZ</item>
+        <item>4Puhemies</item>
+        <item>Lihava vapaa</item>
+        <item>Stimulus</item>
+        <item>Skiffit</item>
+        <item>Fat Frees</item>
+        <item>Kegelit</item>
+        <item>Caguama</item>
+    </string-array>
+    <!-- Built-in bearing choices -->
+    <string-array name="bearings">
+        <item>Yleinen:</item>
+        <item>Bones Reds</item>
+        <item>Beasto</item>
+        <item>Pöly</item>
+        <item>Avaruuspallot</item>
+        <item>Juhu V2</item>
+        <item>Zemustasukkainen</item>
+        <item>Kateellinen (Keraaminen)</item>
+    </string-array>
+    <!-- Built-in grip tape choices -->
+    <string-array name="grip_tapes">
+        <item>VakioJessica</item>
+        <item>Lokton</item>
+        <item>Gangsteri</item>
+        <item>Mob Grip</item>
+        <item>Hardcore</item>
+        <item>Vicious</item>
+    </string-array>
+    <!-- Built-in foot stop choices -->
+    <string-array name="foot_stops">
+        <item>Ei</item>
+        <item>Komennus</item>
+        <item>PSD IN-side</item>
+        <item>PSD MINI-I/O</item>
+        <item>PSD OUT-puoli</item>
+    </string-array>
+    <!-- Built-in tags choices -->
+    <string-array name="tags">
+        <item>Dance</item>
+        <item>LDP</item>
+        <item>Downhill</item>
+        <item>Freeridi</item>
+        <item>Slalom</item>
+        <item>Cruise</item>
+        <item>Freestyle</item>
+        <item>Randomness</item>
+    </string-array>
+    <!-- Built-in bushings choices -->
+    <string-array name="bushings">
+        <item>Kanta</item>
+        <item>Barrel WFB 78a</item>
+        <item>Barrel WFB 83a</item>
+        <item>Barrel WFB 88a</item>
+        <item>Barrel WFB 93a</item>
+        <item>Barrel WFB 95.5a</item>
+        <item>Cone WFB 78a</item>
+        <item>Cone WFB 83a</item>
+        <item>Cone WFB 88a</item>
+        <item>Cone WFB 93a</item>
+        <item>Cone WFB 95.5a</item>
+        <item>Barrel APS 70 a</item>
+        <item>Barrel APS 75a</item>
+        <item>Barrelin APS 80a</item>
+        <item>Barrel APS 85a</item>
+        <item>Barrel APS 90a</item>
+        <item>Ladon APS 92.5a</item>
+        <item>Barrel APS 95a</item>
+        <item>Cone APS 75a</item>
+        <item>Cone APS 70a</item>
+        <item>Cone-APS 80a</item>
+        <item>Cone APS 85a</item>
+        <item>Cone APS 90a</item>
+        <item>Cone APS 92.5a</item>
+        <item>Cone APS 95a</item>
+        <item>Barrel HPF 78a</item>
+        <item>Barrel HPF 81a</item>
+        <item>Barrel HPF 85a</item>
+        <item>Barrel HPF 87a</item>
+        <item>Barrel HPF 90a</item>
+        <item>Barrel HPF 93a</item>
+        <item>Barrel HPF 95a</item>
+        <item>Barrel HPF 97a</item>
+        <item>Cone HPF 78a</item>
+        <item>Cone HPF 81a</item>
+        <item>Cone HPF 85a</item>
+        <item>Cone HPF 87a</item>
+        <item>Cone HPF 90a</item>
+        <item>Cone HPF 93a</item>
+        <item>Cone HPF 95a</item>
+        <item>Cone HPF 97a</item>
+        <item>Barrel SHR 80a</item>
+        <item>Barrel SHR 91a</item>
+        <item>Barrel SHR 83a</item>
+        <item>Barrel SHR 86a</item>
+        <item>Barrel SHR 88a</item>
+        <item>Barrel SHR 95a</item>
+        <item>Cone SHR 80a</item>
+        <item>Cone SHR 91a</item>
+        <item>Cone SHR 83a</item>
+        <item>Cone SHR 86a</item>
+        <item>Cone SHR 88a</item>
+        <item>Cone SHR 95a</item>
+    </string-array>
+    <!-- Built-in pivot choices -->
+    <string-array name="pivots">
+        <item>Kanta</item>
+        <item>Riptidikuppi</item>
+    </string-array>
+    <!-- Built-in riser heights choices -->
+    <string-array name="risers">
+        <item>Kanta</item>
+        <item>Riptidikuppi</item>
+    </string-array>
+</resources>
