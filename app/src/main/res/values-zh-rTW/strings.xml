@@ -2,226 +2,226 @@
 <resources>
     <string name="app_name">Thane Locker</string>
     <string name="title_activity_board">BoardActivity</string>
-    <string name="change">Change</string>
-    <string name="description">Description</string>
-    <string name="save">Save</string>
-    <string name="griptape">Griptape:</string>
-    <string name="bushings_road">Bushings (Road):</string>
-    <string name="bushings_board">Bushings (Board):</string>
-    <string name="default_50">Default: 50</string>
+    <string name="change">變化</string>
+    <string name="description">說明</string>
+    <string name="save">儲存</string>
+    <string name="griptape">網格磁帶：</string>
+    <string name="bushings_road">路士（路）：</string>
+    <string name="bushings_board">Bushings （董事會）：</string>
+    <string name="default_50">預設值： 50</string>
     <string name="_50">50</string>
-    <string name="rear_angle">Rear Angle:</string>
-    <string name="front_angle">Front Angle:</string>
-    <string name="advance_mode">Advance Mode</string>
-    <string name="deck">Deck</string>
-    <string name="name">Name</string>
-    <string name="from_gallery">From Gallery</string>
-    <string name="from_camera">From Camera</string>
-    <string name="avg_mph">Avg MPH</string>
-    <string name="total_miles">Total Miles</string>
+    <string name="rear_angle">後角度：</string>
+    <string name="front_angle">前角度：</string>
+    <string name="advance_mode">高階模式</string>
+    <string name="deck">德克</string>
+    <string name="name">名字</string>
+    <string name="from_gallery">來源展示區</string>
+    <string name="from_camera">從相機</string>
+    <string name="avg_mph">平均 MPH</string>
+    <string name="total_miles">總計邁爾斯</string>
     <string name="_00_0">00.0</string>
-    <string name="statistics">Statistics</string>
-    <string name="distance_ridden">Distance Ridden:</string>
-    <string name="parts">Parts</string>
-    <string name="zenit_mini_marble">Zenit Mini Marble</string>
-    <string name="grip">Grip:</string>
-    <string name="lokton">Lokton</string>
-    <string name="trucks">Trucks:</string>
-    <string name="paris_v3">Paris V3</string>
-    <string name="angle_front">Angle (front):</string>
-    <string name="angle_rear">Angle (rear):</string>
+    <string name="statistics">統計資料</string>
+    <string name="distance_ridden">距離 Ridden：</string>
+    <string name="parts">組件</string>
+    <string name="zenit_mini_marble">Zenit 迷你大理石</string>
+    <string name="grip">我來了</string>
+    <string name="lokton">洛克頓</string>
+    <string name="trucks">卡車司機：</string>
+    <string name="paris_v3">巴黎 V3</string>
+    <string name="angle_front">角度（正面）：</string>
+    <string name="angle_rear">角度（背面）：</string>
     <string name="_50_xb0">50°</string>
     <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
-    <string name="pivot">Pivot:</string>
-    <string name="wheels">Wheels:</string>
-    <string name="bearings">Bearings:</string>
-    <string name="edit_setup">Edit Setup</string>
-    <string name="recent_sessions">Recent Sessions</string>
-    <string name="delete_board">Delete Board</string>
-    <string name="record_session">Record Session</string>
-    <string name="durations">Durations</string>
-    <string name="distances">Distances</string>
-    <string name="top_speeds">Top Speeds</string>
-    <string name="average_speeds">Average Speeds</string>
-    <string name="favorite_board">Favorite Board</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="average_distance">Average Distance:</string>
-    <string name="total_distance">Total Distance:</string>
+    <string name="pivot">Pivot ：</string>
+    <string name="wheels">車輪：</string>
+    <string name="bearings">帶耳：</string>
+    <string name="edit_setup">編輯設定</string>
+    <string name="recent_sessions">最近的階段作業</string>
+    <string name="delete_board">刪除板</string>
+    <string name="record_session">記錄階段作業</string>
+    <string name="durations">持續時間</string>
+    <string name="distances">距離</string>
+    <string name="top_speeds">熱門速度</string>
+    <string name="average_speeds">平均速度</string>
+    <string name="favorite_board">我的最愛板</string>
+    <string name="edit_profile">編輯設定檔</string>
+    <string name="average_distance">平均距離：</string>
+    <string name="total_distance">距離總計：</string>
     <string name="_00_0_miles">00.0 Miles</string>
-    <string name="furthest_distance">Furthest Distance:</string>
-    <string name="average_speed">Average Speed:</string>
-    <string name="_00_0_mph">00.0 MPH</string>
-    <string name="fastest_speed">Fastest Speed:</string>
-    <string name="just_another_awesome_skater">Just another awesome Skater</string>
+    <string name="furthest_distance">最遠距離：</string>
+    <string name="average_speed">平均速度：</string>
+    <string name="_00_0_mph">0 .0 MPH</string>
+    <string name="fastest_speed">最快速度：</string>
+    <string name="just_another_awesome_skater">又是個了不起的滑冰選手</string>
     <string name="john_doe">John Doe</string>
-    <string name="bushing_calculator">Bushing Calculator</string>
-    <string name="weight_lbs">Weight (lbs)</string>
-    <string name="cruising">Cruising</string>
+    <string name="bushing_calculator">推送計算機</string>
+    <string name="weight_lbs">重量（磅）</string>
+    <string name="cruising">克魯辛</string>
     <string name="freeride_downhill">Freeride/Downhill</string>
-    <string name="calculate">Calculate</string>
-    <string name="recommended_durometer_00a">Recommended Durometer: 00a</string>
-    <string name="based_on_venom_hpf_formula">Based on Venom HPF Formula</string>
-    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Go a step softer roadside for better carving. Or go a step up boardside for less slop</string>
-    <string name="create_board">Create Board</string>
+    <string name="calculate">計算</string>
+    <string name="recommended_durometer_00a">建議杜洛米： 00a</string>
+    <string name="based_on_venom_hpf_formula">根據 Venom HPF 公式</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">走一步柔和的路邊，以作更好的雕刻。 或者到船邊去做個小懶人</string>
+    <string name="create_board">建立板</string>
     <string name="plus_sign">+</string>
-    <string name="boards_used">Boards Used:</string>
-    <string name="add_board">Add Board</string>
-    <string name="city">City:</string>
-    <string name="fort_myers">Fort Myers</string>
-    <string name="top_speed">Top Speed:</string>
+    <string name="boards_used">使用的主機板：</string>
+    <string name="add_board">新增板</string>
+    <string name="city">城市：</string>
+    <string name="fort_myers">邁爾斯堡</string>
+    <string name="top_speed">最高速度：</string>
     <string name="_20_mph">20 MPH</string>
-    <string name="duration">Duration:</string>
-    <string name="_0_0_hours">0.0 hours</string>
-    <string name="start_time">Start Time:</string>
-    <string name="end_time">End Time:</string>
-    <string name="_12_00pm">12:00pm</string>
-    <string name="delete_session">Delete Session</string>
-    <string name="profile">Profile</string>
-    <string name="boards">Boards</string>
-    <string name="sessions">Sessions</string>
-    <string name="news">News</string>
-    <string name="map">Map</string>
-    <string name="calculator">Calculator</string>
-    <string name="settings">Settings</string>
-    <string name="muirskate_title">Longboard Shop</string>
-    <string name="discord_title">Longboarding Family Discord</string>
-    <string name="github_title">Source Code on GitHub</string>
-    <string name="sources_title">News Sources</string>
+    <string name="duration">持續時間：</string>
+    <string name="_0_0_hours">0.0 小時</string>
+    <string name="start_time">開始時間：</string>
+    <string name="end_time">結束時間：</string>
+    <string name="_12_00pm">12：00pm</string>
+    <string name="delete_session">刪除階段作業</string>
+    <string name="profile">設定檔</string>
+    <string name="boards">主機板</string>
+    <string name="sessions">塞申斯</string>
+    <string name="news">新聞</string>
+    <string name="map">地圖</string>
+    <string name="calculator">計算機</string>
+    <string name="settings">設定</string>
+    <string name="muirskate_title">長板店</string>
+    <string name="discord_title">Longboarding 家庭斷線</string>
+    <string name="github_title">GitHub 上的原始碼</string>
+    <string name="sources_title">新聞來源</string>
     <string name="downhill254_title">DownHill254</string>
-    <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Force Dark Theme</string>
-    <string name="darktheme_sum">Will otherwise follow system settings. Restart app to take effect</string>
-    <string name="github_sum">View the source code to the app hosted on GitHub, and maybe even contribute!</string>
-    <string name="discord_sum">Join the longboarding family discord server, the best community to meet others</string>
-    <string name="muirskate_sum">Go to Muirskate.com the best place to order anything for Longboarding</string>
-    <string name="no_favorite">No Favorite</string>
-    <string name="speed">Speed</string>
-    <string name="distance">Distance</string>
-    <string name="miles"> Miles</string>
+    <string name="longboardbrand_title">LongboardBrand 部落格</string>
+    <string name="darktheme_title">強制黑暗主題</string>
+    <string name="darktheme_sum">否則將遵循系統設定。 重新啟動應用程式以生效</string>
+    <string name="github_sum">檢視 GitHub 上所管理之應用程式的原始碼，甚至提供投稿！</string>
+    <string name="discord_sum">加入 Longboarding 家族不和伺服器，最適合與他人見面的社群</string>
+    <string name="muirskate_sum">請前往 Muirskate.com 最好訂購任何東西以進行 Longboarding</string>
+    <string name="no_favorite">沒有我的最愛</string>
+    <string name="speed">速度</string>
+    <string name="distance">距離</string>
+    <string name="miles"> 邁爾斯</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
-    <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
-    <string name="recording_session">Recording Session</string>
-    <string name="not_added_disclaimer">Will be added in a future update, but enjoy the rest of what the app has to offer!</string>
-    <string name="not_added_title">This section is not finished</string>
-    <string name="no_news">No news</string>
-    <string name="recommended_durometer">Recommended Durometer: </string>
-    <string name="recommended_shape">Recommended Shape: </string>
-    <string name="need_weight">Please input a weight</string>
-    <string name="ok">OK</string>
-    <string name="delete_session_title">Delete Session</string>
-    <string name="delete_session_dialog">Are you sure?</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="no_sessions">No Sessions Recorded</string>
-    <string name="click_to_stop">Click here to stop recording</string>
-    <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
-    <string name="record_dialog_title">Start Session?</string>
-    <string name="not_enough_data">Not enough data recorded to save</string>
-    <string name="notification_description">Recording your data for you to later view</string>
-    <string name="failed_news">Failed to load News</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="add_tag">Add Tag</string>
-    <string name="finish">Finish</string>
-    <string name="no_boards">No Boards Saved</string>
-    <string name="thank_you_content">Thank you for downloading the app! But this app is still in it\'s early stages and please note many more features are to come!</string>
-    <string name="thank_you_title">Thank You!</string>
-    <string name="went_wrong">Something went wrong</string>
-    <string name="no_image_selected">You didn\'t select an image</string>
-    <string name="minutes">" Minutes"</string>
-    <string name="remove_board_from_session">Remove board from session</string>
+    <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但更有動力抽獎。 建議為 2500</string>
+    <string name="poll_rate_title">位置輪詢率（毫秒）</string>
+    <string name="recording_session">記錄階段作業</string>
+    <string name="not_added_disclaimer">將在未來更新中新增，但享受應用程式所提供的其餘部分！</string>
+    <string name="not_added_title">此區段未完成</string>
+    <string name="no_news">沒消息</string>
+    <string name="recommended_durometer">建議的 Durometer ： </string>
+    <string name="recommended_shape">建議形狀： </string>
+    <string name="need_weight">請輸入重量</string>
+    <string name="ok">好</string>
+    <string name="delete_session_title">刪除階段作業</string>
+    <string name="delete_session_dialog">你確定嗎？</string>
+    <string name="cancel">取消</string>
+    <string name="delete">刪除</string>
+    <string name="no_sessions">未記錄階段作業</string>
+    <string name="click_to_stop">請按一下這裡以停止記錄</string>
+    <string name="start">開始</string>
+    <string name="recording_disclaimer">你的 GPS 資料將被利用</string>
+    <string name="record_dialog_title">啟動階段作業？</string>
+    <string name="not_enough_data">儲存的資料不足，無法儲存</string>
+    <string name="notification_description">將您的資料記錄給之後檢視</string>
+    <string name="failed_news">無法載入新聞</string>
+    <string name="are_you_sure">你確定嗎？</string>
+    <string name="add_tag">新增標籤</string>
+    <string name="finish">完成</string>
+    <string name="no_boards">未儲存主機板</string>
+    <string name="thank_you_content">感謝您下載應用程式！ 但這款 App 仍處於初期階段，請注意許多更多功能要來！</string>
+    <string name="thank_you_title">謝謝！</string>
+    <string name="went_wrong">出事了</string>
+    <string name="no_image_selected">您未選取映像檔</string>
+    <string name="minutes">" 分鐘"</string>
+    <string name="remove_board_from_session">從階段作業中移除主機板</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
         <item>Generic</item>
-        <item>Paris V3</item>
+        <item>巴黎 V3</item>
         <item>Paris Savants</item>
-        <item>Bear Gen6</item>
-        <item>Valkyries</item>
+        <item>大熊 6</item>
+        <item>瓦爾基列斯</item>
         <item>Caliber 2</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
+        <item>Roja 2020</item>
+        <item>蘭德爾斯</item>
         <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Sismic Aeon</item>
+        <item>砷</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
         <item>Generic</item>
-        <item>Snakes</item>
-        <item>G Slides</item>
-        <item>BO Smokes</item>
+        <item>蛇</item>
+        <item>G 投影片</item>
+        <item>BO 平滑</item>
         <item>BO Liam Morgan Pro</item>
-        <item>Fatty Hawgs</item>
-        <item>Chubby Hawgs</item>
-        <item>Supreme Hawgs</item>
-        <item>Biggie Hawgs</item>
-        <item>Speed Vents</item>
-        <item>EZ Hawgs</item>
-        <item>Markers</item>
-        <item>Nine Balls</item>
-        <item>PHAT BOYZ</item>
-        <item>4President</item>
-        <item>Fat Free</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
+        <item>Fatty Haws</item>
+        <item>Chubby Haws</item>
+        <item>最高霍格斯</item>
+        <item>Biggie Haws</item>
+        <item>速度 Vents</item>
+        <item>EZ Haws</item>
+        <item>馬克斯</item>
+        <item>九巴</item>
+        <item>帕博茲</item>
+        <item>4庭長</item>
+        <item>無脂肪</item>
+        <item>斯蒂穆盧斯</item>
+        <item>斯基夫斯</item>
+        <item>胖佛雷</item>
+        <item>凱格爾斯</item>
+        <item>卡瓜馬</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
         <item>Generic</item>
-        <item>Bones Reds</item>
-        <item>Beasto</item>
-        <item>Oust</item>
-        <item>Space Balls</item>
-        <item>Juhu V2</item>
-        <item>Zealous</item>
-        <item>Zealous (Ceramic)</item>
+        <item>Bone Reds</item>
+        <item>貝阿斯託</item>
+        <item>烏斯特</item>
+        <item>空間牆</item>
+        <item>朱湖 V2</item>
+        <item>紐西蘭人</item>
+        <item>紐西蘭人（陶瓷）</item>
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard Jessip</item>
-        <item>Lokton</item>
-        <item>Gangster</item>
-        <item>Mob Grip</item>
-        <item>Hardcore</item>
-        <item>Vicious</item>
+        <item>標準耶穌會</item>
+        <item>洛克頓</item>
+        <item>岡斯特</item>
+        <item>Mob Grigp</item>
+        <item>哈德核心</item>
+        <item>維福瑟</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <string-array name="foot_stops">
-        <item>None</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
+        <item>沒有</item>
+        <item>科莫蒂翁</item>
+        <item>PSD IN - side</item>
         <item>PSD MINI I/O</item>
-        <item>PSD OUT-side</item>
+        <item>PSD 輸出端</item>
     </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
-        <item>Dance</item>
+        <item>舞蹈</item>
         <item>LDP</item>
-        <item>Downhill</item>
-        <item>Freeride</item>
-        <item>Slalom</item>
-        <item>Cruise</item>
-        <item>Freestyle</item>
-        <item>Randomness</item>
+        <item>唐希爾</item>
+        <item>弗賴裡德</item>
+        <item>斯拉洛姆</item>
+        <item>克魯伊塞</item>
+        <item>自由式</item>
+        <item>隨機性</item>
     </string-array>
     <!-- Built-in bushings choices -->
     <string-array name="bushings">
-        <item>Stock</item>
+        <item>股票</item>
         <item>Barrel WFB 78a</item>
         <item>Barrel WFB 83a</item>
         <item>Barrel WFB 88a</item>
         <item>Barrel WFB 93a</item>
-        <item>Barrel WFB 95.5a</item>
+        <item>Barrel WFFB 95.5a</item>
         <item>Cone WFB 78a</item>
         <item>Cone WFB 83a</item>
         <item>Cone WFB 88a</item>
         <item>Cone WFB 93a</item>
-        <item>Cone WFB 95.5a</item>
+        <item>Cone WFFB 95.5a</item>
         <item>Barrel APS 70a</item>
         <item>Barrel APS 75a</item>
         <item>Barrel APS 80a</item>
@@ -267,12 +267,12 @@
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>股票</item>
+        <item>一種潮杯</item>
     </string-array>
     <!-- Built-in riser heights choices -->
     <string-array name="risers">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>股票</item>
+        <item>一種潮杯</item>
     </string-array>
 </resources>
