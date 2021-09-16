@@ -43,12 +43,12 @@ public class BoardsFragment extends Fragment {
 
         binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
 
-        boardThread = new Thread(() -> loadBoards(App.getContext()));
+        boardThread = new Thread(() -> loadBoards(requireContext()));
         boardThread.start();
         return root;
     }
 
-    public void loadBoards(Context context) {
+    public synchronized void loadBoards(Context context) {
         App.cleanBoards();
 
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
@@ -89,7 +89,7 @@ public class BoardsFragment extends Fragment {
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
                                     Board.save();
-                                    boardThread = new Thread(() -> loadBoards(App.getContext()));
+                                    boardThread = new Thread(() -> loadBoards(context));
                                     boardThread.start();
                                 });
                         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),

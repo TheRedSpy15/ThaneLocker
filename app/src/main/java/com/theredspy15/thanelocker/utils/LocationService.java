@@ -73,7 +73,7 @@ public class LocationService extends Service {
         }
     }
 
-    @SuppressLint("MissingPermission")
+    @SuppressLint("MissingPermission") // already checked on button press before this can get called
     void startTracker() {
         locationManager = (LocationManager) App.getContext().getSystemService(Context.LOCATION_SERVICE);
         locationListener = new SessionLocationListener();

@@ -21,6 +21,7 @@ public class Profile implements Serializable {
     private String state = "California";
     private String country = "United States";
     private LinkedList<Integer> friend_ids = new LinkedList<>();
+    private LinkedList<Achievement> achievements = new LinkedList<>();
     private byte[] image;
 
     public Profile() {

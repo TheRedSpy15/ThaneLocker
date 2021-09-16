@@ -26,6 +26,7 @@ import androidx.preference.PreferenceManager;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivitySessionBinding;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -414,6 +415,10 @@ public class SessionActivity extends AppCompatActivity {
             // set data
             chart.setData(data);
             chart.animateX(3000);
+
+            Description description = new Description();
+            description.setText("");
+            chart.setDescription(description);
 
             int color = App.getThemeTextColor(this);
             chart.getData().setValueTextColor(color);

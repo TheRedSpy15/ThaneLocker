@@ -48,11 +48,10 @@
             android:textStyle="bold"
             android:text="Level: 1" />
 
-        <ProgressBar
+        <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/xpView"
             android:layout_width="200dp"
             android:indeterminate="false"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:progress="1"
