@@ -14,7 +14,7 @@ public class Profile implements Serializable {
     public static Profile localProfile;
     private int id = 0;
     private int level = 1;
-    private int level_xp = 0; // 0-100 for all levels
+    private double level_xp = 0; // 0-100 for all levels
     private String name = "John Doe";
     private int age = 18;
     private String description = "just another awesome skater";
@@ -150,12 +150,17 @@ public class Profile implements Serializable {
         this.level = level;
     }
 
-    public int getLevel_xp() {
+    public double getLevel_xp() {
         return level_xp;
     }
 
-    public void setLevel_xp(int level_xp) {
-        this.level_xp = level_xp;
+    public void addXp(double level_xp) {
+        this.level_xp += level_xp;
+        if (getLevel_xp() >= 100) {
+            this.level_xp = 1;
+            setLevel(getLevel()+1);
+        }
+        if (getLevel_xp() < 0) this.level_xp = 1;
     }
 
     public LinkedList<Integer> getFriend_ids() {

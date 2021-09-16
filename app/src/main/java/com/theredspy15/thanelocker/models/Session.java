@@ -21,6 +21,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
+    public static final double xpValue = 1.1;
+
     private LinkedList<Integer> board_ids = new LinkedList<>();
     private int id = 0;
     private int user_id = 0;

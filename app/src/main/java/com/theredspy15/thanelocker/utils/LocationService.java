@@ -85,7 +85,6 @@ public class LocationService extends Service {
         @Override
         public void onLocationChanged(Location loc) {
             SessionLocationPoint point = new SessionLocationPoint();
-            point.setAltitude(loc.getAltitude());
             point.setLongitude(loc.getLongitude());
             point.setLatitude(loc.getLatitude());
             point.setSpeed(loc.getSpeed());

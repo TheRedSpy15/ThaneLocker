@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
 import com.google.android.material.snackbar.Snackbar;
+import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 import com.theredspy15.thanelocker.utils.App;
@@ -199,6 +200,9 @@ public class SessionsFragment extends Fragment {
             sessionThread = new Thread(this::loadSessions);
             sessionThread.start();
             Session.save();
+
+            Profile.localProfile.addXp(Session.xpValue*newSession.getLocations().size());
+            Profile.save();
         } else
             Snackbar.make(binding.newSessionButton, getString(R.string.not_enough_data), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

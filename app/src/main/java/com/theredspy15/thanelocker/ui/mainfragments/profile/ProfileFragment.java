@@ -41,6 +41,8 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel profileViewModel;
     private FragmentProfileBinding binding;
 
+    private final Profile profile = Profile.localProfile;
+
     private final LinkedList<Session> sessions = Profile.sessionsWithLocalProfile();
     private final LinkedList<Board> boards = Profile.boardsWithLocalProfile();
 
@@ -59,15 +61,16 @@ public class ProfileFragment extends Fragment {
 
     private synchronized void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.nameText.setText(Profile.localProfile.getName());
-        binding.descriptionView.setText(Profile.localProfile.getDescription());
+        binding.nameText.setText(profile.getName());
+        binding.descriptionView.setText(profile.getDescription());
 
-        if (Profile.localProfile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Profile.localProfile.getImage(), 0, Profile.localProfile.getImage().length);
+        if (profile.getImage() != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
         loadFavoriteBoard();
+        loadXpBar();
 
         if (sessions.isEmpty()) {
             binding.chartsLayout.setVisibility(View.GONE);
@@ -78,6 +81,11 @@ public class ProfileFragment extends Fragment {
             loadDurationsChart();
             loadTextViewStats();
         }
+    }
+
+    void loadXpBar() {
+        binding.xpView.setProgress((int) profile.getLevel_xp());
+        binding.levelView.setText("Level:"+" "+profile.getLevel());
     }
 
     public void loadEditProfile(View view) {
@@ -148,7 +156,7 @@ public class ProfileFragment extends Fragment {
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }
-        linearLayout.addView(button,6,layout);
+        linearLayout.addView(button,8,layout);
     }
 
     private synchronized void loadSpeedsChart() {
