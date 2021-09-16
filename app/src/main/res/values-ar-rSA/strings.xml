@@ -1,278 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thane Locker</string>
-    <string name="title_activity_board">BoardActivity</string>
-    <string name="change">Change</string>
-    <string name="description">Description</string>
-    <string name="save">Save</string>
-    <string name="griptape">Griptape:</string>
-    <string name="bushings_road">Bushings (Road):</string>
-    <string name="bushings_board">Bushings (Board):</string>
-    <string name="default_50">Default: 50</string>
+    <string name="app_name">(ثاين لاكور)</string>
+    <string name="title_activity_board">نشاط BoardActivity</string>
+    <string name="change">التغيير</string>
+    <string name="description">الوصف</string>
+    <string name="save">حفظ</string>
+    <string name="griptape">الشريط :</string>
+    <string name="bushings_road">Bushings (Road) :</string>
+    <string name="bushings_board">عمليات البوشنغز (المجلس) :</string>
+    <string name="default_50">المفترض : 50</string>
     <string name="_50">50</string>
-    <string name="rear_angle">Rear Angle:</string>
-    <string name="front_angle">Front Angle:</string>
-    <string name="advance_mode">Advance Mode</string>
+    <string name="rear_angle">الزاوية الخلفية :</string>
+    <string name="front_angle">زاوية أمامية :</string>
+    <string name="advance_mode">نمط متقدم</string>
     <string name="deck">Deck</string>
-    <string name="name">Name</string>
-    <string name="from_gallery">From Gallery</string>
-    <string name="from_camera">From Camera</string>
-    <string name="avg_mph">Avg MPH</string>
-    <string name="total_miles">Total Miles</string>
+    <string name="name">الاسم</string>
+    <string name="from_gallery">من الأستوديو</string>
+    <string name="from_camera">من الكاميرا</string>
+    <string name="avg_mph">متوسط MPH</string>
+    <string name="total_miles">اجمالي الأميال</string>
     <string name="_00_0">00.0</string>
-    <string name="statistics">Statistics</string>
-    <string name="distance_ridden">Distance Ridden:</string>
-    <string name="parts">Parts</string>
-    <string name="zenit_mini_marble">Zenit Mini Marble</string>
-    <string name="grip">Grip:</string>
-    <string name="lokton">Lokton</string>
-    <string name="trucks">Trucks:</string>
-    <string name="paris_v3">Paris V3</string>
-    <string name="angle_front">Angle (front):</string>
-    <string name="angle_rear">Angle (rear):</string>
-    <string name="_50_xb0">50°</string>
-    <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
-    <string name="pivot">Pivot:</string>
-    <string name="wheels">Wheels:</string>
-    <string name="bearings">Bearings:</string>
-    <string name="edit_setup">Edit Setup</string>
-    <string name="recent_sessions">Recent Sessions</string>
-    <string name="delete_board">Delete Board</string>
-    <string name="record_session">Record Session</string>
-    <string name="durations">Durations</string>
-    <string name="distances">Distances</string>
-    <string name="top_speeds">Top Speeds</string>
-    <string name="average_speeds">Average Speeds</string>
-    <string name="favorite_board">Favorite Board</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="average_distance">Average Distance:</string>
-    <string name="total_distance">Total Distance:</string>
-    <string name="_00_0_miles">00.0 Miles</string>
-    <string name="furthest_distance">Furthest Distance:</string>
-    <string name="average_speed">Average Speed:</string>
-    <string name="_00_0_mph">00.0 MPH</string>
-    <string name="fastest_speed">Fastest Speed:</string>
-    <string name="just_another_awesome_skater">Just another awesome Skater</string>
-    <string name="john_doe">John Doe</string>
-    <string name="bushing_calculator">Bushing Calculator</string>
-    <string name="weight_lbs">Weight (lbs)</string>
-    <string name="cruising">Cruising</string>
-    <string name="freeride_downhill">Freeride/Downhill</string>
-    <string name="calculate">Calculate</string>
-    <string name="recommended_durometer_00a">Recommended Durometer: 00a</string>
-    <string name="based_on_venom_hpf_formula">Based on Venom HPF Formula</string>
-    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Go a step softer roadside for better carving. Or go a step up boardside for less slop</string>
-    <string name="create_board">Create Board</string>
+    <string name="statistics">الإحصاءات</string>
+    <string name="distance_ridden">مدى المسافة :</string>
+    <string name="parts">الأجزاء</string>
+    <string name="zenit_mini_marble">Zenmit Mini Marble</string>
+    <string name="grip">قبضة :</string>
+    <string name="lokton">لوكتون</string>
+    <string name="trucks">شاحنات :</string>
+    <string name="paris_v3">باريس V3</string>
+    <string name="angle_front">الزاوية (المقدمة) :</string>
+    <string name="angle_rear">الزاوية (الخلفية) :</string>
+    <string name="_50_xb0">50 °</string>
+    <string name="riptide_88a_wps_barrel">Ripالمد 88a WPS Barl</string>
+    <string name="pivot">المحور :</string>
+    <string name="wheels">العجلات :</string>
+    <string name="bearings">اللحية :</string>
+    <string name="edit_setup">تحرير الاعداد</string>
+    <string name="recent_sessions">الجلسات الحديثة</string>
+    <string name="delete_board">حذف اللوحة</string>
+    <string name="record_session">جلسة السجل</string>
+    <string name="durations">الفترات</string>
+    <string name="distances">المسافات</string>
+    <string name="top_speeds">Speeds لأعلى</string>
+    <string name="average_speeds">متوسط السرعة</string>
+    <string name="favorite_board">اللوحة المفضلة</string>
+    <string name="edit_profile">تحرير ملف المواصفات</string>
+    <string name="average_distance">متوسط المسافة :</string>
+    <string name="total_distance">اجمالي المسافة :</string>
+    <string name="_00_0_miles">00.0 أميال</string>
+    <string name="furthest_distance">المسافة الأكثر المسافة :</string>
+    <string name="average_speed">متوسط السرعة :</string>
+    <string name="_00_0_mph">00.0 MPPH</string>
+    <string name="fastest_speed">أسرع سرعة :</string>
+    <string name="just_another_awesome_skater">فقط سكير رائع آخر</string>
+    <string name="john_doe">جون دو</string>
+    <string name="bushing_calculator">دفع الآلة الحاسبة</string>
+    <string name="weight_lbs">وزن (lbs)</string>
+    <string name="cruising">التجول</string>
+    <string name="freeride_downhill">Freeride / Downloree</string>
+    <string name="calculate">احتساب</string>
+    <string name="recommended_durometer_00a">Durmeter الموصى به : 00a</string>
+    <string name="based_on_venom_hpf_formula">بناءا على معادلة Venom HPF</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">اذهب خطوة ليونة على جانب الطريق للحصول على نقش أفضل. أو الذهاب خطوة لأعلى للقليل من الممسحة</string>
+    <string name="create_board">تكوين لوحة</string>
     <string name="plus_sign">+</string>
-    <string name="boards_used">Boards Used:</string>
-    <string name="add_board">Add Board</string>
-    <string name="city">City:</string>
-    <string name="fort_myers">Fort Myers</string>
-    <string name="top_speed">Top Speed:</string>
+    <string name="boards_used">المجالس المستخدمة :</string>
+    <string name="add_board">اضافة لوحة</string>
+    <string name="city">المدينة :</string>
+    <string name="fort_myers">فورت مايرز</string>
+    <string name="top_speed">السرعة العليا :</string>
     <string name="_20_mph">20 MPH</string>
-    <string name="duration">Duration:</string>
-    <string name="_0_0_hours">0.0 hours</string>
-    <string name="start_time">Start Time:</string>
-    <string name="end_time">End Time:</string>
-    <string name="_12_00pm">12:00pm</string>
-    <string name="delete_session">Delete Session</string>
-    <string name="profile">Profile</string>
-    <string name="boards">Boards</string>
-    <string name="sessions">Sessions</string>
-    <string name="news">News</string>
-    <string name="map">Map</string>
-    <string name="calculator">Calculator</string>
-    <string name="settings">Settings</string>
-    <string name="muirskate_title">Longboard Shop</string>
-    <string name="discord_title">Longboarding Family Discord</string>
-    <string name="github_title">Source Code on GitHub</string>
-    <string name="sources_title">News Sources</string>
-    <string name="downhill254_title">DownHill254</string>
+    <string name="duration">المدة :</string>
+    <string name="_0_0_hours">0.0 ساعة</string>
+    <string name="start_time">وقت البدء :</string>
+    <string name="end_time">وقت الانتهاء :</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">حذف جلسة</string>
+    <string name="profile">ملف مواصفات</string>
+    <string name="boards">المجالس</string>
+    <string name="sessions">الجلسات</string>
+    <string name="news">الأخبار</string>
+    <string name="map">خريطة</string>
+    <string name="calculator">آلة حاسبة</string>
+    <string name="settings">المحددات</string>
+    <string name="muirskate_title">متجر لونجلاب</string>
+    <string name="discord_title">تفكيك الحبل السري للأسرة</string>
+    <string name="github_title">كود المصدر في GitHub</string>
+    <string name="sources_title">مصادر الأخبار</string>
+    <string name="downhill254_title">DownHil254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Force Dark Theme</string>
-    <string name="darktheme_sum">Will otherwise follow system settings. Restart app to take effect</string>
-    <string name="github_sum">View the source code to the app hosted on GitHub, and maybe even contribute!</string>
-    <string name="discord_sum">Join the longboarding family discord server, the best community to meet others</string>
-    <string name="muirskate_sum">Go to Muirskate.com the best place to order anything for Longboarding</string>
-    <string name="no_favorite">No Favorite</string>
-    <string name="speed">Speed</string>
-    <string name="distance">Distance</string>
-    <string name="miles"> Miles</string>
-    <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
-    <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
-    <string name="recording_session">Recording Session</string>
-    <string name="not_added_disclaimer">Will be added in a future update, but enjoy the rest of what the app has to offer!</string>
-    <string name="not_added_title">This section is not finished</string>
-    <string name="no_news">No news</string>
-    <string name="recommended_durometer">Recommended Durometer: </string>
-    <string name="recommended_shape">Recommended Shape: </string>
-    <string name="need_weight">Please input a weight</string>
-    <string name="ok">OK</string>
-    <string name="delete_session_title">Delete Session</string>
-    <string name="delete_session_dialog">Are you sure?</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="no_sessions">No Sessions Recorded</string>
-    <string name="click_to_stop">Click here to stop recording</string>
-    <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
-    <string name="record_dialog_title">Start Session?</string>
-    <string name="not_enough_data">Not enough data recorded to save</string>
-    <string name="notification_description">Recording your data for you to later view</string>
-    <string name="failed_news">Failed to load News</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="add_tag">Add Tag</string>
-    <string name="finish">Finish</string>
-    <string name="no_boards">No Boards Saved</string>
-    <string name="thank_you_content">Thank you for downloading the app! But this app is still in it\'s early stages and please note many more features are to come!</string>
-    <string name="thank_you_title">Thank You!</string>
-    <string name="went_wrong">Something went wrong</string>
-    <string name="no_image_selected">You didn\'t select an image</string>
-    <string name="minutes">" Minutes"</string>
-    <string name="remove_board_from_session">Remove board from session</string>
+    <string name="darktheme_title">اجباري موضوع الظلام</string>
+    <string name="darktheme_sum">سيتم اتباع محددات النظام بطريقة أخرى. قم باعادة بدء التطبيق ليصبح فعال</string>
+    <string name="github_sum">قم بمشاهدة كود المصدر الى التطبيق الذي تم استضافته على GitHub ، وقد يتم المشاركة به !</string>
+    <string name="discord_sum">الانضمام إلى خادم الشقاق العائلي الطويل ، أفضل مجتمع لتلبية الآخرين</string>
+    <string name="muirskate_sum">اذهب الى Muirskate.com للحصول على أفضل مكان لطلب أي شيء للونجلوبيت.</string>
+    <string name="no_favorite">بدون تفضيلات</string>
+    <string name="speed">سرعة</string>
+    <string name="distance">مسافة</string>
+    <string name="miles"> ميل</string>
+    <string name="mph"> ميرف</string>
+    <string name="poll_rate_sum">ما مدى سرعة تعديل المكان عند تسجيل جلسة. انخفاض هو أسرع ولكن أكثر سحب السلطة. يعد من المفضل 2500</string>
+    <string name="poll_rate_title">معدل الاقتراع بالمكان (بالملليثانية)</string>
+    <string name="recording_session">جلسة التسجيل</string>
+    <string name="not_added_disclaimer">سيتم إضافته في التحديث في المستقبل ، ولكن التمتع ببقية ما يجب أن يقدمه التطبيق !</string>
+    <string name="not_added_title">لم يتم الانتهاء من هذا القسم</string>
+    <string name="no_news">لا أخبار</string>
+    <string name="recommended_durometer">قياس المقياس الموصى به : </string>
+    <string name="recommended_shape">الشكل الموصى به : </string>
+    <string name="need_weight">برجاء ادخال وزن</string>
+    <string name="ok">طيب</string>
+    <string name="delete_session_title">حذف جلسة</string>
+    <string name="delete_session_dialog">هل أنت متأكد ؟</string>
+    <string name="cancel">الغاء</string>
+    <string name="delete">حذف</string>
+    <string name="no_sessions">لم يتم تسجيل جلسات</string>
+    <string name="click_to_stop">اضغط هنا لايقاف التسجيل</string>
+    <string name="start">بدء</string>
+    <string name="recording_disclaimer">سيتم استخدام بيانات GPS</string>
+    <string name="record_dialog_title">بدء جلسة ؟</string>
+    <string name="not_enough_data">لا توجد بيانات كافية تم تسجيلها للحفظ</string>
+    <string name="notification_description">تسجيل البيانات الخاصة بك لمشاهدة أحدث</string>
+    <string name="failed_news">فشل في تحميل الأخبار</string>
+    <string name="are_you_sure">هل أنت متأكد ؟</string>
+    <string name="add_tag">اضافة شارة</string>
+    <string name="finish">نهاية</string>
+    <string name="no_boards">لم يتم حفظ أي مجالس</string>
+    <string name="thank_you_content">شكرا لك لتحميل التطبيق ! ولكن هذا التطبيق لا يزال في مراحله الأولى ، ويرجى ملاحظة المزيد من الميزات التي ستأتي !</string>
+    <string name="thank_you_title">شكرا لك</string>
+    <string name="went_wrong">شيء ما حدث خطأ</string>
+    <string name="no_image_selected">أنت لم تختار صورة</string>
+    <string name="minutes">" دقائق"</string>
+    <string name="remove_board_from_session">ازالة لوحة من الجلسة</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
-        <item>Generic</item>
-        <item>Paris V3</item>
-        <item>Paris Savants</item>
-        <item>Bear Gen6</item>
+        <item>عام</item>
+        <item>باريس V3</item>
+        <item>ساففر باريس</item>
+        <item>تحمل جنو 6</item>
         <item>Valkyries</item>
         <item>Caliber 2</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>روجا 2020s</item>
+        <item>عشوائي</item>
+        <item>أدوات Sidewinder</item>
+        <item>حمامة زلزالية</item>
+        <item>الزرنيخ</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
-        <item>Generic</item>
-        <item>Snakes</item>
+        <item>عام</item>
+        <item>الأفاعي</item>
         <item>G Slides</item>
-        <item>BO Smokes</item>
-        <item>BO Liam Morgan Pro</item>
-        <item>Fatty Hawgs</item>
-        <item>Chubby Hawgs</item>
-        <item>Supreme Hawgs</item>
-        <item>Biggie Hawgs</item>
-        <item>Speed Vents</item>
+        <item>دخان BO</item>
+        <item>BO ليام مورجان محترف</item>
+        <item>Haty Hawغز</item>
+        <item>حوارات من الممتلئ</item>
+        <item>Hawالعليا العليا</item>
+        <item>بيجي هاوز</item>
+        <item>فتحات السرعة</item>
         <item>EZ Hawgs</item>
-        <item>Markers</item>
-        <item>Nine Balls</item>
-        <item>PHAT BOYZ</item>
-        <item>4President</item>
+        <item>علامات التكويد</item>
+        <item>تسعة كرات</item>
+        <item>PHAT HBOZ</item>
+        <item>4الرئيس</item>
         <item>Fat Free</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
+        <item>التحفيز</item>
+        <item>تخطي</item>
         <item>Fat Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
-        <item>Generic</item>
-        <item>Bones Reds</item>
-        <item>Beasto</item>
+        <item>عام</item>
+        <item>اعادة تنظيم Bons</item>
+        <item>بيكاسو</item>
         <item>Oust</item>
-        <item>Space Balls</item>
+        <item>كرات الفضاء</item>
         <item>Juhu V2</item>
-        <item>Zealous</item>
-        <item>Zealous (Ceramic)</item>
+        <item>نيوزيلندي</item>
+        <item>نيوزيلندي (Ceramic)</item>
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard Jessip</item>
-        <item>Lokton</item>
-        <item>Gangster</item>
-        <item>Mob Grip</item>
+        <item>اليسوفة القياسية</item>
+        <item>لوكتون</item>
+        <item>العصابات</item>
+        <item>قبضة الغوغاء</item>
         <item>Hardcore</item>
-        <item>Vicious</item>
+        <item>مشبوه</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <string-array name="foot_stops">
-        <item>None</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-side</item>
+        <item>لا شيء</item>
+        <item>كوموشن</item>
+        <item>side-side SPD</item>
+        <item>I/O مصغرة PSD</item>
+        <item>PSD OUT-الجانب</item>
     </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
-        <item>Dance</item>
-        <item>LDP</item>
-        <item>Downhill</item>
-        <item>Freeride</item>
-        <item>Slalom</item>
-        <item>Cruise</item>
-        <item>Freestyle</item>
-        <item>Randomness</item>
+        <item>ارقصي</item>
+        <item>شنب</item>
+        <item>التل الأسفل</item>
+        <item>Freservide</item>
+        <item>Sallom</item>
+        <item>كروز</item>
+        <item>أسلوب حر</item>
+        <item>عشوائية</item>
     </string-array>
     <!-- Built-in bushings choices -->
     <string-array name="bushings">
-        <item>Stock</item>
-        <item>Barrel WFB 78a</item>
-        <item>Barrel WFB 83a</item>
-        <item>Barrel WFB 88a</item>
-        <item>Barrel WFB 93a</item>
-        <item>Barrel WFB 95.5a</item>
-        <item>Cone WFB 78a</item>
-        <item>Cone WFB 83a</item>
-        <item>Cone WFB 88a</item>
-        <item>Cone WFB 93a</item>
-        <item>Cone WFB 95.5a</item>
-        <item>Barrel APS 70a</item>
-        <item>Barrel APS 75a</item>
-        <item>Barrel APS 80a</item>
-        <item>Barrel APS 85a</item>
-        <item>Barrel APS 90a</item>
+        <item>سهم</item>
+        <item>Barl WFB 78a</item>
+        <item>Barl WFB 83a</item>
+        <item>Barl WFB 88a</item>
+        <item>Barl WFB 93a</item>
+        <item>Barl WFB 95.5a</item>
+        <item>Ca WFB 78a</item>
+        <item>Ca WFB 83a</item>
+        <item>C1 WFB 88a</item>
+        <item>Ca WFB 93a</item>
+        <item>Ca WFB 95.5a</item>
+        <item>Barl APS 70a</item>
+        <item>Barl APS 75a</item>
+        <item>Barl APS 80a</item>
+        <item>85a AA Barl</item>
+        <item>Barl APS 90a</item>
         <item>Barrel APS 92.5a</item>
-        <item>Barrel APS 95a</item>
-        <item>Cone APS 75a</item>
-        <item>Cone APS 70a</item>
-        <item>Cone APS 80a</item>
-        <item>Cone APS 85a</item>
-        <item>Cone APS 90a</item>
-        <item>Cone APS 92.5a</item>
-        <item>Cone APS 95a</item>
-        <item>Barrel HPF 78a</item>
-        <item>Barrel HPF 81a</item>
-        <item>Barrel HPF 85a</item>
-        <item>Barrel HPF 87a</item>
-        <item>Barrel HPF 90a</item>
-        <item>Barrel HPF 93a</item>
-        <item>Barrel HPF 95a</item>
-        <item>Barrel HPF 97a</item>
-        <item>Cone HPF 78a</item>
-        <item>Cone HPF 81a</item>
-        <item>Cone HPF 85a</item>
-        <item>Cone HPF 87a</item>
-        <item>Cone HPF 90a</item>
-        <item>Cone HPF 93a</item>
-        <item>Cone HPF 95a</item>
-        <item>Cone HPF 97a</item>
-        <item>Barrel SHR 80a</item>
-        <item>Barrel SHR 91a</item>
-        <item>Barrel SHR 83a</item>
-        <item>Barrel SHR 86a</item>
-        <item>Barrel SHR 88a</item>
-        <item>Barrel SHR 95a</item>
-        <item>Cone SHR 80a</item>
-        <item>Cone SHR 91a</item>
-        <item>Cone SHR 83a</item>
-        <item>Cone SHR 86a</item>
-        <item>Cone SHR 88a</item>
-        <item>Cone SHR 95a</item>
+        <item>Barl APS 95a</item>
+        <item>طراز C1 APS 75a</item>
+        <item>Cالواحدة APS 70a</item>
+        <item>Cالواحدة APS 80a</item>
+        <item>Cالواحدة APS 85a</item>
+        <item>Cالوحيدة APS 90a</item>
+        <item>Cالواحدة APS 92.5a</item>
+        <item>Cالواحدة APS 95a</item>
+        <item>Barl HPF 78a</item>
+        <item>Barl HPF 81a</item>
+        <item>85a HPF البرميل Barl</item>
+        <item>برميل باريل رقم 78 (أ)</item>
+        <item>Barl HPF 90a</item>
+        <item>93 فرنل (أ)</item>
+        <item>Barl HPF 95a</item>
+        <item>Barl HPF 97a</item>
+        <item>C1 HPF 78a</item>
+        <item>Ca HPF 81a</item>
+        <item>Ca HPF 85a</item>
+        <item>Cالوحيدة HPF 87a</item>
+        <item>Ca HPF 90a</item>
+        <item>Ca HPF 93a</item>
+        <item>Ca HPF 95a</item>
+        <item>CN HPF 97a</item>
+        <item>Barl SR 80a</item>
+        <item>البرميل SHR 91a</item>
+        <item>شركة Barrel SHR 83a</item>
+        <item>برميل باريل لحقوق الإنسان (أ)</item>
+        <item>Barl SHR 88 (أ)</item>
+        <item>Barl SHR 95a</item>
+        <item>C1 SR SR 8a</item>
+        <item>C1 SHR 91a</item>
+        <item>Cالوحيدة SRHR 83a</item>
+        <item>Cالوحيدة SHR 86a</item>
+        <item>Cالوحيدة SRHR 88 (أ)</item>
+        <item>C1 SRHR 95a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>سهم</item>
+        <item>كوب ريبتيد</item>
     </string-array>
     <!-- Built-in riser heights choices -->
     <string-array name="risers">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>سهم</item>
+        <item>كوب ريبتيد</item>
     </string-array>
 </resources>
