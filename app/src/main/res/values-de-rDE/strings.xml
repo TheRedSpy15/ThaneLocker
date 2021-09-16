@@ -1,278 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thane Locker</string>
-    <string name="title_activity_board">BoardActivity</string>
-    <string name="change">Change</string>
-    <string name="description">Description</string>
-    <string name="save">Save</string>
+    <string name="title_activity_board">Boardaktivität</string>
+    <string name="change">Ändern</string>
+    <string name="description">Beschreibung</string>
+    <string name="save">Speichern</string>
     <string name="griptape">Griptape:</string>
-    <string name="bushings_road">Bushings (Road):</string>
+    <string name="bushings_road">Bushings (Straße):</string>
     <string name="bushings_board">Bushings (Board):</string>
-    <string name="default_50">Default: 50</string>
+    <string name="default_50">Standardwert: 50</string>
     <string name="_50">50</string>
-    <string name="rear_angle">Rear Angle:</string>
-    <string name="front_angle">Front Angle:</string>
-    <string name="advance_mode">Advance Mode</string>
+    <string name="rear_angle">Hinterer Winkel:</string>
+    <string name="front_angle">Vorderwinkel:</string>
+    <string name="advance_mode">Vorschubmodus</string>
     <string name="deck">Deck</string>
     <string name="name">Name</string>
-    <string name="from_gallery">From Gallery</string>
-    <string name="from_camera">From Camera</string>
-    <string name="avg_mph">Avg MPH</string>
-    <string name="total_miles">Total Miles</string>
+    <string name="from_gallery">Von der Galerie</string>
+    <string name="from_camera">Von Kamera</string>
+    <string name="avg_mph">Durchschn. MPH</string>
+    <string name="total_miles">Gesamtmeilen</string>
     <string name="_00_0">00.0</string>
-    <string name="statistics">Statistics</string>
-    <string name="distance_ridden">Distance Ridden:</string>
-    <string name="parts">Parts</string>
-    <string name="zenit_mini_marble">Zenit Mini Marble</string>
+    <string name="statistics">Statistik</string>
+    <string name="distance_ridden">Entfernung Geritten:</string>
+    <string name="parts">Teile</string>
+    <string name="zenit_mini_marble">Zenit Mini Marmor</string>
     <string name="grip">Grip:</string>
     <string name="lokton">Lokton</string>
-    <string name="trucks">Trucks:</string>
+    <string name="trucks">LKW:</string>
     <string name="paris_v3">Paris V3</string>
-    <string name="angle_front">Angle (front):</string>
-    <string name="angle_rear">Angle (rear):</string>
-    <string name="_50_xb0">50°</string>
+    <string name="angle_front">Winkel (Vorderseite):</string>
+    <string name="angle_rear">Winkel (hinten):</string>
+    <string name="_50_xb0">50 °</string>
     <string name="riptide_88a_wps_barrel">Riptide 88a WPS Barrel</string>
     <string name="pivot">Pivot:</string>
-    <string name="wheels">Wheels:</string>
-    <string name="bearings">Bearings:</string>
-    <string name="edit_setup">Edit Setup</string>
-    <string name="recent_sessions">Recent Sessions</string>
-    <string name="delete_board">Delete Board</string>
-    <string name="record_session">Record Session</string>
+    <string name="wheels">Räder:</string>
+    <string name="bearings">Lager:</string>
+    <string name="edit_setup">Konfiguration bearbeiten</string>
+    <string name="recent_sessions">Letzte Sitzungen</string>
+    <string name="delete_board">Vorstand löschen</string>
+    <string name="record_session">Datensatzsitzung</string>
     <string name="durations">Durations</string>
-    <string name="distances">Distances</string>
-    <string name="top_speeds">Top Speeds</string>
-    <string name="average_speeds">Average Speeds</string>
-    <string name="favorite_board">Favorite Board</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="average_distance">Average Distance:</string>
-    <string name="total_distance">Total Distance:</string>
-    <string name="_00_0_miles">00.0 Miles</string>
-    <string name="furthest_distance">Furthest Distance:</string>
-    <string name="average_speed">Average Speed:</string>
+    <string name="distances">Entfernungen</string>
+    <string name="top_speeds">Spitzengeschwindigkeiten</string>
+    <string name="average_speeds">Durchschnittsgeschwindigkeiten</string>
+    <string name="favorite_board">Favoritenboard</string>
+    <string name="edit_profile">Profil bearbeiten</string>
+    <string name="average_distance">Durchschnittliche Entfernung:</string>
+    <string name="total_distance">Gesamte Entfernung:</string>
+    <string name="_00_0_miles">00.0 Meilen</string>
+    <string name="furthest_distance">Entfernteste Entfernung:</string>
+    <string name="average_speed">Durchschnittliche Geschwindigkeit:</string>
     <string name="_00_0_mph">00.0 MPH</string>
-    <string name="fastest_speed">Fastest Speed:</string>
-    <string name="just_another_awesome_skater">Just another awesome Skater</string>
+    <string name="fastest_speed">Schnellste Geschwindigkeit:</string>
+    <string name="just_another_awesome_skater">Nur ein weiterer toller Skater</string>
     <string name="john_doe">John Doe</string>
-    <string name="bushing_calculator">Bushing Calculator</string>
-    <string name="weight_lbs">Weight (lbs)</string>
-    <string name="cruising">Cruising</string>
+    <string name="bushing_calculator">Buchsenrechner</string>
+    <string name="weight_lbs">Gewicht (lbs)</string>
+    <string name="cruising">Kreuzfahrt</string>
     <string name="freeride_downhill">Freeride/Downhill</string>
-    <string name="calculate">Calculate</string>
-    <string name="recommended_durometer_00a">Recommended Durometer: 00a</string>
-    <string name="based_on_venom_hpf_formula">Based on Venom HPF Formula</string>
-    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Go a step softer roadside for better carving. Or go a step up boardside for less slop</string>
-    <string name="create_board">Create Board</string>
+    <string name="calculate">Berechnen</string>
+    <string name="recommended_durometer_00a">Empfohlenes Durometer: 00a</string>
+    <string name="based_on_venom_hpf_formula">Basierend auf der Venom HPF Formel</string>
+    <string name="go_a_step_softer_roadside_for_better_carving_or_go_a_step_up_boardside_for_less_slop">Gehen Sie einen Schritt weicheren Straßenrand für bessere Schnitzerei. Oder gehen Sie einen Schritt nach oben, für weniger Slop</string>
+    <string name="create_board">Brett erstellen</string>
     <string name="plus_sign">+</string>
-    <string name="boards_used">Boards Used:</string>
-    <string name="add_board">Add Board</string>
-    <string name="city">City:</string>
+    <string name="boards_used">Verwendete Platten:</string>
+    <string name="add_board">Brett hinzufügen</string>
+    <string name="city">Stadt:</string>
     <string name="fort_myers">Fort Myers</string>
-    <string name="top_speed">Top Speed:</string>
+    <string name="top_speed">Spitzengeschwindigkeit:</string>
     <string name="_20_mph">20 MPH</string>
-    <string name="duration">Duration:</string>
-    <string name="_0_0_hours">0.0 hours</string>
-    <string name="start_time">Start Time:</string>
-    <string name="end_time">End Time:</string>
-    <string name="_12_00pm">12:00pm</string>
-    <string name="delete_session">Delete Session</string>
-    <string name="profile">Profile</string>
-    <string name="boards">Boards</string>
-    <string name="sessions">Sessions</string>
-    <string name="news">News</string>
-    <string name="map">Map</string>
-    <string name="calculator">Calculator</string>
-    <string name="settings">Settings</string>
+    <string name="duration">Dauer:</string>
+    <string name="_0_0_hours">0,0 Stunden</string>
+    <string name="start_time">Startzeit:</string>
+    <string name="end_time">Endzeit:</string>
+    <string name="_12_00pm">12 :00pm</string>
+    <string name="delete_session">Sitzung löschen</string>
+    <string name="profile">Profil</string>
+    <string name="boards">Bretter</string>
+    <string name="sessions">Sitzungen</string>
+    <string name="news">Nachrichten</string>
+    <string name="map">Karte</string>
+    <string name="calculator">Berechnungsfunktion</string>
+    <string name="settings">Einstellungen</string>
     <string name="muirskate_title">Longboard Shop</string>
     <string name="discord_title">Longboarding Family Discord</string>
-    <string name="github_title">Source Code on GitHub</string>
-    <string name="sources_title">News Sources</string>
+    <string name="github_title">Quellcode auf GitHub</string>
+    <string name="sources_title">Nachrichtenquellen</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Force Dark Theme</string>
-    <string name="darktheme_sum">Will otherwise follow system settings. Restart app to take effect</string>
-    <string name="github_sum">View the source code to the app hosted on GitHub, and maybe even contribute!</string>
-    <string name="discord_sum">Join the longboarding family discord server, the best community to meet others</string>
-    <string name="muirskate_sum">Go to Muirskate.com the best place to order anything for Longboarding</string>
-    <string name="no_favorite">No Favorite</string>
-    <string name="speed">Speed</string>
-    <string name="distance">Distance</string>
-    <string name="miles"> Miles</string>
+    <string name="darktheme_title">Erzwingen Dunkles Thema</string>
+    <string name="darktheme_sum">Andernfalls folgen Sie den Systemeinstellungen. App erneut starten, um wirksam zu werden</string>
+    <string name="github_sum">Sehen Sie sich den Quellcode für die App auf GitHub an, und vielleicht sogar einen Beitrag!</string>
+    <string name="discord_sum">Schließen Sie sich dem Discore-Server der Longboarding-Familie an, der besten Community, um andere zu treffen</string>
+    <string name="muirskate_sum">Gehen Sie zu Muirskate.com der beste Ort, um alles für Longboarding zu bestellen</string>
+    <string name="no_favorite">Kein Favorit</string>
+    <string name="speed">Geschwindigkeit</string>
+    <string name="distance">Abstand</string>
+    <string name="miles"> Meilen</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
-    <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
-    <string name="recording_session">Recording Session</string>
-    <string name="not_added_disclaimer">Will be added in a future update, but enjoy the rest of what the app has to offer!</string>
-    <string name="not_added_title">This section is not finished</string>
-    <string name="no_news">No news</string>
-    <string name="recommended_durometer">Recommended Durometer: </string>
-    <string name="recommended_shape">Recommended Shape: </string>
-    <string name="need_weight">Please input a weight</string>
+    <string name="poll_rate_sum">Wie schnell sollte die Position aktualisiert werden, wenn eine Sitzung aufgezeichnet wird. Niedriger ist schneller, aber mehr Power-Auslosung. Empfohlen ist 2500</string>
+    <string name="poll_rate_title">Positionsabfrageintervall (Millisekunden)</string>
+    <string name="recording_session">Sitzungsaufzeichnung</string>
+    <string name="not_added_disclaimer">Wird in einem zukünftigen Update hinzugefügt werden, aber genießen Sie den Rest von dem, was die App zu bieten hat!</string>
+    <string name="not_added_title">Dieser Abschnitt ist nicht fertig</string>
+    <string name="no_news">Keine Nachrichten</string>
+    <string name="recommended_durometer">Empfohlenes Durometer: </string>
+    <string name="recommended_shape">Empfohlene Form: </string>
+    <string name="need_weight">Bitte ein Gewicht eingeben</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Delete Session</string>
-    <string name="delete_session_dialog">Are you sure?</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="no_sessions">No Sessions Recorded</string>
-    <string name="click_to_stop">Click here to stop recording</string>
+    <string name="delete_session_title">Sitzung löschen</string>
+    <string name="delete_session_dialog">Sind Sie sicher?</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="delete">Löschen</string>
+    <string name="no_sessions">Keine Sitzungen aufgezeichnet</string>
+    <string name="click_to_stop">Hier klicken, um die Aufzeichnung zu stoppen</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
-    <string name="record_dialog_title">Start Session?</string>
-    <string name="not_enough_data">Not enough data recorded to save</string>
-    <string name="notification_description">Recording your data for you to later view</string>
-    <string name="failed_news">Failed to load News</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="add_tag">Add Tag</string>
-    <string name="finish">Finish</string>
-    <string name="no_boards">No Boards Saved</string>
-    <string name="thank_you_content">Thank you for downloading the app! But this app is still in it\'s early stages and please note many more features are to come!</string>
-    <string name="thank_you_title">Thank You!</string>
-    <string name="went_wrong">Something went wrong</string>
-    <string name="no_image_selected">You didn\'t select an image</string>
-    <string name="minutes">" Minutes"</string>
-    <string name="remove_board_from_session">Remove board from session</string>
+    <string name="recording_disclaimer">Sie sind GPS-Daten werden verwendet</string>
+    <string name="record_dialog_title">Sitzung starten?</string>
+    <string name="not_enough_data">Zum Speichern wurden nicht genügend Daten aufgezeichnet.</string>
+    <string name="notification_description">Aufzeichnen Ihrer Daten für Sie zu einem späteren Zeitpunkt</string>
+    <string name="failed_news">Fehler beim Laden von Nachrichten</string>
+    <string name="are_you_sure">Sind Sie sicher?</string>
+    <string name="add_tag">Tag hinzufügen</string>
+    <string name="finish">Fertigstellen</string>
+    <string name="no_boards">Keine Boards gespeichert</string>
+    <string name="thank_you_content">Danke, dass du die App herunterlädst! Aber diese App ist noch in der Anfangsphase und bitte beachten Sie, dass viele weitere Features kommen werden!</string>
+    <string name="thank_you_title">Danke!</string>
+    <string name="went_wrong">Etwas ging schief</string>
+    <string name="no_image_selected">Sie wählen ein Bild nicht aus</string>
+    <string name="minutes">" Minuten"</string>
+    <string name="remove_board_from_session">Board aus Sitzung entfernen</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
-        <item>Generic</item>
+        <item>Generisch</item>
         <item>Paris V3</item>
         <item>Paris Savants</item>
-        <item>Bear Gen6</item>
-        <item>Valkyries</item>
-        <item>Caliber 2</item>
+        <item>Bär Gen6</item>
+        <item>Walküren</item>
+        <item>Kaliber 2</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Seitenwinder</item>
+        <item>Seismische Aeon</item>
+        <item>Arsenale</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
-        <item>Generic</item>
-        <item>Snakes</item>
-        <item>G Slides</item>
-        <item>BO Smokes</item>
+        <item>Generisch</item>
+        <item>Schlangen</item>
+        <item>G Folien</item>
+        <item>BO-Smokes</item>
         <item>BO Liam Morgan Pro</item>
-        <item>Fatty Hawgs</item>
+        <item>Fett-Hawgs</item>
         <item>Chubby Hawgs</item>
         <item>Supreme Hawgs</item>
         <item>Biggie Hawgs</item>
-        <item>Speed Vents</item>
+        <item>Lüftungsschlitze</item>
         <item>EZ Hawgs</item>
-        <item>Markers</item>
-        <item>Nine Balls</item>
+        <item>Markierungen</item>
+        <item>Neun Bälle</item>
         <item>PHAT BOYZ</item>
-        <item>4President</item>
-        <item>Fat Free</item>
-        <item>Stimulus</item>
+        <item>4Präsident</item>
+        <item>Fett frei</item>
+        <item>Stimulierung</item>
         <item>Skiffs</item>
-        <item>Fat Frees</item>
+        <item>Fette Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
-        <item>Generic</item>
+        <item>Generisch</item>
         <item>Bones Reds</item>
         <item>Beasto</item>
         <item>Oust</item>
-        <item>Space Balls</item>
+        <item>Raumbälle</item>
         <item>Juhu V2</item>
         <item>Zealous</item>
-        <item>Zealous (Ceramic)</item>
+        <item>Zealous (Keramik)</item>
     </string-array>
     <!-- Built-in grip tape choices -->
     <string-array name="grip_tapes">
-        <item>Standard Jessip</item>
+        <item>Standard-Jessip</item>
         <item>Lokton</item>
         <item>Gangster</item>
         <item>Mob Grip</item>
         <item>Hardcore</item>
-        <item>Vicious</item>
+        <item>Bösartig</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <string-array name="foot_stops">
-        <item>None</item>
+        <item>Keine</item>
         <item>Komotion</item>
-        <item>PSD IN-side</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-side</item>
+        <item>PSD IN-Seite</item>
+        <item>PSD-MINI-E/A</item>
+        <item>PSD-OUT-Seite</item>
     </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
-        <item>Dance</item>
+        <item>Tanz</item>
         <item>LDP</item>
-        <item>Downhill</item>
+        <item>Abfahrt</item>
         <item>Freeride</item>
         <item>Slalom</item>
-        <item>Cruise</item>
+        <item>Kreuzfahrt</item>
         <item>Freestyle</item>
         <item>Randomness</item>
     </string-array>
     <!-- Built-in bushings choices -->
     <string-array name="bushings">
-        <item>Stock</item>
-        <item>Barrel WFB 78a</item>
-        <item>Barrel WFB 83a</item>
-        <item>Barrel WFB 88a</item>
-        <item>Barrel WFB 93a</item>
-        <item>Barrel WFB 95.5a</item>
-        <item>Cone WFB 78a</item>
-        <item>Cone WFB 83a</item>
-        <item>Cone WFB 88a</item>
-        <item>Cone WFB 93a</item>
-        <item>Cone WFB 95.5a</item>
-        <item>Barrel APS 70a</item>
-        <item>Barrel APS 75a</item>
-        <item>Barrel APS 80a</item>
-        <item>Barrel APS 85a</item>
-        <item>Barrel APS 90a</item>
-        <item>Barrel APS 92.5a</item>
-        <item>Barrel APS 95a</item>
-        <item>Cone APS 75a</item>
+        <item>Bestand</item>
+        <item>Lauf WFB 78a</item>
+        <item>Lauf WFB 83a</item>
+        <item>Lauf WFB 88a</item>
+        <item>Lauf WFB 93a</item>
+        <item>Lauf WFB 95.5a</item>
+        <item>Kegel WFB 78a</item>
+        <item>Kegel WFB 83a</item>
+        <item>Kegel WFB 88a</item>
+        <item>Kegel WFB 93a</item>
+        <item>Kegel WFB 95.5a</item>
+        <item>Lauf APS 70a</item>
+        <item>Lauf APS 75a</item>
+        <item>Lauf APS 80a</item>
+        <item>Lauf APS 85a</item>
+        <item>Fass APS 90a</item>
+        <item>Fass APS 92.5a</item>
+        <item>Lauf APS 95a</item>
+        <item>Konus APS 75a</item>
         <item>Cone APS 70a</item>
         <item>Cone APS 80a</item>
-        <item>Cone APS 85a</item>
+        <item>Konus APS 85a</item>
         <item>Cone APS 90a</item>
-        <item>Cone APS 92.5a</item>
-        <item>Cone APS 95a</item>
-        <item>Barrel HPF 78a</item>
-        <item>Barrel HPF 81a</item>
-        <item>Barrel HPF 85a</item>
-        <item>Barrel HPF 87a</item>
-        <item>Barrel HPF 90a</item>
-        <item>Barrel HPF 93a</item>
-        <item>Barrel HPF 95a</item>
-        <item>Barrel HPF 97a</item>
-        <item>Cone HPF 78a</item>
-        <item>Cone HPF 81a</item>
-        <item>Cone HPF 85a</item>
-        <item>Cone HPF 87a</item>
-        <item>Cone HPF 90a</item>
-        <item>Cone HPF 93a</item>
-        <item>Cone HPF 95a</item>
-        <item>Cone HPF 97a</item>
-        <item>Barrel SHR 80a</item>
-        <item>Barrel SHR 91a</item>
-        <item>Barrel SHR 83a</item>
-        <item>Barrel SHR 86a</item>
-        <item>Barrel SHR 88a</item>
-        <item>Barrel SHR 95a</item>
-        <item>Cone SHR 80a</item>
-        <item>Cone SHR 91a</item>
-        <item>Cone SHR 83a</item>
-        <item>Cone SHR 86a</item>
-        <item>Cone SHR 88a</item>
-        <item>Cone SHR 95a</item>
+        <item>Konus APS 92.5a</item>
+        <item>Konus APS 95a</item>
+        <item>Fass HPF 78a</item>
+        <item>Fass HPF 81a</item>
+        <item>Fass HPF 85a</item>
+        <item>Fass HPF 87a</item>
+        <item>Fass HPF 90a</item>
+        <item>Fass HPF 93a</item>
+        <item>Fass HPF 95a</item>
+        <item>Fass HPF 97a</item>
+        <item>Kegel HPF 78a</item>
+        <item>Kegel HPF 81a</item>
+        <item>Kegel HPF 85a</item>
+        <item>Kegel HPF 87a</item>
+        <item>Kegel HPF 90a</item>
+        <item>Kegel HPF 93a</item>
+        <item>Kegel HPF 95a</item>
+        <item>Kegel HPF 97a</item>
+        <item>Lauf SHR 80a</item>
+        <item>Lauf SHR 91a</item>
+        <item>Fass SHR 83a</item>
+        <item>Fass SHR 86a</item>
+        <item>Lauf SHR 88a</item>
+        <item>Fass SHR 95a</item>
+        <item>Kegel SHR 80a</item>
+        <item>Kegel SHR 91a</item>
+        <item>Kegel SHR 83a</item>
+        <item>Kegel SHR 86a</item>
+        <item>Kegel SHR 88a</item>
+        <item>Kegel SHR 95a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>Bestand</item>
+        <item>Riptidbecher</item>
     </string-array>
     <!-- Built-in riser heights choices -->
     <string-array name="risers">
-        <item>Stock</item>
-        <item>Riptide cup</item>
+        <item>Bestand</item>
+        <item>Riptidbecher</item>
     </string-array>
 </resources>
