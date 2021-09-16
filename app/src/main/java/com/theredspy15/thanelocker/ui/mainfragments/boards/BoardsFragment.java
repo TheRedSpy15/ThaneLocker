@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.ui.mainfragments.boards;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -43,13 +44,16 @@ public class BoardsFragment extends Fragment {
 
         binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
 
-        boardThread = new Thread(() -> loadBoards(requireContext()));
+        boardThread = new Thread(this::loadBoards);
         boardThread.start();
         return root;
     }
 
-    public synchronized void loadBoards(Context context) {
+    public synchronized void loadBoards() {
         App.cleanBoards();
+
+        Context context = getContext();
+        if (context == null) context = requireContext();
 
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -73,14 +77,16 @@ public class BoardsFragment extends Fragment {
                         button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                     }
 
+                    Context finalContext = context;
                     button.setOnClickListener(v->{
-                        Intent myIntent = new Intent(context, BoardActivity.class);
+                        Intent myIntent = new Intent(finalContext, BoardActivity.class);
                         myIntent.putExtra("board_id", board.getId());
                         startActivity(myIntent);
                     });
 
+                    Context finalContext1 = context;
                     button.setOnLongClickListener(v->{
-                        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+                        AlertDialog alertDialog = new AlertDialog.Builder(finalContext1).create();
                         alertDialog.setTitle(getString(R.string.delete_board));
                         alertDialog.setMessage(getString(R.string.are_you_sure));
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
@@ -89,7 +95,7 @@ public class BoardsFragment extends Fragment {
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
                                     Board.save();
-                                    boardThread = new Thread(() -> loadBoards(context));
+                                    boardThread = new Thread(this::loadBoards);
                                     boardThread.start();
                                 });
                         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
@@ -98,8 +104,7 @@ public class BoardsFragment extends Fragment {
                         return false;
                     });
 
-                    // throws null exception if changing fragments before finished loading all boards
-                    if (isAdded() && !isDetached() && isVisible()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(button,layout));
+                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(button,layout));
                 }
             }
             if (Board.savedBoardIds.isEmpty()) { // no boards
