@@ -81,9 +81,9 @@ public class BoardsFragment extends Fragment {
 
                     button.setOnLongClickListener(v->{
                         AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-                        alertDialog.setTitle("Delete Board");
-                        alertDialog.setMessage("Are you sure?");
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                        alertDialog.setTitle(getString(R.string.delete_board));
+                        alertDialog.setMessage(getString(R.string.are_you_sure));
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                                 (dialog, which) -> {
                                     dialog.dismiss();
                                     Board.savedBoards.remove(board.getId());
@@ -92,7 +92,7 @@ public class BoardsFragment extends Fragment {
                                     boardThread = new Thread(() -> loadBoards(App.getContext()));
                                     boardThread.start();
                                 });
-                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                                 (dialog, which) -> dialog.dismiss());
                         alertDialog.show();
                         return false;
@@ -104,7 +104,7 @@ public class BoardsFragment extends Fragment {
             }
             if (Board.savedBoardIds.isEmpty()) { // no boards
                 TextView textView = new TextView(context);
-                textView.setText("No Boards Saved");
+                textView.setText(R.string.no_boards);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
                 requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));

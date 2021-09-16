@@ -58,10 +58,10 @@ public class SkateMapFragment extends Fragment {
 
         // WIP disclaimer dialog
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("This section is not finished");
-        alertDialog.setMessage("Will be added in a future update, but enjoy the rest of what the app has to offer!");
+        alertDialog.setTitle(getString(R.string.not_added_title));
+        alertDialog.setMessage(getString(R.string.not_added_disclaimer));
         alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
 

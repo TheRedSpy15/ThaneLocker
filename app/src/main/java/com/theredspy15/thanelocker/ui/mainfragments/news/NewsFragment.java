@@ -48,6 +48,8 @@ public class NewsFragment extends Fragment {
                 NewsFragment.entries=entries;
                 while (!isAdded()) {} // fixes a rare occurrence of crash when switching fragments too fast
                 requireActivity().runOnUiThread(()->displayEntries(entries));
+            } catch (FeedException e) {
+                feedError();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -55,6 +57,19 @@ public class NewsFragment extends Fragment {
         thread.start();
 
         return root;
+    }
+
+    private void feedError() {
+        binding.feedLayout.removeAllViews();
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(0, 20, 0, 20);
+
+        TextView textView = new TextView(requireContext()); // no news feeds selected
+        textView.setText(R.string.failed_news);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        textView.setTextSize(18);
+        requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+        binding.progressLoader.setVisibility(View.GONE);
     }
 
     public void displayEntries(List<SyndEntry> entries) {
@@ -80,7 +95,7 @@ public class NewsFragment extends Fragment {
 
             if (entries.isEmpty()) {
                 TextView textView = new TextView(requireContext()); // no news feeds selected
-                textView.setText("No news");
+                textView.setText(R.string.no_news);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
                 requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
@@ -88,7 +103,7 @@ public class NewsFragment extends Fragment {
             }
         } else {
             TextView textView = new TextView(requireContext()); // no news feeds selected
-            textView.setText("No news");
+            textView.setText(R.string.no_news);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));

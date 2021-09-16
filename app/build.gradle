@@ -31,8 +31,9 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            debuggable false
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {

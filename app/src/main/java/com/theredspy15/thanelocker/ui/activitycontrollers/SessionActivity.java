@@ -118,10 +118,10 @@ public class SessionActivity extends AppCompatActivity {
         cityView.setText(session.getCityName(this));
 
         TextView topSpeedView = binding.sessionLayout.findViewById(R.id.topSpeedView);
-        topSpeedView.setText(session.getTopSpeed()+" MPH");
+        topSpeedView.setText(session.getTopSpeed()+getString(R.string.mph));
 
         TextView durationView = binding.sessionLayout.findViewById(R.id.durationView);
-        durationView.setText(session.getDuration()+" Minutes");
+        durationView.setText(session.getDuration()+getString(R.string.minutes));
 
         TextView timeStartView = binding.sessionLayout.findViewById(R.id.timeStartView);
         timeStartView.setText(session.getTime_start());
@@ -143,7 +143,7 @@ public class SessionActivity extends AppCompatActivity {
             chip.setText(tag);
             chip.setOnClickListener(v -> {
                 chip.setVisibility(View.GONE);
-                session.getTags().remove(chip.getText());
+                session.getTags().remove(chip.getText()); // TODO: remove by id
                 Objects.requireNonNull(Session.savedSessions.get(session.getId())).setTags(session.getTags());
                 Session.save();
             });
@@ -228,16 +228,16 @@ public class SessionActivity extends AppCompatActivity {
         Button button = (Button) view;
 
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Remove board from session");
-        alertDialog.setMessage("Are you sure?");
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+        alertDialog.setTitle(getString(R.string.remove_board_from_session));
+        alertDialog.setMessage(getString(R.string.are_you_sure));
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
                     session.getBoard_ids().remove(session.getBoard_ids().indexOf(Board.BoardNameToId((String) button.getText()))); // removing by object doesn't work
                     Session.save();
                     loadBoardsUsed();
                 });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
 
@@ -254,7 +254,7 @@ public class SessionActivity extends AppCompatActivity {
         }
 
         AlertDialog.Builder b = new AlertDialog.Builder(this);
-        b.setTitle("Add Board");
+        b.setTitle(getString(R.string.add_board));
         b.setItems(boards, (dialog, which) -> {
             dialog.dismiss();
             session.getBoard_ids().add(Board.BoardNameToId(boards[which]));
@@ -284,14 +284,14 @@ public class SessionActivity extends AppCompatActivity {
         Marker startMarker = new Marker(map);
         startMarker.setPosition(pts.get(0));
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        startMarker.setTextIcon("Start");
+        startMarker.setTextIcon(getString(R.string.start));
         map.getOverlays().add(startMarker);
 
         // finish marker
         Marker finishMarker = new Marker(map);
         finishMarker.setPosition(pts.get(pts.size()-1));
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        finishMarker.setTextIcon("Finish");
+        finishMarker.setTextIcon(getString(R.string.finish));
         map.getOverlays().add(finishMarker);
 
         // determine theme TODO: day/night support
@@ -300,9 +300,9 @@ public class SessionActivity extends AppCompatActivity {
 
     public void deleteSession(View view) {
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Delete Session");
-        alertDialog.setMessage("Are you sure?");
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+        alertDialog.setTitle(getString(R.string.delete_session));
+        alertDialog.setMessage(getString(R.string.are_you_sure));
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
                     Session.savedSessions.remove(session.getId());
@@ -311,14 +311,14 @@ public class SessionActivity extends AppCompatActivity {
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
                 });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
     }
 
     public void addTag(View view) {
         AlertDialog.Builder b = new AlertDialog.Builder(this);
-        b.setTitle("Add Tag");
+        b.setTitle(R.string.add_tag);
         String[] types = getResources().getStringArray(R.array.tags);
         b.setItems(types, (dialog, which) -> {
             dialog.dismiss();
@@ -371,7 +371,7 @@ public class SessionActivity extends AppCompatActivity {
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(values, "Speed");
+            set1 = new LineDataSet(values, getString(R.string.speed));
 
             set1.setDrawIcons(false);
 

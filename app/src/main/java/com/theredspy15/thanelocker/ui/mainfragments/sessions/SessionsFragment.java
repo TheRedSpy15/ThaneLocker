@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -21,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentSessionsBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 import com.theredspy15.thanelocker.utils.App;
@@ -94,9 +94,9 @@ public class SessionsFragment extends Fragment {
 
                     button.setOnLongClickListener(v->{
                         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-                        alertDialog.setTitle("Delete Session");
-                        alertDialog.setMessage("Are you sure?");
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+                        alertDialog.setTitle(getString(R.string.delete_session_title));
+                        alertDialog.setMessage(getString(R.string.delete_session_dialog));
+                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                                 (dialog, which) -> {
                                     dialog.dismiss();
                                     Session.savedSessions.remove(session.getId());
@@ -105,7 +105,7 @@ public class SessionsFragment extends Fragment {
                                     sessionThread = new Thread(this::loadSessions);
                                     sessionThread.start();
                                 });
-                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                                 (dialog, which) -> dialog.dismiss());
                         alertDialog.show();
                         return false;
@@ -119,7 +119,7 @@ public class SessionsFragment extends Fragment {
 
         if (Session.savedSessions != null && Session.savedSessions.isEmpty()) { // no sessions
             TextView textView = new TextView(requireContext());
-            textView.setText("No Session Recorded");
+            textView.setText(R.string.no_sessions);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             requireActivity().runOnUiThread(() -> binding.sessionsLayout.addView(textView, layout));
@@ -135,16 +135,16 @@ public class SessionsFragment extends Fragment {
     public void loadStartSession(View view) {
         if (checkPermission()) {
             AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-            alertDialog.setTitle("Start Session?");
-            alertDialog.setMessage("You're GPS data will be used");
+            alertDialog.setTitle(getString(R.string.record_dialog_title));
+            alertDialog.setMessage(getString(R.string.recording_disclaimer));
             alertDialog.setCancelable(false);
-            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                     (dialog, which) -> dialog.dismiss());
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "START",
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.start),
                     (dialog, which) -> {
                         PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
                         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                                "MyApp::MyWakelockTag");
+                                "ThaneLocker::WakelockTag");
                         wakeLock.acquire(60*60*1000L /*60 minutes*/);
 
                         startService();
@@ -163,11 +163,11 @@ public class SessionsFragment extends Fragment {
     void loadRecordingButtonIndicator() {
         if (isRecording) {
             binding.newSessionButton.setBackgroundColor(requireContext().getColor(R.color.recording_session));
-            binding.newSessionButton.setText("Click here to stop recording");
+            binding.newSessionButton.setText(R.string.click_to_stop);
             binding.newSessionButton.setOnClickListener(this::stopSession);
         } else {
             binding.newSessionButton.setBackgroundColor(requireContext().getColor(R.color.purple_500));
-            binding.newSessionButton.setText("Record Session");
+            binding.newSessionButton.setText(R.string.record_session);
             binding.newSessionButton.setOnClickListener(this::loadStartSession);
         }
     }
@@ -177,7 +177,7 @@ public class SessionsFragment extends Fragment {
         loadRecordingButtonIndicator();
         prepareSession();
         Intent serviceIntent = new Intent(requireContext(), LocationService.class);
-        serviceIntent.putExtra("description", "Recording your data for you to later view"); // maybe send list this way?
+        serviceIntent.putExtra("description", getString(R.string.notification_description)); // maybe send list this way?
         ContextCompat.startForegroundService(requireContext(), serviceIntent);
     }
 
@@ -200,7 +200,8 @@ public class SessionsFragment extends Fragment {
             sessionThread.start();
             Session.save();
         } else
-            Toast.makeText(requireContext(), "Not enough data recorded to save", Toast.LENGTH_LONG).show();
+            Snackbar.make(binding.newSessionButton, getString(R.string.not_enough_data), Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
     }
 
     void prepareSession() {

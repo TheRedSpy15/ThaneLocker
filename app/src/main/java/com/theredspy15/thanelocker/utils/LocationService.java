@@ -39,7 +39,7 @@ public class LocationService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Recording Session")
+                .setContentTitle(getString(R.string.recording_session))
                 .setContentText(input)
                 .setSmallIcon(R.drawable.ic_baseline_location_on_24)
                 .setContentIntent(pendingIntent)

@@ -14,7 +14,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.ActivityEditProfileBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
@@ -61,29 +63,32 @@ public class EditProfileActivity extends AppCompatActivity {
                 binding.profilePictureView.setImageBitmap(selectedImage);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.went_wrong), Toast.LENGTH_LONG).show();
             }
         }else {
-            Toast.makeText(this, "You haven't picked Image", Toast.LENGTH_LONG).show();
+            Snackbar.make(binding.changePictureButton, getString(R.string.no_image_selected), Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
         }
     }
 
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
             uri -> {
-                binding.profilePictureView.setImageURI(uri);
-                imageUri = uri;
+                if (uri != null) {
+                    binding.profilePictureView.setImageURI(uri);
+                    imageUri = uri;
 
-                try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-                    ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        bitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
-                    } else {
-                        bitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                        ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                            bitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
+                        } else {
+                            bitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+                        }
+                        imageBytes = baoStream.toByteArray();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    imageBytes = baoStream.toByteArray();
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             });
 

@@ -122,7 +122,7 @@ public class BoardActivity extends AppCompatActivity {
         }
         else { // no sessions
             TextView textView = new TextView(this);
-            textView.setText("No Sessions");
+            textView.setText(R.string.no_sessions);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             binding.boardContent.sessionsWithBoardLayout.addView(textView,layout);
@@ -131,9 +131,9 @@ public class BoardActivity extends AppCompatActivity {
 
     public void deleteBoard(View view) {
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Delete Board");
-        alertDialog.setMessage("Are you sure?");
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Delete",
+        alertDialog.setTitle(getString(R.string.delete_board));
+        alertDialog.setMessage(getString(R.string.are_you_sure));
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
                     Board.savedBoards.remove(board.getId());
@@ -147,7 +147,7 @@ public class BoardActivity extends AppCompatActivity {
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
                 });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
     }

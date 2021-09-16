@@ -94,12 +94,12 @@ public class ProfileFragment extends Fragment {
             // fastest speed
             float top = 0;
             if (Float.parseFloat(session.getTopSpeed()) > top) top = Float.parseFloat(session.getTopSpeed());
-            binding.topSpeedView.setText(top+" MPH");
+            binding.topSpeedView.setText(top+getString(R.string.mph));
 
             // furthest distance
             top = 0;
             if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
-            binding.furthestDistanceView.setText(top+" Miles");
+            binding.furthestDistanceView.setText(top+getString(R.string.miles));
 
            tDistance += Float.parseFloat(session.getTotalDistance());
            tAvgDistance += Float.parseFloat(session.getTotalDistance());
@@ -108,9 +108,9 @@ public class ProfileFragment extends Fragment {
         tAvgSpeed = tAvgSpeed / sessions.size();
         tAvgDistance = tAvgDistance / sessions.size();
 
-        binding.totalDistanceView.setText(tDistance+" Miles");
-        binding.avgDistanceView.setText(tAvgDistance+" Miles");
-        binding.avgSpeedView.setText(tAvgSpeed+" MPH");
+        binding.totalDistanceView.setText(tDistance+getString(R.string.miles));
+        binding.avgDistanceView.setText(tAvgDistance+getString(R.string.miles));
+        binding.avgSpeedView.setText(tAvgSpeed+getString(R.string.mph));
     }
 
     private synchronized void loadFavoriteBoard() {

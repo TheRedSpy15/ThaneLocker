@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.thanelocker.R;
 import com.example.thanelocker.databinding.FragmentCalculatorBinding;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -47,7 +48,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
             int weight = (int) (Integer.parseInt(binding.editTextWeight.getText().toString())/2.2046226218);
 
             String duro = weightToDuro(weight,false);
-            binding.recommendedTextView.setText("Recommended Durometer: "+duro);
+            binding.recommendedTextView.setText(getString(R.string.recommended_durometer)+duro);
             binding.recommendedTextView.setVisibility(View.VISIBLE);
             binding.basedOnTextView.setVisibility(View.VISIBLE);
             binding.tipTextView.setVisibility(View.VISIBLE);
@@ -59,7 +60,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
             if (!recommendedShape.equals("")) { // TODO: fix not changing after already being calculated with different radio button
                 TextView textView = new TextView(requireContext());
-                textView.setText("Recommended Shape: "+recommendedShape);
+                textView.setText(getString(R.string.recommended_shape)+recommendedShape);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(20);
                 textView.setTypeface(null, Typeface.BOLD);
@@ -68,7 +69,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
-            Snackbar.make(view, "Please input a weight", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, getString(R.string.need_weight), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }

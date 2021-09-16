@@ -96,10 +96,40 @@
     <string name="no_favorite">No Favorite</string>
     <string name="speed">Speed</string>
     <string name="distance">Distance</string>
-    <string name="miles">\" Miles\"</string>
-    <string name="mph">\" MPH\"</string>
+    <string name="miles"> Miles</string>
+    <string name="mph"> MPH</string>
     <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
     <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
+    <string name="recording_session">Recording Session</string>
+    <string name="not_added_disclaimer">Will be added in a future update, but enjoy the rest of what the app has to offer!</string>
+    <string name="not_added_title">This section is not finished</string>
+    <string name="no_news">No news</string>
+    <string name="recommended_durometer">Recommended Durometer: </string>
+    <string name="recommended_shape">Recommended Shape: </string>
+    <string name="need_weight">Please input a weight</string>
+    <string name="ok">OK</string>
+    <string name="delete_session_title">Delete Session</string>
+    <string name="delete_session_dialog">Are you sure?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="no_sessions">No Sessions Recorded</string>
+    <string name="click_to_stop">Click here to stop recording</string>
+    <string name="start">START</string>
+    <string name="recording_disclaimer">You\'re GPS data will be used</string>
+    <string name="record_dialog_title">Start Session?</string>
+    <string name="not_enough_data">Not enough data recorded to save</string>
+    <string name="notification_description">Recording your data for you to later view</string>
+    <string name="failed_news">Failed to load News</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="add_tag">Add Tag</string>
+    <string name="finish">Finish</string>
+    <string name="no_boards">No Boards Saved</string>
+    <string name="thank_you_content">Thank you for downloading the app! But this app is still in it\'s early stages and please note many more features are to come!</string>
+    <string name="thank_you_title">Thank You!</string>
+    <string name="went_wrong">Something went wrong</string>
+    <string name="no_image_selected">You didn\'t select an image</string>
+    <string name="minutes">" Minutes"</string>
+    <string name="remove_board_from_session">Remove board from session</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->
