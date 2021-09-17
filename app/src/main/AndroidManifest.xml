@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.thanelocker"
+    package="com.example.longboardlife"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -26,7 +26,7 @@
         android:required="true" />
 
     <application
-        android:name="com.theredspy15.thanelocker.utils.App"
+        android:name="com.theredspy15.longboardlife.utils.App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,41 +35,41 @@
         android:theme="@style/Theme.ThaneLocker">
 
         <service
-            android:name="com.theredspy15.thanelocker.utils.LocationService"
+            android:name="com.theredspy15.longboardlife.utils.LocationService"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="location" />
 
         <activity
-            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity"
-            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.EditProfileActivity"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:label="Edit Profile"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker"
             android:exported="true" />
         <activity
-            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.SessionActivity"
             android:exported="true"
             android:label="SessionActivity"
-            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker.NoActionBar" />
         <activity
-            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.BoardActivity"
             android:exported="true"
             android:label="@string/title_activity_board"
-            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker.NoActionBar" />
         <activity
-            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.NewBoardActivity"
             android:exported="true"
             android:label="Create Board"
-            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker" />
         <activity
-            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait">

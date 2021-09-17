@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity">
+    tools:context="com.theredspy15.longboardlife.ui.activitycontrollers.SessionActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -25,7 +25,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
-            <com.theredspy15.thanelocker.customviews.PriorityMapView
+            <com.theredspy15.longboardlife.customviews.PriorityMapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

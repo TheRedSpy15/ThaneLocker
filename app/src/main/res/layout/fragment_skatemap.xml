@@ -5,7 +5,7 @@
     android:id="@+id/maplayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.theredspy15.thanelocker.ui.mainfragments.skatemap.SkateMapFragment">
+    tools:context="com.theredspy15.longboardlife.ui.mainfragments.skatemap.SkateMapFragment">
 
     <org.osmdroid.views.MapView
         android:id="@+id/map"

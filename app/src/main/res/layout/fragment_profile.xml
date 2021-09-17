@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.theredspy15.thanelocker.ui.mainfragments.profile.ProfileFragment">
+    tools:context="com.theredspy15.longboardlife.ui.mainfragments.profile.ProfileFragment">
 
     <LinearLayout
         android:id="@+id/statisticsLayout"

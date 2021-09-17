@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thane Locker</string>
+    <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">變化</string>
     <string name="description">說明</string>

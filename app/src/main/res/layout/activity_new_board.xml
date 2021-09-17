@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity">
+    tools:context="com.theredspy15.longboardlife.ui.activitycontrollers.NewBoardActivity">
 
     <ScrollView
         android:layout_width="0dp"
