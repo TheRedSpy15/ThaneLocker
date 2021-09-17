@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thane Locker</string>
+    <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">\' Αλλαγή</string>
     <string name="description">Περιγραφή:</string>
@@ -134,6 +134,7 @@
     <string name="apply">Apply</string>
     <string name="level_1">Level: 1</string>
     <string name="level">Level:</string>
+    <string name="select_theme">Select Theme</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -148,6 +149,12 @@
         <item>Sidewinders:</item>
         <item>Seismic Aeon</item>
         <item>\' Αρσενς</item>
+    </string-array>
+    <!-- Built-in theme choices -->
+    <string-array name="themes">
+        <item>Auto</item>
+        <item>Light</item>
+        <item>Dark</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
