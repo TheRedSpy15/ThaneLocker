@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Thane Locker</string>
+    <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">Działanie boardActivity</string>
     <string name="change">Zmień</string>
     <string name="description">Opis</string>
@@ -131,6 +131,10 @@
     <string name="no_image_selected">Nie wybrano obrazu</string>
     <string name="minutes">" Minuty"</string>
     <string name="remove_board_from_session">Usuń tablicę z sesji</string>
+    <string name="apply">Apply</string>
+    <string name="level_1">Level: 1</string>
+    <string name="level">Level:</string>
+    <string name="select_theme">Select Theme</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -145,6 +149,12 @@
         <item>Chodniki boczne</item>
         <item>Seismic Aeon</item>
         <item>Arsenały</item>
+    </string-array>
+    <!-- Built-in theme choices -->
+    <string-array name="themes">
+        <item>Auto</item>
+        <item>Light</item>
+        <item>Dark</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Armario de etano</string>
+    <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">Malectiva</string>
     <string name="change">Cambio</string>
     <string name="description">Descripción</string>
@@ -131,6 +131,10 @@
     <string name="no_image_selected">No ha seleccionado una imagen</string>
     <string name="minutes">" Minutos"</string>
     <string name="remove_board_from_session">Eliminar la placa de la sesión</string>
+    <string name="apply">Apply</string>
+    <string name="level_1">Level: 1</string>
+    <string name="level">Level:</string>
+    <string name="select_theme">Select Theme</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -145,6 +149,12 @@
         <item>Bobinadores</item>
         <item>Aeon sísmico</item>
         <item>Arsenales</item>
+    </string-array>
+    <!-- Built-in theme choices -->
+    <string-array name="themes">
+        <item>Auto</item>
+        <item>Light</item>
+        <item>Dark</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
