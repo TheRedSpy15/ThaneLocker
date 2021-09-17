@@ -39,6 +39,13 @@
             app:min="1500"
             android:summary="@string/poll_rate_sum"
             app:icon="@drawable/ic_outline_speed_24" />
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="false"
+            android:key="usekilometers"
+            android:persistent="true"
+            app:icon="@drawable/ic_outline_speed_24"
+            android:title="Convert to kilometers per hour" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/sources_title">
         <CheckBoxPreference
@@ -57,12 +64,14 @@
             android:title="@string/longboardbrand_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
-        <SwitchPreference
-            app:icon="@drawable/ic_baseline_dark_mode_24"
-            android:defaultValue="false"
-            android:key="forcedark"
+        <ListPreference
+            app:icon="@drawable/ic_baseline_color_lens_24"
+            android:key="theme"
+            android:defaultValue="Auto"
+            android:entries="@array/themes"
+            android:entryValues="@array/themes"
             android:summary="@string/darktheme_sum"
             android:persistent="true"
-            android:title="@string/darktheme_title" />
+            android:title="@string/select_theme" />
     </PreferenceCategory>
 </androidx.preference.PreferenceScreen>

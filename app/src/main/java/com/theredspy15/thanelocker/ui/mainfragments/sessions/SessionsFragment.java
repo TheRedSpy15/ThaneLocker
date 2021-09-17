@@ -51,6 +51,8 @@ public class SessionsFragment extends Fragment {
         binding = FragmentSessionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        App.cleanSessions();
+
         binding.newSessionButton.setOnClickListener(this::loadStartSession);
 
         sessionThread = new Thread(this::loadSessions);
@@ -66,8 +68,6 @@ public class SessionsFragment extends Fragment {
     }
 
     public void loadSessions() {
-        App.cleanSessions();
-
         requireActivity().runOnUiThread(()->binding.sessionsLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);

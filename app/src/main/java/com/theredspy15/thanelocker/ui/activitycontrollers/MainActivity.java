@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         App.updateTheme();
 
         Profile.load();
-        Board.load();
-        Session.load();
+        if (Board.savedBoards.isEmpty()) Board.load();
+        if (Session.savedSessions.isEmpty()) Session.load();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
 

@@ -79,7 +79,7 @@ public class App extends Application {
         return max.getKey();
     }
 
-    public static synchronized void cleanBoards() { // TODO: clean hashmap, duplicates
+    public static void cleanBoards() { // TODO: clean hashmap, duplicates
         LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
         for (int id : Board.savedBoardIds) {
             if (Board.savedBoards.get(id) == null) {
@@ -89,7 +89,7 @@ public class App extends Application {
         for (int id : list) Board.savedBoardIds.remove((Integer) id);
     }
 
-    public static synchronized void cleanSessions() { // TODO: clean hashmap, duplicates
+    public static void cleanSessions() { // TODO: clean hashmap, duplicates
         LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
         for (int id : Session.savedSessionIds) {
             if (Session.savedSessions.get(id) == null) {
@@ -100,8 +100,16 @@ public class App extends Application {
     }
 
     public static void updateTheme() {
-        if (MainActivity.preferences.getBoolean("forcedark", false))
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        String selectedTheme = MainActivity.preferences.getString("theme","Auto");
+        switch (selectedTheme) {
+            case "Dark":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case "Light":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+        }
+
     }
 
     // for charts

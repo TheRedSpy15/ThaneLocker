@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
         return root;
     }
 
-    private synchronized void loadAllData() { // TODO: multi-thread this
+    private void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         binding.nameText.setText(profile.getName());
         binding.descriptionView.setText(profile.getDescription());
@@ -93,7 +93,7 @@ public class ProfileFragment extends Fragment {
         startActivity(myIntent);
     }
 
-    private synchronized void loadTextViewStats() {
+    private void loadTextViewStats() {
         float tDistance = 0;
         float tAvgDistance = 0;
         float tAvgSpeed = 0;
@@ -121,7 +121,7 @@ public class ProfileFragment extends Fragment {
         binding.avgSpeedView.setText(tAvgSpeed+getString(R.string.mph));
     }
 
-    private synchronized void loadFavoriteBoard() {
+    private void loadFavoriteBoard() {
         LinearLayout linearLayout = binding.statisticsLayout;
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(80,0,80,0);
@@ -159,7 +159,7 @@ public class ProfileFragment extends Fragment {
         linearLayout.addView(button,8,layout);
     }
 
-    private synchronized void loadSpeedsChart() {
+    private void loadSpeedsChart() {
         LineChart chart = binding.speedsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -224,7 +224,7 @@ public class ProfileFragment extends Fragment {
         chart.getLegend().setTextColor(color);
     }
 
-    private synchronized void loadTopSpeedsChart() {
+    private void loadTopSpeedsChart() {
         LineChart chart = binding.topSpeedsChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -290,7 +290,7 @@ public class ProfileFragment extends Fragment {
         chart.getLegend().setTextColor(color);
     }
 
-    private synchronized void loadDistancesChart() {
+    private void loadDistancesChart() {
         LineChart chart = binding.distancesChart;
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -367,7 +367,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private synchronized void loadDurationsChart() {
+    private void loadDurationsChart() {
         LineChart chart = binding.durationsChart;
 
         ArrayList<Entry> values = new ArrayList<>();

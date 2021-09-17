@@ -32,6 +32,8 @@ public class BoardsFragment extends Fragment {
     private BoardsViewModel boardsViewModel;
     private FragmentBoardsBinding binding;
 
+    Context context;
+
     Thread boardThread;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -42,19 +44,23 @@ public class BoardsFragment extends Fragment {
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
+        App.cleanBoards();
 
-        boardThread = new Thread(this::loadBoards);
-        boardThread.start();
+        binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
         return root;
     }
 
-    public synchronized void loadBoards() {
-        App.cleanBoards();
-
-        Context context = getContext();
+    @Override
+    public void onStart() {
+        context = getContext();
         if (context == null) context = requireContext();
 
+        super.onStart();
+        boardThread = new Thread(this::loadBoards);
+        boardThread.start();
+    }
+
+    public void loadBoards() {
         requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);

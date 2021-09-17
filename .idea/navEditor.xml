@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="5" />
-                            <option name="y" value="-237" />
+                            <option name="x" value="7" />
+                            <option name="y" value="-217" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -99,6 +99,11 @@
                               </value>
                             </entry>
                             <entry key="action_navigation_profile_to_navigation_boards">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_navigation_profile_to_navigation_calculator">
                               <value>
                                 <LayoutPositions />
                               </value>

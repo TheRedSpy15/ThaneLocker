@@ -133,6 +133,7 @@
     <string name="apply">Apply</string>
     <string name="level_1">Level: 1</string>
     <string name="level">Level:</string>
+    <string name="select_theme">Select Theme</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->
@@ -148,6 +149,12 @@
         <item>Sidewinders</item>
         <item>Seismic Aeon</item>
         <item>Arsenals</item>
+    </string-array>
+    <!-- Built-in theme choices -->
+    <string-array name="themes">
+        <item>Auto</item>
+        <item>Light</item>
+        <item>Dark</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
