@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">롱보드 라이프</string>
     <string name="title_activity_board">보드활동</string>
     <string name="change">변경</string>
     <string name="description">설명</string>
@@ -131,10 +131,12 @@
     <string name="no_image_selected">이미지를 선택하지 않았습니다</string>
     <string name="minutes">" 분"</string>
     <string name="remove_board_from_session">세션에서 보드를 제거합니다.</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">적용</string>
+    <string name="level_1">레벨: 1</string>
+    <string name="level">레벨:</string>
+    <string name="select_theme">테마 선택</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +154,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>자동</item>
+        <item>빛</item>
+        <item>암흑</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
