@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Cuộc Sống Bàn Dài</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">Thay đổi</string>
     <string name="description">Mô tả</string>
@@ -131,10 +131,12 @@
     <string name="no_image_selected">Bạn không chọn ảnh</string>
     <string name="minutes">" Phút"</string>
     <string name="remove_board_from_session">Loại bỏ bảng khỏi phiên</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Áp dụng</string>
+    <string name="level_1">Mức độ: 1</string>
+    <string name="level">Mức độ:</string>
+    <string name="select_theme">Chọn sắc thái</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +154,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Tự động</item>
+        <item>Ánh sáng</item>
+        <item>Đen</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
