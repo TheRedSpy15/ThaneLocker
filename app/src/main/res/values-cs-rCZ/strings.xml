@@ -131,10 +131,12 @@
     <string name="no_image_selected">Nevybrali jste obrázek</string>
     <string name="minutes">" Minuty"</string>
     <string name="remove_board_from_session">Odebrat nástěnku z relace</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Použít</string>
+    <string name="level_1">Úroveň: 1</string>
+    <string name="level">Úroveň:</string>
+    <string name="select_theme">Vybrat motiv</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +154,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Automatický</item>
+        <item>Světlé</item>
+        <item>Tmavé</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
