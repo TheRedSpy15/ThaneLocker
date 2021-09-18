@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Долговая жизнь</string>
     <string name="title_activity_board">Активность</string>
     <string name="change">Изменение</string>
     <string name="description">Описание</string>
@@ -131,10 +131,12 @@
     <string name="no_image_selected">Вы не выбрали изображение</string>
     <string name="minutes">" Минуты"</string>
     <string name="remove_board_from_session">Удалить совет из сеанса</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Применить</string>
+    <string name="level_1">Уровень: 1</string>
+    <string name="level">Уровень:</string>
+    <string name="select_theme">Выбрать тему</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +154,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Автоматически</item>
+        <item>Свет</item>
+        <item>Темный</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
