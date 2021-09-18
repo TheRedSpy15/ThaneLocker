@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">테인 로커</string>
+    <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">보드활동</string>
     <string name="change">변경</string>
     <string name="description">설명</string>
@@ -131,6 +131,10 @@
     <string name="no_image_selected">이미지를 선택하지 않았습니다</string>
     <string name="minutes">" 분"</string>
     <string name="remove_board_from_session">세션에서 보드를 제거합니다.</string>
+    <string name="apply">Apply</string>
+    <string name="level_1">Level: 1</string>
+    <string name="level">Level:</string>
+    <string name="select_theme">Select Theme</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -145,6 +149,12 @@
         <item>사이드와인더</item>
         <item>지진아</item>
         <item>비소</item>
+    </string-array>
+    <!-- Built-in theme choices -->
+    <string-array name="themes">
+        <item>Auto</item>
+        <item>Light</item>
+        <item>Dark</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
