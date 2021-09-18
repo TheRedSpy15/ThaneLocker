@@ -15,8 +15,8 @@ import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Session;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -80,7 +80,7 @@ public class App extends Application {
     }
 
     public static void cleanBoards() { // TODO: clean hashmap, duplicates
-        LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
+        ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
         for (int id : Board.savedBoardIds) {
             if (Board.savedBoards.get(id) == null) {
                 list.add(id);
@@ -90,7 +90,7 @@ public class App extends Application {
     }
 
     public static void cleanSessions() { // TODO: clean hashmap, duplicates
-        LinkedList<Integer> list = new LinkedList<>(); // ids to null objects
+        ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
         for (int id : Session.savedSessionIds) {
             if (Session.savedSessions.get(id) == null) {
                 list.add(id);

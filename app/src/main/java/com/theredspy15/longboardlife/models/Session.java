@@ -13,8 +13,8 @@ import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
@@ -23,7 +23,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
     public static final double xpValue = 1.1;
 
-    private LinkedList<Integer> board_ids = new LinkedList<>();
+    private ArrayList<Integer> board_ids = new ArrayList<>();
     private int id = 0;
     private int user_id = 0;
     private String notes = "was very lame hill and too hot..."; // TODO: implement this!
@@ -33,11 +33,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private long end_millis = 0;
     private String date = "";
     private String name = ""; // location + date
-    private final LinkedList<SessionLocationPoint> locations = new LinkedList<>();
-    private LinkedList<String> tags = new LinkedList<>();
+    private final ArrayList<SessionLocationPoint> locations = new ArrayList<>();
+    private ArrayList<String> tags = new ArrayList<>();
 
     public static HashMap<Integer,Session> savedSessions = new HashMap<>();
-    public static LinkedList<Integer> savedSessionIds = new LinkedList<>();
+    public static ArrayList<Integer> savedSessionIds = new ArrayList<>();
 
     public Session() {
         int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
@@ -55,8 +55,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         else savedSessions = new HashMap<>();
 
         json = MainActivity.preferences.getString("savedSessionIds", null);
-        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<LinkedList<Integer>>() {}.getType());
-        else savedSessionIds = new LinkedList<>();
+        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
+        else savedSessionIds = new ArrayList<>();
     }
 
     public static void save() {
@@ -72,8 +72,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         prefsEditor.apply();
     }
 
-    public static LinkedList<Session> sessionsWithBoard(int board_id) {
-        LinkedList<Session> sessionsWithBoard = new LinkedList<>();
+    public static ArrayList<Session> sessionsWithBoard(int board_id) {
+        ArrayList<Session> sessionsWithBoard = new ArrayList<>();
 
         for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
@@ -152,11 +152,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         return duration / (60 * 1000); //returns minutes
     }
 
-    public LinkedList<String> getTags() {
+    public ArrayList<String> getTags() {
         return tags;
     }
 
-    public void setTags(LinkedList<String> tags) {
+    public void setTags(ArrayList<String> tags) {
         this.tags = tags;
     }
 
@@ -176,7 +176,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.name = name;
     }
 
-    public LinkedList<SessionLocationPoint> getLocations() {
+    public ArrayList<SessionLocationPoint> getLocations() {
         return locations;
     }
 
@@ -215,11 +215,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.end_millis = end_millis;
     }
 
-    public LinkedList<Integer> getBoard_ids() {
+    public ArrayList<Integer> getBoard_ids() {
         return board_ids;
     }
 
-    public void setBoard_ids(LinkedList<Integer> board_ids) {
+    public void setBoard_ids(ArrayList<Integer> board_ids) {
         this.board_ids = board_ids;
     }
 

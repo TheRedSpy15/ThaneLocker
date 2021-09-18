@@ -26,8 +26,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 
 public class NewBoardActivity extends AppCompatActivity {
 
@@ -86,27 +86,27 @@ public class NewBoardActivity extends AppCompatActivity {
         }
 
         String[] pivotsA = getResources().getStringArray(R.array.pivots);
-        LinkedList<String> pivots = new LinkedList<>();
+        ArrayList<String> pivots = new ArrayList<>();
         Collections.addAll(pivots, pivotsA);
 
         String[] bushingsA = getResources().getStringArray(R.array.bushings);
-        LinkedList<String> bushings = new LinkedList<>();
+        ArrayList<String> bushings = new ArrayList<>();
         Collections.addAll(bushings, bushingsA);
 
         String[] wheelsA = getResources().getStringArray(R.array.wheels);
-        LinkedList<String> wheels = new LinkedList<>();
+        ArrayList<String> wheels = new ArrayList<>();
         Collections.addAll(wheels, wheelsA);
 
         String[] trucksA = getResources().getStringArray(R.array.trucks);
-        LinkedList<String> trucks = new LinkedList<>();
+        ArrayList<String> trucks = new ArrayList<>();
         Collections.addAll(trucks, trucksA);
 
         String[] bearingsA = getResources().getStringArray(R.array.bearings);
-        LinkedList<String> bearings = new LinkedList<>();
+        ArrayList<String> bearings = new ArrayList<>();
         Collections.addAll(bearings, bearingsA);
 
         String[] griptapeA = getResources().getStringArray(R.array.grip_tapes);
-        LinkedList<String> griptape = new LinkedList<>();
+        ArrayList<String> griptape = new ArrayList<>();
         Collections.addAll(griptape, griptapeA);
 
         binding.editTextBoardName.setText(board.getName());

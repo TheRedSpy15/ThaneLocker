@@ -8,7 +8,7 @@ import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
 import com.theredspy15.longboardlife.utils.App;
 
 import java.io.Serializable;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Profile implements Serializable {
     public static Profile localProfile;
@@ -20,8 +20,8 @@ public class Profile implements Serializable {
     private String description = "just another awesome skater";
     private String state = "California";
     private String country = "United States";
-    private LinkedList<Integer> friend_ids = new LinkedList<>();
-    private LinkedList<Achievement> achievements = new LinkedList<>();
+    private ArrayList<Integer> friend_ids = new ArrayList<>();
+    private ArrayList<Achievement> achievements = new ArrayList<>();
     private byte[] image;
 
     public Profile() {
@@ -51,8 +51,8 @@ public class Profile implements Serializable {
         prefsEditor.apply();
     }
 
-    public static LinkedList<Session> sessionsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
-        LinkedList<Session> sessionsWithLocalProfile = new LinkedList<>();
+    public static ArrayList<Session> sessionsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+        ArrayList<Session> sessionsWithLocalProfile = new ArrayList<>();
 
         for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
@@ -64,8 +64,8 @@ public class Profile implements Serializable {
         return sessionsWithLocalProfile;
     }
 
-    public static LinkedList<Board> boardsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
-        LinkedList<Board> boardsWithLocalProfile = new LinkedList<>();
+    public static ArrayList<Board> boardsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+        ArrayList<Board> boardsWithLocalProfile = new ArrayList<>();
 
         for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id);
@@ -78,7 +78,7 @@ public class Profile implements Serializable {
     }
 
     public static Board favoriteBoard() {
-        LinkedList<Integer> boardsFromSessions = new LinkedList<>();
+        ArrayList<Integer> boardsFromSessions = new ArrayList<>();
         for (Session session : sessionsWithLocalProfile())
             boardsFromSessions.addAll(session.getBoard_ids());
 
@@ -164,11 +164,19 @@ public class Profile implements Serializable {
         if (getLevel_xp() < 0) this.level_xp = 1;
     }
 
-    public LinkedList<Integer> getFriend_ids() {
+    public ArrayList<Integer> getFriend_ids() {
         return friend_ids;
     }
 
-    public void setFriend_ids(LinkedList<Integer> friend_ids) {
+    public void setFriend_ids(ArrayList<Integer> friend_ids) {
         this.friend_ids = friend_ids;
+    }
+
+    public ArrayList<Achievement> getAchievements() {
+        return achievements;
+    }
+
+    public void setAchievements(ArrayList<Achievement> achievements) {
+        this.achievements = achievements;
     }
 }

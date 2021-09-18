@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
@@ -41,12 +41,19 @@
             android:foregroundServiceType="location" />
 
         <activity
-            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.EditProfileActivity"
-            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.AchievementsActivity"
             android:label="Edit Profile"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker"
             android:exported="true" />
+        <activity
+            android:name="com.theredspy15.longboardlife.ui.activitycontrollers.EditProfileActivity"
+            android:exported="true"
+            android:label="Edit Profile"
+            android:parentActivityName="com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThaneLocker" />
         <activity
             android:name="com.theredspy15.longboardlife.ui.activitycontrollers.SessionActivity"
             android:exported="true"

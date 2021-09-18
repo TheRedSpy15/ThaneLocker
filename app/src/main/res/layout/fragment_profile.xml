@@ -57,6 +57,20 @@
             android:progress="1"
             android:max="100" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewAchievementsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:text="Achievements"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="20dp"
+            android:textColor="#FF9800"
+            app:strokeColor="#FF9800"
+            app:strokeWidth="2dp" />
+
         <TableLayout
             android:layout_width="300dp"
             android:layout_height="0dp"

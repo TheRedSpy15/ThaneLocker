@@ -7,8 +7,8 @@ import com.google.gson.reflect.TypeToken;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Board implements Serializable { // TODO: parcelable in the future
@@ -31,12 +31,12 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String bearings="Standard ABEC Bearings";
     private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
     private String riserHt="1/16";
-    private LinkedList<String> tags = new LinkedList<>();
+    private ArrayList<String> tags = new ArrayList<>();
     private String gripTp="Standard Griptape";
-    private LinkedList<Session> sessions;
+    private ArrayList<Session> sessions;
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
-    public static LinkedList<Integer> savedBoardIds = new LinkedList<>();
+    public static ArrayList<Integer> savedBoardIds = new ArrayList<>();
 
     public Board() {
         int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
@@ -54,8 +54,8 @@ public class Board implements Serializable { // TODO: parcelable in the future
         else savedBoards = new HashMap<>();
 
         json = MainActivity.preferences.getString("savedBoardIds", null);
-        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<LinkedList<Integer>>() {}.getType());
-        else savedBoardIds = new LinkedList<>();
+        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
+        else savedBoardIds = new ArrayList<>();
     }
 
     public static void save() {
@@ -111,7 +111,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     }
 
     public static int BoardNameToId(String name) {
-        LinkedList<Board> boards = new LinkedList<>();
+        ArrayList<Board> boards = new ArrayList<>();
         Board foundBoard = new Board();
         for (int id : savedBoardIds) {
             boards.add(savedBoards.get(id));
@@ -229,11 +229,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.gripTp = gripTp;
     }
 
-    public LinkedList<Session> getSessions() {
+    public ArrayList<Session> getSessions() {
         return sessions;
     }
 
-    public void setSessions(LinkedList<Session> sessions) {
+    public void setSessions(ArrayList<Session> sessions) {
         this.sessions = sessions;
     }
 
@@ -245,11 +245,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.pivot = pivot;
     }
 
-    public LinkedList<String> getTags() {
+    public ArrayList<String> getTags() {
         return tags;
     }
 
-    public void setTags(LinkedList<String> tags) {
+    public void setTags(ArrayList<String> tags) {
         this.tags = tags;
     }
 

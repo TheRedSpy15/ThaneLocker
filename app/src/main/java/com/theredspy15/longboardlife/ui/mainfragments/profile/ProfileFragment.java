@@ -30,12 +30,12 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Profile;
 import com.theredspy15.longboardlife.models.Session;
+import com.theredspy15.longboardlife.ui.activitycontrollers.AchievementsActivity;
 import com.theredspy15.longboardlife.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.longboardlife.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.longboardlife.utils.App;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class ProfileFragment extends Fragment {
 
@@ -44,8 +44,8 @@ public class ProfileFragment extends Fragment {
 
     private final Profile profile = Profile.localProfile;
 
-    private final LinkedList<Session> sessions = Profile.sessionsWithLocalProfile();
-    private final LinkedList<Board> boards = Profile.boardsWithLocalProfile();
+    private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
+    private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class ProfileFragment extends Fragment {
 
     private void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
         binding.nameText.setText(profile.getName());
         binding.descriptionView.setText(profile.getDescription());
 
@@ -159,7 +160,13 @@ public class ProfileFragment extends Fragment {
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }
-        linearLayout.addView(button,8,layout);
+        linearLayout.addView(button,9,layout);
+    }
+
+    public void loadAchievements(View view) {
+        Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
+        myIntent.putExtra("achievements", profile.getAchievements());
+        startActivity(myIntent);
     }
 
     private void loadSpeedsChart() {

@@ -18,8 +18,8 @@ import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentCalculatorBinding;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.Optional;
 
 public class CalculatorFragment extends Fragment { // TODO: determine if this should be fragment, and what package to move to
@@ -76,7 +76,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
     // based on: https://github.com/Widdershin/BushingPicker/blob/master/bushings.py
     private String weightToDuro(int weight, boolean boardside) {
-        LinkedList<Integer> bushings = new LinkedList<>();
+        ArrayList<Integer> bushings = new ArrayList<>();
         bushings.add(78);
         bushings.add(81);
         bushings.add(85);
