@@ -131,10 +131,12 @@
     <string name="no_image_selected">Du valde inte någon bild</string>
     <string name="minutes">" Minuter"</string>
     <string name="remove_board_from_session">Ta bort bräde från session</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Verkställ</string>
+    <string name="level_1">Nivå: 1</string>
+    <string name="level">Nivå:</string>
+    <string name="select_theme">Välj tema</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +154,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Automatiskt</item>
+        <item>Ljus</item>
+        <item>Mörkt</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
