@@ -131,10 +131,12 @@
     <string name="no_image_selected">Et valinnut imagoa</string>
     <string name="minutes">" Pöytäkirja"</string>
     <string name="remove_board_from_session">Poista taulu istunnosta</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Käytä</string>
+    <string name="level_1">Taso: 1</string>
+    <string name="level">Taso:</string>
+    <string name="select_theme">Valitse teema</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
