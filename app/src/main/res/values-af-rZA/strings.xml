@@ -135,6 +135,8 @@
     <string name="level_1">Level: 1</string>
     <string name="level">Level:</string>
     <string name="select_theme">Select Theme</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
