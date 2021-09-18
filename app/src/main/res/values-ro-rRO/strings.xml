@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Durata de viaţă</string>
     <string name="title_activity_board">BoardActivitate</string>
     <string name="change">Modificare</string>
     <string name="description">Descriere</string>
@@ -131,10 +131,12 @@
     <string name="no_image_selected">Nu aţi selectat o imagine</string>
     <string name="minutes">" Minute"</string>
     <string name="remove_board_from_session">Înlăturare panou din sesiune</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Aplicare</string>
+    <string name="level_1">Nivel: 1</string>
+    <string name="level">Nivel:</string>
+    <string name="select_theme">Selectare temă</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -153,8 +155,8 @@
     <!-- Built-in theme choices -->
     <string-array name="themes">
         <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Lumina</item>
+        <item>Întuneric</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
