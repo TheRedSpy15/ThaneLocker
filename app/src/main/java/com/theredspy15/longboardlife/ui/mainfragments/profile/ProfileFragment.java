@@ -1,6 +1,7 @@
 package com.theredspy15.longboardlife.ui.mainfragments.profile;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.DashPathEffect;
@@ -98,16 +99,18 @@ public class ProfileFragment extends Fragment {
         float tAvgDistance = 0;
         float tAvgSpeed = 0;
 
+        Resources resources = getResources();
+
         for (Session session : sessions) {
             // fastest speed
             float top = 0;
             if (Float.parseFloat(session.getTopSpeed()) > top) top = Float.parseFloat(session.getTopSpeed());
-            binding.topSpeedView.setText(top+getString(R.string.mph));
+            binding.topSpeedView.setText(App.getSpeedFormatted(top,resources));
 
             // furthest distance
             top = 0;
             if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
-            binding.furthestDistanceView.setText(top+getString(R.string.miles));
+            binding.furthestDistanceView.setText(App.getDistanceFormatted(top,resources));
 
            tDistance += Float.parseFloat(session.getTotalDistance());
            tAvgDistance += Float.parseFloat(session.getTotalDistance());
@@ -116,9 +119,9 @@ public class ProfileFragment extends Fragment {
         tAvgSpeed = tAvgSpeed / sessions.size();
         tAvgDistance = tAvgDistance / sessions.size();
 
-        binding.totalDistanceView.setText(tDistance+getString(R.string.miles));
-        binding.avgDistanceView.setText(tAvgDistance+getString(R.string.miles));
-        binding.avgSpeedView.setText(tAvgSpeed+getString(R.string.mph));
+        binding.totalDistanceView.setText(App.getDistanceFormatted(tDistance,resources));
+        binding.avgDistanceView.setText(App.getDistanceFormatted(tAvgDistance,resources));
+        binding.avgSpeedView.setText(App.getSpeedFormatted(tAvgSpeed,resources));
     }
 
     private void loadFavoriteBoard() {

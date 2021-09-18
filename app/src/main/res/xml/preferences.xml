@@ -42,7 +42,7 @@
         <CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="false"
-            android:key="usekilometers"
+            android:key="kilometers"
             android:persistent="true"
             app:icon="@drawable/ic_outline_speed_24"
             android:title="Convert to kilometers per hour" />

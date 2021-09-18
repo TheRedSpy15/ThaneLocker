@@ -112,6 +112,46 @@ public class App extends Application {
 
     }
 
+    /**
+     * returns a speed as a string for display in activity with correct unit of measurement
+     * @param speed should already be converted from m/s to mph
+     * @return
+     */
+    public static String getSpeedFormatted(float speed, Resources resources) {
+        String speedString = "";
+
+        if (MainActivity.preferences.getBoolean("kilometers",false)) {
+            speed*=1.609344;
+            speedString += speed;
+            speedString += " " + resources.getString(R.string.kph);
+        } else {
+            speedString += speed;
+            speedString += " " + resources.getString(R.string.mph);
+        }
+
+        return speedString;
+    }
+
+    /**
+     * returns a distance as a string for display in activity with correct unit of measurement
+     * @param distance should already be in miles
+     * @return
+     */
+    public static String getDistanceFormatted(float distance, Resources resources) {
+        String distanceString = "";
+
+        if (MainActivity.preferences.getBoolean("kilometers",false)) {
+            distance*=1.609344;
+            distanceString += distance;
+            distanceString += " " + resources.getString(R.string.kilometer_short);
+        } else {
+            distanceString += distance;
+            distanceString += " " + resources.getString(R.string.miles);
+        }
+
+        return distanceString;
+    }
+
     // for charts
     public static int getThemeTextColor(Context context) {
         TypedValue typedValue = new TypedValue();
