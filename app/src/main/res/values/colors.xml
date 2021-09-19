@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#333333</color>
     <color name="recording_session">#FF5722</color>
+    <color name="rare">#03A9F4</color>
+    <color name="legendary">#FF9800</color>
 </resources>

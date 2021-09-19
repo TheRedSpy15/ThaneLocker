@@ -11,10 +11,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Profile implements Serializable {
+    private static final long serialVersionUID = 1234570L;
     public static Profile localProfile;
     private int id = 0;
     private int level = 1;
-    private double level_xp = 0; // 0-100 for all levels
+    private int level_xp = 0; // 0-100 for all levels
     private String name = "John Doe";
     private int age = 18;
     private String description = "just another awesome skater";
@@ -151,11 +152,11 @@ public class Profile implements Serializable {
         this.level = level;
     }
 
-    public double getLevel_xp() {
+    public int getLevel_xp() {
         return level_xp;
     }
 
-    public void addXp(double level_xp) {
+    public void addXp(int level_xp) {
         this.level_xp += level_xp;
         if (getLevel_xp() >= 100) {
             this.level_xp = 1;

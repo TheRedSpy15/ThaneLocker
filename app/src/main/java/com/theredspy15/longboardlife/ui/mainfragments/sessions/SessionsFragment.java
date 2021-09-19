@@ -201,7 +201,7 @@ public class SessionsFragment extends Fragment {
             sessionThread.start();
             Session.save();
 
-            Profile.localProfile.addXp(Session.xpValue*newSession.getLocations().size());
+            Profile.localProfile.addXp((int) (Session.xpValue*newSession.getLocations().size()));
             Profile.save();
         } else
             Snackbar.make(binding.newSessionButton, getString(R.string.not_enough_data), Snackbar.LENGTH_LONG)
