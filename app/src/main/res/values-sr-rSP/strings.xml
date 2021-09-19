@@ -137,6 +137,8 @@
     <string name="select_theme">Select Theme</string>
     <string name="kph">KPH</string>
     <string name="kilometer_short">Km</string>
+    <string name="achievements">Achievements</string>
+    <string name="no_achievement">No Achievements</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
