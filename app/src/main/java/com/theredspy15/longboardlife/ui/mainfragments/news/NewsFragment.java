@@ -1,6 +1,8 @@
 package com.theredspy15.longboardlife.ui.mainfragments.news;
 
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,6 +85,7 @@ public class NewsFragment extends Fragment {
                 button.setText(entry.getTitle());
                 button.setTextSize(18);
                 button.setAllCaps(false);
+                button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getUri()))));
                 button.setPadding(50,50,50,50);
                 layout.setMargins(0,20,0,20);
                 button.setBackgroundResource(R.drawable.rounded_corners);
@@ -122,6 +125,11 @@ public class NewsFragment extends Fragment {
 
         if (MainActivity.preferences.getBoolean("longboardbrand",false)) {
             String url = "https://longboardbrand.com/blog/feed";
+            feed = input.build(new XmlReader(new URL(url)));
+        }
+
+        if (MainActivity.preferences.getBoolean("basementskate",false)) {
+            String url = "https://www.basementskate.com.au/blog/feed/";
             feed = input.build(new XmlReader(new URL(url)));
         }
 
