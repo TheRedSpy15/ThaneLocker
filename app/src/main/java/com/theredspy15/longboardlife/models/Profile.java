@@ -1,6 +1,9 @@
 package com.theredspy15.longboardlife.models;
 
 import android.content.SharedPreferences;
+import android.text.TextUtils;
+
+import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -16,14 +19,14 @@ public class Profile implements Serializable {
     private int id = 0;
     private int level = 1;
     private int level_xp = 0; // 0-100 for all levels
-    private String name = "John Doe";
-    private int age = 18;
-    private String description = "just another awesome skater";
-    private String state = "California";
-    private String country = "United States";
+    @Nullable private String name;
+    private int age = 0;
+    @Nullable private String description;
+    @Nullable private String state;
+    @Nullable private String country;
     private ArrayList<Integer> friend_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
-    private byte[] image;
+    @Nullable private byte[] image;
 
     public Profile() {
         //int randId = ThreadLocalRandom.current().nextInt();
@@ -96,11 +99,13 @@ public class Profile implements Serializable {
         this.id = id;
     }
 
+    @Nullable
     public String getName() {
+        if (TextUtils.isEmpty(name)) name = null;
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@Nullable String name) {
         this.name = name;
     }
 
@@ -112,19 +117,23 @@ public class Profile implements Serializable {
         this.image = image;
     }
 
+    @Nullable
     public String getDescription() {
+        if (TextUtils.isEmpty(description)) description = null;
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(@Nullable String description) {
         this.description = description;
     }
 
+    @Nullable
     public String getState() {
+        if (TextUtils.isEmpty(state)) state = null;
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(@Nullable String state) {
         this.state = state;
     }
 
@@ -136,11 +145,13 @@ public class Profile implements Serializable {
         this.age = age;
     }
 
+    @Nullable
     public String getCountry() {
+        if (TextUtils.isEmpty(country)) country = null;
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(@Nullable String country) {
         this.country = country;
     }
 

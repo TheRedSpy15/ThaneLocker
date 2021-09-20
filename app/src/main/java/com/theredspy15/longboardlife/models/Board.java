@@ -2,6 +2,8 @@ package com.theredspy15.longboardlife.models;
 
 import android.content.SharedPreferences;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
@@ -16,9 +18,9 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private int id = 0;
     private boolean advanceMode = false;
     private int user_id = 0;
-    private String name = "board";
-    private byte[] image;
-    private String description = "No Description";
+    @Nullable private String name = "board";
+    @Nullable private byte[] image;
+    @Nullable private String description = "No Description";
     private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
@@ -117,7 +119,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
             boards.add(savedBoards.get(id));
         }
         for (Board board : boards) {
-            if (board.getName().equals(name)) {
+            if (board.getName() != null && board.getName().equals(name)) {
                 foundBoard = board;
                 break;
             }
@@ -133,6 +135,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.id = id;
     }
 
+    @Nullable
     public String getName() {
         return name;
     }
@@ -149,11 +152,12 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.image = image;
     }
 
+    @Nullable
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(@Nullable String description) {
         this.description = description;
     }
 

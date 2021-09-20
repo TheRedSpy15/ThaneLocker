@@ -63,8 +63,8 @@ public class ProfileFragment extends Fragment {
     private void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
-        binding.nameText.setText(profile.getName());
-        binding.descriptionView.setText(profile.getDescription());
+        if (profile.getName() != null) binding.nameText.setText(profile.getName());
+        if (profile.getDescription() != null) binding.descriptionView.setText(profile.getDescription());
 
         if (profile.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);

@@ -7,6 +7,8 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
@@ -26,7 +28,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private ArrayList<Integer> board_ids = new ArrayList<>();
     private int id = 0;
     private int user_id = 0;
-    private String notes = "was very lame hill and too hot..."; // TODO: implement this!
+    @Nullable private String notes = ""; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
     private long start_millis = 0;
@@ -223,11 +225,12 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.board_ids = board_ids;
     }
 
+    @Nullable
     public String getNotes() {
         return notes;
     }
 
-    public void setNotes(String notes) {
+    public void setNotes(@Nullable String notes) {
         this.notes = notes;
     }
 

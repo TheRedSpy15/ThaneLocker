@@ -295,8 +295,10 @@ public class SessionActivity extends AppCompatActivity {
         finishMarker.setTextIcon(getString(R.string.finish));
         map.getOverlays().add(finishMarker);
 
-        // determine theme TODO: day/night support
-        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        // determine theme
+        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
     }
 
     public void deleteSession(View view) {

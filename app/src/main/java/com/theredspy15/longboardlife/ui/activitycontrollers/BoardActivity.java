@@ -20,6 +20,7 @@ import com.example.longboardlife.databinding.ActivityBoardBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Session;
+import com.theredspy15.longboardlife.utils.App;
 
 import java.util.Objects;
 
@@ -73,11 +74,11 @@ public class BoardActivity extends AppCompatActivity {
         binding.boardContent.bearingsView.setText(board.getBearings());
 
         if (!Session.sessionsWithBoard(board.getId()).isEmpty()) {
-            binding.boardContent.totalDistanceView.setText(board.totalDistance()+getString(R.string.miles));
-            binding.boardContent.avgDistanceView.setText(board.avgDistance()+getString(R.string.miles));
-            binding.boardContent.longestDistanceView.setText(board.furthestDistance()+getString(R.string.miles));
-            binding.boardContent.topSpeedView.setText(board.fastestSpeed()+getString(R.string.mph));
-            binding.boardContent.avgSpeedView.setText(board.avgSpeed()+getString(R.string.mph));
+            binding.boardContent.totalDistanceView.setText(App.getDistanceFormatted(board.totalDistance(),getResources()));
+            binding.boardContent.avgDistanceView.setText(App.getDistanceFormatted(board.avgDistance(),getResources()));
+            binding.boardContent.longestDistanceView.setText(App.getDistanceFormatted(board.furthestDistance(),getResources()));
+            binding.boardContent.topSpeedView.setText(App.getSpeedFormatted(board.fastestSpeed(),getResources()));
+            binding.boardContent.avgSpeedView.setText(App.getSpeedFormatted(board.avgSpeed(),getResources()));
         }
 
         loadSessions();
