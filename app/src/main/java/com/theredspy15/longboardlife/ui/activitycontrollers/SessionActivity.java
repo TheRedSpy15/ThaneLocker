@@ -36,6 +36,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.theredspy15.longboardlife.customviews.PriorityMapView;
 import com.theredspy15.longboardlife.models.Board;
+import com.theredspy15.longboardlife.models.Elevation;
 import com.theredspy15.longboardlife.models.Session;
 import com.theredspy15.longboardlife.models.SessionLocationPoint;
 import com.theredspy15.longboardlife.utils.App;
@@ -132,7 +133,13 @@ public class SessionActivity extends AppCompatActivity {
 
         loadTags();
         loadBoardsUsed();
-        loadChart();
+        loadSpeedChart();
+
+        Thread thread = new Thread(()-> session.setElevationPoints(Elevation.getElevations(session.getLocations())));
+        thread.start();
+
+        if (!session.getElevationPoints().isEmpty()) loadElevationChart();
+        else binding.sessionLayout.findViewById(R.id.elevationChart).setVisibility(View.GONE);
     }
 
     private void loadTags() {
@@ -354,13 +361,91 @@ public class SessionActivity extends AppCompatActivity {
         map.onPause();  //needed for compass, my location overlays, v6.0.0 and up
     }
 
-    private void loadChart() {
+    private void loadSpeedChart() {
         LineChart chart = binding.sessionLayout.findViewById(R.id.speedChart);
 
         ArrayList<Entry> values = new ArrayList<>();
 
         for (int i = 0; i < session.getLocations().size(); i++) {
             values.add(new Entry(i, session.getLocations().get(i).getSpeed(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
+        }
+
+        LineDataSet set1;
+
+        if (chart.getData() != null &&
+                chart.getData().getDataSetCount() > 0) {
+            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            set1.notifyDataSetChanged();
+            chart.getData().notifyDataChanged();
+            chart.notifyDataSetChanged();
+        } else {
+            // create a dataset and give it a type
+            set1 = new LineDataSet(values, getString(R.string.speed));
+
+            set1.setDrawIcons(false);
+
+            // draw dashed line
+            set1.enableDashedLine(10f, 5f, 0f);
+
+            // black lines and points
+            set1.setColor(this.getColor(R.color.purple_500));
+            set1.setCircleColor(this.getColor(R.color.purple_500));
+
+            // line thickness and point size
+            set1.setLineWidth(1f);
+            set1.setCircleRadius(3f);
+
+            // draw points as solid circles
+            set1.setDrawCircleHole(false);
+
+            // customize legend entry
+            set1.setFormLineWidth(1f);
+            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            set1.setFormSize(15.f);
+
+            // text size of values
+            set1.setValueTextSize(9f);
+
+            // draw selection line as dashed
+            set1.enableDashedHighlightLine(10f, 5f, 0f);
+
+            // set the filled area
+            set1.setDrawFilled(true);
+            set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
+            set1.setFillColor(this.getColor(R.color.purple_500));
+
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1); // add the data sets
+
+            // create a data object with the data sets
+            LineData data = new LineData(dataSets);
+
+            // set data
+            chart.setData(data);
+            chart.animateX(3000);
+
+            Description description = new Description();
+            description.setText("");
+            chart.setDescription(description);
+
+            int color = App.getThemeTextColor(this);
+            chart.getData().setValueTextColor(color);
+            chart.getData().setValueTextColor(color);
+            chart.getXAxis().setTextColor(color);
+            chart.getAxisLeft().setTextColor(color);
+            chart.getAxisRight().setTextColor(color);
+            chart.getLegend().setTextColor(color);
+        }
+    }
+
+    private void loadElevationChart() {
+        LineChart chart = binding.sessionLayout.findViewById(R.id.elevationChart);
+
+        ArrayList<Entry> values = new ArrayList<>();
+
+        for (int i = 0; i < session.getLocations().size(); i++) {
+            values.add(new Entry(i, session.getElevationPoints().get(i), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
         LineDataSet set1;

@@ -61,7 +61,8 @@ public class BoardsFragment extends Fragment {
     }
 
     public void loadBoards() {
-        requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
+        if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
+
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,20,0,20);
 
@@ -118,7 +119,7 @@ public class BoardsFragment extends Fragment {
                 textView.setText(R.string.no_boards);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
-                requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
+                if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
             }
         }
     }

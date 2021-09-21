@@ -7,7 +7,6 @@ public class SessionLocationPoint implements Serializable { // TODO: parcelable 
     private float speed = 0;
     private double latitude = 0.0;
     private double longitude = 0.0;
-    private double elevation = 0.0; // TODO: implement
 
     public float getSpeed() {
         return speed;
@@ -31,13 +30,5 @@ public class SessionLocationPoint implements Serializable { // TODO: parcelable 
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
-    }
-
-    public double getElevation() {
-        return elevation;
-    }
-
-    public void setElevation(double elevation) {
-        this.elevation = elevation;
     }
 }

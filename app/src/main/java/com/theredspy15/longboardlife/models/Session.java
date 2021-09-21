@@ -37,6 +37,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private String name = ""; // location + date
     private final ArrayList<SessionLocationPoint> locations = new ArrayList<>();
     private ArrayList<String> tags = new ArrayList<>();
+    private ArrayList<Float> elevationPoints = new ArrayList<>();
+    boolean isPublished = false;
 
     public static HashMap<Integer,Session> savedSessions = new HashMap<>();
     public static ArrayList<Integer> savedSessionIds = new ArrayList<>();
@@ -240,5 +242,13 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public ArrayList<Float> getElevationPoints() {
+        return elevationPoints;
+    }
+
+    public void setElevationPoints(ArrayList<Float> elevationPoints) {
+        this.elevationPoints = elevationPoints;
     }
 }

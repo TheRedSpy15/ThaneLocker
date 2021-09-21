@@ -27,7 +27,6 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.theredspy15.longboardlife.models.Achievement;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Profile;
 import com.theredspy15.longboardlife.models.Session;
@@ -55,8 +54,6 @@ public class ProfileFragment extends Fragment {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        Achievement.notify("Ride in a session for at least an hour","First Hour",requireContext());
 
         loadAllData();
 

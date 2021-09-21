@@ -36,6 +36,8 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private ArrayList<String> tags = new ArrayList<>();
     private String gripTp="Standard Griptape";
     private ArrayList<Session> sessions;
+    boolean forSale = false;
+    double cost; // always USD
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();

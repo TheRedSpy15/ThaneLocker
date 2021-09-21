@@ -27,6 +27,8 @@ public class Profile implements Serializable {
     private ArrayList<Integer> friend_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
     @Nullable private byte[] image;
+    String passwordHash;
+    String email;
 
     public Profile() {
         //int randId = ThreadLocalRandom.current().nextInt();
