@@ -34,6 +34,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.longboardlife.customviews.PriorityMapView;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Elevation;
@@ -135,11 +136,29 @@ public class SessionActivity extends AppCompatActivity {
         loadBoardsUsed();
         loadSpeedChart();
 
-        Thread thread = new Thread(()-> session.setElevationPoints(Elevation.getElevations(session.getLocations())));
-        thread.start();
-
-        if (!session.getElevationPoints().isEmpty()) loadElevationChart();
+        if (MainActivity.preferences.getBoolean("downhillrider",false)) loadElevationData();
         else binding.sessionLayout.findViewById(R.id.elevationChart).setVisibility(View.GONE);
+    }
+
+    private void loadElevationData() {
+        if (new Elevation().isNetworkAvailable(this) && session.getElevationPoints().isEmpty()) { // getting data if not already present
+            Thread thread = new Thread(()-> { // TODO: hide elevation gui until finished
+                try {
+                    session.setElevationPoints(Elevation.getElevations(session.getLocations()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Snackbar.make(binding.getRoot(), "Failed to load elevation data from server", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    session.getElevationPoints().clear();
+                }
+
+                if (!session.getElevationPoints().isEmpty()) {
+                    Session.save();
+                    runOnUiThread(this::loadElevationChart);
+                }
+            });
+            thread.start();
+        } else loadElevationChart();
     }
 
     private void loadTags() {
@@ -275,8 +294,8 @@ public class SessionActivity extends AppCompatActivity {
 
     void loadPoints() {
         Polyline line = new Polyline(map);
-        line.setWidth(20f);
-        line.setColor(this.getColor(R.color.purple_500));
+        line.getOutlinePaint().setStrokeWidth(20f);
+        line.getOutlinePaint().setColor(this.getColor(R.color.purple_500));
         List<GeoPoint> pts = new ArrayList<>();
 
         for (SessionLocationPoint point : session.getLocations()) {
@@ -285,7 +304,6 @@ public class SessionActivity extends AppCompatActivity {
 
         map.getOverlays().add(line);
         line.setPoints(pts);
-        line.setOnClickListener(null); // TODO: maybe to see speed at each point?
         mapController.setCenter(pts.get(0));
 
         // start marker
@@ -441,6 +459,8 @@ public class SessionActivity extends AppCompatActivity {
 
     private void loadElevationChart() {
         LineChart chart = binding.sessionLayout.findViewById(R.id.elevationChart);
+        chart.setVisibility(View.VISIBLE);
+        binding.sessionLayout.findViewById(R.id.elevationText).setVisibility(View.VISIBLE);
 
         ArrayList<Entry> values = new ArrayList<>();
 

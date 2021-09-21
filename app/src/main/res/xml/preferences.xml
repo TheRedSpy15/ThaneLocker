@@ -29,6 +29,14 @@
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory app:title="Session Settings">
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="false"
+            android:key="downhillrider"
+            android:persistent="true"
+            app:icon="@drawable/ic_baseline_terrain_24"
+            android:summary="Show elevation data"
+            android:title="Downhill Rider" />
         <SeekBarPreference
             app:title="@string/poll_rate_title"
             android:key="pollrate"
