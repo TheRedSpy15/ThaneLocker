@@ -121,6 +121,8 @@ public class NewBoardActivity extends AppCompatActivity {
         binding.spinnerBearings.setSelection(bearings.indexOf(board.getBearings()));
         binding.spinnerBdBushings.setSelection(bushings.indexOf(board.getBd_bushings()));
         binding.spinnerRdBushings.setSelection(bushings.indexOf(board.getRd_bushing()));
+
+        imageBytes = board.getImage();
     }
 
     @Override
