@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Qué tan rápido se debe actualizar la ubicación al grabar una sesión. Más bajo es más rápido pero más poder dibujar. Recomendado es 2500</string>
     <string name="poll_rate_title">Frecuencia de sondeo de ubicación (milisegundos)</string>
     <string name="recording_session">Sesión de grabación</string>
-    <string name="not_added_disclaimer">Se añadirá en una futura actualización, ¡pero disfruta del resto de lo que la aplicación tiene que ofrecer!</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">Esta sección no ha finalizado</string>
     <string name="no_news">Sin noticias</string>
     <string name="recommended_durometer">Durómetro recomendado: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
