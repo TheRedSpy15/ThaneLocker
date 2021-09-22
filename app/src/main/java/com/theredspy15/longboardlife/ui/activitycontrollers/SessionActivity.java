@@ -211,9 +211,11 @@ public class SessionActivity extends AppCompatActivity {
     public void loadBoardsUsed() {
         LinearLayout linearLayout = binding.sessionLayout.findViewById(R.id.session_board_layout);
         linearLayout.removeAllViews();
+
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0,0,0,50);
-        for (int board_id : session.getBoard_ids()) { // TODO: verify board exists, if not delete record of it. same with sessions!
+
+        for (int board_id : session.getBoard_ids()) {
             Board board = Board.savedBoards.get(board_id);
             if (board != null) {
                 Button button = new Button(this);
@@ -237,6 +239,8 @@ public class SessionActivity extends AppCompatActivity {
                 }
 
                 linearLayout.addView(button,layout);
+            } else {
+                session.getBoard_ids().remove((Integer) board_id);
             }
         }
     }
@@ -265,7 +269,7 @@ public class SessionActivity extends AppCompatActivity {
         String[] boards = new String[Board.savedBoards.size()];
         int i = 0;
         for (int board_id : Board.savedBoardIds) {
-            Board board = Board.savedBoards.get(board_id);
+            Board board = Board.savedBoards.get(board_id); // TODO: don't do this!
             boards[i] = board.getName();
             i+=1;
         }

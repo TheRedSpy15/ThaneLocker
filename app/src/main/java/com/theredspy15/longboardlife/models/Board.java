@@ -115,6 +115,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
         return avg;
     }
 
+    @Deprecated
     public static int BoardNameToId(String name) {
         ArrayList<Board> boards = new ArrayList<>();
         Board foundBoard = new Board();
