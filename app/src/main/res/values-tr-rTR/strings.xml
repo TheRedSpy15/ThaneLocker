@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük, daha hızlı ama daha çok güç çiziyor. Önerilen 2500</string>
     <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
     <string name="recording_session">Kayıt Oturumu</string>
-    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek, ancak uygulamanın sunacağı geri kalan şeyin keyfini çıkarın!</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">Bu bölüm bitirilmedi</string>
     <string name="no_news">Haber yok</string>
     <string name="recommended_durometer">Önerilen Durometre: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
