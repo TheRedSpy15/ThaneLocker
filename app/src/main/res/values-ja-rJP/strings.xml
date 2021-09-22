@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">セッションの記録時にロケーションをどのくらい迅速に更新するか。 低い方は高速だがパワー・ドロー。 推奨は 2500 です。</string>
     <string name="poll_rate_title">ロケーション・ポーリング率 (ミリ秒)</string>
     <string name="recording_session">記録セッション</string>
-    <string name="not_added_disclaimer">今後の更新で追加されるが、アプリが提供する必要のある残りの部分を楽しんでください。</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">このセクションは終了しません</string>
     <string name="no_news">ニュースなし</string>
     <string name="recommended_durometer">推奨されるDuroメーター: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
