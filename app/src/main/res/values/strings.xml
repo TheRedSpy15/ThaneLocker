@@ -145,6 +145,7 @@
     <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

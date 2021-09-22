@@ -3,6 +3,7 @@ package com.theredspy15.longboardlife.ui.activitycontrollers;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.utils.PermissionChecker;
 
@@ -202,35 +204,42 @@ public class NewBoardActivity extends AppCompatActivity {
     }
 
     public void create(View view) {
-        board.setName(binding.editTextBoardName.getText().toString());
-        if (!TextUtils.isEmpty(binding.editTextDeck.getText().toString()))board.setDeck(binding.editTextDeck.getText().toString());
-        board.setImage(imageBytes);
-        if (!TextUtils.isEmpty(binding.editTextDescription.getText().toString()))board.setDescription(binding.editTextDescription.getText().toString());
-        board.setTrucks(binding.spinnerTrucks.getSelectedItem().toString());
-        if (!TextUtils.isEmpty(binding.editTextRAngle.getText().toString()))board.setRearAngle(Byte.parseByte(binding.editTextRAngle.getText().toString()));
-        if (!TextUtils.isEmpty(binding.editTextFAngle.getText().toString()))board.setFrontAngle(Byte.parseByte(binding.editTextFAngle.getText().toString()));
-        board.setRd_bushing(binding.spinnerRdBushings.getSelectedItem().toString());
-        board.setBd_bushings(binding.spinnerBdBushings.getSelectedItem().toString());
-        board.setWheels(binding.spinnerWheels.getSelectedItem().toString());
-        board.setBearings(binding.spinnerBearings.getSelectedItem().toString());
-        board.setPivot(binding.spinnerPivot.getSelectedItem().toString());
-        board.setGripTp(binding.spinnerGriptapes.getSelectedItem().toString());
+        if (!TextUtils.isEmpty(binding.editTextBoardName.getText().toString())) {
+            board.setName(binding.editTextBoardName.getText().toString());
+            if (!TextUtils.isEmpty(binding.editTextDeck.getText().toString()))board.setDeck(binding.editTextDeck.getText().toString());
+            board.setImage(imageBytes);
+            if (!TextUtils.isEmpty(binding.editTextDescription.getText().toString()))board.setDescription(binding.editTextDescription.getText().toString());
+            board.setTrucks(binding.spinnerTrucks.getSelectedItem().toString());
+            if (!TextUtils.isEmpty(binding.editTextRAngle.getText().toString()))board.setRearAngle(Byte.parseByte(binding.editTextRAngle.getText().toString()));
+            if (!TextUtils.isEmpty(binding.editTextFAngle.getText().toString()))board.setFrontAngle(Byte.parseByte(binding.editTextFAngle.getText().toString()));
+            board.setRd_bushing(binding.spinnerRdBushings.getSelectedItem().toString());
+            board.setBd_bushings(binding.spinnerBdBushings.getSelectedItem().toString());
+            board.setWheels(binding.spinnerWheels.getSelectedItem().toString());
+            board.setBearings(binding.spinnerBearings.getSelectedItem().toString());
+            board.setPivot(binding.spinnerPivot.getSelectedItem().toString());
+            board.setGripTp(binding.spinnerGriptapes.getSelectedItem().toString());
 
-        Intent myIntent;
-        if (isEditing) {
-            Board.savedBoards.put(board.getId(),board);
-            Board.save();
+            Intent myIntent;
+            if (isEditing) {
+                Board.savedBoards.put(board.getId(),board);
+                Board.save();
 
-            myIntent = new Intent(this, BoardActivity.class);
-            myIntent.putExtra("board_id",board.getId());
+                myIntent = new Intent(this, BoardActivity.class);
+                myIntent.putExtra("board_id",board.getId());
+            } else {
+                Board.savedBoards.put(board.getId(), board);
+                Board.savedBoardIds.add(board.getId());
+                Board.save();
+
+                myIntent = new Intent(this, BoardActivity.class);
+                myIntent.putExtra("board_id",board.getId());
+            }
+            startActivity(myIntent);
         } else {
-            Board.savedBoards.put(board.getId(), board);
-            Board.savedBoardIds.add(board.getId());
-            Board.save();
+            binding.editTextBoardName.getBackground().mutate().setColorFilter(this.getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
-            myIntent = new Intent(this, BoardActivity.class);
-            myIntent.putExtra("board_id",board.getId());
+            Snackbar.make(view, R.string.board_needs_name, Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
         }
-        startActivity(myIntent);
     }
 }
