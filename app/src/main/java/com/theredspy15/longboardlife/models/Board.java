@@ -2,6 +2,7 @@ package com.theredspy15.longboardlife.models;
 
 import android.content.SharedPreferences;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
@@ -17,14 +18,14 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
     private boolean advanceMode = false;
-    private int user_id = 0;
-    @Nullable private String name = "board";
+    private int user_id = Profile.localProfile.getId();
+    @NonNull private String name = "board";
     @Nullable private byte[] image;
     @Nullable private String description = "No Description";
     private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
-    private String deck="Generic Deck";
+    @Nullable private String deck="Generic Deck";
     private byte rearAngle=50;
     private byte frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
@@ -36,8 +37,8 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private ArrayList<String> tags = new ArrayList<>();
     private String gripTp="Standard Griptape";
     private ArrayList<Session> sessions;
-    boolean forSale = false;
-    double cost; // always USD
+    private boolean forSale = false;
+    private double cost; // always USD
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();
@@ -297,5 +298,21 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public void setAdvanceMode(boolean proMode) {
         this.advanceMode = proMode;
+    }
+
+    public boolean isForSale() {
+        return forSale;
+    }
+
+    public void setForSale(boolean forSale) {
+        this.forSale = forSale;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }

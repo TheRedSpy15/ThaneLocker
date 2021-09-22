@@ -138,11 +138,11 @@ public class BoardActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     Board.savedBoards.remove(board.getId());
-                    Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
+                    Board.savedBoardIds.remove((Integer) board.getId());
                     Board.save();
 
                     for (Session session : Session.sessionsWithBoard(board.getId()))
-                        Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId())); // removing by object doesn't work
+                        Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
                     Session.save();
 
                     Intent myIntent = new Intent(this, MainActivity.class);

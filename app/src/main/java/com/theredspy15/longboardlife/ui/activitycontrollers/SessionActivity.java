@@ -2,7 +2,6 @@ package com.theredspy15.longboardlife.ui.activitycontrollers;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -98,15 +97,10 @@ public class SessionActivity extends AppCompatActivity {
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
         loadPoints();
-        try {
-            loadData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadData();
     }
 
-    @SuppressLint({"DefaultLocale"})
-    void loadData() throws IOException {
+    void loadData() {
         // stats
         TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
         avgSpeedView.setText(session.getAvgSpeed());
@@ -139,12 +133,12 @@ public class SessionActivity extends AppCompatActivity {
 
     private void loadElevationData() {
         if (new Elevation().isNetworkAvailable(this) && session.getElevationPoints().isEmpty()) { // getting data if not already present
-            Thread thread = new Thread(()-> { // TODO: hide elevation gui until finished
+            Thread thread = new Thread(()-> {
                 try {
                     session.setElevationPoints(Elevation.getElevations(session.getLocations()));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Snackbar.make(binding.getRoot(), "Failed to load elevation data from server", Snackbar.LENGTH_LONG)
+                    Snackbar.make(binding.getRoot(), R.string.failed_elevation_server, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     session.getElevationPoints().clear();
                 }
@@ -180,7 +174,6 @@ public class SessionActivity extends AppCompatActivity {
         group.addView(addChip);
     }
 
-    @SuppressLint("ResourceType")
     public void toggleFullscreen(View view) {
         view = binding.appBar;
         ValueAnimator slideAnimator;
@@ -257,7 +250,7 @@ public class SessionActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
-                    session.getBoard_ids().remove(session.getBoard_ids().indexOf(Board.BoardNameToId((String) button.getText()))); // removing by object doesn't work
+                    session.getBoard_ids().remove((Integer) Board.BoardNameToId((String) button.getText()));
                     Session.save();
                     loadBoardsUsed();
                 });
@@ -331,7 +324,7 @@ public class SessionActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     Session.savedSessions.remove(session.getId());
-                    Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
+                    Session.savedSessionIds.remove((Integer) session.getId());
                     Session.save();
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

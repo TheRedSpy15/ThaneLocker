@@ -29,6 +29,9 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private ActivityEditProfileBinding binding;
 
+    Uri imageUri;
+    byte[] imageBytes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +51,6 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.changePictureButton.setOnClickListener(this::changePicture);
     }
 
-    Uri imageUri;
-    byte[] imageBytes;
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -66,7 +66,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, getString(R.string.went_wrong), Toast.LENGTH_LONG).show();
             }
         }else {
-            Snackbar.make(binding.changePictureButton, getString(R.string.no_image_selected), Snackbar.LENGTH_LONG)
+            Snackbar.make(binding.changePictureButton, R.string.no_image_selected, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }
@@ -97,7 +97,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private boolean checkPermission() {
-        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(this,EditProfileActivity.this);
+        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(EditProfileActivity.this);
 
         return PermissionChecker.checkPermissionGallery(this);
     }

@@ -55,8 +55,8 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
             // radio buttons (shape)
             String recommendedShape = "";
-            if (binding.radioButtonCruise.isChecked()) recommendedShape = "Cone/Cone, Cone/Barrel";
-            else if (binding.radioButtonFreeride.isChecked()) recommendedShape = "Barrel/Barrel";
+            if (binding.radioButtonCruise.isChecked()) recommendedShape = getString(R.string.cruise_shape);
+            else if (binding.radioButtonFreeride.isChecked()) recommendedShape = getString(R.string.freeride_shape);
 
             if (!recommendedShape.equals("")) { // TODO: fix not changing after already being calculated with different radio button
                 TextView textView = new TextView(requireContext());
@@ -69,7 +69,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
-            Snackbar.make(view, getString(R.string.need_weight), Snackbar.LENGTH_LONG)
+            Snackbar.make(view, R.string.need_weight, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }

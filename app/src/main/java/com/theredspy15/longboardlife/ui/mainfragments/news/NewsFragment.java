@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
+import com.google.android.material.snackbar.Snackbar;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
@@ -95,16 +96,7 @@ public class NewsFragment extends Fragment {
                 binding.progressLoader.setVisibility(View.GONE);
                 binding.feedLayout.addView(button, layout);
             }
-
-            if (entries.isEmpty()) {
-                TextView textView = new TextView(requireContext()); // no news feeds selected
-                textView.setText(R.string.no_news);
-                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                textView.setTextSize(18);
-                requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
-                binding.progressLoader.setVisibility(View.GONE);
-            }
-        } else {
+        } else if (entries == null || entries.isEmpty()) {
             TextView textView = new TextView(requireContext()); // no news feeds selected
             textView.setText(R.string.no_news);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -114,23 +106,41 @@ public class NewsFragment extends Fragment {
         }
     }
 
-    public List<SyndEntry> getFeed() throws IOException, FeedException {
+    public List<SyndEntry> getFeed() throws FeedException {
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = null;
 
         if (MainActivity.preferences.getBoolean("downhill254",true)) {
             String url = "https://downhill254.com/blog/feed";
-            feed = input.build(new XmlReader(new URL(url)));
+            try {
+                feed = input.build(new XmlReader(new URL(url)));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Snackbar.make(binding.getRoot(), R.string.failed_connect_downhill254, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
         }
 
         if (MainActivity.preferences.getBoolean("longboardbrand",false)) {
             String url = "https://longboardbrand.com/blog/feed";
-            feed = input.build(new XmlReader(new URL(url)));
+            try {
+                feed = input.build(new XmlReader(new URL(url)));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Snackbar.make(binding.getRoot(), R.string.failed_connect_longboardbrand, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
         }
 
         if (MainActivity.preferences.getBoolean("basementskate",false)) {
             String url = "https://www.basementskate.com.au/blog/feed/";
-            feed = input.build(new XmlReader(new URL(url)));
+            try {
+                feed = input.build(new XmlReader(new URL(url)));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Snackbar.make(binding.getRoot(), R.string.failed_connect_basementskate, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
         }
 
         if (feed != null) return feed.getEntries();

@@ -101,7 +101,7 @@ public class SessionsFragment extends Fragment {
                                 (dialog, which) -> {
                                     dialog.dismiss();
                                     Session.savedSessions.remove(session.getId());
-                                    Session.savedSessionIds.remove(Session.savedSessionIds.indexOf(session.getId())); // removing by object doesn't work
+                                    Session.savedSessionIds.remove((Integer) session.getId());
                                     Session.save();
                                     sessionThread = new Thread(this::loadSessions);
                                     sessionThread.start();
@@ -128,7 +128,7 @@ public class SessionsFragment extends Fragment {
     }
 
     private boolean checkPermission() { // TODO: check that gps is even on
-        if (!PermissionChecker.checkPermissionLocation(requireContext())) PermissionChecker.requestPermissionLocation(requireContext(),requireActivity());
+        if (!PermissionChecker.checkPermissionLocation(requireContext())) PermissionChecker.requestPermissionLocation(requireActivity());
 
         return PermissionChecker.checkPermissionLocation(requireContext());
     }
@@ -204,7 +204,7 @@ public class SessionsFragment extends Fragment {
             Profile.localProfile.addXp((int) (Session.xpValue*newSession.getLocations().size()));
             Profile.save();
         } else
-            Snackbar.make(binding.newSessionButton, getString(R.string.not_enough_data), Snackbar.LENGTH_LONG)
+            Snackbar.make(binding.newSessionButton, R.string.not_enough_data, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
     }
 

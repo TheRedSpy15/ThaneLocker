@@ -182,13 +182,13 @@ public class NewBoardActivity extends AppCompatActivity {
             });
 
     private boolean checkPermissionGallery() {
-        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(this,NewBoardActivity.this);
+        if (!PermissionChecker.checkPermissionGallery(this)) PermissionChecker.requestPermissionGallery(NewBoardActivity.this);
 
         return PermissionChecker.checkPermissionGallery(this);
     }
 
     private boolean checkPermissionCamera() {
-        if (!PermissionChecker.checkPermissionCamera(this)) PermissionChecker.requestPermissionCamera(this,NewBoardActivity.this);
+        if (!PermissionChecker.checkPermissionCamera(this)) PermissionChecker.requestPermissionCamera(NewBoardActivity.this);
 
         return PermissionChecker.checkPermissionCamera(this);
     }

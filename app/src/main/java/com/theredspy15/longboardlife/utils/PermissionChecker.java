@@ -23,14 +23,14 @@ public class PermissionChecker { // TODO: handle denied permissions
         return context.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
     }
 
-    public static void requestPermissionLocation(Context context, Activity activity) {
+    public static void requestPermissionLocation(Activity activity) {
         ActivityCompat.requestPermissions(activity, new String[] { Manifest.permission.ACCESS_FINE_LOCATION }, PERMISSION_CODE);
     }
 
-    public static void requestPermissionCamera(Context context, Activity activity) {
+    public static void requestPermissionCamera(Activity activity) {
         ActivityCompat.requestPermissions(activity, new String[] { Manifest.permission.CAMERA }, PERMISSION_CODE);
     }
-    public static void requestPermissionGallery(Context context, Activity activity) {
+    public static void requestPermissionGallery(Activity activity) {
         ActivityCompat.requestPermissions(activity, new String[] { Manifest.permission.READ_EXTERNAL_STORAGE }, PERMISSION_CODE);
     }
 

@@ -100,7 +100,7 @@ public class BoardsFragment extends Fragment {
                                 (dialog, which) -> {
                                     dialog.dismiss();
                                     Board.savedBoards.remove(board.getId());
-                                    Board.savedBoardIds.remove(Board.savedBoardIds.indexOf(board.getId())); // removing by object doesn't work
+                                    Board.savedBoardIds.remove((Integer) board.getId());
                                     Board.save();
                                     boardThread = new Thread(this::loadBoards);
                                     boardThread.start();

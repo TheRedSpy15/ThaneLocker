@@ -9,6 +9,7 @@ import android.location.LocationManager;
 
 import androidx.annotation.Nullable;
 
+import com.example.longboardlife.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
@@ -27,7 +28,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     private ArrayList<Integer> board_ids = new ArrayList<>();
     private int id = 0;
-    private int user_id = 0;
+    private int user_id = Profile.localProfile.getId();
     @Nullable private String notes = ""; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
@@ -38,7 +39,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private final ArrayList<SessionLocationPoint> locations = new ArrayList<>();
     private ArrayList<String> tags = new ArrayList<>();
     private ArrayList<Float> elevationPoints = new ArrayList<>();
-    boolean isPublished = false;
+    private boolean isPublished = false;
 
     public static HashMap<Integer,Session> savedSessions = new HashMap<>();
     public static ArrayList<Integer> savedSessionIds = new ArrayList<>();
@@ -184,12 +185,18 @@ public class Session implements Serializable { // TODO: parcelable in the future
         return locations;
     }
 
-    public String getCityName(Context context) throws IOException {
+    public String getCityName(Context context) {
         String cityName;
         SessionLocationPoint point = getLocations().get(0);
 
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-        List<Address> addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
+        List<Address> addresses;
+        try {
+            addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return context.getString(R.string.failed_city_name);
+        }
         cityName = addresses.get(0).getLocality();
 
         return cityName.trim();
@@ -250,5 +257,13 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public void setElevationPoints(ArrayList<Float> elevationPoints) {
         this.elevationPoints = elevationPoints;
+    }
+
+    public boolean isPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(boolean published) {
+        isPublished = published;
     }
 }
