@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但更有動力抽獎。 建議為 2500</string>
     <string name="poll_rate_title">位置輪詢率（毫秒）</string>
     <string name="recording_session">記錄階段作業</string>
-    <string name="not_added_disclaimer">將在未來更新中新增，但享受應用程式所提供的其餘部分！</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">此區段未完成</string>
     <string name="no_news">沒消息</string>
     <string name="recommended_durometer">建議的 Durometer ： </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
