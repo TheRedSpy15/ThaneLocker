@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Come deve essere rapidamente aggiornata la posizione durante la registrazione di una sessione. Abbassare è più veloce ma più potenza disegna. Consigliato è 2500</string>
     <string name="poll_rate_title">Location Polling Rate (Millisecondi)</string>
     <string name="recording_session">Registrazione della sessione</string>
-    <string name="not_added_disclaimer">Verrà aggiunto in un aggiornamento futuro, ma goditi il resto di quello che l\'app ha da offrire!</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">Questa sezione non è terminata</string>
     <string name="no_news">Nessuna notizia</string>
     <string name="recommended_durometer">Durometro consigliato: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
