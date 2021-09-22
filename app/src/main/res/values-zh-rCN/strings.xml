@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">记录会话时应更新位置的速度。 更低的速度更快，但更省电。 建议 2500</string>
     <string name="poll_rate_title">位置轮询速率 (毫秒)</string>
     <string name="recording_session">记录会话</string>
-    <string name="not_added_disclaimer">将在将来的更新中添加，但享受应用程序要提供的其他内容 !</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">此部分未完成</string>
     <string name="no_news">没有新闻</string>
     <string name="recommended_durometer">建议的 Duroeter: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
