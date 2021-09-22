@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.DashPathEffect;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
@@ -11,6 +12,10 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.longboardlife.R;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Session;
 import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
@@ -110,6 +115,52 @@ public class App extends Application {
                 break;
         }
 
+    }
+
+    public static LineData createLineSet(ArrayList<Entry> values, String label, Context context) {
+        LineDataSet set;
+
+        // create a dataset and give it a type
+        set = new LineDataSet(values, label);
+
+        set.setDrawIcons(false);
+
+        // draw dashed line
+        set.enableDashedLine(10f, 5f, 0f);
+
+        // black lines and points
+        set.setColor(context.getColor(R.color.purple_500));
+        set.setCircleColor(context.getColor(R.color.purple_500));
+
+        // line thickness and point size
+        set.setLineWidth(1f);
+        set.setCircleRadius(3f);
+
+        // draw points as solid circles
+        set.setDrawCircleHole(false);
+
+        // customize legend entry
+        set.setFormLineWidth(1f);
+        set.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+        set.setFormSize(15.f);
+
+        // text size of values
+        //set.setValueTextSize(9f);
+        set.setDrawValues(false);
+
+        // draw selection line as dashed
+        set.enableDashedHighlightLine(10f, 5f, 0f);
+
+        // set the filled area
+        set.setDrawFilled(true);
+        set.setFillColor(context.getColor(R.color.purple_500));
+        set.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
+
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(set); // add the data sets
+
+        // create a data object with the data sets
+        return new LineData(dataSets);
     }
 
     /**

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.DashPathEffect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -25,8 +24,6 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Profile;
 import com.theredspy15.longboardlife.models.Session;
@@ -178,53 +175,17 @@ public class ProfileFragment extends Fragment {
             values.add(new Entry(i, Float.parseFloat(sessions.get(i).getAvgSpeed()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
-        // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(values, getString(R.string.speed)); // TODO: shrink set1 from all 3 graph function into 1, and just change values
-        set1.setDrawIcons(false);
-
-        // draw dashed line
-        set1.enableDashedLine(10f, 5f, 0f);
-
-        // black lines and points
-        set1.setColor(requireContext().getColor(R.color.purple_500));
-        set1.setCircleColor(requireContext().getColor(R.color.purple_500));
-
-        // line thickness and point size
-        set1.setLineWidth(1f);
-        set1.setCircleRadius(3f);
-
-        // draw points as solid circles
-        set1.setDrawCircleHole(false);
-
-        // customize legend entry
-        set1.setFormLineWidth(1f);
-        set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-        set1.setFormSize(15.f);
-
-        // text size of values
-        set1.setValueTextSize(9f);
-
-        // draw selection line as dashed
-        set1.enableDashedHighlightLine(10f, 5f, 0f);
-
-        // set the filled area
-        set1.setDrawFilled(true);
-        set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
-        set1.setFillColor(requireContext().getColor(R.color.purple_500));
-
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        dataSets.add(set1); // add the data sets
-
         // create a data object with the data sets
-        LineData data = new LineData(dataSets);
+        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
 
         // set data
         chart.setData(data);
+        chart.animateX(3000);
 
+        // coloring chart
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-
         int color = App.getThemeTextColor(requireContext());
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
@@ -243,54 +204,17 @@ public class ProfileFragment extends Fragment {
             values.add(new Entry(i, Float.parseFloat(sessions.get(i).getTopSpeed()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
-        // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(values, getString(R.string.speed));
-
-        set1.setDrawIcons(false);
-
-        // draw dashed line
-        set1.enableDashedLine(10f, 5f, 0f);
-
-        // black lines and points
-        set1.setColor(requireContext().getColor(R.color.purple_500));
-        set1.setCircleColor(requireContext().getColor(R.color.purple_500));
-
-        // line thickness and point size
-        set1.setLineWidth(1f);
-        set1.setCircleRadius(3f);
-
-        // draw points as solid circles
-        set1.setDrawCircleHole(false);
-
-        // customize legend entry
-        set1.setFormLineWidth(1f);
-        set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-        set1.setFormSize(15.f);
-
-        // text size of values
-        set1.setValueTextSize(9f);
-
-        // draw selection line as dashed
-        set1.enableDashedHighlightLine(10f, 5f, 0f);
-
-        // set the filled area
-        set1.setDrawFilled(true);
-        set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
-        set1.setFillColor(requireContext().getColor(R.color.purple_500));
-
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        dataSets.add(set1); // add the data sets
-
         // create a data object with the data sets
-        LineData data = new LineData(dataSets);
+        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
 
         // set data
         chart.setData(data);
+        chart.animateX(3000);
 
+        // coloring chart
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-
         int color = App.getThemeTextColor(requireContext());
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
@@ -309,72 +233,24 @@ public class ProfileFragment extends Fragment {
             values.add(new Entry(i, Float.parseFloat(sessions.get(i).getTotalDistance()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
-        LineDataSet set1;
+        // create a data object with the data sets
+        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
 
-        if (chart.getData() != null &&
-                chart.getData().getDataSetCount() > 0) {
-            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
-            set1.setValues(values);
-            set1.notifyDataSetChanged();
-            chart.getData().notifyDataChanged();
-            chart.notifyDataSetChanged();
-        } else {
-            // create a dataset and give it a type
-            set1 = new LineDataSet(values, getString(R.string.distance));
+        // set data
+        chart.setData(data);
+        chart.animateX(3000);
 
-            set1.setDrawIcons(false);
-
-            // draw dashed line
-            set1.enableDashedLine(10f, 5f, 0f);
-
-            // black lines and points
-            set1.setColor(requireContext().getColor(R.color.purple_500));
-            set1.setCircleColor(requireContext().getColor(R.color.purple_500));
-
-            // line thickness and point size
-            set1.setLineWidth(1f);
-            set1.setCircleRadius(3f);
-
-            // draw points as solid circles
-            set1.setDrawCircleHole(false);
-
-            // customize legend entry
-            set1.setFormLineWidth(1f);
-            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-            set1.setFormSize(15.f);
-
-            // text size of values
-            set1.setValueTextSize(9f);
-
-            // draw selection line as dashed
-            set1.enableDashedHighlightLine(10f, 5f, 0f);
-
-            // set the filled area
-            set1.setDrawFilled(true);
-            set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
-            set1.setFillColor(requireContext().getColor(R.color.purple_500));
-
-            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-            dataSets.add(set1); // add the data sets
-
-            // create a data object with the data sets
-            LineData data = new LineData(dataSets);
-
-            // set data
-            chart.setData(data);
-
-            Description description = new Description();
-            description.setText("");
-            chart.setDescription(description);
-
-            int color = App.getThemeTextColor(requireContext());
-            chart.getData().setValueTextColor(color);
-            chart.getData().setValueTextColor(color);
-            chart.getXAxis().setTextColor(color);
-            chart.getAxisLeft().setTextColor(color);
-            chart.getAxisRight().setTextColor(color);
-            chart.getLegend().setTextColor(color);
-        }
+        // coloring chart
+        Description description = new Description();
+        description.setText("");
+        chart.setDescription(description);
+        int color = App.getThemeTextColor(requireContext());
+        chart.getData().setValueTextColor(color);
+        chart.getData().setValueTextColor(color);
+        chart.getXAxis().setTextColor(color);
+        chart.getAxisLeft().setTextColor(color);
+        chart.getAxisRight().setTextColor(color);
+        chart.getLegend().setTextColor(color);
     }
 
     private void loadDurationsChart() {
@@ -386,70 +262,23 @@ public class ProfileFragment extends Fragment {
             values.add(new Entry(i, sessions.get(i).getDuration(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
         }
 
-        LineDataSet set1;
+        // create a data object with the data sets
+        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
 
-        if (chart.getData() != null &&
-                chart.getData().getDataSetCount() > 0) {
-            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
-            set1.setValues(values);
-            set1.notifyDataSetChanged();
-            chart.getData().notifyDataChanged();
-            chart.notifyDataSetChanged();
-        } else {
-            // create a dataset and give it a type
-            set1 = new LineDataSet(values, getString(R.string.duration));
+        // set data
+        chart.setData(data);
+        chart.animateX(3000);
 
-            set1.setDrawIcons(false);
-
-            // draw dashed line
-            set1.enableDashedLine(10f, 5f, 0f);
-
-            // black lines and points
-            set1.setColor(requireContext().getColor(R.color.purple_500));
-            set1.setCircleColor(requireContext().getColor(R.color.purple_500));
-
-            // line thickness and point size
-            set1.setLineWidth(1f);
-            set1.setCircleRadius(3f);
-
-            // draw points as solid circles
-            set1.setDrawCircleHole(false);
-
-            // customize legend entry
-            set1.setFormLineWidth(1f);
-            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-            set1.setFormSize(15.f);
-
-            // text size of values
-            set1.setValueTextSize(9f);
-
-            // draw selection line as dashed
-            set1.enableDashedHighlightLine(10f, 5f, 0f);
-
-            // set the filled area
-            set1.setDrawFilled(true);
-            set1.setFillFormatter((dataSet, dataProvider) -> chart.getAxisLeft().getAxisMinimum());
-            set1.setFillColor(requireContext().getColor(R.color.purple_500));
-
-            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-            dataSets.add(set1); // add the data sets
-
-            // create a data object with the data sets
-            LineData data = new LineData(dataSets);
-
-            // set data
-            chart.setData(data);
-            Description description = new Description();
-            description.setText("");
-            chart.setDescription(description);
-
-            int color = App.getThemeTextColor(requireContext());
-            chart.getData().setValueTextColor(color);
-            chart.getData().setValueTextColor(color);
-            chart.getXAxis().setTextColor(color);
-            chart.getAxisLeft().setTextColor(color);
-            chart.getAxisRight().setTextColor(color);
-            chart.getLegend().setTextColor(color);
-        }
+        // coloring chart
+        Description description = new Description();
+        description.setText("");
+        chart.setDescription(description);
+        int color = App.getThemeTextColor(requireContext());
+        chart.getData().setValueTextColor(color);
+        chart.getData().setValueTextColor(color);
+        chart.getXAxis().setTextColor(color);
+        chart.getAxisLeft().setTextColor(color);
+        chart.getAxisRight().setTextColor(color);
+        chart.getLegend().setTextColor(color);
     }
 }
