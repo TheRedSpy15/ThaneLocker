@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Πόσο γρήγορα θα πρέπει να ενημερώσετε τη θέση κατά την εγγραφή μιας συνεδρίας. Χαμηλότερα είναι πιο γρήγορα, αλλά περισσότερη δύναμη. Συνιστάται είναι 2500</string>
     <string name="poll_rate_title">Ποσοστό δημοσκοπήσεων θέσης (χιλιοστά του δευτερολέπτου)</string>
     <string name="recording_session">Συνεδρία καταγραφής:</string>
-    <string name="not_added_disclaimer">Θα προστεθεί σε μια μελλοντική ενημέρωση, αλλά να απολαύσετε το υπόλοιπο του τι η εφαρμογή έχει να προσφέρει!</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
     <string name="not_added_title">Η ενότητα αυτή δεν έχει ολοκληρωθεί.</string>
     <string name="no_news">Κανένα νέο.</string>
     <string name="recommended_durometer">Συνιστώμενη Durometer: </string>
@@ -139,6 +139,14 @@
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
     <string name="no_achievement">No Achievements</string>
+    <string name="failed_city_name">Failed to determine</string>
+    <string name="failed_elevation_server">Failed to load elevation data from server</string>
+    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
+    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
+    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">The board needs at at least a name</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
