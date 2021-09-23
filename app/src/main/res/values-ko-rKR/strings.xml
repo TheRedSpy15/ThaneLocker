@@ -52,8 +52,8 @@
     <string name="average_speed">평균 속도:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">빠른 속도:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">설명 없음</string>
+    <string name="john_doe">모르는</string>
     <string name="bushing_calculator">부싱 계산기</string>
     <string name="weight_lbs">무게 (lbs)</string>
     <string name="cruising">크루징</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">세션을 기록할 때 위치를 얼마나 빨리 업데이트해야 합니까? 더 낮은 것은 더 빠르지만 더 많은 전력 소모입니다. 권장 2500</string>
     <string name="poll_rate_title">위치 폴링 비율 (밀리초)</string>
     <string name="recording_session">레코딩 세션</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">향후 업데이트에 추가됩니다! 친구들과 스케이트 세션을 계획하고, 갈 수 있는 새로운 장소를 찾는 것을 허락할 것이다.</string>
     <string name="not_added_title">이 섹션은 완료되지 않았습니다.</string>
     <string name="no_news">뉴스 없음</string>
     <string name="recommended_durometer">권장 Durometer: </string>
@@ -135,18 +135,18 @@
     <string name="level_1">레벨: 1</string>
     <string name="level">레벨:</string>
     <string name="select_theme">테마 선택</string>
-    <string name="kph">KPH</string>
+    <string name="kph">포도상구균</string>
     <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
+    <string name="achievements">성취도</string>
+    <string name="no_achievement">성과 없음</string>
+    <string name="failed_city_name">결정 실패</string>
+    <string name="failed_elevation_server">서버에서 표고 데이터를 로드하는 데 실패함</string>
+    <string name="failed_connect_basementskate">basementskate에 연결할 수 없음</string>
+    <string name="failed_connect_longboardbrand">장기 브랜드에 연결할 수 없음</string>
+    <string name="failed_connect_downhill254">다운힐로에 연결할 수 없습니다.</string>
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="board_needs_name">보드에는 적어도 하나의 이름이 필요하다.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
