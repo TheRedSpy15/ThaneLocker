@@ -52,8 +52,8 @@
     <string name="average_speed">Gennemsnithastighed:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Hurtigste hastighed:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Ingen beskrivelse</string>
+    <string name="john_doe">Ukendt</string>
     <string name="bushing_calculator">Bushing Calculator</string>
     <string name="weight_lbs">Vægt (Ib)</string>
     <string name="cruising">Cruising</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Hvor hurtigt skal placeringen opdateres ved indspilning af en session. Lavere er hurtigere, men mere kraftudtræk. Anbefalet er 2500</string>
     <string name="poll_rate_title">PoIIingshastighed for lokation (millisekunder)</string>
     <string name="recording_session">Registrering af session</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Vil blive tilføjet i en fremtidig opdatering! Det vil give mulighed for at planlægge skate sessioner med venner, og finde en ny placering til at gå og skate.</string>
     <string name="not_added_title">Dette afsnit er ikke færdigt</string>
     <string name="no_news">Ingen nyheder</string>
     <string name="recommended_durometer">Anbefalet Durometer: </string>
@@ -138,15 +138,15 @@
     <string name="kph">KPH</string>
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="no_achievement">Ingen Achievements</string>
+    <string name="failed_city_name">Kan ikke bestemme</string>
+    <string name="failed_elevation_server">Kan ikke indlæse eleveringsdata fra server</string>
+    <string name="failed_connect_basementskate">Kan ikke oprette forbindelse til basementskate</string>
+    <string name="failed_connect_longboardbrand">Kan ikke oprette forbindelse til longboardbrand</string>
+    <string name="failed_connect_downhill254">Kan ikke oprette forbindelse til nedhill254</string>
+    <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
+    <string name="freeride_shape">Barrel / Barrel</string>
+    <string name="board_needs_name">Bestyrelsen har brug for mindst et navn</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
