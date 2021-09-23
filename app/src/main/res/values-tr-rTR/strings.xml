@@ -52,8 +52,8 @@
     <string name="average_speed">Ortalama Hız:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">En Hızlı Hız:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Açıklama Yok</string>
+    <string name="john_doe">Bilinmiyor</string>
     <string name="bushing_calculator">Bushing Hesap Makinesi</string>
     <string name="weight_lbs">Ağırlık (lbs)</string>
     <string name="cruising">Geziniyor</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük, daha hızlı ama daha çok güç çiziyor. Önerilen 2500</string>
     <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
     <string name="recording_session">Kayıt Oturumu</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek! arkadaşlarla paten seansları planlamasına izin verecek ve gidecek ve kaymak için yeni bir yer bulmak</string>
     <string name="not_added_title">Bu bölüm bitirilmedi</string>
     <string name="no_news">Haber yok</string>
     <string name="recommended_durometer">Önerilen Durometre: </string>
@@ -137,16 +137,16 @@
     <string name="select_theme">Tema Seçin</string>
     <string name="kph">KPH</string>
     <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="achievements">Başarılar</string>
+    <string name="no_achievement">Başarı Yok</string>
+    <string name="failed_city_name">Saptanamadı</string>
+    <string name="failed_elevation_server">Sunucudan yükselme verileri yüklenemedi</string>
+    <string name="failed_connect_basementskate">Basementpaten \'e bağlanılamadı</string>
+    <string name="failed_connect_longboardbrand">Longboardbrand \'a Bağlanamadı</string>
+    <string name="failed_connect_downhill254">Downhill254 \'e bağlanılamadı</string>
+    <string name="cruise_shape">Koni/Koni, Koni/Varil</string>
+    <string name="freeride_shape">Varil/Barrel</string>
+    <string name="board_needs_name">Kurulun en azından bir isme ihtiyacı var.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
