@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">長板人壽</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">變化</string>
     <string name="description">說明</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">平均速度：</string>
     <string name="_00_0_mph">0 .0 MPH</string>
     <string name="fastest_speed">最快速度：</string>
-    <string name="just_another_awesome_skater">又是個了不起的滑冰選手</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">無說明</string>
+    <string name="john_doe">未知</string>
     <string name="bushing_calculator">推送計算機</string>
     <string name="weight_lbs">重量（磅）</string>
     <string name="cruising">克魯辛</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但更有動力抽獎。 建議為 2500</string>
     <string name="poll_rate_title">位置輪詢率（毫秒）</string>
     <string name="recording_session">記錄階段作業</string>
-    <string name="not_added_disclaimer">將在未來更新中新增，但享受應用程式所提供的其餘部分！</string>
+    <string name="not_added_disclaimer">將在未來更新中新增！ 它將從規劃與朋友的滑板會話中，找到一個新的去溜冰的位置</string>
     <string name="not_added_title">此區段未完成</string>
     <string name="no_news">沒消息</string>
     <string name="recommended_durometer">建議的 Durometer ： </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">您未選取映像檔</string>
     <string name="minutes">" 分鐘"</string>
     <string name="remove_board_from_session">從階段作業中移除主機板</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">應用</string>
+    <string name="level_1">級別： 1</string>
+    <string name="level">級別：</string>
+    <string name="select_theme">選取佈景主題</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">成就</string>
+    <string name="no_achievement">沒有成就</string>
+    <string name="failed_city_name">無法判定</string>
+    <string name="failed_elevation_server">無法從伺服器載入提升資料</string>
+    <string name="failed_connect_basementskate">無法連接至 basementskate</string>
+    <string name="failed_connect_longboardbrand">無法連接至 longboardbrand</string>
+    <string name="failed_connect_downhill254">無法連接至下游 254</string>
+    <string name="cruise_shape">Cone/Cone， Cone/Barrel</string>
+    <string name="freeride_shape">Barrel /Barrel</string>
+    <string name="board_needs_name">董事會至少需要一個名字</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>自動</item>
+        <item>光明</item>
+        <item>黑暗</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

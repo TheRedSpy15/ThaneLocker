@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Durata de viaţă</string>
     <string name="title_activity_board">BoardActivitate</string>
     <string name="change">Modificare</string>
     <string name="description">Descriere</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">Viteză medie:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Viteză cea mai rapidă:</string>
-    <string name="just_another_awesome_skater">Doar un alt minunat Skater</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">Fără descriere</string>
+    <string name="john_doe">Necunoscut</string>
     <string name="bushing_calculator">Calculator bushing</string>
     <string name="weight_lbs">Greutate (lbs)</string>
     <string name="cruising">Croazieră</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Cât de repede ar trebui să fie actualizată locaţia la înregistrarea unei sesiuni. Mai jos este mai rapid, dar mai mult de putere. Recomandat este 2500</string>
     <string name="poll_rate_title">Rată de sondare locaţie (Milisecunde)</string>
     <string name="recording_session">Înregistrare sesiune</string>
-    <string name="not_added_disclaimer">Va fi adaugat intr-o viitoare actualizare, dar bucuraţi-vă de restul a ceea ce trebuie să ofere aplicaţia!</string>
+    <string name="not_added_disclaimer">Va fi adaugat intr-o viitoare actualizare! Va permite de la planificarea sesiuni patate cu prietenii, şi găsirea unei noi locaţii pentru a merge şi a patine</string>
     <string name="not_added_title">Această secţiune nu este terminată</string>
     <string name="no_news">Nicio veste</string>
     <string name="recommended_durometer">Dourmetru recomandat: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Nu aţi selectat o imagine</string>
     <string name="minutes">" Minute"</string>
     <string name="remove_board_from_session">Înlăturare panou din sesiune</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Aplicare</string>
+    <string name="level_1">Nivel: 1</string>
+    <string name="level">Nivel:</string>
+    <string name="select_theme">Selectare temă</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Realizări</string>
+    <string name="no_achievement">Fără realizări</string>
+    <string name="failed_city_name">A eşuat determinarea</string>
+    <string name="failed_elevation_server">Eşuare la încărcarea datelor de elevaţie de la server</string>
+    <string name="failed_connect_basementskate">Nu s-a putut conecta la basementpatat</string>
+    <string name="failed_connect_longboardbrand">Nu s-a putut conecta la marca longboard</string>
+    <string name="failed_connect_downhill254">Nu s-a putut conecta la downhill254</string>
+    <string name="cruise_shape">Con/Con, Con/Butoi</string>
+    <string name="freeride_shape">Baril/Barrel</string>
+    <string name="board_needs_name">Consiliul are nevoie de cel puţin un nume</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -153,8 +165,8 @@
     <!-- Built-in theme choices -->
     <string-array name="themes">
         <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Lumina</item>
+        <item>Întuneric</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

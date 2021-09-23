@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">ロングボードライフ</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">チェンジ</string>
     <string name="description">解説</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">平均速度:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">最速速度:</string>
-    <string name="just_another_awesome_skater">もう一人のすげースケーター</string>
-    <string name="john_doe">ジョン・ドー</string>
+    <string name="just_another_awesome_skater">説明なし</string>
+    <string name="john_doe">不明。</string>
     <string name="bushing_calculator">ブッシング計算器</string>
     <string name="weight_lbs">重みづけ (lbs)</string>
     <string name="cruising">クルージング</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">セッションの記録時にロケーションをどのくらい迅速に更新するか。 低い方は高速だがパワー・ドロー。 推奨は 2500 です。</string>
     <string name="poll_rate_title">ロケーション・ポーリング率 (ミリ秒)</string>
     <string name="recording_session">記録セッション</string>
-    <string name="not_added_disclaimer">今後の更新で追加されるが、アプリが提供する必要のある残りの部分を楽しんでください。</string>
+    <string name="not_added_disclaimer">今後の更新で追加されます。 それは、友人とのスケートセッションを計画し、新しい場所を見つけてスケートをすることを可能にする。</string>
     <string name="not_added_title">このセクションは終了しません</string>
     <string name="no_news">ニュースなし</string>
     <string name="recommended_durometer">推奨されるDuroメーター: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">イメージが選択されていません</string>
     <string name="minutes">" 議事録"</string>
     <string name="remove_board_from_session">セッションからのボードの削除</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">適用</string>
+    <string name="level_1">レベル: 1</string>
+    <string name="level">レベル:</string>
+    <string name="select_theme">テーマの選択</string>
+    <string name="kph">ケフ</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">アチエブメント</string>
+    <string name="no_achievement">Achievements なし</string>
+    <string name="failed_city_name">判別できません</string>
+    <string name="failed_elevation_server">サーバーからの標高データのロードに失敗しました</string>
+    <string name="failed_connect_basementskate">basementskate に接続できませんでした</string>
+    <string name="failed_connect_longboardbrand">ロングボードブランドに接続できませんでした</string>
+    <string name="failed_connect_downhill254">downhill254 に接続できませんでした。</string>
+    <string name="cruise_shape">Cone/Cone、 Cone/Barrel</string>
+    <string name="freeride_shape">バーレル/バレル</string>
+    <string name="board_needs_name">理事会は少なくとも名前を必要としている</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>オート</item>
+        <item>ライト</item>
+        <item>ダーク</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

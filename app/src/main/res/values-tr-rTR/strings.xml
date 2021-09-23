@@ -52,8 +52,8 @@
     <string name="average_speed">Ortalama Hız:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">En Hızlı Hız:</string>
-    <string name="just_another_awesome_skater">Bir başka harika Skater daha.</string>
-    <string name="john_doe">Kimliği belirsiz</string>
+    <string name="just_another_awesome_skater">Açıklama Yok</string>
+    <string name="john_doe">Bilinmiyor</string>
     <string name="bushing_calculator">Bushing Hesap Makinesi</string>
     <string name="weight_lbs">Ağırlık (lbs)</string>
     <string name="cruising">Geziniyor</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük, daha hızlı ama daha çok güç çiziyor. Önerilen 2500</string>
     <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
     <string name="recording_session">Kayıt Oturumu</string>
-    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek, ancak uygulamanın sunacağı geri kalan şeyin keyfini çıkarın!</string>
+    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek! arkadaşlarla paten seansları planlamasına izin verecek ve gidecek ve kaymak için yeni bir yer bulmak</string>
     <string name="not_added_title">Bu bölüm bitirilmedi</string>
     <string name="no_news">Haber yok</string>
     <string name="recommended_durometer">Önerilen Durometre: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Resim seçmediniz</string>
     <string name="minutes">" Dakika"</string>
     <string name="remove_board_from_session">Panoyu oturumdan kaldır</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Uygula</string>
+    <string name="level_1">Düzey: 1</string>
+    <string name="level">Düzey:</string>
+    <string name="select_theme">Tema Seçin</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Başarılar</string>
+    <string name="no_achievement">Başarı Yok</string>
+    <string name="failed_city_name">Saptanamadı</string>
+    <string name="failed_elevation_server">Sunucudan yükselme verileri yüklenemedi</string>
+    <string name="failed_connect_basementskate">Basementpaten \'e bağlanılamadı</string>
+    <string name="failed_connect_longboardbrand">Longboardbrand \'a Bağlanamadı</string>
+    <string name="failed_connect_downhill254">Downhill254 \'e bağlanılamadı</string>
+    <string name="cruise_shape">Koni/Koni, Koni/Varil</string>
+    <string name="freeride_shape">Varil/Barrel</string>
+    <string name="board_needs_name">Kurulun en azından bir isme ihtiyacı var.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Otomatik</item>
+        <item>Açık</item>
+        <item>Koyu</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

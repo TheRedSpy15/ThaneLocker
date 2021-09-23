@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Vida de Longboard</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">Mudança</string>
     <string name="description">Descrição</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">Velocidade Média:</string>
     <string name="_00_0_mph">00,0 MPH</string>
     <string name="fastest_speed">Velocidade Mais Rápida:</string>
-    <string name="just_another_awesome_skater">Só mais um Skater incrível</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">Sem Descrição</string>
+    <string name="john_doe">Desconhecido</string>
     <string name="bushing_calculator">Calculadora de Bushing</string>
     <string name="weight_lbs">Peso (lbs)</string>
     <string name="cruising">Cruzeiro</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">O quão rápido deve ser o local atualizado ao gravar uma sessão. Menor é mais rápido, mas mais potência desenha. Recomendado é 2500</string>
     <string name="poll_rate_title">Taxa de Pesquisa de Localização (Milliseconds)</string>
     <string name="recording_session">Sessão de gravação</string>
-    <string name="not_added_disclaimer">Será adicionado em uma atualização futura, mas aproveite o restante do que o app tem a oferecer!</string>
+    <string name="not_added_disclaimer">Será adicionado em uma atualização futura! Ele vai permitir planejar sessões de skate com os amigos, e encontrar um novo local para ir e andar de skate</string>
     <string name="not_added_title">Esta seção não está acabada</string>
     <string name="no_news">Sem notícias</string>
     <string name="recommended_durometer">Durômetro recomendado: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Você não selecionou uma imagem</string>
     <string name="minutes">" Minutos"</string>
     <string name="remove_board_from_session">Remover placa da sessão</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Aplicar</string>
+    <string name="level_1">Nível: 1</string>
+    <string name="level">Nível:</string>
+    <string name="select_theme">Selecionar Tema</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Realizações</string>
+    <string name="no_achievement">Sem Conquistas</string>
+    <string name="failed_city_name">Falha ao determinar</string>
+    <string name="failed_elevation_server">Falha ao carregar dados de elevação do servidor</string>
+    <string name="failed_connect_basementskate">Não poderia se conectar ao basementskate</string>
+    <string name="failed_connect_longboardbrand">Não poderia se conectar ao longboardbrand</string>
+    <string name="failed_connect_downhill254">Não pôde se conectar ao downhill254</string>
+    <string name="cruise_shape">Cone / Cone, Cone / Cano</string>
+    <string name="freeride_shape">Barril / Barrel</string>
+    <string name="board_needs_name">A diretoria precisa em pelo menos um nome</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -153,8 +165,8 @@
     <!-- Built-in theme choices -->
     <string-array name="themes">
         <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Luz</item>
+        <item>Escuro</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

@@ -52,8 +52,8 @@
     <string name="average_speed">Medelhastighet:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Snabbaste hastighet:</string>
-    <string name="just_another_awesome_skater">Ännu en grym Skater.</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">Ingen beskrivning</string>
+    <string name="john_doe">Okänd</string>
     <string name="bushing_calculator">BushberäkningDescription</string>
     <string name="weight_lbs">Vikt (lbs)</string>
     <string name="cruising">Kryssning</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Hur snabbt bör platsen uppdateras vid inspelning av en session. Lägre är snabbare, men mer kraft oavgjort. Rekommenderat är 2500</string>
     <string name="poll_rate_title">Placeringspollningsvärde (millisekunder)</string>
     <string name="recording_session">Inspelningssession</string>
-    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering, men njut av resten av det som appen har att erbjuda!</string>
+    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering! Det kommer att göra det möjligt att planera rullskridskor med vänner, och hitta en ny plats att åka och åka</string>
     <string name="not_added_title">Det här avsnittet är inte klart</string>
     <string name="no_news">Inga nyheter</string>
     <string name="recommended_durometer">Rekommenderad Durometer: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Du valde inte någon bild</string>
     <string name="minutes">" Minuter"</string>
     <string name="remove_board_from_session">Ta bort bräde från session</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Verkställ</string>
+    <string name="level_1">Nivå: 1</string>
+    <string name="level">Nivå:</string>
+    <string name="select_theme">Välj tema</string>
+    <string name="kph">KF</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Achievements</string>
+    <string name="no_achievement">Inga Achievements</string>
+    <string name="failed_city_name">Misslyckades avgöra</string>
+    <string name="failed_elevation_server">Det gick inte att läsa in elevationsdata från servern</string>
+    <string name="failed_connect_basementskate">Kunde inte ansluta till basementskate</string>
+    <string name="failed_connect_longboardbrand">Kunde inte ansluta till longboardbrand</string>
+    <string name="failed_connect_downhill254">Kunde inte ansluta till downhill254</string>
+    <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
+    <string name="freeride_shape">Barrel / Barrel</string>
+    <string name="board_needs_name">Styrelsen behöver åtminstone ett namn.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Automatiskt</item>
+        <item>Ljus</item>
+        <item>Mörkt</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

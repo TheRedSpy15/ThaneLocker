@@ -52,8 +52,8 @@
     <string name="average_speed">Keskimääräinen nopeus:</string>
     <string name="_00_0_mph">0.0 MPH</string>
     <string name="fastest_speed">Nopein nopeus:</string>
-    <string name="just_another_awesome_skater">Taas yksi mahtava Skater.</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">Ei kuvausta</string>
+    <string name="john_doe">Tuntematon</string>
     <string name="bushing_calculator">Laskettava laskuri</string>
     <string name="weight_lbs">Paino (lbs)</string>
     <string name="cruising">Risteily</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa. Suositeltava on 2500</string>
     <string name="poll_rate_title">Sijainnin Polling Rate (Millisekuntia)</string>
     <string name="recording_session">Tallennusistunto</string>
-    <string name="not_added_disclaimer">Will lisätään myöhemmin päivittää, mutta nauti loput mitä sovellus on tarjota!</string>
+    <string name="not_added_disclaimer">Lisätään tulevaan päivitykseen! Se mahdollistaa suunnitteluluistelua ystävien kanssa, ja löytää uusi sijainti mennä ja luistella</string>
     <string name="not_added_title">Tämä osa ei ole valmis</string>
     <string name="no_news">Ei uutisia</string>
     <string name="recommended_durometer">Suositeltava Durometri: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Et valinnut imagoa</string>
     <string name="minutes">" Pöytäkirja"</string>
     <string name="remove_board_from_session">Poista taulu istunnosta</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Käytä</string>
+    <string name="level_1">Taso: 1</string>
+    <string name="level">Taso:</string>
+    <string name="select_theme">Valitse teema</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Saavutukset</string>
+    <string name="no_achievement">Ei saavutuksia</string>
+    <string name="failed_city_name">Kohteen selvitys ei onnistunut</string>
+    <string name="failed_elevation_server">Korkeussijaintitietojen lataus palvelimesta ei onnistunut</string>
+    <string name="failed_connect_basementskate">Yhteyden muodostus basementskatiin ei onnistunut</string>
+    <string name="failed_connect_longboardbrand">Yhteyden muodostus Longboardbrändiin</string>
+    <string name="failed_connect_downhill254">Yhteyden muodostus ei onnistunut</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">Hallitus tarvitsee ainakin nimen.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

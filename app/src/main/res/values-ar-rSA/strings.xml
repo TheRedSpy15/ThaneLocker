@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">حياة لوح أطول</string>
     <string name="title_activity_board">نشاط BoardActivity</string>
     <string name="change">التغيير</string>
     <string name="description">الوصف</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">متوسط السرعة :</string>
     <string name="_00_0_mph">00.0 MPPH</string>
     <string name="fastest_speed">أسرع سرعة :</string>
-    <string name="just_another_awesome_skater">فقط سكير رائع آخر</string>
-    <string name="john_doe">جون دو</string>
+    <string name="just_another_awesome_skater">لا يوجد وصف</string>
+    <string name="john_doe">غير معروف</string>
     <string name="bushing_calculator">دفع الآلة الحاسبة</string>
     <string name="weight_lbs">وزن (lbs)</string>
     <string name="cruising">التجول</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">ما مدى سرعة تعديل المكان عند تسجيل جلسة. انخفاض هو أسرع ولكن أكثر سحب السلطة. يعد من المفضل 2500</string>
     <string name="poll_rate_title">معدل الاقتراع بالمكان (بالملليثانية)</string>
     <string name="recording_session">جلسة التسجيل</string>
-    <string name="not_added_disclaimer">سيتم إضافته في التحديث في المستقبل ، ولكن التمتع ببقية ما يجب أن يقدمه التطبيق !</string>
+    <string name="not_added_disclaimer">سيتم اضافته في تعديل مستقبلي ! وسيسمح ذلك بالتخطيط لجلسات التزلج مع الأصدقاء ، وإيجاد موقع جديد للذهاب والتزلج</string>
     <string name="not_added_title">لم يتم الانتهاء من هذا القسم</string>
     <string name="no_news">لا أخبار</string>
     <string name="recommended_durometer">قياس المقياس الموصى به : </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">أنت لم تختار صورة</string>
     <string name="minutes">" دقائق"</string>
     <string name="remove_board_from_session">ازالة لوحة من الجلسة</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">تطبيق</string>
+    <string name="level_1">المستوى : 1</string>
+    <string name="level">المستوى :</string>
+    <string name="select_theme">اختيار نسق رئيسي</string>
+    <string name="kph">المقطع</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">الإنجازات</string>
+    <string name="no_achievement">لا إنجازات</string>
+    <string name="failed_city_name">فشل في تحديد</string>
+    <string name="failed_elevation_server">فشل في تحميل بيانات الارتفاع من وحدة الخدمة</string>
+    <string name="failed_connect_basementskate">لا يمكن الاتصال الى basementskate</string>
+    <string name="failed_connect_longboardbrand">لا يمكن الاتصال بعلامة تجارية طويلة</string>
+    <string name="failed_connect_downhill254">لا يمكن الاتصال مع dohill254</string>
+    <string name="cruise_shape">C1 / C1 ، C1 / Barrel</string>
+    <string name="freeride_shape">Barl / Barl</string>
+    <string name="board_needs_name">يجب أن يكون للمجلس اسم على الأقل</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>آلي</item>
+        <item>خفيف</item>
+        <item>ظلام</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

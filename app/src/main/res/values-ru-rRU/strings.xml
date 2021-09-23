@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Долговая жизнь</string>
     <string name="title_activity_board">Активность</string>
     <string name="change">Изменение</string>
     <string name="description">Описание</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">Средняя скорость:</string>
     <string name="_00_0_mph">00,0 MPH</string>
     <string name="fastest_speed">Самая быстрая Скорость:</string>
-    <string name="just_another_awesome_skater">Просто еще один потрясающий Скатер.</string>
-    <string name="john_doe">Джон Доу</string>
+    <string name="just_another_awesome_skater">Без описания</string>
+    <string name="john_doe">Неизвестно</string>
     <string name="bushing_calculator">Калькулятор</string>
     <string name="weight_lbs">Вес (lbs)</string>
     <string name="cruising">Крейсерский</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Нижний-это быстрее, но больше энергии рисуется. Рекомендуется: 2500</string>
     <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
     <string name="recording_session">Запись сеанса</string>
-    <string name="not_added_disclaimer">Будет добавлен в будущее обновление, но насладитесь оставшейся части того, что приложение должно предложить!</string>
+    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать занятия на коньках с друзьями, а также находить новое место для кататься и кататься на коньках</string>
     <string name="not_added_title">Этот раздел не завершен</string>
     <string name="no_news">Нет новостей</string>
     <string name="recommended_durometer">Рекомендуемый дурометр: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Вы не выбрали изображение</string>
     <string name="minutes">" Минуты"</string>
     <string name="remove_board_from_session">Удалить совет из сеанса</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Применить</string>
+    <string name="level_1">Уровень: 1</string>
+    <string name="level">Уровень:</string>
+    <string name="select_theme">Выбрать тему</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Км</string>
+    <string name="achievements">Достижения</string>
+    <string name="no_achievement">Нет достижений</string>
+    <string name="failed_city_name">Не удалось определить</string>
+    <string name="failed_elevation_server">Не удалось загрузить данные повышения с сервера</string>
+    <string name="failed_connect_basementskate">Не удалось подключиться к basementskate</string>
+    <string name="failed_connect_longboardbrand">Не удалось подключиться к longboardbrand</string>
+    <string name="failed_connect_downhill254">Не удалось подключиться к downhill254</string>
+    <string name="cruise_shape">Конус/конус, конус/бочка</string>
+    <string name="freeride_shape">Бочка/Баррель</string>
+    <string name="board_needs_name">Совет должен по крайней мере назвать имя</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Автоматически</item>
+        <item>Свет</item>
+        <item>Темный</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

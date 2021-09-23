@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">Lange levensduur</string>
     <string name="title_activity_board">Boardactiviteit</string>
     <string name="change">Wijziging</string>
     <string name="description">Omschrijving</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">Gemiddelde snelheid:</string>
     <string name="_00_0_mph">00,0 MPH</string>
     <string name="fastest_speed">Snelste Snelheid:</string>
-    <string name="just_another_awesome_skater">Gewoon een geweldige Skater</string>
-    <string name="john_doe">Onbekende</string>
+    <string name="just_another_awesome_skater">Geen beschrijving</string>
+    <string name="john_doe">Onbekend</string>
     <string name="bushing_calculator">Rekenmachine voor bussen</string>
     <string name="weight_lbs">Gewicht (lbs)</string>
     <string name="cruising">Kruissnelheid</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer power draw. Aanbevolen is 2500</string>
     <string name="poll_rate_title">Polling van locatiesnelheid (milliseconden)</string>
     <string name="recording_session">Opnamesessie</string>
-    <string name="not_added_disclaimer">Zal worden toegevoegd in een toekomstige update, maar geniet van de rest van wat de app te bieden heeft!</string>
+    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, en het vinden van een nieuwe locatie te gaan en rog</string>
     <string name="not_added_title">Deze sectie is niet voltooid</string>
     <string name="no_news">Geen nieuws</string>
     <string name="recommended_durometer">Aanbevolen Durometer: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">U hebt geen afbeelding geselecteerd</string>
     <string name="minutes">" Notulen"</string>
     <string name="remove_board_from_session">Bord uit sessie verwijderen</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Toepassen</string>
+    <string name="level_1">Niveau: 1</string>
+    <string name="level">Niveau:</string>
+    <string name="select_theme">Selecteer een thema</string>
+    <string name="kph">Prestatie-indicatoren</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Resultaten</string>
+    <string name="no_achievement">Geen resultaten</string>
+    <string name="failed_city_name">Fout bij vaststellen</string>
+    <string name="failed_elevation_server">Het laden van hoogtegegevens van de server is mislukt</string>
+    <string name="failed_connect_basementskate">Kon geen verbinding maken met basementskate</string>
+    <string name="failed_connect_longboardbrand">Kon geen verbinding maken met longboardbrand</string>
+    <string name="failed_connect_downhill254">Kon geen verbinding maken met downhill254</string>
+    <string name="cruise_shape">Kegel/kegel, kegel/kegel</string>
+    <string name="freeride_shape">Vat/Barrel</string>
+    <string name="board_needs_name">De raad heeft op zijn minst een naam nodig</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Automatisch</item>
+        <item>Licht</item>
+        <item>Donker</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

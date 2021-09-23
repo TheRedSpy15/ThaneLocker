@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Longboard Life</string>
+    <string name="app_name">אורך חיים של Longboard</string>
     <string name="title_activity_board">פעילות BoardActivity</string>
     <string name="change">שינוי</string>
     <string name="description">תיאור</string>
@@ -52,8 +52,8 @@
     <string name="average_speed">מהירות ממוצעת:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">מהירות מהירה:</string>
-    <string name="just_another_awesome_skater">רק עוד \"מחליק על הקרח\".</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">אין תיאור</string>
+    <string name="john_doe">לא ידוע</string>
     <string name="bushing_calculator">חישוב חישוב</string>
     <string name="weight_lbs">משקל (ליברות)</string>
     <string name="cruising">ריסוק</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">באיזו מהירות יש לעדכן את המיקום בעת הקלטת מהלך עבודה. נמוך יותר הוא מהיר יותר אבל יותר כוח לצייר. מומלץ הוא 2500</string>
     <string name="poll_rate_title">שיעור סקר מיקום (אלפיות שניה)</string>
     <string name="recording_session">הקלטת מהלך עבודה</string>
-    <string name="not_added_disclaimer">יתווסף לעדכון עתידי, אך תהנו מכל מה שיש לאפליקציה להציע!</string>
+    <string name="not_added_disclaimer">יתווסף לעדכון עתידי! זה יאפשר מהתכנון פגישות להחליק עם חברים, ומציאת מיקום חדש ללכת ולהחליק</string>
     <string name="not_added_title">סעיף זה לא הסתיים.</string>
     <string name="no_news">אין חדשות</string>
     <string name="recommended_durometer">מד דומטר מומלץ: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">לא בחרתם תמונה.</string>
     <string name="minutes">" דקות"</string>
     <string name="remove_board_from_session">סילוק לוח ממהלך העבודה</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">החלה</string>
+    <string name="level_1">רמה: 1</string>
+    <string name="level">רמה:</string>
+    <string name="select_theme">בחירת ערכה</string>
+    <string name="kph">קיפ</string>
+    <string name="kilometer_short">מ \" מ</string>
+    <string name="achievements">הישגים</string>
+    <string name="no_achievement">ללא מושגים</string>
+    <string name="failed_city_name">נכשל בקביעת</string>
+    <string name="failed_elevation_server">טעינת נתוני גובה מהשרת נכשלה</string>
+    <string name="failed_connect_basementskate">לא ניתן להתחבר אל basementלהחליק</string>
+    <string name="failed_connect_longboardbrand">לא ניתן להתחבר ל-longboardהמותג</string>
+    <string name="failed_connect_downhill254">לא ניתן להתחבר אל downגבעה 254</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">בארל/בארל</string>
+    <string name="board_needs_name">הלוח צריך לפחות שם.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>אוטומטי</item>
+        <item>אור</item>
+        <item>כהה</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">

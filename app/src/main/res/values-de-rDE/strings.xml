@@ -52,8 +52,8 @@
     <string name="average_speed">Durchschnittliche Geschwindigkeit:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Schnellste Geschwindigkeit:</string>
-    <string name="just_another_awesome_skater">Nur ein weiterer toller Skater</string>
-    <string name="john_doe">John Doe</string>
+    <string name="just_another_awesome_skater">Keine Beschreibung</string>
+    <string name="john_doe">Unbekannt</string>
     <string name="bushing_calculator">Buchsenrechner</string>
     <string name="weight_lbs">Gewicht (lbs)</string>
     <string name="cruising">Kreuzfahrt</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Wie schnell sollte die Position aktualisiert werden, wenn eine Sitzung aufgezeichnet wird. Niedriger ist schneller, aber mehr Power-Auslosung. Empfohlen ist 2500</string>
     <string name="poll_rate_title">Positionsabfrageintervall (Millisekunden)</string>
     <string name="recording_session">Sitzungsaufzeichnung</string>
-    <string name="not_added_disclaimer">Wird in einem zukünftigen Update hinzugefügt werden, aber genießen Sie den Rest von dem, was die App zu bieten hat!</string>
+    <string name="not_added_disclaimer">Wird in einem zukünftigen Update hinzugefügt! Es wird die Planung von Skatesitzungen mit Freunden und die Suche nach einem neuen Standort ermöglichen, um zu gehen und zu skaten</string>
     <string name="not_added_title">Dieser Abschnitt ist nicht fertig</string>
     <string name="no_news">Keine Nachrichten</string>
     <string name="recommended_durometer">Empfohlenes Durometer: </string>
@@ -131,10 +131,22 @@
     <string name="no_image_selected">Sie wählen ein Bild nicht aus</string>
     <string name="minutes">" Minuten"</string>
     <string name="remove_board_from_session">Board aus Sitzung entfernen</string>
-    <string name="apply">Apply</string>
-    <string name="level_1">Level: 1</string>
-    <string name="level">Level:</string>
-    <string name="select_theme">Select Theme</string>
+    <string name="apply">Anwenden</string>
+    <string name="level_1">Ebene: 1</string>
+    <string name="level">Ebene:</string>
+    <string name="select_theme">Thema auswählen</string>
+    <string name="kph">KPH</string>
+    <string name="kilometer_short">Km</string>
+    <string name="achievements">Leistungen</string>
+    <string name="no_achievement">Keine Leistungen</string>
+    <string name="failed_city_name">Fehler beim Ermitteln</string>
+    <string name="failed_elevation_server">Fehler beim Laden der Höhendaten vom Server</string>
+    <string name="failed_connect_basementskate">Verbindung zu basementskate konnte nicht hergestellt werden</string>
+    <string name="failed_connect_longboardbrand">Verbindung zu Longboardbrand konnte nicht hergestellt werden</string>
+    <string name="failed_connect_downhill254">Verbindung zum Downhill254 konnte nicht hergestellt werden</string>
+    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
+    <string name="freeride_shape">Barrel/Barrel</string>
+    <string name="board_needs_name">Der Vorstand braucht mindestens einen Namen</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -152,9 +164,9 @@
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
-        <item>Auto</item>
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Automatisch</item>
+        <item>Licht</item>
+        <item>Dunkel</item>
     </string-array>
     <!-- Built-in wheel choices -->
     <string-array name="wheels">
