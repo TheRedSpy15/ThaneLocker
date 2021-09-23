@@ -52,8 +52,8 @@
     <string name="average_speed">Viteză medie:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Viteză cea mai rapidă:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Fără descriere</string>
+    <string name="john_doe">Necunoscut</string>
     <string name="bushing_calculator">Calculator bushing</string>
     <string name="weight_lbs">Greutate (lbs)</string>
     <string name="cruising">Croazieră</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Cât de repede ar trebui să fie actualizată locaţia la înregistrarea unei sesiuni. Mai jos este mai rapid, dar mai mult de putere. Recomandat este 2500</string>
     <string name="poll_rate_title">Rată de sondare locaţie (Milisecunde)</string>
     <string name="recording_session">Înregistrare sesiune</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Va fi adaugat intr-o viitoare actualizare! Va permite de la planificarea sesiuni patate cu prietenii, şi găsirea unei noi locaţii pentru a merge şi a patine</string>
     <string name="not_added_title">Această secţiune nu este terminată</string>
     <string name="no_news">Nicio veste</string>
     <string name="recommended_durometer">Dourmetru recomandat: </string>
@@ -137,16 +137,16 @@
     <string name="select_theme">Selectare temă</string>
     <string name="kph">KPH</string>
     <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="achievements">Realizări</string>
+    <string name="no_achievement">Fără realizări</string>
+    <string name="failed_city_name">A eşuat determinarea</string>
+    <string name="failed_elevation_server">Eşuare la încărcarea datelor de elevaţie de la server</string>
+    <string name="failed_connect_basementskate">Nu s-a putut conecta la basementpatat</string>
+    <string name="failed_connect_longboardbrand">Nu s-a putut conecta la marca longboard</string>
+    <string name="failed_connect_downhill254">Nu s-a putut conecta la downhill254</string>
+    <string name="cruise_shape">Con/Con, Con/Butoi</string>
+    <string name="freeride_shape">Baril/Barrel</string>
+    <string name="board_needs_name">Consiliul are nevoie de cel puţin un nume</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
