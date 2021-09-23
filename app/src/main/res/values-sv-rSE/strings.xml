@@ -52,8 +52,8 @@
     <string name="average_speed">Medelhastighet:</string>
     <string name="_00_0_mph">00.0 MPH</string>
     <string name="fastest_speed">Snabbaste hastighet:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Ingen beskrivning</string>
+    <string name="john_doe">Okänd</string>
     <string name="bushing_calculator">BushberäkningDescription</string>
     <string name="weight_lbs">Vikt (lbs)</string>
     <string name="cruising">Kryssning</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Hur snabbt bör platsen uppdateras vid inspelning av en session. Lägre är snabbare, men mer kraft oavgjort. Rekommenderat är 2500</string>
     <string name="poll_rate_title">Placeringspollningsvärde (millisekunder)</string>
     <string name="recording_session">Inspelningssession</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering! Det kommer att göra det möjligt att planera rullskridskor med vänner, och hitta en ny plats att åka och åka</string>
     <string name="not_added_title">Det här avsnittet är inte klart</string>
     <string name="no_news">Inga nyheter</string>
     <string name="recommended_durometer">Rekommenderad Durometer: </string>
@@ -135,18 +135,18 @@
     <string name="level_1">Nivå: 1</string>
     <string name="level">Nivå:</string>
     <string name="select_theme">Välj tema</string>
-    <string name="kph">KPH</string>
+    <string name="kph">KF</string>
     <string name="kilometer_short">Km</string>
     <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="no_achievement">Inga Achievements</string>
+    <string name="failed_city_name">Misslyckades avgöra</string>
+    <string name="failed_elevation_server">Det gick inte att läsa in elevationsdata från servern</string>
+    <string name="failed_connect_basementskate">Kunde inte ansluta till basementskate</string>
+    <string name="failed_connect_longboardbrand">Kunde inte ansluta till longboardbrand</string>
+    <string name="failed_connect_downhill254">Kunde inte ansluta till downhill254</string>
+    <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
+    <string name="freeride_shape">Barrel / Barrel</string>
+    <string name="board_needs_name">Styrelsen behöver åtminstone ett namn.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
