@@ -52,8 +52,8 @@
     <string name="average_speed">Gemiddelde snelheid:</string>
     <string name="_00_0_mph">00,0 MPH</string>
     <string name="fastest_speed">Snelste Snelheid:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Geen beschrijving</string>
+    <string name="john_doe">Onbekend</string>
     <string name="bushing_calculator">Rekenmachine voor bussen</string>
     <string name="weight_lbs">Gewicht (lbs)</string>
     <string name="cruising">Kruissnelheid</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer power draw. Aanbevolen is 2500</string>
     <string name="poll_rate_title">Polling van locatiesnelheid (milliseconden)</string>
     <string name="recording_session">Opnamesessie</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, en het vinden van een nieuwe locatie te gaan en rog</string>
     <string name="not_added_title">Deze sectie is niet voltooid</string>
     <string name="no_news">Geen nieuws</string>
     <string name="recommended_durometer">Aanbevolen Durometer: </string>
@@ -135,18 +135,18 @@
     <string name="level_1">Niveau: 1</string>
     <string name="level">Niveau:</string>
     <string name="select_theme">Selecteer een thema</string>
-    <string name="kph">KPH</string>
+    <string name="kph">Prestatie-indicatoren</string>
     <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="achievements">Resultaten</string>
+    <string name="no_achievement">Geen resultaten</string>
+    <string name="failed_city_name">Fout bij vaststellen</string>
+    <string name="failed_elevation_server">Het laden van hoogtegegevens van de server is mislukt</string>
+    <string name="failed_connect_basementskate">Kon geen verbinding maken met basementskate</string>
+    <string name="failed_connect_longboardbrand">Kon geen verbinding maken met longboardbrand</string>
+    <string name="failed_connect_downhill254">Kon geen verbinding maken met downhill254</string>
+    <string name="cruise_shape">Kegel/kegel, kegel/kegel</string>
+    <string name="freeride_shape">Vat/Barrel</string>
+    <string name="board_needs_name">De raad heeft op zijn minst een naam nodig</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
