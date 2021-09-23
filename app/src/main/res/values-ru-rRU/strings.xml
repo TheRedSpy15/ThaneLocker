@@ -52,8 +52,8 @@
     <string name="average_speed">Средняя скорость:</string>
     <string name="_00_0_mph">00,0 MPH</string>
     <string name="fastest_speed">Самая быстрая Скорость:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Без описания</string>
+    <string name="john_doe">Неизвестно</string>
     <string name="bushing_calculator">Калькулятор</string>
     <string name="weight_lbs">Вес (lbs)</string>
     <string name="cruising">Крейсерский</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Нижний-это быстрее, но больше энергии рисуется. Рекомендуется: 2500</string>
     <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
     <string name="recording_session">Запись сеанса</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать занятия на коньках с друзьями, а также находить новое место для кататься и кататься на коньках</string>
     <string name="not_added_title">Этот раздел не завершен</string>
     <string name="no_news">Нет новостей</string>
     <string name="recommended_durometer">Рекомендуемый дурометр: </string>
@@ -136,17 +136,17 @@
     <string name="level">Уровень:</string>
     <string name="select_theme">Выбрать тему</string>
     <string name="kph">KPH</string>
-    <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="kilometer_short">Км</string>
+    <string name="achievements">Достижения</string>
+    <string name="no_achievement">Нет достижений</string>
+    <string name="failed_city_name">Не удалось определить</string>
+    <string name="failed_elevation_server">Не удалось загрузить данные повышения с сервера</string>
+    <string name="failed_connect_basementskate">Не удалось подключиться к basementskate</string>
+    <string name="failed_connect_longboardbrand">Не удалось подключиться к longboardbrand</string>
+    <string name="failed_connect_downhill254">Не удалось подключиться к downhill254</string>
+    <string name="cruise_shape">Конус/конус, конус/бочка</string>
+    <string name="freeride_shape">Бочка/Баррель</string>
+    <string name="board_needs_name">Совет должен по крайней мере назвать имя</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
