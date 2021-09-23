@@ -52,8 +52,8 @@
     <string name="average_speed">Tốc Độ Trung Bình:</string>
     <string name="_00_0_mph">0. 0 MPH</string>
     <string name="fastest_speed">Tốc độ nhanh nhất:</string>
-    <string name="just_another_awesome_skater">No Description</string>
-    <string name="john_doe">Unknown</string>
+    <string name="just_another_awesome_skater">Không Mô Tả</string>
+    <string name="john_doe">Chưa biết</string>
     <string name="bushing_calculator">Trình tính đánh bóng</string>
     <string name="weight_lbs">Trọng lượng (lbs)</string>
     <string name="cruising">Đường trường</string>
@@ -102,7 +102,7 @@
     <string name="poll_rate_sum">Vị trí sẽ được cập nhật nhanh như thê ́ nào khi ghi lại một phiên. Thấp hơn thì nhanh hơn nhưng kéo thêm sức mạnh. Khuyến nghị là 2500</string>
     <string name="poll_rate_title">Tỷ lệ đánh dấu vị trí (Milligiây)</string>
     <string name="recording_session">Phiên chạy</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Sẽ được thêm vào cập nhật trong tương lai! Nó sẽ cho phép từ kế hoạch trượt ván với bạn bè, và tìm ra một địa điểm mới để đi và trượt.</string>
     <string name="not_added_title">Phần này chưa kết thúc</string>
     <string name="no_news">Không có tin</string>
     <string name="recommended_durometer">Khuyến cáo Durometer: </string>
@@ -137,16 +137,16 @@
     <string name="select_theme">Chọn sắc thái</string>
     <string name="kph">KPH</string>
     <string name="kilometer_short">Km</string>
-    <string name="achievements">Achievements</string>
-    <string name="no_achievement">No Achievements</string>
-    <string name="failed_city_name">Failed to determine</string>
-    <string name="failed_elevation_server">Failed to load elevation data from server</string>
-    <string name="failed_connect_basementskate">Couldn\'t Connect to basementskate</string>
-    <string name="failed_connect_longboardbrand">Couldn\'t Connect to longboardbrand</string>
-    <string name="failed_connect_downhill254">Couldn\'t Connect to downhill254</string>
-    <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
-    <string name="freeride_shape">Barrel/Barrel</string>
-    <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="achievements">Thành tích</string>
+    <string name="no_achievement">Không có thành tích</string>
+    <string name="failed_city_name">Không thể xác định</string>
+    <string name="failed_elevation_server">Không thể tải dư ̃ liệu độ cao khỏi máy chủ</string>
+    <string name="failed_connect_basementskate">Không thể kết nối để basementskate</string>
+    <string name="failed_connect_longboardbrand">Không thể kết nối đến thương hiệu dài</string>
+    <string name="failed_connect_downhill254">Không thể kết nối tới đỉnh đồi 254</string>
+    <string name="cruise_shape">Hình nón/hình nón, hình nón/thùng</string>
+    <string name="freeride_shape">Thùng/Barrel</string>
+    <string name="board_needs_name">Ban quản trị cần ít nhất một tên</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
