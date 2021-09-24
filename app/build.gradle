@@ -6,7 +6,7 @@ android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "com.theredspy15.thanelocker"
+        applicationId "com.theredspy15.longboardlife"
         minSdk 24
         targetSdk 30
         versionCode 2
