@@ -16,6 +16,7 @@ import androidx.preference.PreferenceManager;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.longboardlife.models.Board;
 import com.theredspy15.longboardlife.models.Profile;
 import com.theredspy15.longboardlife.models.Session;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     public static SharedPreferences preferences;
+    public static FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         if (Session.savedSessions.isEmpty()) Session.load();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
+
+        database = FirebaseFirestore.getInstance();
 
         App.setContext(this);
 
