@@ -1,6 +1,8 @@
 # ThaneLocker
 Longboard locker app. Manage board inventory and track sessions with each board
+
 # Publisher information
+
 ## LongboardBrand
 - Email: longboardbranddotcom@gmail.com
 - Phone: (1) 845-248-1944
