@@ -55,17 +55,9 @@
             app:icon="@drawable/ic_outline_speed_24"
             android:title="Convert to kilometers per hour" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/sources_title">
-        <CheckBoxPreference
+    <PreferenceCategory android:title="@string/sources_title"><CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="true"
-            android:key="downhill254"
-            android:persistent="true"
-            app:icon="@drawable/ic_baseline_article_24"
-            android:title="@string/downhill254_title" />
-        <CheckBoxPreference
-            app:iconSpaceReserved="true"
-            android:defaultValue="false"
             android:key="longboardbrand"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
@@ -77,6 +69,11 @@
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
             android:title="Basement Skate Blog" />
+        <Preference android:title="View Publisher Contact Information"
+            app:icon="@drawable/ic_baseline_info_24">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://theredspy15.github.io/ThaneLocker/" />
+        </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
         <ListPreference
@@ -90,7 +87,6 @@
             android:title="@string/select_theme" />
     </PreferenceCategory>
     <Preference android:title="View Privacy Policy"
-        android:key="privacyPolicy"
         app:icon="@drawable/ic_baseline_policy_24">
         <intent android:action="android.intent.action.VIEW"
             android:data="https://longboard-life.flycricket.io/privacy.html" />

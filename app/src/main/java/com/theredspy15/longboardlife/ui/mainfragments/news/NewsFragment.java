@@ -110,17 +110,6 @@ public class NewsFragment extends Fragment {
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = null;
 
-        if (MainActivity.preferences.getBoolean("downhill254",true)) {
-            String url = "https://downhill254.com/blog/feed";
-            try {
-                feed = input.build(new XmlReader(new URL(url)));
-            } catch (IOException e) {
-                e.printStackTrace();
-                Snackbar.make(binding.getRoot(), R.string.failed_connect_downhill254, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        }
-
         if (MainActivity.preferences.getBoolean("longboardbrand",false)) {
             String url = "https://longboardbrand.com/blog/feed";
             try {
