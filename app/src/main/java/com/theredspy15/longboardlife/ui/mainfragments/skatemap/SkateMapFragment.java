@@ -14,18 +14,13 @@ import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSkatemapBinding;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.theredspy15.longboardlife.models.Meetup;
-import com.theredspy15.longboardlife.ui.activitycontrollers.MainActivity;
 import com.theredspy15.longboardlife.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
 
 public class SkateMapFragment extends Fragment {
 
@@ -33,7 +28,6 @@ public class SkateMapFragment extends Fragment {
     private FragmentSkatemapBinding binding;
 
     private MapView map = null;
-    IMapController mapController;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,23 +47,14 @@ public class SkateMapFragment extends Fragment {
         //note, the load method also sets the HTTP User Agent to your application's package name, abusing osm's
         //tile servers will get you banned based on this string
 
-        // set up map itself
-        Configuration.getInstance().load(requireContext(), PreferenceManager.getDefaultSharedPreferences(requireContext()));
-        map = binding.map;
+        map = binding.maplayout.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
-        mapController = map.getController();
+        IMapController mapController = map.getController();
         mapController.setZoom(5.0);
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
-        map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
-
-        // determine theme for map
-        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
-            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
-
-        loadPoints();
+        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         // WIP disclaimer dialog
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
@@ -81,27 +66,6 @@ public class SkateMapFragment extends Fragment {
         alertDialog.show();
 
         return root;
-    }
-
-    private void loadPoints() {
-        MainActivity.database.collection("meetups")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Meetup meetup = document.toObject(Meetup.class);
-                            GeoPoint geoPoint = new GeoPoint(meetup.getLatitude(), meetup.getLongitude());
-                            Marker marker = new Marker(map);
-                            marker.setTitle(meetup.getTitle());
-                            marker.setSubDescription(meetup.getDescription());
-                            marker.setPosition(geoPoint);
-                            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-                            map.getOverlays().add(marker);
-                        }
-                    } else {
-                        System.out.println("Error getting documents." + task.getException());
-                    }
-                });
     }
 
     @Override
