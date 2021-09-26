@@ -8,7 +8,7 @@ public class Meetup {
     private int meet_id = 0;
     private String title;
     private String description;
-    private List<Integer> attending_ids = new ArrayList<>(); // people attending
+    private List<Integer> attending_users = new ArrayList<>(); // owner is always the first user, index 0
     private double latitude;
     private double longitude;
     private Date date;
@@ -33,12 +33,12 @@ public class Meetup {
         this.description = description;
     }
 
-    public List<Integer> getAttending_ids() {
-        return attending_ids;
+    public List<Integer> getAttending_users() {
+        return attending_users;
     }
 
-    public void setAttending_ids(List<Integer> attending_ids) {
-        this.attending_ids = attending_ids;
+    public void getAttending_users(List<Integer> attending_users) {
+        this.attending_users = attending_users;
     }
 
     public double getLatitude() {
