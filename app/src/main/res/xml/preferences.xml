@@ -46,7 +46,7 @@
             app:title="@string/poll_rate_title"
             android:key="pollrate"
             android:persistent="true"
-            android:defaultValue="2500"
+            android:defaultValue="3500"
             android:max="10000"
             app:showSeekBarValue="true"
             app:min="1500"
