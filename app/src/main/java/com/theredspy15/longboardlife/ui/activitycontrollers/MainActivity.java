@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         if (Board.savedBoards.isEmpty()) Board.load();
         if (Session.savedSessions.isEmpty()) Session.load();
         if (Meetup.meetups.isEmpty()) Meetup.loadFromFirebase();
-
         if (preferences.getBoolean("firstTime",true)) firstTime();
 
         App.setContext(this);
