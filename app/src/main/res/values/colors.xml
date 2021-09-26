@@ -11,4 +11,5 @@
     <color name="recording_session">#FF5722</color>
     <color name="rare">#03A9F4</color>
     <color name="legendary">#FF9800</color>
+    <color name="confirmation_green">#43A047</color>
 </resources>

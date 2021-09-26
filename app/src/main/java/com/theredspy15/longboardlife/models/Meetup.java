@@ -4,7 +4,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Meetup {
@@ -14,7 +13,7 @@ public class Meetup {
     private List<Integer> attending_users = new ArrayList<>(); // people attending
     private double latitude;
     private double longitude;
-    private Date date;
+    private String date;
 
     public static ArrayList<Meetup> meetups = new ArrayList<>();
 
@@ -31,6 +30,15 @@ public class Meetup {
                     } else {
                         // failed
                     }
+                });
+    }
+
+    public static void uploadMeetup(Meetup meetup) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("meetups").document(String.valueOf(meetup.getMeet_id())).set(meetup)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
                 });
     }
 
@@ -74,11 +82,11 @@ public class Meetup {
         this.longitude = longitude;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
