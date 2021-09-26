@@ -14,20 +14,24 @@ import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSkatemapBinding;
+import com.theredspy15.longboardlife.customviews.PriorityMapView;
+import com.theredspy15.longboardlife.models.Meetup;
 import com.theredspy15.longboardlife.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
+import org.osmdroid.views.CustomZoomButtonsController;
+import org.osmdroid.views.overlay.Marker;
 
 public class SkateMapFragment extends Fragment {
 
     private SkateMapViewModel skatemapViewModel;
     private FragmentSkatemapBinding binding;
 
-    private MapView map = null;
+    private PriorityMapView map = null;
+    IMapController mapController;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,14 +51,21 @@ public class SkateMapFragment extends Fragment {
         //note, the load method also sets the HTTP User Agent to your application's package name, abusing osm's
         //tile servers will get you banned based on this string
 
-        map = binding.maplayout.findViewById(R.id.map);
+        // setup map
+        Configuration.getInstance().load(requireContext(), PreferenceManager.getDefaultSharedPreferences(requireContext()));
+        map = binding.map;
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
-        IMapController mapController = map.getController();
+        mapController = map.getController();
         mapController.setZoom(5.0);
         GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
         mapController.setCenter(startPoint);
-        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
+
+        // determine theme for map
+        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
         // WIP disclaimer dialog
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
@@ -65,7 +76,19 @@ public class SkateMapFragment extends Fragment {
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
 
+        loadMeets();
+
         return root;
+    }
+
+    private void loadMeets() {
+        for (Meetup meet : Meetup.meetups) {
+            GeoPoint startPoint = new GeoPoint(meet.getLatitude(),meet.getLongitude());
+            Marker startMarker = new Marker(map);
+            startMarker.setPosition(startPoint);
+            startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            map.getOverlays().add(startMarker);
+        }
     }
 
     @Override

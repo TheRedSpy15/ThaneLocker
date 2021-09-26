@@ -17,6 +17,7 @@ import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theredspy15.longboardlife.models.Board;
+import com.theredspy15.longboardlife.models.Meetup;
 import com.theredspy15.longboardlife.models.Profile;
 import com.theredspy15.longboardlife.models.Session;
 import com.theredspy15.longboardlife.utils.App;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
         if (Session.savedSessions.isEmpty()) Session.load();
+        if (Meetup.meetups.isEmpty()) Meetup.loadFromFirebase();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
 

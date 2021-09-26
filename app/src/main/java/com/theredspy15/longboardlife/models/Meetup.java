@@ -1,5 +1,8 @@
 package com.theredspy15.longboardlife.models;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,13 +11,27 @@ public class Meetup {
     private int meet_id = 0;
     private String title;
     private String description;
-    private List<Integer> attending_ids = new ArrayList<>(); // people attending
+    private List<Integer> attending_users = new ArrayList<>(); // people attending
     private double latitude;
     private double longitude;
     private Date date;
 
-    public static void loadFromFirebase() {
+    public static ArrayList<Meetup> meetups = new ArrayList<>();
 
+    public synchronized static void loadFromFirebase() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("meetups")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            meetups.add(document.toObject(Meetup.class));
+                            System.out.println(meetups.size());
+                        }
+                    } else {
+                        // failed
+                    }
+                });
     }
 
     public String getTitle() {
@@ -33,12 +50,12 @@ public class Meetup {
         this.description = description;
     }
 
-    public List<Integer> getAttending_ids() {
-        return attending_ids;
+    public List<Integer> getAttending_users() {
+        return attending_users;
     }
 
-    public void setAttending_ids(List<Integer> attending_ids) {
-        this.attending_ids = attending_ids;
+    public void setAttending_users(List<Integer> attending_users) {
+        this.attending_users = attending_users;
     }
 
     public double getLatitude() {

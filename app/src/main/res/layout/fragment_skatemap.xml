@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.theredspy15.longboardlife.ui.mainfragments.skatemap.SkateMapFragment">
 
-    <org.osmdroid.views.MapView
+    <com.theredspy15.longboardlife.customviews.PriorityMapView
         android:id="@+id/map"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

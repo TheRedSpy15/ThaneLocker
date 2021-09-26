@@ -96,6 +96,11 @@ public class SessionActivity extends AppCompatActivity {
         mapController.setCenter(startPoint);
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
+        // determine theme for map
+        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+
         loadPoints();
         loadData();
     }
@@ -313,11 +318,6 @@ public class SessionActivity extends AppCompatActivity {
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         finishMarker.setTextIcon(getString(R.string.finish));
         map.getOverlays().add(finishMarker);
-
-        // determine theme
-        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
-            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
     }
 
     public void deleteSession(View view) {
