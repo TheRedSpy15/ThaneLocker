@@ -89,4 +89,10 @@
             android:persistent="true"
             android:title="@string/select_theme" />
     </PreferenceCategory>
+    <Preference android:title="View Privacy Policy"
+        android:key="privacyPolicy"
+        app:icon="@drawable/ic_baseline_policy_24">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://longboard-life.flycricket.io/privacy.html" />
+    </Preference>
 </androidx.preference.PreferenceScreen>
