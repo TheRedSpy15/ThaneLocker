@@ -51,6 +51,14 @@ public class BoardActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Session.save();
+        Board.save();
+    }
+
     void populateViews(Board board) {
         if (board.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
@@ -139,11 +147,9 @@ public class BoardActivity extends AppCompatActivity {
                     dialog.dismiss();
                     Board.savedBoards.remove(board.getId());
                     Board.savedBoardIds.remove((Integer) board.getId());
-                    Board.save();
 
                     for (Session session : Session.sessionsWithBoard(board.getId()))
                         Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
-                    Session.save();
 
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

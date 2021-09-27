@@ -101,7 +101,6 @@ public class BoardsFragment extends Fragment {
                                     dialog.dismiss();
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove((Integer) board.getId());
-                                    Board.save();
                                     boardThread = new Thread(this::loadBoards);
                                     boardThread.start();
                                 });

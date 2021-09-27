@@ -102,7 +102,6 @@ public class SessionsFragment extends Fragment {
                                     dialog.dismiss();
                                     Session.savedSessions.remove(session.getId());
                                     Session.savedSessionIds.remove((Integer) session.getId());
-                                    Session.save();
                                     sessionThread = new Thread(this::loadSessions);
                                     sessionThread.start();
                                 });
@@ -199,10 +198,8 @@ public class SessionsFragment extends Fragment {
             Session.savedSessionIds.add(newSession.getId());
             sessionThread = new Thread(this::loadSessions);
             sessionThread.start();
-            Session.save();
 
             Profile.localProfile.addXp((int) (Session.xpValue*newSession.getLocations().size()));
-            Profile.save();
         } else
             Snackbar.make(binding.newSessionButton, R.string.not_enough_data, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

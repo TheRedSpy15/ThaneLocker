@@ -149,7 +149,6 @@ public class SessionActivity extends AppCompatActivity {
                 }
 
                 if (!session.getElevationPoints().isEmpty()) {
-                    Session.save();
                     runOnUiThread(this::loadElevationChart);
                 }
             });
@@ -168,7 +167,6 @@ public class SessionActivity extends AppCompatActivity {
                 chip.setVisibility(View.GONE);
                 session.getTags().remove(chip.getText()); // TODO: remove by id
                 Objects.requireNonNull(Session.savedSessions.get(session.getId())).setTags(session.getTags());
-                Session.save();
             });
             group.addView(chip);
         }
@@ -260,7 +258,7 @@ public class SessionActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     dialog.dismiss();
                     session.getBoard_ids().remove((Integer) Board.BoardNameToId((String) button.getText()));
-                    Session.save();
+
                     loadBoardsUsed();
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
@@ -284,7 +282,6 @@ public class SessionActivity extends AppCompatActivity {
         b.setItems(boards, (dialog, which) -> {
             dialog.dismiss();
             session.getBoard_ids().add(Board.BoardNameToId(boards[which]));
-            Session.save();
 
             loadBoardsUsed();
         });
@@ -329,7 +326,7 @@ public class SessionActivity extends AppCompatActivity {
                     dialog.dismiss();
                     Session.savedSessions.remove(session.getId());
                     Session.savedSessionIds.remove((Integer) session.getId());
-                    Session.save();
+
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
                 });
@@ -346,7 +343,6 @@ public class SessionActivity extends AppCompatActivity {
             dialog.dismiss();
             session.getTags().add(types[which]);
             Session.savedSessions.get(session.getId()).setTags(session.getTags());
-            Session.save();
 
             loadTags();
         });
@@ -366,11 +362,19 @@ public class SessionActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
+
         //this will refresh the osmdroid configuration on resuming.
         //if you make changes to the configuration, use
         //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         //Configuration.getInstance().save(this, prefs);
         map.onPause();  //needed for compass, my location overlays, v6.0.0 and up
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Session.save();
     }
 
     private void loadSpeedChart() {

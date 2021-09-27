@@ -52,6 +52,13 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+
+        Profile.save();
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -106,7 +113,6 @@ public class EditProfileActivity extends AppCompatActivity {
         Profile.localProfile.setImage(imageBytes);
         Profile.localProfile.setName(binding.editTextName.getText().toString());
         Profile.localProfile.setDescription(binding.editTextDescription.getText().toString());
-        Profile.save();
 
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);

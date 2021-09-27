@@ -58,6 +58,7 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
+    implementation "io.grpc:grpc-okhttp:1.32.2"
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.8.0'

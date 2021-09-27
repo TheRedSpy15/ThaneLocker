@@ -170,6 +170,9 @@ public class SkateMapFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+
+        Meetup.loadFromFirebase();
+
         //this will refresh the osmdroid configuration on resuming.
         //if you make changes to the configuration, use
         //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

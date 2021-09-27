@@ -18,6 +18,7 @@ public class Meetup {
     public static ArrayList<Meetup> meetups = new ArrayList<>();
 
     public synchronized static void loadFromFirebase() {
+        meetups.clear();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("meetups")
                 .get()

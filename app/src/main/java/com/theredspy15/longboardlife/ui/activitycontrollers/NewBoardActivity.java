@@ -65,6 +65,13 @@ public class NewBoardActivity extends AppCompatActivity {
         checkAdvanceMode(board.isAdvanceMode());
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Board.save();
+    }
+
     private void toggleAdvanceMode(CompoundButton compoundButton, boolean isChecked) {
         checkAdvanceMode(isChecked);
     }
@@ -222,14 +229,12 @@ public class NewBoardActivity extends AppCompatActivity {
             Intent myIntent;
             if (isEditing) {
                 Board.savedBoards.put(board.getId(),board);
-                Board.save();
 
                 myIntent = new Intent(this, BoardActivity.class);
                 myIntent.putExtra("board_id",board.getId());
             } else {
                 Board.savedBoards.put(board.getId(), board);
                 Board.savedBoardIds.add(board.getId());
-                Board.save();
 
                 myIntent = new Intent(this, BoardActivity.class);
                 myIntent.putExtra("board_id",board.getId());
