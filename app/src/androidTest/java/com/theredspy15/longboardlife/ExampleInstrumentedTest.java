@@ -1,4 +1,4 @@
-package com.theredspy15.longboardlife;
+package com.theredspy15.thanelocker;
 
 import static org.junit.Assert.assertEquals;
 
