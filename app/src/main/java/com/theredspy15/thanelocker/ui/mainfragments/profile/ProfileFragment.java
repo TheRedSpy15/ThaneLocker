@@ -234,7 +234,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.distances),requireContext());
 
         // set data
         chart.setData(data);
@@ -263,7 +263,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
 
         // set data
         chart.setData(data);

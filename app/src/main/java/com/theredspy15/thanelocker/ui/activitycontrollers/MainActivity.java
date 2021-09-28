@@ -1,4 +1,4 @@
-package com.theredspy15.longboardlife.ui.activitycontrollers;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import androidx.preference.PreferenceManager;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.theredspy15.longboardlife.models.Board;
-import com.theredspy15.longboardlife.models.Meetup;
-import com.theredspy15.longboardlife.models.Profile;
-import com.theredspy15.longboardlife.models.Session;
-import com.theredspy15.longboardlife.utils.App;
+import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Meetup;
+import com.theredspy15.thanelocker.models.Profile;
+import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.utils.App;
 
 public class MainActivity extends AppCompatActivity {
 

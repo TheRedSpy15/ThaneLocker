@@ -87,7 +87,7 @@ public class SettingsFragment extends Fragment {
                 myPref.setOnPreferenceClickListener(preference -> {
                     // Configure Google Sign In
                     GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                            .requestIdToken("54419120166-hs016kdul4ajjt2h2jhrmlbk7bdtvae9.apps.googleusercontent.com")
+                            .requestIdToken("54419120166-j9r26huvdl4vcsctd2qtpg6og5r77nm3.apps.googleusercontent.com")
                             .requestEmail()
                             .build();
                     GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso);

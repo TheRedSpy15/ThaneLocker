@@ -7,15 +7,19 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:54419120166:android:23280c6290c361cb16c6e7",
+        "mobilesdk_app_id": "1:54419120166:android:d07d849d2be3cd7b16c6e7",
         "android_client_info": {
           "package_name": "com.theredspy15.thanelocker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "54419120166-bf6dvt9r9nnsmin4vmutl0ma8i9f6sda.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "54419120166-j9r26huvdl4vcsctd2qtpg6og5r77nm3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theredspy15.thanelocker",
+            "certificate_hash": "2455de4cfbee336f58365fe418e0e4640bbf8d84"
+          }
         }
       ],
       "api_key": [
@@ -25,12 +29,7 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "54419120166-bf6dvt9r9nnsmin4vmutl0ma8i9f6sda.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

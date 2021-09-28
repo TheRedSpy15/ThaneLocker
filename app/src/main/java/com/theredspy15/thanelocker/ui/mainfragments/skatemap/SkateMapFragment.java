@@ -1,4 +1,4 @@
-package com.theredspy15.longboardlife.ui.mainfragments.skatemap;
+package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -20,9 +20,9 @@ import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSkatemapBinding;
-import com.theredspy15.longboardlife.models.Meetup;
-import com.theredspy15.longboardlife.models.Profile;
-import com.theredspy15.longboardlife.utils.MapThemes;
+import com.theredspy15.thanelocker.models.Meetup;
+import com.theredspy15.thanelocker.models.Profile;
+import com.theredspy15.thanelocker.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;

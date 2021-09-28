@@ -1,4 +1,4 @@
-package com.theredspy15.longboardlife.models;
+package com.theredspy15.thanelocker.models;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
