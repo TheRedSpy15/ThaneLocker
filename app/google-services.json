@@ -7,15 +7,19 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:54419120166:android:23280c6290c361cb16c6e7",
+        "mobilesdk_app_id": "1:54419120166:android:496ac972fcbc2c7216c6e7",
         "android_client_info": {
           "package_name": "com.theredspy15.longboardlife"
         }
       },
       "oauth_client": [
         {
-          "client_id": "54419120166-bf6dvt9r9nnsmin4vmutl0ma8i9f6sda.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "54419120166-n8hv1m2t5u6pa3n9cbqupn3ej42ji1bs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theredspy15.longboardlife",
+            "certificate_hash": "2455de4cfbee336f58365fe418e0e4640bbf8d84"
+          }
         }
       ],
       "api_key": [
@@ -25,12 +29,7 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "54419120166-bf6dvt9r9nnsmin4vmutl0ma8i9f6sda.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
