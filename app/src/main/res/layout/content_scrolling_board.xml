@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/board_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.theredspy15.longboardlife.ui.activitycontrollers.BoardActivity"
+    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity"
     tools:showIn="@layout/activity_board">
 
     <LinearLayout

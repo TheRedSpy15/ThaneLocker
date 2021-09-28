@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_boards"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.boards.BoardsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.boards.BoardsFragment"
         android:label="Boards"
         tools:layout="@layout/fragment_boards" >
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_sessions"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.sessions.SessionsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment"
         android:label="Sessions"
         tools:layout="@layout/fragment_sessions" >
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.profile.ProfileFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -58,45 +58,45 @@
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.news.NewsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.news.NewsFragment"
         android:label="News"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.settings.SettingsFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_calculator"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.calculator.CalculatorFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.calculator.CalculatorFragment"
         android:label="Calculator"
         tools:layout="@layout/fragment_calculator" />
 
     <fragment
         android:id="@+id/navigation_skatemap"
-        android:name="com.theredspy15.longboardlife.ui.mainfragments.skatemap.SkateMapFragment"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.skatemap.SkateMapFragment"
         android:label="Map"
         tools:layout="@layout/fragment_skatemap" />
     <activity
         android:id="@+id/editProfileActivity"
-        android:name="com.theredspy15.longboardlife.ui.activitycontrollers.EditProfileActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity"
         android:label="activity_edit_profile"
         tools:layout="@layout/activity_edit_profile" />
     <activity
         android:id="@+id/sessionActivity"
-        android:name="com.theredspy15.longboardlife.ui.activitycontrollers.SessionActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
         android:label="activity_session"
         tools:layout="@layout/activity_session" />
     <activity
         android:id="@+id/newBoardActivity"
-        android:name="com.theredspy15.longboardlife.ui.activitycontrollers.NewBoardActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity"
         android:label="activity_new_board"
         tools:layout="@layout/activity_new_board" />
     <activity
         android:id="@+id/boardActivity"
-        android:name="com.theredspy15.longboardlife.ui.activitycontrollers.BoardActivity"
+        android:name="com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity"
         android:label="content_scrolling_board"
         tools:layout="@layout/content_scrolling_board" />
 

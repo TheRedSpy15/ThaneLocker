@@ -7,7 +7,7 @@
     tools:viewBindingIgnore="true"
     android:id="@+id/session_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.theredspy15.longboardlife.ui.activitycontrollers.SessionActivity"
+    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity"
     tools:showIn="@layout/activity_session">
 
     <LinearLayout

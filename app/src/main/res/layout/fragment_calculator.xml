@@ -7,7 +7,7 @@
     android:paddingTop="50dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.theredspy15.longboardlife.ui.mainfragments.calculator.CalculatorFragment">
+    tools:context="com.theredspy15.thanelocker.ui.mainfragments.calculator.CalculatorFragment">
 
     <TextView
         android:layout_width="wrap_content"
