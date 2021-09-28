@@ -4,6 +4,5 @@ import androidx.lifecycle.ViewModel;
 
 public class BoardsViewModel extends ViewModel {
 
-    public BoardsViewModel() { }
-
+  public BoardsViewModel() {}
 }

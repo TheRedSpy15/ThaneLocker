@@ -12,12 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentProfileBinding;
 import com.github.mikephil.charting.charts.LineChart;
@@ -31,254 +29,284 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.thanelocker.utils.App;
-
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
-    private FragmentProfileBinding binding;
+  private ProfileViewModel profileViewModel;
+  private FragmentProfileBinding binding;
 
-    private final Profile profile = Profile.localProfile;
+  private final Profile profile = Profile.localProfile;
 
-    private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
-    private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
+  private final ArrayList<Session> sessions =
+      Profile.sessionsWithLocalProfile();
+  private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        profileViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
+  public View onCreateView(@NonNull LayoutInflater inflater,
+                           ViewGroup container, Bundle savedInstanceState) {
+    profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    binding = FragmentProfileBinding.inflate(inflater, container, false);
+    View root = binding.getRoot();
 
-        loadAllData();
+    loadAllData();
 
-        return root;
+    return root;
+  }
+
+  private void loadAllData() { // TODO: multi-thread this
+    binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+    binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
+    if (profile.getName() != null)
+      binding.nameText.setText(profile.getName());
+    if (profile.getDescription() != null)
+      binding.descriptionView.setText(profile.getDescription());
+
+    if (profile.getImage() != null) {
+      Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0,
+                                                    profile.getImage().length);
+      binding.profilePictureView.setImageBitmap(bitmap);
     }
 
-    private void loadAllData() { // TODO: multi-thread this
-        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
-        if (profile.getName() != null) binding.nameText.setText(profile.getName());
-        if (profile.getDescription() != null) binding.descriptionView.setText(profile.getDescription());
+    loadFavoriteBoard();
+    loadXpBar();
 
-        if (profile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);
-            binding.profilePictureView.setImageBitmap(bitmap);
-        }
-
-        loadFavoriteBoard();
-        loadXpBar();
-
-        if (sessions.isEmpty()) {
-            binding.chartsLayout.setVisibility(View.GONE);
-        } else {
-            loadSpeedsChart();
-            loadTopSpeedsChart();
-            loadDistancesChart();
-            loadDurationsChart();
-            loadTextViewStats();
-        }
+    if (sessions.isEmpty()) {
+      binding.chartsLayout.setVisibility(View.GONE);
+    } else {
+      loadSpeedsChart();
+      loadTopSpeedsChart();
+      loadDistancesChart();
+      loadDurationsChart();
+      loadTextViewStats();
     }
+  }
 
-    void loadXpBar() {
-        binding.xpView.setProgress((int) profile.getLevel_xp());
-        binding.levelView.setText(getString(R.string.level)+" "+profile.getLevel());
+  void loadXpBar() {
+    binding.xpView.setProgress((int)profile.getLevel_xp());
+    binding.levelView.setText(getString(R.string.level) + " " +
+                              profile.getLevel());
+  }
+
+  public void loadEditProfile(View view) {
+    Intent myIntent = new Intent(requireContext(), EditProfileActivity.class);
+    startActivity(myIntent);
+  }
+
+  private void loadTextViewStats() {
+    float tDistance = 0;
+    float tAvgDistance = 0;
+    float tAvgSpeed = 0;
+
+    Resources resources = getResources();
+
+    for (Session session : sessions) {
+      // fastest speed
+      float top = 0;
+      if (Float.parseFloat(session.getTopSpeed()) > top)
+        top = Float.parseFloat(session.getTopSpeed());
+      binding.topSpeedView.setText(App.getSpeedFormatted(top, resources));
+
+      // furthest distance
+      top = 0;
+      if (Float.parseFloat(session.getTotalDistance()) > top)
+        top = Float.parseFloat(session.getTotalDistance());
+      binding.furthestDistanceView.setText(
+          App.getDistanceFormatted(top, resources));
+
+      tDistance += Float.parseFloat(session.getTotalDistance());
+      tAvgDistance += Float.parseFloat(session.getTotalDistance());
+      tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
     }
+    tAvgSpeed = tAvgSpeed / sessions.size();
+    tAvgDistance = tAvgDistance / sessions.size();
 
-    public void loadEditProfile(View view) {
-        Intent myIntent = new Intent(requireContext(), EditProfileActivity.class);
+    binding.totalDistanceView.setText(
+        App.getDistanceFormatted(tDistance, resources));
+    binding.avgDistanceView.setText(
+        App.getDistanceFormatted(tAvgDistance, resources));
+    binding.avgSpeedView.setText(App.getSpeedFormatted(tAvgSpeed, resources));
+  }
+
+  private void loadFavoriteBoard() {
+    LinearLayout linearLayout = binding.statisticsLayout;
+    LinearLayout.LayoutParams layout =
+        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                                      ViewGroup.LayoutParams.MATCH_PARENT);
+    layout.setMargins(80, 0, 80, 0);
+
+    Board board = Profile.favoriteBoard();
+
+    Button button = new Button(requireContext());
+    if (board != null) {
+      button.setText(board.getName());
+      button.setTextSize(18);
+      button.setBackgroundColor(requireContext().getColor(R.color.grey));
+      button.getBackground().setAlpha(64);
+      button.setPadding(0, 0, 0, 0);
+      button.setAllCaps(false);
+      button.setOnClickListener(v -> {
+        Intent myIntent = new Intent(requireContext(), BoardActivity.class);
+        myIntent.putExtra("board_id", board.getId());
         startActivity(myIntent);
+      });
+
+      if (board.getImage() != null) {
+        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0,
+                                                      board.getImage().length);
+        Drawable drawable = new BitmapDrawable(
+            this.getResources(),
+            Bitmap.createScaledBitmap(bitmap, 400, 400, false));
+        button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, null,
+                                                               null, null);
+      }
+
+    } else {
+      button.setText(R.string.no_favorite);
+      button.setTextSize(18);
+      button.setBackgroundColor(requireContext().getColor(R.color.grey));
+      button.getBackground().setAlpha(64);
+      button.setPadding(0, 0, 0, 0);
+      button.setAllCaps(false);
+    }
+    linearLayout.addView(button, 9, layout);
+  }
+
+  public void loadAchievements(View view) {
+    Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
+    myIntent.putExtra("achievements", profile.getAchievements());
+    startActivity(myIntent);
+  }
+
+  private void loadSpeedsChart() {
+    LineChart chart = binding.speedsChart;
+
+    ArrayList<Entry> values = new ArrayList<>();
+
+    for (int i = 0; i < sessions.size(); i++) {
+      values.add(new Entry(
+          i, Float.parseFloat(sessions.get(i).getAvgSpeed()),
+          ResourcesCompat.getDrawable(
+              getResources(), R.drawable.ic_baseline_location_on_24, null)));
     }
 
-    private void loadTextViewStats() {
-        float tDistance = 0;
-        float tAvgDistance = 0;
-        float tAvgSpeed = 0;
+    // create a data object with the data sets
+    LineData data =
+        App.createLineSet(values, getString(R.string.speed), requireContext());
 
-        Resources resources = getResources();
+    // set data
+    chart.setData(data);
+    chart.animateX(3000);
 
-        for (Session session : sessions) {
-            // fastest speed
-            float top = 0;
-            if (Float.parseFloat(session.getTopSpeed()) > top) top = Float.parseFloat(session.getTopSpeed());
-            binding.topSpeedView.setText(App.getSpeedFormatted(top,resources));
+    // coloring chart
+    Description description = new Description();
+    description.setText("");
+    chart.setDescription(description);
+    int color = App.getThemeTextColor(requireContext());
+    chart.getData().setValueTextColor(color);
+    chart.getData().setValueTextColor(color);
+    chart.getXAxis().setTextColor(color);
+    chart.getAxisLeft().setTextColor(color);
+    chart.getAxisRight().setTextColor(color);
+    chart.getLegend().setTextColor(color);
+  }
 
-            // furthest distance
-            top = 0;
-            if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
-            binding.furthestDistanceView.setText(App.getDistanceFormatted(top,resources));
+  private void loadTopSpeedsChart() {
+    LineChart chart = binding.topSpeedsChart;
 
-           tDistance += Float.parseFloat(session.getTotalDistance());
-           tAvgDistance += Float.parseFloat(session.getTotalDistance());
-           tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
-        }
-        tAvgSpeed = tAvgSpeed / sessions.size();
-        tAvgDistance = tAvgDistance / sessions.size();
+    ArrayList<Entry> values = new ArrayList<>();
 
-        binding.totalDistanceView.setText(App.getDistanceFormatted(tDistance,resources));
-        binding.avgDistanceView.setText(App.getDistanceFormatted(tAvgDistance,resources));
-        binding.avgSpeedView.setText(App.getSpeedFormatted(tAvgSpeed,resources));
+    for (int i = 0; i < sessions.size(); i++) {
+      values.add(new Entry(
+          i, Float.parseFloat(sessions.get(i).getTopSpeed()),
+          ResourcesCompat.getDrawable(
+              getResources(), R.drawable.ic_baseline_location_on_24, null)));
     }
 
-    private void loadFavoriteBoard() {
-        LinearLayout linearLayout = binding.statisticsLayout;
-        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layout.setMargins(80,0,80,0);
+    // create a data object with the data sets
+    LineData data =
+        App.createLineSet(values, getString(R.string.speed), requireContext());
 
-        Board board = Profile.favoriteBoard();
+    // set data
+    chart.setData(data);
+    chart.animateX(3000);
 
-        Button button = new Button(requireContext());
-        if (board != null) {
-            button.setText(board.getName());
-            button.setTextSize(18);
-            button.setBackgroundColor(requireContext().getColor(R.color.grey));
-            button.getBackground().setAlpha(64);
-            button.setPadding(0,0,0,0);
-            button.setAllCaps(false);
-            button.setOnClickListener(v->{
-                Intent myIntent = new Intent(requireContext(), BoardActivity.class);
-                myIntent.putExtra("board_id", board.getId());
-                startActivity(myIntent);
-            });
+    // coloring chart
+    Description description = new Description();
+    description.setText("");
+    chart.setDescription(description);
+    int color = App.getThemeTextColor(requireContext());
+    chart.getData().setValueTextColor(color);
+    chart.getData().setValueTextColor(color);
+    chart.getXAxis().setTextColor(color);
+    chart.getAxisLeft().setTextColor(color);
+    chart.getAxisRight().setTextColor(color);
+    chart.getLegend().setTextColor(color);
+  }
 
-            if (board.getImage() != null) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
-                button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
-            }
+  private void loadDistancesChart() {
+    LineChart chart = binding.distancesChart;
 
-        } else {
-            button.setText(R.string.no_favorite);
-            button.setTextSize(18);
-            button.setBackgroundColor(requireContext().getColor(R.color.grey));
-            button.getBackground().setAlpha(64);
-            button.setPadding(0,0,0,0);
-            button.setAllCaps(false);
-        }
-        linearLayout.addView(button,9,layout);
+    ArrayList<Entry> values = new ArrayList<>();
+
+    for (int i = 0; i < sessions.size(); i++) {
+      values.add(new Entry(
+          i, Float.parseFloat(sessions.get(i).getTotalDistance()),
+          ResourcesCompat.getDrawable(
+              getResources(), R.drawable.ic_baseline_location_on_24, null)));
     }
 
-    public void loadAchievements(View view) {
-        Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
-        myIntent.putExtra("achievements", profile.getAchievements());
-        startActivity(myIntent);
+    // create a data object with the data sets
+    LineData data =
+        App.createLineSet(values, getString(R.string.speed), requireContext());
+
+    // set data
+    chart.setData(data);
+    chart.animateX(3000);
+
+    // coloring chart
+    Description description = new Description();
+    description.setText("");
+    chart.setDescription(description);
+    int color = App.getThemeTextColor(requireContext());
+    chart.getData().setValueTextColor(color);
+    chart.getData().setValueTextColor(color);
+    chart.getXAxis().setTextColor(color);
+    chart.getAxisLeft().setTextColor(color);
+    chart.getAxisRight().setTextColor(color);
+    chart.getLegend().setTextColor(color);
+  }
+
+  private void loadDurationsChart() {
+    LineChart chart = binding.durationsChart;
+
+    ArrayList<Entry> values = new ArrayList<>();
+
+    for (int i = 0; i < sessions.size(); i++) {
+      values.add(new Entry(
+          i, sessions.get(i).getDuration(),
+          ResourcesCompat.getDrawable(
+              getResources(), R.drawable.ic_baseline_location_on_24, null)));
     }
 
-    private void loadSpeedsChart() {
-        LineChart chart = binding.speedsChart;
+    // create a data object with the data sets
+    LineData data =
+        App.createLineSet(values, getString(R.string.speed), requireContext());
 
-        ArrayList<Entry> values = new ArrayList<>();
+    // set data
+    chart.setData(data);
+    chart.animateX(3000);
 
-        for (int i = 0; i < sessions.size(); i++) {
-            values.add(new Entry(i, Float.parseFloat(sessions.get(i).getAvgSpeed()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
-        }
-
-        // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
-
-        // set data
-        chart.setData(data);
-        chart.animateX(3000);
-
-        // coloring chart
-        Description description = new Description();
-        description.setText("");
-        chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
-        chart.getData().setValueTextColor(color);
-        chart.getData().setValueTextColor(color);
-        chart.getXAxis().setTextColor(color);
-        chart.getAxisLeft().setTextColor(color);
-        chart.getAxisRight().setTextColor(color);
-        chart.getLegend().setTextColor(color);
-    }
-
-    private void loadTopSpeedsChart() {
-        LineChart chart = binding.topSpeedsChart;
-
-        ArrayList<Entry> values = new ArrayList<>();
-
-        for (int i = 0; i < sessions.size(); i++) {
-            values.add(new Entry(i, Float.parseFloat(sessions.get(i).getTopSpeed()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
-        }
-
-        // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
-
-        // set data
-        chart.setData(data);
-        chart.animateX(3000);
-
-        // coloring chart
-        Description description = new Description();
-        description.setText("");
-        chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
-        chart.getData().setValueTextColor(color);
-        chart.getData().setValueTextColor(color);
-        chart.getXAxis().setTextColor(color);
-        chart.getAxisLeft().setTextColor(color);
-        chart.getAxisRight().setTextColor(color);
-        chart.getLegend().setTextColor(color);
-    }
-
-    private void loadDistancesChart() {
-        LineChart chart = binding.distancesChart;
-
-        ArrayList<Entry> values = new ArrayList<>();
-
-        for (int i = 0; i < sessions.size(); i++) {
-            values.add(new Entry(i, Float.parseFloat(sessions.get(i).getTotalDistance()), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
-        }
-
-        // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
-
-        // set data
-        chart.setData(data);
-        chart.animateX(3000);
-
-        // coloring chart
-        Description description = new Description();
-        description.setText("");
-        chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
-        chart.getData().setValueTextColor(color);
-        chart.getData().setValueTextColor(color);
-        chart.getXAxis().setTextColor(color);
-        chart.getAxisLeft().setTextColor(color);
-        chart.getAxisRight().setTextColor(color);
-        chart.getLegend().setTextColor(color);
-    }
-
-    private void loadDurationsChart() {
-        LineChart chart = binding.durationsChart;
-
-        ArrayList<Entry> values = new ArrayList<>();
-
-        for (int i = 0; i < sessions.size(); i++) {
-            values.add(new Entry(i, sessions.get(i).getDuration(), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
-        }
-
-        // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
-
-        // set data
-        chart.setData(data);
-        chart.animateX(3000);
-
-        // coloring chart
-        Description description = new Description();
-        description.setText("");
-        chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
-        chart.getData().setValueTextColor(color);
-        chart.getData().setValueTextColor(color);
-        chart.getXAxis().setTextColor(color);
-        chart.getAxisLeft().setTextColor(color);
-        chart.getAxisRight().setTextColor(color);
-        chart.getLegend().setTextColor(color);
-    }
+    // coloring chart
+    Description description = new Description();
+    description.setText("");
+    chart.setDescription(description);
+    int color = App.getThemeTextColor(requireContext());
+    chart.getData().setValueTextColor(color);
+    chart.getData().setValueTextColor(color);
+    chart.getXAxis().setTextColor(color);
+    chart.getAxisLeft().setTextColor(color);
+    chart.getAxisRight().setTextColor(color);
+    chart.getLegend().setTextColor(color);
+  }
 }
