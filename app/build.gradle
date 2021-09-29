@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\hjada\\Documents\\thanelockerkey.jks')
+            storePassword 'HDrum_19'
+            keyAlias 'key0'
+            keyPassword 'HDrum_19'
+        }
+    }
     compileSdk 30
 
     defaultConfig {
@@ -13,6 +21,7 @@ android {
         versionName "1.2-Community-update"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     lintOptions {
@@ -24,14 +33,15 @@ android {
             minifyEnabled false
             shrinkResources false
             debuggable true
+            signingConfig signingConfigs.debug
         }
 
         release {
-            minifyEnabled true
-            shrinkResources true
-            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -44,6 +54,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
 
@@ -58,7 +70,7 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
-    implementation "io.grpc:grpc-okhttp:1.32.2"
+    implementation 'io.grpc:grpc-okhttp:1.41.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.8.0'

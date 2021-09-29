@@ -1,4 +1,5 @@
 <resources>
+    <string name="default_web_client_id" translatable="false">54419120166-1sulrscba15esmc3kpe1c0qe1tthbqdt.apps.googleusercontent.com</string>
     <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">Change</string>

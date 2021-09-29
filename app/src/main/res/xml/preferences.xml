@@ -2,12 +2,6 @@
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference android:title="Link Google Account"
-        app:iconSpaceReserved="true"
-        android:key="login"
-        android:icon="@drawable/googleg_standard_color_18"
-        android:summary="Needed for backing up and syncing data, friends, selling boards, finding suggested locations, and meet ups">
-    </Preference>
     <PreferenceCategory android:title="Links to other awesome places">
         <Preference android:title="@string/muirskate_title"
             android:key="shop"

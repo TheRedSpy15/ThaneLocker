@@ -28,7 +28,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     private ArrayList<Integer> board_ids = new ArrayList<>();
     private int id = 0;
-    private int user_id = Profile.localProfile.getId();
+    private String user_id = Profile.localProfile.getId();
     @Nullable private String notes = ""; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
@@ -243,11 +243,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         this.notes = notes;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

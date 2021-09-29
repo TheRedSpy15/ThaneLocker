@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import androidx.preference.PreferenceManager;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Meetup;
 import com.theredspy15.thanelocker.models.Profile;
@@ -28,11 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     public static SharedPreferences preferences;
 
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         App.updateTheme();
+
+        signIntoFirestore();
 
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
@@ -54,6 +61,30 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    private void signIntoFirestore() {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            Profile.localProfile.setId("");
+        } else {
+            mAuth.signInAnonymously()
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            System.out.println("signInAnonymously:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            //updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            System.out.println("signInAnonymously:failure"+task.getException());
+                            Toast.makeText(this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            //updateUI(null);
+                        }
+                    });
+        }
     }
 
     @Override

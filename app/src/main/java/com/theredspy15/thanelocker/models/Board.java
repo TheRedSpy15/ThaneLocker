@@ -18,7 +18,7 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
     private boolean advanceMode = false;
-    private int user_id = Profile.localProfile.getId();
+    private String user_id = Profile.localProfile.getId();
     @NonNull private String name = "board";
     @Nullable private byte[] image;
     @Nullable private String description = "No Description";
@@ -269,11 +269,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.deck = deck;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

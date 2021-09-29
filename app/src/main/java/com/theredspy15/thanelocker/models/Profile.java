@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Profile implements Serializable {
     private static final long serialVersionUID = 1234570L;
     public static Profile localProfile;
-    private int id = 0;
+    private String id = "no_uid";
     private int level = 1;
     private int level_xp = 0; // 0-100 for all levels
     @Nullable private String name;
@@ -63,7 +63,7 @@ public class Profile implements Serializable {
         for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
 
-            if (session != null && session.getUser_id() == localProfile.getId())
+            if (session != null && session.getUser_id().equals(localProfile.getId()))
                 sessionsWithLocalProfile.add(session);
         }
 
@@ -76,7 +76,7 @@ public class Profile implements Serializable {
         for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id);
 
-            if (board != null && board.getUser_id() == localProfile.getId())
+            if (board != null && board.getUser_id().equals(localProfile.getId()))
                 boardsWithLocalProfile.add(board);
         }
 
@@ -93,11 +93,11 @@ public class Profile implements Serializable {
         return null;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

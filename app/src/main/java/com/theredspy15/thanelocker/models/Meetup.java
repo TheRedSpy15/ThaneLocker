@@ -10,7 +10,7 @@ public class Meetup {
     private int meet_id = 0;
     private String title;
     private String description;
-    private List<Integer> attending_users = new ArrayList<>(); // people attending
+    private List<String> attending_users = new ArrayList<>(); // people attending
     private double latitude;
     private double longitude;
     private String date;
@@ -26,7 +26,6 @@ public class Meetup {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             meetups.add(document.toObject(Meetup.class));
-                            System.out.println(meetups.size());
                         }
                     } else {
                         // failed
@@ -59,11 +58,11 @@ public class Meetup {
         this.description = description;
     }
 
-    public List<Integer> getAttending_users() {
+    public List<String> getAttending_users() {
         return attending_users;
     }
 
-    public void setAttending_users(List<Integer> attending_users) {
+    public void setAttending_users(List<String> attending_users) {
         this.attending_users = attending_users;
     }
 
