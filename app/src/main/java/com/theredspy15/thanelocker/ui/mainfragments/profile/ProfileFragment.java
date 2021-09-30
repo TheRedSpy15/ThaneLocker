@@ -39,8 +39,6 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel profileViewModel;
     private FragmentProfileBinding binding;
 
-    private final Profile profile = Profile.localProfile;
-
     private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
     private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
 
@@ -52,19 +50,20 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
+
         loadAllData();
 
         return root;
     }
 
     private void loadAllData() { // TODO: multi-thread this
-        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
-        if (profile.getName() != null) binding.nameText.setText(profile.getName());
-        if (profile.getDescription() != null) binding.descriptionView.setText(profile.getDescription());
+        if (Profile.localProfile.getName() != null) binding.nameText.setText(Profile.localProfile.getName());
+        if (Profile.localProfile.getDescription() != null) binding.descriptionView.setText(Profile.localProfile.getDescription());
 
-        if (profile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);
+        if (Profile.localProfile.getImage() != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -83,8 +82,8 @@ public class ProfileFragment extends Fragment {
     }
 
     void loadXpBar() {
-        binding.xpView.setProgress((int) profile.getLevel_xp());
-        binding.levelView.setText(getString(R.string.level)+" "+profile.getLevel());
+        binding.xpView.setProgress((int) Profile.localProfile.getLevel_xp());
+        binding.levelView.setText(getString(R.string.level)+" "+Profile.localProfile.getLevel());
     }
 
     public void loadEditProfile(View view) {
@@ -144,7 +143,7 @@ public class ProfileFragment extends Fragment {
             });
 
             if (board.getImage() != null) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
                 Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
             }
@@ -162,7 +161,7 @@ public class ProfileFragment extends Fragment {
 
     public void loadAchievements(View view) {
         Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
-        myIntent.putExtra("achievements", profile.getAchievements());
+        myIntent.putExtra("achievements", Profile.localProfile.getAchievements());
         startActivity(myIntent);
     }
 

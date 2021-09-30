@@ -18,6 +18,7 @@ import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityEditProfileBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Profile;
+import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.io.ByteArrayOutputStream;
@@ -43,7 +44,7 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.editTextDescription.setText(Profile.localProfile.getDescription());
 
         if (Profile.localProfile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Profile.localProfile.getImage(), 0, Profile.localProfile.getImage().length);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -103,7 +104,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        Profile.localProfile.setImage(imageBytes);
+        Profile.localProfile.setImage(App.convertBytesToList(imageBytes));
         Profile.localProfile.setName(binding.editTextName.getText().toString());
         Profile.localProfile.setDescription(binding.editTextDescription.getText().toString());
         Profile.save();

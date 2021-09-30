@@ -79,7 +79,7 @@ public class BoardsFragment extends Fragment {
                     button.setAllCaps(false);
 
                     if (board.getImage() != null) {
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
                         Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
                         button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                     }

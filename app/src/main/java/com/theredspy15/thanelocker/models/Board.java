@@ -1,33 +1,32 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.SharedPreferences;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Board implements Serializable { // TODO: parcelable in the future
+public class Board implements Serializable {
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
     private boolean advanceMode = false;
-    private String user_id = Profile.localProfile.getId();
+    private String user_id = Objects.requireNonNull(MainActivity.mAuth.getCurrentUser()).getUid();
     @NonNull private String name = "board";
-    @Nullable private byte[] image;
+    @Nullable private ArrayList<Byte> image;
     @Nullable private String description = "No Description";
     private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
     @Nullable private String deck="Generic Deck";
-    private byte rearAngle=50;
-    private byte frontAngle=50;
+    private int rearAngle=50;
+    private int frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
     private String bd_bushings="Stock Bushings";
     private String wheels = "Generic Wheels";
@@ -44,36 +43,24 @@ public class Board implements Serializable { // TODO: parcelable in the future
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();
 
     public Board() {
-        int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
+        int randId = ThreadLocalRandom.current().nextInt();
         if (!savedBoardIds.contains(randId)) setId(randId);
         else while (savedBoardIds.contains(randId)) ThreadLocalRandom.current().nextInt();
-
-        setUser_id(Profile.localProfile.getId());
-    }
-
-    public static void load() {
-        Gson gson = new Gson();
-
-        String json = MainActivity.preferences.getString("savedBoards", null);
-        if (json != null) savedBoards = gson.fromJson(json, new TypeToken<HashMap<Integer,Board>>() {}.getType());
-        else savedBoards = new HashMap<>();
-
-        json = MainActivity.preferences.getString("savedBoardIds", null);
-        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
-        else savedBoardIds = new ArrayList<>();
     }
 
     public static void save() {
-        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-        Gson gson = new Gson();
+        for (int id : savedBoardIds) {
+            uploadBoard(Objects.requireNonNull(savedBoards.get(id)));
+        }
+    }
 
-        String json = gson.toJson(savedBoards);
-        prefsEditor.putString("savedBoards", json);
-
-        json = gson.toJson(savedBoardIds);
-        prefsEditor.putString("savedBoardIds", json);
-
-        prefsEditor.apply();
+    public static void uploadBoard(Board board) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("boards").document(String.valueOf(board.getId())).set(board)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
     }
 
     public float fastestSpeed() {
@@ -148,12 +135,21 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.name = name;
     }
 
-    public byte[] getImage() {
+    public ArrayList<Byte> getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(ArrayList<Byte> image) {
         this.image = image;
+    }
+
+    /**
+     * takes byte[] since most of the time when read an image, we get a byte[].
+     * Just converts it to List<Byte> when byte[] is passed
+     * @param image
+     */
+    public void setImageBytes(byte[] image) {
+        this.image = App.convertBytesToList(image);
     }
 
     @Nullable
@@ -173,19 +169,19 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.trucks = trucks;
     }
 
-    public byte getRearAngle() {
+    public int getRearAngle() {
         return rearAngle;
     }
 
-    public void setRearAngle(byte rearAngle) {
+    public void setRearAngle(int rearAngle) {
         this.rearAngle = rearAngle;
     }
 
-    public byte getFrontAngle() {
+    public int getFrontAngle() {
         return frontAngle;
     }
 
-    public void setFrontAngle(byte frontAngle) {
+    public void setFrontAngle(int frontAngle) {
         this.frontAngle = frontAngle;
     }
 

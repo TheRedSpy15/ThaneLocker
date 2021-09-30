@@ -1,5 +1,4 @@
 <resources>
-    <string name="default_web_client_id" translatable="false">54419120166-1sulrscba15esmc3kpe1c0qe1tthbqdt.apps.googleusercontent.com</string>
     <string name="app_name">Longboard Life</string>
     <string name="title_activity_board">BoardActivity</string>
     <string name="change">Change</string>
@@ -116,7 +115,7 @@
     <string name="no_sessions">No Sessions Recorded</string>
     <string name="click_to_stop">Click here to stop recording</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Start Session?</string>
     <string name="not_enough_data">Not enough data recorded to save</string>
     <string name="notification_description">Recording your data for you to later view</string>

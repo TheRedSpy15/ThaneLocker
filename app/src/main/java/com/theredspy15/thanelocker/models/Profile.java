@@ -1,13 +1,10 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
@@ -15,7 +12,7 @@ import java.util.ArrayList;
 
 public class Profile implements Serializable {
     private static final long serialVersionUID = 1234570L;
-    public static Profile localProfile;
+    public static Profile localProfile = new Profile();
     private String id = "no_uid";
     private int level = 1;
     private int level_xp = 0; // 0-100 for all levels
@@ -26,38 +23,22 @@ public class Profile implements Serializable {
     @Nullable private String country;
     private ArrayList<Integer> friend_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
-    @Nullable private byte[] image;
-    private String passwordHash;
-    private String email;
-
-    public Profile() {
-        //int randId = ThreadLocalRandom.current().nextInt();
-        //setId(randId);
-
-
-        //if (!savedSessionIds.contains(randId)) setId(randId); TODO: check with database when thats created
-        //else while (savedSessionIds.contains(randId)) randId = ThreadLocalRandom.current().nextInt();
-    }
-
-    public static void load() {
-        Gson gson = new Gson();
-
-        String json = MainActivity.preferences.getString("localProfile", null);
-        if (json != null) localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
-        else localProfile = new Profile();
-    }
+    @Nullable private ArrayList<Byte> image;
 
     public static void save() {
-        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-        Gson gson = new Gson();
-
-        String json = gson.toJson(localProfile);
-        prefsEditor.putString("localProfile", json);
-
-        prefsEditor.apply();
+        uploadProfile(localProfile);
     }
 
-    public static ArrayList<Session> sessionsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+    public static void uploadProfile(Profile profile) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("profiles").document(String.valueOf(profile.getId())).set(profile)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
+
+    public static ArrayList<Session> sessionsWithLocalProfile() {
         ArrayList<Session> sessionsWithLocalProfile = new ArrayList<>();
 
         for (int session_id : Session.savedSessionIds) {
@@ -70,7 +51,7 @@ public class Profile implements Serializable {
         return sessionsWithLocalProfile;
     }
 
-    public static ArrayList<Board> boardsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+    public static ArrayList<Board> boardsWithLocalProfile() {
         ArrayList<Board> boardsWithLocalProfile = new ArrayList<>();
 
         for (int board_id : Board.savedBoardIds) {
@@ -111,11 +92,11 @@ public class Profile implements Serializable {
         this.name = name;
     }
 
-    public byte[] getImage() {
+    public ArrayList<Byte> getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(ArrayList<Byte> image) {
         this.image = image;
     }
 
@@ -192,21 +173,5 @@ public class Profile implements Serializable {
 
     public void setAchievements(ArrayList<Achievement> achievements) {
         this.achievements = achievements;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

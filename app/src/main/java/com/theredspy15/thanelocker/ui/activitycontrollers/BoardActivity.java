@@ -61,7 +61,7 @@ public class BoardActivity extends AppCompatActivity {
 
     void populateViews(Board board) {
         if (board.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
             binding.imageView.setImageBitmap(bitmap);
         } else {
             binding.imageView.setVisibility(View.GONE);

@@ -1,8 +1,5 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -18,11 +15,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Elevation {
-
-    public boolean isNetworkAvailable(final Context context) {
-        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
-        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
-    }
 
     /**
      * gets elevations for a session AFTER it has been created to load all the elevations at once.

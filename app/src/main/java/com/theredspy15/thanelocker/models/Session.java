@@ -1,7 +1,6 @@
 package com.theredspy15.thanelocker.models;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -10,8 +9,7 @@ import android.location.LocationManager;
 import androidx.annotation.Nullable;
 
 import com.example.longboardlife.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.io.IOException;
@@ -20,15 +18,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Session implements Serializable { // TODO: parcelable in the future
+public class Session implements Serializable {
     private static final long serialVersionUID = 1234568L;
     public static final double xpValue = 1.1;
 
     private ArrayList<Integer> board_ids = new ArrayList<>();
     private int id = 0;
-    private String user_id = Profile.localProfile.getId();
+    private String user_id = Objects.requireNonNull(MainActivity.mAuth.getCurrentUser()).getUid();
     @Nullable private String notes = ""; // TODO: implement this!
     private String time_start = "";
     private String time_end = "";
@@ -45,36 +44,24 @@ public class Session implements Serializable { // TODO: parcelable in the future
     public static ArrayList<Integer> savedSessionIds = new ArrayList<>();
 
     public Session() {
-        int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
+        int randId = ThreadLocalRandom.current().nextInt();
         if (!savedSessionIds.contains(randId)) setId(randId);
         else while (savedSessionIds.contains(randId)) randId = ThreadLocalRandom.current().nextInt();
-
-        setUser_id(Profile.localProfile.getId());
-    }
-
-    public static void load() {
-        Gson gson = new Gson();
-
-        String json = MainActivity.preferences.getString("savedSessions", null);
-        if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Integer,Session>>() {}.getType());
-        else savedSessions = new HashMap<>();
-
-        json = MainActivity.preferences.getString("savedSessionIds", null);
-        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
-        else savedSessionIds = new ArrayList<>();
     }
 
     public static void save() {
-        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-        Gson gson = new Gson();
+        for (int id : savedSessionIds) {
+            uploadSession(Objects.requireNonNull(savedSessions.get(id)));
+        }
+    }
 
-        String json = gson.toJson(savedSessions);
-        prefsEditor.putString("savedSessions", json);
-
-        json = gson.toJson(savedSessionIds);
-        prefsEditor.putString("savedSessionIds", json);
-
-        prefsEditor.apply();
+    public static void uploadSession(Session session) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("sessions").document(String.valueOf(session.getId())).set(session)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
     }
 
     public static ArrayList<Session> sessionsWithBoard(int board_id) {

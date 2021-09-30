@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.DashPathEffect;
+import android.net.ConnectivityManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
@@ -25,6 +26,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is mostly just a util class
+ */
 public class App extends Application {
 
     @SuppressLint("StaticFieldLeak")
@@ -42,6 +46,32 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         setContext(this);
+    }
+
+    public static ArrayList<Byte> convertBytesToList(byte[] bytes) {
+        if (bytes != null) {
+            final ArrayList<Byte> list = new ArrayList<>();
+            for (byte b : bytes) {
+                list.add(b);
+            }
+            return list;
+        } else return null;
+    }
+
+    public static byte[] toByteArray(List<Byte> list) {
+        if (list != null) {
+            final int n = list.size();
+            byte[] ret = new byte[n];
+            for (int i = 0; i < n; i++) {
+                ret[i] = list.get(i);
+            }
+            return ret;
+        } else return null;
+    }
+
+    public boolean isNetworkAvailable(final Context context) {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }
 
     /**

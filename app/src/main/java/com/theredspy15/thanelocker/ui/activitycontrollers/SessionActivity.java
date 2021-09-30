@@ -137,7 +137,7 @@ public class SessionActivity extends AppCompatActivity {
     }
 
     private void loadElevationData() {
-        if (new Elevation().isNetworkAvailable(this) && session.getElevationPoints().isEmpty()) { // getting data if not already present
+        if (new App().isNetworkAvailable(this) && session.getElevationPoints().isEmpty()) { // getting data if not already present
             Thread thread = new Thread(()-> {
                 try {
                     session.setElevationPoints(Elevation.getElevations(session.getLocations()));
@@ -236,7 +236,7 @@ public class SessionActivity extends AppCompatActivity {
                 button.setOnLongClickListener(this::removeUsedBoard);
 
                 if (board.getImage() != null) {
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
                     Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
                     button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                 }
