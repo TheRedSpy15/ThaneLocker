@@ -42,6 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5128547878021429~6770473318"/>
 
         <service
             android:name="com.theredspy15.thanelocker.utils.LocationService"

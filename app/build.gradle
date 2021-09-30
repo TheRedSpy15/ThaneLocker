@@ -37,9 +37,9 @@ android {
         }
 
         release {
-            minifyEnabled false
-            shrinkResources false
-            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
@@ -70,6 +70,7 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
     implementation 'io.grpc:grpc-okhttp:1.41.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
