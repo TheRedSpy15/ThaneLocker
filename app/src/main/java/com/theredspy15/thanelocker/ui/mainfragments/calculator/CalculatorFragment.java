@@ -1,21 +1,24 @@
 package com.theredspy15.thanelocker.ui.mainfragments.calculator;
 
 import android.graphics.PorterDuff;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentCalculatorBinding;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -37,7 +40,24 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
         binding.calculateButton.setOnClickListener(this::calculate);
 
+        loadAdData();
+
         return root;
+    }
+
+    private void loadAdData() {
+        String unitId;
+        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+            unitId = "ca-app-pub-3940256099942544/6300978111";
+        } else unitId = "ca-app-pub-5128547878021429~1004953500";
+
+        MobileAds.initialize(requireContext(), initializationStatus -> { });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdView adView = new AdView(requireContext());
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(unitId);
+        binding.calculatorLayout.addView(adView,9);
+        adView.loadAd(adRequest);
     }
 
     public void calculate(View view) {
@@ -59,12 +79,8 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
             else if (binding.radioButtonFreeride.isChecked()) recommendedShape = getString(R.string.freeride_shape);
 
             if (!recommendedShape.equals("")) { // TODO: fix not changing after already being calculated with different radio button
-                TextView textView = new TextView(requireContext());
-                textView.setText(getString(R.string.recommended_shape)+recommendedShape);
-                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                textView.setTextSize(20);
-                textView.setTypeface(null, Typeface.BOLD);
-                binding.calculatorLayout.addView(textView, layout);
+                binding.shapeTextView.setText(getString(R.string.recommended_shape)+recommendedShape);
+                binding.shapeTextView.setVisibility(View.VISIBLE);
             }
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
