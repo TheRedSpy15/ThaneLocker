@@ -21,12 +21,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.PreferenceManager;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivitySessionBinding;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -103,6 +108,23 @@ public class SessionActivity extends AppCompatActivity {
 
         loadPoints();
         loadData();
+        loadAdData();
+    }
+
+    private void loadAdData() {
+        String unitId;
+        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+            unitId = "ca-app-pub-3940256099942544/6300978111";
+        } else unitId = "ca-app-pub-5128547878021429/7473799446"; // production only!
+
+        MobileAds.initialize(this, initializationStatus -> { });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(unitId);
+        LinearLayout layout = binding.sessionLayout.findViewById(R.id.session_content_layout);
+        layout.addView(adView,2);
+        adView.loadAd(adRequest);
     }
 
     void loadData() {
