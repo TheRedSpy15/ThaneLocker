@@ -49,7 +49,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
         String unitId;
         if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
             unitId = "ca-app-pub-3940256099942544/6300978111";
-        } else unitId = "ca-app-pub-5128547878021429~1004953500";
+        } else unitId = "ca-app-pub-5128547878021429/6255236482"; // production only!
 
         MobileAds.initialize(requireContext(), initializationStatus -> { });
         AdRequest adRequest = new AdRequest.Builder().build();
