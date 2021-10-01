@@ -15,8 +15,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityBoardBinding;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
@@ -49,6 +54,23 @@ public class BoardActivity extends AppCompatActivity {
         toolBarLayout.setTitle(board.getName());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        loadAdData();
+    }
+
+    private void loadAdData() {
+        String unitId;
+        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+            unitId = "ca-app-pub-3940256099942544/6300978111";
+        } else unitId = "ca-app-pub-5128547878021429/7644000468"; // production only!
+
+        MobileAds.initialize(this, initializationStatus -> { });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(unitId);
+        binding.boardContent.layoutforcontent.addView(adView,2);
+        adView.loadAd(adRequest);
     }
 
     @Override
