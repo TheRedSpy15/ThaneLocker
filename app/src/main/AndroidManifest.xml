@@ -42,9 +42,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5128547878021429~6770473318"/>
+            android:value="ca-app-pub-5128547878021429~6770473318" />
 
         <service
             android:name="com.theredspy15.thanelocker.utils.LocationService"
@@ -52,6 +53,13 @@
             android:exported="false"
             android:foregroundServiceType="location" />
 
+        <activity
+            android:name="com.theredspy15.thanelocker.ui.activitycontrollers.FriendActivity"
+            android:exported="true"
+            android:label="Friend"
+            android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThaneLocker" />
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity"
             android:exported="true"
@@ -91,7 +99,7 @@
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

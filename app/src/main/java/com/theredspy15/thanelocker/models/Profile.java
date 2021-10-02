@@ -22,6 +22,7 @@ public class Profile implements Serializable {
     @Nullable private String state;
     @Nullable private String country;
     private ArrayList<String> friend_ids = new ArrayList<>();
+    private ArrayList<String> blocked_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
     @Nullable private ArrayList<Byte> image;
 
@@ -173,5 +174,13 @@ public class Profile implements Serializable {
 
     public void setAchievements(ArrayList<Achievement> achievements) {
         this.achievements = achievements;
+    }
+
+    public ArrayList<String> getBlocked_ids() {
+        return blocked_ids;
+    }
+
+    public void setBlocked_ids(ArrayList<String> blocked_ids) {
+        this.blocked_ids = blocked_ids;
     }
 }

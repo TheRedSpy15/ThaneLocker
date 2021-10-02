@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
@@ -19,8 +21,10 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
-import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
+import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.ui.activitycontrollers.FriendActivity;
 
 import java.util.ArrayList;
 
@@ -28,11 +32,16 @@ public class FriendsListFragment extends Fragment {
 
     FragmentFriendslistBinding binding;
 
+    private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
+    private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentFriendslistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.newFriendButton.setOnClickListener(this::addFriend);
 
         loadProfiles();
 
@@ -51,7 +60,7 @@ public class FriendsListFragment extends Fragment {
                 button.setTextSize(18);
                 button.setAllCaps(false);
                 button.setOnClickListener(v -> {
-                    Intent myIntent = new Intent(requireContext(), BoardActivity.class);
+                    Intent myIntent = new Intent(requireContext(), FriendActivity.class);
                     myIntent.putExtra("friend", profile);
                     startActivity(myIntent);
                 });
@@ -74,6 +83,21 @@ public class FriendsListFragment extends Fragment {
         }
     }
 
+    public void addFriend(View view) {
+        final EditText inputId = new EditText(requireContext());
+        inputId.setHint("Profile ID");
+
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Create Meetup")
+                .setMessage("Please provide a name and description so people know what the meetup is going to be like")
+                .setView(inputId)
+                .setPositiveButton("Next", (dialog, whichButton) -> {
+                    Profile.localProfile.getFriend_ids().add(inputId.getText().toString());
+                    loadProfiles();
+                })
+                .setNegativeButton(R.string.cancel, (dialog, whichButton) -> dialog.dismiss()).show();
+    }
+
     private void loadProfiles() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -81,7 +105,7 @@ public class FriendsListFragment extends Fragment {
         CollectionReference boardsRef = db.collection("profiles");
 
         // Create a query against the collection.
-        Query query = boardsRef.whereEqualTo("id",  Profile.localProfile.getFriend_ids());
+        Query query = boardsRef.whereIn("id",  Profile.localProfile.getFriend_ids());
         query.get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

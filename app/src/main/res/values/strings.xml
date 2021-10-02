@@ -148,6 +148,7 @@
     <string name="board_needs_name">The board needs at at least a name</string>
     <string name="friends">Friends</string>
     <string name="no_friends">No Friends</string>
+    <string name="add_friend">Add Friend</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->
