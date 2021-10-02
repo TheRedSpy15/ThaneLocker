@@ -88,8 +88,8 @@ public class FriendsListFragment extends Fragment {
         inputId.setHint("Profile ID");
 
         new AlertDialog.Builder(requireContext())
-                .setTitle("Create Meetup")
-                .setMessage("Please provide a name and description so people know what the meetup is going to be like")
+                .setTitle("Add Friend")
+                .setMessage("Enter your friends ID or copy yours to give to them")
                 .setView(inputId)
                 .setPositiveButton("Next", (dialog, whichButton) -> {
                     Profile.localProfile.getFriend_ids().add(inputId.getText().toString());

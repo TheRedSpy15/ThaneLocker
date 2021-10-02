@@ -74,7 +74,6 @@ public class IntroActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Profile.localProfile = document.toObject(Profile.class);
-                            Profile.save();
                         }
                         binding.layout.addView(createDoneText("Loaded Profile"), 1);
                         loadSessions();
