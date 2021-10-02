@@ -55,6 +55,18 @@ public class Session implements Serializable {
         }
     }
 
+    public static void deleteSession(Session session) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("sessions").document(String.valueOf(session.getId()))
+                .delete()
+                .addOnSuccessListener(aVoid -> System.out.println("deletion worked!!"))
+                .addOnFailureListener(aVoid-> System.out.println("deletion failed...!"));
+
+        Session.savedSessions.remove(session.getId());
+        Session.savedSessionIds.remove((Integer) session.getId());
+    }
+
     public static void uploadSession(Session session) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("sessions").document(String.valueOf(session.getId())).set(session)

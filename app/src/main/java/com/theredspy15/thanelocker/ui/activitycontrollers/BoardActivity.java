@@ -167,11 +167,7 @@ public class BoardActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
-                    Board.savedBoards.remove(board.getId());
-                    Board.savedBoardIds.remove((Integer) board.getId());
-
-                    for (Session session : Session.sessionsWithBoard(board.getId()))
-                        Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
+                    Board.deleteBoard(board);
 
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

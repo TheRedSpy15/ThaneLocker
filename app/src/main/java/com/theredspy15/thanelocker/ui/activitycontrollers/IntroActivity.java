@@ -65,14 +65,13 @@ public class IntroActivity extends AppCompatActivity {
         System.out.println("loading profile3");
 
         // Create a reference to the cities collection
-        CollectionReference citiesRef = db.collection("profiles");
+        CollectionReference profileRef = db.collection("profiles");
 
         // Create a query against the collection.
-        Query query = citiesRef.whereEqualTo("id", Profile.localProfile.getId());
+        Query query = profileRef.whereEqualTo("id", Profile.localProfile.getId());
         query.get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        System.out.println("loading profile5--"+MainActivity.mAuth.getCurrentUser().getUid());
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Profile.localProfile = document.toObject(Profile.class);
                             Profile.save();
@@ -87,10 +86,10 @@ public class IntroActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Create a reference to the cities collection
-        CollectionReference citiesRef = db.collection("sessions");
+        CollectionReference sessionsRef = db.collection("sessions");
 
         // Create a query against the collection.
-        Query query = citiesRef.whereEqualTo("user_id",  Profile.localProfile.getId());
+        Query query = sessionsRef.whereEqualTo("user_id",  Profile.localProfile.getId());
         query.get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -109,10 +108,10 @@ public class IntroActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Create a reference to the cities collection
-        CollectionReference citiesRef = db.collection("boards");
+        CollectionReference boardsRef = db.collection("boards");
 
         // Create a query against the collection.
-        Query query = citiesRef.whereEqualTo("user_id",  Profile.localProfile.getId());
+        Query query = boardsRef.whereEqualTo("user_id",  Profile.localProfile.getId());
         query.get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

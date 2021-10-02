@@ -63,6 +63,21 @@ public class Board implements Serializable {
                 });
     }
 
+    public static void deleteBoard(Board board) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("boards").document(String.valueOf(board.getId()))
+                .delete()
+                .addOnSuccessListener(aVoid -> System.out.println("deletion worked!!"))
+                .addOnFailureListener(aVoid-> System.out.println("deletion failed...!"));
+
+        Board.savedBoards.remove(board.getId());
+        Board.savedBoardIds.remove((Integer) board.getId());
+
+        for (Session session : Session.sessionsWithBoard(board.getId()))
+            Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
+    }
+
     public float fastestSpeed() {
         float fastest = 0;
         for (Session session : Session.sessionsWithBoard(getId()))

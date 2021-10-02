@@ -346,8 +346,7 @@ public class SessionActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
-                    Session.savedSessions.remove(session.getId());
-                    Session.savedSessionIds.remove((Integer) session.getId());
+                    Session.deleteSession(session);
 
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

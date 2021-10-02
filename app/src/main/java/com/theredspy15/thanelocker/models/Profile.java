@@ -21,7 +21,7 @@ public class Profile implements Serializable {
     @Nullable private String description;
     @Nullable private String state;
     @Nullable private String country;
-    private ArrayList<Integer> friend_ids = new ArrayList<>();
+    private ArrayList<String> friend_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
     @Nullable private ArrayList<Byte> image;
 
@@ -159,11 +159,11 @@ public class Profile implements Serializable {
         if (getLevel_xp() < 0) this.level_xp = 1;
     }
 
-    public ArrayList<Integer> getFriend_ids() {
+    public ArrayList<String> getFriend_ids() {
         return friend_ids;
     }
 
-    public void setFriend_ids(ArrayList<Integer> friend_ids) {
+    public void setFriend_ids(ArrayList<String> friend_ids) {
         this.friend_ids = friend_ids;
     }
 
