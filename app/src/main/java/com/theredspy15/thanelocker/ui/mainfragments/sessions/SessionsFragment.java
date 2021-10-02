@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSessionsBinding;
@@ -35,7 +34,6 @@ import java.util.Collections;
 
 public class SessionsFragment extends Fragment {
 
-    private SessionsViewModel sessionsViewModel;
     private FragmentSessionsBinding binding;
 
     public static Session newSession = new Session();
@@ -45,8 +43,6 @@ public class SessionsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sessionsViewModel =
-                new ViewModelProvider(this).get(SessionsViewModel.class);
 
         binding = FragmentSessionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

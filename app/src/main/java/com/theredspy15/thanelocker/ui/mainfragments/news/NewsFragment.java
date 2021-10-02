@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
@@ -31,15 +30,12 @@ import java.util.List;
 
 public class NewsFragment extends Fragment {
 
-    private NewsViewModel newsViewModel;
     private FragmentNewsBinding binding;
 
     public static List<SyndEntry> entries;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        newsViewModel =
-                new ViewModelProvider(this).get(NewsViewModel.class);
 
         binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

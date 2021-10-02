@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
@@ -40,7 +39,6 @@ import java.util.ArrayList;
 
 public class SkateMapFragment extends Fragment {
 
-    private SkateMapViewModel skatemapViewModel;
     private FragmentSkatemapBinding binding;
 
     private MapView map = null;
@@ -49,8 +47,6 @@ public class SkateMapFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        skatemapViewModel =
-                new ViewModelProvider(this).get(SkateMapViewModel.class);
 
         binding = FragmentSkatemapBinding.inflate(inflater, container, false);
         binding.button.setOnClickListener(this::createMeetup);

@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
@@ -27,13 +26,10 @@ import java.util.Optional;
 
 public class CalculatorFragment extends Fragment { // TODO: determine if this should be fragment, and what package to move to
 
-    private CalculatorViewModel calculatorViewModel;
     private FragmentCalculatorBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        calculatorViewModel =
-                new ViewModelProvider(this).get(CalculatorViewModel.class);
 
         binding = FragmentCalculatorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
