@@ -24,6 +24,7 @@ import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
@@ -59,7 +60,7 @@ public class ProfileFragment extends Fragment {
         if (Profile.localProfile.getDescription() != null) binding.descriptionView.setText(Profile.localProfile.getDescription());
 
         if (Profile.localProfile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(Image.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -139,7 +140,9 @@ public class ProfileFragment extends Fragment {
             });
 
             if (board.getImage() != null) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+                Bitmap bitmap = BitmapFactory.decodeByteArray(
+                        Image.convertImageStringToBytes(board.getImage().getData()),
+                        0, Image.convertImageStringToBytes(board.getImage().getData()).length);
                 Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
             }

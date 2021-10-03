@@ -24,6 +24,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
 
@@ -83,7 +84,9 @@ public class BoardActivity extends AppCompatActivity {
 
     void populateViews(Board board) {
         if (board.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(board.getImage().getData()),
+                    0, Image.convertImageStringToBytes(board.getImage().getData()).length);
             binding.imageView.setImageBitmap(bitmap);
         } else {
             binding.imageView.setVisibility(View.GONE);

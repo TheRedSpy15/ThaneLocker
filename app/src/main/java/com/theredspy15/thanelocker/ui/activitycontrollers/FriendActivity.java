@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
@@ -81,7 +82,7 @@ public class FriendActivity extends AppCompatActivity {
         if (friend.getDescription() != null) binding.descriptionView.setText(friend.getDescription());
 
         if (friend.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(friend.getImage()), 0, friend.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(Image.toByteArray(friend.getImage()), 0, friend.getImage().size());
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -161,7 +162,9 @@ public class FriendActivity extends AppCompatActivity {
             });
 
             if (board.getImage() != null) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+                Bitmap bitmap = BitmapFactory.decodeByteArray(
+                        Image.convertImageStringToBytes(board.getImage().getData()),
+                        0, Image.convertImageStringToBytes(board.getImage().getData()).length);
                 Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
             }

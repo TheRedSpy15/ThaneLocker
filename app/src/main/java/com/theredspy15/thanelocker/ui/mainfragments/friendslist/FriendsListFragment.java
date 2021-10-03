@@ -74,13 +74,21 @@ public class FriendsListFragment extends Fragment {
                 binding.friendsLayout.addView(button, layout);
             }
         } else {
-            TextView textView = new TextView(requireContext()); // no news feeds selected
-            textView.setText(R.string.no_friends);
-            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            textView.setTextSize(18);
-            requireActivity().runOnUiThread(() -> binding.friendsLayout.addView(textView, layout));
-            binding.progressLoader.setVisibility(View.GONE);
+            loadNoFriends();
         }
+    }
+
+    private void loadNoFriends() {
+        binding.friendsLayout.removeAllViews();
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        layout.setMargins(0, 20, 0, 20);
+
+        TextView textView = new TextView(requireContext()); // no news feeds selected
+        textView.setText(R.string.no_friends);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        textView.setTextSize(18);
+        requireActivity().runOnUiThread(() -> binding.friendsLayout.addView(textView, layout));
+        binding.progressLoader.setVisibility(View.GONE);
     }
 
     public void addFriend(View view) {
@@ -99,23 +107,25 @@ public class FriendsListFragment extends Fragment {
     }
 
     private void loadProfiles() {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        if (!Profile.localProfile.getFriend_ids().isEmpty()) {
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // Create a reference to the cities collection
-        CollectionReference boardsRef = db.collection("profiles");
+            // Create a reference to the cities collection
+            CollectionReference boardsRef = db.collection("profiles");
 
-        // Create a query against the collection.
-        Query query = boardsRef.whereIn("id",  Profile.localProfile.getFriend_ids());
-        query.get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        ArrayList<Profile> profiles = new ArrayList<>();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Profile profile = document.toObject(Profile.class);
-                            profiles.add(profile);
+            // Create a query against the collection.
+            Query query = boardsRef.whereIn("id",  Profile.localProfile.getFriend_ids());
+            query.get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            ArrayList<Profile> profiles = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Profile profile = document.toObject(Profile.class);
+                                profiles.add(profile);
+                            }
+                            loadFriends(profiles);
                         }
-                        loadFriends(profiles);
-                    }
-                });
+                    });
+        } else loadNoFriends();
     }
 }

@@ -48,27 +48,6 @@ public class App extends Application {
         setContext(this);
     }
 
-    public static ArrayList<Byte> convertBytesToList(byte[] bytes) {
-        if (bytes != null) {
-            final ArrayList<Byte> list = new ArrayList<>();
-            for (byte b : bytes) {
-                list.add(b);
-            }
-            return list;
-        } else return null;
-    }
-
-    public static byte[] toByteArray(List<Byte> list) {
-        if (list != null) {
-            final int n = list.size();
-            byte[] ret = new byte[n];
-            for (int i = 0; i < n; i++) {
-                ret[i] = list.get(i);
-            }
-            return ret;
-        } else return null;
-    }
-
     public boolean isNetworkAvailable(final Context context) {
         final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();

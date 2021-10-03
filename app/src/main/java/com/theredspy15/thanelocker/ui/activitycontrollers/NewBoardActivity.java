@@ -22,7 +22,7 @@ import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Board;
-import com.theredspy15.thanelocker.utils.App;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.io.ByteArrayOutputStream;
@@ -91,7 +91,9 @@ public class NewBoardActivity extends AppCompatActivity {
 
     private void loadForEdit() {
         if (board.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(board.getImage().getData()),
+                    0, Image.convertImageStringToBytes(board.getImage().getData()).length);
             binding.imageView.setImageBitmap(bitmap);
         }
 
@@ -132,7 +134,7 @@ public class NewBoardActivity extends AppCompatActivity {
         binding.spinnerBdBushings.setSelection(bushings.indexOf(board.getBd_bushings()));
         binding.spinnerRdBushings.setSelection(bushings.indexOf(board.getRd_bushing()));
 
-        imageBytes = App.toByteArray(board.getImage());
+        imageBytes = Image.convertImageStringToBytes(board.getImage().getData());
     }
 
     @Override
@@ -215,7 +217,6 @@ public class NewBoardActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(binding.editTextBoardName.getText().toString())) {
             board.setName(binding.editTextBoardName.getText().toString());
             if (!TextUtils.isEmpty(binding.editTextDeck.getText().toString()))board.setDeck(binding.editTextDeck.getText().toString());
-            board.setImageBytes(imageBytes);
             if (!TextUtils.isEmpty(binding.editTextDescription.getText().toString()))board.setDescription(binding.editTextDescription.getText().toString());
             board.setTrucks(binding.spinnerTrucks.getSelectedItem().toString());
             if (!TextUtils.isEmpty(binding.editTextRAngle.getText().toString()))board.setRearAngle(Byte.parseByte(binding.editTextRAngle.getText().toString()));
@@ -226,6 +227,9 @@ public class NewBoardActivity extends AppCompatActivity {
             board.setBearings(binding.spinnerBearings.getSelectedItem().toString());
             board.setPivot(binding.spinnerPivot.getSelectedItem().toString());
             board.setGripTp(binding.spinnerGriptapes.getSelectedItem().toString());
+
+            // image
+            board.setImage(new Image(Image.convertImageBytesToString(imageBytes),board.getId()));
 
             Intent myIntent;
             if (isEditing) { // editing

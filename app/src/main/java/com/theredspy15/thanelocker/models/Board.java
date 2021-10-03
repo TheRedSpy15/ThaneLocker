@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
-import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class Board implements Serializable {
     private boolean advanceMode = false;
     private String user_id = Objects.requireNonNull(MainActivity.mAuth.getCurrentUser()).getUid();
     @NonNull private String name = "board";
-    @Nullable private ArrayList<Byte> image;
+    @Nullable private Image image; // stored in object as gson, access:needs converted to byte[]
     @Nullable private String description = "No Description";
     private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
@@ -150,21 +149,12 @@ public class Board implements Serializable {
         this.name = name;
     }
 
-    public ArrayList<Byte> getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(ArrayList<Byte> image) {
+    public void setImage(Image image) {
         this.image = image;
-    }
-
-    /**
-     * takes byte[] since most of the time when read an image, we get a byte[].
-     * Just converts it to List<Byte> when byte[] is passed
-     * @param image
-     */
-    public void setImageBytes(byte[] image) {
-        this.image = App.convertBytesToList(image);
     }
 
     @Nullable

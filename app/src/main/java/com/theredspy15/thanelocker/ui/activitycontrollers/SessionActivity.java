@@ -39,6 +39,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Elevation;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.App;
@@ -258,7 +259,9 @@ public class SessionActivity extends AppCompatActivity {
                 button.setOnLongClickListener(this::removeUsedBoard);
 
                 if (board.getImage() != null) {
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(
+                            Image.convertImageStringToBytes(board.getImage().getData()),
+                            0, Image.convertImageStringToBytes(board.getImage().getData()).length);
                     Drawable drawable = new BitmapDrawable(this.getResources(),Bitmap.createScaledBitmap(bitmap, 400, 400, false));
                     button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                 }

@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 import com.theredspy15.thanelocker.utils.App;
@@ -75,7 +76,9 @@ public class BoardsFragment extends Fragment {
                     button.setAllCaps(false);
 
                     if (board.getImage() != null) {
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(App.toByteArray(board.getImage()), 0, board.getImage().size());
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(
+                                Image.convertImageStringToBytes(board.getImage().getData()),
+                                0, Image.convertImageStringToBytes(board.getImage().getData()).length);
                         Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
                         button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                     }
