@@ -44,7 +44,9 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.editTextDescription.setText(Profile.localProfile.getDescription());
 
         if (Profile.localProfile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Image.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()),
+                    0, Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()).length);
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -104,7 +106,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        Profile.localProfile.setImage(Image.convertBytesToList(imageBytes));
+        Profile.localProfile.setImage(new Image(Image.convertImageBytesToString(imageBytes),Profile.localProfile.getId()));
         Profile.localProfile.setName(binding.editTextName.getText().toString());
         Profile.localProfile.setDescription(binding.editTextDescription.getText().toString());
         Profile.save();

@@ -258,7 +258,7 @@ public class SessionActivity extends AppCompatActivity {
                 });
                 button.setOnLongClickListener(this::removeUsedBoard);
 
-                if (board.getImage() != null) {
+                if (board.getImage() != null && board.getImage().getData() != null) {
                     Bitmap bitmap = BitmapFactory.decodeByteArray(
                             Image.convertImageStringToBytes(board.getImage().getData()),
                             0, Image.convertImageStringToBytes(board.getImage().getData()).length);

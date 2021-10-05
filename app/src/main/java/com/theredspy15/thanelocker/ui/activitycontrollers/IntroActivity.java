@@ -116,6 +116,7 @@ public class IntroActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Board board = document.toObject(Board.class);
+                            if (board.getImage() != null) board.getImage().downloadImage(this);
                             Board.savedBoards.put(board.getId(), board);
                             Board.savedBoardIds.add((Integer) board.getId());
                         }

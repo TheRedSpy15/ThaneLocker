@@ -60,7 +60,9 @@ public class ProfileFragment extends Fragment {
         if (Profile.localProfile.getDescription() != null) binding.descriptionView.setText(Profile.localProfile.getDescription());
 
         if (Profile.localProfile.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Image.toByteArray(Profile.localProfile.getImage()), 0, Profile.localProfile.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()),
+                    0, Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()).length);
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -139,7 +141,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(myIntent);
             });
 
-            if (board.getImage() != null) {
+            if (board.getImage() != null && board.getImage().getData() != null) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(
                         Image.convertImageStringToBytes(board.getImage().getData()),
                         0, Image.convertImageStringToBytes(board.getImage().getData()).length);

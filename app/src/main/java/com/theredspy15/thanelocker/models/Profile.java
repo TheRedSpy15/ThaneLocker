@@ -24,7 +24,7 @@ public class Profile implements Serializable {
     private ArrayList<String> friend_ids = new ArrayList<>();
     private ArrayList<String> blocked_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
-    @Nullable private ArrayList<Byte> image;
+    @Nullable private Image image;
 
     public static void save() {
         uploadProfile(localProfile);
@@ -93,11 +93,11 @@ public class Profile implements Serializable {
         this.name = name;
     }
 
-    public ArrayList<Byte> getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(ArrayList<Byte> image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 

@@ -1,11 +1,14 @@
 package com.theredspy15.thanelocker.models;
 
+import android.content.Context;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,12 +18,12 @@ public class Image implements Serializable {
 
     private static final long serialVersionUID = 1234590L;
 
-    private int location;
+    private String location;
     private String data = "";
 
     public Image() {}
 
-    public Image(String data, int boardId) {
+    public Image(String data, String boardId) {
         this.data = data;
         location = boardId;
     }
@@ -39,13 +42,33 @@ public class Image implements Serializable {
      * When doing any saving of an object that uses Image, it should save it to the firebase storage, meant for files. NOT DATABASE!
      * Save the image first, then sent its data to nothing when saving the object containing the image. Leaving only the location to reload it later
      */
-    public static void uploadImage(byte[] bytes) {
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
+    public void uploadImage(Context context) {
+        byte[] bytes = convertImageStringToBytes(data);
 
-        UploadTask uploadTask = storageRef.putBytes(bytes);
-        uploadTask.addOnFailureListener((OnFailureListener) exception -> System.out.println("image upload failed"))
-                .addOnSuccessListener(taskSnapshot -> System.out.println("imageuploaded"));
+        if (bytes != null && new App().isNetworkAvailable(context)) {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference(location);
+
+            UploadTask uploadTask = storageRef.putBytes(bytes);
+            uploadTask
+                    .addOnFailureListener((OnFailureListener) exception -> System.out.println("image upload failed"))
+                    .addOnSuccessListener(taskSnapshot -> System.out.println("imageuploaded"));
+        }
+    }
+
+    public void downloadImage(Context context) {
+        if (new App().isNetworkAvailable(context)) {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference(location);
+
+            final long ONE_MEGABYTE = 1024 * 1024;
+            storageRef.getBytes(ONE_MEGABYTE)
+                    .addOnSuccessListener(bytes -> {
+                        data = convertImageBytesToString(bytes);
+                        System.out.println("downloads worked");
+                    })
+                    .addOnFailureListener(System.out::println);
+        }
     }
 
     public static byte[] toByteArray(List<Byte> list) {
@@ -72,11 +95,11 @@ public class Image implements Serializable {
         return gson.fromJson(json, new TypeToken<byte[]>() {}.getType());
     }
 
-    public int getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 

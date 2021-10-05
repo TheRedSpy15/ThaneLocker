@@ -70,7 +70,7 @@ public class NewBoardActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
 
-        Board.save();
+        Board.save(this);
     }
 
     private void toggleAdvanceMode(CompoundButton compoundButton, boolean isChecked) {
@@ -90,7 +90,7 @@ public class NewBoardActivity extends AppCompatActivity {
     }
 
     private void loadForEdit() {
-        if (board.getImage() != null) {
+        if (board.getImage() != null && board.getImage().getData() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(
                     Image.convertImageStringToBytes(board.getImage().getData()),
                     0, Image.convertImageStringToBytes(board.getImage().getData()).length);
@@ -229,7 +229,7 @@ public class NewBoardActivity extends AppCompatActivity {
             board.setGripTp(binding.spinnerGriptapes.getSelectedItem().toString());
 
             // image
-            board.setImage(new Image(Image.convertImageBytesToString(imageBytes),board.getId()));
+            board.setImage(new Image(Image.convertImageBytesToString(imageBytes),String.valueOf(board.getId())));
 
             Intent myIntent;
             if (isEditing) { // editing

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         Session.save();
-        Board.save();
+        Board.save(this);
         Profile.save();
     }
 

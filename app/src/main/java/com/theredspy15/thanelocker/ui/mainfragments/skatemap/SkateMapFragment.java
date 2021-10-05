@@ -202,23 +202,11 @@ public class SkateMapFragment extends Fragment {
                 anotherItemizedIconOverlay = new ItemizedIconOverlay<>(requireContext(), overlayArray, null);
                 mapView.getOverlays().add(anotherItemizedIconOverlay);
                 mapView.invalidate();
-                binding.button.setBackgroundColor(getContext().getColor(R.color.confirmation_green));
-                binding.button.setText("Confirm");
-                binding.button.setOnClickListener(confirmedLocation());
-                newMeetup = new Meetup();
-                newMeetup.setLongitude(loc.getLongitude());
-                newMeetup.setLatitude(loc.getLatitude());
             }else{ // replacing/updating it
                 mapView.getOverlays().remove(anotherItemizedIconOverlay);
                 mapView.invalidate();
                 anotherItemizedIconOverlay = new ItemizedIconOverlay<>(requireContext(), overlayArray, null);
                 mapView.getOverlays().add(anotherItemizedIconOverlay);
-                binding.button.setBackgroundColor(getContext().getColor(R.color.confirmation_green));
-                binding.button.setText("Confirm");
-                binding.button.setOnClickListener(confirmedLocation());
-                newMeetup = new Meetup();
-                newMeetup.setLongitude(loc.getLongitude());
-                newMeetup.setLatitude(loc.getLatitude());
             }
 
             return true;

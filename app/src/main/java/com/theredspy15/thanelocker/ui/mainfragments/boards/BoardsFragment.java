@@ -75,7 +75,7 @@ public class BoardsFragment extends Fragment {
                     button.setPadding(0,0,0,0);
                     button.setAllCaps(false);
 
-                    if (board.getImage() != null) {
+                    if (board.getImage() != null && board.getImage().getData() != null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(
                                 Image.convertImageStringToBytes(board.getImage().getData()),
                                 0, Image.convertImageStringToBytes(board.getImage().getData()).length);

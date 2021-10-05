@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 public class Elevation {
 
     /**
+     * TODO: verify we have connection to api
      * gets elevations for a session AFTER it has been created to load all the elevations at once.
      * The list of returned elevations should be saved inside the session, to prevent constantly
      * having to wait for server to respond

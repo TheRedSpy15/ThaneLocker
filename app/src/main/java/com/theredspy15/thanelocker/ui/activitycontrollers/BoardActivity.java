@@ -79,11 +79,11 @@ public class BoardActivity extends AppCompatActivity {
         super.onStop();
 
         Session.save();
-        Board.save();
+        Board.save(this);
     }
 
     void populateViews(Board board) {
-        if (board.getImage() != null) {
+        if (board.getImage() != null && board.getImage().getData() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(
                     Image.convertImageStringToBytes(board.getImage().getData()),
                     0, Image.convertImageStringToBytes(board.getImage().getData()).length);

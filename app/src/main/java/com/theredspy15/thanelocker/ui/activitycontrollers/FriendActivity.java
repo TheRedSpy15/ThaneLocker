@@ -53,8 +53,7 @@ public class FriendActivity extends AppCompatActivity {
         sessionsWithProfile(friend);
     }
 
-    public ArrayList<Session> sessionsWithProfile(Profile profile) {
-        ArrayList<Session> sessionsWithProfile = new ArrayList<>();
+    public void sessionsWithProfile(Profile profile) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -74,7 +73,6 @@ public class FriendActivity extends AppCompatActivity {
                     }
                 });
 
-        return sessionsWithProfile;
     }
 
     private void loadAllData() { // TODO: multi-thread this
@@ -82,7 +80,9 @@ public class FriendActivity extends AppCompatActivity {
         if (friend.getDescription() != null) binding.descriptionView.setText(friend.getDescription());
 
         if (friend.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Image.toByteArray(friend.getImage()), 0, friend.getImage().size());
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()),
+                    0, Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()).length);
             binding.profilePictureView.setImageBitmap(bitmap);
         }
 
@@ -103,11 +103,6 @@ public class FriendActivity extends AppCompatActivity {
     void loadXpBar() {
         binding.xpView.setProgress((int) friend.getLevel_xp());
         binding.levelView.setText(getString(R.string.level)+" "+friend.getLevel());
-    }
-
-    public void loadEditProfile(View view) {
-        Intent myIntent = new Intent(this, EditProfileActivity.class);
-        startActivity(myIntent);
     }
 
     private void loadTextViewStats() {
@@ -177,7 +172,7 @@ public class FriendActivity extends AppCompatActivity {
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }
-        linearLayout.addView(button,9,layout);
+        linearLayout.addView(button,8,layout);
     }
 
     public void loadAchievements(View view) {

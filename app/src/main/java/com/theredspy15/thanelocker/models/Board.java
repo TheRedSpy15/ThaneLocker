@@ -1,5 +1,7 @@
 package com.theredspy15.thanelocker.models;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -36,7 +38,7 @@ public class Board implements Serializable {
     private String gripTp="Standard Griptape";
     private ArrayList<Session> sessions;
     private boolean forSale = false;
-    private double cost; // always USD
+    private double cost;
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();
@@ -47,13 +49,15 @@ public class Board implements Serializable {
         else while (savedBoardIds.contains(randId)) ThreadLocalRandom.current().nextInt();
     }
 
-    public static void save() {
+    public static void save(Context context) {
         for (int id : savedBoardIds) {
+            if (savedBoards.get(id).getImage() != null) savedBoards.get(id).getImage().uploadImage(context);
             uploadBoard(Objects.requireNonNull(savedBoards.get(id)));
         }
     }
 
     public static void uploadBoard(Board board) {
+        if (board.getImage() != null) board.getImage().setData(null);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("boards").document(String.valueOf(board.getId())).set(board)
                 .addOnSuccessListener(aVoid -> {
