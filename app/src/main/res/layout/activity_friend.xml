@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.theredspy15.thanelocker.ui.activitycontrollers.FriendActivity">
+
+    <LinearLayout
+        android:id="@+id/statisticsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profilePictureView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_outline_person_24"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/john_doe"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/just_another_awesome_skater" />
+
+        <TextView
+            android:id="@+id/levelView"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="@string/level_1" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/xpView"
+            android:layout_width="200dp"
+            android:indeterminate="false"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:progress="1"
+            android:max="100" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewAchievementsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:text="@string/achievements"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="20dp"
+            android:textColor="#FF9800"
+            app:strokeColor="#FF9800"
+            app:strokeWidth="2dp" />
+
+        <TableLayout
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:showDividers="middle"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:text="@string/fastest_speed"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/topSpeedView"
+                    android:text="@string/_00_0_mph"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/average_speed"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgSpeedView"
+                    android:text="@string/_00_0_mph"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/furthest_distance"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/furthestDistanceView"
+                    android:text="@string/_00_0_miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/total_distance"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/totalDistanceView"
+                    android:text="@string/_00_0_miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="@string/average_distance"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/avgDistanceView"
+                    android:text="@string/_00_0_miles"
+                    android:textAlignment="textEnd" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="@string/favorite_board"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/chartsLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/average_speeds"
+                android:textStyle="bold" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/speedsChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/top_speeds"
+                android:textStyle="bold" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/topSpeedsChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/distances"
+                android:textStyle="bold" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/distancesChart"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/durations"
+                android:textStyle="bold" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/durationsChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,4 +1,4 @@
-package com.theredspy15.thanelocker.ui.mainfragments.profile;
+package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -7,59 +7,79 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
-import com.example.longboardlife.databinding.FragmentProfileBinding;
+import com.example.longboardlife.databinding.ActivityFriendBinding;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
-import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
-import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
-import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.util.ArrayList;
 
-public class ProfileFragment extends Fragment {
+public class FriendActivity extends AppCompatActivity {
 
-    private FragmentProfileBinding binding;
+    ActivityFriendBinding binding;
 
-    private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
-    private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
+    private final ArrayList<Session> sessions = new ArrayList<>();
+    private ArrayList<Board> boards; // TODO: implement with selling update
+    private Profile friend;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_friend);
 
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        binding = ActivityFriendBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
+        friend = (Profile) getIntent().getSerializableExtra("friend");
+        sessionsWithProfile(friend);
+    }
 
-        loadAllData();
+    public void sessionsWithProfile(Profile profile) {
 
-        return root;
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a reference to the cities collection
+        CollectionReference sessionsRef = db.collection("sessions");
+
+        // Create a query against the collection.
+        Query query = sessionsRef.whereEqualTo("user_id",  profile.getId());
+        query.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Session session = document.toObject(Session.class);
+                            sessions.add(session);
+                        }
+                        loadAllData();
+                    }
+                });
+
     }
 
     private void loadAllData() { // TODO: multi-thread this
-        if (Profile.localProfile.getName() != null) binding.nameText.setText(Profile.localProfile.getName());
-        if (Profile.localProfile.getDescription() != null) binding.descriptionView.setText(Profile.localProfile.getDescription());
+        if (friend.getName() != null) binding.nameText.setText(friend.getName());
+        if (friend.getDescription() != null) binding.descriptionView.setText(friend.getDescription());
 
-        if (Profile.localProfile.getImage() != null) {
+        if (friend.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(
                     Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()),
                     0, Image.convertImageStringToBytes(Profile.localProfile.getImage().getData()).length);
@@ -81,13 +101,8 @@ public class ProfileFragment extends Fragment {
     }
 
     void loadXpBar() {
-        binding.xpView.setProgress((int) Profile.localProfile.getLevel_xp());
-        binding.levelView.setText(getString(R.string.level)+" "+Profile.localProfile.getLevel());
-    }
-
-    public void loadEditProfile(View view) {
-        Intent myIntent = new Intent(requireContext(), EditProfileActivity.class);
-        startActivity(myIntent);
+        binding.xpView.setProgress((int) friend.getLevel_xp());
+        binding.levelView.setText(getString(R.string.level)+" "+friend.getLevel());
     }
 
     private void loadTextViewStats() {
@@ -108,9 +123,9 @@ public class ProfileFragment extends Fragment {
             if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
             binding.furthestDistanceView.setText(App.getDistanceFormatted(top,resources));
 
-           tDistance += Float.parseFloat(session.getTotalDistance());
-           tAvgDistance += Float.parseFloat(session.getTotalDistance());
-           tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
+            tDistance += Float.parseFloat(session.getTotalDistance());
+            tAvgDistance += Float.parseFloat(session.getTotalDistance());
+            tAvgSpeed += Float.parseFloat(session.getAvgSpeed());
         }
         tAvgSpeed = tAvgSpeed / sessions.size();
         tAvgDistance = tAvgDistance / sessions.size();
@@ -127,21 +142,21 @@ public class ProfileFragment extends Fragment {
 
         Board board = Profile.favoriteBoard();
 
-        Button button = new Button(requireContext());
+        Button button = new Button(this);
         if (board != null) {
             button.setText(board.getName());
             button.setTextSize(18);
-            button.setBackgroundColor(requireContext().getColor(R.color.grey));
+            button.setBackgroundColor(this.getColor(R.color.grey));
             button.getBackground().setAlpha(64);
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
             button.setOnClickListener(v->{
-                Intent myIntent = new Intent(requireContext(), BoardActivity.class);
+                Intent myIntent = new Intent(this, BoardActivity.class);
                 myIntent.putExtra("board_id", board.getId());
                 startActivity(myIntent);
             });
 
-            if (board.getImage() != null && board.getImage().getData() != null) {
+            if (board.getImage() != null) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(
                         Image.convertImageStringToBytes(board.getImage().getData()),
                         0, Image.convertImageStringToBytes(board.getImage().getData()).length);
@@ -152,17 +167,17 @@ public class ProfileFragment extends Fragment {
         } else {
             button.setText(R.string.no_favorite);
             button.setTextSize(18);
-            button.setBackgroundColor(requireContext().getColor(R.color.grey));
+            button.setBackgroundColor(this.getColor(R.color.grey));
             button.getBackground().setAlpha(64);
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }
-        linearLayout.addView(button,9,layout);
+        linearLayout.addView(button,8,layout);
     }
 
     public void loadAchievements(View view) {
-        Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
-        myIntent.putExtra("achievements", Profile.localProfile.getAchievements());
+        Intent myIntent = new Intent(this, AchievementsActivity.class);
+        myIntent.putExtra("achievements", friend.getAchievements());
         startActivity(myIntent);
     }
 
@@ -176,7 +191,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.speed),this);
 
         // set data
         chart.setData(data);
@@ -186,7 +201,7 @@ public class ProfileFragment extends Fragment {
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
+        int color = App.getThemeTextColor(this);
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
         chart.getXAxis().setTextColor(color);
@@ -205,7 +220,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.speed),this);
 
         // set data
         chart.setData(data);
@@ -215,7 +230,7 @@ public class ProfileFragment extends Fragment {
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
+        int color = App.getThemeTextColor(this);
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
         chart.getXAxis().setTextColor(color);
@@ -234,7 +249,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.distances),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.distances),this);
 
         // set data
         chart.setData(data);
@@ -244,7 +259,7 @@ public class ProfileFragment extends Fragment {
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
+        int color = App.getThemeTextColor(this);
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
         chart.getXAxis().setTextColor(color);
@@ -263,7 +278,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.durations),this);
 
         // set data
         chart.setData(data);
@@ -273,7 +288,7 @@ public class ProfileFragment extends Fragment {
         Description description = new Description();
         description.setText("");
         chart.setDescription(description);
-        int color = App.getThemeTextColor(requireContext());
+        int color = App.getThemeTextColor(this);
         chart.getData().setValueTextColor(color);
         chart.getData().setValueTextColor(color);
         chart.getXAxis().setTextColor(color);

@@ -2,19 +2,26 @@ plugins {
     id 'com.android.application'
 }
 
-apply plugin: 'com.google.gms.google-services'
-
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\hjada\\Documents\\thanelockerkey.jks')
+            storePassword 'HDrum_19'
+            keyAlias 'key0'
+            keyPassword 'HDrum_19'
+        }
+    }
     compileSdk 30
 
     defaultConfig {
         applicationId "com.theredspy15.thanelocker"
         minSdk 24
         targetSdk 30
-        versionCode 4
-        versionName "1.1-Release"
+        versionCode 5
+        versionName "1.2-Community-update"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     lintOptions {
@@ -26,14 +33,15 @@ android {
             minifyEnabled false
             shrinkResources false
             debuggable true
+            signingConfig signingConfigs.debug
         }
 
         release {
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             debuggable false
-            //proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -46,9 +54,24 @@ android {
 }
 
 dependencies {
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
+    // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
-    implementation 'com.google.firebase:firebase-analytics'
+
+    // Declare the dependency for the Cloud Firestore library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-firestore'
+
+    // Declare the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Also declare the dependency for the Google Play services library and specify its version
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    implementation 'io.grpc:grpc-okhttp:1.41.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.8.0'
@@ -56,14 +79,17 @@ dependencies {
     implementation 'com.rometools:rome:1.16.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'org.osmdroid:osmdroid-android:6.1.11'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

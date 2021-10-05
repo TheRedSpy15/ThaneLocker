@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSessionsBinding;
@@ -35,7 +34,6 @@ import java.util.Collections;
 
 public class SessionsFragment extends Fragment {
 
-    private SessionsViewModel sessionsViewModel;
     private FragmentSessionsBinding binding;
 
     public static Session newSession = new Session();
@@ -45,8 +43,6 @@ public class SessionsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sessionsViewModel =
-                new ViewModelProvider(this).get(SessionsViewModel.class);
 
         binding = FragmentSessionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -102,7 +98,6 @@ public class SessionsFragment extends Fragment {
                                     dialog.dismiss();
                                     Session.savedSessions.remove(session.getId());
                                     Session.savedSessionIds.remove((Integer) session.getId());
-                                    Session.save();
                                     sessionThread = new Thread(this::loadSessions);
                                     sessionThread.start();
                                 });
@@ -199,10 +194,8 @@ public class SessionsFragment extends Fragment {
             Session.savedSessionIds.add(newSession.getId());
             sessionThread = new Thread(this::loadSessions);
             sessionThread.start();
-            Session.save();
 
             Profile.localProfile.addXp((int) (Session.xpValue*newSession.getLocations().size()));
-            Profile.save();
         } else
             Snackbar.make(binding.newSessionButton, R.string.not_enough_data, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

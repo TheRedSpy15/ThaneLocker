@@ -8,4 +8,8 @@
         android:id="@+id/navigation_calculator"
         android:title="@string/calculator" />
 
+    <item
+        android:id="@+id/navigation_friendslist"
+        android:title="@string/friends" />
+
 </menu>

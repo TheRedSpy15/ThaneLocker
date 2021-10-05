@@ -1,20 +1,45 @@
 package com.theredspy15.thanelocker.models;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Meetup {
     private int meet_id = 0;
     private String title;
     private String description;
-    private List<Integer> attending_users = new ArrayList<>(); // owner is always the first user, index 0
+    private List<String> attending_users = new ArrayList<>(); // people attending
     private double latitude;
     private double longitude;
-    private Date date;
+    private String date;
 
-    public static void loadFromFirebase() {
+    public static ArrayList<Meetup> meetups = new ArrayList<>();
 
+    public synchronized static void loadFromFirebase() {
+        meetups.clear();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("meetups")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            meetups.add(document.toObject(Meetup.class));
+                        }
+                    } else {
+                        // failed
+                    }
+                });
+    }
+
+    public static void uploadMeetup(Meetup meetup) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("meetups").document(String.valueOf(meetup.getMeet_id())).set(meetup)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
     }
 
     public String getTitle() {
@@ -33,11 +58,11 @@ public class Meetup {
         this.description = description;
     }
 
-    public List<Integer> getAttending_users() {
+    public List<String> getAttending_users() {
         return attending_users;
     }
 
-    public void getAttending_users(List<Integer> attending_users) {
+    public void setAttending_users(List<String> attending_users) {
         this.attending_users = attending_users;
     }
 
@@ -57,11 +82,11 @@ public class Meetup {
         this.longitude = longitude;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

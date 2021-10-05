@@ -15,10 +15,16 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityBoardBinding;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
 
@@ -49,11 +55,38 @@ public class BoardActivity extends AppCompatActivity {
         toolBarLayout.setTitle(board.getName());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        loadAdData();
+    }
+
+    private void loadAdData() {
+        String unitId;
+        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+            unitId = "ca-app-pub-3940256099942544/6300978111";
+        } else unitId = "ca-app-pub-5128547878021429/7644000468"; // production only!
+
+        MobileAds.initialize(this, initializationStatus -> { });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(unitId);
+        binding.boardContent.layoutforcontent.addView(adView,2);
+        adView.loadAd(adRequest);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Session.save();
+        Board.save(this);
     }
 
     void populateViews(Board board) {
-        if (board.getImage() != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+        if (board.getImage() != null && board.getImage().getData() != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    Image.convertImageStringToBytes(board.getImage().getData()),
+                    0, Image.convertImageStringToBytes(board.getImage().getData()).length);
             binding.imageView.setImageBitmap(bitmap);
         } else {
             binding.imageView.setVisibility(View.GONE);
@@ -137,13 +170,7 @@ public class BoardActivity extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
                 (dialog, which) -> {
                     dialog.dismiss();
-                    Board.savedBoards.remove(board.getId());
-                    Board.savedBoardIds.remove((Integer) board.getId());
-                    Board.save();
-
-                    for (Session session : Session.sessionsWithBoard(board.getId()))
-                        Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
-                    Session.save();
+                    Board.deleteBoard(board);
 
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);

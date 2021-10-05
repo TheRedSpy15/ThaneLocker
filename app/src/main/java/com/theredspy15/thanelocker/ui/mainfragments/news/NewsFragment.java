@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
@@ -31,15 +30,12 @@ import java.util.List;
 
 public class NewsFragment extends Fragment {
 
-    private NewsViewModel newsViewModel;
     private FragmentNewsBinding binding;
 
     public static List<SyndEntry> entries;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        newsViewModel =
-                new ViewModelProvider(this).get(NewsViewModel.class);
 
         binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -53,6 +49,7 @@ public class NewsFragment extends Fragment {
                 requireActivity().runOnUiThread(()->displayEntries(entries));
             } catch (FeedException e) {
                 feedError();
+                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -63,7 +60,7 @@ public class NewsFragment extends Fragment {
     }
 
     private void feedError() {
-        binding.feedLayout.removeAllViews();
+        requireActivity().runOnUiThread(()->binding.feedLayout.removeAllViews());
         LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setMargins(0, 20, 0, 20);
 
@@ -72,7 +69,7 @@ public class NewsFragment extends Fragment {
         textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         textView.setTextSize(18);
         requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
-        binding.progressLoader.setVisibility(View.GONE);
+        requireActivity().runOnUiThread(()->binding.progressLoader.setVisibility(View.GONE));
     }
 
     public void displayEntries(List<SyndEntry> entries) {
@@ -109,6 +106,17 @@ public class NewsFragment extends Fragment {
     public List<SyndEntry> getFeed() throws FeedException {
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = null;
+
+        if (MainActivity.preferences.getBoolean("downhill254",true)) {
+            String url = "https://downhill254.com/blog/feed";
+            try {
+                feed = input.build(new XmlReader(new URL(url)));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Snackbar.make(binding.getRoot(), R.string.failed_connect_downhill254, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        }
 
         if (MainActivity.preferences.getBoolean("longboardbrand",false)) {
             String url = "https://longboardbrand.com/blog/feed";

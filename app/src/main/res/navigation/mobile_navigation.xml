@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_navigation_calculator"
             app:destination="@id/navigation_calculator" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_friendslist"
+            app:destination="@id/navigation_friendslist" />
     </fragment>
 
     <fragment
@@ -73,6 +76,12 @@
         android:name="com.theredspy15.thanelocker.ui.mainfragments.calculator.CalculatorFragment"
         android:label="Calculator"
         tools:layout="@layout/fragment_calculator" />
+
+    <fragment
+        android:id="@+id/navigation_friendslist"
+        android:name="com.theredspy15.thanelocker.ui.mainfragments.friendslist.FriendsListFragment"
+        android:label="Friends List"
+        tools:layout="@layout/fragment_friendslist" />
 
     <fragment
         android:id="@+id/navigation_skatemap"

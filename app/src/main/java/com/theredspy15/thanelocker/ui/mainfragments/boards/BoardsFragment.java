@@ -18,18 +18,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Image;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 import com.theredspy15.thanelocker.utils.App;
 
 public class BoardsFragment extends Fragment {
 
-    private BoardsViewModel boardsViewModel;
     private FragmentBoardsBinding binding;
 
     Context context;
@@ -38,8 +37,6 @@ public class BoardsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        boardsViewModel =
-                new ViewModelProvider(this).get(BoardsViewModel.class);
 
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -78,8 +75,10 @@ public class BoardsFragment extends Fragment {
                     button.setPadding(0,0,0,0);
                     button.setAllCaps(false);
 
-                    if (board.getImage() != null) {
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                    if (board.getImage() != null && board.getImage().getData() != null) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(
+                                Image.convertImageStringToBytes(board.getImage().getData()),
+                                0, Image.convertImageStringToBytes(board.getImage().getData()).length);
                         Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
                         button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
                     }
@@ -101,7 +100,6 @@ public class BoardsFragment extends Fragment {
                                     dialog.dismiss();
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove((Integer) board.getId());
-                                    Board.save();
                                     boardThread = new Thread(this::loadBoards);
                                     boardThread.start();
                                 });

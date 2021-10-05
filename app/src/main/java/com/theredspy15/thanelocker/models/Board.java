@@ -1,33 +1,33 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.SharedPreferences;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Board implements Serializable { // TODO: parcelable in the future
+public class Board implements Serializable {
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
     private boolean advanceMode = false;
-    private int user_id = Profile.localProfile.getId();
+    private String user_id = Objects.requireNonNull(MainActivity.mAuth.getCurrentUser()).getUid();
     @NonNull private String name = "board";
-    @Nullable private byte[] image;
+    @Nullable private Image image; // stored in object as gson, access:needs converted to byte[]
     @Nullable private String description = "No Description";
     private String trucks = "Generic Trucks";
     private int truckWidth = 180; // TODO
     private String footStop = "None"; // i.e type of footstop if present
     @Nullable private String deck="Generic Deck";
-    private byte rearAngle=50;
-    private byte frontAngle=50;
+    private int rearAngle=50;
+    private int frontAngle=50;
     private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
     private String bd_bushings="Stock Bushings";
     private String wheels = "Generic Wheels";
@@ -38,42 +38,47 @@ public class Board implements Serializable { // TODO: parcelable in the future
     private String gripTp="Standard Griptape";
     private ArrayList<Session> sessions;
     private boolean forSale = false;
-    private double cost; // always USD
+    private double cost;
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();
 
     public Board() {
-        int randId = ThreadLocalRandom.current().nextInt(); // TODO: change to result of hash after finished being created
+        int randId = ThreadLocalRandom.current().nextInt();
         if (!savedBoardIds.contains(randId)) setId(randId);
         else while (savedBoardIds.contains(randId)) ThreadLocalRandom.current().nextInt();
-
-        setUser_id(Profile.localProfile.getId());
     }
 
-    public static void load() {
-        Gson gson = new Gson();
-
-        String json = MainActivity.preferences.getString("savedBoards", null);
-        if (json != null) savedBoards = gson.fromJson(json, new TypeToken<HashMap<Integer,Board>>() {}.getType());
-        else savedBoards = new HashMap<>();
-
-        json = MainActivity.preferences.getString("savedBoardIds", null);
-        if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
-        else savedBoardIds = new ArrayList<>();
+    public static void save(Context context) {
+        for (int id : savedBoardIds) {
+            if (savedBoards.get(id).getImage() != null) savedBoards.get(id).getImage().uploadImage(context);
+            uploadBoard(Objects.requireNonNull(savedBoards.get(id)));
+        }
     }
 
-    public static void save() {
-        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-        Gson gson = new Gson();
+    public static void uploadBoard(Board board) {
+        if (board.getImage() != null) board.getImage().setData(null);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("boards").document(String.valueOf(board.getId())).set(board)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
 
-        String json = gson.toJson(savedBoards);
-        prefsEditor.putString("savedBoards", json);
+    public static void deleteBoard(Board board) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        json = gson.toJson(savedBoardIds);
-        prefsEditor.putString("savedBoardIds", json);
+        db.collection("boards").document(String.valueOf(board.getId()))
+                .delete()
+                .addOnSuccessListener(aVoid -> System.out.println("deletion worked!!"))
+                .addOnFailureListener(aVoid-> System.out.println("deletion failed...!"));
 
-        prefsEditor.apply();
+        Board.savedBoards.remove(board.getId());
+        Board.savedBoardIds.remove((Integer) board.getId());
+
+        for (Session session : Session.sessionsWithBoard(board.getId()))
+            Session.savedSessions.get(session.getId()).getBoard_ids().remove(session.getBoard_ids().indexOf(board.getId()));
     }
 
     public float fastestSpeed() {
@@ -148,11 +153,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.name = name;
     }
 
-    public byte[] getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 
@@ -173,19 +178,19 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.trucks = trucks;
     }
 
-    public byte getRearAngle() {
+    public int getRearAngle() {
         return rearAngle;
     }
 
-    public void setRearAngle(byte rearAngle) {
+    public void setRearAngle(int rearAngle) {
         this.rearAngle = rearAngle;
     }
 
-    public byte getFrontAngle() {
+    public int getFrontAngle() {
         return frontAngle;
     }
 
-    public void setFrontAngle(byte frontAngle) {
+    public void setFrontAngle(int frontAngle) {
         this.frontAngle = frontAngle;
     }
 
@@ -269,11 +274,11 @@ public class Board implements Serializable { // TODO: parcelable in the future
         this.deck = deck;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 

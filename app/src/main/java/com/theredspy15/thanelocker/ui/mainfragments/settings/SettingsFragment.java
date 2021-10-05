@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.longboardlife.R;
@@ -15,13 +14,10 @@ import com.example.longboardlife.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
 
-    private SettingsViewModel settingsViewModel;
     private FragmentSettingsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
 
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -38,18 +34,17 @@ public class SettingsFragment extends Fragment {
     }
 
     public static class MyPreferenceFragment extends PreferenceFragmentCompat {
+
         @Override
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             this.setHasOptionsMenu(true);
         }
 
-        /**
-         * Inflate Preferences
-         */
+        // Everything below here is for Google account login
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            addPreferencesFromResource(R.xml.preferences);
+            addPreferencesFromResource(R.xml.preferences); // inflate preferences
         }
     }
 }

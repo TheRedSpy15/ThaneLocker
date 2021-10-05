@@ -1,8 +1,5 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -19,12 +16,8 @@ import java.util.regex.Pattern;
 
 public class Elevation {
 
-    public boolean isNetworkAvailable(final Context context) {
-        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
-        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
-    }
-
     /**
+     * TODO: verify we have connection to api
      * gets elevations for a session AFTER it has been created to load all the elevations at once.
      * The list of returned elevations should be saved inside the session, to prevent constantly
      * having to wait for server to respond

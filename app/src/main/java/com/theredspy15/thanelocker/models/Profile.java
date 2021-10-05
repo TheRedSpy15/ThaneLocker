@@ -1,13 +1,10 @@
 package com.theredspy15.thanelocker.models;
 
-import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.io.Serializable;
@@ -15,8 +12,8 @@ import java.util.ArrayList;
 
 public class Profile implements Serializable {
     private static final long serialVersionUID = 1234570L;
-    public static Profile localProfile;
-    private int id = 0;
+    public static Profile localProfile = new Profile();
+    private String id = "no_uid";
     private int level = 1;
     private int level_xp = 0; // 0-100 for all levels
     @Nullable private String name;
@@ -24,59 +21,44 @@ public class Profile implements Serializable {
     @Nullable private String description;
     @Nullable private String state;
     @Nullable private String country;
-    private ArrayList<Integer> friend_ids = new ArrayList<>();
+    private ArrayList<String> friend_ids = new ArrayList<>();
+    private ArrayList<String> blocked_ids = new ArrayList<>();
     private ArrayList<Achievement> achievements = new ArrayList<>();
-    @Nullable private byte[] image;
-    private String passwordHash;
-    private String email;
-
-    public Profile() {
-        //int randId = ThreadLocalRandom.current().nextInt();
-        //setId(randId);
-
-
-        //if (!savedSessionIds.contains(randId)) setId(randId); TODO: check with database when thats created
-        //else while (savedSessionIds.contains(randId)) randId = ThreadLocalRandom.current().nextInt();
-    }
-
-    public static void load() {
-        Gson gson = new Gson();
-
-        String json = MainActivity.preferences.getString("localProfile", null);
-        if (json != null) localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
-        else localProfile = new Profile();
-    }
+    @Nullable private Image image;
 
     public static void save() {
-        SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-        Gson gson = new Gson();
-
-        String json = gson.toJson(localProfile);
-        prefsEditor.putString("localProfile", json);
-
-        prefsEditor.apply();
+        uploadProfile(localProfile);
     }
 
-    public static ArrayList<Session> sessionsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+    public static void uploadProfile(Profile profile) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("profiles").document(String.valueOf(profile.getId())).set(profile)
+                .addOnSuccessListener(aVoid -> {
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
+
+    public static ArrayList<Session> sessionsWithLocalProfile() {
         ArrayList<Session> sessionsWithLocalProfile = new ArrayList<>();
 
         for (int session_id : Session.savedSessionIds) {
             Session session = Session.savedSessions.get(session_id);
 
-            if (session != null && session.getUser_id() == localProfile.getId())
+            if (session != null && session.getUser_id().equals(localProfile.getId()))
                 sessionsWithLocalProfile.add(session);
         }
 
         return sessionsWithLocalProfile;
     }
 
-    public static ArrayList<Board> boardsWithLocalProfile() { // TODO: overload later on to loading from database when thats created
+    public static ArrayList<Board> boardsWithLocalProfile() {
         ArrayList<Board> boardsWithLocalProfile = new ArrayList<>();
 
         for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id);
 
-            if (board != null && board.getUser_id() == localProfile.getId())
+            if (board != null && board.getUser_id().equals(localProfile.getId()))
                 boardsWithLocalProfile.add(board);
         }
 
@@ -93,11 +75,11 @@ public class Profile implements Serializable {
         return null;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -111,11 +93,11 @@ public class Profile implements Serializable {
         this.name = name;
     }
 
-    public byte[] getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 
@@ -178,11 +160,11 @@ public class Profile implements Serializable {
         if (getLevel_xp() < 0) this.level_xp = 1;
     }
 
-    public ArrayList<Integer> getFriend_ids() {
+    public ArrayList<String> getFriend_ids() {
         return friend_ids;
     }
 
-    public void setFriend_ids(ArrayList<Integer> friend_ids) {
+    public void setFriend_ids(ArrayList<String> friend_ids) {
         this.friend_ids = friend_ids;
     }
 
@@ -194,19 +176,11 @@ public class Profile implements Serializable {
         this.achievements = achievements;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public ArrayList<String> getBlocked_ids() {
+        return blocked_ids;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setBlocked_ids(ArrayList<String> blocked_ids) {
+        this.blocked_ids = blocked_ids;
     }
 }

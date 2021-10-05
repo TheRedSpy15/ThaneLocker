@@ -11,12 +11,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -27,36 +25,44 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     public static SharedPreferences preferences;
-    public static FirebaseFirestore database;
+
+    public static FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        App.updateTheme();
-
-        Profile.load();
-        if (Board.savedBoards.isEmpty()) Board.load();
-        if (Session.savedSessions.isEmpty()) Session.load();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
-
-        database = FirebaseFirestore.getInstance();
 
         App.setContext(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_profile, R.id.navigation_boards, R.id.navigation_sessions, R.id.navigation_news, R.id.navigation_calculator, R.id.navigation_settings, R.id.navigation_skatemap)
+                R.id.navigation_profile,
+                R.id.navigation_boards,
+                R.id.navigation_sessions,
+                R.id.navigation_news,
+                R.id.navigation_calculator,
+                R.id.navigation_settings,
+                R.id.navigation_skatemap,
+                R.id.navigation_friendslist)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Session.save();
+        Board.save(this);
+        Profile.save();
     }
 
     @Override
