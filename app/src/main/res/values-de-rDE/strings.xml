@@ -99,10 +99,10 @@
     <string name="distance">Abstand</string>
     <string name="miles"> Meilen</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Wie schnell sollte die Position aktualisiert werden, wenn eine Sitzung aufgezeichnet wird. Niedriger ist schneller, aber mehr Power-Auslosung. Empfohlen ist 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Positionsabfrageintervall (Millisekunden)</string>
     <string name="recording_session">Sitzungsaufzeichnung</string>
-    <string name="not_added_disclaimer">Wird in einem zukünftigen Update hinzugefügt! Es wird die Planung von Skatesitzungen mit Freunden und die Suche nach einem neuen Standort ermöglichen, um zu gehen und zu skaten</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Dieser Abschnitt ist nicht fertig</string>
     <string name="no_news">Keine Nachrichten</string>
     <string name="recommended_durometer">Empfohlenes Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Keine Sitzungen aufgezeichnet</string>
     <string name="click_to_stop">Hier klicken, um die Aufzeichnung zu stoppen</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">Sie sind GPS-Daten werden verwendet</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Sitzung starten?</string>
     <string name="not_enough_data">Zum Speichern wurden nicht genügend Daten aufgezeichnet.</string>
     <string name="notification_description">Aufzeichnen Ihrer Daten für Sie zu einem späteren Zeitpunkt</string>
