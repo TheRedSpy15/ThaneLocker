@@ -99,10 +99,10 @@
     <string name="distance">\' Απόσταση</string>
     <string name="miles"> -Μάιλς.</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Πόσο γρήγορα θα πρέπει να ενημερώσετε τη θέση κατά την εγγραφή μιας συνεδρίας. Χαμηλότερα είναι πιο γρήγορα, αλλά περισσότερη δύναμη. Συνιστάται είναι 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Ποσοστό δημοσκοπήσεων θέσης (χιλιοστά του δευτερολέπτου)</string>
     <string name="recording_session">Συνεδρία καταγραφής:</string>
-    <string name="not_added_disclaimer">Θα προστεθεί σε μια μελλοντική ενημέρωση! Θα επιτρέψει από το σχεδιασμό συνεδρίες skate με τους φίλους, και την εξεύρεση μια νέα τοποθεσία για να πάει και να skate</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Η ενότητα αυτή δεν έχει ολοκληρωθεί.</string>
     <string name="no_news">Κανένα νέο.</string>
     <string name="recommended_durometer">Συνιστώμενη Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Δεν Καταγράφονται συνεδρίες</string>
     <string name="click_to_stop">Πατήστε εδώ για να τερματίσετε την καταγραφή</string>
     <string name="start">\' ΡΧΙΣΕ</string>
-    <string name="recording_disclaimer">Θα χρησιμοποιηθούν δεδομένα GPS.</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Έναρξη Συνεδρίας;</string>
     <string name="not_enough_data">Δεν καταγράφονται αρκετά δεδομένα για αποθήκευση.</string>
     <string name="notification_description">Καταγραφή δεδομένων για μελλοντική προβολή.</string>
