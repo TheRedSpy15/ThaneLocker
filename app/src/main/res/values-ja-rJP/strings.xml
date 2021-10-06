@@ -99,10 +99,10 @@
     <string name="distance">ディスタンス</string>
     <string name="miles"> マイルズ</string>
     <string name="mph"> モフ</string>
-    <string name="poll_rate_sum">セッションの記録時にロケーションをどのくらい迅速に更新するか。 低い方は高速だがパワー・ドロー。 推奨は 2500 です。</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">ロケーション・ポーリング率 (ミリ秒)</string>
     <string name="recording_session">記録セッション</string>
-    <string name="not_added_disclaimer">今後の更新で追加されます。 それは、友人とのスケートセッションを計画し、新しい場所を見つけてスケートをすることを可能にする。</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">このセクションは終了しません</string>
     <string name="no_news">ニュースなし</string>
     <string name="recommended_durometer">推奨されるDuroメーター: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">記録なしのセッション</string>
     <string name="click_to_stop">記録を停止するにはここ</string>
     <string name="start">スタート</string>
-    <string name="recording_disclaimer">GPS データが使用されます</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">セッションを開始する</string>
     <string name="not_enough_data">保存するデータが記録されていない</string>
     <string name="notification_description">後で表示するためのデータの記録</string>
