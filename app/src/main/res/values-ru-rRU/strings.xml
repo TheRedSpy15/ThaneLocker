@@ -99,10 +99,10 @@
     <string name="distance">Расстояние</string>
     <string name="miles"> Майлз</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Нижний-это быстрее, но больше энергии рисуется. Рекомендуется: 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
     <string name="recording_session">Запись сеанса</string>
-    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать занятия на коньках с друзьями, а также находить новое место для кататься и кататься на коньках</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Этот раздел не завершен</string>
     <string name="no_news">Нет новостей</string>
     <string name="recommended_durometer">Рекомендуемый дурометр: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Число записанных сеансов</string>
     <string name="click_to_stop">Щелкните здесь, чтобы остановить запись</string>
     <string name="start">НАЧАЛО</string>
-    <string name="recording_disclaimer">Вы будете использовать данные GPS</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Запустить сеанс?</string>
     <string name="not_enough_data">Недостаточно данных, записанных для сохранения</string>
     <string name="notification_description">Запись данных для последующего просмотра</string>
