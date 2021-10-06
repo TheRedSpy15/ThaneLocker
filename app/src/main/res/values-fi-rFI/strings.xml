@@ -99,10 +99,10 @@
     <string name="distance">Etäisyys</string>
     <string name="miles"> Miles.</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa. Suositeltava on 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Sijainnin Polling Rate (Millisekuntia)</string>
     <string name="recording_session">Tallennusistunto</string>
-    <string name="not_added_disclaimer">Lisätään tulevaan päivitykseen! Se mahdollistaa suunnitteluluistelua ystävien kanssa, ja löytää uusi sijainti mennä ja luistella</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Tämä osa ei ole valmis</string>
     <string name="no_news">Ei uutisia</string>
     <string name="recommended_durometer">Suositeltava Durometri: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Ei tunnustettuja tunnustuksia</string>
     <string name="click_to_stop">Lopeta tallennus napsauttamalla tätä</string>
     <string name="start">ALOITA</string>
-    <string name="recording_disclaimer">Olet GPS-datan käytössä</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Aloita istunto?</string>
     <string name="not_enough_data">Ei riittävästi tallennettuja tietoja</string>
     <string name="notification_description">Tietojesi tallentaminen myöhempään tarkasteluun</string>
