@@ -99,10 +99,10 @@
     <string name="distance">Distanza</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Come deve essere rapidamente aggiornata la posizione durante la registrazione di una sessione. Abbassare è più veloce ma più potenza disegna. Consigliato è 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Location Polling Rate (Millisecondi)</string>
     <string name="recording_session">Registrazione della sessione</string>
-    <string name="not_added_disclaimer">Verrà aggiunto in un aggiornamento futuro! Permetterà di pianificare le sessioni di skate con gli amici, e trovare una nuova location per andare e pattarsi</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Questa sezione non è terminata</string>
     <string name="no_news">Nessuna notizia</string>
     <string name="recommended_durometer">Durometro consigliato: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Nessuna Sessioni Registrate</string>
     <string name="click_to_stop">Clicca qui per arrestare la registrazione</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">Ti verranno utilizzati i dati GPS</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Avviare la sessione?</string>
     <string name="not_enough_data">Dati non sufficienti registrati per salvare</string>
     <string name="notification_description">Registrazione dei tuoi dati per la visualizzazione successiva</string>
