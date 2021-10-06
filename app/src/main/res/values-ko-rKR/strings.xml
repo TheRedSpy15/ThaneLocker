@@ -99,10 +99,10 @@
     <string name="distance">거리</string>
     <string name="miles"> 마일스</string>
     <string name="mph"> 모프</string>
-    <string name="poll_rate_sum">세션을 기록할 때 위치를 얼마나 빨리 업데이트해야 합니까? 더 낮은 것은 더 빠르지만 더 많은 전력 소모입니다. 권장 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">위치 폴링 비율 (밀리초)</string>
     <string name="recording_session">레코딩 세션</string>
-    <string name="not_added_disclaimer">향후 업데이트에 추가됩니다! 친구들과 스케이트 세션을 계획하고, 갈 수 있는 새로운 장소를 찾는 것을 허락할 것이다.</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">이 섹션은 완료되지 않았습니다.</string>
     <string name="no_news">뉴스 없음</string>
     <string name="recommended_durometer">권장 Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">기록된 세션이 없음</string>
     <string name="click_to_stop">레코딩을 중지하려면 여기를 클릭</string>
     <string name="start">시작</string>
-    <string name="recording_disclaimer">GPS 데이터가 사용될 것이다</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">세션 시작?</string>
     <string name="not_enough_data">저장할 데이터가 충분하지 않음</string>
     <string name="notification_description">나중에 볼 수 있도록 데이터 기록</string>
