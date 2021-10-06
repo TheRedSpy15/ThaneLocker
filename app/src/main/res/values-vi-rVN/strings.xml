@@ -99,10 +99,10 @@
     <string name="distance">Khoảng cách</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Vị trí sẽ được cập nhật nhanh như thê ́ nào khi ghi lại một phiên. Thấp hơn thì nhanh hơn nhưng kéo thêm sức mạnh. Khuyến nghị là 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Tỷ lệ đánh dấu vị trí (Milligiây)</string>
     <string name="recording_session">Phiên chạy</string>
-    <string name="not_added_disclaimer">Sẽ được thêm vào cập nhật trong tương lai! Nó sẽ cho phép từ kế hoạch trượt ván với bạn bè, và tìm ra một địa điểm mới để đi và trượt.</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Phần này chưa kết thúc</string>
     <string name="no_news">Không có tin</string>
     <string name="recommended_durometer">Khuyến cáo Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Không có phiên ghi lại</string>
     <string name="click_to_stop">Click vào đây để ngừng ghi âm</string>
     <string name="start">BẮT ĐẦU</string>
-    <string name="recording_disclaimer">Bạn là dữ liệu GPS sẽ được sử dụng</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Bắt đầu phiên chạy?</string>
     <string name="not_enough_data">Không đủ dữ liệu được ghi để lưu</string>
     <string name="notification_description">Ghi lại dư ̃ liệu cho bạn xem sau này</string>
