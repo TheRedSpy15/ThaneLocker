@@ -99,10 +99,10 @@
     <string name="distance">距離</string>
     <string name="miles"> 邁爾斯</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但更有動力抽獎。 建議為 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">位置輪詢率（毫秒）</string>
     <string name="recording_session">記錄階段作業</string>
-    <string name="not_added_disclaimer">將在未來更新中新增！ 它將從規劃與朋友的滑板會話中，找到一個新的去溜冰的位置</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">此區段未完成</string>
     <string name="no_news">沒消息</string>
     <string name="recommended_durometer">建議的 Durometer ： </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">未記錄階段作業</string>
     <string name="click_to_stop">請按一下這裡以停止記錄</string>
     <string name="start">開始</string>
-    <string name="recording_disclaimer">你的 GPS 資料將被利用</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">啟動階段作業？</string>
     <string name="not_enough_data">儲存的資料不足，無法儲存</string>
     <string name="notification_description">將您的資料記錄給之後檢視</string>
