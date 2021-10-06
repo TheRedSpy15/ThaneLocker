@@ -65,6 +65,13 @@ public class NewBoardActivity extends AppCompatActivity {
         checkAdvanceMode(board.isAdvanceMode());
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Board.save();
+    }
+
     private void toggleAdvanceMode(CompoundButton compoundButton, boolean isChecked) {
         checkAdvanceMode(isChecked);
     }

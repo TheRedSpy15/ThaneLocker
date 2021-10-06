@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 public class Elevation {
 
-    public boolean isNetworkAvailable(final Context context) {
+    public boolean isApiAvailable(final Context context) { // TODO: check specifically is api is available
         final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }

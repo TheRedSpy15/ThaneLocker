@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentProfileBinding;
@@ -36,7 +35,6 @@ import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
     private FragmentProfileBinding binding;
 
     private final Profile profile = Profile.localProfile;
@@ -46,11 +44,12 @@ public class ProfileFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        profileViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.editProfileButton.setOnClickListener(this::loadEditProfile);
+        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
 
         loadAllData();
 
@@ -234,7 +233,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.distances),requireContext());
 
         // set data
         chart.setData(data);
@@ -263,7 +262,7 @@ public class ProfileFragment extends Fragment {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+        LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
 
         // set data
         chart.setData(data);

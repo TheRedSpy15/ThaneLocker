@@ -11,7 +11,7 @@
     tools:showIn="@layout/activity_session">
 
     <LinearLayout
-        android:id="@+id/board_layout"
+        android:id="@+id/session_content_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">

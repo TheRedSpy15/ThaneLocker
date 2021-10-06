@@ -6,13 +6,13 @@
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.settings.SettingsFragment"
-        android:label="Settings"
+        android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_calculator"
         android:name="com.theredspy15.thanelocker.ui.mainfragments.calculator.CalculatorFragment"
-        android:label="Calculator"
+        android:label="@string/calculator"
         tools:layout="@layout/fragment_calculator" />
 
 </navigation>

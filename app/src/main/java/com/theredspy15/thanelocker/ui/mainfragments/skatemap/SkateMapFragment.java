@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
@@ -24,15 +23,12 @@ import org.osmdroid.views.MapView;
 
 public class SkateMapFragment extends Fragment {
 
-    private SkateMapViewModel skatemapViewModel;
     private FragmentSkatemapBinding binding;
 
     private MapView map = null;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        skatemapViewModel =
-                new ViewModelProvider(this).get(SkateMapViewModel.class);
 
         binding = FragmentSkatemapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

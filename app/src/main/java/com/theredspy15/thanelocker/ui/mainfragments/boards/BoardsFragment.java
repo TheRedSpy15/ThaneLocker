@@ -18,7 +18,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
@@ -29,7 +28,6 @@ import com.theredspy15.thanelocker.utils.App;
 
 public class BoardsFragment extends Fragment {
 
-    private BoardsViewModel boardsViewModel;
     private FragmentBoardsBinding binding;
 
     Context context;
@@ -38,8 +36,6 @@ public class BoardsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        boardsViewModel =
-                new ViewModelProvider(this).get(BoardsViewModel.class);
 
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -101,7 +97,6 @@ public class BoardsFragment extends Fragment {
                                     dialog.dismiss();
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove((Integer) board.getId());
-                                    Board.save();
                                     boardThread = new Thread(this::loadBoards);
                                     boardThread.start();
                                 });

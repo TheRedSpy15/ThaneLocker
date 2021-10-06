@@ -41,7 +41,7 @@
             app:title="@string/poll_rate_title"
             android:key="pollrate"
             android:persistent="true"
-            android:defaultValue="2500"
+            android:defaultValue="3500"
             android:max="10000"
             app:showSeekBarValue="true"
             app:min="1500"
@@ -55,7 +55,15 @@
             app:icon="@drawable/ic_outline_speed_24"
             android:title="Convert to kilometers per hour" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/sources_title"><CheckBoxPreference
+    <PreferenceCategory android:title="@string/sources_title">
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="true"
+            android:key="downhill254"
+            android:persistent="true"
+            app:icon="@drawable/ic_baseline_article_24"
+            android:title="@string/downhill254_title" />
+        <CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="true"
             android:key="longboardbrand"
@@ -69,11 +77,6 @@
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
             android:title="Basement Skate Blog" />
-        <Preference android:title="View Publisher Contact Information"
-            app:icon="@drawable/ic_baseline_info_24">
-            <intent android:action="android.intent.action.VIEW"
-                android:data="https://theredspy15.github.io/ThaneLocker/" />
-        </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
         <ListPreference
