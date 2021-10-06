@@ -99,10 +99,10 @@
     <string name="distance">Afstand</string>
     <string name="miles"> Mijl</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer power draw. Aanbevolen is 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Polling van locatiesnelheid (milliseconden)</string>
     <string name="recording_session">Opnamesessie</string>
-    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, en het vinden van een nieuwe locatie te gaan en rog</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">Deze sectie is niet voltooid</string>
     <string name="no_news">Geen nieuws</string>
     <string name="recommended_durometer">Aanbevolen Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Geen sessies opgenomen</string>
     <string name="click_to_stop">Klik hier om de opname te stoppen</string>
     <string name="start">STAREN</string>
-    <string name="recording_disclaimer">U bent GPS-gegevens gebruikt</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Sessie starten?</string>
     <string name="not_enough_data">Niet genoeg gegevens opgeslagen om op te slaan</string>
     <string name="notification_description">Uw gegevens voor u later bekijken</string>
