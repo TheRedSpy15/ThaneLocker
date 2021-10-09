@@ -5,6 +5,8 @@ import android.net.ConnectivityManager;
 
 import com.google.gson.Gson;
 
+import org.osmdroid.util.GeoPoint;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -77,6 +79,65 @@ public class Elevation {
         while (valueFinder.find()) list.add(Float.valueOf(valueFinder.group(0)));
 
         http.disconnect();
+
+        return list;
+    }
+
+    /**
+     * use in finding the elevation of said route
+     * @param start
+     * @param end
+     * @return
+     * @throws IOException
+     */
+    public static List<SessionLocationPoint> getLocationsFromRoute(GeoPoint start, GeoPoint end) throws IOException {
+        // create requests from locations
+        String locations = start.getLongitude()+","+start.getLatitude()+";"+end.getLongitude()+","+end.getLatitude();
+
+        List<SessionLocationPoint> list = new ArrayList<>();
+
+        // creating connection
+        URL url = new URL("https://routing.openstreetmap.de/routed-car/route/v1/driving/"+locations+"?alternatives=false&overview=full&steps=true");
+        HttpURLConnection http = (HttpURLConnection)url.openConnection();
+        http.setRequestMethod("GET");
+        http.setDoOutput(true);
+        http.setRequestProperty("Content-Type", "application/json");
+
+        // getting response
+        BufferedReader reader = new BufferedReader(new InputStreamReader((http.getInputStream())));
+        StringBuilder stringBuilder = new StringBuilder();
+        String output;
+        while ((output = reader.readLine()) != null) {
+            stringBuilder.append(output);
+        }
+
+        // regex to find elevations
+        // separate all elevations from the data we don't need
+        StringBuilder elevations = new StringBuilder();
+        Matcher elevationsFinder = Pattern.compile("location\\\":(.*?)\\]")
+                .matcher(stringBuilder.toString());
+        while (elevationsFinder.find()) elevations.append(elevationsFinder.group());
+
+        // get just the integers
+        Matcher valueFinder = Pattern.compile("[-?0.0,-9.9]+")
+                .matcher(elevations.toString());
+        while (valueFinder.find()) {
+            SessionLocationPoint point = new SessionLocationPoint();
+            point.setLongitude(Double.parseDouble(valueFinder.group(0).split(",")[0]));
+            point.setLatitude(Double.parseDouble(valueFinder.group(0).split(",")[1]));
+            list.add(point);
+        }
+
+        http.disconnect();
+
+        return list;
+    }
+
+    public static ArrayList<Float> getElevationsFromRoute(GeoPoint start, GeoPoint end) throws IOException {
+        ArrayList<Float> list = getElevations(getLocationsFromRoute(start, end));
+        list.remove(1);
+        list.remove(2);
+        list.remove(list.size()-1);
 
         return list;
     }

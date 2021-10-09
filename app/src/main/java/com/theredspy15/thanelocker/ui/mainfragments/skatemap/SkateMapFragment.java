@@ -1,7 +1,9 @@
 package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +15,25 @@ import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSkatemapBinding;
+import com.theredspy15.thanelocker.models.Elevation;
+import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.routing.OSRMRoadManager;
+import org.osmdroid.bonuspack.routing.Road;
+import org.osmdroid.bonuspack.routing.RoadManager;
+import org.osmdroid.bonuspack.routing.RoadNode;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.Projection;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class SkateMapFragment extends Fragment {
 
@@ -47,8 +61,9 @@ public class SkateMapFragment extends Fragment {
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
-        mapController.setZoom(5.0);
-        GeoPoint startPoint = new GeoPoint(40.722429, -99.366040);
+        mapController.setZoom(15.0);
+        GeoPoint startPoint = new GeoPoint(41.222789, -81.706360);
+        GeoPoint endPoint = new GeoPoint(41.220546, -81.706457);
         mapController.setCenter(startPoint);
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
@@ -60,6 +75,29 @@ public class SkateMapFragment extends Fragment {
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
                 (dialog, which) -> dialog.dismiss());
         alertDialog.show();
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        RoadManager roadManager = new OSRMRoadManager(requireContext(), "MY_USER_AGENT");
+        ArrayList<GeoPoint> waypoints = new ArrayList<>();
+        waypoints.add(startPoint);
+        waypoints.add(endPoint);
+        Road road = roadManager.getRoad(waypoints);
+        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+        map.getOverlays().add(roadOverlay);
+        map.invalidate();
+        Drawable nodeIcon = getResources().getDrawable(R.drawable.ic_baseline_location_on_24);
+        try {
+            for (SessionLocationPoint point : Elevation.getLocationsFromRoute(startPoint,endPoint)){
+                Marker nodeMarker = new Marker(map);
+                nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
+                nodeMarker.setIcon(nodeIcon);
+                map.getOverlays().add(nodeMarker);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return root;
     }
