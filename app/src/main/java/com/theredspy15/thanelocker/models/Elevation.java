@@ -83,6 +83,63 @@ public class Elevation {
         return list;
     }
 
+    public static ArrayList<Float> getElevationsHighRes(List<SessionLocationPoint> locations) throws IOException {
+        // create requests from locations
+        List<ElevationRequest> requests = new ArrayList<>();
+        for (SessionLocationPoint point : locations) {
+            requests.add(new ElevationRequest(point.getLatitude(), point.getLongitude()));
+        }
+
+        StringBuilder apiLocation = new StringBuilder("https://api.opentopodata.org/v1/aster30m?locations=");
+        for (SessionLocationPoint point : locations) {
+            apiLocation.append(point.getLatitude()).append(",").append(point.getLongitude()).append("|");
+        }
+        apiLocation = new StringBuilder(apiLocation.substring(0, apiLocation.length() - 1));
+        apiLocation.append("&interpolation=cubic");
+        System.out.println("apiLocation: "+apiLocation);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(requests);
+
+        ArrayList<Float> list = new ArrayList<>();
+
+        // creating connection
+        URL url = new URL(apiLocation.toString());
+        HttpURLConnection http = (HttpURLConnection)url.openConnection();
+        System.out.println("responsecodefromapi:"+http.getResponseCode());
+
+        // creating message to send
+        //String data = "{\"locations\":" + json + "}"; // TODO: do this this more properly
+        //byte[] out = data.getBytes(StandardCharsets.UTF_8);
+        //OutputStream stream = http.getOutputStream();
+        //stream.write(out);
+
+        // getting response
+        BufferedReader reader = new BufferedReader(new InputStreamReader((http.getInputStream())));
+        StringBuilder stringBuilder = new StringBuilder();
+        String output;
+        while ((output = reader.readLine()) != null) {
+            stringBuilder.append(output);
+        }
+        System.out.println("Response from api: "+output);
+
+        // regex to find elevations
+        // separate all elevations from the data we don't need
+        StringBuilder elevations = new StringBuilder();
+        Matcher elevationsFinder = Pattern.compile("elevation\":(.*?),")
+                .matcher(stringBuilder.toString());
+        while (elevationsFinder.find()) elevations.append(elevationsFinder.group());
+
+        // get just the integers
+        Matcher valueFinder = Pattern.compile("[0-9]+")
+                .matcher(elevations.toString());
+        while (valueFinder.find()) list.add(Float.valueOf(valueFinder.group(0)));
+
+        http.disconnect();
+
+        return list;
+    }
+
     /**
      * use in finding the elevation of said route
      * @param start
@@ -134,7 +191,7 @@ public class Elevation {
     }
 
     public static ArrayList<Float> getElevationsFromRoute(GeoPoint start, GeoPoint end) throws IOException {
-        ArrayList<Float> list = getElevations(getLocationsFromRoute(start, end));
+        ArrayList<Float> list = getElevationsHighRes(getLocationsFromRoute(start, end));
         list.remove(1);
         list.remove(2);
         list.remove(list.size()-1);

@@ -13,6 +13,15 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
+import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.BillingClientStateListener;
+import com.android.billingclient.api.BillingFlowParams;
+import com.android.billingclient.api.BillingResult;
+import com.android.billingclient.api.Purchase;
+import com.android.billingclient.api.PurchasesUpdatedListener;
+import com.android.billingclient.api.SkuDetails;
+import com.android.billingclient.api.SkuDetailsParams;
+import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,6 +30,9 @@ import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +52,44 @@ public class MainActivity extends AppCompatActivity {
         if (Session.savedSessions.isEmpty()) Session.load();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
+
+        BillingClient billingClient = BillingClient.newBuilder(this)
+                .setListener(purchasesUpdatedListener)
+                .enablePendingPurchases()
+                .build();
+
+        billingClient.startConnection(new BillingClientStateListener() {
+            @Override
+            public void onBillingSetupFinished(BillingResult billingResult) {
+                if (billingResult.getResponseCode() ==  BillingClient.BillingResponseCode.OK) {
+                    // The BillingClient is ready. You can query purchases here.
+                }
+            }
+            @Override
+            public void onBillingServiceDisconnected() {
+                // Try to restart the connection on the next request to
+                // Google Play by calling the startConnection() method.
+            }
+        });
+
+        final SkuDetails[] details = new SkuDetails[1];
+        List<String> skuList = new ArrayList<>();
+        skuList.add("longboardlife_premium");
+        SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
+        params.setSkusList(skuList).setType(BillingClient.SkuType.SUBS);
+        /*billingClient.querySkuDetailsAsync(params.build(),
+                (billingResult, skuDetailsList) -> {
+                    // Process the result.
+                    details[0] = skuDetailsList.get(0);
+                });
+
+        // Retrieve a value for "skuDetails" by calling querySkuDetailsAsync().
+        BillingFlowParams billingFlowParams = BillingFlowParams.newBuilder()
+                .setSkuDetails(details[0])
+                .build();
+        int responseCode = billingClient.launchBillingFlow(this, billingFlowParams).getResponseCode();*/
+
+        // Handle the result.
 
         database = FirebaseFirestore.getInstance();
 
@@ -95,5 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 });
         alertDialog.show();
     }
+
+    private PurchasesUpdatedListener purchasesUpdatedListener = (billingResult, purchases) -> {
+        // To be implemented in a later section.
+    };
 
 }

@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -25,10 +26,12 @@ import org.osmdroid.bonuspack.routing.Road;
 import org.osmdroid.bonuspack.routing.RoadManager;
 import org.osmdroid.bonuspack.routing.RoadNode;
 import org.osmdroid.config.Configuration;
+import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.Projection;
+import org.osmdroid.views.overlay.MapEventsOverlay;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
@@ -62,8 +65,8 @@ public class SkateMapFragment extends Fragment {
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
         mapController.setZoom(15.0);
-        GeoPoint startPoint = new GeoPoint(41.222789, -81.706360);
-        GeoPoint endPoint = new GeoPoint(41.220546, -81.706457);
+        GeoPoint startPoint = new GeoPoint(20.712807,-156.251335);
+        GeoPoint endPoint = new GeoPoint(20.768995,-156.306052);
         mapController.setCenter(startPoint);
         map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
@@ -98,9 +101,25 @@ public class SkateMapFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
+        map.getOverlays().add(OverlayEvents);
 
         return root;
     }
+
+    MapEventsReceiver mReceive = new MapEventsReceiver() {
+        @Override
+        public boolean singleTapConfirmedHelper(GeoPoint p) {
+            Toast.makeText(requireContext(),p.getLatitude() + " - "+p.getLongitude(),Toast.LENGTH_LONG).show();
+
+            return false;
+        }
+
+        @Override
+        public boolean longPressHelper(GeoPoint p) {
+            return false;
+        }
+    };
 
     @Override
     public void onResume() {

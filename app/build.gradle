@@ -5,14 +5,14 @@ plugins {
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.theredspy15.thanelocker"
         minSdk 24
-        targetSdk 30
-        versionCode 4
-        versionName "1.1-Release"
+        targetSdk 31
+        versionCode 7
+        versionName "1.37-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,6 +46,10 @@ android {
 }
 
 dependencies {
+    def billing_version = "4.0.0"
+
+    implementation "com.android.billingclient:billing:$billing_version"
+
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
     implementation 'com.google.firebase:firebase-analytics'

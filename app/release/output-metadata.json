@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.theredspy15.longboardlife",
+  "applicationId": "com.theredspy15.thanelocker",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0-Test",
+      "versionCode": 5,
+      "versionName": "1.35-Release",
       "outputFile": "app-release.apk"
     }
   ],
