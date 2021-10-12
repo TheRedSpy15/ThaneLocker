@@ -43,6 +43,7 @@ import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
+import com.theredspy15.thanelocker.utils.Reduction;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
