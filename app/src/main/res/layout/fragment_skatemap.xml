@@ -32,5 +32,12 @@
             android:layout_height="wrap_content"
             android:text="Distance: 0.00 Miles" />
 
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/elevationsChart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

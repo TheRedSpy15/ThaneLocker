@@ -7,30 +7,34 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSkatemapBinding;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
+import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.routing.OSRMRoadManager;
 import org.osmdroid.bonuspack.routing.Road;
 import org.osmdroid.bonuspack.routing.RoadManager;
-import org.osmdroid.bonuspack.routing.RoadNode;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.Projection;
 import org.osmdroid.views.overlay.MapEventsOverlay;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
@@ -43,6 +47,9 @@ public class SkateMapFragment extends Fragment {
     private FragmentSkatemapBinding binding;
 
     private MapView map = null;
+    private IMapController mapController;
+    private GeoPoint point1 = null;
+    private GeoPoint point2 = null;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -60,47 +67,22 @@ public class SkateMapFragment extends Fragment {
         //note, the load method also sets the HTTP User Agent to your application's package name, abusing osm's
         //tile servers will get you banned based on this string
 
-        map = binding.maplayout.findViewById(R.id.map);
+        // setup map
+        Configuration.getInstance().load(requireContext(), PreferenceManager.getDefaultSharedPreferences(requireContext()));
+        map = binding.map;
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
-        IMapController mapController = map.getController();
+        mapController = map.getController();
         mapController.setZoom(15.0);
         GeoPoint startPoint = new GeoPoint(20.712807,-156.251335);
-        GeoPoint endPoint = new GeoPoint(20.768995,-156.306052);
         mapController.setCenter(startPoint);
-        map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
-        // WIP disclaimer dialog
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle(getString(R.string.not_added_title));
-        alertDialog.setMessage(getString(R.string.not_added_disclaimer));
-        alertDialog.setCancelable(false);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
-                (dialog, which) -> dialog.dismiss());
-        alertDialog.show();
+        // determine theme for map
+        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        RoadManager roadManager = new OSRMRoadManager(requireContext(), "MY_USER_AGENT");
-        ArrayList<GeoPoint> waypoints = new ArrayList<>();
-        waypoints.add(startPoint);
-        waypoints.add(endPoint);
-        Road road = roadManager.getRoad(waypoints);
-        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
-        map.getOverlays().add(roadOverlay);
-        map.invalidate();
-        Drawable nodeIcon = getResources().getDrawable(R.drawable.ic_baseline_location_on_24);
-        try {
-            for (SessionLocationPoint point : Elevation.getLocationsFromRoute(startPoint,endPoint)){
-                Marker nodeMarker = new Marker(map);
-                nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
-                nodeMarker.setIcon(nodeIcon);
-                map.getOverlays().add(nodeMarker);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
         map.getOverlays().add(OverlayEvents);
 
@@ -110,16 +92,100 @@ public class SkateMapFragment extends Fragment {
     MapEventsReceiver mReceive = new MapEventsReceiver() {
         @Override
         public boolean singleTapConfirmedHelper(GeoPoint p) {
-            Toast.makeText(requireContext(),p.getLatitude() + " - "+p.getLongitude(),Toast.LENGTH_LONG).show();
+            if (point1 == null) {
+                point1 = p;
+                addMarker(point1,false);
+            } else if (point2 == null) {
+                point2 = p;
+                addMarker(point2,true);
+            } else {
+                point1 = p;
+                point2 = null;
+                // clear route
+            }
 
             return false;
         }
 
         @Override
-        public boolean longPressHelper(GeoPoint p) {
-            return false;
-        }
+        public boolean longPressHelper(GeoPoint p) { return false; }
     };
+
+    /*
+    // Calculates and returns grade
+    function calcGrade(rise,run) {
+        return (rise/run*100).toFixed(2);
+    }
+    */
+
+    private void addMarker(GeoPoint point, boolean getElevation) {
+        // add marker
+        Drawable icon = getResources().getDrawable(R.drawable.ic_baseline_location_on_24);
+        Marker nodeMarker = new Marker(map);
+        nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
+        nodeMarker.setIcon(icon);
+        map.getOverlays().add(nodeMarker);
+
+        if (getElevation) {
+            if (point1 != null && point2 != null) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+
+                // display route
+                RoadManager roadManager = new OSRMRoadManager(requireContext(), "MY_USER_AGENT");
+                ArrayList<GeoPoint> waypoints = new ArrayList<>();
+                waypoints.add(point1);
+                waypoints.add(point2);
+                Road road = roadManager.getRoad(waypoints);
+                Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+                map.getOverlays().add(roadOverlay);
+                map.invalidate();
+
+                for (GeoPoint geo : road.mRouteHigh) {
+                    Marker nodeMarker2 = new Marker(map);
+                    nodeMarker2.setPosition(new GeoPoint(geo.getLatitude(),geo.getLongitude()));
+                    nodeMarker2.setIcon(icon);
+                    map.getOverlays().add(nodeMarker2);
+                }
+
+                // get elevations
+                ArrayList<Float> elePoints = new ArrayList<>();
+                try {
+                    elePoints = new ArrayList<>(Elevation.getElevationsGeoPoint(road.mRouteHigh));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // update graph
+                LineChart chart = binding.elevationsChart;
+
+                ArrayList<Entry> values = new ArrayList<>();
+
+                for (int i = 0; i < elePoints.size(); i++) {
+                    values.add(new Entry(i, elePoints.get(i), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
+                }
+
+                // create a data object with the data sets
+                LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
+
+                // set data
+                chart.setData(data);
+                chart.animateX(3000);
+
+                // coloring chart
+                Description description = new Description();
+                description.setText("");
+                chart.setDescription(description);
+                int color = App.getThemeTextColor(requireContext());
+                chart.getData().setValueTextColor(color);
+                chart.getData().setValueTextColor(color);
+                chart.getXAxis().setTextColor(color);
+                chart.getAxisLeft().setTextColor(color);
+                chart.getAxisRight().setTextColor(color);
+                chart.getLegend().setTextColor(color);
+            }
+        }
+    }
 
     @Override
     public void onResume() {
