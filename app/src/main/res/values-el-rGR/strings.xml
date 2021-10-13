@@ -147,6 +147,7 @@
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Βαρέλι/Βαρέλι</string>
     <string name="board_needs_name">Το συμβούλιο χρειάζεται τουλάχιστον ένα όνομα.</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
