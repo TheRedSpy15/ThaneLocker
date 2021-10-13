@@ -147,6 +147,7 @@
     <string name="cruise_shape">Cono/Cono, Cono/Barrel</string>
     <string name="freeride_shape">Barril/Barrel</string>
     <string name="board_needs_name">El tablero necesita al menos un nombre</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
