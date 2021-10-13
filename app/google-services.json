@@ -14,19 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "54419120166-1sulrscba15esmc3kpe1c0qe1tthbqdt.apps.googleusercontent.com",
+          "client_id": "54419120166-1qq6jk36lvhu8umr0g20050u3i7alcq9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.theredspy15.thanelocker",
-            "certificate_hash": "1a87425e773cffe163ddd79925ca794e31f0b80f"
-          }
-        },
-        {
-          "client_id": "54419120166-t3chup1n5fpjonn4apgfk46hh4ogbrok.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.theredspy15.thanelocker",
-            "certificate_hash": "6168805aa3df8f4024d6cd8b67263f94ff01f777"
+            "certificate_hash": "2455de4cfbee336f58365fe418e0e4640bbf8d84"
           }
         }
       ],

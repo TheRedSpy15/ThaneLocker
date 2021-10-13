@@ -21,3 +21,10 @@
 #-renamesourcefileattribute SourceFile
 -keep class com.rometools.rome.feed.synd.impl.*
 -keep class com.rometools.rome.io.impl.*
+-keep public class com.google.android.gms.ads.** {
+  public *;
+}
+
+-keep public class com.google.ads.** {
+  public *;
+}
