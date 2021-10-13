@@ -147,6 +147,7 @@
     <string name="cruise_shape">C1 / C1 ، C1 / Barrel</string>
     <string name="freeride_shape">Barl / Barl</string>
     <string name="board_needs_name">يجب أن يكون للمجلس اسم على الأقل</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
