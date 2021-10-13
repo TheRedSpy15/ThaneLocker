@@ -147,6 +147,7 @@
     <string name="cruise_shape">Koni/Koni, Koni/Varil</string>
     <string name="freeride_shape">Varil/Barrel</string>
     <string name="board_needs_name">Kurulun en azından bir isme ihtiyacı var.</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
