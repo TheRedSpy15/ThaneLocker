@@ -147,6 +147,7 @@
     <string name="cruise_shape">Con/Con, Con/Butoi</string>
     <string name="freeride_shape">Baril/Barrel</string>
     <string name="board_needs_name">Consiliul are nevoie de cel puţin un nume</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
