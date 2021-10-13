@@ -1,6 +1,8 @@
 package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -24,6 +26,8 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
+import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
 
@@ -85,8 +89,12 @@ public class SkateMapFragment extends Fragment {
         if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
             map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
 
+        // get where user clicks on map
         MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
         map.getOverlays().add(OverlayEvents);
+
+        // offline notice
+        if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
 
         return root;
     }
@@ -123,6 +131,19 @@ public class SkateMapFragment extends Fragment {
         return (rise/run*100).toFixed(2);
     }
     */
+
+    private void offlineNotice() {
+        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+        alertDialog.setTitle("Offline");
+        alertDialog.setMessage("This section requires internet to access elevation data from server");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                });
+        alertDialog.show();
+    }
 
     private void addMarker(GeoPoint point, boolean getElevation) {
         // add marker
