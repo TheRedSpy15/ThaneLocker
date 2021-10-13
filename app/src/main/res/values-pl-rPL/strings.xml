@@ -147,6 +147,7 @@
     <string name="cruise_shape">Stożek/stożek, stożek</string>
     <string name="freeride_shape">Beczka/Barrel</string>
     <string name="board_needs_name">Zarząd potrzebuje co najmniej nazwy</string>
+    <string name="elevation">Elevation</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
