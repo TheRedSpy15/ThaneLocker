@@ -1,6 +1,7 @@
 package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
@@ -99,9 +101,13 @@ public class SkateMapFragment extends Fragment {
                 point2 = p;
                 addMarker(point2,true);
             } else {
+                point2 = null; // reset for new route
+                map.getOverlays().clear();
+                MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
+                map.getOverlays().add(OverlayEvents);
+
                 point1 = p;
-                point2 = null;
-                // clear route
+                addMarker(point1,false);
             }
 
             return false;
@@ -120,7 +126,7 @@ public class SkateMapFragment extends Fragment {
 
     private void addMarker(GeoPoint point, boolean getElevation) {
         // add marker
-        Drawable icon = getResources().getDrawable(R.drawable.ic_baseline_location_on_24);
+        Drawable icon = AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_location_on_24);
         Marker nodeMarker = new Marker(map);
         nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
         nodeMarker.setIcon(icon);
@@ -128,63 +134,73 @@ public class SkateMapFragment extends Fragment {
 
         if (getElevation) {
             if (point1 != null && point2 != null) {
-                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
-
-                // display route
-                RoadManager roadManager = new OSRMRoadManager(requireContext(), "MY_USER_AGENT");
-                ArrayList<GeoPoint> waypoints = new ArrayList<>();
-                waypoints.add(point1);
-                waypoints.add(point2);
-                Road road = roadManager.getRoad(waypoints);
-                Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
-                map.getOverlays().add(roadOverlay);
-                map.invalidate();
-
-                for (GeoPoint geo : road.mRouteHigh) {
-                    Marker nodeMarker2 = new Marker(map);
-                    nodeMarker2.setPosition(new GeoPoint(geo.getLatitude(),geo.getLongitude()));
-                    nodeMarker2.setIcon(icon);
-                    map.getOverlays().add(nodeMarker2);
-                }
-
-                // get elevations
-                ArrayList<Float> elePoints = new ArrayList<>();
-                try {
-                    elePoints = new ArrayList<>(Elevation.getElevationsGeoPoint(road.mRouteHigh));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                // update graph
-                LineChart chart = binding.elevationsChart;
-
-                ArrayList<Entry> values = new ArrayList<>();
-
-                for (int i = 0; i < elePoints.size(); i++) {
-                    values.add(new Entry(i, elePoints.get(i), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
-                }
-
-                // create a data object with the data sets
-                LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
-
-                // set data
-                chart.setData(data);
-                chart.animateX(3000);
-
-                // coloring chart
-                Description description = new Description();
-                description.setText("");
-                chart.setDescription(description);
-                int color = App.getThemeTextColor(requireContext());
-                chart.getData().setValueTextColor(color);
-                chart.getData().setValueTextColor(color);
-                chart.getXAxis().setTextColor(color);
-                chart.getAxisLeft().setTextColor(color);
-                chart.getAxisRight().setTextColor(color);
-                chart.getLegend().setTextColor(color);
+                Thread elevationThread = new Thread(this::getElevation);
+                elevationThread.start();
             }
         }
+    }
+
+    private void getElevation() {
+        // display route
+        RoadManager roadManager = new OSRMRoadManager(requireContext(), "MY_USER_AGENT");
+        ArrayList<GeoPoint> waypoints = new ArrayList<>();
+        waypoints.add(point1);
+        waypoints.add(point2);
+        Road road = roadManager.getRoad(waypoints);
+        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+        roadOverlay.getOutlinePaint().setColor(Color.YELLOW);
+
+        // get elevations
+        ArrayList<Float> elePoints = new ArrayList<>();
+        try {
+            elePoints = new ArrayList<>(Elevation.getElevationsGeoPoint(road.mRouteHigh));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // update graph
+        LineChart chart = binding.elevationsChart;
+
+        ArrayList<Entry> values = new ArrayList<>();
+
+        for (int i = 0; i < elePoints.size(); i++) {
+            values.add(new Entry(i, elePoints.get(i), ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_location_on_24,null)));
+        }
+
+        // create a data object with the data sets
+        LineData data = App.createLineSet(values,getString(R.string.elevation),requireContext());
+
+        // set data
+        chart.setData(data);
+
+        // coloring chart
+        Description description = new Description();
+        description.setText("");
+        chart.setDescription(description);
+        int color = App.getThemeTextColor(requireContext());
+        chart.getData().setValueTextColor(color);
+        chart.getData().setValueTextColor(color);
+        chart.getXAxis().setTextColor(color);
+        chart.getAxisLeft().setTextColor(color);
+        chart.getAxisRight().setTextColor(color);
+        chart.getLegend().setTextColor(color);
+
+        requireActivity().runOnUiThread(()->{
+            // ui text
+            binding.tipView.setVisibility(View.GONE);
+            binding.elevationsChart.setVisibility(View.VISIBLE);
+            binding.distanceView.setVisibility(View.VISIBLE);
+
+            // route
+            map.getOverlays().add(roadOverlay);
+            map.invalidate();
+
+            // chart
+            chart.animateX(3000);
+
+            // distance text
+            binding.distanceView.setText("Distance: "+road.mLength*0.6213711922);
+        });
     }
 
     @Override

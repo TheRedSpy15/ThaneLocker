@@ -107,7 +107,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
             }
         }
 
-        String totalString = String.format("%.1f", total*0.000621371192); // converts to miles
+        String totalString = String.format("%.1f", total*0.000621371192); // converts to miles (from METERS)
         if (total*0.000621371192 < 10) return "0"+totalString;
         return totalString;
     }

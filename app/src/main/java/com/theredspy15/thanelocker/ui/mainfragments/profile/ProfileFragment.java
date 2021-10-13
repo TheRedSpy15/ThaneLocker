@@ -54,9 +54,6 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
 

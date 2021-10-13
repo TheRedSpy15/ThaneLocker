@@ -437,7 +437,7 @@ public class SessionActivity extends AppCompatActivity {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),this);
+        LineData data = App.createLineSet(values,getString(R.string.elevation),this);
 
         // set data
         chart.setData(data);
