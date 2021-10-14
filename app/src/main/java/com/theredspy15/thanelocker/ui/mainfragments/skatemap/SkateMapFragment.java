@@ -30,6 +30,7 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
+import com.theredspy15.thanelocker.utils.Purchasing;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.routing.OSRMRoadManager;
@@ -38,6 +39,7 @@ import org.osmdroid.bonuspack.routing.RoadManager;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.tileprovider.util.StorageUtils;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.MapView;
@@ -95,6 +97,7 @@ public class SkateMapFragment extends Fragment {
 
         // offline notice
         if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) premiumNotice();
 
         return root;
     }
@@ -141,6 +144,26 @@ public class SkateMapFragment extends Fragment {
                     dialog.dismiss();
                     Intent myIntent = new Intent(requireContext(), MainActivity.class);
                     startActivity(myIntent);
+                });
+        alertDialog.show();
+    }
+
+    private void premiumNotice() {
+        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
+        alertDialog.setTitle("Premium Required");
+        alertDialog.setMessage("This section requires a very cheap subscription to cover server costs");
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.ok),
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Sign up",
+                (dialog, which) -> {
+                    dialog.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                    new Purchasing().subscribe(requireContext(),requireActivity());
                 });
         alertDialog.show();
     }

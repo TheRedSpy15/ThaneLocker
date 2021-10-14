@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
@@ -32,7 +33,9 @@ import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
+import com.theredspy15.thanelocker.utils.Purchasing;
 
 import org.osmdroid.util.GeoPoint;
 
@@ -166,9 +169,12 @@ public class ProfileFragment extends Fragment {
     }
 
     public void loadAchievements(View view) {
-        Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
-        myIntent.putExtra("achievements", profile.getAchievements());
-        startActivity(myIntent);
+        //Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
+        //myIntent.putExtra("achievements", profile.getAchievements());
+        //startActivity(myIntent);
+
+        new Purchasing().subscribe(requireContext(),requireActivity());
+        Toast.makeText(requireContext(), ""+MainActivity.preferences.getBoolean("subscribe",false), Toast.LENGTH_SHORT).show();
     }
 
     private void loadSpeedsChart() {
