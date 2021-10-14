@@ -163,7 +163,7 @@ public class SkateMapFragment extends Fragment {
                     dialog.dismiss();
                     Intent myIntent = new Intent(requireContext(), MainActivity.class);
                     startActivity(myIntent);
-                    new Purchasing().subscribe(requireContext(),requireActivity());
+                    new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
                 });
         alertDialog.show();
     }

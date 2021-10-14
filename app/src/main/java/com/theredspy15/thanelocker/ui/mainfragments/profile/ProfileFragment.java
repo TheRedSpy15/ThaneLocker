@@ -169,12 +169,9 @@ public class ProfileFragment extends Fragment {
     }
 
     public void loadAchievements(View view) {
-        //Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
-        //myIntent.putExtra("achievements", profile.getAchievements());
-        //startActivity(myIntent);
-
-        new Purchasing().subscribe(requireContext(),requireActivity());
-        Toast.makeText(requireContext(), ""+MainActivity.preferences.getBoolean("subscribe",false), Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
+        myIntent.putExtra("achievements", profile.getAchievements());
+        startActivity(myIntent);
     }
 
     private void loadSpeedsChart() {

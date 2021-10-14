@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
 
-        Purchasing.billingClient = BillingClient.newBuilder(this).enablePendingPurchases().setListener(Purchasing.purchasesUpdatedListener).build();
-
         App.setContext(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());

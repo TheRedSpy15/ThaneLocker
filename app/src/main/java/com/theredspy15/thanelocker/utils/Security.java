@@ -85,11 +85,7 @@ public class Security {
             Signature signatureAlgorithm = Signature.getInstance(SIGNATURE_ALGORITHM);
             signatureAlgorithm.initVerify(publicKey);
             signatureAlgorithm.update(signedData.getBytes());
-            if (!signatureAlgorithm.verify(signatureBytes)) {
-                //Signature verification failed
-                return false;
-            }
-            return true;
+            return signatureAlgorithm.verify(signatureBytes);
         } catch (NoSuchAlgorithmException e) {
             // "RSA" is guaranteed to be available
             throw new RuntimeException(e);

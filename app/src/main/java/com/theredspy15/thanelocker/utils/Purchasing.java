@@ -28,7 +28,11 @@ public class Purchasing implements PurchasesUpdatedListener {
     private static final String ITEM_SKU_SUBSCRIBE = "longboardlife_premium";
     public static final String SUBSCRIBE_KEY= "subscribe";
 
-    public static BillingClient billingClient;
+    public BillingClient billingClient;
+
+    public Purchasing(Context context) {
+        billingClient = BillingClient.newBuilder(context).enablePendingPurchases().setListener(purchasesUpdatedListener).build();
+    }
 
     private boolean getSubscribeValueFromPref() {
         return MainActivity.preferences.getBoolean(SUBSCRIBE_KEY,false);
