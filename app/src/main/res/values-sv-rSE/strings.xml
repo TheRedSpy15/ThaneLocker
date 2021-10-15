@@ -99,10 +99,10 @@
     <string name="distance">Avstånd</string>
     <string name="miles"> Miles.</string>
     <string name="mph"> MF</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">Hur snabbt bör platsen uppdateras vid inspelning av en session. Lägre är snabbare, men mer kraft och betydligt mer lagringsutrymme. Rekommenderat är 3500</string>
     <string name="poll_rate_title">Placeringspollningsvärde (millisekunder)</string>
     <string name="recording_session">Inspelningssession</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering! Det kommer att göra det möjligt att planera rullskridskor med vänner, för att hitta en ny plats att åka och åka skridskor</string>
     <string name="not_added_title">Det här avsnittet är inte klart</string>
     <string name="no_news">Inga nyheter</string>
     <string name="recommended_durometer">Rekommenderad Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Inga sessioner har formulerats</string>
     <string name="click_to_stop">Klicka här för att stoppa inspelningen</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">För bästa spårning, avaktivera energisparläge och batterioptimeringar</string>
     <string name="record_dialog_title">Starta session?</string>
     <string name="not_enough_data">Inte tillräckligt med data inspelade för att spara</string>
     <string name="notification_description">Registrera data för dig till senare vy</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
     <string name="freeride_shape">Barrel / Barrel</string>
     <string name="board_needs_name">Styrelsen behöver åtminstone ett namn.</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">Höjd</string>
+    <string name="free_limit_reached">Fritt gräns nåddes. Uppgradera</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
