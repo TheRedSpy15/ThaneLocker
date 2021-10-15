@@ -99,10 +99,10 @@
     <string name="distance">距离</string>
     <string name="miles"> 迈尔斯</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">记录会话时应更新位置的速度。 更低的速度更快，但耗电更多，存储能力也会显着增加。 建议 3500</string>
     <string name="poll_rate_title">位置轮询速率 (毫秒)</string>
     <string name="recording_session">记录会话</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">将在将来的更新中添加 ! 它将允许与朋友一起规划轮滑会，找到一个新的地点去溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜</string>
     <string name="not_added_title">此部分未完成</string>
     <string name="no_news">没有新闻</string>
     <string name="recommended_durometer">建议的 Duroeter: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">未记录会话</string>
     <string name="click_to_stop">单击此处停止记录</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">为了进行最佳跟踪，请禁用省电方式以及电池优化</string>
     <string name="record_dialog_title">启动会话?</string>
     <string name="not_enough_data">记录的数据不足，无法保存</string>
     <string name="notification_description">将您的数据记录到以后查看</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">锥 /锥，锥/桶</string>
     <string name="freeride_shape">桶 / 桶</string>
     <string name="board_needs_name">董事会至少需要一个名字</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">高海拔</string>
+    <string name="free_limit_reached">已达到自由限制。 单击以升级</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
