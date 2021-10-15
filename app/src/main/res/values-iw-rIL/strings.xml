@@ -99,10 +99,10 @@
     <string name="distance">מרחק</string>
     <string name="miles"> מיילס</string>
     <string name="mph"> מפ</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">באיזו מהירות יש לעדכן את המיקום בעת הקלטת מהלך עבודה. נמוך יותר הוא מהיר יותר אבל יותר כוח לצייר ואחסון באופן משמעותי יותר. ההמלצה היא 3500</string>
     <string name="poll_rate_title">שיעור סקר מיקום (אלפיות שניה)</string>
     <string name="recording_session">הקלטת מהלך עבודה</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">יתווסף לעדכון עתידי! זה יאפשר מהתכנון פגישות להחליק עם חברים, למצוא מיקום חדש ללכת ולהחליק</string>
     <string name="not_added_title">סעיף זה לא הסתיים.</string>
     <string name="no_news">אין חדשות</string>
     <string name="recommended_durometer">מד דומטר מומלץ: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">אין מהלכי עבודה מוקלטים</string>
     <string name="click_to_stop">לחצו כאן כדי לעצור את ההקלטה.</string>
     <string name="start">התחלה</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">למעקב מיטבי, השביתו את מצב השמירה של הכוח וכן את מיטוב הסוללה.</string>
     <string name="record_dialog_title">להתחיל מהלך עבודה?</string>
     <string name="not_enough_data">אין מספיק נתונים שנרשמו לשמירה</string>
     <string name="notification_description">הקלטת הנתונים שלכם כדי שתוכלו לראות אותה מאוחר יותר.</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">בארל/בארל</string>
     <string name="board_needs_name">הלוח צריך לפחות שם.</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">מעלית</string>
+    <string name="free_limit_reached">הגעתם למגבלה החופשית. לחצו כדי לשדרג</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
