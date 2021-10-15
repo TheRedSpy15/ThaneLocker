@@ -99,10 +99,10 @@
     <string name="distance">Odległość</string>
     <string name="miles"> Mile</string>
     <string name="mph"> MH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">Jak szybko położenie powinno być aktualizowane podczas rejestrowania sesji. Niższe jest szybsze, ale więcej mocy i znacznie więcej pamięci masowej. Zalecany jest 3500</string>
     <string name="poll_rate_title">Częstotliwość odpytywania lokalizacji (milisekundy)</string>
     <string name="recording_session">Sesja rejestrowania</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Zostanie dodany w przyszłej aktualizacji! Pozwoli to na planowanie sesji skate z przyjaciółmi, znalezienie nowego miejsca, aby przejść i skate</string>
     <string name="not_added_title">Ta sekcja nie jest zakończona</string>
     <string name="no_news">Brak wiadomości</string>
     <string name="recommended_durometer">Zalecany durometr: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Nie zarejestrowano żadnych sesji</string>
     <string name="click_to_stop">Kliknij tutaj, aby zatrzymać rejestrowanie</string>
     <string name="start">URUCHOM</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">Aby uzyskać najlepsze śledzenie, wyłącz tryb oszczędzania energii, a także optymalizacje akumulatora</string>
     <string name="record_dialog_title">Czy uruchomić sesję?</string>
     <string name="not_enough_data">Brak wystarczającej ilości danych do zapisania</string>
     <string name="notification_description">Zapisywanie danych w celu późniejszego wyświetlenia</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">Stożek/stożek, stożek</string>
     <string name="freeride_shape">Beczka/Barrel</string>
     <string name="board_needs_name">Zarząd potrzebuje co najmniej nazwy</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">Wysokość</string>
+    <string name="free_limit_reached">Osiągnięto wolny limit. Kliknij, aby zaktualizować</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
