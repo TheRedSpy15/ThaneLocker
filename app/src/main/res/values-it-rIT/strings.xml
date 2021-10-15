@@ -148,6 +148,7 @@
     <string name="freeride_shape">Barile / Barile</string>
     <string name="board_needs_name">Il consiglio ha bisogno di almeno un nome</string>
     <string name="elevation">Elevation</string>
+    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
