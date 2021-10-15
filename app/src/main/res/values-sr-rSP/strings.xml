@@ -99,10 +99,10 @@
     <string name="distance">Distance</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw. Recommended is 2500</string>
+    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
     <string name="poll_rate_title">Location Polling Rate (Milliseconds)</string>
     <string name="recording_session">Recording Session</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, and finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
     <string name="not_added_title">This section is not finished</string>
     <string name="no_news">No news</string>
     <string name="recommended_durometer">Recommended Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">No Sessions Recorded</string>
     <string name="click_to_stop">Click here to stop recording</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">You\'re GPS data will be used</string>
+    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
     <string name="record_dialog_title">Start Session?</string>
     <string name="not_enough_data">Not enough data recorded to save</string>
     <string name="notification_description">Recording your data for you to later view</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Barrel/Barrel</string>
     <string name="board_needs_name">The board needs at at least a name</string>
+    <string name="elevation">Elevation</string>
+    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

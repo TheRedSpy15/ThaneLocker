@@ -99,10 +99,10 @@
     <string name="distance">Etäisyys</string>
     <string name="miles"> Miles.</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa. Suositeltava on 2500</string>
+    <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa tasata ja huomattavasti enemmän varastointia. Suositeltava on 3500</string>
     <string name="poll_rate_title">Sijainnin Polling Rate (Millisekuntia)</string>
     <string name="recording_session">Tallennusistunto</string>
-    <string name="not_added_disclaimer">Lisätään tulevaan päivitykseen! Se mahdollistaa suunnitteluluistelua ystävien kanssa, ja löytää uusi sijainti mennä ja luistella</string>
+    <string name="not_added_disclaimer">Lisätään tulevaan päivitykseen! Sen avulla voi suunnitella skeittoja ystävien kanssa, löytää uusi sijainti mennä ja luistella</string>
     <string name="not_added_title">Tämä osa ei ole valmis</string>
     <string name="no_news">Ei uutisia</string>
     <string name="recommended_durometer">Suositeltava Durometri: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Ei tunnustettuja tunnustuksia</string>
     <string name="click_to_stop">Lopeta tallennus napsauttamalla tätä</string>
     <string name="start">ALOITA</string>
-    <string name="recording_disclaimer">Olet GPS-datan käytössä</string>
+    <string name="recording_disclaimer">Parhaiden jäljityksen, virransäästötilan ja pariston optimoinnin osalta</string>
     <string name="record_dialog_title">Aloita istunto?</string>
     <string name="not_enough_data">Ei riittävästi tallennettuja tietoja</string>
     <string name="notification_description">Tietojesi tallentaminen myöhempään tarkasteluun</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Barrel/Barrel</string>
     <string name="board_needs_name">Hallitus tarvitsee ainakin nimen.</string>
+    <string name="elevation">Korkeus</string>
+    <string name="free_limit_reached">Vapaa raja saavutettu. Päivitä päivitys</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

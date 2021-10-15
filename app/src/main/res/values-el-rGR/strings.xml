@@ -99,10 +99,10 @@
     <string name="distance">\' Απόσταση</string>
     <string name="miles"> -Μάιλς.</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Πόσο γρήγορα θα πρέπει να ενημερώσετε τη θέση κατά την εγγραφή μιας συνεδρίας. Χαμηλότερα είναι πιο γρήγορα, αλλά περισσότερη δύναμη. Συνιστάται είναι 2500</string>
+    <string name="poll_rate_sum">Πόσο γρήγορα θα πρέπει να ενημερώσετε τη θέση κατά την εγγραφή μιας συνεδρίας. Χαμηλότερη είναι ταχύτερη, αλλά περισσότερη δύναμη έλξης και σημαντικά μεγαλύτερη αποθήκευση. Συνιστάται είναι 3500</string>
     <string name="poll_rate_title">Ποσοστό δημοσκοπήσεων θέσης (χιλιοστά του δευτερολέπτου)</string>
     <string name="recording_session">Συνεδρία καταγραφής:</string>
-    <string name="not_added_disclaimer">Θα προστεθεί σε μια μελλοντική ενημέρωση! Θα επιτρέψει από το σχεδιασμό συνεδρίες skate με τους φίλους, και την εξεύρεση μια νέα τοποθεσία για να πάει και να skate</string>
+    <string name="not_added_disclaimer">Θα προστεθεί σε μια μελλοντική ενημέρωση! Θα επιτρέψει από το σχεδιασμό συνεδρίες skate με τους φίλους, να βρει μια νέα τοποθεσία για να πάει και να skate</string>
     <string name="not_added_title">Η ενότητα αυτή δεν έχει ολοκληρωθεί.</string>
     <string name="no_news">Κανένα νέο.</string>
     <string name="recommended_durometer">Συνιστώμενη Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Δεν Καταγράφονται συνεδρίες</string>
     <string name="click_to_stop">Πατήστε εδώ για να τερματίσετε την καταγραφή</string>
     <string name="start">\' ΡΧΙΣΕ</string>
-    <string name="recording_disclaimer">Θα χρησιμοποιηθούν δεδομένα GPS.</string>
+    <string name="recording_disclaimer">Για καλύτερη παρακολούθηση, απενεργοποίηση της κατάστασης εξοικονόμησης ενέργειας, καθώς και βελτιστοποιήσεις μπαταριών</string>
     <string name="record_dialog_title">Έναρξη Συνεδρίας;</string>
     <string name="not_enough_data">Δεν καταγράφονται αρκετά δεδομένα για αποθήκευση.</string>
     <string name="notification_description">Καταγραφή δεδομένων για μελλοντική προβολή.</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone/Cone, Cone/Barrel</string>
     <string name="freeride_shape">Βαρέλι/Βαρέλι</string>
     <string name="board_needs_name">Το συμβούλιο χρειάζεται τουλάχιστον ένα όνομα.</string>
+    <string name="elevation">-Έντεκα</string>
+    <string name="free_limit_reached">Το ελεύθερο όριο έφτασε. Πατήστε για αναβάθμιση.</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

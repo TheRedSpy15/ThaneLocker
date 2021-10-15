@@ -99,10 +99,10 @@
     <string name="distance">距離</string>
     <string name="miles"> 邁爾斯</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但更有動力抽獎。 建議為 2500</string>
+    <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但會增加更多的功率，並大幅增加儲存設備。 建議是 3500</string>
     <string name="poll_rate_title">位置輪詢率（毫秒）</string>
     <string name="recording_session">記錄階段作業</string>
-    <string name="not_added_disclaimer">將在未來更新中新增！ 它將從規劃與朋友的滑板會話中，找到一個新的去溜冰的位置</string>
+    <string name="not_added_disclaimer">將在未來更新中新增！ 它將允許計劃與朋友的滑板會話，找到一個新地點去溜冰</string>
     <string name="not_added_title">此區段未完成</string>
     <string name="no_news">沒消息</string>
     <string name="recommended_durometer">建議的 Durometer ： </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">未記錄階段作業</string>
     <string name="click_to_stop">請按一下這裡以停止記錄</string>
     <string name="start">開始</string>
-    <string name="recording_disclaimer">你的 GPS 資料將被利用</string>
+    <string name="recording_disclaimer">如需最佳追踪，請停用省電模式，以及電池最佳化</string>
     <string name="record_dialog_title">啟動階段作業？</string>
     <string name="not_enough_data">儲存的資料不足，無法儲存</string>
     <string name="notification_description">將您的資料記錄給之後檢視</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone/Cone， Cone/Barrel</string>
     <string name="freeride_shape">Barrel /Barrel</string>
     <string name="board_needs_name">董事會至少需要一個名字</string>
+    <string name="elevation">仰角</string>
+    <string name="free_limit_reached">已達到可用限制。 按一下以升級</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

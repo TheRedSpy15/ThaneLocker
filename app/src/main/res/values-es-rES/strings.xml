@@ -99,10 +99,10 @@
     <string name="distance">Distancia</string>
     <string name="miles"> Millas</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Qué tan rápido se debe actualizar la ubicación al grabar una sesión. Más bajo es más rápido pero más poder dibujar. Recomendado es 2500</string>
+    <string name="poll_rate_sum">Qué tan rápido se debe actualizar la ubicación al grabar una sesión. Más bajo es más rápido pero más atractivo y mucho más almacenamiento. Recomendado es 3500</string>
     <string name="poll_rate_title">Frecuencia de sondeo de ubicación (milisegundos)</string>
     <string name="recording_session">Sesión de grabación</string>
-    <string name="not_added_disclaimer">¡Se añadirá en una actualización futura! Permitirá planificar sesiones de skate con amigos, y encontrar una nueva ubicación para ir a patinar</string>
+    <string name="not_added_disclaimer">¡Se añadirá en una actualización futura! Permitirá planificar sesiones de skate con amigos, encontrar una nueva ubicación para ir y patinar</string>
     <string name="not_added_title">Esta sección no ha finalizado</string>
     <string name="no_news">Sin noticias</string>
     <string name="recommended_durometer">Durómetro recomendado: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">No se han registrado sesiones</string>
     <string name="click_to_stop">Pulse aquí para detener el registro</string>
     <string name="start">INICIO</string>
-    <string name="recording_disclaimer">Son datos de GPS que se utilizarán</string>
+    <string name="recording_disclaimer">Para un mejor seguimiento, inhabilite el modo de ahorro de energía así como las optimizaciones de la batería</string>
     <string name="record_dialog_title">¿Iniciar sesión?</string>
     <string name="not_enough_data">No se han registrado suficientes datos para guardar</string>
     <string name="notification_description">Grabación de los datos para su vista posterior</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cono/Cono, Cono/Barrel</string>
     <string name="freeride_shape">Barril/Barrel</string>
     <string name="board_needs_name">El tablero necesita al menos un nombre</string>
+    <string name="elevation">Elevación</string>
+    <string name="free_limit_reached">Límite libre alcanzado. Pulse para actualizar</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

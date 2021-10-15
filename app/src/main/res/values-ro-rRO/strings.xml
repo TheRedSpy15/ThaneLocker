@@ -99,10 +99,10 @@
     <string name="distance">Distanţă</string>
     <string name="miles"> Mile</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Cât de repede ar trebui să fie actualizată locaţia la înregistrarea unei sesiuni. Mai jos este mai rapid, dar mai mult de putere. Recomandat este 2500</string>
+    <string name="poll_rate_sum">Cât de repede ar trebui să fie actualizată locaţia la înregistrarea unei sesiuni. Mai jos este mai rapid, dar mai mult de putere, şi mai mult spaţiu de stocare Recomandat este 3500</string>
     <string name="poll_rate_title">Rată de sondare locaţie (Milisecunde)</string>
     <string name="recording_session">Înregistrare sesiune</string>
-    <string name="not_added_disclaimer">Va fi adaugat intr-o viitoare actualizare! Va permite de la planificarea sesiuni patate cu prietenii, şi găsirea unei noi locaţii pentru a merge şi a patine</string>
+    <string name="not_added_disclaimer">Va fi adaugat intr-o viitoare actualizare! Va permite de la planificarea sesiuni patate cu prietenii, pentru a gasi o locatie noua pentru a merge si a patina</string>
     <string name="not_added_title">Această secţiune nu este terminată</string>
     <string name="no_news">Nicio veste</string>
     <string name="recommended_durometer">Dourmetru recomandat: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Nicio sesiune înregistrată</string>
     <string name="click_to_stop">Faceţi clic aici pentru a opri înregistrarea</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">Sunt date GPS vor fi folosite</string>
+    <string name="recording_disclaimer">Pentru cea mai bună urmărire, dezactivaţi modul de economisire a alimentării, precum şi optimizările de baterii</string>
     <string name="record_dialog_title">Pornire sesiune?</string>
     <string name="not_enough_data">Nu sunt suficiente date înregistrate pentru salvare</string>
     <string name="notification_description">Înregistrarea datelor dumneavoastră pentru a vedea mai târziu</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Con/Con, Con/Butoi</string>
     <string name="freeride_shape">Baril/Barrel</string>
     <string name="board_needs_name">Consiliul are nevoie de cel puţin un nume</string>
+    <string name="elevation">Elevaţie</string>
+    <string name="free_limit_reached">Limita liberă atinsă. Faceţi clic pentru modernizare</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

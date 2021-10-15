@@ -99,10 +99,10 @@
     <string name="distance">Distância</string>
     <string name="miles"> Milhas</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">O quão rápido deve ser o local atualizado ao gravar uma sessão. Menor é mais rápido, mas mais potência desenha. Recomendado é 2500</string>
+    <string name="poll_rate_sum">O quão rápido deve ser o local atualizado ao gravar uma sessão. Mais baixo é mais rápido mas mais potência desenha e significativamente mais armazenamento. Recomendado é 3500</string>
     <string name="poll_rate_title">Taxa de Pesquisa de Localização (Milliseconds)</string>
     <string name="recording_session">Sessão de gravação</string>
-    <string name="not_added_disclaimer">Será adicionado em uma atualização futura! Ele vai permitir planejar sessões de skate com os amigos, e encontrar um novo local para ir e andar de skate</string>
+    <string name="not_added_disclaimer">Será adicionado em uma atualização futura! Vai permitir planejar sessões de skate com os amigos, para encontrar um novo local para ir e andar de skate</string>
     <string name="not_added_title">Esta seção não está acabada</string>
     <string name="no_news">Sem notícias</string>
     <string name="recommended_durometer">Durômetro recomendado: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Sem Sessões Registradas</string>
     <string name="click_to_stop">Clique aqui para parar de gravar</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">Os dados do GPS serão usados</string>
+    <string name="recording_disclaimer">Para melhor rastreamento, desative o modo de economia de energia, bem como otimizações de bateria</string>
     <string name="record_dialog_title">Sessão de Início?</string>
     <string name="not_enough_data">Não foram registrados dados suficientes para salvar</string>
     <string name="notification_description">Registrando seus dados para você visualizar mais tarde</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone / Cone, Cone / Cano</string>
     <string name="freeride_shape">Barril / Barrel</string>
     <string name="board_needs_name">A diretoria precisa em pelo menos um nome</string>
+    <string name="elevation">Elevação</string>
+    <string name="free_limit_reached">Limite livre atingido. Clique para fazer o upgrade</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

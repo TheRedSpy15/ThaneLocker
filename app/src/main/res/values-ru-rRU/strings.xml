@@ -99,10 +99,10 @@
     <string name="distance">Расстояние</string>
     <string name="miles"> Майлз</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Нижний-это быстрее, но больше энергии рисуется. Рекомендуется: 2500</string>
+    <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Более низкая скорость является более быстрой, но более мощной и значительно большей складской памятью. Рекомендуется 3500</string>
     <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
     <string name="recording_session">Запись сеанса</string>
-    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать занятия на коньках с друзьями, а также находить новое место для кататься и кататься на коньках</string>
+    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать сеансы скейта с друзьями, находить новое место для кататься и кататься на коньках</string>
     <string name="not_added_title">Этот раздел не завершен</string>
     <string name="no_news">Нет новостей</string>
     <string name="recommended_durometer">Рекомендуемый дурометр: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Число записанных сеансов</string>
     <string name="click_to_stop">Щелкните здесь, чтобы остановить запись</string>
     <string name="start">НАЧАЛО</string>
-    <string name="recording_disclaimer">Вы будете использовать данные GPS</string>
+    <string name="recording_disclaimer">Для лучшего отслеживания, выключения режима энергосбережения, а также оптимизации аккумуляторов</string>
     <string name="record_dialog_title">Запустить сеанс?</string>
     <string name="not_enough_data">Недостаточно данных, записанных для сохранения</string>
     <string name="notification_description">Запись данных для последующего просмотра</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Конус/конус, конус/бочка</string>
     <string name="freeride_shape">Бочка/Баррель</string>
     <string name="board_needs_name">Совет должен по крайней мере назвать имя</string>
+    <string name="elevation">Возвышение</string>
+    <string name="free_limit_reached">Достигнуто свободное ограничение. Щелкните для обновления</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

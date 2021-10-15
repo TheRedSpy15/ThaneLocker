@@ -99,10 +99,10 @@
     <string name="distance">Afstand</string>
     <string name="miles"> Mijl</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer power draw. Aanbevolen is 2500</string>
+    <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer vermogen trekken en aanzienlijk meer opslag. Aanbevolen is 3500</string>
     <string name="poll_rate_title">Polling van locatiesnelheid (milliseconden)</string>
     <string name="recording_session">Opnamesessie</string>
-    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, en het vinden van een nieuwe locatie te gaan en rog</string>
+    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, het vinden van een nieuwe locatie te gaan en schaatsen</string>
     <string name="not_added_title">Deze sectie is niet voltooid</string>
     <string name="no_news">Geen nieuws</string>
     <string name="recommended_durometer">Aanbevolen Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Geen sessies opgenomen</string>
     <string name="click_to_stop">Klik hier om de opname te stoppen</string>
     <string name="start">STAREN</string>
-    <string name="recording_disclaimer">U bent GPS-gegevens gebruikt</string>
+    <string name="recording_disclaimer">Voor het beste bijhouden, uitschakelen van de spaarstand en de batterij optimalisaties</string>
     <string name="record_dialog_title">Sessie starten?</string>
     <string name="not_enough_data">Niet genoeg gegevens opgeslagen om op te slaan</string>
     <string name="notification_description">Uw gegevens voor u later bekijken</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Kegel/kegel, kegel/kegel</string>
     <string name="freeride_shape">Vat/Barrel</string>
     <string name="board_needs_name">De raad heeft op zijn minst een naam nodig</string>
+    <string name="elevation">Hoogte</string>
+    <string name="free_limit_reached">Vrije limiet bereikt. Klik om te upgraden</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

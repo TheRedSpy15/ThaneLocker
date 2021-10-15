@@ -99,10 +99,10 @@
     <string name="distance">Afstand</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">Hvor hurtigt skal placeringen opdateres ved indspilning af en session. Lavere er hurtigere, men mere kraftudtræk. Anbefalet er 2500</string>
+    <string name="poll_rate_sum">Hvor hurtigt skal placeringen opdateres ved indspilning af en session. Længere er hurtigere, men mere kraftudtræk og betydeligt mere lager. Anbefalet er 3500</string>
     <string name="poll_rate_title">PoIIingshastighed for lokation (millisekunder)</string>
     <string name="recording_session">Registrering af session</string>
-    <string name="not_added_disclaimer">Vil blive tilføjet i en fremtidig opdatering! Det vil give mulighed for at planlægge skate sessioner med venner, og finde en ny placering til at gå og skate.</string>
+    <string name="not_added_disclaimer">Vil blive tilføjet i en fremtidig opdatering! Det vil give mulighed for at planlægge skate-sessioner med venner, til at finde en ny placering at gå og skate.</string>
     <string name="not_added_title">Dette afsnit er ikke færdigt</string>
     <string name="no_news">Ingen nyheder</string>
     <string name="recommended_durometer">Anbefalet Durometer: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Ingen sessioner er Recorded</string>
     <string name="click_to_stop">Klik her for at stoppe optagelse</string>
     <string name="start">START</string>
-    <string name="recording_disclaimer">Du er GPS-data vil blive brugt</string>
+    <string name="recording_disclaimer">Deaktivér energibesparende tilstand såvel som batterioptimeringer</string>
     <string name="record_dialog_title">Start session?</string>
     <string name="not_enough_data">Der er ikke registreret nok data til at gemme</string>
     <string name="notification_description">Indspil dine data for dig til senere fremvisning</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
     <string name="freeride_shape">Barrel / Barrel</string>
     <string name="board_needs_name">Bestyrelsen har brug for mindst et navn</string>
+    <string name="elevation">Elevation</string>
+    <string name="free_limit_reached">Gratis grænse nået. Klik på opgradering</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">

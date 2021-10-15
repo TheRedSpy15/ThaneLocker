@@ -99,10 +99,10 @@
     <string name="distance">Distance</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">A quelle vitesse l\'emplacement doit être mis à jour lors de l\'enregistrement d\'une session. La baisse est plus rapide mais plus de puissance. Recommandé: 2500</string>
+    <string name="poll_rate_sum">A quelle vitesse l\'emplacement doit être mis à jour lors de l\'enregistrement d\'une session. La baisse est plus rapide mais plus de puissance et beaucoup plus de stockage. Recommandé: 3500</string>
     <string name="poll_rate_title">Taux d\'interrogation des emplacements (Millisecondes)</string>
     <string name="recording_session">Session d\'enregistrement</string>
-    <string name="not_added_disclaimer">Sera ajouté dans une future mise à jour ! Il permettra de planifier des séances de patinage avec des amis et de trouver un nouvel endroit où aller et patiner.</string>
+    <string name="not_added_disclaimer">Sera ajouté dans une future mise à jour ! Il permettra de planifier des séances de patinage avec des amis, de trouver un nouvel endroit où aller et patiner.</string>
     <string name="not_added_title">Cette section n\'est pas terminée</string>
     <string name="no_news">Aucune information</string>
     <string name="recommended_durometer">Duromètre recommandé: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Aucune session enregistrée</string>
     <string name="click_to_stop">Cliquez ici pour arrêter l\'enregistrement</string>
     <string name="start">DÉMARRER</string>
-    <string name="recording_disclaimer">Vous êtes des données GPS.</string>
+    <string name="recording_disclaimer">Pour le meilleur suivi, désactiver le mode d\'économie d\'énergie ainsi que les optimisations de batterie</string>
     <string name="record_dialog_title">Démarrer la session?</string>
     <string name="not_enough_data">Données insuffisantes enregistrées pour la sauvegarde</string>
     <string name="notification_description">Enregistrement de vos données pour une vue ultérieure</string>
@@ -147,6 +147,8 @@
     <string name="cruise_shape">Cone / Cone, Cone / Barrel</string>
     <string name="freeride_shape">Barrel / Barrel</string>
     <string name="board_needs_name">Le conseil a besoin d\'au moins un nom</string>
+    <string name="elevation">Élévation</string>
+    <string name="free_limit_reached">Limite libre atteinte. Cliquez pour mettre à niveau</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
