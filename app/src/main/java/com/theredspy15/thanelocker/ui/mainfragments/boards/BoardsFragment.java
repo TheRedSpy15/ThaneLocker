@@ -22,9 +22,12 @@ import androidx.fragment.app.Fragment;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.models.Board;
+import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 import com.theredspy15.thanelocker.utils.App;
+import com.theredspy15.thanelocker.utils.Purchasing;
 
 public class BoardsFragment extends Fragment {
 
@@ -42,6 +45,8 @@ public class BoardsFragment extends Fragment {
 
         App.cleanBoards();
 
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) enableLimit();
+
         binding.newBoardButton.setOnClickListener(this::loadCreateBoard);
         return root;
     }
@@ -54,6 +59,17 @@ public class BoardsFragment extends Fragment {
         super.onStart();
         boardThread = new Thread(this::loadBoards);
         boardThread.start();
+    }
+
+    private void enableLimit() {
+        if (Board.savedBoards.size() >= 2) {
+            binding.newBoardButton.setText(R.string.free_limit_reached);
+            binding.newBoardButton.setOnClickListener(v->{
+                Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                startActivity(myIntent);
+                new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
+            });
+        }
     }
 
     public void loadBoards() {

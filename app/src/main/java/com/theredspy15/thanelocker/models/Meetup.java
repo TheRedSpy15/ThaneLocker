@@ -13,10 +13,6 @@ public class Meetup {
     private double longitude;
     private Date date;
 
-    public static void loadFromFirebase() {
-
-    }
-
     public String getTitle() {
         return title;
     }

@@ -20,12 +20,15 @@ import androidx.fragment.app.Fragment;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSessionsBinding;
 import com.google.android.material.snackbar.Snackbar;
+import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.SessionActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.LocationService;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
+import com.theredspy15.thanelocker.utils.Purchasing;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -54,7 +57,21 @@ public class SessionsFragment extends Fragment {
         sessionThread = new Thread(this::loadSessions);
         sessionThread.start();
         loadRecordingButtonIndicator();
+
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) enableLimit();
+
         return root;
+    }
+
+    private void enableLimit() {
+        if (Session.savedSessions.size() >= 2) {
+            binding.newSessionButton.setText(R.string.free_limit_reached);
+            binding.newSessionButton.setOnClickListener(v->{
+                Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                startActivity(myIntent);
+                new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
+            });
+        }
     }
 
     @Override
@@ -153,6 +170,7 @@ public class SessionsFragment extends Fragment {
     public void stopSession(View view) {
         stopService();
         loadRecordingButtonIndicator();
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) enableLimit();
     }
 
     /** sets record button text and color depending on whether or not a session is being recorded actively **/
