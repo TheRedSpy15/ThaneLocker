@@ -99,10 +99,10 @@
     <string name="distance">ディスタンス</string>
     <string name="miles"> マイルズ</string>
     <string name="mph"> モフ</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">セッションの記録時にロケーションをどのくらい迅速に更新するか。 より高速であるが、より多くのパワー・ドローと、かなりのストレージ 推奨される値は 3500</string>
     <string name="poll_rate_title">ロケーション・ポーリング率 (ミリ秒)</string>
     <string name="recording_session">記録セッション</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">今後の更新で追加されます。 それは、友人とスケートセッションを計画することで、新しい場所を見つけてスケートをすることを可能にする。</string>
     <string name="not_added_title">このセクションは終了しません</string>
     <string name="no_news">ニュースなし</string>
     <string name="recommended_durometer">推奨されるDuroメーター: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">記録なしのセッション</string>
     <string name="click_to_stop">記録を停止するにはここ</string>
     <string name="start">スタート</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">最良の追跡のために、電力節約モードとバッテリーの最適化を無効にします。</string>
     <string name="record_dialog_title">セッションを開始する</string>
     <string name="not_enough_data">保存するデータが記録されていない</string>
     <string name="notification_description">後で表示するためのデータの記録</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">Cone/Cone、 Cone/Barrel</string>
     <string name="freeride_shape">バーレル/バレル</string>
     <string name="board_needs_name">理事会は少なくとも名前を必要としている</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">エレベレーション</string>
+    <string name="free_limit_reached">空き限界に達しました。 クリックしてアップグレード</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
