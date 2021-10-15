@@ -99,10 +99,10 @@
     <string name="distance">Mesafe</string>
     <string name="miles"> Mil</string>
     <string name="mph"> MPH</string>
-    <string name="poll_rate_sum">How quickly should location be updated when recording a session. Lower is faster but more power draw and significantly more storage. Recommended is 3500</string>
+    <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük daha hızlı, ancak daha fazla güç çizimi ve önemli ölçüde daha fazla depolama. Önerilen 3500</string>
     <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
     <string name="recording_session">Kayıt Oturumu</string>
-    <string name="not_added_disclaimer">Will be added in a future update! It will allow from planning skate sessions with friends, to finding a new location to go and skate</string>
+    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek! arkadaşlarıyla birlikte paten seansları planlamasına, gidilecek yeni bir yer bulmasına ve kaymaya izin verecek.</string>
     <string name="not_added_title">Bu bölüm bitirilmedi</string>
     <string name="no_news">Haber yok</string>
     <string name="recommended_durometer">Önerilen Durometre: </string>
@@ -116,7 +116,7 @@
     <string name="no_sessions">Herhangi Bir Oturum Kaydedilmedi</string>
     <string name="click_to_stop">Kaydı durdurmak için burayı tıklatın</string>
     <string name="start">BAŞLA</string>
-    <string name="recording_disclaimer">For best tracking, disable power saving mode as well as battery optimizations</string>
+    <string name="recording_disclaimer">En iyi izleme için, pil eniyilemelerinin yanı sıra güç tasarrufu kipini devre dışı bırakın</string>
     <string name="record_dialog_title">Oturum başlatılsın mı?</string>
     <string name="not_enough_data">Saklanacak kadar veri kaydedilmedi</string>
     <string name="notification_description">Verilerinizin daha sonra görüntülenmek üzere kaydedilmesi</string>
@@ -147,8 +147,8 @@
     <string name="cruise_shape">Koni/Koni, Koni/Varil</string>
     <string name="freeride_shape">Varil/Barrel</string>
     <string name="board_needs_name">Kurulun en azından bir isme ihtiyacı var.</string>
-    <string name="elevation">Elevation</string>
-    <string name="free_limit_reached">Free limit reached. Click to upgrade</string>
+    <string name="elevation">Yükselme</string>
+    <string name="free_limit_reached">Serbest sınıra ulaşıldı. Yükseltmek için tıklatın</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
