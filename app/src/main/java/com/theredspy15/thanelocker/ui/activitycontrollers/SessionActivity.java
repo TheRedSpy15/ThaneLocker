@@ -109,7 +109,7 @@ public class SessionActivity extends AppCompatActivity {
 
         loadPoints();
         loadData();
-        loadAdData();
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) loadAdData();
     }
 
     @Override

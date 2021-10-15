@@ -19,6 +19,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.snackbar.Snackbar;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -36,7 +37,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
         binding.calculateButton.setOnClickListener(this::calculate);
 
-        loadAdData();
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) loadAdData();
 
         return root;
     }

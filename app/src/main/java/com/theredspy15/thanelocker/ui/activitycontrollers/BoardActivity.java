@@ -55,7 +55,7 @@ public class BoardActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        loadAdData();
+        if (!MainActivity.preferences.getBoolean("subscribe",false)) loadAdData();
     }
 
     @Override
