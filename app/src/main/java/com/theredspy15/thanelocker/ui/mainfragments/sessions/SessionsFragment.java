@@ -64,7 +64,7 @@ public class SessionsFragment extends Fragment {
     }
 
     private void enableLimit() {
-        if (Session.savedSessions.size() >= 2) {
+        if (Session.savedSessions.size() >= 10) {
             binding.newSessionButton.setText(R.string.free_limit_reached);
             binding.newSessionButton.setOnClickListener(v->{
                 Intent myIntent = new Intent(requireContext(), MainActivity.class);
