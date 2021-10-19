@@ -115,7 +115,7 @@ public class Profile implements Serializable {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(@Nullable byte[] image) {
         this.image = image;
     }
 

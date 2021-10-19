@@ -104,19 +104,19 @@ public class ProfileFragment extends Fragment {
         float tDistance = 0;
         float tAvgDistance = 0;
         float tAvgSpeed = 0;
+        float topSpeed = 0;
+        float topDistance = 0;
 
         Resources resources = getResources();
 
         for (Session session : sessions) {
             // fastest speed
-            float top = 0;
-            if (Float.parseFloat(session.getTopSpeed()) > top) top = Float.parseFloat(session.getTopSpeed());
-            binding.topSpeedView.setText(App.getSpeedFormatted(top,resources));
+            if (Float.parseFloat(session.getTopSpeed()) > topSpeed) topSpeed = Float.parseFloat(session.getTopSpeed());
+            binding.topSpeedView.setText(App.getSpeedFormatted(topSpeed,resources));
 
             // furthest distance
-            top = 0;
-            if (Float.parseFloat(session.getTotalDistance()) > top) top = Float.parseFloat(session.getTotalDistance());
-            binding.furthestDistanceView.setText(App.getDistanceFormatted(top,resources));
+            if (Float.parseFloat(session.getTotalDistance()) > topDistance) topDistance = Float.parseFloat(session.getTotalDistance());
+            binding.furthestDistanceView.setText(App.getDistanceFormatted(topDistance,resources));
 
            tDistance += Float.parseFloat(session.getTotalDistance());
            tAvgDistance += Float.parseFloat(session.getTotalDistance());
