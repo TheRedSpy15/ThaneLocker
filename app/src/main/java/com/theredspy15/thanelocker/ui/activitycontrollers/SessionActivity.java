@@ -121,7 +121,7 @@ public class SessionActivity extends AppCompatActivity {
 
     private void loadAdData() {
         String unitId;
-        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+        if (BuildConfig.DEBUG) {
             unitId = "ca-app-pub-3940256099942544/6300978111";
         } else unitId = "ca-app-pub-5128547878021429/7473799446"; // production only!
 

@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -11,6 +13,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
+
+import com.example.longboardlife.BuildConfig;
+
 import com.android.billingclient.api.BillingClient;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
@@ -36,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
         if (Session.savedSessions.isEmpty()) Session.load();
+
+        // removes need for subscribing while testing
+        if (BuildConfig.DEBUG)
+            preferences.edit().putBoolean("subscribe",true).apply();
 
         if (preferences.getBoolean("firstTime",true)) firstTime();
 

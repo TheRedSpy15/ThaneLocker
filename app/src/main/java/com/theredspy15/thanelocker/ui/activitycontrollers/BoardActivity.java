@@ -14,8 +14,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewbinding.BuildConfig;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityBoardBinding;
 import com.google.android.gms.ads.AdRequest;
@@ -68,7 +68,7 @@ public class BoardActivity extends AppCompatActivity {
 
     private void loadAdData() {
         String unitId;
-        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
+        if (BuildConfig.DEBUG) {
             unitId = "ca-app-pub-3940256099942544/6300978111";
         } else unitId = "ca-app-pub-5128547878021429/7644000468"; // production only!
 
