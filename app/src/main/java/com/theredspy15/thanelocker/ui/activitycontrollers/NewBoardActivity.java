@@ -179,6 +179,7 @@ public class NewBoardActivity extends AppCompatActivity {
     ActivityResultLauncher<Void> mGetCamera = registerForActivityResult(new ActivityResultContracts.TakePicturePreview(),
             bitmap -> {
                 if (bitmap != null) {
+                    binding.imageView.setImageBitmap(bitmap);
                     imageBitmap = bitmap;
                     ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
