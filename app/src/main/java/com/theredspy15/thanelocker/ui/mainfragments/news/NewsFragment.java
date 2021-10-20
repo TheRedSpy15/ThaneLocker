@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
@@ -40,6 +41,14 @@ public class NewsFragment extends Fragment {
         binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.swipeRefreshLayout.setOnRefreshListener(this::initFeed);
+        binding.swipeRefreshLayout.setRefreshing(true);
+        initFeed();
+
+        return root;
+    }
+
+    private void initFeed() {
         Thread thread = new Thread(() -> {
             try  {
                 List<SyndEntry> entries;
@@ -55,8 +64,6 @@ public class NewsFragment extends Fragment {
             }
         });
         thread.start();
-
-        return root;
     }
 
     private void feedError() {
@@ -69,7 +76,6 @@ public class NewsFragment extends Fragment {
         textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         textView.setTextSize(18);
         requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
-        requireActivity().runOnUiThread(()->binding.progressLoader.setVisibility(View.GONE));
     }
 
     public void displayEntries(List<SyndEntry> entries) {
@@ -90,7 +96,6 @@ public class NewsFragment extends Fragment {
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(requireContext().getColor(R.color.grey));
                 drawable.setAlpha(64);
-                binding.progressLoader.setVisibility(View.GONE);
                 binding.feedLayout.addView(button, layout);
             }
         } else if (entries == null || entries.isEmpty()) {
@@ -99,8 +104,8 @@ public class NewsFragment extends Fragment {
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
-            binding.progressLoader.setVisibility(View.GONE);
         }
+        binding.swipeRefreshLayout.setRefreshing(false);
     }
 
     public List<SyndEntry> getFeed() throws FeedException {

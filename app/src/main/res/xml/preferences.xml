@@ -76,7 +76,7 @@
             android:key="basementskate"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_article_24"
-            android:title="Basement Skate Blog" />
+            android:title="@string/basement_blog_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Other">
         <ListPreference
