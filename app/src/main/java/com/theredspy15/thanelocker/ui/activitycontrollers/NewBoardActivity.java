@@ -7,6 +7,7 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,10 +15,13 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
+import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,10 +29,12 @@ import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class NewBoardActivity extends AppCompatActivity {
@@ -50,6 +56,7 @@ public class NewBoardActivity extends AppCompatActivity {
         binding = ActivityNewBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initSpinners();
         binding.advanceSwitch.setOnCheckedChangeListener(this::toggleAdvanceMode);
         binding.buttonCreate.setOnClickListener(this::create);
 
@@ -63,6 +70,10 @@ public class NewBoardActivity extends AppCompatActivity {
         } else board = new Board();
 
         checkAdvanceMode(board.isAdvanceMode());
+    }
+
+    private void initSpinners() {
+        binding.spinnerTrucks.setItem(Arrays.asList(getResources().getStringArray(R.array.trucks)));
     }
 
     @Override
@@ -176,18 +187,24 @@ public class NewBoardActivity extends AppCompatActivity {
                 }
             });
 
-    ActivityResultLauncher<Void> mGetCamera = registerForActivityResult(new ActivityResultContracts.TakePicturePreview(),
-            bitmap -> {
-                if (bitmap != null) {
-                    binding.imageView.setImageBitmap(bitmap);
-                    imageBitmap = bitmap;
-                    ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        imageBitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
-                    } else {
-                        imageBitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+    ActivityResultLauncher<Uri> mGetCamera = registerForActivityResult(
+            new ActivityResultContracts.TakePicture(),
+            result -> {
+                if (result) {
+                    binding.imageView.setImageURI(imageUri);
+
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                        ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                            bitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 30, baoStream);
+                        } else {
+                            bitmap.compress(Bitmap.CompressFormat.WEBP, 30, baoStream);
+                        }
+                        imageBytes = baoStream.toByteArray();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    imageBytes = baoStream.toByteArray();
                 }
             });
 
@@ -208,7 +225,27 @@ public class NewBoardActivity extends AppCompatActivity {
     }
 
     public void fromCamera(View view) {
-        if (checkPermissionCamera()) mGetCamera.launch(null);
+        if (checkPermissionCamera()) {
+            File photoFile = null;
+        try {
+            photoFile = File.createTempFile(
+                    "IMG_",
+                    ".jpg",
+                    this.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (photoFile != null) {
+            imageUri = FileProvider.getUriForFile(
+                    this,
+                    getApplicationContext().getPackageName() + ".provider",
+                    photoFile
+            );
+        }
+
+        mGetCamera.launch(imageUri);
+        }
     }
 
     public void create(View view) {

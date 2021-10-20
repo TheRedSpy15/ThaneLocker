@@ -45,18 +45,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/from_camera"
+                    android:layout_marginEnd="5dp"
                     android:onClick="fromCamera"
                     android:textColor="@color/purple_500"
                     app:backgroundTint="@android:color/transparent"
                     app:cornerRadius="20dp"
                     app:strokeColor="@color/purple_500"
                     app:strokeWidth="2dp" />
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonGallery"
@@ -126,12 +121,24 @@
                         android:text="@string/trucks"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerTrucks"
+                        app:smsp_isSearchable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/trucks"
-                        android:spinnerMode="dialog" />
+                        app:smsp_floatingLabelColor="@color/purple_500"
+                        app:smsp_floatingLabelText="Floating Label Text"
+                        app:smsp_hint="Hint Text"
+                        app:smsp_searchBackgroundColor="@color/black"
+                        app:smsp_itemListBackgroundColor="@color/black"
+                        android:background="#000"
+                        android:backgroundTint="#000"
+                        app:smsp_hintColor="#388E3C"
+                        app:smsp_itemColor="@color/purple_500"
+                        app:smsp_itemListColor="@color/purple_500"
+                        app:smsp_itemListHintBackgroundColor="#4CAF50"
+                        app:smsp_itemListHintColor="#FF9800"
+                        app:smsp_selectedItemListColor="#FF9800" />
                 </TableRow>
 
                 <TableRow
