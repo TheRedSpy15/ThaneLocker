@@ -11,7 +11,7 @@ Fitness tracker meets longboarding, creating Longboarder Life
 • Longboard Community Feed!  
 • Level up & earn achievements!  
 • View your saved boards and monitor you statistics with each!  
-• Bushing Calculator!
+• Bushing Calculator!  
 • More Coming Soon!
 
 Where you can track everything from how far you go, to how fast you got there. Even allows you to store data on each of your boards and link them to each session. Providing metrics for how you use each one
