@@ -124,6 +124,7 @@
                     <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerTrucks"
                         app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:smsp_floatingLabelColor="@color/purple_500"

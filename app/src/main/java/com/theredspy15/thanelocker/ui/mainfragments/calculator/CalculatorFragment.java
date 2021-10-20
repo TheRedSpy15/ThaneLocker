@@ -75,10 +75,8 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
             if (binding.radioButtonCruise.isChecked()) recommendedShape = getString(R.string.cruise_shape);
             else if (binding.radioButtonFreeride.isChecked()) recommendedShape = getString(R.string.freeride_shape);
 
-            if (!recommendedShape.equals("")) { // TODO: fix not changing after already being calculated with different radio button
-                binding.shapeTextView.setText(getString(R.string.recommended_shape)+recommendedShape);
-                binding.shapeTextView.setVisibility(View.VISIBLE);
-            }
+            if (!recommendedShape.equals("")) binding.shapeTextView.setVisibility(View.VISIBLE);
+            binding.shapeTextView.setText(getString(R.string.recommended_shape)+recommendedShape);
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
