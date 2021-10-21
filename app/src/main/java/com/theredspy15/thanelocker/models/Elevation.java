@@ -146,7 +146,6 @@ public class Elevation {
         }
         apiLocation = new StringBuilder(apiLocation.substring(0, apiLocation.length() - 1));
         apiLocation.append("&interpolation=cubic");
-        System.out.println("apiLocation: "+apiLocation);
 
         Gson gson = new Gson();
         String json = gson.toJson(requests);
@@ -156,7 +155,6 @@ public class Elevation {
         // creating connection
         URL url = new URL(apiLocation.toString());
         HttpURLConnection http = (HttpURLConnection)url.openConnection();
-        System.out.println("responsecodefromapi:"+http.getResponseCode());
 
         // getting response
         BufferedReader reader = new BufferedReader(new InputStreamReader((http.getInputStream())));
@@ -165,7 +163,6 @@ public class Elevation {
         while ((output = reader.readLine()) != null) {
             stringBuilder.append(output);
         }
-        System.out.println("Response from api: "+output);
 
         // regex to find elevations
         // separate all elevations from the data we don't need
@@ -197,7 +194,6 @@ public class Elevation {
         }
         apiLocation = new StringBuilder(apiLocation.substring(0, apiLocation.length() - 1));
         apiLocation.append("&interpolation=cubic");
-        System.out.println("apiLocation: "+apiLocation);
 
         Gson gson = new Gson();
         String json = gson.toJson(requests);
@@ -207,7 +203,6 @@ public class Elevation {
         // creating connection
         URL url = new URL(apiLocation.toString());
         HttpURLConnection http = (HttpURLConnection)url.openConnection();
-        System.out.println("responsecodefromapi:"+http.getResponseCode());
 
         // getting response
         BufferedReader reader = new BufferedReader(new InputStreamReader((http.getInputStream())));
@@ -216,7 +211,6 @@ public class Elevation {
         while ((output = reader.readLine()) != null) {
             stringBuilder.append(output);
         }
-        System.out.println("Response from api: "+output);
 
         // regex to find elevations
         // separate all elevations from the data we don't need

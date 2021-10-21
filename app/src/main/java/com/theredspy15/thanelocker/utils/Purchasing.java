@@ -70,13 +70,11 @@ public class Purchasing implements PurchasesUpdatedListener {
             {
                 if (!verifyValidSignature(purchase.getOriginalJson(), purchase.getSignature())) {
                     // Invalid purchase
-                    System.out.println("e111 invalid");
                     return;
                 }
                 // else purchase is valid
                 //if item is purchased and not acknowledged
                 if (!purchase.isAcknowledged()) {
-                    System.out.println("e111 needs acknowledged");
                     AcknowledgePurchaseParams acknowledgePurchaseParams =
                             AcknowledgePurchaseParams.newBuilder()
                                     .setPurchaseToken(purchase.getPurchaseToken())
@@ -85,7 +83,6 @@ public class Purchasing implements PurchasesUpdatedListener {
                 }
                 //else item is purchased and also acknowledged
                 else {
-                    System.out.println("e111 should be good");
                     // Grant entitlement to the user on item purchase
                     // TODO: restart activity
                     if(!getSubscribeValueFromPref()){
@@ -95,13 +92,11 @@ public class Purchasing implements PurchasesUpdatedListener {
             }
             //if purchase is pending
             else if (ITEM_SKU_SUBSCRIBE.equals(purchase.getSkus().get(0)) && purchase.getPurchaseState() == Purchase.PurchaseState.PENDING) {
-                System.out.println("e111 pending");
             }
             //if purchase is unknown mark false
             else if(ITEM_SKU_SUBSCRIBE.equals(purchase.getSkus().get(0)) && purchase.getPurchaseState() == Purchase.PurchaseState.UNSPECIFIED_STATE) {
                 saveSubscribeValueToPref(false);
-                System.out.println("e111 unknown");
-            } else System.out.println("e111 else");
+            }
         }
     }
 
