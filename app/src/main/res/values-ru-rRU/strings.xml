@@ -149,6 +149,7 @@
     <string name="board_needs_name">Совет должен по крайней мере назвать имя</string>
     <string name="elevation">Возвышение</string>
     <string name="free_limit_reached">Достигнуто свободное ограничение. Щелкните для обновления</string>
+    <string name="basement_blog_title">Basement Skate Blog</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
