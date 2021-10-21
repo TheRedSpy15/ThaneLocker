@@ -127,14 +127,11 @@
                         app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:smsp_searchBackgroundColor="@color/black"
-                        app:smsp_itemListBackgroundColor="@color/recording_session"
-                        app:smsp_hintColor="#388E3C"
-                        app:smsp_itemColor="@color/purple_500"
-                        app:smsp_itemListColor="@color/purple_500"
-                        app:smsp_itemListHintBackgroundColor="#4CAF50"
-                        app:smsp_itemListHintColor="#FF9800"
-                        app:smsp_selectedItemListColor="#FF9800" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
                 <TableRow
@@ -182,12 +179,17 @@
                         android:text="@string/bushings_board"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerBdBushings"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/bushings"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
                 <TableRow
@@ -198,12 +200,17 @@
                         android:text="@string/bushings_road"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerRdBushings"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/bushings"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
                 <TableRow
@@ -214,12 +221,17 @@
                         android:text="@string/pivot"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerPivot"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/pivots"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
                 <TableRow>
@@ -227,24 +239,34 @@
                         android:text="@string/wheels"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerWheels"
-                        android:entries="@array/wheels"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:text="@string/bearings"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerBearings"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/bearings"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
                 <TableRow
@@ -255,12 +277,17 @@
                         android:text="@string/griptape"
                         android:textAlignment="textStart" />
 
-                    <Spinner
+                    <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
                         android:id="@+id/spinnerGriptapes"
+                        app:smsp_isSearchable="true"
+                        app:smsp_autoSelectable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:entries="@array/grip_tapes"
-                        android:spinnerMode="dialog" />
+                        app:smsp_itemColor="@color/design_default_color_primary"
+                        app:smsp_searchTextColor="#fff"
+                        app:smsp_searchHintColor="#fff"
+                        app:smsp_searchHeaderBackgroundColor="@color/grey"
+                        app:smsp_searchBackgroundColor="@color/black" />
                 </TableRow>
 
             </TableLayout>

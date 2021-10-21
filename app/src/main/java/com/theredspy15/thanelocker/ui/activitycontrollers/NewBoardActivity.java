@@ -3,6 +3,7 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -74,6 +75,12 @@ public class NewBoardActivity extends AppCompatActivity {
 
     private void initSpinners() {
         binding.spinnerTrucks.setItem(Arrays.asList(getResources().getStringArray(R.array.trucks)));
+        binding.spinnerBdBushings.setItem(Arrays.asList(getResources().getStringArray(R.array.bushings)));
+        binding.spinnerRdBushings.setItem(Arrays.asList(getResources().getStringArray(R.array.bushings)));
+        binding.spinnerPivot.setItem(Arrays.asList(getResources().getStringArray(R.array.pivots)));
+        binding.spinnerWheels.setItem(Arrays.asList(getResources().getStringArray(R.array.wheels)));
+        binding.spinnerBearings.setItem(Arrays.asList(getResources().getStringArray(R.array.bearings)));
+        binding.spinnerGriptapes.setItem(Arrays.asList(getResources().getStringArray(R.array.grip_tapes)));
     }
 
     @Override
