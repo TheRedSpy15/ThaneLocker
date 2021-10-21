@@ -149,6 +149,7 @@
     <string name="board_needs_name">理事会は少なくとも名前を必要としている</string>
     <string name="elevation">エレベレーション</string>
     <string name="free_limit_reached">空き限界に達しました。 クリックしてアップグレード</string>
+    <string name="basement_blog_title">Basement Skate Blog</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
