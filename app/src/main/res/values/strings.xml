@@ -157,6 +157,8 @@
     <string name="downhill_sum">Show elevation data</string>
     <string name="reduce_title">Reduce Charts</string>
     <string name="reduce_sum">Simplifies the amount of data for longer sessions</string>
+    <string name="no_save_session">Didn\'t save</string>
+    <string name="no_elevation_failed">Couldn\'t get elevation</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

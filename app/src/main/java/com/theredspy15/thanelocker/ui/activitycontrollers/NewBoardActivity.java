@@ -302,8 +302,15 @@ public class NewBoardActivity extends AppCompatActivity {
         } else {
             binding.editTextBoardName.getBackground().mutate().setColorFilter(this.getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
 
-            Snackbar.make(view, R.string.board_needs_name, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            MotionToast.Companion.createColorToast(
+                    this,
+                    getString(R.string.no_save_session),
+                    getString(R.string.board_needs_name),
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
+            );
         }
     }
 }

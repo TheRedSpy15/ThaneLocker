@@ -65,6 +65,8 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class SessionActivity extends AppCompatActivity {
 
@@ -182,8 +184,15 @@ public class SessionActivity extends AppCompatActivity {
                     session.setElevationPoints(Elevation.getElevations(session.getLocations()));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Snackbar.make(binding.getRoot(), R.string.failed_elevation_server, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    MotionToast.Companion.createColorToast(
+                            this,
+                            getString(R.string.no_elevation_failed),
+                            getString(R.string.failed_elevation_server),
+                            MotionToastStyle.WARNING,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                    );
                     session.getElevationPoints().clear();
                 }
 

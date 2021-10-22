@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
@@ -39,6 +40,8 @@ import java.util.Collections;
 import dev.shreyaspatil.MaterialDialog.AbstractDialog;
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 import dev.shreyaspatil.MaterialDialog.interfaces.DialogInterface;
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class SessionsFragment extends Fragment {
 
@@ -222,8 +225,15 @@ public class SessionsFragment extends Fragment {
 
             Profile.localProfile.addXp((int) (Session.xpValue*newSession.getLocations().size()));
         } else
-            Snackbar.make(binding.newSessionButton, R.string.not_enough_data, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            MotionToast.Companion.createColorToast(
+                    requireActivity(),
+                    getString(R.string.no_save_session),
+                    getString(R.string.not_enough_data),
+                    MotionToastStyle.WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+            );
     }
 
     void prepareSession() {

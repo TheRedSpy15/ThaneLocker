@@ -122,8 +122,15 @@ public class NewsFragment extends Fragment {
                 feed = input.build(new XmlReader(new URL(url)));
             } catch (IOException e) {
                 e.printStackTrace();
-                Snackbar.make(binding.getRoot(), R.string.failed_connect_downhill254, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                MotionToast.Companion.createColorToast(
+                        requireActivity(),
+                        getString(R.string.failed_news),
+                        getString(R.string.failed_connect_downhill254),
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                );
             }
         }
 
@@ -133,8 +140,15 @@ public class NewsFragment extends Fragment {
                 feed = input.build(new XmlReader(new URL(url)));
             } catch (IOException e) {
                 e.printStackTrace();
-                Snackbar.make(binding.getRoot(), R.string.failed_connect_longboardbrand, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                MotionToast.Companion.createColorToast(
+                        requireActivity(),
+                        getString(R.string.failed_news),
+                        getString(R.string.failed_connect_longboardbrand),
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                );
             }
         }
 
@@ -144,8 +158,15 @@ public class NewsFragment extends Fragment {
                 feed = input.build(new XmlReader(new URL(url)));
             } catch (IOException e) {
                 e.printStackTrace();
-                Snackbar.make(binding.getRoot(), R.string.failed_connect_basementskate, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                MotionToast.Companion.createColorToast(
+                        requireActivity(),
+                        getString(R.string.failed_news),
+                        getString(R.string.failed_connect_basementskate),
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                );
             }
         }
 
