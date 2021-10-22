@@ -25,23 +25,25 @@
         app:layout_constraintEnd_toEndOf="@+id/textViewTotalDistance"
         app:layout_constraintStart_toStartOf="@+id/textViewTotalDistance" />
 
-    <TextView
+    <com.robinhood.ticker.TickerView
         android:id="@+id/textViewAvgSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/_00_0"
+        app:ticker_animationDuration="1000"
         android:textSize="80sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.robinhood.ticker.TickerView
         android:id="@+id/textViewTotalDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/_00_0"
         android:textSize="80sp"
+        app:ticker_animationDuration="1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

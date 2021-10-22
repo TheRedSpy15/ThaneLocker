@@ -36,6 +36,8 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.snackbar.Snackbar;
+import com.robinhood.ticker.TickerUtils;
+import com.robinhood.ticker.TickerView;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Elevation;
@@ -137,10 +139,12 @@ public class SessionActivity extends AppCompatActivity {
 
     void loadData() {
         // stats
-        TextView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
+        TickerView avgSpeedView = binding.sessionLayout.findViewById(R.id.textViewAvgSpeed);
+        avgSpeedView.setCharacterLists(TickerUtils.provideNumberList());
         avgSpeedView.setText(session.getAvgSpeed());
 
-        TextView totalDistanceView = binding.sessionLayout.findViewById(R.id.textViewTotalDistance);
+        TickerView totalDistanceView = binding.sessionLayout.findViewById(R.id.textViewTotalDistance);
+        totalDistanceView.setCharacterLists(TickerUtils.provideNumberList());
         totalDistanceView.setText(session.getTotalDistance());
 
         TextView cityView = binding.sessionLayout.findViewById(R.id.cityView);
