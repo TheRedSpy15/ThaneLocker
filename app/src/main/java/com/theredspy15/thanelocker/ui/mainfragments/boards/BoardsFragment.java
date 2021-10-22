@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.Purchasing;
+
+import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 
 public class BoardsFragment extends Fragment {
 
@@ -103,22 +106,23 @@ public class BoardsFragment extends Fragment {
                         startActivity(myIntent);
                     });
 
-                    Context finalContext1 = context;
                     button.setOnLongClickListener(v->{
-                        AlertDialog alertDialog = new AlertDialog.Builder(finalContext1).create();
-                        alertDialog.setTitle(getString(R.string.delete_board));
-                        alertDialog.setMessage(getString(R.string.are_you_sure));
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
-                                (dialog, which) -> {
-                                    dialog.dismiss();
+                        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                                .setTitle(getString(R.string.delete_board))
+                                .setAnimation("58413-delete-icon-animation.json")
+                                .setMessage(getString(R.string.are_you_sure))
+                                .setCancelable(false)
+                                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                                    dialogInterface.dismiss();
                                     Board.savedBoards.remove(board.getId());
                                     Board.savedBoardIds.remove((Integer) board.getId());
                                     boardThread = new Thread(this::loadBoards);
                                     boardThread.start();
-                                });
-                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                                (dialog, which) -> dialog.dismiss());
-                        alertDialog.show();
+                                })
+                                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                                .build();
+                        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                        mDialog.show();
                         return false;
                     });
 

@@ -2,16 +2,19 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -60,6 +63,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
+
+import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 
 public class SessionActivity extends AppCompatActivity {
 
@@ -285,18 +290,20 @@ public class SessionActivity extends AppCompatActivity {
     public boolean removeUsedBoard(View view) {
         Button button = (Button) view;
 
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle(getString(R.string.remove_board_from_session));
-        alertDialog.setMessage(getString(R.string.are_you_sure));
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
-                (dialog, which) -> {
-                    dialog.dismiss();
+        MaterialDialog mDialog = new MaterialDialog.Builder(this)
+                .setTitle(getString(R.string.remove_board_from_session))
+                .setAnimation("58413-delete-icon-animation.json")
+                .setMessage(getString(R.string.are_you_sure))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
                     session.getBoard_ids().remove((Integer) Board.BoardNameToId((String) button.getText()));
                     loadBoardsUsed();
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                (dialog, which) -> dialog.dismiss());
-        alertDialog.show();
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
 
         return true;
     }
@@ -306,7 +313,9 @@ public class SessionActivity extends AppCompatActivity {
         int i = 0;
         for (int board_id : Board.savedBoardIds) {
             Board board = Board.savedBoards.get(board_id); // TODO: don't do this!
-            boards[i] = board.getName();
+            if (board != null) {
+                boards[i] = board.getName();
+            }
             i+=1;
         }
 
@@ -351,20 +360,22 @@ public class SessionActivity extends AppCompatActivity {
     }
 
     public void deleteSession(View view) {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle(getString(R.string.delete_session));
-        alertDialog.setMessage(getString(R.string.are_you_sure));
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
-                (dialog, which) -> {
-                    dialog.dismiss();
+        MaterialDialog mDialog = new MaterialDialog.Builder(this)
+                .setTitle(getString(R.string.delete_session))
+                .setAnimation("58413-delete-icon-animation.json")
+                .setMessage(getString(R.string.are_you_sure))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
                     Session.savedSessions.remove(session.getId());
                     Session.savedSessionIds.remove((Integer) session.getId());
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                (dialog, which) -> dialog.dismiss());
-        alertDialog.show();
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
     }
 
     public void addTag(View view) {

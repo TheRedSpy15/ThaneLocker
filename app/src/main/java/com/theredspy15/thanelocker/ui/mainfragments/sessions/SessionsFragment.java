@@ -112,20 +112,22 @@ public class SessionsFragment extends Fragment {
                     });
 
                     button.setOnLongClickListener(v->{
-                        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-                        alertDialog.setTitle(getString(R.string.delete_session_title));
-                        alertDialog.setMessage(getString(R.string.delete_session_dialog));
-                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
-                                (dialog, which) -> {
-                                    dialog.dismiss();
+                        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                                .setTitle(getString(R.string.delete_session))
+                                .setAnimation("58413-delete-icon-animation.json")
+                                .setMessage(getString(R.string.are_you_sure))
+                                .setCancelable(false)
+                                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                                    dialogInterface.dismiss();
                                     Session.savedSessions.remove(session.getId());
                                     Session.savedSessionIds.remove((Integer) session.getId());
                                     sessionThread = new Thread(this::loadSessions);
                                     sessionThread.start();
-                                });
-                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                                (dialog, which) -> dialog.dismiss());
-                        alertDialog.show();
+                                })
+                                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                                .build();
+                        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                        mDialog.show();
                         return false;
                     });
 

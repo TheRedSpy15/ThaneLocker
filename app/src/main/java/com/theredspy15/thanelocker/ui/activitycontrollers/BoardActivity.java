@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.util.Objects;
+
+import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -160,13 +163,14 @@ public class BoardActivity extends AppCompatActivity {
         }
     }
 
-    public void deleteBoard(View view) {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle(getString(R.string.delete_board));
-        alertDialog.setMessage(getString(R.string.are_you_sure));
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete),
-                (dialog, which) -> {
-                    dialog.dismiss();
+    public void deleteBoard(View view) { // TODO: stop duplicating this with deletion in board fragment
+        MaterialDialog mDialog = new MaterialDialog.Builder(this)
+                .setTitle(getString(R.string.delete_board))
+                .setAnimation("58413-delete-icon-animation.json")
+                .setMessage(getString(R.string.are_you_sure))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
                     Board.savedBoards.remove(board.getId());
                     Board.savedBoardIds.remove((Integer) board.getId());
 
@@ -175,9 +179,10 @@ public class BoardActivity extends AppCompatActivity {
 
                     Intent myIntent = new Intent(this, MainActivity.class);
                     startActivity(myIntent);
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                (dialog, which) -> dialog.dismiss());
-        alertDialog.show();
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
     }
 }
