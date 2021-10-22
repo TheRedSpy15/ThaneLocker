@@ -32,11 +32,19 @@
         <CheckBoxPreference
             app:iconSpaceReserved="true"
             android:defaultValue="false"
+            android:key="reducechart"
+            android:persistent="true"
+            app:icon="@drawable/ic_baseline_show_chart_24"
+            android:summary="@string/reduce_sum"
+            android:title="@string/reduce_title" />
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="false"
             android:key="downhillrider"
             android:persistent="true"
             app:icon="@drawable/ic_baseline_terrain_24"
-            android:summary="Show elevation data"
-            android:title="Downhill Rider" />
+            android:summary="@string/downhill_sum"
+            android:title="@string/downhill_title" />
         <SeekBarPreference
             app:title="@string/poll_rate_title"
             android:key="pollrate"

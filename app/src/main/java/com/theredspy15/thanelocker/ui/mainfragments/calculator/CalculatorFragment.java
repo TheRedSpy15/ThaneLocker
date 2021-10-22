@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.BuildConfig;
@@ -24,6 +25,9 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Optional;
+
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class CalculatorFragment extends Fragment { // TODO: determine if this should be fragment, and what package to move to
 
@@ -79,9 +83,15 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
             binding.shapeTextView.setText(getString(R.string.recommended_shape)+recommendedShape);
         } else {
             binding.editTextWeight.getBackground().mutate().setColorFilter(requireActivity().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
-
-            Snackbar.make(view, R.string.need_weight, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            MotionToast.Companion.createColorToast(
+                    requireActivity(),
+                    getString(R.string.hold_up),
+                    getString(R.string.need_weight),
+                    MotionToastStyle.WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+            );
         }
     }
 

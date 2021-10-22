@@ -21,6 +21,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
@@ -37,6 +38,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class NewBoardActivity extends AppCompatActivity {
 
@@ -165,7 +169,15 @@ public class NewBoardActivity extends AppCompatActivity {
                     binding.imageView.setImageBitmap(selectedImage);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, getString(R.string.went_wrong), Toast.LENGTH_LONG).show();
+                    MotionToast.Companion.createColorToast(
+                            this,
+                            getString(R.string.went_wrong),
+                            getString(R.string.failed_image),
+                            MotionToastStyle.ERROR,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                    );
                 }
             } else {
                 binding.imageView.setImageBitmap(imageBitmap);

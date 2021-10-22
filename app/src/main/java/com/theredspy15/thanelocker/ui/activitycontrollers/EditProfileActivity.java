@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityEditProfileBinding;
@@ -24,6 +25,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -63,7 +67,15 @@ public class EditProfileActivity extends AppCompatActivity {
                 binding.profilePictureView.setImageBitmap(selectedImage);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(this, getString(R.string.went_wrong), Toast.LENGTH_LONG).show();
+                MotionToast.Companion.createColorToast(
+                        this,
+                        getString(R.string.went_wrong),
+                        getString(R.string.failed_image),
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                );
             }
         }else {
             Snackbar.make(binding.changePictureButton, R.string.no_image_selected, Snackbar.LENGTH_LONG)
