@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,6 +35,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
+
+import dev.shreyaspatil.MaterialDialog.AbstractDialog;
+import dev.shreyaspatil.MaterialDialog.MaterialDialog;
+import dev.shreyaspatil.MaterialDialog.interfaces.DialogInterface;
 
 public class SessionsFragment extends Fragment {
 
@@ -147,23 +152,23 @@ public class SessionsFragment extends Fragment {
 
     public void loadStartSession(View view) {
         if (checkPermission()) {
-            AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-            alertDialog.setTitle(getString(R.string.record_dialog_title));
-            alertDialog.setMessage(getString(R.string.recording_disclaimer));
-            alertDialog.setCancelable(false);
-            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel),
-                    (dialog, which) -> dialog.dismiss());
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.start),
-                    (dialog, which) -> {
+            MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                    .setTitle(getString(R.string.record_dialog_title))
+                    .setAnimation("49696-skateboarding-boy.json")
+                    .setMessage(getString(R.string.recording_disclaimer))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.start), (dialogInterface, which) -> {
                         PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
                         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                                 "ThaneLocker::WakelockTag");
                         wakeLock.acquire(60*60*1000L /*60 minutes*/);
-
                         startService();
-                        dialog.dismiss();
-                    });
-            alertDialog.show();
+                        dialogInterface.dismiss();
+                    })
+                    .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                    .build();
+            mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            mDialog.show();
         }
     }
 
