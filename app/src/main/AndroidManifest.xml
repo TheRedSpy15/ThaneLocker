@@ -57,6 +57,9 @@
             android:exported="false"
             android:foregroundServiceType="location" />
 
+        <activity android:name="com.theredspy15.thanelocker.ui.MyIntro"
+            android:label="My Custom AppIntro" />
+
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity"
             android:exported="true"

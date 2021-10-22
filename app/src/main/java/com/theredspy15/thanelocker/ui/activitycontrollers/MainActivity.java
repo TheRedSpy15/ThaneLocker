@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.ui.activitycontrollers;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
+import com.theredspy15.thanelocker.ui.MyIntro;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.Purchasing;
 
@@ -56,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Intent myIntent = new Intent(this, MyIntro.class);
+        startActivity(myIntent);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-    //implementation 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
+    implementation 'com.github.AppIntro:AppIntro:6.1.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
     implementation 'com.airbnb.android:lottie:3.7.0'
     implementation 'com.robinhood.ticker:ticker:2.0.3'
