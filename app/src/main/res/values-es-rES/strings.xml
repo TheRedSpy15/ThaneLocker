@@ -160,6 +160,15 @@
     <string name="reduce_sum">Simplifies the amount of data for longer sessions</string>
     <string name="no_save_session">Didn\'t save</string>
     <string name="no_elevation_failed">Couldn\'t get elevation</string>
+    <string name="achievements_label">Achievements</string>
+    <string name="board_creator_label">Board Creator</string>
+    <string name="welcome">Welcome!</string>
+    <string name="page_two_title">Starting Off</string>
+    <string name="page_two_sum">While you can enter info about your quiver of boards into the app, the main function of the app is recording sessions</string>
+    <string name="page_three_title">Profiles</string>
+    <string name="page_three_sum">Once you\'re done recording a session, your profile page starts to show a lot more data. Eventually you will be able to see your friends profiles as well</string>
+    <string name="page_four_title">Find Hills!</string>
+    <string name="page_four_sum">For those that love downhill style riding, there is a section much like findhills.com in the app. This is a subscription based feature like findhills.com, however this app is still maintained and costs less to use</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
