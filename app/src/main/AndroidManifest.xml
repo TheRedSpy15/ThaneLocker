@@ -58,19 +58,19 @@
             android:foregroundServiceType="location" />
 
         <activity android:name="com.theredspy15.thanelocker.ui.MyIntro"
-            android:label="My Custom AppIntro" />
+            android:label="@string/welcome" />
 
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity"
             android:exported="true"
-            android:label="Edit Profile"
+            android:label="@string/achievements_label"
             android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker" />
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity"
             android:exported="true"
-            android:label="Edit Profile"
+            android:label="@string/edit_profile"
             android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker" />
@@ -91,7 +91,7 @@
         <activity
             android:name="com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity"
             android:exported="true"
-            android:label="Create Board"
+            android:label="@string/board_creator_label"
             android:parentActivityName="com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ThaneLocker" />

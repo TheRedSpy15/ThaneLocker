@@ -8,34 +8,45 @@ import com.example.longboardlife.R;
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
 import com.github.appintro.AppIntroPageTransformerType;
+import com.github.appintro.SlideBackgroundColorHolder;
 
-public class MyIntro extends AppIntro {
+public class MyIntro extends AppIntro implements SlideBackgroundColorHolder {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addSlide(AppIntroFragment.newInstance("Welcome!",
-                "This is a demo example in java of AppIntro library, with a custom background on each slide!",
-                R.drawable.ic_baseline_friends_24));
-
         addSlide(AppIntroFragment.newInstance(
-                "Clean App Intros",
-                "This library offers developers the ability to add clean app intros at the start of their apps.",
-                R.drawable.ic_baseline_article_24
+                getString(R.string.thank_you_title),
+                getString(R.string.thank_you_content),
+                R.drawable.heart,
+                getColor(R.color.purple_500)
         ));
 
         addSlide(AppIntroFragment.newInstance(
-                "Simple, yet Customizable",
-                "The library offers a lot of customization, while keeping it simple for those that like simple.",
-                R.drawable.ic_baseline_code_24
+                getString(R.string.page_two_title),
+                getString(R.string.page_two_sum),
+                R.drawable.board,
+                getColor(R.color.purple_200)
         ));
 
         addSlide(AppIntroFragment.newInstance(
-                "Explore",
-                "Feel free to explore the rest of the library demo!",
-                R.drawable.ic_baseline_trophy_24
+                getString(R.string.page_three_title),
+                getString(R.string.page_three_sum),
+                R.drawable.profile,
+                getColor(R.color.rare)
         ));
+
+        addSlide(AppIntroFragment.newInstance(
+                getString(R.string.page_four_title),
+                getString(R.string.page_four_sum),
+                R.drawable.mountain,
+                getColor(R.color.purple_500)
+        ));
+
+        setTransformer(new AppIntroPageTransformerType.Parallax(-1.0,-1.0,2.0));
+        setColorTransitionsEnabled(true);
+        setImmersive(true);
     }
 
     @Override
@@ -48,5 +59,15 @@ public class MyIntro extends AppIntro {
     protected void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
         finish();
+    }
+
+    @Override
+    public int getDefaultBackgroundColor() {
+        return 0;
+    }
+
+    @Override
+    public void setBackgroundColor(int i) {
+
     }
 }

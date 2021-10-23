@@ -59,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent myIntent = new Intent(this, MyIntro.class);
-        startActivity(myIntent);
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -97,16 +94,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void firstTime() {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle(getString(R.string.thank_you_title));
-        alertDialog.setMessage(getString(R.string.thank_you_content));
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
-                (dialog, which) -> {
-                    dialog.dismiss();
-                    SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
-                    prefsEditor.putBoolean("firstTime",false);
-                    prefsEditor.apply();
-                });
-        alertDialog.show();
+        Intent myIntent = new Intent(this, MyIntro.class);
+        startActivity(myIntent);
     }
 }
