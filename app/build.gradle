@@ -48,7 +48,7 @@ android {
 dependencies {
     implementation 'com.github.AppIntro:AppIntro:6.1.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
-    implementation 'com.airbnb.android:lottie:3.7.0'
+    implementation 'com.airbnb.android:lottie:4.2.0'
     implementation 'com.robinhood.ticker:ticker:2.0.3'
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
     implementation 'com.github.chivorns:smartmaterialspinner:1.5.0'
