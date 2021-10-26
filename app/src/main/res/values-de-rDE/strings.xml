@@ -89,28 +89,22 @@
     <string name="sources_title">Nachrichtenquellen</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Erzwingen Dunkles Thema</string>
     <string name="darktheme_sum">Andernfalls folgen Sie den Systemeinstellungen. App erneut starten, um wirksam zu werden</string>
     <string name="github_sum">Sehen Sie sich den Quellcode für die App auf GitHub an, und vielleicht sogar einen Beitrag!</string>
     <string name="discord_sum">Schließen Sie sich dem Discore-Server der Longboarding-Familie an, der besten Community, um andere zu treffen</string>
     <string name="muirskate_sum">Gehen Sie zu Muirskate.com der beste Ort, um alles für Longboarding zu bestellen</string>
     <string name="no_favorite">Kein Favorit</string>
     <string name="speed">Geschwindigkeit</string>
-    <string name="distance">Abstand</string>
     <string name="miles"> Meilen</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Wie schnell sollte die Position aktualisiert werden, wenn eine Sitzung aufgezeichnet wird. Niedriger ist schneller, aber mehr Leistung zeichnen und deutlich mehr Speicher. Empfohlen ist 3500</string>
     <string name="poll_rate_title">Positionsabfrageintervall (Millisekunden)</string>
     <string name="recording_session">Sitzungsaufzeichnung</string>
-    <string name="not_added_disclaimer">Wird in einem zukünftigen Update hinzugefügt! Es wird es ermöglichen, mit Freunden Skatesitzungen zu planen, eine neue Location zu finden, um zu gehen und zu skaten</string>
-    <string name="not_added_title">Dieser Abschnitt ist nicht fertig</string>
     <string name="no_news">Keine Nachrichten</string>
     <string name="recommended_durometer">Empfohlenes Durometer: </string>
     <string name="recommended_shape">Empfohlene Form: </string>
     <string name="need_weight">Bitte ein Gewicht eingeben</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Sitzung löschen</string>
-    <string name="delete_session_dialog">Sind Sie sicher?</string>
     <string name="cancel">Abbrechen</string>
     <string name="delete">Löschen</string>
     <string name="no_sessions">Keine Sitzungen aufgezeichnet</string>
@@ -235,13 +229,6 @@
         <item>Bösartig</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Keine</item>
-        <item>Komotion</item>
-        <item>PSD IN-Seite</item>
-        <item>PSD-MINI-E/A</item>
-        <item>PSD-OUT-Seite</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Tanz</item>
@@ -315,8 +302,4 @@
         <item>Riptidbecher</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Bestand</item>
-        <item>Riptidbecher</item>
-    </string-array>
 </resources>
