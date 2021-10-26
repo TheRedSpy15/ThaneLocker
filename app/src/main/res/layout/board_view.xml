@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:background="@drawable/grey_rounded_background"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:layout_weight="2"
+        android:id="@+id/imageViewBoard"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/board" />
+
+    <LinearLayout
+        android:layout_marginStart="15dp"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Board Name"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewSpeed"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:text="Average Speed: 00 MPH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewDistance"
+            android:textSize="20sp"
+            android:text="Distance Ridden: 00 Miles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

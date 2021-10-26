@@ -28,3 +28,4 @@
 -keep public class com.google.ads.** {
   public *;
 }
+-keeppackagenames org.jsoup.nodes

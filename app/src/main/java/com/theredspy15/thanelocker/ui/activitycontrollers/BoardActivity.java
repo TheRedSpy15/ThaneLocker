@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.longboardlife.BuildConfig;
@@ -24,6 +26,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.theredspy15.thanelocker.customviews.NewsView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
@@ -141,7 +144,7 @@ public class BoardActivity extends AppCompatActivity {
                 button.setBackgroundResource(R.drawable.rounded_corners);
                 GradientDrawable drawable = (GradientDrawable) button.getBackground();
                 drawable.setColor(this.getColor(R.color.grey));
-                drawable.setAlpha(64);
+                drawable.setAlpha(30);
 
                 button.setOnClickListener(v -> {
                     Intent myIntent = new Intent(this, SessionActivity.class);

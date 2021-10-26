@@ -4,4 +4,10 @@
         <attr name="image" format="reference"/>
         <attr name="text" format="string"/>
     </declare-styleable>
+    <declare-styleable name="BoardView">
+        <attr name="imageboard" format="reference"/>
+        <attr name="textname" format="string"/>
+        <attr name="textspeed" format="string"/>
+        <attr name="textdistance" format="string"/>
+    </declare-styleable>
 </resources>

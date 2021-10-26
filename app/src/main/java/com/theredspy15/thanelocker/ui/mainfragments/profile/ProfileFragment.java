@@ -142,7 +142,7 @@ public class ProfileFragment extends Fragment {
             button.setText(board.getName());
             button.setTextSize(18);
             button.setBackgroundColor(requireContext().getColor(R.color.grey));
-            button.getBackground().setAlpha(64);
+            button.getBackground().setAlpha(30);
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
             button.setOnClickListener(v->{
@@ -161,7 +161,7 @@ public class ProfileFragment extends Fragment {
             button.setText(R.string.no_favorite);
             button.setTextSize(18);
             button.setBackgroundColor(requireContext().getColor(R.color.grey));
-            button.getBackground().setAlpha(64);
+            button.getBackground().setAlpha(30);
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }

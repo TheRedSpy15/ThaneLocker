@@ -273,7 +273,7 @@ public class SessionActivity extends AppCompatActivity {
                 button.setText(board.getName());
                 button.setTextSize(18);
                 button.setBackgroundColor(this.getColor(R.color.grey));
-                button.getBackground().setAlpha(64);
+                button.getBackground().setAlpha(30);
                 button.setPadding(0,0,0,0);
                 button.setAllCaps(false);
                 button.setOnClickListener(v->{

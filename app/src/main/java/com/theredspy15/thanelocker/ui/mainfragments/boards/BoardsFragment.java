@@ -18,10 +18,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
+import com.theredspy15.thanelocker.customviews.BoardView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
@@ -85,18 +88,19 @@ public class BoardsFragment extends Fragment {
             for (int board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
                 if (board != null) {
-                    Button button = new Button(context);
-                    button.setText(board.getName());
-                    button.setTextSize(18);
+                    BoardView button = new BoardView(context);
+                    button.setTextName(board.getName());
+                    button.setTextDistance("Distance: 05.3 Miles");
+                    button.setTextSpeed("Average Speed: 14 MPH");
                     button.setBackgroundColor(context.getColor(R.color.grey));
-                    button.getBackground().setAlpha(64);
+                    button.getBackground().setAlpha(30);
                     button.setPadding(0,0,0,0);
-                    button.setAllCaps(false);
 
                     if (board.getImage() != null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                        Drawable drawable = new BitmapDrawable(context.getResources(),Bitmap.createScaledBitmap(bitmap, 500, 500, false));
-                        button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable,null,null,null);
+                        button.setBitmap(bitmap);
+                    } else {
+                        button.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
                     }
 
                     Context finalContext = context;

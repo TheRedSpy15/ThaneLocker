@@ -4,8 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.DashPathEffect;
 import android.net.ConnectivityManager;
+import android.os.StrictMode;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
@@ -21,6 +24,16 @@ import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -221,4 +234,45 @@ public class App extends Application {
         return color;
     }
 
+    public static Bitmap getMainImage(String url) throws IOException {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        // Connect to website. This can be replaced with your file loading implementation
+        Document doc = Jsoup.connect(url).get();
+
+        // Get all img tags
+        Elements img = doc.getElementsByTag("a");
+
+        // Loop through img tags
+        double sizeBiggest=0.0;
+        Element biggestEl = null;
+        for (Element el : img) {
+            if ((Double.parseDouble(el.attr("height")) + Double.parseDouble(el.attr("width"))) >= sizeBiggest) {
+                sizeBiggest = Double.parseDouble(el.attr("height")) + Double.parseDouble(el.attr("width"));
+                biggestEl = el;
+                System.out.println("dis ran"+sizeBiggest);
+            }
+        }
+        if (biggestEl == null) System.out.println("disbitch null");
+        return getImageBitmapFromUrl(biggestEl.absUrl("src"));
+    }
+
+    public static Bitmap getImageBitmapFromUrl(String url) {
+        Bitmap bm = null;
+        try {
+            URL aURL = new URL(url);
+            URLConnection conn = aURL.openConnection();
+            conn.connect();
+
+            InputStream is = conn.getInputStream();
+            BufferedInputStream bis = new BufferedInputStream(is);
+            bm = BitmapFactory.decodeStream(bis);
+
+            bis.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bm;
+    }
 }

@@ -54,13 +54,13 @@ public class AchievementsActivity extends AppCompatActivity {
                     text.setAllCaps(false);
                     text.setBackgroundResource(R.drawable.rounded_corners);
                     text.setBackgroundColor(this.getColor(R.color.grey));
-                    text.getBackground().setAlpha(64);
+                    text.getBackground().setAlpha(30);
                     text.setLineSpacing(App.convertDpToPixel(5,this),1);
 
                     text.setBackgroundResource(R.drawable.rounded_corners);
                     GradientDrawable drawable = (GradientDrawable) text.getBackground();
                     drawable.setColor(this.getColor(R.color.grey));
-                    drawable.setAlpha(64);
+                    drawable.setAlpha(30);
 
                     SpannableStringBuilder builder = new SpannableStringBuilder();
                     int color;

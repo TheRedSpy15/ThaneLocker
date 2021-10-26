@@ -5,11 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -17,8 +14,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.example.longboardlife.BuildConfig;
-
-import com.android.billingclient.api.BillingClient;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,10 +22,8 @@ import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.MyIntro;
 import com.theredspy15.thanelocker.utils.App;
-import com.theredspy15.thanelocker.utils.Purchasing;
 
-import www.sanju.motiontoast.MotionToast;
-import www.sanju.motiontoast.MotionToastStyle;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         if (preferences.getBoolean("firstTime",true)) firstTime();
 
         App.setContext(this);
+
+        /*try { TODO wip
+            App.getMainImage("https://www.bing.com");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
