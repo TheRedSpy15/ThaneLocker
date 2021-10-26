@@ -44,6 +44,10 @@ public class BoardView extends LinearLayout {
         imageView.setImageDrawable(drawable);
     }
 
+    public ImageView getImageView() {
+        return findViewById(R.id.imageViewBoard);
+    }
+
     public void setTextName(String text) {
         TextView textView = findViewById(R.id.textViewName);
         textView.setText(text);

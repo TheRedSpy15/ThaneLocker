@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.customviews.BoardView;
@@ -92,7 +93,7 @@ public class BoardsFragment extends Fragment {
 
                     if (board.getImage() != null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                        boardView.setBitmap(bitmap);
+                        requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).into(boardView.getImageView()));
                     } else {
                         boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
                     }
