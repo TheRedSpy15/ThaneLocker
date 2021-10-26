@@ -89,28 +89,22 @@
     <string name="sources_title">Nyhedskilder</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand-blog</string>
-    <string name="darktheme_title">Force Dark Theme</string>
     <string name="darktheme_sum">Vil ellers følge systemindstillingerne. Genstart applikation, der skal træde i kraft</string>
     <string name="github_sum">Vis kildekoden til den app, der er hostet på GitHub, og måske endda bidrage!</string>
     <string name="discord_sum">Deltag i den longboardfamilieserverserver, det bedste fællesskab for at møde andre</string>
     <string name="muirskate_sum">Gå til Muirskate.com det bedste sted at bestille noget for Longboarding</string>
     <string name="no_favorite">Ingen foretrukken</string>
     <string name="speed">Hastighed</string>
-    <string name="distance">Afstand</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Hvor hurtigt skal placeringen opdateres ved indspilning af en session. Længere er hurtigere, men mere kraftudtræk og betydeligt mere lager. Anbefalet er 3500</string>
     <string name="poll_rate_title">PoIIingshastighed for lokation (millisekunder)</string>
     <string name="recording_session">Registrering af session</string>
-    <string name="not_added_disclaimer">Vil blive tilføjet i en fremtidig opdatering! Det vil give mulighed for at planlægge skate-sessioner med venner, til at finde en ny placering at gå og skate.</string>
-    <string name="not_added_title">Dette afsnit er ikke færdigt</string>
     <string name="no_news">Ingen nyheder</string>
     <string name="recommended_durometer">Anbefalet Durometer: </string>
     <string name="recommended_shape">Anbefalet Shape: </string>
     <string name="need_weight">Angiv en vægt</string>
     <string name="ok">OKAY, OKAY.</string>
-    <string name="delete_session_title">Slet session</string>
-    <string name="delete_session_dialog">-Er du sikker?</string>
     <string name="cancel">Annullér</string>
     <string name="delete">Slet</string>
     <string name="no_sessions">Ingen sessioner er Recorded</string>
@@ -235,13 +229,6 @@
         <item>Vicious</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Ingen</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-side</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Danse</item>
@@ -315,8 +302,4 @@
         <item>Riptide kop</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Aktier</item>
-        <item>Riptide kop</item>
-    </string-array>
 </resources>
