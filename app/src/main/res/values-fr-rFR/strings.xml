@@ -89,28 +89,22 @@
     <string name="sources_title">Sources d\'information</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Forcer le thème noir</string>
     <string name="darktheme_sum">Sinon, suivez les paramètres du système. Redémarrer l\'application pour qu\'il prenne effet</string>
     <string name="github_sum">Affichez le code source de l\'application hébergée sur GitHub, et peut-être même y contribuer !</string>
     <string name="discord_sum">Rejoignez le serveur de discorde de la famille de longboard, la meilleure communauté pour rencontrer les autres</string>
     <string name="muirskate_sum">Aller à Muirskate.com le meilleur endroit pour commander n\'importe quoi pour Longboarding</string>
     <string name="no_favorite">Aucun favori</string>
     <string name="speed">Vitesse</string>
-    <string name="distance">Distance</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">A quelle vitesse l\'emplacement doit être mis à jour lors de l\'enregistrement d\'une session. La baisse est plus rapide mais plus de puissance et beaucoup plus de stockage. Recommandé: 3500</string>
     <string name="poll_rate_title">Taux d\'interrogation des emplacements (Millisecondes)</string>
     <string name="recording_session">Session d\'enregistrement</string>
-    <string name="not_added_disclaimer">Sera ajouté dans une future mise à jour ! Il permettra de planifier des séances de patinage avec des amis, de trouver un nouvel endroit où aller et patiner.</string>
-    <string name="not_added_title">Cette section n\'est pas terminée</string>
     <string name="no_news">Aucune information</string>
     <string name="recommended_durometer">Duromètre recommandé: </string>
     <string name="recommended_shape">Forme recommandée: </string>
     <string name="need_weight">Veuillez entrer un poids</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Supprimer une session</string>
-    <string name="delete_session_dialog">Es-tu sûre?</string>
     <string name="cancel">Annuler</string>
     <string name="delete">Supprimer</string>
     <string name="no_sessions">Aucune session enregistrée</string>
@@ -235,13 +229,6 @@
         <item>Vicious</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Néant</item>
-        <item>Komotion</item>
-        <item>PSD en face</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Danse</item>
@@ -315,8 +302,4 @@
         <item>Coupe Riptide</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Stock</item>
-        <item>Coupe Riptide</item>
-    </string-array>
 </resources>
