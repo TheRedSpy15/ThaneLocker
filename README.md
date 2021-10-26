@@ -1,4 +1,7 @@
 # ThaneLocker
+
+[![Android CI](https://github.com/TheRedSpy15/ThaneLocker/actions/workflows/android.yml/badge.svg)](https://github.com/TheRedSpy15/ThaneLocker/actions/workflows/android.yml)
+
 Fitness tracker meets longboarding, creating Longboarder Life. Goes by "Longboard Life" on playstore since "thane" is copyrighted
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
