@@ -89,28 +89,22 @@
     <string name="sources_title">新闻来源</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand 博客</string>
-    <string name="darktheme_title">强制暗主题</string>
     <string name="darktheme_sum">否则将遵循系统设置。 重新启动应用程序以生效</string>
     <string name="github_sum">将源代码查看到 GitHub 上托管的应用程序，甚至可能提供帮助 !</string>
     <string name="discord_sum">加入龙寄宿家庭不和服务器，最好的社区与他人见面</string>
     <string name="muirskate_sum">请访问 Muirskate.com 为 Longboarding 订购任何内容的最佳场所</string>
     <string name="no_favorite">无收藏夹</string>
     <string name="speed">速度</string>
-    <string name="distance">距离</string>
     <string name="miles"> 迈尔斯</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">记录会话时应更新位置的速度。 更低的速度更快，但耗电更多，存储能力也会显着增加。 建议 3500</string>
     <string name="poll_rate_title">位置轮询速率 (毫秒)</string>
     <string name="recording_session">记录会话</string>
-    <string name="not_added_disclaimer">将在将来的更新中添加 ! 它将允许与朋友一起规划轮滑会，找到一个新的地点去溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜溜</string>
-    <string name="not_added_title">此部分未完成</string>
     <string name="no_news">没有新闻</string>
     <string name="recommended_durometer">建议的 Duroeter: </string>
     <string name="recommended_shape">建议的形状: </string>
     <string name="need_weight">请输入权重</string>
     <string name="ok">好的</string>
-    <string name="delete_session_title">删除会话</string>
-    <string name="delete_session_dialog">你确定吗</string>
     <string name="cancel">取消</string>
     <string name="delete">删除</string>
     <string name="no_sessions">未记录会话</string>
@@ -235,13 +229,6 @@
         <item>恶毒</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>没有</item>
-        <item>科莫蒂翁</item>
-        <item>PSD IN 端</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-端</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>舞蹈</item>
@@ -315,8 +302,4 @@
         <item>波纹杯</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>施托克</item>
-        <item>波纹杯</item>
-    </string-array>
 </resources>
