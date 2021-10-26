@@ -9,7 +9,6 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:scaleType="centerCrop"
         android:layout_weight="2"
         android:id="@+id/imageViewBoard"
         android:layout_width="0dp"

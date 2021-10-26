@@ -76,9 +76,6 @@ public class BoardsFragment extends Fragment {
     public void loadBoards() {
         if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
 
-        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layout.setMargins(0,20,0,20);
-
         if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
             for (int board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
@@ -93,7 +90,7 @@ public class BoardsFragment extends Fragment {
 
                     if (board.getImage() != null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                        requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).into(boardView.getImageView()));
+                        requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).centerCrop().into(boardView.getImageView()));
                     } else {
                         boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
                     }
@@ -125,7 +122,7 @@ public class BoardsFragment extends Fragment {
                         return false;
                     });
 
-                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(boardView,layout));
+                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(boardView));
                 }
             }
             if (Board.savedBoardIds.isEmpty()) { // no boards
@@ -133,7 +130,7 @@ public class BoardsFragment extends Fragment {
                 textView.setText(R.string.no_boards);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
-                if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView,layout));
+                if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView));
             }
         }
     }
