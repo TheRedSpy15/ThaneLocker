@@ -89,28 +89,22 @@
     <string name="sources_title">מקורות חדשות</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">בלוג של Longישיבות</string>
-    <string name="darktheme_title">אכיפת נושא כהה</string>
     <string name="darktheme_sum">במקרים אחרים, בצעו את הגדרות המערכת. הפעלה מחדש של יישום לביצוע</string>
     <string name="github_sum">הצג את קוד המקור לאפליקציה המתארח ב GitHub, ואולי אפילו לתרום!</string>
     <string name="discord_sum">הצטרפו לשרת המחלוקת הוותיק, הקהילה הטובה ביותר כדי לפגוש אחרים</string>
     <string name="muirskate_sum">בקרו בכתובת Muirskate.com. המקום הטוב ביותר להזמין כל דבר עבור Longboarding</string>
     <string name="no_favorite">אין מועדף</string>
     <string name="speed">מהירות</string>
-    <string name="distance">מרחק</string>
     <string name="miles"> מיילס</string>
     <string name="mph"> מפ</string>
     <string name="poll_rate_sum">באיזו מהירות יש לעדכן את המיקום בעת הקלטת מהלך עבודה. נמוך יותר הוא מהיר יותר אבל יותר כוח לצייר ואחסון באופן משמעותי יותר. ההמלצה היא 3500</string>
     <string name="poll_rate_title">שיעור סקר מיקום (אלפיות שניה)</string>
     <string name="recording_session">הקלטת מהלך עבודה</string>
-    <string name="not_added_disclaimer">יתווסף לעדכון עתידי! זה יאפשר מהתכנון פגישות להחליק עם חברים, למצוא מיקום חדש ללכת ולהחליק</string>
-    <string name="not_added_title">סעיף זה לא הסתיים.</string>
     <string name="no_news">אין חדשות</string>
     <string name="recommended_durometer">מד דומטר מומלץ: </string>
     <string name="recommended_shape">צורה מומלצת: </string>
     <string name="need_weight">נא לציין משקל</string>
     <string name="ok">אוקי</string>
-    <string name="delete_session_title">מחיקת מהלך עבודה</string>
-    <string name="delete_session_dialog">אתה בטוח?</string>
     <string name="cancel">ביטול</string>
     <string name="delete">מחיקה</string>
     <string name="no_sessions">אין מהלכי עבודה מוקלטים</string>
@@ -235,13 +229,6 @@
         <item>Vicious</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>ללא</item>
-        <item>בקשה</item>
-        <item>PSD-בצד</item>
-        <item>מיני I/O של PSD</item>
-        <item>PSD-צד</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>דאנס</item>
@@ -315,8 +302,4 @@
         <item>כוס ריקרד</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>מניות</item>
-        <item>כוס ריקרד</item>
-    </string-array>
 </resources>
