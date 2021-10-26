@@ -89,28 +89,22 @@
     <string name="sources_title">Nguồn tin tức</string>
     <string name="downhill254_title">DowHill254</string>
     <string name="longboardbrand_title">Blog LongboardBrand</string>
-    <string name="darktheme_title">Sắc thái tối</string>
     <string name="darktheme_sum">Nếu không sẽ tuân theo thiết lập hệ thống Khởi động lại ứng dụng có hiệu lực</string>
     <string name="github_sum">Xem mã nguồn cho ứng dụng được lưu trữ trên GitHub, và có thể thậm chí đóng góp!</string>
     <string name="discord_sum">Tham gia máy chủ của gia đình dài hạn, cộng đồng tốt nhất để gặp người khác</string>
     <string name="muirskate_sum">Đến Muirskate.com nơi tốt nhất để đặt mua bất cứ thứ gì cho Longboarding</string>
     <string name="no_favorite">Không yêu thích</string>
     <string name="speed">Tốc độ</string>
-    <string name="distance">Khoảng cách</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Vị trí sẽ được cập nhật nhanh như thê ́ nào khi ghi lại một phiên. Thấp hơn thì nhanh hơn nhưng kéo mạnh hơn và lưu trữ nhiều hơn. Đề nghị là 3500</string>
     <string name="poll_rate_title">Tỷ lệ đánh dấu vị trí (Milligiây)</string>
     <string name="recording_session">Phiên chạy</string>
-    <string name="not_added_disclaimer">Sẽ được thêm vào cập nhật trong tương lai! Nó sẽ cho phép từ kế hoạch trượt ván với bạn bè, để tìm ra một địa điểm mới để đi và trượt ván.</string>
-    <string name="not_added_title">Phần này chưa kết thúc</string>
     <string name="no_news">Không có tin</string>
     <string name="recommended_durometer">Khuyến cáo Durometer: </string>
     <string name="recommended_shape">Hình khuyến nghị: </string>
     <string name="need_weight">Làm ơn đầu vào trọng lượng</string>
     <string name="ok">Được rồi</string>
-    <string name="delete_session_title">Xoá phiên chạy</string>
-    <string name="delete_session_dialog">Anh chắc chứ?</string>
     <string name="cancel">Hủy</string>
     <string name="delete">&amp; Xoá</string>
     <string name="no_sessions">Không có phiên ghi lại</string>
@@ -235,13 +229,6 @@
         <item>Luẩn quẩn</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Không có</item>
-        <item>Komotion</item>
-        <item>PSD bên trong</item>
-        <item>I/O MINI I/O</item>
-        <item>PSD ra ngoài</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Nhảy</item>
@@ -315,8 +302,4 @@
         <item>Cúp thủy triều</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Chứng khoán</item>
-        <item>Cúp thủy triều</item>
-    </string-array>
 </resources>
