@@ -89,28 +89,22 @@
     <string name="sources_title">ニュース・ソース</string>
     <string name="downhill254_title">254 万部</string>
     <string name="longboardbrand_title">ロングボルドブラリー・ブログ</string>
-    <string name="darktheme_title">ダーク・テーマの強制</string>
     <string name="darktheme_sum">それ以外はシステム設定に従います。 アプリを再始動して有効にする</string>
     <string name="github_sum">GitHub上でホストされているアプリケーションにソース・コードを表示し、さらに投稿することもできます。</string>
     <string name="discord_sum">ロングボーディング・ファミリーのディコード・サーバーに参加し、他のユーザーに会うのに最適なコミュニティー</string>
     <string name="muirskate_sum">Muirskate.com にアクセスして、ロングボーディングのために何かを注文する</string>
     <string name="no_favorite">お気に入りなし</string>
     <string name="speed">スピード</string>
-    <string name="distance">ディスタンス</string>
     <string name="miles"> マイルズ</string>
     <string name="mph"> モフ</string>
     <string name="poll_rate_sum">セッションの記録時にロケーションをどのくらい迅速に更新するか。 より高速であるが、より多くのパワー・ドローと、かなりのストレージ 推奨される値は 3500</string>
     <string name="poll_rate_title">ロケーション・ポーリング率 (ミリ秒)</string>
     <string name="recording_session">記録セッション</string>
-    <string name="not_added_disclaimer">今後の更新で追加されます。 それは、友人とスケートセッションを計画することで、新しい場所を見つけてスケートをすることを可能にする。</string>
-    <string name="not_added_title">このセクションは終了しません</string>
     <string name="no_news">ニュースなし</string>
     <string name="recommended_durometer">推奨されるDuroメーター: </string>
     <string name="recommended_shape">推奨される形状: </string>
     <string name="need_weight">ウェイトを入力してください</string>
     <string name="ok">オク</string>
-    <string name="delete_session_title">セッションの削除</string>
-    <string name="delete_session_dialog">- 確かか ?</string>
     <string name="cancel">キャンセル</string>
     <string name="delete">削除</string>
     <string name="no_sessions">記録なしのセッション</string>
@@ -235,13 +229,6 @@
         <item>ヴィシャス</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>なし</item>
-        <item>コモティオン</item>
-        <item>PSD IN サイド</item>
-        <item>PSD ミニ I/O</item>
-        <item>PSD の OUT サイド</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>ダンス</item>
@@ -315,8 +302,4 @@
         <item>リプタイド・カップ</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>ストック</item>
-        <item>リプタイド・カップ</item>
-    </string-array>
 </resources>
