@@ -89,28 +89,22 @@
     <string name="sources_title">Zdroje novinek</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">Blog LongboardBrand</string>
-    <string name="darktheme_title">Vynutit tmavý motiv</string>
     <string name="darktheme_sum">V opačném případě se řiďte systémovými nastaveními. Restartujte aplikaci, aby se projevila</string>
     <string name="github_sum">Prohlédněte si zdrojový kód aplikace hostované na GitHub, a možná i přispějte!</string>
     <string name="discord_sum">Připojte se k dlouholetým kabelovým serverům pro dlouhé stravování, nejlepší komunitě pro schůzku s ostatními uživateli.</string>
     <string name="muirskate_sum">Přejít na Muirskate.com nejlepší místo k objednání cokoliv pro Longboarding</string>
     <string name="no_favorite">Žádná oblíbená položka</string>
     <string name="speed">linky</string>
-    <string name="distance">Vzdálenost</string>
     <string name="miles"> Míle</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Jak rychle by se mělo umístění aktualizovat při záznamu relace. Nižší je rychlejší, ale vyšší spotřeba energie a podstatně více prostoru pro ukládání dat. Doporučeno je 3500</string>
     <string name="poll_rate_title">Rychlost výzev lokality (milisekundy)</string>
     <string name="recording_session">Relace záznamu</string>
-    <string name="not_added_disclaimer">Bude přidána do budoucí aktualizace! To umožní od plánování skate relací s přáteli, najít nové umístění jít a brusle</string>
-    <string name="not_added_title">Tato sekce není dokončena</string>
     <string name="no_news">Žádné zprávy</string>
     <string name="recommended_durometer">Doporučené Durometer: </string>
     <string name="recommended_shape">Doporučený tvar: </string>
     <string name="need_weight">Vložte, prosím, váhu</string>
     <string name="ok">OK.</string>
-    <string name="delete_session_title">Odstranit relaci</string>
-    <string name="delete_session_dialog">Jsi si jistý?</string>
     <string name="cancel">Storno</string>
     <string name="delete">Odstranit</string>
     <string name="no_sessions">Nebyly zaznamenány žádné relace</string>
@@ -235,13 +229,6 @@
         <item>Vhodný</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Žádná položka</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
-        <item>PSD MINI/O</item>
-        <item>PSD LIMIT</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Tanec</item>
@@ -315,8 +302,4 @@
         <item>Vlk ripti</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Burzovní</item>
-        <item>Vlk ripti</item>
-    </string-array>
 </resources>
