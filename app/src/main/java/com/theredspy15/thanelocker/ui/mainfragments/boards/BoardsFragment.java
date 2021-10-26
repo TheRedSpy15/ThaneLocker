@@ -5,28 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
 import com.theredspy15.thanelocker.customviews.BoardView;
 import com.theredspy15.thanelocker.models.Board;
-import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.NewBoardActivity;
@@ -88,29 +82,29 @@ public class BoardsFragment extends Fragment {
             for (int board_id : Board.savedBoardIds) {
                 Board board = Board.savedBoards.get(board_id);
                 if (board != null) {
-                    BoardView button = new BoardView(context);
-                    button.setTextName(board.getName());
-                    button.setTextDistance("Distance: 05.3 Miles");
-                    button.setTextSpeed("Average Speed: 14 MPH");
-                    button.setBackgroundColor(context.getColor(R.color.grey));
-                    button.getBackground().setAlpha(30);
-                    button.setPadding(0,0,0,0);
+                    BoardView boardView = new BoardView(context);
+                    boardView.setTextName(board.getName());
+                    boardView.setTextDistance("Distance: 05.3 Miles");
+                    boardView.setTextSpeed("Average Speed: 14 MPH");
+                    boardView.setBackgroundColor(context.getColor(R.color.grey));
+                    boardView.getBackground().setAlpha(30);
+                    boardView.setPadding(0,0,0,0);
 
                     if (board.getImage() != null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                        button.setBitmap(bitmap);
+                        boardView.setBitmap(bitmap);
                     } else {
-                        button.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
+                        boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
                     }
 
                     Context finalContext = context;
-                    button.setOnClickListener(v->{
+                    boardView.setOnClickListener(v->{
                         Intent myIntent = new Intent(finalContext, BoardActivity.class);
                         myIntent.putExtra("board_id", board.getId());
                         startActivity(myIntent);
                     });
 
-                    button.setOnLongClickListener(v->{
+                    boardView.setOnLongClickListener(v->{
                         MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
                                 .setTitle(getString(R.string.delete_board))
                                 .setAnimation("58413-delete-icon-animation.json")
@@ -130,7 +124,7 @@ public class BoardsFragment extends Fragment {
                         return false;
                     });
 
-                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(button,layout));
+                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(boardView,layout));
                 }
             }
             if (Board.savedBoardIds.isEmpty()) { // no boards
