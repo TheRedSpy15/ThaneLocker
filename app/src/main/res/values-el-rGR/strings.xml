@@ -89,28 +89,22 @@
     <string name="sources_title">Πηγές ειδήσεων</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">Blog LongboardBrand</string>
-    <string name="darktheme_title">Δύναμη σκοτεινό θέμα</string>
     <string name="darktheme_sum">Θα ακολουθήσει τις ρυθμίσεις του συστήματος. Επανεκκινήστε την εφαρμογή.</string>
     <string name="github_sum">Δείτε τον πηγό κώδικα για την εφαρμογή που φιλοξενείται στο GitHub, και ίσως και να συμβάλει!</string>
     <string name="discord_sum">Γίνετε μέλος του μακροχρόνιου server discord server, η καλύτερη κοινότητα για να συναντήσετε άλλους</string>
     <string name="muirskate_sum">Πηγαίνετε στο Muirskate.com το καλύτερο μέρος για να παραγγείλετε τίποτα για Longboarding</string>
     <string name="no_favorite">Όχι Αγαπημένα</string>
     <string name="speed">Ταχύτητα:</string>
-    <string name="distance">\' Απόσταση</string>
     <string name="miles"> -Μάιλς.</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Πόσο γρήγορα θα πρέπει να ενημερώσετε τη θέση κατά την εγγραφή μιας συνεδρίας. Χαμηλότερη είναι ταχύτερη, αλλά περισσότερη δύναμη έλξης και σημαντικά μεγαλύτερη αποθήκευση. Συνιστάται είναι 3500</string>
     <string name="poll_rate_title">Ποσοστό δημοσκοπήσεων θέσης (χιλιοστά του δευτερολέπτου)</string>
     <string name="recording_session">Συνεδρία καταγραφής:</string>
-    <string name="not_added_disclaimer">Θα προστεθεί σε μια μελλοντική ενημέρωση! Θα επιτρέψει από το σχεδιασμό συνεδρίες skate με τους φίλους, να βρει μια νέα τοποθεσία για να πάει και να skate</string>
-    <string name="not_added_title">Η ενότητα αυτή δεν έχει ολοκληρωθεί.</string>
     <string name="no_news">Κανένα νέο.</string>
     <string name="recommended_durometer">Συνιστώμενη Durometer: </string>
     <string name="recommended_shape">Συνιστώμενη μορφή: </string>
     <string name="need_weight">Παρακαλώ εισάγετε ένα βάρος.</string>
     <string name="ok">ΕΝΤΆΞΕΙ.</string>
-    <string name="delete_session_title">Διαγραφή συνεδρίας</string>
-    <string name="delete_session_dialog">-Σίγουρα;</string>
     <string name="cancel">Ακύρωση.</string>
     <string name="delete">Διαγραφή:</string>
     <string name="no_sessions">Δεν Καταγράφονται συνεδρίες</string>
@@ -235,13 +229,6 @@
         <item>Vicious.</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Καμία.</item>
-        <item>Η Komotion</item>
-        <item>PSD στο πλάι</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-πλευρά</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Χόρεψε!</item>
@@ -315,8 +302,4 @@
         <item>Ποτήρι του Riptide</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Απόθεμα:</item>
-        <item>Ποτήρι του Riptide</item>
-    </string-array>
 </resources>
