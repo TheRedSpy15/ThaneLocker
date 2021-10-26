@@ -89,28 +89,22 @@
     <string name="sources_title">Nyhetskällor</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Tvinga mörktema</string>
     <string name="darktheme_sum">Kommer annars att följa systeminställningarna. Starta om app för att få effekt</string>
     <string name="github_sum">Visa källkoden till appen som är värd för GitHub, och kanske till och med bidra!</string>
     <string name="discord_sum">Gå med i den långbänkta familjen-disackordsservern, den bästa gemenskapen att träffa andra</string>
     <string name="muirskate_sum">Gå till Muirskate.com den bästa platsen att beställa något för Longboarding</string>
     <string name="no_favorite">Ingen favorit</string>
     <string name="speed">Hastighet</string>
-    <string name="distance">Avstånd</string>
     <string name="miles"> Miles.</string>
     <string name="mph"> MF</string>
     <string name="poll_rate_sum">Hur snabbt bör platsen uppdateras vid inspelning av en session. Lägre är snabbare, men mer kraft och betydligt mer lagringsutrymme. Rekommenderat är 3500</string>
     <string name="poll_rate_title">Placeringspollningsvärde (millisekunder)</string>
     <string name="recording_session">Inspelningssession</string>
-    <string name="not_added_disclaimer">Kommer att läggas till i en framtida uppdatering! Det kommer att göra det möjligt att planera rullskridskor med vänner, för att hitta en ny plats att åka och åka skridskor</string>
-    <string name="not_added_title">Det här avsnittet är inte klart</string>
     <string name="no_news">Inga nyheter</string>
     <string name="recommended_durometer">Rekommenderad Durometer: </string>
     <string name="recommended_shape">Rekommenderad form: </string>
     <string name="need_weight">Ange en vikt</string>
     <string name="ok">OKEJ.</string>
-    <string name="delete_session_title">Ta bort session</string>
-    <string name="delete_session_dialog">Är du säker på det?</string>
     <string name="cancel">Avbryt</string>
     <string name="delete">Radera</string>
     <string name="no_sessions">Inga sessioner har formulerats</string>
@@ -215,13 +209,6 @@
         <item>Utsökt</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Ingen-</item>
-        <item>Komotion</item>
-        <item>PSD IN-sidan</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD OUT-sidan</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Dansa</item>
@@ -295,8 +282,4 @@
         <item>Riptidbägare</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Bestånd</item>
-        <item>Riptidbägare</item>
-    </string-array>
 </resources>

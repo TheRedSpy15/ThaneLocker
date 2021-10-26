@@ -89,28 +89,22 @@
     <string name="sources_title">مصادر الأخبار</string>
     <string name="downhill254_title">DownHil254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">اجباري موضوع الظلام</string>
     <string name="darktheme_sum">سيتم اتباع محددات النظام بطريقة أخرى. قم باعادة بدء التطبيق ليصبح فعال</string>
     <string name="github_sum">قم بمشاهدة كود المصدر الى التطبيق الذي تم استضافته على GitHub ، وقد يتم المشاركة به !</string>
     <string name="discord_sum">الانضمام إلى خادم الشقاق العائلي الطويل ، أفضل مجتمع لتلبية الآخرين</string>
     <string name="muirskate_sum">اذهب الى Muirskate.com للحصول على أفضل مكان لطلب أي شيء للونجلوبيت.</string>
     <string name="no_favorite">بدون تفضيلات</string>
     <string name="speed">سرعة</string>
-    <string name="distance">مسافة</string>
     <string name="miles"> ميل</string>
     <string name="mph"> ميرف</string>
     <string name="poll_rate_sum">ما مدى سرعة تعديل المكان عند تسجيل جلسة. أقل هو أسرع ولكن أكثر سحب الطاقة وإلى حد كبير التخزين أكثر. المفضل هو 3500</string>
     <string name="poll_rate_title">معدل الاقتراع بالمكان (بالملليثانية)</string>
     <string name="recording_session">جلسة التسجيل</string>
-    <string name="not_added_disclaimer">سيتم اضافته في تعديل مستقبلي ! وسيسمح لها بالتخطيط لجلسات التزلج مع الأصدقاء ، لإيجاد موقع جديد للذهاب والتزلج</string>
-    <string name="not_added_title">لم يتم الانتهاء من هذا القسم</string>
     <string name="no_news">لا أخبار</string>
     <string name="recommended_durometer">قياس المقياس الموصى به : </string>
     <string name="recommended_shape">الشكل الموصى به : </string>
     <string name="need_weight">برجاء ادخال وزن</string>
     <string name="ok">طيب</string>
-    <string name="delete_session_title">حذف جلسة</string>
-    <string name="delete_session_dialog">هل أنت متأكد ؟</string>
     <string name="cancel">الغاء</string>
     <string name="delete">حذف</string>
     <string name="no_sessions">لم يتم تسجيل جلسات</string>
@@ -215,13 +209,6 @@
         <item>مشبوه</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>لا شيء</item>
-        <item>كوموشن</item>
-        <item>side-side SPD</item>
-        <item>I/O مصغرة PSD</item>
-        <item>PSD OUT-الجانب</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>ارقصي</item>
@@ -295,8 +282,4 @@
         <item>كوب ريبتيد</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>سهم</item>
-        <item>كوب ريبتيد</item>
-    </string-array>
 </resources>

@@ -89,28 +89,22 @@
     <string name="sources_title">新聞來源</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand 部落格</string>
-    <string name="darktheme_title">強制黑暗主題</string>
     <string name="darktheme_sum">否則將遵循系統設定。 重新啟動應用程式以生效</string>
     <string name="github_sum">檢視 GitHub 上所管理之應用程式的原始碼，甚至提供投稿！</string>
     <string name="discord_sum">加入 Longboarding 家族不和伺服器，最適合與他人見面的社群</string>
     <string name="muirskate_sum">請前往 Muirskate.com 最好訂購任何東西以進行 Longboarding</string>
     <string name="no_favorite">沒有我的最愛</string>
     <string name="speed">速度</string>
-    <string name="distance">距離</string>
     <string name="miles"> 邁爾斯</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">當記錄階段作業時，應該更新位置的速度。 更低的速度更快，但會增加更多的功率，並大幅增加儲存設備。 建議是 3500</string>
     <string name="poll_rate_title">位置輪詢率（毫秒）</string>
     <string name="recording_session">記錄階段作業</string>
-    <string name="not_added_disclaimer">將在未來更新中新增！ 它將允許計劃與朋友的滑板會話，找到一個新地點去溜冰</string>
-    <string name="not_added_title">此區段未完成</string>
     <string name="no_news">沒消息</string>
     <string name="recommended_durometer">建議的 Durometer ： </string>
     <string name="recommended_shape">建議形狀： </string>
     <string name="need_weight">請輸入重量</string>
     <string name="ok">好</string>
-    <string name="delete_session_title">刪除階段作業</string>
-    <string name="delete_session_dialog">你確定嗎？</string>
     <string name="cancel">取消</string>
     <string name="delete">刪除</string>
     <string name="no_sessions">未記錄階段作業</string>
@@ -215,13 +209,6 @@
         <item>維福瑟</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>沒有</item>
-        <item>科莫蒂翁</item>
-        <item>PSD IN - side</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD 輸出端</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>舞蹈</item>
@@ -295,8 +282,4 @@
         <item>一種潮杯</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>股票</item>
-        <item>一種潮杯</item>
-    </string-array>
 </resources>

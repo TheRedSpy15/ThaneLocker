@@ -89,28 +89,22 @@
     <string name="sources_title">Источники новостей</string>
     <string name="downhill254_title">Лив_254</string>
     <string name="longboardbrand_title">Блог longboardBrand</string>
-    <string name="darktheme_title">Сила темной темы</string>
     <string name="darktheme_sum">В противном случае последуют параметры системы. Перезапустить приложение, чтобы выполнить действие</string>
     <string name="github_sum">Просмотрите исходный код приложения на GitHub и, возможно, даже внесете свой вклад!</string>
     <string name="discord_sum">Присоедините к серверу раздора в семье, чтобы познакомиться с другими</string>
     <string name="muirskate_sum">Перейдите по адресу Muirskate.com лучшее место, чтобы заказать что-либо для Лонгборда</string>
     <string name="no_favorite">Нет избранного</string>
     <string name="speed">Скорость</string>
-    <string name="distance">Расстояние</string>
     <string name="miles"> Майлз</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Как быстро следует обновлять расположение при записи сеанса. Более низкая скорость является более быстрой, но более мощной и значительно большей складской памятью. Рекомендуется 3500</string>
     <string name="poll_rate_title">Частота опроса положения (в миллисекундах)</string>
     <string name="recording_session">Запись сеанса</string>
-    <string name="not_added_disclaimer">Будет добавлен в будущее обновление! Это позволит планировать сеансы скейта с друзьями, находить новое место для кататься и кататься на коньках</string>
-    <string name="not_added_title">Этот раздел не завершен</string>
     <string name="no_news">Нет новостей</string>
     <string name="recommended_durometer">Рекомендуемый дурометр: </string>
     <string name="recommended_shape">Рекомендуемая форма: </string>
     <string name="need_weight">Введите вес</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Удалить сеанс</string>
-    <string name="delete_session_dialog">Вы уверены?</string>
     <string name="cancel">Отмена</string>
     <string name="delete">Удалить</string>
     <string name="no_sessions">Число записанных сеансов</string>
@@ -215,13 +209,6 @@
         <item>Порочный</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Нет</item>
-        <item>Komotion</item>
-        <item>PSD В стороне</item>
-        <item>Ввод-вывод MINI PSD</item>
-        <item>PSD OUT-side</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Танец</item>
@@ -295,8 +282,4 @@
         <item>Рябный кубок</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Запасы</item>
-        <item>Рябный кубок</item>
-    </string-array>
 </resources>

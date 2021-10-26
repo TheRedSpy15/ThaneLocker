@@ -89,28 +89,22 @@
     <string name="sources_title">Nieuwsbronnen</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">Blog LongboardBrand</string>
-    <string name="darktheme_title">Donkerthema van kracht</string>
     <string name="darktheme_sum">Anders volgt u de systeeminstellingen. App Opnieuw starten om van kracht te worden</string>
     <string name="github_sum">Bekijk de broncode van de app gehost op GitHub, en misschien zelfs bijdragen!</string>
     <string name="discord_sum">Word lid van de longboarding familie discord server, de beste gemeenschap om anderen te ontmoeten</string>
     <string name="muirskate_sum">Ga naar Muirskate.com de beste plek om alles te bestellen voor Longboarding</string>
     <string name="no_favorite">Geen favoriet</string>
     <string name="speed">Snelheid</string>
-    <string name="distance">Afstand</string>
     <string name="miles"> Mijl</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Hoe snel de locatie moet worden bijgewerkt bij het opnemen van een sessie. Lager is sneller maar meer vermogen trekken en aanzienlijk meer opslag. Aanbevolen is 3500</string>
     <string name="poll_rate_title">Polling van locatiesnelheid (milliseconden)</string>
     <string name="recording_session">Opnamesessie</string>
-    <string name="not_added_disclaimer">Wordt toegevoegd in een toekomstige update! Het zal het mogelijk maken van het plannen van skate sessies met vrienden, het vinden van een nieuwe locatie te gaan en schaatsen</string>
-    <string name="not_added_title">Deze sectie is niet voltooid</string>
     <string name="no_news">Geen nieuws</string>
     <string name="recommended_durometer">Aanbevolen Durometer: </string>
     <string name="recommended_shape">Aanbevolen vorm: </string>
     <string name="need_weight">Geef een gewicht op</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Sessie wissen</string>
-    <string name="delete_session_dialog">Weet je het zeker?</string>
     <string name="cancel">Annuleren</string>
     <string name="delete">Wissen</string>
     <string name="no_sessions">Geen sessies opgenomen</string>
@@ -215,13 +209,6 @@
         <item>Vicieuze</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Geen</item>
-        <item>Komotie</item>
-        <item>PSD IN-kant</item>
-        <item>PSD MINI I/O</item>
-        <item>PSD-kant</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Dans</item>
@@ -295,8 +282,4 @@
         <item>Riptide-cup</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Bestand</item>
-        <item>Riptide-cup</item>
-    </string-array>
 </resources>

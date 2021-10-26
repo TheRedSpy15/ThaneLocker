@@ -89,28 +89,22 @@
     <string name="sources_title">Origini notizie</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Tema Forza Dark</string>
     <string name="darktheme_sum">Altrimenti seguiranno le impostazioni di sistema. Riavvia l\'app per prendere effetto</string>
     <string name="github_sum">Visualizza il codice sorgente all\'app ospitata su GitHub, e forse anche contribuire!</string>
     <string name="discord_sum">Unisciti al server di discordia familiare di longboarding, la migliore community per incontrare gli altri</string>
     <string name="muirskate_sum">Vai su Muirskate.com il posto migliore per ordinare qualsiasi cosa per Longboarding</string>
     <string name="no_favorite">Nessun Preferito</string>
     <string name="speed">Velocità</string>
-    <string name="distance">Distanza</string>
     <string name="miles"> Miles</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Come deve essere rapidamente aggiornata la posizione durante la registrazione di una sessione. Abbassare è più veloce ma più potenza disegna e significativamente più storage. Consigliato è 3500</string>
     <string name="poll_rate_title">Location Polling Rate (Millisecondi)</string>
     <string name="recording_session">Registrazione della sessione</string>
-    <string name="not_added_disclaimer">Verrà aggiunto in un aggiornamento futuro! Permetterà di pianificare sessioni di skate con gli amici, di trovare una nuova location per andare e pattarsi</string>
-    <string name="not_added_title">Questa sezione non è terminata</string>
     <string name="no_news">Nessuna notizia</string>
     <string name="recommended_durometer">Durometro consigliato: </string>
     <string name="recommended_shape">Forma Consigliata: </string>
     <string name="need_weight">Si prega di inserire un peso</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Elimina sessione</string>
-    <string name="delete_session_dialog">Sei sicuro?</string>
     <string name="cancel">Annulla</string>
     <string name="delete">Elimina</string>
     <string name="no_sessions">Nessuna Sessioni Registrate</string>
@@ -215,13 +209,6 @@
         <item>Vicente</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Nessuno</item>
-        <item>Komotion</item>
-        <item>PSD IN - lato</item>
-        <item>I/O MINI PSD</item>
-        <item>PSD OUT - lato</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Danza</item>
@@ -295,8 +282,4 @@
         <item>Coppa Riptide</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Stock</item>
-        <item>Coppa Riptide</item>
-    </string-array>
 </resources>

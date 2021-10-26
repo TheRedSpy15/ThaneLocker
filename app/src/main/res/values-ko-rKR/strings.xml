@@ -89,28 +89,22 @@
     <string name="sources_title">뉴스 소스</string>
     <string name="downhill254_title">다운힐스</string>
     <string name="longboardbrand_title">LongboardBrand 블로그</string>
-    <string name="darktheme_title">다크 테마 포스</string>
     <string name="darktheme_sum">그렇지 않으면 시스템 설정을 따를 것입니다. 앱을 다시 시작하여 적용</string>
     <string name="github_sum">GitHub 에서 호스팅되는 앱에 대한 소스 코드를 보고, 아마도 기여할 수 있을 것이다.</string>
     <string name="discord_sum">소지품 불협화서버, 다른 사람들을 만나는 최고의 커뮤니티에 가입하세요.</string>
     <string name="muirskate_sum">롱보딩을 주문하기에 가장 좋은 곳을 Muirskate.com로 이동하십시오.</string>
     <string name="no_favorite">즐겨찾기 없음</string>
     <string name="speed">속도</string>
-    <string name="distance">거리</string>
     <string name="miles"> 마일스</string>
     <string name="mph"> 모프</string>
     <string name="poll_rate_sum">세션을 기록할 때 위치를 얼마나 빨리 업데이트해야 합니까? 더 낮은 속도는 더 빠르지만 더 많은 전력 소모와 훨씬 더 많은 스토리지를 제공합니다. 권장 3500</string>
     <string name="poll_rate_title">위치 폴링 비율 (밀리초)</string>
     <string name="recording_session">레코딩 세션</string>
-    <string name="not_added_disclaimer">향후 업데이트에 추가됩니다! 친구들과 스케이트 세션을 계획하는 것을 허용하고, 갈 수 있는 새로운 장소를 찾을 수 있도록 할 것이다.</string>
-    <string name="not_added_title">이 섹션은 완료되지 않았습니다.</string>
     <string name="no_news">뉴스 없음</string>
     <string name="recommended_durometer">권장 Durometer: </string>
     <string name="recommended_shape">권장 형태: </string>
     <string name="need_weight">무게를 입력하세요</string>
     <string name="ok">알았다</string>
-    <string name="delete_session_title">세션 삭제</string>
-    <string name="delete_session_dialog">확실해요?</string>
     <string name="cancel">취소</string>
     <string name="delete">삭제</string>
     <string name="no_sessions">기록된 세션이 없음</string>
@@ -215,13 +209,6 @@
         <item>사악한</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>없음</item>
-        <item>운동</item>
-        <item>PSD IN-사이드</item>
-        <item>PSD 미니 I/O</item>
-        <item>PSD OUT-사이드</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>춤</item>
@@ -295,8 +282,4 @@
         <item>리프티드 컵</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>주식</item>
-        <item>리프티드 컵</item>
-    </string-array>
 </resources>

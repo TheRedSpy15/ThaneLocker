@@ -89,28 +89,22 @@
     <string name="sources_title">Haber Kaynakları</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand</string>
-    <string name="darktheme_title">Koyu Temayı Zorla</string>
     <string name="darktheme_sum">Tersi durumda, sistem ayarları da izlenecektir. Etkiyi yürürlüğe almak için uygulamayı yeniden başlat</string>
     <string name="github_sum">GitHub \'da barındırılan uygulama için kaynak kodu görüntüleyin ve hatta katkıda bulunun!</string>
     <string name="discord_sum">longboarding family discord sunucusuna katılın, diğer kişileri karşılamak için en iyi topluluk</string>
     <string name="muirskate_sum">Longboarding için herhangi bir şey sipariş etmek için en iyi yer Muirskate.com adresine gidin</string>
     <string name="no_favorite">Sık Kullanılan Yok</string>
     <string name="speed">Hız</string>
-    <string name="distance">Mesafe</string>
     <string name="miles"> Mil</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Bir oturum kaydedilirken konum güncelleştirilmesi ne kadar hızlı bir şekilde güncellenmelidir. Daha düşük daha hızlı, ancak daha fazla güç çizimi ve önemli ölçüde daha fazla depolama. Önerilen 3500</string>
     <string name="poll_rate_title">Yer Yoklama Hızı (Milisaniye)</string>
     <string name="recording_session">Kayıt Oturumu</string>
-    <string name="not_added_disclaimer">Gelecekteki bir güncellemeye eklenecek! arkadaşlarıyla birlikte paten seansları planlamasına, gidilecek yeni bir yer bulmasına ve kaymaya izin verecek.</string>
-    <string name="not_added_title">Bu bölüm bitirilmedi</string>
     <string name="no_news">Haber yok</string>
     <string name="recommended_durometer">Önerilen Durometre: </string>
     <string name="recommended_shape">Önerilen Şekil: </string>
     <string name="need_weight">Lütfen bir ağırlık girin</string>
     <string name="ok">Tamam</string>
-    <string name="delete_session_title">Oturumu Sil</string>
-    <string name="delete_session_dialog">Emin misin?</string>
     <string name="cancel">İptal</string>
     <string name="delete">Sil</string>
     <string name="no_sessions">Herhangi Bir Oturum Kaydedilmedi</string>
@@ -215,13 +209,6 @@
         <item>Kısır</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Yok</item>
-        <item>Komotion</item>
-        <item>PSD \' de yan yana</item>
-        <item>PSD MINI G/Ç</item>
-        <item>PSD Dışı TARAF</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Dans</item>
@@ -295,8 +282,4 @@
         <item>Riptid kabı</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Hisse senedi</item>
-        <item>Riptid kabı</item>
-    </string-array>
 </resources>
