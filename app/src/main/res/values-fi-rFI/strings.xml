@@ -89,28 +89,22 @@
     <string name="sources_title">Uutislähteet</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">LongboardBrand Blog</string>
-    <string name="darktheme_title">Dark Theme.</string>
     <string name="darktheme_sum">Muussa tapauksessa seuraa järjestelmän asetuksia. Aloita sovellus uudelleen</string>
     <string name="github_sum">Näytä sovelluspalvelimen lähdekoodi GitHubissa ja ehkä jopa myötävaikuttaa siihen!</string>
     <string name="discord_sum">Liity pitkäsiimaperheeseen hajaannuspalvelimeen, paras yhteisö tapaamaan muita</string>
     <string name="muirskate_sum">Mene osoitteeseen Muirskate.com paras paikka tilata mitään Longboarding</string>
     <string name="no_favorite">Ei suosikkia</string>
     <string name="speed">Nopeus</string>
-    <string name="distance">Etäisyys</string>
     <string name="miles"> Miles.</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">Miten nopeasti sijainti päivitetään, kun tallennat istunnon. Alempi on nopeampi, mutta enemmän tehoa tasata ja huomattavasti enemmän varastointia. Suositeltava on 3500</string>
     <string name="poll_rate_title">Sijainnin Polling Rate (Millisekuntia)</string>
     <string name="recording_session">Tallennusistunto</string>
-    <string name="not_added_disclaimer">Lisätään tulevaan päivitykseen! Sen avulla voi suunnitella skeittoja ystävien kanssa, löytää uusi sijainti mennä ja luistella</string>
-    <string name="not_added_title">Tämä osa ei ole valmis</string>
     <string name="no_news">Ei uutisia</string>
     <string name="recommended_durometer">Suositeltava Durometri: </string>
     <string name="recommended_shape">Suositeltu Shape: </string>
     <string name="need_weight">Anna paino</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Poista istunto</string>
-    <string name="delete_session_dialog">Oletko varma?</string>
     <string name="cancel">Peruuta</string>
     <string name="delete">Poista</string>
     <string name="no_sessions">Ei tunnustettuja tunnustuksia</string>
@@ -235,13 +229,6 @@
         <item>Vicious</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Ei</item>
-        <item>Komennus</item>
-        <item>PSD IN-side</item>
-        <item>PSD MINI-I/O</item>
-        <item>PSD OUT-puoli</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Dance</item>
@@ -315,8 +302,4 @@
         <item>Riptidikuppi</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Kanta</item>
-        <item>Riptidikuppi</item>
-    </string-array>
 </resources>
