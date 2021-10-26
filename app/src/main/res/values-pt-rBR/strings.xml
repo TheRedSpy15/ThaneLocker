@@ -89,28 +89,22 @@
     <string name="sources_title">Fontes de Notícias</string>
     <string name="downhill254_title">DownHill254</string>
     <string name="longboardbrand_title">Blog LongboardBrand</string>
-    <string name="darktheme_title">Força Tema Escuro</string>
     <string name="darktheme_sum">Caso contrário, seguirá configurações do sistema. Reiniciar app para fazer efeito</string>
     <string name="github_sum">Visualize o código-fonte para o app hospedado no GitHub, e talvez até contribua!</string>
     <string name="discord_sum">Junte-se ao servidor de discórdia familiar de longa data, a melhor comunidade para conhecer outros</string>
     <string name="muirskate_sum">Acesse Muirskate.com o melhor lugar para encomendar qualquer coisa para Longboarding</string>
     <string name="no_favorite">Sem Favorito</string>
     <string name="speed">Velocidade</string>
-    <string name="distance">Distância</string>
     <string name="miles"> Milhas</string>
     <string name="mph"> MPH</string>
     <string name="poll_rate_sum">O quão rápido deve ser o local atualizado ao gravar uma sessão. Mais baixo é mais rápido mas mais potência desenha e significativamente mais armazenamento. Recomendado é 3500</string>
     <string name="poll_rate_title">Taxa de Pesquisa de Localização (Milliseconds)</string>
     <string name="recording_session">Sessão de gravação</string>
-    <string name="not_added_disclaimer">Será adicionado em uma atualização futura! Vai permitir planejar sessões de skate com os amigos, para encontrar um novo local para ir e andar de skate</string>
-    <string name="not_added_title">Esta seção não está acabada</string>
     <string name="no_news">Sem notícias</string>
     <string name="recommended_durometer">Durômetro recomendado: </string>
     <string name="recommended_shape">Forma Recomendada: </string>
     <string name="need_weight">Por favor, insira um peso</string>
     <string name="ok">OK</string>
-    <string name="delete_session_title">Excluir Sessão</string>
-    <string name="delete_session_dialog">Você tem certeza?</string>
     <string name="cancel">Cancelar</string>
     <string name="delete">Excluir</string>
     <string name="no_sessions">Sem Sessões Registradas</string>
@@ -235,13 +229,6 @@
         <item>Vicioso</item>
     </string-array>
     <!-- Built-in foot stop choices -->
-    <string-array name="foot_stops">
-        <item>Nenhum</item>
-        <item>Komotion</item>
-        <item>PSD IN-side</item>
-        <item>E/S PSD MINI</item>
-        <item>PSD OUT-lado</item>
-    </string-array>
     <!-- Built-in tags choices -->
     <string-array name="tags">
         <item>Dança</item>
@@ -315,8 +302,4 @@
         <item>Xícara de riptide</item>
     </string-array>
     <!-- Built-in riser heights choices -->
-    <string-array name="risers">
-        <item>Estoque</item>
-        <item>Xícara de riptide</item>
-    </string-array>
 </resources>
