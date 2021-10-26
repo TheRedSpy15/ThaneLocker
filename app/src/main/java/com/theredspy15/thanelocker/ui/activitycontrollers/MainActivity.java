@@ -95,5 +95,7 @@ public class MainActivity extends AppCompatActivity {
     private void firstTime() {
         Intent myIntent = new Intent(this, MyIntro.class);
         startActivity(myIntent);
+
+        preferences.edit().putBoolean("firstTime",false).apply();
     }
 }
