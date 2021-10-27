@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentProfileBinding;
 import com.github.mikephil.charting.charts.LineChart;
@@ -73,7 +74,7 @@ public class ProfileFragment extends Fragment {
 
         if (profile.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);
-            binding.profilePictureView.setImageBitmap(bitmap);
+            Glide.with(this).load(bitmap).into(binding.profilePictureView);
         }
 
         loadFavoriteBoard();

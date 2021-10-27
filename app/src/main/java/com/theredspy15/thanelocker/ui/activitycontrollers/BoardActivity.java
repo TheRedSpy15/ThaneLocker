@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityBoardBinding;
@@ -90,7 +91,7 @@ public class BoardActivity extends AppCompatActivity {
     void populateViews(Board board) {
         if (board.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-            binding.imageView.setImageBitmap(bitmap);
+            Glide.with(this).load(bitmap).centerCrop().into(binding.imageView);
         } else {
             binding.imageView.setVisibility(View.GONE);
         }

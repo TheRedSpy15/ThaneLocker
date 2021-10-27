@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
@@ -113,7 +114,7 @@ public class NewBoardActivity extends AppCompatActivity {
     private void loadForEdit() {
         if (board.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-            binding.imageView.setImageBitmap(bitmap);
+            Glide.with(this).load(bitmap).centerCrop().into(binding.imageView);
         }
 
         String[] pivotsA = getResources().getStringArray(R.array.pivots);
@@ -166,7 +167,7 @@ public class NewBoardActivity extends AppCompatActivity {
                     final Uri imageUri = data.getData();
                     final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                     final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                    binding.imageView.setImageBitmap(selectedImage);
+                    Glide.with(this).load(selectedImage).centerCrop().into(binding.imageView);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                     MotionToast.Companion.createColorToast(
@@ -180,7 +181,7 @@ public class NewBoardActivity extends AppCompatActivity {
                     );
                 }
             } else {
-                binding.imageView.setImageBitmap(imageBitmap);
+                Glide.with(this).load(imageBitmap).centerCrop().into(binding.imageView);
             }
         } // else: no image selected
     }
@@ -188,7 +189,7 @@ public class NewBoardActivity extends AppCompatActivity {
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
             uri -> {
                 if (uri != null) {
-                    binding.imageView.setImageURI(uri);
+                    Glide.with(this).load(uri).centerCrop().into(binding.imageView);
                     imageUri = uri;
 
                     try {
@@ -210,7 +211,7 @@ public class NewBoardActivity extends AppCompatActivity {
             new ActivityResultContracts.TakePicture(),
             result -> {
                 if (result) {
-                    binding.imageView.setImageURI(imageUri);
+                    Glide.with(this).load(imageUri).centerCrop().into(binding.imageView);
 
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);

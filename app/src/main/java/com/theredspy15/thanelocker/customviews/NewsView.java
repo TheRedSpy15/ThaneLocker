@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 
 public class NewsView extends LinearLayout {
@@ -35,7 +37,7 @@ public class NewsView extends LinearLayout {
 
     public void setBitmap(Bitmap bitmap) {
         ImageView imageView = findViewById(R.id.image);
-        imageView.setImageBitmap(bitmap);
+        Glide.with(this).load(bitmap).centerCrop().into(imageView);
     }
 
     public void setDrawable(Drawable drawable) {

@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 
 public class BoardView extends LinearLayout {
@@ -36,7 +38,7 @@ public class BoardView extends LinearLayout {
 
     public void setBitmap(Bitmap bitmap) {
         ImageView imageView = findViewById(R.id.imageViewBoard);
-        imageView.setImageBitmap(bitmap);
+        Glide.with(this).load(bitmap).centerCrop().into(imageView);
     }
 
     public void setDrawable(Drawable drawable) {

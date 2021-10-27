@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityEditProfileBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -48,7 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         if (Profile.localProfile.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(Profile.localProfile.getImage(), 0, Profile.localProfile.getImage().length);
-            binding.profilePictureView.setImageBitmap(bitmap);
+            Glide.with(this).load(bitmap).into(binding.profilePictureView);
         }
 
         binding.saveButton.setOnClickListener(this::save);
@@ -64,7 +65,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 final Uri imageUri = data.getData();
                 final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                binding.profilePictureView.setImageBitmap(selectedImage);
+                Glide.with(this).load(selectedImage).into(binding.profilePictureView);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 MotionToast.Companion.createColorToast(
@@ -93,7 +94,7 @@ public class EditProfileActivity extends AppCompatActivity {
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
             uri -> {
                 if (uri != null) {
-                    binding.profilePictureView.setImageURI(uri);
+                    Glide.with(this).load(uri).into(binding.profilePictureView);
                     imageUri = uri;
 
                     try {
