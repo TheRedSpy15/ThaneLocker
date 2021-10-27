@@ -163,7 +163,9 @@
     <string name="page_four_title">Find Hills!</string>
     <string name="page_four_sum">For those that love downhill style riding, there is a section much like findhills.com in the app. This is a subscription based feature like findhills.com, however this app is still maintained and costs less to use</string>
     <string name="premium_required">Premium Required</string>
-    <string name="premium_sum">This section requires a very cheap subscription to cover server costs. This joining removes advertisements, also unlocks unlimited boards and sessions</string>
+    <string name="premium_sum">This section requires a very cheap subscription to cover server costs. Joining removes advertisements, also unlocks unlimited boards and sessions</string>
+    <string name="no_connection_title">No Connection</string>
+    <string name="no_connection_sum">This section requires internet to access elevation data from server</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

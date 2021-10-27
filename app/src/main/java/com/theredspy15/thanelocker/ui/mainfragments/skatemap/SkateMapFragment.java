@@ -101,7 +101,7 @@ public class SkateMapFragment extends Fragment {
 
         // offline notice
         if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
-        if (!MainActivity.preferences.getBoolean("subscribe",false)) premiumNotice();
+        else if (!MainActivity.preferences.getBoolean("subscribe",false)) premiumNotice();
 
         return root;
     }
@@ -140,37 +140,27 @@ public class SkateMapFragment extends Fragment {
     */
 
     private void offlineNotice() {
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("Offline");
-        alertDialog.setMessage("This section requires internet to access elevation data from server");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok),
-                (dialog, which) -> {
-                    dialog.dismiss();
+        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                .setTitle(getString(R.string.no_connection_title))
+                .setMessage(getString(R.string.no_connection_sum))
+                .setAnimation("12701-no-internet-connection.json")
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
                     Intent myIntent = new Intent(requireContext(), MainActivity.class);
                     startActivity(myIntent);
-                });
-        alertDialog.show();
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                })
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
     }
 
     private void premiumNotice() {
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext()).create();
-        alertDialog.setTitle("Premium Required");
-        alertDialog.setMessage("This section requires a very cheap subscription to cover server costs");
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.ok),
-                (dialog, which) -> {
-                    dialog.dismiss();
-                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
-                    startActivity(myIntent);
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Sign up",
-                (dialog, which) -> {
-                    dialog.dismiss();
-                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
-                    startActivity(myIntent);
-                    new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
-                });
-        alertDialog.show();
-
         MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
                 .setTitle(getString(R.string.premium_required))
                 .setMessage(getString(R.string.premium_sum))

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (BuildConfig.DEBUG)
             preferences.edit().putBoolean("subscribe",true).apply();
 
-        if (preferences.getBoolean("firstTime",true)) firstTime();
+        if (preferences.getBoolean("firsttime",true)) firstTime();
 
         App.setContext(this);
 
@@ -96,6 +96,6 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, MyIntro.class);
         startActivity(myIntent);
 
-        preferences.edit().putBoolean("firstTime",false).apply();
+        preferences.edit().putBoolean("firsttime",false).apply();
     }
 }
