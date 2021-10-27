@@ -10,6 +10,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +25,7 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
@@ -49,6 +51,8 @@ import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 
 public class SkateMapFragment extends Fragment {
 
@@ -166,6 +170,25 @@ public class SkateMapFragment extends Fragment {
                     new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
                 });
         alertDialog.show();
+
+        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                .setTitle(getString(R.string.premium_required))
+                .setMessage(getString(R.string.premium_sum))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                    new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
+                })
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> {
+                    dialogInterface.dismiss();
+                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
+                    startActivity(myIntent);
+                })
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
     }
 
     private void addMarker(GeoPoint point, boolean getElevation) {
