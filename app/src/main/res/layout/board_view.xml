@@ -23,7 +23,6 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_marginBottom="10dp"
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +32,6 @@
 
         <TextView
             android:id="@+id/textViewSpeed"
-            android:layout_marginBottom="5dp"
             android:textSize="20sp"
             android:text="Average Speed: 00 MPH"
             android:layout_width="wrap_content"
