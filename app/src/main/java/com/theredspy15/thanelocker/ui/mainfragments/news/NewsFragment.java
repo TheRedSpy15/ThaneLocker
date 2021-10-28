@@ -1,6 +1,7 @@
 package com.theredspy15.thanelocker.ui.mainfragments.news;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.coder.link.preview.library.LinkPreviewCallback;
+import com.coder.link.preview.library.SourceContent;
+import com.coder.link.preview.library.TextCrawler;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,7 +53,30 @@ public class NewsFragment extends Fragment {
         binding.swipeRefreshLayout.setRefreshing(true);
         initFeed();
 
+        //getArticleImage();
+
         return root;
+    }
+
+    private void getArticleImage() {
+        final Bitmap[] bitmap = new Bitmap[1];
+        TextCrawler textCrawler = new TextCrawler();
+
+        // Create the callbacks to handle pre and post execution of the preview generation.
+        LinkPreviewCallback linkPreviewCallback = new LinkPreviewCallback() {
+            @Override
+            public void onPre() {
+                // Any work that needs to be done before generating the preview. Usually inflate
+                // your custom preview layout here.
+            }
+
+            @Override
+            public void onPos(SourceContent sourceContent, boolean b) {
+                // Populate your preview layout with the results of sourceContent.
+                System.out.println("gegege "+sourceContent.getTitle());
+            }
+        };
+        textCrawler.makePreview(linkPreviewCallback,"http://goo.gl/jKCPgp");
     }
 
     private void initFeed() {

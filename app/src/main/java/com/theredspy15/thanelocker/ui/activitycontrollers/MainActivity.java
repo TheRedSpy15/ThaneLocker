@@ -49,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
         App.setContext(this);
 
-        /*try { TODO wip
-            App.getMainImage("https://www.bing.com");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
