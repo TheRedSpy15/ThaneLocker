@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSettingsBinding;
+import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 public class SettingsFragment extends Fragment {
 
@@ -46,6 +48,13 @@ public class SettingsFragment extends Fragment {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             addPreferencesFromResource(R.xml.preferences);
+
+            Preference myPref = (Preference) findPreference("satellite");
+            if (!MainActivity.preferences.getBoolean("subscribe",false)) {
+                if (myPref != null) {
+                    myPref.setEnabled(false);
+                }
+            }
         }
     }
 }

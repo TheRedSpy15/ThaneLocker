@@ -148,7 +148,7 @@
     <string name="failed_image">Failed to load image</string>
     <string name="hold_up">Hold up!</string>
     <string name="downhill_title">Downhill Rider</string>
-    <string name="downhill_sum">Show elevation data</string>
+    <string name="downhill_sum">Show elevation data. Uses low accuracy unless premium is purchased due to higher server costs</string>
     <string name="reduce_title">Reduce Charts (Experimental)</string>
     <string name="reduce_sum">Simplifies the amount of data for longer sessions</string>
     <string name="no_save_session">Didn\'t save</string>
