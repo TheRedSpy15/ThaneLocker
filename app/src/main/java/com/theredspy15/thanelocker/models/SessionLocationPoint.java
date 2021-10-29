@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class SessionLocationPoint implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234569L;
+    private long timeStamp = 0;
     private float speed = 0;
     private double latitude = 0.0;
     private double longitude = 0.0;
@@ -30,5 +31,13 @@ public class SessionLocationPoint implements Serializable { // TODO: parcelable 
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

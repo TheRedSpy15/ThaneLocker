@@ -23,6 +23,8 @@ import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.ui.mainfragments.sessions.SessionsFragment;
 
+import java.util.Calendar;
+
 public class LocationService extends Service {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     LocationManager locationManager;
@@ -88,6 +90,7 @@ public class LocationService extends Service {
             point.setLongitude(loc.getLongitude());
             point.setLatitude(loc.getLatitude());
             point.setSpeed(loc.getSpeed());
+            point.setTimeStamp(Calendar.getInstance().getTimeInMillis());
             SessionsFragment.newSession.getLocations().add(point);
         }
 
