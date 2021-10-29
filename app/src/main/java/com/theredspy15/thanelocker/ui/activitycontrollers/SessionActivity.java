@@ -53,6 +53,7 @@ import com.theredspy15.thanelocker.utils.Reduction;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.tileprovider.tilesource.bing.BingMapTileSource;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.overlay.Marker;
@@ -61,6 +62,7 @@ import org.osmdroid.views.overlay.Polyline;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -111,10 +113,18 @@ public class SessionActivity extends AppCompatActivity {
         mapController.setCenter(startPoint);
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
-        // determine theme for map
-        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
-            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        if (MainActivity.preferences.getBoolean("satellite",false) && MainActivity.preferences.getBoolean("subscribe",false)) {
+            BingMapTileSource.retrieveBingKey(this);
+            String m_locale = Locale.getDefault().getDisplayName();
+            BingMapTileSource bing = new BingMapTileSource(m_locale);
+            bing.setStyle(BingMapTileSource.IMAGERYSET_AERIAL);
+            map.setTileSource(bing);
+        } else {
+            // determine theme for map
+            int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+            if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+                map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        }
 
         loadPoints();
         loadData();

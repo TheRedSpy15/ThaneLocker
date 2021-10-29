@@ -47,6 +47,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
+        <meta-data android:name="BING_KEY" android:value="AjDazGFNtjU5Ez8V_FZLFWmtXVNKTup_WwT-tB766ylC1kquFV9Eqk17IDv0ZV8U" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5128547878021429~6770473318" />

@@ -41,6 +41,7 @@ import org.osmdroid.bonuspack.routing.RoadManager;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.tileprovider.tilesource.bing.BingMapTileSource;
 import org.osmdroid.tileprovider.util.StorageUtils;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.CustomZoomButtonsController;
@@ -51,6 +52,7 @@ import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
 
@@ -90,14 +92,22 @@ public class SkateMapFragment extends Fragment {
         mapController.setCenter(startPoint);
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
-        // determine theme for map
-        int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
-            map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
-
         // get where user clicks on map
         MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
         map.getOverlays().add(OverlayEvents);
+
+        if (MainActivity.preferences.getBoolean("satellite",false) && MainActivity.preferences.getBoolean("subscribe",false)) {
+            BingMapTileSource.retrieveBingKey(requireContext());
+            String m_locale = Locale.getDefault().getDisplayName();
+            BingMapTileSource bing = new BingMapTileSource(m_locale);
+            bing.setStyle(BingMapTileSource.IMAGERYSET_AERIAL);
+            map.setTileSource(bing);
+        } else {
+            // determine theme for map
+            int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+            if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+                map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        }
 
         // offline notice
         if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
