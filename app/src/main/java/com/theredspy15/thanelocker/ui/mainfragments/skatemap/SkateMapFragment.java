@@ -155,12 +155,7 @@ public class SkateMapFragment extends Fragment {
                 .setMessage(getString(R.string.no_connection_sum))
                 .setAnimation("12701-no-internet-connection.json")
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
-                    dialogInterface.dismiss();
-                    Intent myIntent = new Intent(requireContext(), MainActivity.class);
-                    startActivity(myIntent);
-                })
-                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> {
+                .setPositiveButton(getString(R.string.ok), (dialogInterface, which) -> {
                     dialogInterface.dismiss();
                     Intent myIntent = new Intent(requireContext(), MainActivity.class);
                     startActivity(myIntent);
@@ -175,7 +170,7 @@ public class SkateMapFragment extends Fragment {
                 .setTitle(getString(R.string.premium_required))
                 .setMessage(getString(R.string.premium_sum))
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                .setPositiveButton(getString(R.string.sign_up), (dialogInterface, which) -> {
                     dialogInterface.dismiss();
                     Intent myIntent = new Intent(requireContext(), MainActivity.class);
                     startActivity(myIntent);
