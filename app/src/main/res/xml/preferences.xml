@@ -61,7 +61,7 @@
             android:key="kilometers"
             android:persistent="true"
             app:icon="@drawable/ic_outline_speed_24"
-            android:title="Convert to kilometers per hour" />
+            android:title="@string/convert_kph_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/sources_title">
         <CheckBoxPreference
@@ -96,8 +96,16 @@
             android:summary="@string/darktheme_sum"
             android:persistent="true"
             android:title="@string/select_theme" />
+        <CheckBoxPreference
+            app:iconSpaceReserved="true"
+            android:defaultValue="false"
+            android:key="satellite"
+            android:persistent="true"
+            app:icon="@drawable/ic_outline_map_24"
+            android:summary="@string/satellite_sum"
+            android:title="@string/satellite_title" />
     </PreferenceCategory>
-    <Preference android:title="View Privacy Policy"
+    <Preference android:title="@string/privacy_policy_title"
         app:icon="@drawable/ic_baseline_policy_24">
         <intent android:action="android.intent.action.VIEW"
             android:data="https://longboard-life.flycricket.io/privacy.html" />

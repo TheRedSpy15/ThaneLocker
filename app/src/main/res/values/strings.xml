@@ -166,6 +166,10 @@
     <string name="premium_sum">This section requires a very cheap subscription to cover server costs. Joining removes advertisements, also unlocks unlimited boards and sessions</string>
     <string name="no_connection_title">No Connection</string>
     <string name="no_connection_sum">This section requires internet to access elevation data from server</string>
+    <string name="convert_kph_title">Convert to kilometers per hour</string>
+    <string name="satellite_title">Default to Satellite Map</string>
+    <string name="satellite_sum">This applies to all maps in the app. This is a premium feature, Bing maps charges a fee to use its servers</string>
+    <string name="privacy_policy_title">View Privacy Policy</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->
