@@ -171,6 +171,7 @@
     <string name="satellite_sum">This applies to all maps in the app. This is a premium feature, Bing maps charges a fee to use its servers</string>
     <string name="privacy_policy_title">View Privacy Policy</string>
     <string name="sign_up">Sign up</string>
+    <string name="distance">Distance:</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

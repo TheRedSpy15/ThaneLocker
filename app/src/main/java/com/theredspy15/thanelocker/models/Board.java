@@ -86,9 +86,10 @@ public class Board implements Serializable { // TODO: parcelable in the future
 
     public float avgSpeed() {
         float avg = 0;
-        for (Session session : Session.sessionsWithBoard(getId()))
+        ArrayList<Session> sessions = Session.sessionsWithBoard(getId());
+        for (Session session : sessions)
             avg += Float.parseFloat(session.getAvgSpeed());
-        avg = avg / Session.sessionsWithBoard(getId()).size();
+        if (sessions.size() > 0) avg = avg / sessions.size();
         return avg;
     }
 

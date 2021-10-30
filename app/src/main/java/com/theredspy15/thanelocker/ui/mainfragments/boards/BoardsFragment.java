@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -82,8 +81,8 @@ public class BoardsFragment extends Fragment {
                 if (board != null) {
                     BoardView boardView = new BoardView(context);
                     boardView.setTextName(board.getName());
-                    boardView.setTextDistance("Distance: 05.3 Miles");
-                    boardView.setTextSpeed("Average Speed: 14 MPH");
+                    boardView.setTextDistance(getString(R.string.distance)+" "+App.getDistanceFormatted(board.totalDistance(),getResources()));
+                    boardView.setTextSpeed(getString(R.string.average_speed)+" "+App.getSpeedFormatted(board.avgSpeed(),getResources()));
                     boardView.setBackgroundColor(context.getColor(R.color.grey));
                     boardView.getBackground().setAlpha(30);
                     boardView.setPadding(0,0,0,0);
