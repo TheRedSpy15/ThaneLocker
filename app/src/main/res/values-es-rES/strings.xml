@@ -149,7 +149,7 @@
     <string name="failed_image">Failed to load image</string>
     <string name="hold_up">Hold up!</string>
     <string name="downhill_title">Downhill Rider</string>
-    <string name="downhill_sum">Show elevation data</string>
+    <string name="downhill_sum">Show elevation data. Uses low accuracy unless premium is purchased due to higher server costs</string>
     <string name="reduce_title">Reduce Charts (Experimental)</string>
     <string name="reduce_sum">Simplifies the amount of data for longer sessions</string>
     <string name="no_save_session">Didn\'t save</string>
@@ -171,6 +171,8 @@
     <string name="satellite_title">Default to Satellite Map</string>
     <string name="satellite_sum">This applies to all maps in the app. This is a premium feature, Bing maps charges a fee to use its servers</string>
     <string name="privacy_policy_title">View Privacy Policy</string>
+    <string name="sign_up">Sign up</string>
+    <string name="distance">Distance:</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
