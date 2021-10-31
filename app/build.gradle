@@ -11,10 +11,14 @@ android {
         applicationId "com.theredspy15.thanelocker"
         minSdk 24
         targetSdk 31
-        versionCode 9
-        versionName "1.52-Release"
+        versionCode 10
+        versionName "1.88-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    android.packagingOptions {
+        exclude 'rome-utils-*.jar'
     }
 
     lintOptions {
@@ -29,8 +33,8 @@ android {
         }
 
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
@@ -46,10 +50,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.avinashcoder:Android-Link-Preview:1.0.0'
+    implementation 'com.prof18.rssparser:rssparser:3.1.5'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
-    implementation 'org.jsoup:jsoup:1.14.3'
     implementation 'com.github.AppIntro:AppIntro:6.1.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
     implementation 'com.airbnb.android:lottie:4.2.0'
@@ -64,7 +66,6 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.8.0'
     implementation 'com.google.code.gson:gson:2.8.8'
-    implementation 'com.rometools:rome:1.16.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'

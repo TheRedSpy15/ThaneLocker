@@ -19,8 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.rometools.rome.feed.synd.impl.*
--keep class com.rometools.rome.io.impl.*
 -keep public class com.google.android.gms.ads.** {
   public *;
 }
@@ -28,4 +26,10 @@
 -keep public class com.google.ads.** {
   public *;
 }
--keeppackagenames org.jsoup.nodes
+
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
