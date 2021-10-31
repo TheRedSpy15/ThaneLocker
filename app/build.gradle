@@ -17,10 +17,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    android.packagingOptions {
-        exclude 'rome-utils-*.jar'
-    }
-
     lintOptions {
         abortOnError false
     }
