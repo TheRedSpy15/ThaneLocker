@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
@@ -49,6 +51,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class SkateMapFragment extends Fragment {
 
@@ -144,16 +148,86 @@ public class SkateMapFragment extends Fragment {
     }
 
     public void saveRoute(View view) {
-        ArrayList<GeoPoint> points = new ArrayList();
-        points.add(point1);
-        points.add(point2);
+        if (point1 != null && point2 != null) {
+            ArrayList<GeoPoint> points = new ArrayList<>();
+            points.add(point1);
+            points.add(point2);
 
-        HillRoute route = new HillRoute();
-        route.setPoints(points);
+            HillRoute route = new HillRoute();
+            EditText editText = new EditText(requireContext());
+
+            AlertDialog dialog = new AlertDialog.Builder(requireContext())
+                    .setTitle("Title")
+                    .setMessage("Message")
+                    .setView(editText)
+                    .setCancelable(false)
+                    .setPositiveButton("OK", (dialogInterface, i) -> {
+                        String input = editText.getText().toString();
+                        route.setName(input);
+                        route.setPoints(points);
+                        HillRoute.save();
+
+                        MotionToast.Companion.createColorToast(
+                                requireActivity(),
+                                "Saved!",
+                                "Saved as:"+" "+route.getName(),
+                                MotionToastStyle.SUCCESS,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                        );
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .create();
+            dialog.show();
+        } else {
+            MotionToast.Companion.createColorToast(
+                    requireActivity(),
+                    "Did not save",
+                    "No route to save",
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+            );
+        }
     }
 
     public void loadRoute(View view) {
+        String[] routeNames = new String[HillRoute.savedHills.size()];
+        int i = 0;
+        for (int hill_id : HillRoute.savedHillIds) {
+            HillRoute route = HillRoute.savedHills.get(hill_id); // TODO: don't do this!
+            if (route != null) {
+                routeNames[i] = route.getName();
+            }
+            i+=1;
+        }
 
+        AlertDialog.Builder b = new AlertDialog.Builder(requireContext());
+        b.setTitle("Load Route");
+        b.setItems(routeNames, (dialog, which) -> {
+            dialog.dismiss();
+            HillRoute route = HillRoute.savedHills.get(HillRoute.RouteNameToId(routeNames[which]));
+            if (route != null) {
+                point1 = route.getPoints().get(0);
+                point2 = route.getPoints().get(1);
+
+                Thread elevationThread = new Thread(this::getElevation);
+                elevationThread.start();
+            } else {
+                MotionToast.Companion.createColorToast(
+                        requireActivity(),
+                        "Failed to load",
+                        "Unexpected error loading route",
+                        MotionToastStyle.ERROR,
+                        MotionToast.GRAVITY_BOTTOM,
+                        MotionToast.LONG_DURATION,
+                        ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                );
+            }
+        });
+        b.show();
     }
 
     public void toggleStyle(View view) {
