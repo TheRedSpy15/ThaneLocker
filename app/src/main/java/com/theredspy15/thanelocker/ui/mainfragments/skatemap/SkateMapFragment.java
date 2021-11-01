@@ -242,7 +242,6 @@ public class SkateMapFragment extends Fragment {
 
         requireActivity().runOnUiThread(()->{
             // ui text
-            binding.tipView.setVisibility(View.GONE);
             binding.elevationsChart.setVisibility(View.VISIBLE);
             binding.distanceView.setVisibility(View.VISIBLE);
 
