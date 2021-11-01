@@ -58,26 +58,31 @@
             app:efab_iconAnimationRotationDeg="-225"
             app:efab_closingAnticipateTension="0"/>
         <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/styleOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_style_24"
             app:label_text="Change map" />
         <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/clearOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_delete_"
             app:label_text="Clear" />
         <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/helpOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_help_24"
             app:label_text="Help" />
         <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/saveOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_save_24"
             app:label_text="Save route" />
         <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/loadOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_insert_drive_file_24"

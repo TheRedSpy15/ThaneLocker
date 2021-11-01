@@ -57,12 +57,20 @@ public class SkateMapFragment extends Fragment {
     private IMapController mapController;
     private GeoPoint point1 = null;
     private GeoPoint point2 = null;
+    private boolean usingSatellite = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentSkatemapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        // fab options
+        binding.clearOption.setOnClickListener(this::clear);
+        binding.helpOption.setOnClickListener(this::help);
+        binding.loadOption.setOnClickListener(this::loadRoute);
+        binding.saveOption.setOnClickListener(this::saveRoute);
+        binding.styleOption.setOnClickListener(this::toggleStyle);
 
         //load/initialize the osmdroid configuration, this can be done
         Context ctx = requireContext();
@@ -89,14 +97,15 @@ public class SkateMapFragment extends Fragment {
         MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
         map.getOverlays().add(OverlayEvents);
 
+        // determine theme for map - satellite
         if (MainActivity.preferences.getBoolean("satellite",false) && MainActivity.preferences.getBoolean("subscribe",false)) {
             BingMapTileSource.retrieveBingKey(requireContext());
             String m_locale = Locale.getDefault().getDisplayName();
             BingMapTileSource bing = new BingMapTileSource(m_locale);
             bing.setStyle(BingMapTileSource.IMAGERYSET_AERIAL);
             map.setTileSource(bing);
-        } else {
-            // determine theme for map
+            usingSatellite = true;
+        } else { // simple
             int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
             if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
                 map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
@@ -107,6 +116,56 @@ public class SkateMapFragment extends Fragment {
         else if (!MainActivity.preferences.getBoolean("subscribe",false)) premiumNotice();
 
         return root;
+    }
+
+    public void help(View view) {
+        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                .setTitle("Hill Finder")
+                .setMessage("How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data")
+                .setAnimation("78890-finding-route.json")
+                .setCancelable(true)
+                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                .setPositiveButton(getString(R.string.ok), (dialogInterface, which) -> dialogInterface.dismiss())
+                .build();
+        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mDialog.show();
+    }
+
+    public void clear(View view) {
+        point1 = null;
+        point2 = null;
+        map.getOverlays().clear();
+        LineChart chart = binding.elevationsChart;
+        chart.clear();
+        chart.setVisibility(View.GONE);
+        binding.distanceView.setText("");
+        binding.distanceView.setVisibility(View.GONE);
+    }
+
+    public void saveRoute(View view) {
+
+    }
+
+    public void loadRoute(View view) {
+
+    }
+
+    public void toggleStyle(View view) {
+        if (usingSatellite) { // switch to simple
+            usingSatellite = false;
+            map.setTileSource(TileSourceFactory.MAPNIK);
+            int nightModeFlags = this.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+            if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+                map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
+        } else { // switch to satellite
+            usingSatellite = true;
+            map.getOverlayManager().getTilesOverlay().setColorFilter(null);
+            BingMapTileSource.retrieveBingKey(requireContext());
+            String m_locale = Locale.getDefault().getDisplayName();
+            BingMapTileSource bing = new BingMapTileSource(m_locale);
+            bing.setStyle(BingMapTileSource.IMAGERYSET_AERIAL);
+            map.setTileSource(bing);
+        }
     }
 
     MapEventsReceiver mReceive = new MapEventsReceiver() {
@@ -135,7 +194,7 @@ public class SkateMapFragment extends Fragment {
         public boolean longPressHelper(GeoPoint p) { return false; }
     };
 
-    /*
+    /* TODO: maybe use this to get average grade for entire route
     // Calculates and returns grade
     function calcGrade(rise,run) {
         return (rise/run*100).toFixed(2);
