@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Board implements Serializable { // TODO: parcelable in the future
+public class Board implements Serializable {
     private static final long serialVersionUID = 1234567L;
     private int id = 0;
     private boolean advanceMode = false;

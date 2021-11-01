@@ -23,6 +23,7 @@ import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.theredspy15.thanelocker.models.Elevation;
+import com.theredspy15.thanelocker.models.HillRoute;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
@@ -143,7 +144,12 @@ public class SkateMapFragment extends Fragment {
     }
 
     public void saveRoute(View view) {
+        ArrayList<GeoPoint> points = new ArrayList();
+        points.add(point1);
+        points.add(point2);
 
+        HillRoute route = new HillRoute();
+        route.setPoints(points);
     }
 
     public void loadRoute(View view) {
