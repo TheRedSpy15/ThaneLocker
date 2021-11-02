@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -139,7 +140,8 @@ public class SkateMapFragment extends Fragment {
     public void clear(View view) {
         point1 = null;
         point2 = null;
-        map.getOverlays().clear();
+        MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
+        map.getOverlays().add(OverlayEvents);
         LineChart chart = binding.elevationsChart;
         chart.clear();
         chart.setVisibility(View.GONE);
@@ -165,6 +167,8 @@ public class SkateMapFragment extends Fragment {
                         String input = editText.getText().toString();
                         route.setName(input);
                         route.setPoints(points);
+                        HillRoute.savedHillIds.add(route.getId());
+                        HillRoute.savedHills.put(route.getId(),route);
                         HillRoute.save();
 
                         MotionToast.Companion.createColorToast(
@@ -194,6 +198,7 @@ public class SkateMapFragment extends Fragment {
     }
 
     public void loadRoute(View view) {
+        Toast.makeText(requireContext(), ""+HillRoute.savedHillIds.size(), Toast.LENGTH_SHORT).show();
         String[] routeNames = new String[HillRoute.savedHills.size()];
         int i = 0;
         for (int hill_id : HillRoute.savedHillIds) {
