@@ -51,8 +51,9 @@
         <com.nambimobile.widgets.efab.ExpandableFab
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="20dp"
+            android:layout_gravity="top|end"
+            app:efab_fabOptionPosition="below"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:efab_icon="@drawable/ic_baseline_terrain_24"
             app:efab_iconAnimationRotationDeg="-225"
