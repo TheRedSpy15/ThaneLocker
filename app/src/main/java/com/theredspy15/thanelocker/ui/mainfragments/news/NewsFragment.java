@@ -83,14 +83,12 @@ public class NewsFragment extends Fragment {
                 requireActivity().runOnUiThread(()->binding.feedLayout.addView(button,layout));
             }
         } else if (articles == null || articles.isEmpty()) {
-            System.out.println("ege 3");
             TextView textView = new TextView(requireContext()); // no news feeds selected
             textView.setText(R.string.no_news);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setTextSize(18);
             requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
         }
-        System.out.println("ege 4");
         binding.swipeRefreshLayout.setRefreshing(false);
     }
 
@@ -105,7 +103,6 @@ public class NewsFragment extends Fragment {
 
             @Override
             public void onTaskCompleted(@NonNull Channel channel) {
-                System.out.println("ege compl");
                 displayEntries(channel.getArticles());
             }
 
