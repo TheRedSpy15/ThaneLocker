@@ -163,7 +163,8 @@ public class App extends Application {
         // set the filled area
         set.setDrawFilled(true);
         set.setFillColor(context.getColor(R.color.purple_500));
-        set.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawCircles(false);
 
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set); // add the data sets
