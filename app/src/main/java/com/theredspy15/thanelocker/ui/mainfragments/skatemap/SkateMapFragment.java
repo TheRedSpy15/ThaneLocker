@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +26,15 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.HillRoute;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
+import com.theredspy15.thanelocker.utils.PermissionChecker;
 import com.theredspy15.thanelocker.utils.Purchasing;
 
 import org.osmdroid.api.IMapController;
@@ -77,6 +82,7 @@ public class SkateMapFragment extends Fragment {
         binding.loadOption.setOnClickListener(this::loadRoute);
         binding.saveOption.setOnClickListener(this::saveRoute);
         binding.styleOption.setOnClickListener(this::toggleStyle);
+        binding.myLocationButton.setOnClickListener(this::lastKnownLocation);
 
         //load/initialize the osmdroid configuration, this can be done
         Context ctx = requireContext();
@@ -95,7 +101,7 @@ public class SkateMapFragment extends Fragment {
         map.setMultiTouchControls(true);
         mapController = map.getController();
         mapController.setZoom(15.0);
-        GeoPoint startPoint = new GeoPoint(20.712807,-156.251335);
+        GeoPoint startPoint = new GeoPoint(20.712807, -156.251335);
         mapController.setCenter(startPoint);
         map.getZoomController().setVisibility(CustomZoomButtonsController.Visibility.NEVER);
 
@@ -104,7 +110,7 @@ public class SkateMapFragment extends Fragment {
         map.getOverlays().add(OverlayEvents);
 
         // determine theme for map - satellite
-        if (MainActivity.preferences.getBoolean("satellite",false) && MainActivity.preferences.getBoolean("subscribe",false)) {
+        if (MainActivity.preferences.getBoolean("satellite", false) && MainActivity.preferences.getBoolean("subscribe", false)) {
             BingMapTileSource.retrieveBingKey(requireContext());
             String m_locale = Locale.getDefault().getDisplayName();
             BingMapTileSource bing = new BingMapTileSource(m_locale);
@@ -119,9 +125,40 @@ public class SkateMapFragment extends Fragment {
 
         // offline notice
         if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
-        else if (!MainActivity.preferences.getBoolean("subscribe",false)) premiumNotice();
+        else if (!MainActivity.preferences.getBoolean("subscribe", false)) premiumNotice();
 
         return root;
+    }
+
+    private boolean checkPermission() { // TODO: check that gps is even on
+        if (!PermissionChecker.checkPermissionLocation(requireContext())) PermissionChecker.requestPermissionLocation(requireActivity());
+
+        return PermissionChecker.checkPermissionLocation(requireContext());
+    }
+
+    public void lastKnownLocation(View view) {
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext());
+        if (checkPermission()) {
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(requireActivity(), (OnSuccessListener<Location>) location -> {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            // Logic to handle location object
+                            Toast.makeText(requireContext(), "not null", Toast.LENGTH_SHORT).show();
+                            mapController.setCenter(new GeoPoint(location.getLatitude(),location.getLongitude()));
+                        } else {
+                            MotionToast.Companion.createColorToast(
+                                    requireActivity(),
+                                    "Could not find location",
+                                    "Make sure to enable it in settings",
+                                    MotionToastStyle.ERROR,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                            );
+                        }
+                    });
+        }
     }
 
     public void help(View view) {

@@ -48,12 +48,22 @@
         <com.nambimobile.widgets.efab.Overlay
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/myLocationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            app:tint="@color/black"
+            android:src="@drawable/ic_baseline_my_location_24"
+            android:focusable="true" />
         <com.nambimobile.widgets.efab.ExpandableFab
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|end"
             app:efab_fabOptionPosition="below"
             android:layout_marginTop="20dp"
+            android:layout_gravity="end"
             android:layout_marginEnd="20dp"
             app:efab_icon="@drawable/ic_baseline_terrain_24"
             app:efab_iconAnimationRotationDeg="-225"
