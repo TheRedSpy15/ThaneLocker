@@ -220,6 +220,9 @@ public class SkateMapFragment extends Fragment {
     }
 
     public void loadRoute(View view) {
+        clear(null);
+        HillRoute.load();
+
         Toast.makeText(requireContext(), ""+HillRoute.savedHillIds.size(), Toast.LENGTH_SHORT).show();
         String[] routeNames = new String[HillRoute.savedHills.size()];
         int i = 0;
@@ -281,10 +284,10 @@ public class SkateMapFragment extends Fragment {
         public boolean singleTapConfirmedHelper(GeoPoint p) {
             if (point1 == null) {
                 point1 = p;
-                addMarker(point1,false);
+                addMarker(point1,false, true);
             } else if (point2 == null) {
                 point2 = p;
-                addMarker(point2,true);
+                addMarker(point2,true, false);
             } else {
                 point2 = null; // reset for new route
                 map.getOverlays().clear();
@@ -292,7 +295,7 @@ public class SkateMapFragment extends Fragment {
                 map.getOverlays().add(OverlayEvents);
 
                 point1 = p;
-                addMarker(point1,false);
+                addMarker(point1,false, false);
             }
 
             return false;
@@ -346,9 +349,12 @@ public class SkateMapFragment extends Fragment {
         mDialog.show();
     }
 
-    private void addMarker(GeoPoint point, boolean getElevation) {
+    private void addMarker(GeoPoint point, boolean getElevation, boolean startMarker) {
         // add marker
         Drawable icon = AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_location_on_24);
+        if (startMarker) icon.setTint(Color.GREEN);
+        else icon.setTint(Color.RED);
+
         Marker nodeMarker = new Marker(map);
         nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
         nodeMarker.setIcon(icon);
