@@ -243,8 +243,8 @@ public class SkateMapFragment extends Fragment {
                 point1 = route.getPoints().get(0);
                 point2 = route.getPoints().get(1);
 
-                Thread elevationThread = new Thread(this::getElevation);
-                elevationThread.start();
+                addMarker(point1,false,true);
+                addMarker(point2,true,false);
             } else {
                 MotionToast.Companion.createColorToast(
                         requireActivity(),
