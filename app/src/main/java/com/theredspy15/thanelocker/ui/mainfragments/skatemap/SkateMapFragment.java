@@ -426,7 +426,7 @@ public class SkateMapFragment extends Fragment {
             chart.animateX(3000);
 
             // distance text
-            binding.distanceView.setText("Distance: "+road.mLength*0.6213711922);
+            binding.distanceView.setText(App.getDistanceFormatted((float) road.mLength,getResources()));
         });
     }
 
