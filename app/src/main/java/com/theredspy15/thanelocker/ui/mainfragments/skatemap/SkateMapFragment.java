@@ -1,10 +1,14 @@
 package com.theredspy15.thanelocker.ui.mainfragments.skatemap;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,9 +30,6 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.HillRoute;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -137,27 +138,10 @@ public class SkateMapFragment extends Fragment {
     }
 
     public void lastKnownLocation(View view) {
-        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext());
         if (checkPermission()) {
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(requireActivity(), (OnSuccessListener<Location>) location -> {
-                        // Got last known location. In some rare situations this can be null.
-                        if (location != null) {
-                            // Logic to handle location object
-                            Toast.makeText(requireContext(), "not null", Toast.LENGTH_SHORT).show();
-                            mapController.setCenter(new GeoPoint(location.getLatitude(),location.getLongitude()));
-                        } else {
-                            MotionToast.Companion.createColorToast(
-                                    requireActivity(),
-                                    "Could not find location",
-                                    "Make sure to enable it in settings",
-                                    MotionToastStyle.ERROR,
-                                    MotionToast.GRAVITY_BOTTOM,
-                                    MotionToast.LONG_DURATION,
-                                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
-                            );
-                        }
-                    });
+            SingleShotLocationProvider.requestSingleUpdate(requireContext(), location -> {
+                mapController.setCenter(new GeoPoint(location.latitude,location.longitude));
+            });
         }
     }
 
@@ -464,4 +448,67 @@ public class SkateMapFragment extends Fragment {
         binding = null;
     }
 
+}
+
+class SingleShotLocationProvider {
+
+    public static interface LocationCallback {
+        public void onNewLocationAvailable(GPSCoordinates location);
+    }
+
+    // calls back to calling thread, note this is for low grain: if you want higher precision, swap the
+    // contents of the else and if. Also be sure to check gps permission/settings are allowed.
+    // call usually takes <10ms
+    @SuppressLint("MissingPermission")
+    public static void requestSingleUpdate(final Context context, final LocationCallback callback) {
+        final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        if (isNetworkEnabled) {
+            Criteria criteria = new Criteria();
+            criteria.setAccuracy(Criteria.ACCURACY_COARSE);
+            locationManager.requestSingleUpdate(criteria, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude()));
+                }
+
+                @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+                @Override public void onProviderEnabled(String provider) { }
+                @Override public void onProviderDisabled(String provider) { }
+            }, null);
+        } else {
+            boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            if (isGPSEnabled) {
+                Criteria criteria = new Criteria();
+                criteria.setAccuracy(Criteria.ACCURACY_FINE);
+                locationManager.requestSingleUpdate(criteria, new LocationListener() {
+                    @Override
+                    public void onLocationChanged(Location location) {
+                        callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude()));
+                    }
+
+                    @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+                    @Override public void onProviderEnabled(String provider) { }
+                    @Override public void onProviderDisabled(String provider) { }
+                }, null);
+            }
+        }
+    }
+
+
+    // consider returning Location instead of this dummy wrapper class
+    public static class GPSCoordinates {
+        public float longitude = -1;
+        public float latitude = -1;
+
+        public GPSCoordinates(float theLatitude, float theLongitude) {
+            longitude = theLongitude;
+            latitude = theLatitude;
+        }
+
+        public GPSCoordinates(double theLatitude, double theLongitude) {
+            longitude = (float) theLongitude;
+            latitude = (float) theLatitude;
+        }
+    }
 }
