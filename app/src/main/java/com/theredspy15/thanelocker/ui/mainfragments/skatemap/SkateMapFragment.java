@@ -161,6 +161,7 @@ public class SkateMapFragment extends Fragment {
     public void clear(View view) {
         point1 = null;
         point2 = null;
+        map.getOverlays().clear();
         MapEventsOverlay OverlayEvents = new MapEventsOverlay(mReceive);
         map.getOverlays().add(OverlayEvents);
         LineChart chart = binding.elevationsChart;
@@ -274,6 +275,7 @@ public class SkateMapFragment extends Fragment {
         }
     }
 
+    // this is the overlay for getting user touch, and setting geopoints for those locations
     MapEventsReceiver mReceive = new MapEventsReceiver() {
         @Override
         public boolean singleTapConfirmedHelper(GeoPoint p) {
