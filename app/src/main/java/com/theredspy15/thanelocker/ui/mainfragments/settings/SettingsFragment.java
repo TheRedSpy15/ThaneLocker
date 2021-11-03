@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSettingsBinding;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
+import com.theredspy15.thanelocker.utils.Purchasing;
 
 public class SettingsFragment extends Fragment {
 
@@ -49,11 +50,21 @@ public class SettingsFragment extends Fragment {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             addPreferencesFromResource(R.xml.preferences);
 
-            Preference myPref = (Preference) findPreference("satellite");
+            Preference satellitePref = (Preference) findPreference("satellite");
             if (!MainActivity.preferences.getBoolean("subscribe",false)) {
-                if (myPref != null) {
-                    myPref.setEnabled(false);
+                if (satellitePref != null) {
+                    satellitePref.setEnabled(false);
                 }
+            }
+
+            Preference premiumPref = (Preference) findPreference("getpremium");
+            if (MainActivity.preferences.getBoolean("subscribe",false)) {
+                premiumPref.setVisible(false);
+            } else {
+                premiumPref.setOnPreferenceClickListener(preference -> {
+                    new Purchasing(requireContext()).subscribe(requireContext(),requireActivity());
+                    return false;
+                });
             }
         }
     }

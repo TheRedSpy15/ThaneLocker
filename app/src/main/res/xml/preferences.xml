@@ -2,6 +2,11 @@
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference android:title="Get Premium"
+        android:key="getpremium"
+        app:iconSpaceReserved="true"
+        android:icon="@drawable/ic_baseline_bolt_24"
+        android:summary="Unlocks: Hill Finder, unlimited Boards, unlimited Sessions, removes advertisements, and higher accuracy elevation data"/>
     <PreferenceCategory android:title="Links to other awesome places">
         <Preference android:title="@string/muirskate_title"
             android:key="shop"
