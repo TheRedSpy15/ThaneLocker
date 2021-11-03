@@ -19,7 +19,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Session implements Serializable { // TODO: parcelable in the future
@@ -189,7 +188,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
         String cityName;
         SessionLocationPoint point = getLocations().get(0);
 
-        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+        Geocoder geocoder = new Geocoder(context, context.getResources().getConfiguration().getLocales().get(0));
         List<Address> addresses;
         try {
             addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
