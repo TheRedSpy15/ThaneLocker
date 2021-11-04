@@ -242,6 +242,7 @@ public class SkateMapFragment extends Fragment {
             if (route != null) {
                 point1 = route.getPoints().get(0);
                 point2 = route.getPoints().get(1);
+                mapController.setCenter(point1);
 
                 addMarker(point1,false,true);
                 addMarker(point2,true,false);
