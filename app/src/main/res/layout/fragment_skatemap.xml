@@ -10,8 +10,19 @@
     <org.osmdroid.views.MapView
         android:id="@+id/map"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:layout_constraintBottom_toTopOf="@id/chartLayout"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchbarLocation" >
+    </org.osmdroid.views.MapView>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchbarLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:queryHint="Location or address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,54 +55,64 @@
 
     <com.nambimobile.widgets.efab.ExpandableFabLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchbarLocation">
+
         <com.nambimobile.widgets.efab.Overlay
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/myLocationButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:clickable="true"
-            app:tint="@color/black"
+            android:focusable="true"
             android:src="@drawable/ic_baseline_my_location_24"
-            android:focusable="true" />
+            app:tint="@color/black" />
+
         <com.nambimobile.widgets.efab.ExpandableFab
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:efab_fabOptionPosition="below"
-            android:layout_marginTop="20dp"
             android:layout_gravity="end"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            app:efab_closingAnticipateTension="0"
+            app:efab_fabOptionPosition="below"
             app:efab_icon="@drawable/ic_baseline_terrain_24"
-            app:efab_iconAnimationRotationDeg="-225"
-            app:efab_closingAnticipateTension="0"/>
+            app:efab_iconAnimationRotationDeg="-225" />
+
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/styleOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_style_24"
             app:label_text="Change map" />
+
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/clearOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_delete_"
             app:label_text="Clear" />
+
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/helpOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_help_24"
             app:label_text="Help" />
+
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/saveOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_icon="@drawable/ic_baseline_save_24"
             app:label_text="Save route" />
+
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/loadOption"
             android:layout_width="wrap_content"
