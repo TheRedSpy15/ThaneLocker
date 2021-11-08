@@ -115,15 +115,14 @@ public class App extends Application {
 
     public static void updateTheme() {
         String selectedTheme = MainActivity.preferences.getString("theme","Auto");
-        switch (selectedTheme) {
-            case "Dark":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case "Light":
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-        }
+        final String dark = getContext().getResources().getStringArray(R.array.themes)[2];
+        final String light = getContext().getResources().getStringArray(R.array.themes)[1];
 
+        if (dark.equals(selectedTheme)) { // dark
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else if (light.equals(selectedTheme)) { // light
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } // auto
     }
 
     public static LineData createLineSet(ArrayList<Entry> values, String label, Context context) {
