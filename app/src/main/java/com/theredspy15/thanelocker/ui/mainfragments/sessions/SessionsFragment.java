@@ -14,15 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSessionsBinding;
-import com.google.android.material.snackbar.Snackbar;
-import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -37,9 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
 
-import dev.shreyaspatil.MaterialDialog.AbstractDialog;
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
-import dev.shreyaspatil.MaterialDialog.interfaces.DialogInterface;
 import www.sanju.motiontoast.MotionToast;
 import www.sanju.motiontoast.MotionToastStyle;
 
@@ -232,7 +227,7 @@ public class SessionsFragment extends Fragment {
                     MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                    ResourcesCompat.getFont(requireContext(), R.font.roboto)
             );
     }
 

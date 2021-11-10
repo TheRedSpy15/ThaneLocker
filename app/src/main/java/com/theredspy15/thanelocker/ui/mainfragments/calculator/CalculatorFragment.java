@@ -19,7 +19,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.util.ArrayList;
@@ -90,7 +89,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
                     MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                    ResourcesCompat.getFont(requireContext(), R.font.roboto)
             );
         }
     }

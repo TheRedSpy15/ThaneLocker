@@ -2,14 +2,12 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -38,7 +36,6 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.snackbar.Snackbar;
 import com.robinhood.ticker.TickerUtils;
 import com.robinhood.ticker.TickerView;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
@@ -48,7 +45,6 @@ import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.utils.App;
 import com.theredspy15.thanelocker.utils.MapThemes;
-import com.theredspy15.thanelocker.utils.Reduction;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -201,7 +197,7 @@ public class SessionActivity extends AppCompatActivity {
                             MotionToastStyle.WARNING,
                             MotionToast.GRAVITY_BOTTOM,
                             MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                            ResourcesCompat.getFont(this, R.font.roboto)
                     );
                     session.getElevationPoints().clear();
                 }

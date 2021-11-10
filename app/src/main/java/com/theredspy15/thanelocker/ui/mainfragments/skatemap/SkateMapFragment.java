@@ -205,7 +205,7 @@ public class SkateMapFragment extends Fragment {
                                 MotionToastStyle.SUCCESS,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                                ResourcesCompat.getFont(requireContext(), R.font.roboto)
                         );
                     })
                     .setNegativeButton("Cancel", null)
@@ -219,7 +219,7 @@ public class SkateMapFragment extends Fragment {
                     MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                    ResourcesCompat.getFont(requireContext(), R.font.roboto)
             );
         }
     }
@@ -259,7 +259,7 @@ public class SkateMapFragment extends Fragment {
                         MotionToastStyle.ERROR,
                         MotionToast.GRAVITY_BOTTOM,
                         MotionToast.LONG_DURATION,
-                        ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                        ResourcesCompat.getFont(requireContext(), R.font.roboto)
                 );
             }
         });

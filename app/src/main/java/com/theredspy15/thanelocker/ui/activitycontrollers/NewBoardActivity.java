@@ -3,7 +3,6 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -14,9 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,10 +21,8 @@ import androidx.core.content.FileProvider;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.bumptech.glide.Glide;
-import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
-import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
@@ -177,7 +172,7 @@ public class NewBoardActivity extends AppCompatActivity {
                             MotionToastStyle.ERROR,
                             MotionToast.GRAVITY_BOTTOM,
                             MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                            ResourcesCompat.getFont(this, R.font.roboto)
                     );
                 }
             } else {
@@ -310,7 +305,7 @@ public class NewBoardActivity extends AppCompatActivity {
                     MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                    ResourcesCompat.getFont(this, R.font.roboto)
             );
         }
     }

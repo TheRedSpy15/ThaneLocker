@@ -116,7 +116,7 @@ public class NewsFragment extends Fragment {
                             MotionToastStyle.ERROR,
                             MotionToast.GRAVITY_BOTTOM,
                             MotionToast.LONG_DURATION,
-                            ResourcesCompat.getFont(requireContext(), R.font.montserrat_regular)
+                            ResourcesCompat.getFont(requireContext(), R.font.roboto)
                     );
                 }
             }

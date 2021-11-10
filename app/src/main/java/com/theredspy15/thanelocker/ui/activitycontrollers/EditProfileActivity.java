@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -18,7 +17,6 @@ import androidx.core.content.res.ResourcesCompat;
 import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityEditProfileBinding;
-import com.google.android.material.snackbar.Snackbar;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
@@ -75,7 +73,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         MotionToastStyle.ERROR,
                         MotionToast.GRAVITY_BOTTOM,
                         MotionToast.LONG_DURATION,
-                        ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                        ResourcesCompat.getFont(this, R.font.roboto)
                 );
             }
         }else {
@@ -86,7 +84,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
+                    ResourcesCompat.getFont(this, R.font.roboto)
             );
         }
     }
