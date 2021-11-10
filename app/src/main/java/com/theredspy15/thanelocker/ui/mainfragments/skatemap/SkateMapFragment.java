@@ -124,11 +124,16 @@ public class SkateMapFragment extends Fragment {
                 map.getOverlayManager().getTilesOverlay().setColorFilter(MapThemes.darkFilter());
         }
 
-        // offline notice
+        return root;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // offline & premium notices
         if (!new App().isNetworkAvailable(requireContext())) offlineNotice();
         else if (!MainActivity.preferences.getBoolean("subscribe", false)) premiumNotice();
-
-        return root;
     }
 
     private boolean checkPermission() { // TODO: check that gps is even on

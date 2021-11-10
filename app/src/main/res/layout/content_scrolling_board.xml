@@ -24,6 +24,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/descriptionView"
             android:layout_gravity="center"
             android:layout_width="wrap_content"

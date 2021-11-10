@@ -14,7 +14,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
