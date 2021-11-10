@@ -188,11 +188,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
         String cityName;
         SessionLocationPoint point = getLocations().get(0);
 
-        Geocoder geocoder = new Geocoder(context, context.getResources().getConfiguration().getLocales().get(0));
         List<Address> addresses;
         try {
+            Geocoder geocoder = new Geocoder(context, context.getResources().getConfiguration().getLocales().get(0));
             addresses = geocoder.getFromLocation(point.getLatitude(), point.getLongitude(), 1);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return context.getString(R.string.failed_city_name);
         }
