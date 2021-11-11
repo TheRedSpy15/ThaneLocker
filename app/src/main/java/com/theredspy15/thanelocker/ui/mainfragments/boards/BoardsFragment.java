@@ -53,10 +53,10 @@ public class BoardsFragment extends Fragment {
 
     @Override
     public void onStart() {
+        super.onStart();
         context = getContext();
         if (context == null) context = requireContext();
 
-        super.onStart();
         boardThread = new Thread(this::loadBoards);
         boardThread.start();
     }
@@ -73,64 +73,68 @@ public class BoardsFragment extends Fragment {
     }
 
     public void loadBoards() {
-        if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
+        try { // terrible way to prevent illegalstate when changing pages before done loading
+            if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.removeAllViews());
 
-        if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
-            for (int board_id : Board.savedBoardIds) {
-                Board board = Board.savedBoards.get(board_id);
-                if (board != null) {
-                    BoardView boardView = new BoardView(context);
-                    boardView.setTextName(board.getName());
-                    boardView.setTextDistance(getString(R.string.distance)+" "+App.getDistanceFormatted(board.totalDistance(),getResources()));
-                    boardView.setTextSpeed(getString(R.string.average_speed)+" "+App.getSpeedFormatted(board.avgSpeed(),getResources()));
-                    boardView.setBackgroundColor(context.getColor(R.color.grey));
-                    boardView.getBackground().setAlpha(30);
-                    boardView.setPadding(0,0,0,0);
+            if (Board.savedBoards != null) { // add boards // TODO: using a lot of same code in SessionActivity to create board button, maybe a single function for both?
+                for (int board_id : Board.savedBoardIds) {
+                    Board board = Board.savedBoards.get(board_id);
+                    if (board != null || !Thread.interrupted()) {
+                        BoardView boardView = new BoardView(context);
+                        boardView.setTextName(board.getName());
+                        boardView.setTextDistance(getString(R.string.distance)+" "+App.getDistanceFormatted(board.totalDistance(),getResources()));
+                        boardView.setTextSpeed(getString(R.string.average_speed)+" "+App.getSpeedFormatted(board.avgSpeed(),getResources()));
+                        boardView.setBackgroundColor(context.getColor(R.color.grey));
+                        boardView.getBackground().setAlpha(30);
+                        boardView.setPadding(0,0,0,0);
 
-                    if (board.getImage() != null) {
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                        requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).centerCrop().into(boardView.getImageView()));
-                    } else {
-                        boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
+                        if (board.getImage() != null) {
+                            Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
+                            requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).centerCrop().into(boardView.getImageView()));
+                        } else {
+                            boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
+                        }
+
+                        Context finalContext = context;
+                        boardView.setOnClickListener(v->{
+                            Intent myIntent = new Intent(finalContext, BoardActivity.class);
+                            myIntent.putExtra("board_id", board.getId());
+                            startActivity(myIntent);
+                        });
+
+                        boardView.setOnLongClickListener(v->{
+                            MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
+                                    .setTitle(getString(R.string.delete_board))
+                                    .setAnimation("58413-delete-icon-animation.json")
+                                    .setMessage(getString(R.string.are_you_sure))
+                                    .setCancelable(false)
+                                    .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
+                                        dialogInterface.dismiss();
+                                        Board.savedBoards.remove(board.getId());
+                                        Board.savedBoardIds.remove((Integer) board.getId());
+                                        boardThread = new Thread(this::loadBoards);
+                                        boardThread.start();
+                                    })
+                                    .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
+                                    .build();
+                            mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                            mDialog.show();
+                            return false;
+                        });
+
+                        if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(boardView));
                     }
-
-                    Context finalContext = context;
-                    boardView.setOnClickListener(v->{
-                        Intent myIntent = new Intent(finalContext, BoardActivity.class);
-                        myIntent.putExtra("board_id", board.getId());
-                        startActivity(myIntent);
-                    });
-
-                    boardView.setOnLongClickListener(v->{
-                        MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
-                                .setTitle(getString(R.string.delete_board))
-                                .setAnimation("58413-delete-icon-animation.json")
-                                .setMessage(getString(R.string.are_you_sure))
-                                .setCancelable(false)
-                                .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
-                                    dialogInterface.dismiss();
-                                    Board.savedBoards.remove(board.getId());
-                                    Board.savedBoardIds.remove((Integer) board.getId());
-                                    boardThread = new Thread(this::loadBoards);
-                                    boardThread.start();
-                                })
-                                .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
-                                .build();
-                        mDialog.getAnimationView().setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                        mDialog.show();
-                        return false;
-                    });
-
-                    if (binding != null) ((Activity)context).runOnUiThread(()->binding.boardLayout.addView(boardView));
+                }
+                if (Board.savedBoardIds.isEmpty()) { // no boards
+                    TextView textView = new TextView(context);
+                    textView.setText(R.string.no_boards);
+                    textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                    textView.setTextSize(18);
+                    if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView));
                 }
             }
-            if (Board.savedBoardIds.isEmpty()) { // no boards
-                TextView textView = new TextView(context);
-                textView.setText(R.string.no_boards);
-                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                textView.setTextSize(18);
-                if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView));
-            }
+        } catch (IllegalStateException | NullPointerException e) {
+            // TODO something
         }
     }
 
