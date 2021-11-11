@@ -21,6 +21,7 @@ import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -178,11 +179,12 @@ public class App extends Application {
      * @return
      */
     public static String getSpeedFormatted(float speed, Resources resources) {
+        DecimalFormat numberFormat = new DecimalFormat("0.00");
         String speedString = "";
 
         if (MainActivity.preferences.getBoolean("kilometers",false)) {
             speed*=1.609344;
-            speedString += speed;
+            speedString += numberFormat.format(speed);
             speedString += " " + resources.getString(R.string.kph);
         } else {
             speedString += speed;
@@ -198,11 +200,12 @@ public class App extends Application {
      * @return
      */
     public static String getDistanceFormatted(float distance, Resources resources) {
+        DecimalFormat numberFormat = new DecimalFormat("0.00");
         String distanceString = "";
 
         if (MainActivity.preferences.getBoolean("kilometers",false)) {
             distance*=1.609344;
-            distanceString += distance;
+            distanceString += numberFormat.format(distance);
             distanceString += " " + resources.getString(R.string.kilometer_short);
         } else {
             distanceString += distance;
