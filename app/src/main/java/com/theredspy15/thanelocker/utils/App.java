@@ -126,8 +126,17 @@ public class App extends Application {
         } // auto
     }
 
+    private static void convertValuesKph(ArrayList<Entry> values) {
+        for (Entry value : values) {
+            value.setY((float) (value.getY()*1.609344));
+        }
+    }
+
     public static LineData createLineSet(ArrayList<Entry> values, String label, Context context) {
         LineDataSet set;
+        if (MainActivity.preferences.getBoolean("kilometers",false)) {
+            convertValuesKph(values);
+        }
 
         // create a dataset and give it a type
         set = new LineDataSet(values, label);
