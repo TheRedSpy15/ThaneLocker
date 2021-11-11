@@ -2,6 +2,7 @@ package com.theredspy15.thanelocker.ui.activitycontrollers;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,9 +27,12 @@ import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivitySessionBinding;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -60,6 +64,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 import dev.shreyaspatil.MaterialDialog.MaterialDialog;
@@ -438,6 +443,23 @@ public class SessionActivity extends AppCompatActivity {
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.speed),this);
 
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long start = session.getLocations().get(0).getTimeStamp();
+                long current = session.getLocations().get((int) value).getTimeStamp();
+                long diff = current - start;
+
+                @SuppressLint("DefaultLocale") String time = String.format("%02d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes(diff) -
+                                TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(diff)),
+                        TimeUnit.MILLISECONDS.toSeconds(diff) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)));
+                return time;
+            }
+        });
+
         // set data
         chart.setData(data);
         chart.animateX(3000);
@@ -468,6 +490,23 @@ public class SessionActivity extends AppCompatActivity {
 
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.elevation),this);
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long start = session.getLocations().get(0).getTimeStamp();
+                long current = session.getLocations().get((int) value).getTimeStamp();
+                long diff = current - start;
+
+                @SuppressLint("DefaultLocale") String time = String.format("%02d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes(diff) -
+                                TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(diff)),
+                        TimeUnit.MILLISECONDS.toSeconds(diff) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)));
+                return time;
+            }
+        });
 
         // set data
         chart.setData(data);
