@@ -148,7 +148,7 @@ public class App extends Application {
 
         // black lines and points
         set.setColor(context.getColor(R.color.purple_500));
-        set.setCircleColor(context.getColor(R.color.purple_500));
+        //set.setCircleColor(context.getColor(R.color.purple_500));
 
         // line thickness and point size
         set.setLineWidth(1f);
@@ -163,15 +163,15 @@ public class App extends Application {
         set.setFormSize(15.f);
 
         // text size of values
-        //set.setValueTextSize(9f);
-        set.setDrawValues(false);
+        set.setValueTextSize(9f);
+        set.setDrawValues(true);
 
         // draw selection line as dashed
         set.enableDashedHighlightLine(10f, 5f, 0f);
 
         // set the filled area
-        set.setDrawFilled(true);
-        set.setFillColor(context.getColor(R.color.purple_500));
+        set.setDrawFilled(false);
+        //set.setFillColor(context.getColor(R.color.purple_500));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         set.setDrawCircles(false);
 

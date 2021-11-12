@@ -316,7 +316,7 @@ public class SessionActivity extends AppCompatActivity {
                 .setMessage(getString(R.string.are_you_sure))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.delete), (dialogInterface, which) -> {
-                    dialogInterface.dismiss();
+                    dialogInterface.dismiss();//TODO use board's position in a listview, in a session.boards.get(postion) to remove it
                     session.getBoard_ids().remove((Integer) Board.BoardNameToId((String) button.getText()));
                     loadBoardsUsed();
                 })
@@ -444,6 +444,8 @@ public class SessionActivity extends AppCompatActivity {
         LineData data = App.createLineSet(values,getString(R.string.speed),this);
 
         XAxis xAxis = chart.getXAxis();
+        xAxis.setLabelRotationAngle(30f);
+        xAxis.setAvoidFirstLastClipping(true);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {

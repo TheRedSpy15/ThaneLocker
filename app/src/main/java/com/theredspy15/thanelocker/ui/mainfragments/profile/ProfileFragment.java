@@ -7,13 +7,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
@@ -23,25 +21,22 @@ import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentProfileBinding;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.theredspy15.thanelocker.models.Board;
-import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
-import com.theredspy15.thanelocker.models.SessionLocationPoint;
 import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
-import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
-import com.theredspy15.thanelocker.utils.Purchasing;
 
-import org.osmdroid.util.GeoPoint;
-
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ProfileFragment extends Fragment {
 
@@ -187,6 +182,22 @@ public class ProfileFragment extends Fragment {
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
 
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setLabelCount(Session.savedSessions.size());
+        xAxis.setLabelRotationAngle(0f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(timeFromSessionBeginning);
+
+                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
+                return formatted;
+            }
+        });
+
         // set data
         chart.setData(data);
         chart.animateX(3000);
@@ -215,6 +226,22 @@ public class ProfileFragment extends Fragment {
 
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.speed),requireContext());
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setLabelCount(Session.savedSessions.size());
+        xAxis.setLabelRotationAngle(0f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(timeFromSessionBeginning);
+
+                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
+                return formatted;
+            }
+        });
 
         // set data
         chart.setData(data);
@@ -245,6 +272,22 @@ public class ProfileFragment extends Fragment {
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.distances),requireContext());
 
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setLabelCount(Session.savedSessions.size());
+        xAxis.setLabelRotationAngle(0f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(timeFromSessionBeginning);
+
+                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
+                return formatted;
+            }
+        });
+
         // set data
         chart.setData(data);
         chart.animateX(3000);
@@ -273,6 +316,22 @@ public class ProfileFragment extends Fragment {
 
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.durations),requireContext());
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setLabelCount(Session.savedSessions.size());
+        xAxis.setLabelRotationAngle(0f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(timeFromSessionBeginning);
+
+                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
+                return formatted;
+            }
+        });
 
         // set data
         chart.setData(data);
