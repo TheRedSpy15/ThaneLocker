@@ -441,7 +441,7 @@ public class SessionActivity extends AppCompatActivity {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.speed),this);
+        LineData data = App.createLineSet(values,getString(R.string.speed),true,this);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setLabelRotationAngle(30f);
@@ -491,7 +491,7 @@ public class SessionActivity extends AppCompatActivity {
         }
 
         // create a data object with the data sets
-        LineData data = App.createLineSet(values,getString(R.string.elevation),this);
+        LineData data = App.createLineSet(values,getString(R.string.elevation),true,this);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setValueFormatter(new ValueFormatter() {

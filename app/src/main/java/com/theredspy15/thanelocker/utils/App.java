@@ -132,7 +132,7 @@ public class App extends Application {
         }
     }
 
-    public static LineData createLineSet(ArrayList<Entry> values, String label, Context context) {
+    public static LineData createLineSet(ArrayList<Entry> values, String label, boolean highPerformance, Context context) {
         LineDataSet set;
         if (MainActivity.preferences.getBoolean("kilometers",false)) {
             convertValuesKph(values);
@@ -174,6 +174,14 @@ public class App extends Application {
         //set.setFillColor(context.getColor(R.color.purple_500));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         set.setDrawCircles(false);
+
+        if (!highPerformance) { // TODO reduce redundant code
+            set.setMode(LineDataSet.Mode.LINEAR);
+            set.setDrawCircles(true);
+            set.setCircleColor(context.getColor(R.color.purple_700));
+            set.setDrawFilled(true);
+            set.setFillColor(context.getColor(R.color.purple_500));
+        }
 
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set); // add the data sets
