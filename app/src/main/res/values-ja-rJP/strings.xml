@@ -180,13 +180,17 @@
         <item>パリ V3</item>
         <item>パリサバンツ</item>
         <item>ベア・ Gen6</item>
-        <item>ヴァルキュリーズ</item>
-        <item>キャリバー 2</item>
-        <item>ロハ・ 2020 年代</item>
-        <item>ランドールズ</item>
-        <item>サイドウィナーズ</item>
-        <item>シズミック・イオン</item>
-        <item>アーセナルス</item>
+        <item>Bear Gen5 (vintage)</item>
+        <item>Valkyries</item>
+        <item>Caliber 2</item>
+        <item>Caliber 3</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Sidewinders</item>
+        <item>Seismic Aeon</item>
+        <item>Arsenals</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -211,12 +215,12 @@
         <item>ナイン・ボール</item>
         <item>ファット・ボーイズ</item>
         <item>四代</item>
-        <item>ファット・フリー</item>
-        <item>スティムルス</item>
-        <item>スキー</item>
-        <item>ファット・フレース</item>
-        <item>ケーゲルス</item>
-        <item>カグアマ</item>
+        <item>Stimulus</item>
+        <item>Skiffs</item>
+        <item>Fat Frees</item>
+        <item>Kegels</item>
+        <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -237,6 +241,7 @@
         <item>モブ・グリップ</item>
         <item>ハードコア</item>
         <item>ヴィシャス</item>
+        <item>Dark Matter</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -305,6 +310,13 @@
         <item>コノン・ SHR 86a</item>
         <item>コネ・ SHR 88a</item>
         <item>コネ・ SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
