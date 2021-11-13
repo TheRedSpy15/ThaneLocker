@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -144,9 +142,8 @@ public class SkateMapFragment extends Fragment {
 
     public void lastKnownLocation(View view) {
         if (checkPermission()) {
-            SingleShotLocationProvider.requestSingleUpdate(requireContext(), location -> {
-                mapController.setCenter(new GeoPoint(location.latitude,location.longitude));
-            });
+            SingleShotLocationProvider.requestSingleUpdate(requireContext(),
+                    location -> mapController.setCenter(new GeoPoint(location.latitude,location.longitude)));
         }
     }
 
@@ -358,8 +355,10 @@ public class SkateMapFragment extends Fragment {
     private void addMarker(GeoPoint point, boolean getElevation, boolean startMarker) {
         // add marker
         Drawable icon = AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_location_on_24);
-        if (startMarker) icon.setTint(Color.GREEN);
-        else icon.setTint(Color.RED);
+        if (icon != null) {
+            if (startMarker) icon.setTint(Color.GREEN);
+            else icon.setTint(Color.RED);
+        }
 
         Marker nodeMarker = new Marker(map);
         nodeMarker.setPosition(new GeoPoint(point.getLatitude(),point.getLongitude()));
@@ -439,21 +438,13 @@ public class SkateMapFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //this will refresh the osmdroid configuration on resuming.
-        //if you make changes to the configuration, use
-        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
-        map.onResume(); //needed for compass, my location overlays, v6.0.0 and up
+        map.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //this will refresh the osmdroid configuration on resuming.
-        //if you make changes to the configuration, use
-        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        //Configuration.getInstance().save(this, prefs);
-        map.onPause();  //needed for compass, my location overlays, v6.0.0 and up
+        map.onPause();
     }
 
     @Override
@@ -461,64 +452,39 @@ public class SkateMapFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }
 
+/**
+ * Used to go to user location
+ */
 class SingleShotLocationProvider {
 
-    public static interface LocationCallback {
-        public void onNewLocationAvailable(GPSCoordinates location);
+    public interface LocationCallback {
+        void onNewLocationAvailable(GPSCoordinates location);
     }
 
-    // calls back to calling thread, note this is for low grain: if you want higher precision, swap the
-    // contents of the else and if. Also be sure to check gps permission/settings are allowed.
-    // call usually takes <10ms
     @SuppressLint("MissingPermission")
     public static void requestSingleUpdate(final Context context, final LocationCallback callback) {
         final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        if (isNetworkEnabled) {
+
+        if (isNetworkEnabled) { // uses coarse first, fine as a fallback
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_COARSE);
-            locationManager.requestSingleUpdate(criteria, new LocationListener() {
-                @Override
-                public void onLocationChanged(Location location) {
-                    callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude()));
-                }
-
-                @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
-                @Override public void onProviderEnabled(String provider) { }
-                @Override public void onProviderDisabled(String provider) { }
-            }, null);
+            locationManager.requestSingleUpdate(criteria, location -> callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude())), null);
         } else {
             boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
             if (isGPSEnabled) {
                 Criteria criteria = new Criteria();
                 criteria.setAccuracy(Criteria.ACCURACY_FINE);
-                locationManager.requestSingleUpdate(criteria, new LocationListener() {
-                    @Override
-                    public void onLocationChanged(Location location) {
-                        callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude()));
-                    }
-
-                    @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
-                    @Override public void onProviderEnabled(String provider) { }
-                    @Override public void onProviderDisabled(String provider) { }
-                }, null);
+                locationManager.requestSingleUpdate(criteria, location -> callback.onNewLocationAvailable(new GPSCoordinates(location.getLatitude(), location.getLongitude())), null);
             }
         }
     }
 
-
-    // consider returning Location instead of this dummy wrapper class
     public static class GPSCoordinates {
-        public float longitude = -1;
-        public float latitude = -1;
-
-        public GPSCoordinates(float theLatitude, float theLongitude) {
-            longitude = theLongitude;
-            latitude = theLatitude;
-        }
+        public float longitude;
+        public float latitude;
 
         public GPSCoordinates(double theLatitude, double theLongitude) {
             longitude = (float) theLongitude;
