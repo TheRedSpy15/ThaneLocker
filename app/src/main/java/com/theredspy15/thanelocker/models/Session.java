@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.models;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.location.Address;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
@@ -73,6 +75,19 @@ public class Session implements Serializable { // TODO: parcelable in the future
         prefsEditor.putString("savedSessionIds", json);
 
         prefsEditor.apply();
+    }
+
+    public static String convertTime(Session session, long millis) {
+        long start = session.getLocations().get(0).getTimeStamp();
+        long current = millis;
+        long diff = current - start;
+
+        @SuppressLint("DefaultLocale") String time = String.format("%02d:%02d",
+                TimeUnit.MILLISECONDS.toMinutes(diff) -
+                        TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(diff)),
+                TimeUnit.MILLISECONDS.toSeconds(diff) -
+                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)));
+        return time;
     }
 
     public static ArrayList<Session> sessionsWithBoard(int board_id) {

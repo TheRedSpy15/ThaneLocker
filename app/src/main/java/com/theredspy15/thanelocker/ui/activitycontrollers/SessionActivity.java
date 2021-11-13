@@ -351,29 +351,40 @@ public class SessionActivity extends AppCompatActivity {
     }
 
     void loadPoints() {
-        Polyline line = new Polyline(map);
-        line.getOutlinePaint().setStrokeWidth(20f);
-        line.getOutlinePaint().setColor(this.getColor(R.color.purple_500));
-        List<GeoPoint> pts = new ArrayList<>();
+        SessionLocationPoint firstPoint = session.getLocations().get(0);
+        SessionLocationPoint lastPoint = session.getLocations().get(session.getLocations().size()-1);
 
+        // creates a line for each 2 points. Instead of one long one
         for (SessionLocationPoint point : session.getLocations()) {
-            pts.add(new GeoPoint(point.getLatitude(), point.getLongitude()));
-        }
+            if (session.getLocations().size() > session.getLocations().indexOf(point)+1) {
+                Polyline line = new Polyline(map);
+                line.getOutlinePaint().setStrokeWidth(20f);
+                line.getOutlinePaint().setColor(this.getColor(R.color.purple_500));
 
-        map.getOverlays().add(line);
-        line.setPoints(pts);
-        mapController.setCenter(pts.get(0));
+                List<GeoPoint> pts = new ArrayList<>();
+                pts.add(new GeoPoint(point.getLatitude(), point.getLongitude()));
+                SessionLocationPoint point2 = session.getLocations().get(session.getLocations().indexOf(point)+1);
+                pts.add(new GeoPoint(point2.getLatitude(), point2.getLongitude()));
+
+                line.setTitle(Session.convertTime(session, point.getTimeStamp()));
+                line.setSubDescription(App.getSpeedFormatted(point.getSpeed(), getResources()));
+
+                line.setPoints(pts);
+                map.getOverlays().add(line);
+            }
+        }
+        mapController.setCenter(new GeoPoint(firstPoint.getLatitude(),firstPoint.getLongitude()));
 
         // start marker
         Marker startMarker = new Marker(map);
-        startMarker.setPosition(pts.get(0));
+        startMarker.setPosition(new GeoPoint(firstPoint.getLatitude(),firstPoint.getLongitude()));
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         startMarker.setTextIcon(getString(R.string.start));
         map.getOverlays().add(startMarker);
 
         // finish marker
         Marker finishMarker = new Marker(map);
-        finishMarker.setPosition(pts.get(pts.size()-1));
+        finishMarker.setPosition(new GeoPoint(lastPoint.getLatitude(),lastPoint.getLongitude()));
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         finishMarker.setTextIcon(getString(R.string.finish));
         map.getOverlays().add(finishMarker);
