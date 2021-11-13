@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.PreferenceManager;
@@ -379,14 +381,24 @@ public class SessionActivity extends AppCompatActivity {
         Marker startMarker = new Marker(map);
         startMarker.setPosition(new GeoPoint(firstPoint.getLatitude(),firstPoint.getLongitude()));
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        startMarker.setTextIcon(getString(R.string.start));
+        Drawable icon = AppCompatResources.getDrawable(this,R.drawable.ic_baseline_location_on_24);
+        if (icon != null) {
+            icon.setTint(Color.GREEN);
+            startMarker.setIcon(icon);
+            startMarker.setTitle(getString(R.string.start));
+        } else startMarker.setTextIcon(getString(R.string.start));
         map.getOverlays().add(startMarker);
 
         // finish marker
         Marker finishMarker = new Marker(map);
         finishMarker.setPosition(new GeoPoint(lastPoint.getLatitude(),lastPoint.getLongitude()));
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        finishMarker.setTextIcon(getString(R.string.finish));
+        Drawable icon2 = AppCompatResources.getDrawable(this,R.drawable.ic_baseline_location_on_24);
+        if (icon != null) {
+            icon2.setTint(Color.RED);
+            finishMarker.setIcon(icon2);
+            finishMarker.setTitle(getString(R.string.finish));
+        } else finishMarker.setTextIcon(getString(R.string.finish));
         map.getOverlays().add(finishMarker);
     }
 
