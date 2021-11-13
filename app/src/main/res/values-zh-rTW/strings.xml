@@ -180,13 +180,17 @@
         <item>巴黎 V3</item>
         <item>Paris Savants</item>
         <item>大熊 6</item>
-        <item>瓦爾基列斯</item>
+        <item>Bear Gen5 (vintage)</item>
+        <item>Valkyries</item>
         <item>Caliber 2</item>
-        <item>Roja 2020</item>
-        <item>蘭德爾斯</item>
+        <item>Caliber 3</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
         <item>Sidewinders</item>
-        <item>Sismic Aeon</item>
-        <item>砷</item>
+        <item>Seismic Aeon</item>
+        <item>Arsenals</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -211,12 +215,12 @@
         <item>九巴</item>
         <item>帕博茲</item>
         <item>4庭長</item>
-        <item>無脂肪</item>
-        <item>斯蒂穆盧斯</item>
-        <item>斯基夫斯</item>
-        <item>胖佛雷</item>
-        <item>凱格爾斯</item>
-        <item>卡瓜馬</item>
+        <item>Stimulus</item>
+        <item>Skiffs</item>
+        <item>Fat Frees</item>
+        <item>Kegels</item>
+        <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -237,6 +241,7 @@
         <item>Mob Grigp</item>
         <item>哈德核心</item>
         <item>維福瑟</item>
+        <item>Dark Matter</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -305,6 +310,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
