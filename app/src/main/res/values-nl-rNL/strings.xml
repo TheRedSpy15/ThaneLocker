@@ -180,13 +180,17 @@
         <item>Parijs V3</item>
         <item>Parijse Savants</item>
         <item>Beer Gen6</item>
+        <item>Bear Gen5 (vintage)</item>
         <item>Valkyries</item>
-        <item>Kaliber 2</item>
-        <item>Roja 2020</item>
+        <item>Caliber 2</item>
+        <item>Caliber 3</item>
+        <item>Roja 2020s</item>
         <item>Randalls</item>
-        <item>Zijwikkelaars</item>
-        <item>Seismische Aeon</item>
-        <item>Arsenalen</item>
+        <item>Sidewinders</item>
+        <item>Seismic Aeon</item>
+        <item>Arsenals</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -211,12 +215,12 @@
         <item>Negen ballen</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>Vetvrij</item>
         <item>Stimulus</item>
         <item>Skiffs</item>
-        <item>Vette Frees</item>
+        <item>Fat Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -237,6 +241,7 @@
         <item>Grijpgreep</item>
         <item>Hardcore</item>
         <item>Vicieuze</item>
+        <item>Dark Matter</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -305,6 +310,13 @@
         <item>Kegel SHR 86a</item>
         <item>Kegel SHR 88a</item>
         <item>Kegel SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
