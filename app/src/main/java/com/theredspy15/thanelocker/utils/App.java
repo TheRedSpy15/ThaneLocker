@@ -204,7 +204,7 @@ public class App extends Application {
             speedString += numberFormat.format(speed);
             speedString += " " + resources.getString(R.string.kph);
         } else {
-            speedString += speed;
+            speedString += numberFormat.format(speed);
             speedString += " " + resources.getString(R.string.mph);
         }
 
@@ -225,7 +225,7 @@ public class App extends Application {
             distanceString += numberFormat.format(distance);
             distanceString += " " + resources.getString(R.string.kilometer_short);
         } else {
-            distanceString += distance;
+            distanceString += numberFormat.format(distance);
             distanceString += " " + resources.getString(R.string.miles);
         }
 
