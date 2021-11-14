@@ -28,6 +28,8 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.HillRoute;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -405,6 +407,30 @@ public class SkateMapFragment extends Fragment {
 
         // set data
         chart.setData(data);
+
+        // connecting chart values to map
+        final Marker[] marker = {null};
+        chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                System.out.println("Select: "+e.getY());
+                if (marker[0] == null) {
+                    marker[0] = new Marker(map);
+                    GeoPoint selectedLocation = road.mRouteHigh.get((int) e.getX());
+                    marker[0].setPosition(selectedLocation);
+                    map.getOverlays().add(marker[0]);
+                } else {
+                    GeoPoint selectedLocation = road.mRouteHigh.get((int) e.getX());
+                    marker[0].setPosition(selectedLocation);
+                }
+                map.postInvalidate();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
 
         // coloring chart
         Description description = new Description();
