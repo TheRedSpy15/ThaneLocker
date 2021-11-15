@@ -408,6 +408,7 @@ public class SkateMapFragment extends Fragment {
 
         // create a data object with the data sets
         LineData data = App.createLineSet(values,getString(R.string.elevation),true,requireContext());
+        data.setDrawValues(false);
 
         // set data
         chart.setData(data);
