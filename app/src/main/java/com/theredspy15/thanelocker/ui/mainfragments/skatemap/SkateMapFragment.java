@@ -173,6 +173,7 @@ public class SkateMapFragment extends Fragment {
         chart.setVisibility(View.GONE);
         binding.distanceView.setText("");
         binding.distanceView.setVisibility(View.GONE);
+        map.postInvalidate();
     }
 
     public void saveRoute(View view) {
@@ -263,6 +264,7 @@ public class SkateMapFragment extends Fragment {
             }
         });
         b.show();
+        map.postInvalidate();
     }
 
     public void toggleStyle(View view) {
@@ -373,6 +375,8 @@ public class SkateMapFragment extends Fragment {
                 elevationThread.start();
             }
         }
+
+        map.postInvalidate();
     }
 
     private void getElevation() {

@@ -18,7 +18,7 @@
     </org.osmdroid.views.MapView>
 
     <androidx.appcompat.widget.SearchView
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/searchbarLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
