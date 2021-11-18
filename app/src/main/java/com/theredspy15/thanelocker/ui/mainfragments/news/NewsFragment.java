@@ -64,32 +64,36 @@ public class NewsFragment extends Fragment {
     }
 
     public synchronized void displayEntries(List<Article> articles) {
-        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layout.setMargins(0, 20, 0, 20);
+        try {
+            LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            layout.setMargins(0, 20, 0, 20);
 
-        if (articles != null) {
-            for (Article entry: articles) {
-                Button button = new Button(requireContext());
-                button.setText(entry.getTitle());
-                button.setTextSize(18);
-                button.setAllCaps(false);
-                button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getLink()))));
-                button.setPadding(50,50,50,50);
-                layout.setMargins(0,20,0,20);
-                button.setBackgroundResource(R.drawable.rounded_corners);
-                GradientDrawable drawable = (GradientDrawable) button.getBackground();
-                drawable.setColor(requireContext().getColor(R.color.grey));
-                drawable.setAlpha(30);
-                requireActivity().runOnUiThread(()->binding.feedLayout.addView(button,layout));
+            if (articles != null) {
+                for (Article entry: articles) {
+                    Button button = new Button(requireContext());
+                    button.setText(entry.getTitle());
+                    button.setTextSize(18);
+                    button.setAllCaps(false);
+                    button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getLink()))));
+                    button.setPadding(50,50,50,50);
+                    layout.setMargins(0,20,0,20);
+                    button.setBackgroundResource(R.drawable.rounded_corners);
+                    GradientDrawable drawable = (GradientDrawable) button.getBackground();
+                    drawable.setColor(requireContext().getColor(R.color.grey));
+                    drawable.setAlpha(30);
+                    requireActivity().runOnUiThread(()->binding.feedLayout.addView(button,layout));
+                }
+            } else if (articles == null || articles.isEmpty()) {
+                TextView textView = new TextView(requireContext()); // no news feeds selected
+                textView.setText(R.string.no_news);
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextSize(18);
+                requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
             }
-        } else if (articles == null || articles.isEmpty()) {
-            TextView textView = new TextView(requireContext()); // no news feeds selected
-            textView.setText(R.string.no_news);
-            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            textView.setTextSize(18);
-            requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+            binding.swipeRefreshLayout.setRefreshing(false);
+        } catch (NullPointerException | IllegalStateException e) {
+            // TODO something
         }
-        binding.swipeRefreshLayout.setRefreshing(false);
     }
 
     public void getFeeds() { // TODO: sort by date when using more than one source
