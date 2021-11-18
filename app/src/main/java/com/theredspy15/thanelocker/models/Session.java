@@ -212,7 +212,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         }
         cityName = addresses.get(0).getLocality();
 
-        return cityName.trim();
+        if (cityName != null) return cityName.trim();
+        else return context.getString(R.string.failed_city_name);
     }
 
     public int getId() {
