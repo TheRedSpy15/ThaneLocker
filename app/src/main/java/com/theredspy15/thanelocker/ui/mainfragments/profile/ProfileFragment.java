@@ -36,7 +36,6 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.thanelocker.utils.App;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class ProfileFragment extends Fragment {
 
@@ -189,12 +188,11 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(timeFromSessionBeginning);
-
-                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
-                return formatted;
+                if ((int) value < sessions.size() && (int) value >= 0) {
+                    return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
+                }
+                else
+                    return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
         });
 
@@ -234,12 +232,11 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(timeFromSessionBeginning);
-
-                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
-                return formatted;
+                if ((int) value < sessions.size() && (int) value >= 0) {
+                    return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
+                }
+                else
+                    return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
         });
 
@@ -279,12 +276,11 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(timeFromSessionBeginning);
-
-                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
-                return formatted;
+                if ((int) value < sessions.size() && (int) value >= 0) {
+                    return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
+                }
+                else
+                    return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
         });
 
@@ -324,12 +320,11 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                long timeFromSessionBeginning = sessions.get((int) value).getLocations().get(0).getTimeStamp();
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(timeFromSessionBeginning);
-
-                String formatted = calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
-                return formatted;
+                if ((int) value < sessions.size() && (int) value >= 0) {
+                    return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
+                }
+                else
+                    return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
         });
 

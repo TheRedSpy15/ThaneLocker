@@ -23,6 +23,7 @@ import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -209,6 +210,17 @@ public class App extends Application {
         }
 
         return speedString;
+    }
+
+    public static String convertTimeToStringDate(long time) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+
+        return calendar.get(Calendar.MONTH)+1 + "/" + calendar.get(Calendar.DAY_OF_MONTH);
+    }
+
+    public static String convertTimeToString(long time) {
+        return "NOT IMPLEMENTED"; //TODO implement
     }
 
     /**
