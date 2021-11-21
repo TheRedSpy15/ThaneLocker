@@ -1,6 +1,7 @@
 package com.theredspy15.thanelocker.models;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.location.Address;
@@ -9,9 +10,11 @@ import android.location.Location;
 import android.location.LocationManager;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.longboardlife.R;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
@@ -21,6 +24,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
 
 public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
@@ -52,16 +58,30 @@ public class Session implements Serializable { // TODO: parcelable in the future
         setUser_id(Profile.localProfile.getId());
     }
 
-    public static void load() {
+    public static void load(Activity activity) {
         Gson gson = new Gson();
 
-        String json = MainActivity.preferences.getString("savedSessions", null);
-        if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Integer,Session>>() {}.getType());
-        else savedSessions = new HashMap<>();
+        try {
+            String json = MainActivity.preferences.getString("savedSessions", null);
+            if (json != null) savedSessions = gson.fromJson(json, new TypeToken<HashMap<Integer,Session>>() {}.getType());
+            else savedSessions = new HashMap<>();
 
-        json = MainActivity.preferences.getString("savedSessionIds", null);
-        if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
-        else savedSessionIds = new ArrayList<>();
+            json = MainActivity.preferences.getString("savedSessionIds", null);
+            if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
+            else savedSessionIds = new ArrayList<>();
+        } catch (JsonSyntaxException e) {
+            MotionToast.Companion.createColorToast(
+                    activity,
+                    "Failed to load",
+                    "Saved sessions are incompatible with app version",
+                    MotionToastStyle.ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(activity, R.font.roboto)
+            );
+            savedSessions = new HashMap<>();
+            savedSessionIds = new ArrayList<>();
+        }
     }
 
     public static void save() {

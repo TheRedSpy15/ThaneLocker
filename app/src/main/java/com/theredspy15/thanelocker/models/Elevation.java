@@ -116,7 +116,7 @@ public class Elevation {
             stringBuilder.append(output);
         }
 
-        // regex to find elevations
+        // regex to find elevations TODO create an actual model class instead this
         // separate all elevations from the data we don't need
         StringBuilder elevations = new StringBuilder();
         Matcher elevationsFinder = Pattern.compile("elevation\":(.*?)\\}")
@@ -181,6 +181,7 @@ public class Elevation {
         return list;
     }
 
+    // not used yet
     public static ArrayList<Float> getElevationsHighResGeoPoint(List<GeoPoint> locations) throws IOException {
         // create requests from locations
         List<ElevationRequest> requests = new ArrayList<>();
@@ -281,9 +282,6 @@ public class Elevation {
 
     public static ArrayList<Float> getElevationsFromRoute(GeoPoint start, GeoPoint end) throws IOException {
         ArrayList<Float> list = getElevationsHighRes(getLocationsFromRoute(start, end));
-        //list.remove(1);
-        //list.remove(2);
-        //list.remove(list.size()-1);
 
         return list;
     }
