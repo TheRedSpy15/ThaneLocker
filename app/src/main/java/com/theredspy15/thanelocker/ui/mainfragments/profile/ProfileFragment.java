@@ -188,7 +188,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                if ((int) value < sessions.size() && (int) value >= 0) {
+                if ((int) value < sessions.size()-1 && (int) value >= 0) {
                     return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
                 }
                 else
@@ -232,7 +232,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                if ((int) value < sessions.size() && (int) value >= 0) {
+                if ((int) value < sessions.size()-1 && (int) value >= 0) {
                     return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
                 }
                 else
@@ -276,7 +276,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                if ((int) value < sessions.size() && (int) value >= 0) {
+                if ((int) value < sessions.size()-1 && (int) value >= 0) {
                     return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
                 }
                 else
@@ -320,7 +320,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                if ((int) value < sessions.size() && (int) value >= 0) {
+                if ((int) value < sessions.size()-1 && (int) value >= 0) {
                     return App.convertTimeToStringDate(sessions.get((int) value).getLocations().get(0).getTimeStamp());
                 }
                 else
