@@ -69,7 +69,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
             json = MainActivity.preferences.getString("savedSessionIds", null);
             if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
             else savedSessionIds = new ArrayList<>();
-        } catch (JsonSyntaxException e) {
+        } catch (JsonSyntaxException | IllegalStateException e) {
             MotionToast.Companion.createColorToast(
                     activity,
                     "Failed to load",
