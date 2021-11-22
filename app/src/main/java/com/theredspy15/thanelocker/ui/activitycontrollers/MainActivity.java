@@ -23,8 +23,6 @@ import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.MyIntro;
 import com.theredspy15.thanelocker.utils.App;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
-        if (Session.savedSessions.isEmpty()) Session.load();
+        if (Session.savedSessions.isEmpty()) Session.load(this);
 
         // removes need for subscribing while testing
         if (BuildConfig.DEBUG)
