@@ -21,10 +21,12 @@ import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentProfileBinding;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -183,7 +185,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setLabelCount(Session.savedSessions.size());
         xAxis.setLabelRotationAngle(0f);
         xAxis.setCenterAxisLabels(true);
-        /*xAxis.setValueFormatter(new ValueFormatter() {
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
                 if ((int) value < sessions.size()-1 && (int) value >= 0) {
@@ -192,7 +194,7 @@ public class ProfileFragment extends Fragment {
                 else
                     return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
-        });*/
+        });
 
         // set data
         chart.setData(data);
@@ -227,7 +229,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setLabelCount(Session.savedSessions.size());
         xAxis.setLabelRotationAngle(0f);
         xAxis.setCenterAxisLabels(true);
-        /*xAxis.setValueFormatter(new ValueFormatter() {
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
                 if ((int) value < sessions.size()-1 && (int) value >= 0) {
@@ -236,7 +238,7 @@ public class ProfileFragment extends Fragment {
                 else
                     return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
-        });*/
+        });
 
         // set data
         chart.setData(data);
@@ -271,7 +273,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setLabelCount(Session.savedSessions.size());
         xAxis.setLabelRotationAngle(0f);
         xAxis.setCenterAxisLabels(true);
-        /*xAxis.setValueFormatter(new ValueFormatter() {
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
                 if ((int) value < sessions.size()-1 && (int) value >= 0) {
@@ -280,7 +282,7 @@ public class ProfileFragment extends Fragment {
                 else
                     return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
-        });*/
+        });
 
         // set data
         chart.setData(data);
@@ -315,7 +317,7 @@ public class ProfileFragment extends Fragment {
         xAxis.setLabelCount(Session.savedSessions.size());
         xAxis.setLabelRotationAngle(0f);
         xAxis.setCenterAxisLabels(true);
-        /*xAxis.setValueFormatter(new ValueFormatter() {
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
                 if ((int) value < sessions.size()-1 && (int) value >= 0) {
@@ -324,7 +326,7 @@ public class ProfileFragment extends Fragment {
                 else
                     return App.convertTimeToStringDate(sessions.get(0).getLocations().get(0).getTimeStamp());
             }
-        });*/
+        });
 
         // set data
         chart.setData(data);
