@@ -31,6 +31,10 @@ public class NewsView extends LinearLayout {
         attributes.recycle();
     }
 
+    public ImageView getImageView() {
+        return findViewById(R.id.image);
+    }
+
     public NewsView(Context context) {
         this(context, null);
     }

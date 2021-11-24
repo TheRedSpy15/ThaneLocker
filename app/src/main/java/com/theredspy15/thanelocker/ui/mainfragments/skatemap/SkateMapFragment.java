@@ -418,7 +418,6 @@ public class SkateMapFragment extends Fragment {
         chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
-                System.out.println("Select: "+e.getY());
                 if (marker[0] == null) {
                     marker[0] = new Marker(map);
                     GeoPoint selectedLocation = road.mRouteHigh.get((int) e.getX());

@@ -1,13 +1,11 @@
 package com.theredspy15.thanelocker.ui.mainfragments.news;
 
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,15 +13,20 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
 import com.prof.rssparser.Article;
 import com.prof.rssparser.Channel;
 import com.prof.rssparser.OnTaskCompleted;
 import com.prof.rssparser.Parser;
+import com.theredspy15.thanelocker.customviews.NewsView;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import www.sanju.motiontoast.MotionToast;
@@ -65,30 +68,30 @@ public class NewsFragment extends Fragment {
 
     public synchronized void displayEntries(List<Article> articles) {
         try {
-            LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            layout.setMargins(0, 20, 0, 20);
-
             if (articles != null) {
                 for (Article entry: articles) {
-                    Button button = new Button(requireContext());
-                    button.setText(entry.getTitle());
-                    button.setTextSize(18);
-                    button.setAllCaps(false);
-                    button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getLink()))));
-                    button.setPadding(50,50,50,50);
-                    layout.setMargins(0,20,0,20);
-                    button.setBackgroundResource(R.drawable.rounded_corners);
-                    GradientDrawable drawable = (GradientDrawable) button.getBackground();
-                    drawable.setColor(requireContext().getColor(R.color.grey));
-                    drawable.setAlpha(30);
-                    requireActivity().runOnUiThread(()->binding.feedLayout.addView(button,layout));
+                    NewsView view = new NewsView(requireContext());
+                    view.setText(entry.getTitle());
+                    view.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getLink()))));
+
+                    requireActivity().runOnUiThread(()-> {
+                        RequestOptions requestOptions = new RequestOptions();
+                        requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(30));
+                        Glide.with(this)
+                                .load(entry.getImage())
+                                .apply(requestOptions)
+                                .placeholder(R.drawable.ic_baseline_image_24)
+                                .into(view.getImageView());
+                    });
+
+                    if (binding.feedLayout != null) requireActivity().runOnUiThread(()->binding.feedLayout.addView(view));
                 }
             } else if (articles == null || articles.isEmpty()) {
                 TextView textView = new TextView(requireContext()); // no news feeds selected
                 textView.setText(R.string.no_news);
                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 textView.setTextSize(18);
-                requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
+                requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView));
             }
             binding.swipeRefreshLayout.setRefreshing(false);
         } catch (NullPointerException | IllegalStateException e) {
@@ -98,9 +101,8 @@ public class NewsFragment extends Fragment {
 
     public void getFeeds() { // TODO: sort by date when using more than one source
         Parser parser = new Parser.Builder()
-                .charset(Charset.forName("ISO-8859-7"))
+                .charset(StandardCharsets.UTF_8)
                 .context(requireContext())
-                .cacheExpirationMillis(24L * 60L * 60L * 100L)
                 .build();
 
         parser.onFinish(new OnTaskCompleted() {
