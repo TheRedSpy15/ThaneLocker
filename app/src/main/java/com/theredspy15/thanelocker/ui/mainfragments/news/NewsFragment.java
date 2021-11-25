@@ -94,7 +94,7 @@ public class NewsFragment extends Fragment {
                 requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView));
             }
             binding.swipeRefreshLayout.setRefreshing(false);
-        } catch (NullPointerException | IllegalStateException e) {
+        } catch (Exception e) {
             // TODO something
         }
     }

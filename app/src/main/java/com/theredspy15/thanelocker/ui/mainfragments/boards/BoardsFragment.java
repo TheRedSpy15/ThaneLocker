@@ -130,7 +130,7 @@ public class BoardsFragment extends Fragment {
                     if (isAdded()) requireActivity().runOnUiThread(()->binding.boardLayout.addView(textView));
                 }
             }
-        } catch (IllegalStateException | NullPointerException e) {
+        } catch (Exception e) {
             // TODO something
         }
     }
