@@ -84,9 +84,6 @@ public class BoardsFragment extends Fragment {
                         boardView.setTextName(board.getName());
                         boardView.setTextDistance(getString(R.string.distance)+" "+App.getDistanceFormatted(board.totalDistance(),getResources()));
                         boardView.setTextSpeed(getString(R.string.average_speed)+" "+App.getSpeedFormatted(board.avgSpeed(),getResources()));
-                        boardView.setBackgroundColor(context.getColor(R.color.grey));
-                        boardView.getBackground().setAlpha(30);
-                        boardView.setPadding(0,0,0,0);
 
                         if (board.getImage() != null) {
                             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
