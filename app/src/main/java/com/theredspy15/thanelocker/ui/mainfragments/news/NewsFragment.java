@@ -1,5 +1,6 @@
 package com.theredspy15.thanelocker.ui.mainfragments.news;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -66,7 +67,7 @@ public class NewsFragment extends Fragment {
         requireActivity().runOnUiThread(() -> binding.feedLayout.addView(textView, layout));
     }
 
-    public synchronized void displayEntries(List<Article> articles) {
+    public void displayEntries(List<Article> articles) {
         try {
             if (articles != null) {
                 for (Article entry: articles) {
@@ -74,15 +75,18 @@ public class NewsFragment extends Fragment {
                     view.setText(entry.getTitle());
                     view.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(entry.getLink()))));
 
-                    requireActivity().runOnUiThread(()-> {
-                        RequestOptions requestOptions = new RequestOptions();
-                        requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(30));
-                        Glide.with(requireActivity())
-                                .load(entry.getImage())
-                                .apply(requestOptions)
-                                .placeholder(R.drawable.ic_baseline_image_24)
-                                .into(view.getImageView());
-                    });
+                    Context context = getContext();
+                    if (context != null) {
+                        requireActivity().runOnUiThread(()-> {
+                            RequestOptions requestOptions = new RequestOptions();
+                            requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(30));
+                            Glide.with(context)
+                                    .load(entry.getImage())
+                                    .apply(requestOptions)
+                                    .placeholder(R.drawable.ic_baseline_image_24)
+                                    .into(view.getImageView());
+                        });
+                    }
 
                     if (binding.feedLayout != null) requireActivity().runOnUiThread(()->binding.feedLayout.addView(view));
                 }
