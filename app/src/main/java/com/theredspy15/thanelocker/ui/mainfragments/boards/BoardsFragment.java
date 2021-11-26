@@ -87,7 +87,7 @@ public class BoardsFragment extends Fragment {
 
                         if (board.getImage() != null) {
                             Bitmap bitmap = BitmapFactory.decodeByteArray(board.getImage(), 0, board.getImage().length);
-                            requireActivity().runOnUiThread(()->Glide.with(this).load(bitmap).centerCrop().into(boardView.getImageView()));
+                                requireActivity().runOnUiThread(()->Glide.with(requireActivity()).load(bitmap).centerCrop().into(boardView.getImageView()));
                         } else {
                             boardView.setDrawable(AppCompatResources.getDrawable(requireContext(),R.drawable.ic_baseline_image_24));
                         }

@@ -77,7 +77,7 @@ public class NewsFragment extends Fragment {
                     requireActivity().runOnUiThread(()-> {
                         RequestOptions requestOptions = new RequestOptions();
                         requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(30));
-                        Glide.with(this)
+                        Glide.with(requireActivity())
                                 .load(entry.getImage())
                                 .apply(requestOptions)
                                 .placeholder(R.drawable.ic_baseline_image_24)

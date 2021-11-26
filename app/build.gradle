@@ -6,14 +6,14 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.theredspy15.thanelocker"
         minSdk 24
-        targetSdk 30
-        versionCode 23
-        versionName "1.992-Release"
+        targetSdk 31
+        versionCode 24
+        versionName "1.993-Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -57,7 +57,7 @@ dependencies {
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
     implementation 'com.github.chivorns:smartmaterialspinner:1.5.0'
     implementation "com.android.billingclient:billing:4.0.0"
-    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    implementation 'com.google.android.gms:play-services-ads:20.5.0'
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-analytics'
@@ -65,7 +65,7 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.8.0'
     implementation 'com.google.code.gson:gson:2.8.9'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
