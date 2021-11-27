@@ -12,14 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentCalculatorBinding;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -40,24 +34,7 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
         binding.calculateButton.setOnClickListener(this::calculate);
 
-        if (!MainActivity.preferences.getBoolean("subscribe",false)) loadAdData();
-
         return root;
-    }
-
-    private void loadAdData() {
-        String unitId;
-        if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
-            unitId = "ca-app-pub-3940256099942544/6300978111";
-        } else unitId = "ca-app-pub-5128547878021429/6255236482"; // production only!
-
-        MobileAds.initialize(requireContext(), initializationStatus -> { });
-        AdRequest adRequest = new AdRequest.Builder().build();
-        AdView adView = new AdView(requireContext());
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId(unitId);
-        binding.calculatorLayout.addView(adView,9);
-        adView.loadAd(adRequest);
     }
 
     public void calculate(View view) {
