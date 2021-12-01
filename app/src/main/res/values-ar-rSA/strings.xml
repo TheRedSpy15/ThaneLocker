@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">مشاهدة سياسة السرية</string>
     <string name="sign_up">تسجيل المستخدم</string>
     <string name="distance">المسافة :</string>
+    <string name="failed_to_load_sessions">فشل في التحميل</string>
+    <string name="failed_load_sessions_sum">الجلسات التي تم حفظها غير متوافقة مع نسخة التطبيق</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,17 +192,17 @@
         <item>باريس V3</item>
         <item>ساففر باريس</item>
         <item>تحمل جنو 6</item>
-        <item>Bear Gen5 (vintage)</item>
+        <item>الدب Gen5 (vinage)</item>
         <item>Valkyries</item>
         <item>Caliber 2</item>
         <item>Caliber 3</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>روجا 2020s</item>
+        <item>عشوائي</item>
+        <item>أدوات Sidewinder</item>
+        <item>حمامة زلزالية</item>
+        <item>الزرنيخ</item>
         <item>Valkyries</item>
-        <item>Rogues</item>
+        <item>المحتالين</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -215,12 +227,12 @@
         <item>تسعة كرات</item>
         <item>PHAT HBOZ</item>
         <item>4الرئيس</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
+        <item>التحفيز</item>
+        <item>تخطي</item>
         <item>Fat Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
-        <item>Harlot</item>
+        <item>هارلوت</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -241,7 +253,7 @@
         <item>قبضة الغوغاء</item>
         <item>Hardcore</item>
         <item>مشبوه</item>
-        <item>Dark Matter</item>
+        <item>Matcher داكن</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -310,13 +322,13 @@
         <item>Cالوحيدة SHR 86a</item>
         <item>Cالوحيدة SRHR 88 (أ)</item>
         <item>C1 SRHR 95a</item>
-        <item>Barrel Krank 87a</item>
-        <item>Barrel Krank 90a</item>
-        <item>Barrel Krank 83a</item>
-        <item>Barrel Krank 96a</item>
+        <item>Barl Krank 87a</item>
+        <item>Barl Krank 90 أ</item>
+        <item>Barl Krank 83a</item>
+        <item>Barl Krank 96a</item>
         <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
-        <item>Cone Krank 93a</item>
+        <item>C1 Krank 87a</item>
+        <item>C1 Kالمرتبة 93 (أ)</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
