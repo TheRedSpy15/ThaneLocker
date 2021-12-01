@@ -176,15 +176,15 @@
     <string name="failed_to_load_sessions">Kohteen lataus ei onnistunut</string>
     <string name="failed_load_sessions_sum">Tallennetut istunnot eivät ole yhteensopivia sovelluksen version kanssa</string>
     <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
+    <string name="hill_finder_howto">Miten se toimii: paikka kartta, jota seuraa sekunti. Tämän jälkeen järjestelmä luo reitin, jossa on korkeussijaintitietoja sisältävä kaavio</string>
+    <string name="save_route_sum">Anna reittisi nimi</string>
+    <string name="save_route">Tallenna reitti</string>
     <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="saved_as">Säästö:</string>
+    <string name="did_not_save">Ei pelastanut</string>
+    <string name="no_route">Ei reittiä</string>
+    <string name="failed_route_load">Kohteen lataus ei onnistunut</string>
+    <string name="unknown_error">Odottamaton latausreitti</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
