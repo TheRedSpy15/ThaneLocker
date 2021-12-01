@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Vis politik for beskyttelse af personoplysninger</string>
     <string name="sign_up">Tilmeld</string>
     <string name="distance">Afstand:</string>
+    <string name="failed_to_load_sessions">Kan ikke indlæse</string>
+    <string name="failed_load_sessions_sum">Gemte sessioner er ikke kompatible med app-version</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,16 +192,16 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bjørn Gen6</item>
-        <item>Bear Gen5 (vintage)</item>
-        <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
+        <item>Bjørne Gen5 (årgang)</item>
+        <item>Valkyrier</item>
+        <item>Kaliber 2</item>
+        <item>Kaliber 3</item>
         <item>Roja 2020s</item>
-        <item>Randalls</item>
+        <item>Tilfældige</item>
         <item>Sidewinders</item>
         <item>Seismic Aeon</item>
-        <item>Arsenals</item>
-        <item>Valkyries</item>
+        <item>Arsenaler</item>
+        <item>Valkyrier</item>
         <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
@@ -217,8 +229,8 @@
         <item>4.</item>
         <item>Stimulus</item>
         <item>Skiffs</item>
-        <item>Fat Frees</item>
-        <item>Kegels</item>
+        <item>Fede Frees</item>
+        <item>Kegelller</item>
         <item>Caguama</item>
         <item>Harlot</item>
     </string-array>
@@ -241,7 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Vicious</item>
-        <item>Dark Matter</item>
+        <item>Mørkt stof</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
