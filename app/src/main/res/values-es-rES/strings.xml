@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Ver política de privacidad</string>
     <string name="sign_up">Inscríbase</string>
     <string name="distance">Distancia:</string>
+    <string name="failed_to_load_sessions">No se ha podido cargar</string>
+    <string name="failed_load_sessions_sum">Las sesiones guardadas son incompatibles con la versión de aplicación</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,15 +192,15 @@
         <item>París V3</item>
         <item>París Savants</item>
         <item>Oso Gen6</item>
-        <item>Bear Gen5 (vintage)</item>
+        <item>Oso Gen5 (vintage)</item>
         <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
+        <item>Calibre 2</item>
+        <item>Calibre 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Bobinadores</item>
+        <item>Aeon sísmico</item>
+        <item>Arsenales</item>
         <item>Valkyries</item>
         <item>Rogues</item>
     </string-array>
@@ -215,9 +227,9 @@
         <item>Nueve bolas</item>
         <item>PHAT BOYZ</item>
         <item>4Presidente</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
+        <item>Estímulo</item>
+        <item>Esquifes</item>
+        <item>Grasa Libre</item>
         <item>Kegels</item>
         <item>Caguama</item>
         <item>Harlot</item>
@@ -241,7 +253,7 @@
         <item>Agarre de turba</item>
         <item>Hardcore</item>
         <item>Viciosa</item>
-        <item>Dark Matter</item>
+        <item>Materia oscura</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -310,13 +322,13 @@
         <item>Cono SHR 86a</item>
         <item>Cono SHR 88a</item>
         <item>Cono SHR 95a</item>
-        <item>Barrel Krank 87a</item>
-        <item>Barrel Krank 90a</item>
-        <item>Barrel Krank 83a</item>
-        <item>Barrel Krank 96a</item>
-        <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
-        <item>Cone Krank 93a</item>
+        <item>Barril Krank 87a</item>
+        <item>Barril Krank 90a</item>
+        <item>Barril Krank 83a</item>
+        <item>Barril Krank 96a</item>
+        <item>Barril Krank 84a</item>
+        <item>Cono Krank 87a</item>
+        <item>Cono Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
