@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">檢視隱私權原則</string>
     <string name="sign_up">註冊</string>
     <string name="distance">距離：</string>
+    <string name="failed_to_load_sessions">無法載入</string>
+    <string name="failed_load_sessions_sum">儲存的階段作業與應用程式版本不相容</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,17 +192,17 @@
         <item>巴黎 V3</item>
         <item>Paris Savants</item>
         <item>大熊 6</item>
-        <item>Bear Gen5 (vintage)</item>
-        <item>Valkyries</item>
+        <item>小熊 Gen5 （復古）</item>
+        <item>瓦爾基列斯</item>
         <item>Caliber 2</item>
         <item>Caliber 3</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
+        <item>Roja 2020</item>
+        <item>蘭德爾斯</item>
         <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
-        <item>Valkyries</item>
-        <item>Rogues</item>
+        <item>Sismic Aeon</item>
+        <item>砷</item>
+        <item>瓦爾基列斯</item>
+        <item>羅蓋斯</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -215,12 +227,12 @@
         <item>九巴</item>
         <item>帕博茲</item>
         <item>4庭長</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
-        <item>Harlot</item>
+        <item>斯蒂穆盧斯</item>
+        <item>斯基夫斯</item>
+        <item>胖佛雷</item>
+        <item>凱格爾斯</item>
+        <item>卡瓜馬</item>
+        <item>哈洛特</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -241,7 +253,7 @@
         <item>Mob Grigp</item>
         <item>哈德核心</item>
         <item>維福瑟</item>
-        <item>Dark Matter</item>
+        <item>暗物質</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -315,7 +327,7 @@
         <item>Barrel Krank 83a</item>
         <item>Barrel Krank 96a</item>
         <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
+        <item>第 87a 級</item>
         <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
