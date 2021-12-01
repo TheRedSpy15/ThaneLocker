@@ -175,16 +175,16 @@
     <string name="distance">Mesafe:</string>
     <string name="failed_to_load_sessions">Yüklenemedi</string>
     <string name="failed_load_sessions_sum">Kaydedilen oturumlar uygulama sürümüyle uyumlu değil</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Tepe Arayıcı</string>
+    <string name="hill_finder_howto">Nasıl çalışır: haritaya bir nokta koyun, ardından bir saniye gelir. Daha sonra, yükselme verileri içeren bir grafik görüntüleyecek bir rota oluşturulur</string>
+    <string name="save_route_sum">Rotanızı bir ad verin.</string>
+    <string name="save_route">Rotayı Sakla</string>
+    <string name="saved_success">Kurtulun!</string>
+    <string name="saved_as">Şu şekilde kaydedildi:</string>
+    <string name="did_not_save">Kaydedilmedi</string>
+    <string name="no_route">Kaydedilecek rota yok</string>
+    <string name="failed_route_load">Yüklenemedi</string>
+    <string name="unknown_error">Rota yüklenirken beklenmeyen hata oluştu</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
