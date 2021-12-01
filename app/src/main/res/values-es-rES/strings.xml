@@ -143,6 +143,48 @@
     <string name="board_needs_name">El tablero necesita al menos un nombre</string>
     <string name="elevation">Elevación</string>
     <string name="free_limit_reached">Límite libre alcanzado. Pulse para actualizar</string>
+    <string name="basement_blog_title">Blog de Skate</string>
+    <string name="distance_0_00_miles">Distancia: 0,00 millas</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Haga clic en dos puntos en el mapa para dibujar una ruta y mostrar datos de elevación</string>
+    <string name="failed_image">Error al cargar la imagen</string>
+    <string name="hold_up">¡Aguantad!</string>
+    <string name="downhill_title">Corredor de descenso</string>
+    <string name="downhill_sum">Mostrar datos de elevación. Utiliza poca precisión a menos que la prima se compre debido a costes de servidor más altos</string>
+    <string name="reduce_title">Reducir gráficos (Experimental)</string>
+    <string name="reduce_sum">Simplifica la cantidad de datos para sesiones más largas</string>
+    <string name="no_save_session">No se ha guardado</string>
+    <string name="no_elevation_failed">No se pudo obtener la elevación</string>
+    <string name="achievements_label">Logros</string>
+    <string name="board_creator_label">Creador del tablero</string>
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="page_two_title">Cómo empezar</string>
+    <string name="page_two_sum">Mientras que usted puede entrar información sobre su quiver de tablas en la aplicación, la función principal de la aplicación es el registro de sesiones</string>
+    <string name="page_three_title">Perfiles</string>
+    <string name="page_three_sum">Una vez que hayas terminado de grabar una sesión, tu página de perfil comienza a mostrar muchos más datos. Con el tiempo podrá ver sus perfiles de amigos también</string>
+    <string name="page_four_title">¡Encontrar las colinas!</string>
+    <string name="page_four_sum">Para aquellos que aman el estilo cuesta abajo, hay una sección muy parecida a findhills.com en la aplicación. Esta es una característica basada en la suscripción como findhills.com, sin embargo esta aplicación todavía se mantiene y cuesta menos usar</string>
+    <string name="premium_required">Prima requerida</string>
+    <string name="premium_sum">Esta sección requiere una suscripción muy barata para cubrir los costes del servidor. La unión elimina los anuncios, también desbloquea las sesiones y las sesiones ilimitadas</string>
+    <string name="no_connection_title">Sin conexión</string>
+    <string name="no_connection_sum">Esta sección requiere Internet para acceder a los datos de elevación del servidor</string>
+    <string name="convert_kph_title">Convertir a kilómetros por hora</string>
+    <string name="satellite_title">Correlación por omisión con vía satélite</string>
+    <string name="satellite_sum">Esto se aplica a todos los mapas de la aplicación. Esta es una característica premium, Bing Maps cobra una tarifa para utilizar sus servidores</string>
+    <string name="privacy_policy_title">Ver política de privacidad</string>
+    <string name="sign_up">Inscríbase</string>
+    <string name="distance">Distancia:</string>
+    <string name="failed_to_load_sessions">No se ha podido cargar</string>
+    <string name="failed_load_sessions_sum">Las sesiones guardadas son incompatibles con la versión de aplicación</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">Cómo funciona: colocar un punto en el mapa, seguido de un segundo. A continuación, se generará una ruta que mostrará un gráfico con datos de elevación</string>
+    <string name="save_route_sum">Dé un nombre a su ruta</string>
+    <string name="save_route">Guardar ruta</string>
+    <string name="saved_success">¡Guardado</string>
+    <string name="saved_as">Guardado como:</string>
+    <string name="did_not_save">No se ha guardado</string>
+    <string name="no_route">No hay ninguna ruta para guardar</string>
+    <string name="failed_route_load">No se ha podido cargar</string>
+    <string name="unknown_error">Ruta de carga de error inesperada</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>París V3</item>
         <item>París Savants</item>
         <item>Oso Gen6</item>
+        <item>Oso Gen5 (vintage)</item>
         <item>Valkyries</item>
         <item>Calibre 2</item>
+        <item>Calibre 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
         <item>Bobinadores</item>
         <item>Aeon sísmico</item>
         <item>Arsenales</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Nueve bolas</item>
         <item>PHAT BOYZ</item>
         <item>4Presidente</item>
-        <item>Grasa Libre</item>
         <item>Estímulo</item>
         <item>Esquifes</item>
         <item>Grasa Libre</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Agarre de turba</item>
         <item>Hardcore</item>
         <item>Viciosa</item>
+        <item>Materia oscura</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cono SHR 86a</item>
         <item>Cono SHR 88a</item>
         <item>Cono SHR 95a</item>
+        <item>Barril Krank 87a</item>
+        <item>Barril Krank 90a</item>
+        <item>Barril Krank 83a</item>
+        <item>Barril Krank 96a</item>
+        <item>Barril Krank 84a</item>
+        <item>Cono Krank 87a</item>
+        <item>Cono Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

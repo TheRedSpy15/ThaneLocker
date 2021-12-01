@@ -143,6 +143,48 @@
     <string name="board_needs_name">Совет должен по крайней мере назвать имя</string>
     <string name="elevation">Возвышение</string>
     <string name="free_limit_reached">Достигнуто свободное ограничение. Щелкните для обновления</string>
+    <string name="basement_blog_title">Блог Skate</string>
+    <string name="distance_0_00_miles">Расстояние: 0,00 миль</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Щелкните по двум точкам на карте, чтобы нарисовать маршрут и показать данные возвышения</string>
+    <string name="failed_image">Не удалось загрузить образ</string>
+    <string name="hold_up">Постой!</string>
+    <string name="downhill_title">Райдер, Рейдер</string>
+    <string name="downhill_sum">Показать данные повышения. Использует низкую точность, если только премия не приобретен из-за более высоких серверных затрат</string>
+    <string name="reduce_title">Сократить диаграммы (экспериментальные)</string>
+    <string name="reduce_sum">Упрощает объем данных для более длительной сессии</string>
+    <string name="no_save_session">Не удалось сохранить</string>
+    <string name="no_elevation_failed">Не удалось поднять высоту</string>
+    <string name="achievements_label">Достижения</string>
+    <string name="board_creator_label">Создатель платы</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="page_two_title">Начиная с</string>
+    <string name="page_two_sum">В то время как вы можете ввести информацию о своей викторине досок в приложении, основная функция приложения-запись сеансов</string>
+    <string name="page_three_title">Профайлы</string>
+    <string name="page_three_sum">После того, как вы закончите запись сеанса, ваша страница профиля начнет показывать намного больше данных. В конце концов вы сможете увидеть свои друзья и профайлы</string>
+    <string name="page_four_title">Найди холмы!</string>
+    <string name="page_four_sum">Для тех, кто любит верховой езде, в приложении есть такой раздел, как findhills.com. Это функция, основанная на подписке, как findhills.com, однако это приложение все еще сохраняется, и затраты меньше на использование</string>
+    <string name="premium_required">Требуется премиум</string>
+    <string name="premium_sum">Для этого раздела требуется очень дешевая подписка, чтобы покрыть расходы на сервер. Объединение удаляет рекламные объявления, также разблокирует неограниченные доски и сеансы</string>
+    <string name="no_connection_title">Нет соединения</string>
+    <string name="no_connection_sum">В этом разделе для доступа к данным с сервера требуется доступ в Интернет</string>
+    <string name="convert_kph_title">Преобразовать в километры в час</string>
+    <string name="satellite_title">По умолчанию для спутниковой карты</string>
+    <string name="satellite_sum">Это относится ко всем картам в приложении. Это премиальная функция, Bing maps взимает плату за использование своих серверов</string>
+    <string name="privacy_policy_title">Просмотреть политику конфиденциальности</string>
+    <string name="sign_up">Вход в систему</string>
+    <string name="distance">Расстояние:</string>
+    <string name="failed_to_load_sessions">Не удалось загрузить</string>
+    <string name="failed_load_sessions_sum">Сохраненные сеансы несовместимы с версией приложения</string>
+    <string name="hill_finder">Поиск по хи</string>
+    <string name="hill_finder_howto">Как это работает: разместите точку на карте, а затем вторую. Затем будет сгенерирован маршрут с отображением диаграммы с данными об возвышении</string>
+    <string name="save_route_sum">Укажите имя маршрута</string>
+    <string name="save_route">Сохранить маршрут</string>
+    <string name="saved_success">Спасено!</string>
+    <string name="saved_as">Сохранено как:</string>
+    <string name="did_not_save">Не удалось сохранить</string>
+    <string name="no_route">Нет маршрута для сохранения</string>
+    <string name="failed_route_load">Не удалось загрузить</string>
+    <string name="unknown_error">Непредвиденная ошибка при загрузке маршрута</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Париж V3</item>
         <item>Парижский саванц</item>
         <item>Медведь Gen6</item>
+        <item>Медведь Gen5 (винтаж)</item>
         <item>Валькирии</item>
         <item>Калибр 2</item>
+        <item>Калибр 3</item>
         <item>Roja 2020</item>
         <item>Рэндалс</item>
         <item>Боковины</item>
         <item>Сейсмический аон</item>
         <item>Арсеналы</item>
+        <item>Валькирии</item>
+        <item>Роги</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Девять мячей</item>
         <item>PHAT BOYZ</item>
         <item>4Президент</item>
-        <item>Без жира</item>
         <item>Стимул</item>
         <item>Лыжники</item>
         <item>Толстые фрезы</item>
         <item>Кегельс</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Мафиози</item>
         <item>Хардкор</item>
         <item>Порочный</item>
+        <item>Темная материя</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Конус SHR 86a</item>
         <item>Конус SHR 88а</item>
         <item>Конус SHR 95a</item>
+        <item>Krank Krank 87a</item>
+        <item>Krank 90a</item>
+        <item>Krank 83a</item>
+        <item>Krank Krank 96a</item>
+        <item>Krank 84a</item>
+        <item>Конус Krank 87a</item>
+        <item>Конус Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

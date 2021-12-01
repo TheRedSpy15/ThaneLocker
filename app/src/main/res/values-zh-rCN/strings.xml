@@ -143,6 +143,48 @@
     <string name="board_needs_name">董事会至少需要一个名字</string>
     <string name="elevation">高海拔</string>
     <string name="free_limit_reached">已达到自由限制。 单击以升级</string>
+    <string name="basement_blog_title">地下室溜冰鞋博客</string>
+    <string name="distance_0_00_miles">距离: 0.00 英里</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">单击地图上的两个点以绘制路线并显示海拔数据</string>
+    <string name="failed_image">未能装入图像</string>
+    <string name="hold_up">等等 !</string>
+    <string name="downhill_title">下坡骑士</string>
+    <string name="downhill_sum">显示海拔高度数据。 使用低准确性，除非由于服务器成本较高而购买了保费</string>
+    <string name="reduce_title">减少图表 (实验)</string>
+    <string name="reduce_sum">简化较长会话的数据量</string>
+    <string name="no_save_session">没救</string>
+    <string name="no_elevation_failed">无法获得海拔高度</string>
+    <string name="achievements_label">成就</string>
+    <string name="board_creator_label">板创建者</string>
+    <string name="welcome">欢迎 !</string>
+    <string name="page_two_title">开始关闭</string>
+    <string name="page_two_sum">虽然可以在应用程序中输入有关板的信息的信息，但应用程序的主要功能是记录会话</string>
+    <string name="page_three_title">个人档案</string>
+    <string name="page_three_sum">一旦完成记录会话，概要文件页面将开始显示更多数据。 最终你也能看到你的朋友简介</string>
+    <string name="page_four_title">找到希尔斯</string>
+    <string name="page_four_sum">对于喜欢下坡式骑行的人来说， app中有一个类似于 findhills.com 的部分。 这是基于预订的功能，如 findhills.com ，但此应用程序仍保留，且成本较低</string>
+    <string name="premium_required">需要的保费</string>
+    <string name="premium_sum">此部分需要非常便宜的预订以支付服务器成本。 加入删除广告，也会解锁无限的板和会话</string>
+    <string name="no_connection_title">无连接</string>
+    <string name="no_connection_sum">此部分要求因特网从服务器访问海拔高度数据</string>
+    <string name="convert_kph_title">转换为千米 / 小时</string>
+    <string name="satellite_title">缺省为卫星图</string>
+    <string name="satellite_sum">这适用于应用程序中的所有映射。 这是一个特别功能， Bing 映射收取使用其服务器的费用</string>
+    <string name="privacy_policy_title">查看隐私策略</string>
+    <string name="sign_up">报名</string>
+    <string name="distance">距离 :</string>
+    <string name="failed_to_load_sessions">未能装入</string>
+    <string name="failed_load_sessions_sum">保存的会话与应用程序版本不兼容</string>
+    <string name="hill_finder">希尔查找器</string>
+    <string name="hill_finder_howto">它如何运作: 在地图上放置一个点，然后是第二个。 然后将生成显示具有海拔数据的图表的路线</string>
+    <string name="save_route_sum">给你的路一个名字</string>
+    <string name="save_route">保存检修路线</string>
+    <string name="saved_success">救命啊</string>
+    <string name="saved_as">另存为:</string>
+    <string name="did_not_save">未保存</string>
+    <string name="no_route">没有要保存的路由</string>
+    <string name="failed_route_load">未能装入</string>
+    <string name="unknown_error">装入路由时发生意外错误</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>巴黎 V3</item>
         <item>巴黎 Savants</item>
         <item>熊 Gen6</item>
+        <item>熊 Gen5 ( vintage)</item>
         <item>瓦尔基里斯</item>
         <item>口径 2</item>
+        <item>口径 3</item>
         <item>Roja 2020s</item>
         <item>兰德尔斯</item>
         <item>西德温德</item>
         <item>地震 Aeon</item>
         <item>武库</item>
+        <item>瓦尔基里斯</item>
+        <item>罗格斯</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>九球</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>可用脂肪</item>
         <item>刺激</item>
         <item>斯基夫斯</item>
         <item>Fat Frees</item>
         <item>凯格尔斯</item>
         <item>卡瓜马</item>
+        <item>哈洛特</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>暴民控制</item>
         <item>哈德核心</item>
         <item>恶毒</item>
+        <item>暗物质</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>锥形 SHR 86a</item>
         <item>锥形 SHR 88a</item>
         <item>锥形 SHR 95a</item>
+        <item>桶 Krank 87a</item>
+        <item>桶 Krank 90a</item>
+        <item>桶 Krank 83a</item>
+        <item>桶 Krank 96a</item>
+        <item>桶 Krank 84a</item>
+        <item>锥体库 87a</item>
+        <item>锥体库 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

@@ -143,6 +143,48 @@
     <string name="board_needs_name">Consiliul are nevoie de cel puţin un nume</string>
     <string name="elevation">Elevaţie</string>
     <string name="free_limit_reached">Limita liberă atinsă. Faceţi clic pentru modernizare</string>
+    <string name="basement_blog_title">Subsol Skate Blog</string>
+    <string name="distance_0_00_miles">Distanta: 0.00 Mile</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Faceți clic pe două puncte de pe hartă pentru a desena o rută și arată datele de elevație</string>
+    <string name="failed_image">Eșec la încărcarea imaginii</string>
+    <string name="hold_up">Stai aşa!</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Arată datele elevaţiei. Utilizează o precizie scăzută, cu excepția cazului în care prima este achiziționată datorită costurilor mai mari</string>
+    <string name="reduce_title">Reduce diagramele (experimental)</string>
+    <string name="reduce_sum">Simplifică cantitatea de date pentru sesiuni mai lungi</string>
+    <string name="no_save_session">Nu a salvat</string>
+    <string name="no_elevation_failed">Nu a putut obține elevație</string>
+    <string name="achievements_label">Realizări</string>
+    <string name="board_creator_label">Creator de bord</string>
+    <string name="welcome">Bun venit!</string>
+    <string name="page_two_title">Pornirea Off</string>
+    <string name="page_two_sum">În timp ce puteți introduce informații despre tolba dvs. de placi în aplicație, funcția principală a aplicației este sesiuni de înregistrare</string>
+    <string name="page_three_title">Profile</string>
+    <string name="page_three_sum">Odată ce ați terminat înregistrarea unei sesiuni, pagina de profil începe să arate mult mai multe date. În cele din urmă va fi capabil de a vedea profilurile de prieteni, precum și</string>
+    <string name="page_four_title">Găseşte Hills!</string>
+    <string name="page_four_sum">Pentru cei care iubesc în jos stil de echitatie, există o secțiune mult ca findhills.com în aplicație. Aceasta este o caracteristică bazată pe abonament, cum ar fi findhills.com, cu toate acestea această aplicație este încă menținută și costă mai puțin de utilizat</string>
+    <string name="premium_required">Primă necesară</string>
+    <string name="premium_sum">Această secțiune necesită un abonament foarte ieftin pentru a acoperi costurile serverului. Aderarea elimină reclame, deblochează, de asemenea, placi nelimitate și sesiuni</string>
+    <string name="no_connection_title">Nici O Conexiune</string>
+    <string name="no_connection_sum">Această secțiune necesită internet pentru a accesa datele de elevație de pe server</string>
+    <string name="convert_kph_title">Conversia la kilometri pe oră</string>
+    <string name="satellite_title">Implicit la harta prin satelit</string>
+    <string name="satellite_sum">Acest lucru se aplică tuturor hărților din aplicație. Aceasta este o caracteristică premium, Bing hărți percepe o taxă pentru a utiliza serverele sale</string>
+    <string name="privacy_policy_title">Vizualizați Politica de confidențialitate</string>
+    <string name="sign_up">Înscrie-te!</string>
+    <string name="distance">Distanța:</string>
+    <string name="failed_to_load_sessions">Nu s-a încărcat</string>
+    <string name="failed_load_sessions_sum">Sesiunile salvate sunt incompatibile cu versiunea app</string>
+    <string name="hill_finder">Deal Finder</string>
+    <string name="hill_finder_howto">Cum functioneaza: puneti un punct pe harta, urmat de o secunda. Apoi, va fi generat un traseu care afișează un grafic cu date de elevație</string>
+    <string name="save_route_sum">Dă-ţi un nume pe drum.</string>
+    <string name="save_route">Salvează ruta</string>
+    <string name="saved_success">Salvat!</string>
+    <string name="saved_as">Salvat ca:</string>
+    <string name="did_not_save">Nu a salvat</string>
+    <string name="no_route">Nici un traseu pentru a salva</string>
+    <string name="failed_route_load">Nu s-a încărcat</string>
+    <string name="unknown_error">Eroare neașteptată de încărcare</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Savante de la Paris</item>
         <item>Urs Gen6</item>
-        <item>Valkyrii</item>
+        <item>Urs Gen5 (vintage)</item>
+        <item>Valkyries</item>
         <item>Calibru 2</item>
-        <item>Roja 2020</item>
-        <item>Ransalls</item>
-        <item>Sidevindere</item>
-        <item>Aeon seismic</item>
-        <item>Arsenal</item>
+        <item>Calibru 3</item>
+        <item>Roja 2020s</item>
+        <item>Randalls</item>
+        <item>Sidewinders</item>
+        <item>Eeon seismic</item>
+        <item>Arsen</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Nouă Balls</item>
         <item>PHAT BOYZ</item>
         <item>4Preşedinte</item>
-        <item>Grăsimi gratuite</item>
         <item>Stimul</item>
-        <item>Skifuri</item>
-        <item>Eliberare de grăsimi</item>
-        <item>Kegeluri</item>
+        <item>Skiffs</item>
+        <item>Frees de grăsime</item>
+        <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Prindere în grup</item>
         <item>Hardcore</item>
         <item>Vicios</item>
+        <item>Materie întunecată</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Baril Krank 87a</item>
+        <item>Baril Krank 90a</item>
+        <item>Baril Krank 83a</item>
+        <item>Baril Krank 96a</item>
+        <item>Butoi Krank 84a</item>
+        <item>Con Krank 87a</item>
+        <item>Con Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

@@ -143,6 +143,48 @@
     <string name="board_needs_name">Styrelsen behöver åtminstone ett namn.</string>
     <string name="elevation">Höjd</string>
     <string name="free_limit_reached">Fritt gräns nåddes. Uppgradera</string>
+    <string name="basement_blog_title">Källskatalogblogg</string>
+    <string name="distance_0_00_miles">Avstånd: 0,00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Klicka på två punkter på kartan för att rita en rutt och visa elevationsdata</string>
+    <string name="failed_image">Misslyckades ladda bild</string>
+    <string name="hold_up">Vänta!</string>
+    <string name="downhill_title">Nedförsbacke</string>
+    <string name="downhill_sum">Visa elevationsdata. Använder låg noggrannhet om inte premien köps på grund av högre serverkostnader.</string>
+    <string name="reduce_title">Reducera diagram (Experimentell)</string>
+    <string name="reduce_sum">Förenklar mängden data för längre sessioner</string>
+    <string name="no_save_session">Räddade inte</string>
+    <string name="no_elevation_failed">Kunde inte bli upphöjd</string>
+    <string name="achievements_label">Achievements</string>
+    <string name="board_creator_label">Brädskapare</string>
+    <string name="welcome">Välkomna!</string>
+    <string name="page_two_title">Startar av</string>
+    <string name="page_two_sum">Medan du kan skriva in information om din version av brädor i appen, är huvudfunktionen för appen inspelningssessioner</string>
+    <string name="page_three_title">Profiler</string>
+    <string name="page_three_sum">När du har spelat in en session, börjar din profilsida att visa mycket mer data. Så småningom kommer du att kunna se dina vänners profiler också</string>
+    <string name="page_four_title">Hitta Hills!</string>
+    <string name="page_four_sum">För dem som älskar nedåtgående stilar finns det ett avsnitt mycket som findhills.com i appen. Det här är en prenumerationsbaserad funktion som findhills.com, men den här appen är fortfarande underhållen och kostar mindre att använda</string>
+    <string name="premium_required">Premium krävs</string>
+    <string name="premium_sum">Det här avsnittet kräver en mycket billig prenumeration för att täcka serverkostnader. Josining tar bort annonser, även obegränsade brädor och sessioner.</string>
+    <string name="no_connection_title">Ingen anslutning</string>
+    <string name="no_connection_sum">Det här avsnittet kräver internet för att få åtkomst till elevdata från servern</string>
+    <string name="convert_kph_title">Konvertera till kilometer per timme</string>
+    <string name="satellite_title">Standard till satellitkarta</string>
+    <string name="satellite_sum">Det här gäller alla kartor i appen. Detta är en premie-funktion, Bing kartor debiterar en avgift för att använda dess servrar</string>
+    <string name="privacy_policy_title">Visa integritetspolicy</string>
+    <string name="sign_up">Registrera dig</string>
+    <string name="distance">Avstånd:</string>
+    <string name="failed_to_load_sessions">Misslyckades ladda</string>
+    <string name="failed_load_sessions_sum">Sparade sessioner är inte kompatibla med appversion</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">Hur det fungerar: placera en punkt på kartan, följt av en sekund. Sedan genereras en rutt som visar ett diagram med höjddata</string>
+    <string name="save_route_sum">Ge rutten ett namn</string>
+    <string name="save_route">Spara rutt</string>
+    <string name="saved_success">Räddad!</string>
+    <string name="saved_as">Sparades som:</string>
+    <string name="did_not_save">Spara inte</string>
+    <string name="no_route">Ingen rutt att spara</string>
+    <string name="failed_route_load">Misslyckades ladda</string>
+    <string name="unknown_error">Oväntad fel vid inläsning av rutt</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bear Gen6</item>
+        <item>Bear Gen5 (vintage)</item>
         <item>Valkyrior</item>
         <item>Caliber 2</item>
+        <item>Caliber 3</item>
         <item>Roja 2020:</item>
         <item>Randalls</item>
         <item>Sidovindrare</item>
         <item>Seismisk Aeon</item>
         <item>Arsenaler</item>
+        <item>Valkyrior</item>
+        <item>Tungor</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Nio Ballar</item>
         <item>PHAT BOYZ</item>
         <item>4Ordförande</item>
-        <item>Fettfri</item>
         <item>Stimulus</item>
         <item>Skiffar</item>
         <item>Fettfreoner</item>
         <item>Kegel</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Utsökt</item>
+        <item>Mörk materia</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

@@ -143,6 +143,48 @@
     <string name="board_needs_name">Ban quản trị cần ít nhất một tên</string>
     <string name="elevation">Độ cao</string>
     <string name="free_limit_reached">Đã đạt giới hạn miễn phí Nhấp để nâng cấp</string>
+    <string name="basement_blog_title">Blog Skate</string>
+    <string name="distance_0_00_miles">Khoảng cách: 0,00 dặm</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Nhấp vào hai điểm trên ánh xạ để vẽ định tuyến và hiển thị dư ̃ liệu nâng cao</string>
+    <string name="failed_image">Lỗi tải ảnh</string>
+    <string name="hold_up">Khoan đã!</string>
+    <string name="downhill_title">Nhân viên xuống dốc</string>
+    <string name="downhill_sum">Hiện dư ̃ liệu nâng cao Sử dụng độ chính xác thấp trư ̀ khi được mua do chi phí máy chủ cao hơn</string>
+    <string name="reduce_title">Giảm biểu đồ (thử nghiệm)</string>
+    <string name="reduce_sum">Đơn giản hóa lượng dữ liệu cho các phiên dài hơn</string>
+    <string name="no_save_session">Không cứu được</string>
+    <string name="no_elevation_failed">Không thể lên cao được.</string>
+    <string name="achievements_label">Thành tích</string>
+    <string name="board_creator_label">Người tạo bảng</string>
+    <string name="welcome">Chào mừng!</string>
+    <string name="page_two_title">Bắt đầu</string>
+    <string name="page_two_sum">Trong khi bạn có thể nhập thông tin vê ̀ quiver của bo mạch vào ứng dụng, chức năng chính của ứng dụng là thu âm</string>
+    <string name="page_three_title">Cấu hình</string>
+    <string name="page_three_sum">Khi đã hoàn thành việc ghi lại một phiên, trang hồ sơ của bạn bắt đầu hiển thị nhiều dữ liệu hơn. Cuối cùng bạn cũng có thể thấy được hồ sơ bạn bè của bạn</string>
+    <string name="page_four_title">Tìm Hills!</string>
+    <string name="page_four_sum">Đối với những người yêu thích cưỡi ngựa theo phong cách, có một phần giống như findhills.com trong ứng dụng. Đây là tính năng đăng ký như findhills.com, tuy nhiên ứng dụng này vẫn được duy trì và chi phí ít sử dụng</string>
+    <string name="premium_required">Yêu cầu cao</string>
+    <string name="premium_sum">Phần này yêu cầu một thuê bao rẻ tiền để trang trải chi phí máy chủ. Tham gia loại bỏ quảng cáo, cũng mở khóa không giới hạn và các phiên chạy</string>
+    <string name="no_connection_title">Không kết nối</string>
+    <string name="no_connection_sum">Phần này yêu cầu internet để truy cập dư ̃ liệu trên máy chủ</string>
+    <string name="convert_kph_title">Chuyển đổi sang cây số mỗi giờ</string>
+    <string name="satellite_title">Xem bản đồ vệ tinh</string>
+    <string name="satellite_sum">Điều này áp dụng cho tất cả các bản đồ trong ứng dụng. Đây là tính năng cao cấp, Bing bản đồ tính phí sử dụng máy chủ của nó</string>
+    <string name="privacy_policy_title">Xem Chính sách Bảo mật</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="distance">Khoảng cách:</string>
+    <string name="failed_to_load_sessions">Không thể tải</string>
+    <string name="failed_load_sessions_sum">Phiên đã lưu không tương thích với phiên bản ứng dụng</string>
+    <string name="hill_finder">Trình tìm kiếm đồi</string>
+    <string name="hill_finder_howto">Nó hoạt động như thế nào: đặt một điểm trên bản đồ, tiếp theo là một giây. Sau đó, một định tuyến sẽ được tạo biểu đô ̀ có dư ̃ liệu nâng cao</string>
+    <string name="save_route_sum">Hãy cho biết tên của bạn</string>
+    <string name="save_route">Lưu lộ trình</string>
+    <string name="saved_success">Cứu!</string>
+    <string name="saved_as">Đã lưu như:</string>
+    <string name="did_not_save">Không lưu</string>
+    <string name="no_route">Không có định tuyến để lưu</string>
+    <string name="failed_route_load">Không thể tải</string>
+    <string name="unknown_error">Ðịnh tuyến tải lỗi ngoài dự</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bear Gen6</item>
+        <item>Bear Gen5 (cổ điển)</item>
         <item>Valkyries</item>
         <item>Cỡ 2</item>
+        <item>Cỡ nòng 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
         <item>Kính sát lề</item>
         <item>Địa chấn Aeon</item>
         <item>Arsenal</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Chín quả bóng.</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>Miễn phí</item>
         <item>Kích thích</item>
         <item>Thuyền trưởng</item>
         <item>Chất béo</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Kìm kẹp đám đông</item>
         <item>Hardcore</item>
         <item>Luẩn quẩn</item>
+        <item>Vật chất tối</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Hình nón SHR 86a</item>
         <item>Hình nón SHR 88a</item>
         <item>Hình nón SHR 95A</item>
+        <item>Barrel Krank 87a</item>
+        <item>Nòng súng Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Hình nón Krank 87a</item>
+        <item>Hình nón Kala 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

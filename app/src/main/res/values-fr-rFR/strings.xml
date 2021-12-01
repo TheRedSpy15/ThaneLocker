@@ -143,6 +143,48 @@
     <string name="board_needs_name">Le conseil a besoin d\'au moins un nom</string>
     <string name="elevation">Élévation</string>
     <string name="free_limit_reached">Limite libre atteinte. Cliquez pour mettre à niveau</string>
+    <string name="basement_blog_title">Blogue de Patinage de base</string>
+    <string name="distance_0_00_miles">Distance: 0.00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Cliquez sur deux points de la carte pour tracer une route et afficher les données d\'altitude.</string>
+    <string name="failed_image">Impossible de charger l\'image</string>
+    <string name="hold_up">Attends !</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Afficher les données d\'altitude. Utilise une faible précision, sauf si la prime est achetée en raison des coûts plus élevés du serveur</string>
+    <string name="reduce_title">Réduire les graphiques (expérimental)</string>
+    <string name="reduce_sum">Simplifie la quantité de données pour les sessions plus longues</string>
+    <string name="no_save_session">N\'a pas été sauvegardé</string>
+    <string name="no_elevation_failed">Impossible d\'obtenir l\'altitude</string>
+    <string name="achievements_label">Réalisations</string>
+    <string name="board_creator_label">Créateur de la Commission</string>
+    <string name="welcome">Bienvenue !</string>
+    <string name="page_two_title">Démarrage hors tension</string>
+    <string name="page_two_sum">Tandis que vous pouvez entrer des informations sur votre quiver de planches dans l\'application, la fonction principale de l\'application est d\'enregistrer des sessions</string>
+    <string name="page_three_title">Profils</string>
+    <string name="page_three_sum">Une fois que vous avez terminé l\'enregistrement d\'une session, votre page de profil commence à afficher beaucoup plus de données. Finalement, vous pourrez voir aussi vos profils d\'amis.</string>
+    <string name="page_four_title">Trouvez Hills !</string>
+    <string name="page_four_sum">Pour ceux qui aiment le style de descente, il y a une section comme findhills.com dans l\'application. Il s\'agit d\'une fonction basée sur l\'abonnement, telle que findhills.com, mais cette application est toujours maintenue et coûte moins d\'utilisation</string>
+    <string name="premium_required">Premium requis</string>
+    <string name="premium_sum">Cette section nécessite un abonnement très bon marché pour couvrir les coûts du serveur. Joindre supprime les publicités, déverrouille également les conseils illimités et les sessions</string>
+    <string name="no_connection_title">Aucune connexion</string>
+    <string name="no_connection_sum">Cette section nécessite Internet pour accéder aux données d\'élévation du serveur</string>
+    <string name="convert_kph_title">Convertir en kilomètres par heure</string>
+    <string name="satellite_title">Carte satellite par défaut</string>
+    <string name="satellite_sum">Ceci s\'applique à toutes les cartes de l\'application. Il s\'agit d\'une fonction premium, Bing mappe des frais pour l\'utilisation de ses serveurs</string>
+    <string name="privacy_policy_title">Afficher la règle de confidentialité</string>
+    <string name="sign_up">Inscription</string>
+    <string name="distance">Distance:</string>
+    <string name="failed_to_load_sessions">Echec du chargement</string>
+    <string name="failed_load_sessions_sum">Les sessions sauvegardées sont incompatibles avec la version de l\'application</string>
+    <string name="hill_finder">Finder de Hill</string>
+    <string name="hill_finder_howto">Comment ça marche: placez un point sur la carte, suivi d\'une seconde. Ensuite, une route sera générée affichant un graphique avec des données d\'élévation.</string>
+    <string name="save_route_sum">Donnez un nom à votre route</string>
+    <string name="save_route">Enregistrer la route</string>
+    <string name="saved_success">Sauvé !</string>
+    <string name="saved_as">Enregistré comme:</string>
+    <string name="did_not_save">N\'a pas été sauvegardé</string>
+    <string name="no_route">Aucune route à sauvegarder</string>
+    <string name="failed_route_load">Echec du chargement</string>
+    <string name="unknown_error">Erreur inattendue lors du chargement de la route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Ours Gen6</item>
+        <item>Ours Gen5 (vintage)</item>
         <item>Valkyries</item>
         <item>Calibre 2</item>
+        <item>Calibre 3</item>
         <item>Roja 20-20</item>
         <item>Randalls</item>
         <item>Sidewinders</item>
         <item>Aeon Seismic</item>
         <item>Arsenaux</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Nine Balls</item>
         <item>PHAT BOYZ</item>
         <item>4Président</item>
-        <item>Fat Free</item>
         <item>Stimulation</item>
         <item>Skiffs</item>
         <item>Fat Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Vicious</item>
+        <item>Dark Matter</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

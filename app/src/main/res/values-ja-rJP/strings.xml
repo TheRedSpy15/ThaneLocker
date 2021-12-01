@@ -143,6 +143,48 @@
     <string name="board_needs_name">理事会は少なくとも名前を必要としている</string>
     <string name="elevation">エレベレーション</string>
     <string name="free_limit_reached">空き限界に達しました。 クリックしてアップグレード</string>
+    <string name="basement_blog_title">ベースメント・スケート・ブログ</string>
+    <string name="distance_0_00_miles">距離: 0.00 マイル</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">マップ上の 2 つの点をクリックして、ルートを描画し、標高データを表示します。</string>
+    <string name="failed_image">イメージをロードできません</string>
+    <string name="hold_up">止まれ !</string>
+    <string name="downhill_title">ダウンヒル・ライダー</string>
+    <string name="downhill_sum">標高データを表示します。 サーバー・コストが高いためにプレミアムが購入されない限り、低精度で</string>
+    <string name="reduce_title">料金の削減 (実験)</string>
+    <string name="reduce_sum">より長いセッションのデータ量を単純化します。</string>
+    <string name="no_save_session">保存しなかった</string>
+    <string name="no_elevation_failed">標高を取得できませんでした</string>
+    <string name="achievements_label">アチエブメント</string>
+    <string name="board_creator_label">ボード・クリエーター</string>
+    <string name="welcome">ようこそ !</string>
+    <string name="page_two_title">開始オフ</string>
+    <string name="page_two_sum">ボードの使い方に関する情報をアプリに入力することができますが、アプリのメイン機能はセッションを記録しています。</string>
+    <string name="page_three_title">プロファイル</string>
+    <string name="page_three_sum">セッションの記録が完了すると、プロファイル・ページが開始され、さらに多くのデータが表示されます。 最終的には、友人のプロフィールも同様に見ることができます。</string>
+    <string name="page_four_title">ヒルズを探せ !</string>
+    <string name="page_four_sum">このアプリでは、 findhills.com のようなセクションがあるのと同じように、ダウンヒルスタイルの乗車スタイルについても、 findhills.com のようなセクション これは、 findhills.comのようなサブスクリプション・ベースの機能ですが、このアプリは引き続き保守され、使用コストは低くなります。</string>
+    <string name="premium_required">プレミアム必須</string>
+    <string name="premium_sum">このセクションでは、サーバー・コストをカバーするために非常に安いサブスクリプションが必要です 広告を削除すると、無制限のボードとセッションも解除されます。</string>
+    <string name="no_connection_title">接続なし</string>
+    <string name="no_connection_sum">このセクションでは、サーバーからの標高データへのアクセスがインターネットに</string>
+    <string name="convert_kph_title">キロメートル / 時の変換</string>
+    <string name="satellite_title">デフォルトからサテライト・マップ</string>
+    <string name="satellite_sum">これはアプリ内のすべてのマップに適用されます これはプレミアム・フィーチャーで、 Bing マップはそのサーバーを使用するために料金を課金します。</string>
+    <string name="privacy_policy_title">プライバシーポリシーの表示</string>
+    <string name="sign_up">登録</string>
+    <string name="distance">距離:</string>
+    <string name="failed_to_load_sessions">ロードの失敗</string>
+    <string name="failed_load_sessions_sum">保存済みセッションはアプリケーション・バージョンと非互換</string>
+    <string name="hill_finder">ヒル・ファインダー</string>
+    <string name="hill_finder_howto">動作方法 : マップ上に点を配置し、その後に 2 番目の点を配置します。 この場合、標高データを含むチャートを表示するルートが生成されます。</string>
+    <string name="save_route_sum">経路に名前を付けてください</string>
+    <string name="save_route">経路の保存</string>
+    <string name="saved_success">セイド!</string>
+    <string name="saved_as">保存日:</string>
+    <string name="did_not_save">保存しない</string>
+    <string name="no_route">保存する経路がありませ</string>
+    <string name="failed_route_load">ロードの失敗</string>
+    <string name="unknown_error">経路のロード時の予期</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>パリ V3</item>
         <item>パリサバンツ</item>
         <item>ベア・ Gen6</item>
+        <item>ベア Gen5 (ビンテージ)</item>
         <item>ヴァルキュリーズ</item>
         <item>キャリバー 2</item>
+        <item>キャリバー 3</item>
         <item>ロハ・ 2020 年代</item>
         <item>ランドールズ</item>
         <item>サイドウィナーズ</item>
         <item>シズミック・イオン</item>
         <item>アーセナルス</item>
+        <item>ヴァルキュリーズ</item>
+        <item>ローグ</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>ナイン・ボール</item>
         <item>ファット・ボーイズ</item>
         <item>四代</item>
-        <item>ファット・フリー</item>
         <item>スティムルス</item>
         <item>スキー</item>
         <item>ファット・フレース</item>
         <item>ケーゲルス</item>
         <item>カグアマ</item>
+        <item>ハーロット</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>モブ・グリップ</item>
         <item>ハードコア</item>
         <item>ヴィシャス</item>
+        <item>ダーク・マター</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>コノン・ SHR 86a</item>
         <item>コネ・ SHR 88a</item>
         <item>コネ・ SHR 95a</item>
+        <item>バーレル・クランク 87a</item>
+        <item>バーレル・クランク・ 90a</item>
+        <item>バーレル・クランク 83a</item>
+        <item>バーレル・クランク・ 96a</item>
+        <item>バーレル・クランク 84a</item>
+        <item>コーネ・クランク・ 87a</item>
+        <item>コネ・クランク・ 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

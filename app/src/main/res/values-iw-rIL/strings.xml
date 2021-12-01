@@ -143,6 +143,48 @@
     <string name="board_needs_name">הלוח צריך לפחות שם.</string>
     <string name="elevation">מעלית</string>
     <string name="free_limit_reached">הגעתם למגבלה החופשית. לחצו כדי לשדרג</string>
+    <string name="basement_blog_title">בלוג סקייט של מרתף</string>
+    <string name="distance_0_00_miles">מרחק: 0.00 מיילים</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">לחצו על שתי נקודות במפה כדי לשרטט נתיב ולהציג את נתוני הגובה.</string>
+    <string name="failed_image">כשל בטעינת התמונה</string>
+    <string name="hold_up">תחזיק מעמד!</string>
+    <string name="downhill_title">רוכב במורד הגבעה</string>
+    <string name="downhill_sum">הצגת נתוני גובה. שימוש בדייקנות נמוכה אלא אם הפרמיה נרכשה עקב עלויות שרת גבוהות יותר.</string>
+    <string name="reduce_title">הפחתת תרשימים (Experimental)</string>
+    <string name="reduce_sum">פשטות כמות הנתונים עבור מהלכי עבודה ארוכים יותר.</string>
+    <string name="no_save_session">לא נשמר</string>
+    <string name="no_elevation_failed">לא ניתן לקבל את הגובה</string>
+    <string name="achievements_label">הישגים</string>
+    <string name="board_creator_label">בורא לוח</string>
+    <string name="welcome">ברוכים הבאים!</string>
+    <string name="page_two_title">כיבוי</string>
+    <string name="page_two_sum">בזמן שתוכלו לציין מידע אודות ה-quiver של לוחות ביישום, הפונקציה העיקרית של היישום היא הקלטת מהלכי עבודה</string>
+    <string name="page_three_title">פרופילים</string>
+    <string name="page_three_sum">לאחר שתסיימו להקליט מהלך עבודה, דף הפרופיל שלכם מתחיל להראות הרבה יותר נתונים. סופו של דבר תוכל לראות את הפרופילים של החברים שלך גם כן</string>
+    <string name="page_four_title">מצא את גבעות!</string>
+    <string name="page_four_sum">עבור אלה שאוהבים רכיבה בסגנון בירידה, יש סעיף כמו findhills.com באפליקציה. זהו מאפיין המבוסס על מינוי כגון findhills.com, אולם יישום זה עדיין מתוחזק ועולה פחות לשימוש</string>
+    <string name="premium_required">נדרשת פרמיה</string>
+    <string name="premium_sum">סעיף זה דורש מינוי זול מאוד כדי לכסות את עלויות השרת. הצטרפות מסלקת פרסומות, פותחת גם לוחות ופגישות ללא הגבלה</string>
+    <string name="no_connection_title">אין חיבור</string>
+    <string name="no_connection_sum">סעיף זה דורש אינטרנט כדי לגשת לנתוני גובה מהשרת</string>
+    <string name="convert_kph_title">המרה למק \" מ לשעה</string>
+    <string name="satellite_title">ברירת מחדל למפת לווין</string>
+    <string name="satellite_sum">דבר זה חל על כל המפות ביישום. זהו מאפיין פרמיה, מפות Bing גובה אגרה לשימוש בשרתים שלה</string>
+    <string name="privacy_policy_title">הצגת מדיניות פרטיות</string>
+    <string name="sign_up">הירשמו</string>
+    <string name="distance">מרחק:</string>
+    <string name="failed_to_load_sessions">הטעינה נכשלה</string>
+    <string name="failed_load_sessions_sum">מהלכי עבודה שמורים אינם תואמים לגרסת יישום.</string>
+    <string name="hill_finder">מאתר היל</string>
+    <string name="hill_finder_howto">איך זה עובד: למקם נקודה על המפה, ואחריו שנייה. לאחר מכן, תופק נתיב המציג תרשים עם נתוני גובה</string>
+    <string name="save_route_sum">תנו את הנתיב שלכם לשם.</string>
+    <string name="save_route">שמירת נתיב</string>
+    <string name="saved_success">נשמר!</string>
+    <string name="saved_as">נשמר בתור:</string>
+    <string name="did_not_save">לא נשמר</string>
+    <string name="no_route">אין נתיב לשמירה.</string>
+    <string name="failed_route_load">הטעינה נכשלה</string>
+    <string name="unknown_error">שגיאה לא צפויה בטעינת הנתיב</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>פריז V3</item>
         <item>שוברי פריז</item>
         <item>דוב ג \' 6</item>
+        <item>דוב ג \' 5 (בציר)</item>
         <item>ואלקיריות</item>
         <item>קליבר 2</item>
+        <item>קליבר 3</item>
         <item>רוג \' ה 20-20</item>
         <item>רנדלס</item>
         <item>נוסעי צד</item>
         <item>סביבה סבימית</item>
         <item>ארסנל</item>
+        <item>ואלקיריות</item>
+        <item>נוכלים</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>תשע כדורים</item>
         <item>בויץ \'</item>
         <item>4בנשיא</item>
-        <item>שומן חופשי</item>
         <item>Stimulus</item>
         <item>מדפים</item>
         <item>פרסות שמנות</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>הרלוט</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Grip מאפיה</item>
         <item>הארדקור</item>
         <item>Vicious</item>
+        <item>חומר אפל</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>בארל Krank 87a</item>
+        <item>חבית Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>גזע Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

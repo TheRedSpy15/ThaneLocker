@@ -143,6 +143,48 @@
     <string name="board_needs_name">Kurulun en azından bir isme ihtiyacı var.</string>
     <string name="elevation">Yükselme</string>
     <string name="free_limit_reached">Serbest sınıra ulaşıldı. Yükseltmek için tıklatın</string>
+    <string name="basement_blog_title">Bodrum Paten Blog</string>
+    <string name="distance_0_00_miles">Mesafe: 0.00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Bir rota çizmek ve yükselme verilerini göstermek için haritadaki iki noktayı tıklatın</string>
+    <string name="failed_image">Görüntü yüklenemedi</string>
+    <string name="hold_up">Durun!</string>
+    <string name="downhill_title">Yokuş Aşağı</string>
+    <string name="downhill_sum">Yükselme verilerini göster. Daha yüksek sunucu maliyetleri nedeniyle prim satın alınmadıkça düşük doğruluk kullanır</string>
+    <string name="reduce_title">Grafikleri Azalt (Deneysel)</string>
+    <string name="reduce_sum">Daha uzun oturumlar için veri miktarını basitleştirir</string>
+    <string name="no_save_session">Kaydedilmedi</string>
+    <string name="no_elevation_failed">Yükselme olamaz.</string>
+    <string name="achievements_label">Başarılar</string>
+    <string name="board_creator_label">Pano Yaratıcı</string>
+    <string name="welcome">Hoş geldiniz!</string>
+    <string name="page_two_title">Başlangıç Başlangıcı</string>
+    <string name="page_two_sum">app store \' a quiver your boards hakkında bilgi girebilirken, uygulamanın ana işlevi kayıt oturumları.</string>
+    <string name="page_three_title">Tanıtımlar</string>
+    <string name="page_three_sum">Bir oturumu kaydettikten sonra, profil sayfanız çok daha fazla veri göstermeye başlar. En sonunda arkadaşlarınızın profillerini de görebileceksiniz.</string>
+    <string name="page_four_title">Hills \'i bul!</string>
+    <string name="page_four_sum">downhill tarzı binicilik sevenler için, uygulamada findhills.com gibi bir bölüm çok var. findhills.com gibi bir abonelik tabanlı bir özeldir, ancak bu uygulama hala sürdürülmekte ve kullanımı daha az maliyetle</string>
+    <string name="premium_required">Ek Gerekli</string>
+    <string name="premium_sum">Bu bölüm, sunucu maliyetlerini karşılamak için çok ucuz bir abonelik gerektirir. Katılanlar, reklamların kaldırılmasına, ayrıca sınırsız pano ve oturumların da kaldırılmasına neden olur</string>
+    <string name="no_connection_title">Bağlantı Yok</string>
+    <string name="no_connection_sum">Bu bölümde, sunucudan yükselme verilerine erişmek için İnternet gereklidir.</string>
+    <string name="convert_kph_title">Saat başına kilometreye dönüştür</string>
+    <string name="satellite_title">Varsayılan Uydu Haritası</string>
+    <string name="satellite_sum">Bu, uygulamadaki tüm haritalar için geçerlidir. Bu bir ek özelliğidir, Bing haritalar, sunucularını kullanmak için bir ücret talep eder</string>
+    <string name="privacy_policy_title">Gizlilik İlkesini Görüntüle</string>
+    <string name="sign_up">Oturum açın</string>
+    <string name="distance">Mesafe:</string>
+    <string name="failed_to_load_sessions">Yüklenemedi</string>
+    <string name="failed_load_sessions_sum">Kaydedilen oturumlar uygulama sürümüyle uyumlu değil</string>
+    <string name="hill_finder">Tepe Arayıcı</string>
+    <string name="hill_finder_howto">Nasıl çalışır: haritaya bir nokta koyun, ardından bir saniye gelir. Daha sonra, yükselme verileri içeren bir grafik görüntüleyecek bir rota oluşturulur</string>
+    <string name="save_route_sum">Rotanızı bir ad verin.</string>
+    <string name="save_route">Rotayı Sakla</string>
+    <string name="saved_success">Kurtulun!</string>
+    <string name="saved_as">Şu şekilde kaydedildi:</string>
+    <string name="did_not_save">Kaydedilmedi</string>
+    <string name="no_route">Kaydedilecek rota yok</string>
+    <string name="failed_route_load">Yüklenemedi</string>
+    <string name="unknown_error">Rota yüklenirken beklenmeyen hata oluştu</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bear Gen6</item>
+        <item>Bear Gen5 (vintage)</item>
         <item>Valkyries</item>
         <item>Kalibre 2</item>
+        <item>Kalibre 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
         <item>Kaldırıcılar</item>
         <item>Sismik Aeon</item>
         <item>Arsenal</item>
+        <item>Valkyries</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Dokuz Top</item>
         <item>PHAT BOYZ</item>
         <item>4Başkan</item>
-        <item>Ücretsiz Yağ</item>
         <item>Uyarıcılar</item>
         <item>Skips</item>
         <item>Şişko Frees</item>
         <item>Kegeller</item>
         <item>Caguyama.</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Kavrama</item>
         <item>Hardcore</item>
         <item>Kısır</item>
+        <item>Koyu Madde</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Koni SHR 86a</item>
         <item>Koni SHR 88a</item>
         <item>Koni SHR 95a</item>
+        <item>Varil Krank 87a</item>
+        <item>Varil Krank 90a</item>
+        <item>Varil Krank 83a</item>
+        <item>Varil Krank 96a</item>
+        <item>Varil Krank 84a</item>
+        <item>Koni Krank 87a</item>
+        <item>Koni Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

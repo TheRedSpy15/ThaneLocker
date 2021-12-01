@@ -143,6 +143,48 @@
     <string name="board_needs_name">Hallitus tarvitsee ainakin nimen.</string>
     <string name="elevation">Korkeus</string>
     <string name="free_limit_reached">Vapaa raja saavutettu. Päivitä päivitys</string>
+    <string name="basement_blog_title">KellolSkate Blog</string>
+    <string name="distance_0_00_miles">Etäisyys: 0,00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Klikkaa kaksi pistettä kartalla piirtää reitin ja näyttää korkeussijaintitietoja</string>
+    <string name="failed_image">Kuvan lataus ei onnistunut</string>
+    <string name="hold_up">Odota!</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Näytä korkeussijaintitiedot. Käyttää alhaista tarkkuutta, ellei palkkio osteta korkeampien palvelinkustannusten vuoksi.</string>
+    <string name="reduce_title">Pienennä veloitukset (kokeellinen)</string>
+    <string name="reduce_sum">Yksinkertaistaa tietojen määrää pidempiä istuntoa varten</string>
+    <string name="no_save_session">Ei pelastanut</string>
+    <string name="no_elevation_failed">Hän ei saanut korkeutta.</string>
+    <string name="achievements_label">Saavutukset</string>
+    <string name="board_creator_label">Board Creator</string>
+    <string name="welcome">Tervetuloa!</string>
+    <string name="page_two_title">Aloitusaika</string>
+    <string name="page_two_sum">Sovelluksen päätehtävä on nauhoittaa istuntoja, kun voit antaa tietoja levyjen maksasta sovellukseen.</string>
+    <string name="page_three_title">Profiilit</string>
+    <string name="page_three_sum">Kun olet lopettanut istunnon kirjaamisen, profiilisivu alkaa näyttää paljon enemmän tietoja. Lopulta näet myös ystäväsi profiilit.</string>
+    <string name="page_four_title">Etsi Hills.</string>
+    <string name="page_four_sum">Niille, jotka rakastavat alamäkeä ratsastus, on osa paljon, kuten findhills.com sovelluksessa. Tämä on tilauspohjainen ominaisuus, kuten findhills.com, mutta tämä sovellus on edelleen voimassa ja kustannukset vähemmän käyttää</string>
+    <string name="premium_required">Premium-pakollinen</string>
+    <string name="premium_sum">Tämä kohta edellyttää erittäin edullista tilausta, joka kattaa palvelimen kustannukset. Liityminen poistaa mainoksia, avaa myös rajoittamattomat taulut ja istunnot</string>
+    <string name="no_connection_title">Ei yhteyttä</string>
+    <string name="no_connection_sum">Tämä osa edellyttää Internet-yhteyksien käyttötietoja palvelimesta</string>
+    <string name="convert_kph_title">Muunna kilometreinä tunnissa</string>
+    <string name="satellite_title">Satelliittikartan oletusarvo</string>
+    <string name="satellite_sum">Tämä koskee kaikkia sovelluksen karttoja. Tämä on palkkio, Bing karttoja veloittaa maksu käyttää sen palvelimia</string>
+    <string name="privacy_policy_title">Näytä tietosuojakäytäntö</string>
+    <string name="sign_up">Merkki ylös</string>
+    <string name="distance">Etäisyys:</string>
+    <string name="failed_to_load_sessions">Kohteen lataus ei onnistunut</string>
+    <string name="failed_load_sessions_sum">Tallennetut istunnot eivät ole yhteensopivia sovelluksen version kanssa</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">Miten se toimii: paikka kartta, jota seuraa sekunti. Tämän jälkeen järjestelmä luo reitin, jossa on korkeussijaintitietoja sisältävä kaavio</string>
+    <string name="save_route_sum">Anna reittisi nimi</string>
+    <string name="save_route">Tallenna reitti</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Säästö:</string>
+    <string name="did_not_save">Ei pelastanut</string>
+    <string name="no_route">Ei reittiä</string>
+    <string name="failed_route_load">Kohteen lataus ei onnistunut</string>
+    <string name="unknown_error">Odottamaton latausreitti</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Pariisi V3</item>
         <item>Pariisin säästö</item>
         <item>Bear Gen6</item>
+        <item>Karhu Gen5 (vintage)</item>
         <item>Valkyyriat</item>
         <item>Kaliber 2</item>
+        <item>Kaliber 3</item>
         <item>Roja 2020</item>
         <item>Randallit</item>
         <item>Tuulettimet</item>
         <item>Seisminen Aeon</item>
         <item>Arsenaali</item>
+        <item>Valkyyriat</item>
+        <item>Roistot</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Yhdeksän munaa.</item>
         <item>PHAT BOZ</item>
         <item>4Puhemies</item>
-        <item>Lihava vapaa</item>
         <item>Stimulus</item>
         <item>Skiffit</item>
         <item>Fat Frees</item>
         <item>Kegelit</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Vicious</item>
+        <item>Tumma aine</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

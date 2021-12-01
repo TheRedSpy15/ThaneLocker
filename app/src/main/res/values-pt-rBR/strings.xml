@@ -143,6 +143,48 @@
     <string name="board_needs_name">A diretoria precisa em pelo menos um nome</string>
     <string name="elevation">Elevação</string>
     <string name="free_limit_reached">Limite livre atingido. Clique para fazer o upgrade</string>
+    <string name="basement_blog_title">Blog Skate do porão</string>
+    <string name="distance_0_00_miles">Distância: 0,00 Milhas</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Clique em dois pontos no mapa para traçar uma rota e mostrar dados de elevação</string>
+    <string name="failed_image">Falha ao carregar imagem</string>
+    <string name="hold_up">Segure-se!</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Mostrar dados de elevação. Usa baixa precisão a menos que o prêmio seja comprado devido aos custos mais altos do servidor</string>
+    <string name="reduce_title">Reduzir Gráficos (Experimental)</string>
+    <string name="reduce_sum">Simplifica a quantidade de dados para sessões mais longas</string>
+    <string name="no_save_session">Não salvou</string>
+    <string name="no_elevation_failed">Não foi possível obter elevação</string>
+    <string name="achievements_label">Realizações</string>
+    <string name="board_creator_label">Criador de Planos</string>
+    <string name="welcome">Bem-vindo!</string>
+    <string name="page_two_title">Iniciando Off</string>
+    <string name="page_two_sum">Enquanto você pode inserir info sobre seu quiver de pranchas no app, a função principal do app é gravar sessões</string>
+    <string name="page_three_title">Perfis</string>
+    <string name="page_three_sum">Uma vez feito a gravação de uma sessão, a sua página de perfil começa a mostrar muito mais dados. Eventualmente você será capaz de ver seus perfis de amigos também</string>
+    <string name="page_four_title">Encontre Hills!</string>
+    <string name="page_four_sum">Para aqueles que amam o estilo downhill cavalgando, há uma seção muito parecida com a findhills.com no app. Este é um recurso baseado em assinatura como findhills.com, no entanto este app ainda é mantido e custa menos para usar</string>
+    <string name="premium_required">Prêmio Necessário</string>
+    <string name="premium_sum">Esta seção requer uma assinatura muito barata para cobrir os custos do servidor. Unindo anúncios de removes, também desbloqueia tábuas e sessões ilimitadas</string>
+    <string name="no_connection_title">Sem Conexão</string>
+    <string name="no_connection_sum">Esta seção requer internet para acessar dados de elevação do servidor</string>
+    <string name="convert_kph_title">Converter em quilômetros por hora</string>
+    <string name="satellite_title">Padrão para Mapa do Satélite</string>
+    <string name="satellite_sum">Isso se aplica a todos os mapas no app. Este é um recurso premium, o Bing maps cobra uma taxa para usar seus servidores</string>
+    <string name="privacy_policy_title">Visualizar Política De Privacidade</string>
+    <string name="sign_up">Inscrever-se</string>
+    <string name="distance">Distância:</string>
+    <string name="failed_to_load_sessions">Falha ao carregar</string>
+    <string name="failed_load_sessions_sum">Sessões salvas são incompatíveis com a versão do app</string>
+    <string name="hill_finder">Finder de Hill</string>
+    <string name="hill_finder_howto">Como funciona: coloque um ponto no mapa, seguido por um segundo. Em seguida, uma rota será gerada exibindo um gráfico com dados de elevação</string>
+    <string name="save_route_sum">Dê um nome à sua rota</string>
+    <string name="save_route">Salvar Rota</string>
+    <string name="saved_success">Salvo!</string>
+    <string name="saved_as">Salvo como:</string>
+    <string name="did_not_save">Não salvou</string>
+    <string name="no_route">Sem rota para salvar</string>
+    <string name="failed_route_load">Falha ao carregar</string>
+    <string name="unknown_error">Rota de carregamento de erro inesperado</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Savanas de Paris</item>
         <item>Urso Gen6</item>
+        <item>Urso Gen5 (vintage)</item>
         <item>Valquírias</item>
         <item>Calibre 2</item>
+        <item>Calibre 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
         <item>Sidewinders</item>
         <item>Aeon Sísmico</item>
         <item>Arsenais</item>
+        <item>Valquírias</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Nove Bolas</item>
         <item>BOYZ PHAT</item>
         <item>4President</item>
-        <item>Gordura Livre</item>
         <item>Estímulo</item>
         <item>Skiffs</item>
         <item>Fretes Gordos</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Vicioso</item>
+        <item>Matéria Escura</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barril Krank 87a</item>
+        <item>Barril Krank 90a</item>
+        <item>Barril Krank 83a</item>
+        <item>Barril Krank 96a</item>
+        <item>Barril Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

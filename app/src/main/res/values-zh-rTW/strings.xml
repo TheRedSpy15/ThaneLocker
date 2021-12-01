@@ -143,6 +143,48 @@
     <string name="board_needs_name">董事會至少需要一個名字</string>
     <string name="elevation">仰角</string>
     <string name="free_limit_reached">已達到可用限制。 按一下以升級</string>
+    <string name="basement_blog_title">地下室溜冰部落格</string>
+    <string name="distance_0_00_miles">距離： 0.00 英里</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">點擊地圖上的兩個點，繪製路線並顯示仰角資料</string>
+    <string name="failed_image">無法載入影像</string>
+    <string name="hold_up">等等！</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">顯示高度資料。 除非保費是因伺服器成本較高而購買，否則使用精確度較低</string>
+    <string name="reduce_title">減少圖表（實驗）</string>
+    <string name="reduce_sum">簡化較長階段作業的資料量</string>
+    <string name="no_save_session">未儲存</string>
+    <string name="no_elevation_failed">升不高</string>
+    <string name="achievements_label">成就</string>
+    <string name="board_creator_label">董事會建立者</string>
+    <string name="welcome">歡迎光臨</string>
+    <string name="page_two_title">開始關閉</string>
+    <string name="page_two_sum">雖然您可以在應用程式中輸入公告欄的資訊，但應用程式的主要功能是記錄階段作業</string>
+    <string name="page_three_title">人員資訊</string>
+    <string name="page_three_sum">完成記錄階段作業之後，您的設定檔頁面就會開始顯示更多資料。 最終你也能看到你的朋友的輪廓</string>
+    <string name="page_four_title">找希爾斯！</string>
+    <string name="page_four_sum">對於喜愛下坡式騎乘的人來說，在應用程式中有一個類似 findhills.com 的區段。 這是一個如 findhills.com 的訂閱型功能，不過，此應用程式仍在維護，且成本不高</string>
+    <string name="premium_required">需要保費</string>
+    <string name="premium_sum">此區段需要非常便宜的訂閱來涵蓋伺服器成本。 加入移除廣告，也取消鎖定無限制的公告欄及階段作業</string>
+    <string name="no_connection_title">無連線</string>
+    <string name="no_connection_sum">此區段需要網際網路來存取伺服器的升降資料</string>
+    <string name="convert_kph_title">轉換為每小時公里</string>
+    <string name="satellite_title">預設為衛星地圖</string>
+    <string name="satellite_sum">這會套用至應用程式中的所有對映。 此為高階功能， Bing 地圖會收取費用，以使用其伺服器</string>
+    <string name="privacy_policy_title">檢視隱私權原則</string>
+    <string name="sign_up">註冊</string>
+    <string name="distance">距離：</string>
+    <string name="failed_to_load_sessions">無法載入</string>
+    <string name="failed_load_sessions_sum">儲存的階段作業與應用程式版本不相容</string>
+    <string name="hill_finder">希爾 - 芬德</string>
+    <string name="hill_finder_howto">它的運作方式：在地圖上放置一個點，接著是第二個。 然後將產生路徑，以顯示具有高度資料的圖表</string>
+    <string name="save_route_sum">給你的路線一個名字</string>
+    <string name="save_route">儲存路徑</string>
+    <string name="saved_success">得救了</string>
+    <string name="saved_as">另存為：</string>
+    <string name="did_not_save">未儲存</string>
+    <string name="no_route">沒有要儲存的路徑</string>
+    <string name="failed_route_load">無法載入</string>
+    <string name="unknown_error">載入路徑時發生異常錯誤</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>巴黎 V3</item>
         <item>Paris Savants</item>
         <item>大熊 6</item>
+        <item>小熊 Gen5 （復古）</item>
         <item>瓦爾基列斯</item>
         <item>Caliber 2</item>
+        <item>Caliber 3</item>
         <item>Roja 2020</item>
         <item>蘭德爾斯</item>
         <item>Sidewinders</item>
         <item>Sismic Aeon</item>
         <item>砷</item>
+        <item>瓦爾基列斯</item>
+        <item>羅蓋斯</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>九巴</item>
         <item>帕博茲</item>
         <item>4庭長</item>
-        <item>無脂肪</item>
         <item>斯蒂穆盧斯</item>
         <item>斯基夫斯</item>
         <item>胖佛雷</item>
         <item>凱格爾斯</item>
         <item>卡瓜馬</item>
+        <item>哈洛特</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grigp</item>
         <item>哈德核心</item>
         <item>維福瑟</item>
+        <item>暗物質</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>第 87a 級</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

@@ -143,6 +143,48 @@
     <string name="board_needs_name">يجب أن يكون للمجلس اسم على الأقل</string>
     <string name="elevation">ارتفاع</string>
     <string name="free_limit_reached">تم الوصول الى الحد الأقصى. اضغط لتحديث</string>
+    <string name="basement_blog_title">Blog Skate Blog</string>
+    <string name="distance_0_00_miles">المسافة : 0.00 ميل</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">اضغط زر الفأرة عند نقطتين على Map لرسم مسار توجيه وعرض بيانات الارتفاع.</string>
+    <string name="failed_image">فشل في تحميل الصورة</string>
+    <string name="hold_up">عقد للأعلى !</string>
+    <string name="downhill_title">رايدر الانحدار</string>
+    <string name="downhill_sum">عرض بيانات الارتفاع. يقوم باستخدام الدقة المنخفضة ما لم يتم شراء علاوة بسبب ارتفاع تكاليف وحدة الخدمة</string>
+    <string name="reduce_title">تقليل الرسوم البيانية (تجريبي)</string>
+    <string name="reduce_sum">يقوم بتبسيط مقدار البيانات للجلسات الطويلة</string>
+    <string name="no_save_session">لم يتم الحفظ</string>
+    <string name="no_elevation_failed">لا يمكن الحصول على الارتفاع</string>
+    <string name="achievements_label">الإنجازات</string>
+    <string name="board_creator_label">وحدة تكوين اللوحة</string>
+    <string name="welcome">أهلا وسهلا</string>
+    <string name="page_two_title">بدء التشغيل</string>
+    <string name="page_two_sum">أثناء قيامك بادخال معلومات عن quiver الخاص بك في الألواح في التطبيق ، فان الوظيفة الرئيسية للتطبيق هي تسجيل الجلسات</string>
+    <string name="page_three_title">ملفات المواصفات</string>
+    <string name="page_three_sum">بمجرد الانتهاء من تسجيل جلسة العمل ، سيتم بدء صفحة ملف المواصفات الخاص بك لعرض مزيد من البيانات. في النهاية ستكون قادرا على رؤية. ملفات أصدقائك كذلك</string>
+    <string name="page_four_title">! اعثر على هيلز</string>
+    <string name="page_four_sum">وبالنسبة لأولئك الذين يحبون ركوب أسلوب المنحدر ، هناك قسم يشبه إلى حد كبير findhills.com في التطبيق. هذه الخاصية المميزة للاشتراك مثل findhills.com ، ولكن هذا التطبيق لا يزال يتم صيانته والتكاليف التي سيتم استخدامها أقل</string>
+    <string name="premium_required">الكميوم مطلوب</string>
+    <string name="premium_sum">يتطلب هذا القسم اشتراك رخيص جدا لتغطية تكاليف وحدة الخدمة. الربط يقوم بازالة الدعايات ، كما يقوم بالغاء اقفال لوحات وجلسات غير محدودة</string>
+    <string name="no_connection_title">لا توجد وصلة</string>
+    <string name="no_connection_sum">هذا القسم يتطلب أن يقوم الانترنت بالاتصال ببيانات الارتفاع من وحدة الخدمة</string>
+    <string name="convert_kph_title">تحويل الى الكيلومترات في الساعة</string>
+    <string name="satellite_title">القيمة المفترضة لمناظرة القمر الصناعي</string>
+    <string name="satellite_sum">وينطبق هذا على جميع الخرائط في التطبيق. يعد هذا عبارة عن خاصية علاوة ، يقوم Bing Maps بتحميل الرسوم لاستخدام وحدات الخدمة الخاصة به</string>
+    <string name="privacy_policy_title">مشاهدة سياسة السرية</string>
+    <string name="sign_up">تسجيل المستخدم</string>
+    <string name="distance">المسافة :</string>
+    <string name="failed_to_load_sessions">فشل في التحميل</string>
+    <string name="failed_load_sessions_sum">الجلسات التي تم حفظها غير متوافقة مع نسخة التطبيق</string>
+    <string name="hill_finder">أداة ايجاد هيل</string>
+    <string name="hill_finder_howto">كيف تعمل : وضع نقطة على الخريطة ، تليها الثانية. ثم سيتم تكوين مسار التوجيه لعرض مخطط بياني مع بيانات الارتفاع</string>
+    <string name="save_route_sum">تحديد اسم المسار الخاص بك</string>
+    <string name="save_route">حفظ مسار توجيه</string>
+    <string name="saved_success">! أنقذت</string>
+    <string name="saved_as">حفظ على أنه :</string>
+    <string name="did_not_save">لم يتم الحفظ</string>
+    <string name="no_route">لا يوجد مسار توجيه للحفظ</string>
+    <string name="failed_route_load">فشل في التحميل</string>
+    <string name="unknown_error">خطأ غير متوقع أثناء تحميل مسار التوجيه</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>باريس V3</item>
         <item>ساففر باريس</item>
         <item>تحمل جنو 6</item>
+        <item>الدب Gen5 (vinage)</item>
         <item>Valkyries</item>
         <item>Caliber 2</item>
+        <item>Caliber 3</item>
         <item>روجا 2020s</item>
         <item>عشوائي</item>
         <item>أدوات Sidewinder</item>
         <item>حمامة زلزالية</item>
         <item>الزرنيخ</item>
+        <item>Valkyries</item>
+        <item>المحتالين</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>تسعة كرات</item>
         <item>PHAT HBOZ</item>
         <item>4الرئيس</item>
-        <item>Fat Free</item>
         <item>التحفيز</item>
         <item>تخطي</item>
         <item>Fat Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>هارلوت</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>قبضة الغوغاء</item>
         <item>Hardcore</item>
         <item>مشبوه</item>
+        <item>Matcher داكن</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cالوحيدة SHR 86a</item>
         <item>Cالوحيدة SRHR 88 (أ)</item>
         <item>C1 SRHR 95a</item>
+        <item>Barl Krank 87a</item>
+        <item>Barl Krank 90 أ</item>
+        <item>Barl Krank 83a</item>
+        <item>Barl Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>C1 Krank 87a</item>
+        <item>C1 Kالمرتبة 93 (أ)</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

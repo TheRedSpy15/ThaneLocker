@@ -143,6 +143,48 @@
     <string name="board_needs_name">Bestyrelsen har brug for mindst et navn</string>
     <string name="elevation">Elevation</string>
     <string name="free_limit_reached">Gratis grænse nået. Klik på opgradering</string>
+    <string name="basement_blog_title">Kælder-Skate-blog</string>
+    <string name="distance_0_00_miles">Afstand: 0,00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Klik på to punkter på kortet for at tegne en rute og vise eleveringsdata</string>
+    <string name="failed_image">Kan ikke indlæse billede</string>
+    <string name="hold_up">Vent!</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Vis elevationsdata. Bruger lav nøjagtighed, medmindre præmien er købt på grund af højere serveromkostninger</string>
+    <string name="reduce_title">Reducér diagrammer (Experimental)</string>
+    <string name="reduce_sum">Forenkler mængden af data til længere sessioner</string>
+    <string name="no_save_session">Har ikke gemt</string>
+    <string name="no_elevation_failed">Kan ikke få elevation</string>
+    <string name="achievements_label">Achievements</string>
+    <string name="board_creator_label">Skabelleskab</string>
+    <string name="welcome">-Velkommen!</string>
+    <string name="page_two_title">Start fra</string>
+    <string name="page_two_sum">Mens du kan angive oplysninger om din udkvist af bestyrelser i appen, er den primære funktion af appen indspilningssessioner.</string>
+    <string name="page_three_title">Profiler</string>
+    <string name="page_three_sum">Når du er færdig med at optage en session, begynder din profilside at vise mange flere data. Til sidst vil du også kunne se dine venner profiler.</string>
+    <string name="page_four_title">Find Hills!</string>
+    <string name="page_four_sum">For dem, der elsker at ride på bakken, er der et afsnit som findhills.com i appen. Dette er en abonnementsbaseret funktion, f.eks. findhills.com, men denne app vedligeholdes stadig og koster mindre at bruge</string>
+    <string name="premium_required">Premium påkrævet</string>
+    <string name="premium_sum">Dette afsnit kræver et meget billigt abonnement for at dække serveromkostninger. Deltager i annoncering af annoncer, også låse med ubegrænset antal bestyrelser og sessioner</string>
+    <string name="no_connection_title">Ingen forbindelse</string>
+    <string name="no_connection_sum">Dette afsnit kræver internet for at få adgang til elevation-data fra server</string>
+    <string name="convert_kph_title">Konvertér til kilometer pr. time</string>
+    <string name="satellite_title">Standard for satellitkort</string>
+    <string name="satellite_sum">Dette gælder for alle kort i appen. Dette er en tillægsydelse, Bing knytter et gebyr for at bruge sine servere</string>
+    <string name="privacy_policy_title">Vis politik for beskyttelse af personoplysninger</string>
+    <string name="sign_up">Tilmeld</string>
+    <string name="distance">Afstand:</string>
+    <string name="failed_to_load_sessions">Kan ikke indlæse</string>
+    <string name="failed_load_sessions_sum">Gemte sessioner er ikke kompatible med app-version</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">Hvordan det fungerer: placere et punkt på kortet, efterfulgt af et sekund. Så vil der blive genereret en rute, der viser et diagram med elementdata</string>
+    <string name="save_route_sum">Giv din rute et navn</string>
+    <string name="save_route">Gem rute</string>
+    <string name="saved_success">Reddet!</string>
+    <string name="saved_as">Gemt som:</string>
+    <string name="did_not_save">Har ikke gemt</string>
+    <string name="no_route">Ingen rute, der skal gemmes</string>
+    <string name="failed_route_load">Kan ikke indlæse</string>
+    <string name="unknown_error">Uventet fejl under indlæsning af rute</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bjørn Gen6</item>
+        <item>Bjørne Gen5 (årgang)</item>
         <item>Valkyrier</item>
         <item>Kaliber 2</item>
+        <item>Kaliber 3</item>
         <item>Roja 2020s</item>
         <item>Tilfældige</item>
         <item>Sidewinders</item>
         <item>Seismic Aeon</item>
         <item>Arsenaler</item>
+        <item>Valkyrier</item>
+        <item>Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Ni Balls</item>
         <item>PHAT BOYZ</item>
         <item>4.</item>
-        <item>Tykfri</item>
         <item>Stimulus</item>
         <item>Skiffs</item>
         <item>Fede Frees</item>
         <item>Kegelller</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>Hardcore</item>
         <item>Vicious</item>
+        <item>Mørkt stof</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

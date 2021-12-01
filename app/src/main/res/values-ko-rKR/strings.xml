@@ -143,6 +143,48 @@
     <string name="board_needs_name">보드에는 적어도 하나의 이름이 필요하다.</string>
     <string name="elevation">상승</string>
     <string name="free_limit_reached">자유 한계에 도달했습니다. 업그레이드하려면 클릭</string>
+    <string name="basement_blog_title">Basement Skate 블로그</string>
+    <string name="distance_0_00_miles">거리: 0.00 마일즈</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">경로를 그리고 표고 데이터를 표시하려면 맵에서 두 점을 클릭하십시오.</string>
+    <string name="failed_image">이미지를 로드하는 데 실패함</string>
+    <string name="hold_up">잠깐만!</string>
+    <string name="downhill_title">다운힐 라이더</string>
+    <string name="downhill_sum">표고 데이터를 표시합니다. 높은 서버 비용으로 인해 프리미엄을 구매하지 않는 한 낮은 정확성을 사용합니다.</string>
+    <string name="reduce_title">차트 축소 (실험)</string>
+    <string name="reduce_sum">더 긴 세션에 대한 데이터의 양을 단순화합니다.</string>
+    <string name="no_save_session">저장하지 않았다</string>
+    <string name="no_elevation_failed">고도를 얻을 수 없음</string>
+    <string name="achievements_label">성취도</string>
+    <string name="board_creator_label">이사회 작성자</string>
+    <string name="welcome">환영합니다!</string>
+    <string name="page_two_title">시작하기</string>
+    <string name="page_two_sum">사용자의 게시판에 대한 정보를 앱에 입력할 수 있지만 앱의 기본 기능은 세션을 기록하는 것입니다.</string>
+    <string name="page_three_title">프로파일</string>
+    <string name="page_three_sum">세션 레코딩을 완료하면 프로파일 페이지가 더 많은 데이터를 표시하기 시작합니다. 결국에는 친구 프로파일도 볼 수 있을 것이다.</string>
+    <string name="page_four_title">힐즈를 찾아!</string>
+    <string name="page_four_sum">다운힐을 좋아하는 사람들을 위해 앱에 findhills.com과 같은 섹션이 있다. 이 기능은 findhills.com과 같은 구독 기반 기능입니다. 그러나 이 앱은 여전히 유지보수되며 사용하기에는 비용이 적게 듭니다.</string>
+    <string name="premium_required">프리미엄 필수</string>
+    <string name="premium_sum">이 섹션에서는 서버 비용을 감당하기 위해 매우 저렴한 구독이 필요합니다. 광고를 제거하고, 무제한 보드 및 세션을 잠금 해제합니다.</string>
+    <string name="no_connection_title">연결 없음</string>
+    <string name="no_connection_sum">이 섹션에서는 인터넷이 서버의 표고 데이터에 액세스해야 합니다.</string>
+    <string name="convert_kph_title">시간당 킬로미터로 변환</string>
+    <string name="satellite_title">기본 맵에 대한 기본값</string>
+    <string name="satellite_sum">이는 앱의 모든 맵에 적용됩니다. 이 기능은 프리미엄 기능이며, 빙 맵은 서버를 사용하는 데 필요한 요금을 부과합니다.</string>
+    <string name="privacy_policy_title">개인정보 보호정책 보기</string>
+    <string name="sign_up">등록</string>
+    <string name="distance">거리:</string>
+    <string name="failed_to_load_sessions">로드 실패</string>
+    <string name="failed_load_sessions_sum">저장된 세션이 애플리케이션 버전과 호환되지 않습니다.</string>
+    <string name="hill_finder">힐 파인더</string>
+    <string name="hill_finder_howto">그것이 어떻게 작동하는가: 지도 위에 점을 놓고, 그 뒤에 두 번째를 두세요. 그런 다음 표고 데이터가 있는 차트를 표시하는 경로가 생성됩니다.</string>
+    <string name="save_route_sum">경로 이름을 지정하십시오.</string>
+    <string name="save_route">경로 저장</string>
+    <string name="saved_success">nbsp;</string>
+    <string name="saved_as">다음과 같이 저장:</string>
+    <string name="did_not_save">저장하지 않음</string>
+    <string name="no_route">저장할 라우트가 없음</string>
+    <string name="failed_route_load">로드 실패</string>
+    <string name="unknown_error">예기치 않은 오류 로드 라우트</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>파리 V3</item>
         <item>파리 새츠</item>
         <item>베어 젠6</item>
+        <item>베어 젠5 (빈티지)</item>
         <item>발키리</item>
         <item>칼리버 2</item>
+        <item>칼리버 3</item>
         <item>로자 2020</item>
         <item>랜달스</item>
         <item>사이드와인더</item>
         <item>지진아</item>
         <item>비소</item>
+        <item>발키리</item>
+        <item>로구스</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>9개의 발스</item>
         <item>PHAT 보이즈</item>
         <item>4대 대통령</item>
-        <item>자유로운 자유</item>
         <item>자극</item>
         <item>건너뜀</item>
         <item>Fat Frees</item>
         <item>케겔</item>
         <item>재규어</item>
+        <item>하르롯</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Mob Grip</item>
         <item>하드코어</item>
         <item>사악한</item>
+        <item>다크 매터</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>콘 SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>콘 SHR 95a</item>
+        <item>Barrel Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Barrel Krank 84a</item>
+        <item>Cone Krank 87a</item>
+        <item>Cone Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">

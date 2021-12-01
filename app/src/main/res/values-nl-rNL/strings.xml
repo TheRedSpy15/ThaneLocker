@@ -143,6 +143,48 @@
     <string name="board_needs_name">De raad heeft op zijn minst een naam nodig</string>
     <string name="elevation">Hoogte</string>
     <string name="free_limit_reached">Vrije limiet bereikt. Klik om te upgraden</string>
+    <string name="basement_blog_title">Kelder skate blog</string>
+    <string name="distance_0_00_miles">Afstand: 0.00 Miles</string>
+    <string name="click_on_two_points_on_the_map_to_draw_a_route_and_show_elevation_data">Klik op twee punten op de kaart om een route te tekenen en hoogtegegevens te tonen</string>
+    <string name="failed_image">Laden van afbeelding is mislukt</string>
+    <string name="hold_up">Wacht even.</string>
+    <string name="downhill_title">Downhill Rider</string>
+    <string name="downhill_sum">Hoogte-gegevens afbeelden. Gebruikt een lage nauwkeurigheid, tenzij de premie wordt aangeschaft als gevolg van hogere serverkosten</string>
+    <string name="reduce_title">Grafieken reduceren (experimenteel)</string>
+    <string name="reduce_sum">Vereenvoudigt de hoeveelheid gegevens voor langere sessies</string>
+    <string name="no_save_session">Niet opgeslagen</string>
+    <string name="no_elevation_failed">Kon de hoogte niet krijgen</string>
+    <string name="achievements_label">Resultaten</string>
+    <string name="board_creator_label">Maker van boord</string>
+    <string name="welcome">Welkom!</string>
+    <string name="page_two_title">Starten uit</string>
+    <string name="page_two_sum">Terwijl u informatie over uw quiver van planken in de app kunt invoeren, de belangrijkste functie van de app is het opnemen van sessies</string>
+    <string name="page_three_title">Profielen</string>
+    <string name="page_three_sum">Als u klaar bent met het opnemen van een sessie, begint uw profielpagina om veel meer gegevens af te beelden. Uiteindelijk zult u in staat zijn om uw vrienden profielen te zien ook</string>
+    <string name="page_four_title">Zoek Hills!</string>
+    <string name="page_four_sum">Voor degenen die houden van downhill stijl rijden, is er een sectie veel als findhills.com in de app. Dit is een abonnement op basis van functie, zoals findhills.com, maar deze app is nog steeds onderhouden en kost minder om te gebruiken</string>
+    <string name="premium_required">Premie vereist</string>
+    <string name="premium_sum">Voor deze sectie is een zeer goedkoop abonnement nodig om de kosten van de server te dekken. Samenvoegen verwijdert advertenties, ook onvergrendelingen onbeperkt boards en sessies</string>
+    <string name="no_connection_title">Geen verbinding</string>
+    <string name="no_connection_sum">Deze sectie vereist internet om toegang te krijgen tot hoogtegegevens van de server</string>
+    <string name="convert_kph_title">Converteren naar kilometers per uur</string>
+    <string name="satellite_title">Standaard naar satellietkaart</string>
+    <string name="satellite_sum">Dit geldt voor alle kaarten in de app. Dit is een premium functie, Bing kaarten kosten een vergoeding voor het gebruik van de servers</string>
+    <string name="privacy_policy_title">Privacybeleid bekijken</string>
+    <string name="sign_up">Aanmelden</string>
+    <string name="distance">Afstand:</string>
+    <string name="failed_to_load_sessions">Laden mislukt</string>
+    <string name="failed_load_sessions_sum">Opgeslagen sessies zijn niet compatibel met appversie</string>
+    <string name="hill_finder">Bergzoeker</string>
+    <string name="hill_finder_howto">Hoe het werkt: plaats een punt op de kaart, gevolgd door een seconde. Dan wordt er een route gegenereerd met een grafiek met hoogtegegevens</string>
+    <string name="save_route_sum">Geef uw route een naam</string>
+    <string name="save_route">Route opslaan</string>
+    <string name="saved_success">Opgeslagen!</string>
+    <string name="saved_as">Opgeslagen als:</string>
+    <string name="did_not_save">Niet opgeslagen</string>
+    <string name="no_route">Geen route om op te slaan</string>
+    <string name="failed_route_load">Laden mislukt</string>
+    <string name="unknown_error">Onverwachte laadroute voor fouten</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -150,13 +192,17 @@
         <item>Parijs V3</item>
         <item>Parijse Savants</item>
         <item>Beer Gen6</item>
+        <item>Beer Gen5 (vintage)</item>
         <item>Valkyries</item>
         <item>Kaliber 2</item>
+        <item>Kaliber 3</item>
         <item>Roja 2020</item>
         <item>Randalls</item>
         <item>Zijwikkelaars</item>
         <item>Seismische Aeon</item>
         <item>Arsenalen</item>
+        <item>Valkyries</item>
+        <item>Schurken</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -181,12 +227,12 @@
         <item>Negen ballen</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>Vetvrij</item>
         <item>Stimulus</item>
         <item>Skiffs</item>
         <item>Vette Frees</item>
         <item>Kegels</item>
         <item>Caguama</item>
+        <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -207,6 +253,7 @@
         <item>Grijpgreep</item>
         <item>Hardcore</item>
         <item>Vicieuze</item>
+        <item>Donkere materie</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -275,6 +322,13 @@
         <item>Kegel SHR 86a</item>
         <item>Kegel SHR 88a</item>
         <item>Kegel SHR 95a</item>
+        <item>Vat Krank 87a</item>
+        <item>Barrel Krank 90a</item>
+        <item>Barrel Krank 83a</item>
+        <item>Barrel Krank 96a</item>
+        <item>Vat Krank 84a</item>
+        <item>Kegel Krank 87a</item>
+        <item>Kegel Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
