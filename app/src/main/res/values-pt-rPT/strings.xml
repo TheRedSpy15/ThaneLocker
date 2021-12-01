@@ -175,16 +175,16 @@
     <string name="distance">Distância:</string>
     <string name="failed_to_load_sessions">Falha ao carregar</string>
     <string name="failed_load_sessions_sum">Sessões salvas são incompatíveis com a versão do app</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Finder de Hill</string>
+    <string name="hill_finder_howto">Como funciona: coloque um ponto no mapa, seguido por um segundo. Em seguida, uma rota será gerada exibindo um gráfico com dados de elevação</string>
+    <string name="save_route_sum">Dê um nome à sua rota</string>
+    <string name="save_route">Salvar Rota</string>
+    <string name="saved_success">Salvo!</string>
+    <string name="saved_as">Salvo como:</string>
+    <string name="did_not_save">Não salvou</string>
+    <string name="no_route">Sem rota para salvar</string>
+    <string name="failed_route_load">Falha ao carregar</string>
+    <string name="unknown_error">Rota de carregamento de erro inesperado</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
