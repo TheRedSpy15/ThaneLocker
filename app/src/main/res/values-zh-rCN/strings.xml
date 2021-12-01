@@ -175,16 +175,16 @@
     <string name="distance">距离 :</string>
     <string name="failed_to_load_sessions">未能装入</string>
     <string name="failed_load_sessions_sum">保存的会话与应用程序版本不兼容</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">希尔查找器</string>
+    <string name="hill_finder_howto">它如何运作: 在地图上放置一个点，然后是第二个。 然后将生成显示具有海拔数据的图表的路线</string>
+    <string name="save_route_sum">给你的路一个名字</string>
+    <string name="save_route">保存检修路线</string>
+    <string name="saved_success">救命啊</string>
+    <string name="saved_as">另存为:</string>
+    <string name="did_not_save">未保存</string>
+    <string name="no_route">没有要保存的路由</string>
+    <string name="failed_route_load">未能装入</string>
+    <string name="unknown_error">装入路由时发生意外错误</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
