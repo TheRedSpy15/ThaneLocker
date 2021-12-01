@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">개인정보 보호정책 보기</string>
     <string name="sign_up">등록</string>
     <string name="distance">거리:</string>
+    <string name="failed_to_load_sessions">로드 실패</string>
+    <string name="failed_load_sessions_sum">저장된 세션이 애플리케이션 버전과 호환되지 않습니다.</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,17 +192,17 @@
         <item>파리 V3</item>
         <item>파리 새츠</item>
         <item>베어 젠6</item>
-        <item>Bear Gen5 (vintage)</item>
-        <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
-        <item>Valkyries</item>
-        <item>Rogues</item>
+        <item>베어 젠5 (빈티지)</item>
+        <item>발키리</item>
+        <item>칼리버 2</item>
+        <item>칼리버 3</item>
+        <item>로자 2020</item>
+        <item>랜달스</item>
+        <item>사이드와인더</item>
+        <item>지진아</item>
+        <item>비소</item>
+        <item>발키리</item>
+        <item>로구스</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -215,12 +227,12 @@
         <item>9개의 발스</item>
         <item>PHAT 보이즈</item>
         <item>4대 대통령</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
+        <item>자극</item>
+        <item>건너뜀</item>
         <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
-        <item>Harlot</item>
+        <item>케겔</item>
+        <item>재규어</item>
+        <item>하르롯</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -241,7 +253,7 @@
         <item>Mob Grip</item>
         <item>하드코어</item>
         <item>사악한</item>
-        <item>Dark Matter</item>
+        <item>다크 매터</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
