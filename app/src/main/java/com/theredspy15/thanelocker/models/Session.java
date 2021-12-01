@@ -16,6 +16,7 @@ import com.example.longboardlife.R;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
@@ -33,20 +34,20 @@ public class Session implements Serializable { // TODO: parcelable in the future
     private static final long serialVersionUID = 1234568L;
     public static final double xpValue = 1.1;
 
-    private ArrayList<Integer> board_ids = new ArrayList<>();
-    private int id = 0;
-    private int user_id = Profile.localProfile.getId();
-    @Nullable private String notes = ""; // TODO: implement this!
-    private String time_start = "";
-    private String time_end = "";
-    private long start_millis = 0;
-    private long end_millis = 0;
-    private String date = "";
-    private String name = ""; // location + date
-    private final ArrayList<SessionLocationPoint> locations = new ArrayList<>();
-    private ArrayList<String> tags = new ArrayList<>();
-    private ArrayList<Float> elevationPoints = new ArrayList<>();
-    private boolean isPublished = false;
+    @SerializedName("boards") private ArrayList<Integer> board_ids = new ArrayList<>();
+    @SerializedName("id") private int id = 0;
+    @SerializedName("user") private int user_id = Profile.localProfile.getId();
+    @SerializedName("notes") @Nullable private String notes = ""; // TODO: implement this!
+    @SerializedName("start") private String time_start = "";
+    @SerializedName("end") private String time_end = "";
+    @SerializedName("startunix") private long start_millis = 0;
+    @SerializedName("endunix") private long end_millis = 0;
+    @SerializedName("date") private String date = "";
+    @SerializedName("name") private String name = ""; // location + date
+    @SerializedName("locations") private final ArrayList<SessionLocationPoint> locations = new ArrayList<>();
+    @SerializedName("tags") private ArrayList<String> tags = new ArrayList<>();
+    @SerializedName("elevations") private ArrayList<Float> elevationPoints = new ArrayList<>();
+    @SerializedName("published") private boolean isPublished = false;
 
     public static HashMap<Integer,Session> savedSessions = new HashMap<>();
     public static ArrayList<Integer> savedSessionIds = new ArrayList<>();
@@ -77,8 +78,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
         } catch (JsonSyntaxException | IllegalStateException e) {
             MotionToast.Companion.createColorToast(
                     activity,
-                    "Failed to load",
-                    "Saved sessions are incompatible with app version",
+                    activity.getString(R.string.failed_to_load_sessions),
+                    activity.getString(R.string.failed_load_sessions_sum),
                     MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -104,8 +105,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public static String convertTime(Session session, long millis) {
         long start = session.getLocations().get(0).getTimeStamp();
-        long current = millis;
-        long diff = current - start;
+        long diff = millis - start;
 
         @SuppressLint("DefaultLocale") String time = String.format("%02d:%02d",
                 TimeUnit.MILLISECONDS.toMinutes(diff) -

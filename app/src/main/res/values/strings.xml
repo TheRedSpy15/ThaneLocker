@@ -172,6 +172,8 @@
     <string name="privacy_policy_title">View Privacy Policy</string>
     <string name="sign_up">Sign up</string>
     <string name="distance">Distance:</string>
+    <string name="failed_to_load_sessions">Failed to load</string>
+    <string name="failed_load_sessions_sum">Saved sessions are incompatible with app version</string>
     <!-- Strings used for fragments for navigation -->
 
     <!-- Built-in truck choices -->

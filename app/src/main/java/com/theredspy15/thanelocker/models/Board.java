@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
@@ -17,29 +18,30 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Board implements Serializable {
     private static final long serialVersionUID = 1234567L;
-    private int id = 0;
-    private boolean advanceMode = false;
-    private int user_id = Profile.localProfile.getId();
-    @NonNull private String name = "board";
-    @Nullable private byte[] image;
-    @Nullable private String description = "No Description";
-    private String trucks = "Generic Trucks";
-    private int truckWidth = 180; // TODO
-    private String footStop = "None"; // i.e type of footstop if present
-    @Nullable private String deck="Generic Deck";
-    private byte rearAngle=50;
-    private byte frontAngle=50;
-    private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
-    private String bd_bushings="Stock Bushings";
-    private String wheels = "Generic Wheels";
-    private String bearings="Standard ABEC Bearings";
-    private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
-    private String riserHt="1/16";
-    private ArrayList<String> tags = new ArrayList<>();
-    private String gripTp="Standard Griptape";
-    private ArrayList<Session> sessions;
-    private boolean forSale = false;
-    private double cost; // always USD
+
+    @SerializedName("id") private int id = 0;
+    @SerializedName("advance") private boolean advanceMode = false;
+    @SerializedName("user") private int user_id = Profile.localProfile.getId();
+    @SerializedName("name") @NonNull private String name = "board";
+    @SerializedName("image") @Nullable private byte[] image;
+    @SerializedName("description") @Nullable private String description = "No Description";
+    @SerializedName("trucks") private String trucks = "Generic Trucks";
+    @SerializedName("truckW") private int truckWidth = 180; // TODO
+    @SerializedName("footstop") private String footStop = "None"; // i.e type of footstop if present
+    @SerializedName("deck") @Nullable private String deck="Generic Deck";
+    @SerializedName("rAngle") private byte rearAngle=50;
+    @SerializedName("fAngle") private byte frontAngle=50;
+    @SerializedName("rdBushing") private String rd_bushing="Stock Bushings"; // example format: Riptide 88a WPS Barrel
+    @SerializedName("bdBushing") private String bd_bushings="Stock Bushings";
+    @SerializedName("wheels") private String wheels = "Generic Wheels";
+    @SerializedName("bearings") private String bearings="Standard ABEC Bearings";
+    @SerializedName("pivot") private String pivot="Stock Pivot Cup"; // Brand, duro (if applicable)
+    @SerializedName("riser") private String riserHt="1/16";
+    @SerializedName("tags") private ArrayList<String> tags = new ArrayList<>();
+    @SerializedName("grip") private String gripTp="Standard Griptape";
+    @SerializedName("sessions") private ArrayList<Session> sessions;
+    @SerializedName("selling") private boolean forSale = false;
+    @SerializedName("cost") private double cost; // always USD
 
     public static HashMap<Integer,Board> savedBoards = new HashMap<>();
     public static ArrayList<Integer> savedBoardIds = new ArrayList<>();

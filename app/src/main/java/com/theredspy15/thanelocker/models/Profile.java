@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.App;
@@ -17,19 +18,19 @@ import java.util.ArrayList;
 public class Profile implements Serializable {
     private static final long serialVersionUID = 1234570L;
     public static Profile localProfile;
-    private int id = 0;
-    private int level = 1;
-    private int level_xp = 0; // 0-100 for all levels
-    @Nullable private String name;
-    private int age = 0;
-    @Nullable private String description;
-    @Nullable private String state;
-    @Nullable private String country;
-    private ArrayList<Integer> friend_ids = new ArrayList<>();
-    private ArrayList<Achievement> achievements = new ArrayList<>();
-    @Nullable private byte[] image;
-    private String passwordHash;
-    private String email;
+    @SerializedName("id") private int id = 0;
+    @SerializedName("level") private int level = 1;
+    @SerializedName("xp") private int level_xp = 0; // 0-100 for all levels
+    @SerializedName("name") @Nullable private String name;
+    @SerializedName("age") private int age = 0;
+    @SerializedName("description") @Nullable private String description;
+    @SerializedName("state") @Nullable private String state;
+    @SerializedName("country") @Nullable private String country;
+    @SerializedName("friends") private ArrayList<Integer> friend_ids = new ArrayList<>();
+    @SerializedName("achievements") private ArrayList<Achievement> achievements = new ArrayList<>();
+    @SerializedName("image") @Nullable private byte[] image;
+    @SerializedName("password") private String passwordHash;
+    @SerializedName("email") private String email;
 
     public Profile() {
         //int randId = ThreadLocalRandom.current().nextInt();
