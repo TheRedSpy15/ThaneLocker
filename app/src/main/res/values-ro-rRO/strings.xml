@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Vizualizați Politica de confidențialitate</string>
     <string name="sign_up">Înscrie-te!</string>
     <string name="distance">Distanța:</string>
+    <string name="failed_to_load_sessions">Nu s-a încărcat</string>
+    <string name="failed_load_sessions_sum">Sesiunile salvate sunt incompatibile cu versiunea app</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,15 +192,15 @@
         <item>Paris V3</item>
         <item>Savante de la Paris</item>
         <item>Urs Gen6</item>
-        <item>Bear Gen5 (vintage)</item>
+        <item>Urs Gen5 (vintage)</item>
         <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
+        <item>Calibru 2</item>
+        <item>Calibru 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
         <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Eeon seismic</item>
+        <item>Arsen</item>
         <item>Valkyries</item>
         <item>Rogues</item>
     </string-array>
@@ -215,9 +227,9 @@
         <item>Nouă Balls</item>
         <item>PHAT BOYZ</item>
         <item>4Preşedinte</item>
-        <item>Stimulus</item>
+        <item>Stimul</item>
         <item>Skiffs</item>
-        <item>Fat Frees</item>
+        <item>Frees de grăsime</item>
         <item>Kegels</item>
         <item>Caguama</item>
         <item>Harlot</item>
@@ -241,7 +253,7 @@
         <item>Prindere în grup</item>
         <item>Hardcore</item>
         <item>Vicios</item>
-        <item>Dark Matter</item>
+        <item>Materie întunecată</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -310,13 +322,13 @@
         <item>Cone SHR 86a</item>
         <item>Cone SHR 88a</item>
         <item>Cone SHR 95a</item>
-        <item>Barrel Krank 87a</item>
-        <item>Barrel Krank 90a</item>
-        <item>Barrel Krank 83a</item>
-        <item>Barrel Krank 96a</item>
-        <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
-        <item>Cone Krank 93a</item>
+        <item>Baril Krank 87a</item>
+        <item>Baril Krank 90a</item>
+        <item>Baril Krank 83a</item>
+        <item>Baril Krank 96a</item>
+        <item>Butoi Krank 84a</item>
+        <item>Con Krank 87a</item>
+        <item>Con Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
