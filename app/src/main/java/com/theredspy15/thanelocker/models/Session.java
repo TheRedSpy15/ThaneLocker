@@ -60,6 +60,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
     }
 
     public static void load(Activity activity) {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
         Gson gson = new Gson();
 
         try {
@@ -71,10 +72,8 @@ public class Session implements Serializable { // TODO: parcelable in the future
             if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
             else savedSessionIds = new ArrayList<>();
 
-            FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
-            if (json != null) {
-                crashlytics.setCustomKey("sessions_json", json); // TODO ignore image
-            }
+            // extra crashlytics keys
+            crashlytics.setCustomKey("session_count",savedSessionIds.size());
         } catch (JsonSyntaxException | IllegalStateException e) {
             MotionToast.Companion.createColorToast(
                     activity,

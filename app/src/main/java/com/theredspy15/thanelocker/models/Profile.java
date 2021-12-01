@@ -41,16 +41,23 @@ public class Profile implements Serializable {
     }
 
     public static void load() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("localProfile", null);
-        if (json != null) localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
-        else localProfile = new Profile();
-
-        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
         if (json != null) {
             crashlytics.setCustomKey("profile_json", json); // TODO ignore image
+            localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
+        } else localProfile = new Profile();
+
+        // extra crashlytics keys
+        if (localProfile.name != null) {
+            crashlytics.setCustomKey("user_name:", localProfile.name);
         }
+        crashlytics.setCustomKey("premium_user", MainActivity.preferences.getBoolean("subscribe",false));
+        crashlytics.setCustomKey("user_id", localProfile.getId());
+        crashlytics.setCustomKey("user_level",localProfile.level);
+        crashlytics.setCustomKey("user_xp", localProfile.getLevel_xp());
     }
 
     public static void save() {

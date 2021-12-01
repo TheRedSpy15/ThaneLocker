@@ -53,6 +53,7 @@ public class Board implements Serializable {
     }
 
     public static void load() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("savedBoards", null);
@@ -63,10 +64,8 @@ public class Board implements Serializable {
         if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
         else savedBoardIds = new ArrayList<>();
 
-        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
-        if (json != null) {
-            crashlytics.setCustomKey("boards_json", json); // TODO ignore image
-        }
+        // extra crashlytics keys
+        crashlytics.setCustomKey("board_count",savedBoardIds.size());
     }
 
     public static void save() {
