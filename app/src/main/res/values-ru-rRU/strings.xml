@@ -175,16 +175,16 @@
     <string name="distance">Расстояние:</string>
     <string name="failed_to_load_sessions">Не удалось загрузить</string>
     <string name="failed_load_sessions_sum">Сохраненные сеансы несовместимы с версией приложения</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Поиск по хи</string>
+    <string name="hill_finder_howto">Как это работает: разместите точку на карте, а затем вторую. Затем будет сгенерирован маршрут с отображением диаграммы с данными об возвышении</string>
+    <string name="save_route_sum">Укажите имя маршрута</string>
+    <string name="save_route">Сохранить маршрут</string>
+    <string name="saved_success">Спасено!</string>
+    <string name="saved_as">Сохранено как:</string>
+    <string name="did_not_save">Не удалось сохранить</string>
+    <string name="no_route">Нет маршрута для сохранения</string>
+    <string name="failed_route_load">Не удалось загрузить</string>
+    <string name="unknown_error">Непредвиденная ошибка при загрузке маршрута</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
