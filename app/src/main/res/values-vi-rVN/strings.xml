@@ -175,16 +175,16 @@
     <string name="distance">Khoảng cách:</string>
     <string name="failed_to_load_sessions">Không thể tải</string>
     <string name="failed_load_sessions_sum">Phiên đã lưu không tương thích với phiên bản ứng dụng</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Trình tìm kiếm đồi</string>
+    <string name="hill_finder_howto">Nó hoạt động như thế nào: đặt một điểm trên bản đồ, tiếp theo là một giây. Sau đó, một định tuyến sẽ được tạo biểu đô ̀ có dư ̃ liệu nâng cao</string>
+    <string name="save_route_sum">Hãy cho biết tên của bạn</string>
+    <string name="save_route">Lưu lộ trình</string>
+    <string name="saved_success">Cứu!</string>
+    <string name="saved_as">Đã lưu như:</string>
+    <string name="did_not_save">Không lưu</string>
+    <string name="no_route">Không có định tuyến để lưu</string>
+    <string name="failed_route_load">Không thể tải</string>
+    <string name="unknown_error">Ðịnh tuyến tải lỗi ngoài dự</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
