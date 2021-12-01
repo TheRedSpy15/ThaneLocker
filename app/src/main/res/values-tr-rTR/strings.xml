@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Gizlilik İlkesini Görüntüle</string>
     <string name="sign_up">Oturum açın</string>
     <string name="distance">Mesafe:</string>
+    <string name="failed_to_load_sessions">Yüklenemedi</string>
+    <string name="failed_load_sessions_sum">Kaydedilen oturumlar uygulama sürümüyle uyumlu değil</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -182,13 +194,13 @@
         <item>Bear Gen6</item>
         <item>Bear Gen5 (vintage)</item>
         <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
+        <item>Kalibre 2</item>
+        <item>Kalibre 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Kaldırıcılar</item>
+        <item>Sismik Aeon</item>
+        <item>Arsenal</item>
         <item>Valkyries</item>
         <item>Rogues</item>
     </string-array>
@@ -215,11 +227,11 @@
         <item>Dokuz Top</item>
         <item>PHAT BOYZ</item>
         <item>4Başkan</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
+        <item>Uyarıcılar</item>
+        <item>Skips</item>
+        <item>Şişko Frees</item>
+        <item>Kegeller</item>
+        <item>Caguyama.</item>
         <item>Harlot</item>
     </string-array>
     <!-- Built-in bearing choices -->
@@ -241,7 +253,7 @@
         <item>Mob Kavrama</item>
         <item>Hardcore</item>
         <item>Kısır</item>
-        <item>Dark Matter</item>
+        <item>Koyu Madde</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -310,13 +322,13 @@
         <item>Koni SHR 86a</item>
         <item>Koni SHR 88a</item>
         <item>Koni SHR 95a</item>
-        <item>Barrel Krank 87a</item>
-        <item>Barrel Krank 90a</item>
-        <item>Barrel Krank 83a</item>
-        <item>Barrel Krank 96a</item>
-        <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
-        <item>Cone Krank 93a</item>
+        <item>Varil Krank 87a</item>
+        <item>Varil Krank 90a</item>
+        <item>Varil Krank 83a</item>
+        <item>Varil Krank 96a</item>
+        <item>Varil Krank 84a</item>
+        <item>Koni Krank 87a</item>
+        <item>Koni Krank 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
