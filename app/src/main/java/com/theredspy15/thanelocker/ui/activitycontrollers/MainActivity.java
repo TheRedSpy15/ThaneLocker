@@ -17,6 +17,7 @@ import com.example.longboardlife.BuildConfig;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         App.updateTheme();
+
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.setCustomKey("mode",BuildConfig.BUILD_TYPE);
+        crashlytics.setCustomKey("version_code",BuildConfig.VERSION_CODE);
+        crashlytics.setCustomKey("version_name",BuildConfig.VERSION_NAME);
 
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
