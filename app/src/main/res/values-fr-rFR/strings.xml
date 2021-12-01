@@ -175,16 +175,16 @@
     <string name="distance">Distance:</string>
     <string name="failed_to_load_sessions">Echec du chargement</string>
     <string name="failed_load_sessions_sum">Les sessions sauvegardées sont incompatibles avec la version de l\'application</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Finder de Hill</string>
+    <string name="hill_finder_howto">Comment ça marche: placez un point sur la carte, suivi d\'une seconde. Ensuite, une route sera générée affichant un graphique avec des données d\'élévation.</string>
+    <string name="save_route_sum">Donnez un nom à votre route</string>
+    <string name="save_route">Enregistrer la route</string>
+    <string name="saved_success">Sauvé !</string>
+    <string name="saved_as">Enregistré comme:</string>
+    <string name="did_not_save">N\'a pas été sauvegardé</string>
+    <string name="no_route">Aucune route à sauvegarder</string>
+    <string name="failed_route_load">Echec du chargement</string>
+    <string name="unknown_error">Erreur inattendue lors du chargement de la route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
