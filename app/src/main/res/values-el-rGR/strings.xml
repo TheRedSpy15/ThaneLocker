@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Προβολή πολιτικής ιδιωτικότητας</string>
     <string name="sign_up">Υπογραφή:</string>
     <string name="distance">Απόσταση:</string>
+    <string name="failed_to_load_sessions">Αποτυχία φόρτωσης.</string>
+    <string name="failed_load_sessions_sum">Οι αποθηκευμένες συνεδρίες δεν είναι συμβατές με την έκδοση app</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,17 +192,17 @@
         <item>Παρίσι V3</item>
         <item>Savants του Παρισιού</item>
         <item>Μπέαρ Gen6</item>
-        <item>Bear Gen5 (vintage)</item>
-        <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
-        <item>Roja 2020s</item>
-        <item>Randalls</item>
-        <item>Sidewinders</item>
+        <item>Αρκούδα Gen5 (vintage)</item>
+        <item>Valkyries,</item>
+        <item>Διαμέτρημα 2</item>
+        <item>Διαμέτρημα 3</item>
+        <item>Ρόγια 2020</item>
+        <item>Οι Randalls</item>
+        <item>Sidewinders:</item>
         <item>Seismic Aeon</item>
-        <item>Arsenals</item>
-        <item>Valkyries</item>
-        <item>Rogues</item>
+        <item>\' Αρσενς</item>
+        <item>Valkyries,</item>
+        <item>Ο Rogues</item>
     </string-array>
     <!-- Built-in theme choices -->
     <string-array name="themes">
@@ -216,11 +228,11 @@
         <item>PHAT BOYZ</item>
         <item>4 Πρόεδρος</item>
         <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
-        <item>Kegels</item>
-        <item>Caguama</item>
-        <item>Harlot</item>
+        <item>Σκι.</item>
+        <item>Λίπος Frees</item>
+        <item>Kegels.</item>
+        <item>Caguama!</item>
+        <item>-Πολύ.</item>
     </string-array>
     <!-- Built-in bearing choices -->
     <string-array name="bearings">
@@ -241,7 +253,7 @@
         <item>Μοβ Grip</item>
         <item>Ο Hardcore</item>
         <item>Vicious.</item>
-        <item>Dark Matter</item>
+        <item>Σκοτεινή ύλη.</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -314,7 +326,7 @@
         <item>Barrel Krank 90a</item>
         <item>Barrel Krank 83a</item>
         <item>Barrel Krank 96a</item>
-        <item>Barrel Krank 84a</item>
+        <item>Βαρέλι Krank 84a</item>
         <item>Cone Krank 87a</item>
         <item>Cone Krank 93a</item>
     </string-array>
