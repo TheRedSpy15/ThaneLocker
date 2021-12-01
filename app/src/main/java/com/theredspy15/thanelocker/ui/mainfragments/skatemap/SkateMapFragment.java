@@ -151,8 +151,8 @@ public class SkateMapFragment extends Fragment {
 
     public void help(View view) {
         MaterialDialog mDialog = new MaterialDialog.Builder(requireActivity())
-                .setTitle("Hill Finder")
-                .setMessage("How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data")
+                .setTitle(getString(R.string.hill_finder))
+                .setMessage(getString(R.string.hill_finder_howto))
                 .setAnimation("78890-finding-route.json")
                 .setCancelable(true)
                 .setNegativeButton(getString(R.string.cancel), (dialogInterface, which) -> dialogInterface.dismiss())
@@ -186,11 +186,11 @@ public class SkateMapFragment extends Fragment {
             EditText editText = new EditText(requireContext());
 
             AlertDialog dialog = new AlertDialog.Builder(requireContext())
-                    .setTitle("Title")
-                    .setMessage("Message")
+                    .setTitle(R.string.save_route)
+                    .setMessage(R.string.save_route_sum)
                     .setView(editText)
                     .setCancelable(false)
-                    .setPositiveButton("OK", (dialogInterface, i) -> {
+                    .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> {
                         String input = editText.getText().toString();
                         route.setName(input);
                         route.setPoints(points);
@@ -200,22 +200,22 @@ public class SkateMapFragment extends Fragment {
 
                         MotionToast.Companion.createColorToast(
                                 requireActivity(),
-                                "Saved!",
-                                "Saved as:"+" "+route.getName(),
+                                getString(R.string.saved_success),
+                                getString(R.string.saved_as)+" "+route.getName(),
                                 MotionToastStyle.SUCCESS,
                                 MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION,
                                 ResourcesCompat.getFont(requireContext(), R.font.roboto)
                         );
                     })
-                    .setNegativeButton("Cancel", null)
+                    .setNegativeButton(getString(R.string.cancel), null)
                     .create();
             dialog.show();
         } else {
             MotionToast.Companion.createColorToast(
                     requireActivity(),
-                    "Did not save",
-                    "No route to save",
+                    getString(R.string.did_not_save),
+                    getString(R.string.no_route),
                     MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -254,8 +254,8 @@ public class SkateMapFragment extends Fragment {
             } else {
                 MotionToast.Companion.createColorToast(
                         requireActivity(),
-                        "Failed to load",
-                        "Unexpected error loading route",
+                        getString(R.string.failed_route_load),
+                        getString(R.string.unknown_error),
                         MotionToastStyle.ERROR,
                         MotionToast.GRAVITY_BOTTOM,
                         MotionToast.LONG_DURATION,
