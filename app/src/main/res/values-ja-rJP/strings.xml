@@ -175,16 +175,16 @@
     <string name="distance">距離:</string>
     <string name="failed_to_load_sessions">ロードの失敗</string>
     <string name="failed_load_sessions_sum">保存済みセッションはアプリケーション・バージョンと非互換</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">ヒル・ファインダー</string>
+    <string name="hill_finder_howto">動作方法 : マップ上に点を配置し、その後に 2 番目の点を配置します。 この場合、標高データを含むチャートを表示するルートが生成されます。</string>
+    <string name="save_route_sum">経路に名前を付けてください</string>
+    <string name="save_route">経路の保存</string>
+    <string name="saved_success">セイド!</string>
+    <string name="saved_as">保存日:</string>
+    <string name="did_not_save">保存しない</string>
+    <string name="no_route">保存する経路がありませ</string>
+    <string name="failed_route_load">ロードの失敗</string>
+    <string name="unknown_error">経路のロード時の予期</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
