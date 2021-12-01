@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -61,6 +62,11 @@ public class Board implements Serializable {
         json = MainActivity.preferences.getString("savedBoardIds", null);
         if (json != null) savedBoardIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
         else savedBoardIds = new ArrayList<>();
+
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        if (json != null) {
+            crashlytics.setCustomKey("boards_json", json); // TODO ignore image
+        }
     }
 
     public static void save() {

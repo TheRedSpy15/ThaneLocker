@@ -5,6 +5,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -45,6 +46,11 @@ public class Profile implements Serializable {
         String json = MainActivity.preferences.getString("localProfile", null);
         if (json != null) localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
         else localProfile = new Profile();
+
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        if (json != null) {
+            crashlytics.setCustomKey("profile_json", json); // TODO ignore image
+        }
     }
 
     public static void save() {

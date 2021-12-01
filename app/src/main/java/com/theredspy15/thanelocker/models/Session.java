@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.example.longboardlife.R;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -69,6 +70,11 @@ public class Session implements Serializable { // TODO: parcelable in the future
             json = MainActivity.preferences.getString("savedSessionIds", null);
             if (json != null) savedSessionIds = gson.fromJson(json, new TypeToken<ArrayList<Integer>>() {}.getType());
             else savedSessionIds = new ArrayList<>();
+
+            FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+            if (json != null) {
+                crashlytics.setCustomKey("sessions_json", json); // TODO ignore image
+            }
         } catch (JsonSyntaxException | IllegalStateException e) {
             MotionToast.Companion.createColorToast(
                     activity,
