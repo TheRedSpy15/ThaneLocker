@@ -423,9 +423,11 @@ public class SkateMapFragment extends Fragment {
                     GeoPoint selectedLocation = road.mRouteHigh.get((int) e.getX());
                     marker[0].setPosition(selectedLocation);
                     map.getOverlays().add(marker[0]);
+                    mapController.setCenter(selectedLocation);
                 } else {
                     GeoPoint selectedLocation = road.mRouteHigh.get((int) e.getX());
                     marker[0].setPosition(selectedLocation);
+                    mapController.setCenter(selectedLocation);
                 }
                 map.postInvalidate();
             }

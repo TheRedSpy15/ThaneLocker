@@ -35,6 +35,8 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -485,6 +487,31 @@ public class SessionActivity extends AppCompatActivity {
             }
         });
 
+        // connecting chart values to map
+        final Marker[] marker = {null};
+        chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                if (marker[0] == null) {
+                    marker[0] = new Marker(map);
+                    GeoPoint selectedLocation = new GeoPoint(session.getLocations().get((int) e.getX()).getLatitude(),session.getLocations().get((int) e.getX()).getLongitude());
+                    marker[0].setPosition(selectedLocation);
+                    map.getOverlays().add(marker[0]);
+                    mapController.setCenter(selectedLocation);
+                } else {
+                    GeoPoint selectedLocation = new GeoPoint(session.getLocations().get((int) e.getX()).getLatitude(),session.getLocations().get((int) e.getX()).getLongitude());
+                    marker[0].setPosition(selectedLocation);
+                    mapController.setCenter(selectedLocation);
+                }
+                map.postInvalidate();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
+
         // set data
         chart.setData(data);
         chart.animateX(3000);
@@ -530,6 +557,31 @@ public class SessionActivity extends AppCompatActivity {
                         TimeUnit.MILLISECONDS.toSeconds(diff) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)));
                 return time;
+            }
+        });
+
+        // connecting chart values to map
+        final Marker[] marker = {null};
+        chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                if (marker[0] == null) {
+                    marker[0] = new Marker(map);
+                    GeoPoint selectedLocation = new GeoPoint(session.getLocations().get((int) e.getX()).getLatitude(),session.getLocations().get((int) e.getX()).getLongitude());
+                    marker[0].setPosition(selectedLocation);
+                    map.getOverlays().add(marker[0]);
+                    mapController.setCenter(selectedLocation);
+                } else {
+                    GeoPoint selectedLocation = new GeoPoint(session.getLocations().get((int) e.getX()).getLatitude(),session.getLocations().get((int) e.getX()).getLongitude());
+                    marker[0].setPosition(selectedLocation);
+                    mapController.setCenter(selectedLocation);
+                }
+                map.postInvalidate();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
             }
         });
 
