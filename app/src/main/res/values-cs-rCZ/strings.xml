@@ -176,15 +176,15 @@
     <string name="failed_to_load_sessions">Načtení se nezdařilo</string>
     <string name="failed_load_sessions_sum">Uložené relace jsou nekompatibilní s verzí aplikace</string>
     <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder_howto">Jak funguje: umístěte bod na mapu a za ní následuje druhý. Pak bude generována trasa zobrazující graf s elevacemi dat</string>
+    <string name="save_route_sum">Pojmenujte svou přenosovou cestu</string>
+    <string name="save_route">Uložit trasu</string>
+    <string name="saved_success">Zachráněni!</string>
+    <string name="saved_as">Uloženo jako:</string>
+    <string name="did_not_save">Neukládat</string>
+    <string name="no_route">Žádná trasa k uložení</string>
+    <string name="failed_route_load">Načtení se nezdařilo</string>
+    <string name="unknown_error">Neočekávaná chyba při načítání trasy</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
