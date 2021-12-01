@@ -173,6 +173,18 @@
     <string name="privacy_policy_title">Xem Chính sách Bảo mật</string>
     <string name="sign_up">Đăng ký</string>
     <string name="distance">Khoảng cách:</string>
+    <string name="failed_to_load_sessions">Không thể tải</string>
+    <string name="failed_load_sessions_sum">Phiên đã lưu không tương thích với phiên bản ứng dụng</string>
+    <string name="hill_finder">Hill Finder</string>
+    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
+    <string name="save_route_sum">Give your route a name</string>
+    <string name="save_route">Save Route</string>
+    <string name="saved_success">Saved!</string>
+    <string name="saved_as">Saved as:</string>
+    <string name="did_not_save">Did not save</string>
+    <string name="no_route">No route to save</string>
+    <string name="failed_route_load">Failed to load</string>
+    <string name="unknown_error">Unexpected error loading route</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
@@ -180,15 +192,15 @@
         <item>Paris V3</item>
         <item>Paris Savants</item>
         <item>Bear Gen6</item>
-        <item>Bear Gen5 (vintage)</item>
+        <item>Bear Gen5 (cổ điển)</item>
         <item>Valkyries</item>
-        <item>Caliber 2</item>
-        <item>Caliber 3</item>
+        <item>Cỡ 2</item>
+        <item>Cỡ nòng 3</item>
         <item>Roja 2020s</item>
         <item>Randalls</item>
-        <item>Sidewinders</item>
-        <item>Seismic Aeon</item>
-        <item>Arsenals</item>
+        <item>Kính sát lề</item>
+        <item>Địa chấn Aeon</item>
+        <item>Arsenal</item>
         <item>Valkyries</item>
         <item>Rogues</item>
     </string-array>
@@ -215,9 +227,9 @@
         <item>Chín quả bóng.</item>
         <item>PHAT BOYZ</item>
         <item>4President</item>
-        <item>Stimulus</item>
-        <item>Skiffs</item>
-        <item>Fat Frees</item>
+        <item>Kích thích</item>
+        <item>Thuyền trưởng</item>
+        <item>Chất béo</item>
         <item>Kegels</item>
         <item>Caguama</item>
         <item>Harlot</item>
@@ -241,7 +253,7 @@
         <item>Kìm kẹp đám đông</item>
         <item>Hardcore</item>
         <item>Luẩn quẩn</item>
-        <item>Dark Matter</item>
+        <item>Vật chất tối</item>
     </string-array>
     <!-- Built-in foot stop choices -->
     <!-- Built-in tags choices -->
@@ -311,12 +323,12 @@
         <item>Hình nón SHR 88a</item>
         <item>Hình nón SHR 95A</item>
         <item>Barrel Krank 87a</item>
-        <item>Barrel Krank 90a</item>
+        <item>Nòng súng Krank 90a</item>
         <item>Barrel Krank 83a</item>
         <item>Barrel Krank 96a</item>
         <item>Barrel Krank 84a</item>
-        <item>Cone Krank 87a</item>
-        <item>Cone Krank 93a</item>
+        <item>Hình nón Krank 87a</item>
+        <item>Hình nón Kala 93a</item>
     </string-array>
     <!-- Built-in pivot choices -->
     <string-array name="pivots">
