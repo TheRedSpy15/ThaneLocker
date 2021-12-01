@@ -175,16 +175,16 @@
     <string name="distance">المسافة :</string>
     <string name="failed_to_load_sessions">فشل في التحميل</string>
     <string name="failed_load_sessions_sum">الجلسات التي تم حفظها غير متوافقة مع نسخة التطبيق</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">أداة ايجاد هيل</string>
+    <string name="hill_finder_howto">كيف تعمل : وضع نقطة على الخريطة ، تليها الثانية. ثم سيتم تكوين مسار التوجيه لعرض مخطط بياني مع بيانات الارتفاع</string>
+    <string name="save_route_sum">تحديد اسم المسار الخاص بك</string>
+    <string name="save_route">حفظ مسار توجيه</string>
+    <string name="saved_success">! أنقذت</string>
+    <string name="saved_as">حفظ على أنه :</string>
+    <string name="did_not_save">لم يتم الحفظ</string>
+    <string name="no_route">لا يوجد مسار توجيه للحفظ</string>
+    <string name="failed_route_load">فشل في التحميل</string>
+    <string name="unknown_error">خطأ غير متوقع أثناء تحميل مسار التوجيه</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
