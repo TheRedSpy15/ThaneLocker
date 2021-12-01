@@ -175,16 +175,16 @@
     <string name="distance">距離：</string>
     <string name="failed_to_load_sessions">無法載入</string>
     <string name="failed_load_sessions_sum">儲存的階段作業與應用程式版本不相容</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">希爾 - 芬德</string>
+    <string name="hill_finder_howto">它的運作方式：在地圖上放置一個點，接著是第二個。 然後將產生路徑，以顯示具有高度資料的圖表</string>
+    <string name="save_route_sum">給你的路線一個名字</string>
+    <string name="save_route">儲存路徑</string>
+    <string name="saved_success">得救了</string>
+    <string name="saved_as">另存為：</string>
+    <string name="did_not_save">未儲存</string>
+    <string name="no_route">沒有要儲存的路徑</string>
+    <string name="failed_route_load">無法載入</string>
+    <string name="unknown_error">載入路徑時發生異常錯誤</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
