@@ -175,16 +175,16 @@
     <string name="distance">Odległość:</string>
     <string name="failed_to_load_sessions">Ładowanie nie powiodło się</string>
     <string name="failed_load_sessions_sum">Zapisane sesje są niezgodne z wersją aplikacji</string>
-    <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder">Wyszukiwarka górska</string>
+    <string name="hill_finder_howto">Jak to działa: umieścić punkt na mapie, po którym następuje sekunda. Następnie zostanie wygenerowana trasa wyświetlający wykres z danymi o uniesienia.</string>
+    <string name="save_route_sum">Podaj nazwę trasy</string>
+    <string name="save_route">Zapisz trasę</string>
+    <string name="saved_success">Zapisano!</string>
+    <string name="saved_as">Zapisane jako:</string>
+    <string name="did_not_save">Nie zapisał</string>
+    <string name="no_route">Brak trasy do zapisania</string>
+    <string name="failed_route_load">Ładowanie nie powiodło się</string>
+    <string name="unknown_error">Nieoczekiwany błąd podczas ładowania trasy</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
