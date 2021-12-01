@@ -176,15 +176,15 @@
     <string name="failed_to_load_sessions">No se ha podido cargar</string>
     <string name="failed_load_sessions_sum">Las sesiones guardadas son incompatibles con la versión de aplicación</string>
     <string name="hill_finder">Hill Finder</string>
-    <string name="hill_finder_howto">How it works: place a point on the map, followed by a second. Then a route will be generated displaying a chart with elevation data</string>
-    <string name="save_route_sum">Give your route a name</string>
-    <string name="save_route">Save Route</string>
-    <string name="saved_success">Saved!</string>
-    <string name="saved_as">Saved as:</string>
-    <string name="did_not_save">Did not save</string>
-    <string name="no_route">No route to save</string>
-    <string name="failed_route_load">Failed to load</string>
-    <string name="unknown_error">Unexpected error loading route</string>
+    <string name="hill_finder_howto">Cómo funciona: colocar un punto en el mapa, seguido de un segundo. A continuación, se generará una ruta que mostrará un gráfico con datos de elevación</string>
+    <string name="save_route_sum">Dé un nombre a su ruta</string>
+    <string name="save_route">Guardar ruta</string>
+    <string name="saved_success">¡Guardado</string>
+    <string name="saved_as">Guardado como:</string>
+    <string name="did_not_save">No se ha guardado</string>
+    <string name="no_route">No hay ninguna ruta para guardar</string>
+    <string name="failed_route_load">No se ha podido cargar</string>
+    <string name="unknown_error">Ruta de carga de error inesperada</string>
     <!-- Strings used for fragments for navigation -->
     <!-- Built-in truck choices -->
     <string-array name="trucks">
