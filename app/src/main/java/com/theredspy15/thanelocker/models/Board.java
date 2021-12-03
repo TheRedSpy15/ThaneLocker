@@ -56,6 +56,7 @@ public class Board implements Serializable {
 
     public static void load() {
         FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("Loading boards");
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("savedBoards", null);
@@ -71,6 +72,9 @@ public class Board implements Serializable {
     }
 
     public static void save() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("saving boards");
+
         SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
         Gson gson = new Gson();
 

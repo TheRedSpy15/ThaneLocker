@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -96,6 +97,8 @@ public class App extends Application {
     }
 
     public static void cleanBoards() { // TODO: clean hashmap, duplicates
+        FirebaseCrashlytics.getInstance().log("cleaning boards - ids");
+
         ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
         for (int id : Board.savedBoardIds) {
             if (Board.savedBoards.get(id) == null) {
@@ -106,6 +109,8 @@ public class App extends Application {
     }
 
     public static void cleanSessions() { // TODO: clean hashmap, duplicates
+        FirebaseCrashlytics.getInstance().log("cleaning sessions - ids");
+
         ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
         for (int id : Session.savedSessionIds) {
             if (Session.savedSessions.get(id) == null) {
@@ -116,6 +121,8 @@ public class App extends Application {
     }
 
     public static void updateTheme() {
+        FirebaseCrashlytics.getInstance().log("updating theme");
+
         String selectedTheme = MainActivity.preferences.getString("theme","Auto");
         final String dark = getContext().getResources().getStringArray(R.array.themes)[2];
         final String light = getContext().getResources().getStringArray(R.array.themes)[1];

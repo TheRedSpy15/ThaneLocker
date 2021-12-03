@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSessionsBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -52,6 +53,8 @@ public class SessionsFragment extends Fragment {
 
         binding = FragmentSessionsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying sessions fragment");
 
         App.cleanSessions();
 
@@ -158,6 +161,7 @@ public class SessionsFragment extends Fragment {
                     .setMessage(getString(R.string.recording_disclaimer))
                     .setCancelable(false)
                     .setPositiveButton(getString(R.string.start), (dialogInterface, which) -> {
+                        FirebaseCrashlytics.getInstance().log("Starting recording");
                         PowerManager powerManager = (PowerManager) requireContext().getSystemService(Context.POWER_SERVICE);
                         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                                 "ThaneLocker::WakelockTag");
@@ -173,6 +177,8 @@ public class SessionsFragment extends Fragment {
     }
 
     public void stopSession(View view) {
+        FirebaseCrashlytics.getInstance().log("Stopping recording");
+
         stopService();
         loadRecordingButtonIndicator();
         if (!MainActivity.preferences.getBoolean("subscribe",false)) enableLimit();

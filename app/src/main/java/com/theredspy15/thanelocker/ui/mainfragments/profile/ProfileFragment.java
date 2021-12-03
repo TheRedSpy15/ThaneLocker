@@ -27,6 +27,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -51,6 +52,8 @@ public class ProfileFragment extends Fragment {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying profile fragment");
 
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);

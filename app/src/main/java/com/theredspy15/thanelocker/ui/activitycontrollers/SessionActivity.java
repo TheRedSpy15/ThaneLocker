@@ -44,6 +44,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.robinhood.ticker.TickerUtils;
 import com.robinhood.ticker.TickerView;
 import com.theredspy15.thanelocker.customviews.PriorityMapView;
@@ -87,6 +88,8 @@ public class SessionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session);
+
+        FirebaseCrashlytics.getInstance().log("opening session activity");
 
         // doesn't count as serializable like Board objects do
         session = Session.savedSessions.get(getIntent().getIntExtra("session_id", 0));
@@ -144,6 +147,8 @@ public class SessionActivity extends AppCompatActivity {
     }
 
     private void loadAdData() {
+        FirebaseCrashlytics.getInstance().log("Loading advertisement");
+
         String unitId;
         if (BuildConfig.DEBUG) {
             unitId = "ca-app-pub-3940256099942544/6300978111";

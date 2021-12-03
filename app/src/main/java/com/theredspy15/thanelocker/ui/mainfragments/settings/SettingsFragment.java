@@ -12,6 +12,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentSettingsBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 import com.theredspy15.thanelocker.utils.Purchasing;
 
@@ -24,6 +25,8 @@ public class SettingsFragment extends Fragment {
 
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying settings fragment");
 
         getChildFragmentManager().beginTransaction().replace(R.id.settingsLayout, new MyPreferenceFragment()).commit();
 

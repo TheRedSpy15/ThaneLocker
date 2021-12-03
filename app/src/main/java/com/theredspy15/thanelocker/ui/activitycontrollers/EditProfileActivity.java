@@ -17,6 +17,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityEditProfileBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
@@ -41,6 +42,8 @@ public class EditProfileActivity extends AppCompatActivity {
 
         binding = ActivityEditProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        FirebaseCrashlytics.getInstance().log("opening edit profile activity");
 
         binding.editTextName.setText(Profile.localProfile.getName());
         binding.editTextDescription.setText(Profile.localProfile.getDescription());

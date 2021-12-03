@@ -9,12 +9,15 @@ import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
 import com.github.appintro.AppIntroPageTransformerType;
 import com.github.appintro.SlideBackgroundColorHolder;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 public class MyIntro extends AppIntro implements SlideBackgroundColorHolder {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseCrashlytics.getInstance().log("displaying intro");
 
         addSlide(AppIntroFragment.newInstance(
                 getString(R.string.thank_you_title),

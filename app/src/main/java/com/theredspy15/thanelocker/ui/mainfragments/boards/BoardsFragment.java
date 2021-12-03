@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentBoardsBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.customviews.BoardView;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
@@ -42,6 +43,8 @@ public class BoardsFragment extends Fragment {
 
         binding = FragmentBoardsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying boards fragment");
 
         App.cleanBoards();
 

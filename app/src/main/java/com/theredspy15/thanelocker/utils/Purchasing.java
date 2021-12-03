@@ -15,6 +15,7 @@ import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.SkuDetailsParams;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
 
 import java.io.IOException;
@@ -132,6 +133,8 @@ public class Purchasing implements PurchasesUpdatedListener {
     }
 
     public void subscribe(Context context, Activity activity) {
+        FirebaseCrashlytics.getInstance().log("starting premium signup process");
+
         //check if service is already connected
         if (billingClient.isReady()) {
             initiatePurchase(activity);

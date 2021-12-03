@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentCalculatorBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -31,6 +32,8 @@ public class CalculatorFragment extends Fragment { // TODO: determine if this sh
 
         binding = FragmentCalculatorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying calculator fragment");
 
         binding.calculateButton.setOnClickListener(this::calculate);
 

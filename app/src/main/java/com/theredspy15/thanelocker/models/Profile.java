@@ -43,6 +43,7 @@ public class Profile implements Serializable {
 
     public static void load() {
         FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("Loading profile");
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("localProfile", null);

@@ -30,6 +30,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Elevation;
 import com.theredspy15.thanelocker.models.HillRoute;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -76,6 +77,8 @@ public class SkateMapFragment extends Fragment {
 
         binding = FragmentSkatemapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying skatemap fragment");
 
         // fab options
         binding.clearOption.setOnClickListener(this::clear);

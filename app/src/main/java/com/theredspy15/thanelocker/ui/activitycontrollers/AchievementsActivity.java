@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityAchievementsBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Achievement;
 import com.theredspy15.thanelocker.utils.App;
 
@@ -30,6 +31,7 @@ public class AchievementsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievements);
+        FirebaseCrashlytics.getInstance().log("opening achievements activity");
 
         binding = ActivityAchievementsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 import www.sanju.motiontoast.MotionToast;
 import www.sanju.motiontoast.MotionToastStyle;
 
-public class Session implements Serializable { // TODO: parcelable in the future
+public class Session implements Serializable {
     private static final long serialVersionUID = 1234568L;
     public static final double xpValue = 1.1;
 
@@ -62,6 +62,7 @@ public class Session implements Serializable { // TODO: parcelable in the future
 
     public static void load(Activity activity) {
         FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("Loading sessions");
         Gson gson = new Gson();
 
         try {
@@ -91,6 +92,9 @@ public class Session implements Serializable { // TODO: parcelable in the future
     }
 
     public static void save() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("saving sessions");
+
         SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
         Gson gson = new Gson();
 

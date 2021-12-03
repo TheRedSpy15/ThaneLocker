@@ -20,6 +20,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.FragmentNewsBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.prof.rssparser.Article;
 import com.prof.rssparser.Channel;
 import com.prof.rssparser.OnTaskCompleted;
@@ -42,6 +43,8 @@ public class NewsFragment extends Fragment {
 
         binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FirebaseCrashlytics.getInstance().log("displaying news fragment");
 
         binding.swipeRefreshLayout.setOnRefreshListener(this::initFeed);
         binding.swipeRefreshLayout.setRefreshing(true);

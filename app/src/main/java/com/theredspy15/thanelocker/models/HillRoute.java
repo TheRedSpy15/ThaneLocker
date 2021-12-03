@@ -2,6 +2,7 @@ package com.theredspy15.thanelocker.models;
 
 import android.content.SharedPreferences;
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.theredspy15.thanelocker.ui.activitycontrollers.MainActivity;
@@ -29,6 +30,9 @@ public class HillRoute implements Serializable {
     }
 
     public static void save() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("saving hill routes");
+
         SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
         Gson gson = new Gson();
 
@@ -42,6 +46,8 @@ public class HillRoute implements Serializable {
     }
 
     public static void load() {
+        FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+        crashlytics.log("loading hill routes");
         Gson gson = new Gson();
 
         String json = MainActivity.preferences.getString("savedHills", null);

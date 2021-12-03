@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
@@ -27,7 +24,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.theredspy15.thanelocker.customviews.NewsView;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Session;
 import com.theredspy15.thanelocker.utils.App;
@@ -48,6 +45,8 @@ public class BoardActivity extends AppCompatActivity {
 
         binding = ActivityBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        FirebaseCrashlytics.getInstance().log("opening board activity");
 
         board = Board.savedBoards.get(getIntent().getIntExtra("board_id", 0));
         if (board != null) populateViews(board);
@@ -74,6 +73,8 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     private void loadAdData() {
+        FirebaseCrashlytics.getInstance().log("Loading advertisement");
+
         String unitId;
         if (BuildConfig.DEBUG) {
             unitId = "ca-app-pub-3940256099942544/6300978111";

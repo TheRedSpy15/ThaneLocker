@@ -18,6 +18,7 @@ import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.google.firebase.installations.FirebaseInstallations;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
@@ -36,11 +37,22 @@ public class MainActivity extends AppCompatActivity {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         App.updateTheme();
 
+        // crashlytics
         FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
         crashlytics.setCustomKey("mode",BuildConfig.BUILD_TYPE);
         crashlytics.setCustomKey("version_code",BuildConfig.VERSION_CODE);
         crashlytics.setCustomKey("version_name",BuildConfig.VERSION_NAME);
+        FirebaseInstallations.getInstance().getId()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseCrashlytics.getInstance().setUserId(task.getResult());
+                    } else {
+                        FirebaseCrashlytics.getInstance().log("Failed to access FID");
+                    }
+                });
 
+        // loading data
+        FirebaseCrashlytics.getInstance().log("beginning to load data");
         Profile.load();
         if (Board.savedBoards.isEmpty()) Board.load();
         if (Session.savedSessions.isEmpty()) Session.load(this);

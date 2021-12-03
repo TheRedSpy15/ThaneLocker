@@ -23,6 +23,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.bumptech.glide.Glide;
 import com.example.longboardlife.R;
 import com.example.longboardlife.databinding.ActivityNewBoardBinding;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.utils.PermissionChecker;
 
@@ -53,6 +54,8 @@ public class NewBoardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_board);
+
+        FirebaseCrashlytics.getInstance().log("opening new board activity");
 
         binding = ActivityNewBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
