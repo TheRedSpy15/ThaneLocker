@@ -31,7 +31,6 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.theredspy15.thanelocker.models.Board;
 import com.theredspy15.thanelocker.models.Profile;
 import com.theredspy15.thanelocker.models.Session;
-import com.theredspy15.thanelocker.ui.activitycontrollers.AchievementsActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.BoardActivity;
 import com.theredspy15.thanelocker.ui.activitycontrollers.EditProfileActivity;
 import com.theredspy15.thanelocker.utils.App;
@@ -56,7 +55,7 @@ public class ProfileFragment extends Fragment {
         FirebaseCrashlytics.getInstance().log("displaying profile fragment");
 
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
+        //binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
 
         loadAllData();
 
@@ -65,7 +64,7 @@ public class ProfileFragment extends Fragment {
 
     private void loadAllData() { // TODO: multi-thread this
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
-        binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
+        //binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
         if (profile.getName() != null) binding.nameText.setText(profile.getName());
         if (profile.getDescription() != null) binding.descriptionView.setText(profile.getDescription());
 
@@ -166,11 +165,11 @@ public class ProfileFragment extends Fragment {
         linearLayout.addView(button,9,layout);
     }
 
-    public void loadAchievements(View view) {
+    /*public void loadAchievements(View view) {
         Intent myIntent = new Intent(requireContext(), AchievementsActivity.class);
         myIntent.putExtra("achievements", profile.getAchievements());
         startActivity(myIntent);
-    }
+    }*/
 
     private void loadSpeedsChart() {
         LineChart chart = binding.speedsChart;

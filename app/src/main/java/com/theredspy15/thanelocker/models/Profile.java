@@ -27,7 +27,7 @@ public class Profile implements Serializable {
     @SerializedName("state") @Nullable private String state;
     @SerializedName("country") @Nullable private String country;
     @SerializedName("friends") private ArrayList<Integer> friend_ids = new ArrayList<>();
-    @SerializedName("achievements") private ArrayList<Achievement> achievements = new ArrayList<>();
+    // @SerializedName("achievements") private ArrayList<Achievement> achievements = new ArrayList<>(); TODO should load separately
     @SerializedName("image") @Nullable private byte[] image;
     @SerializedName("password") private String passwordHash;
     @SerializedName("email") private String email;
@@ -199,14 +199,6 @@ public class Profile implements Serializable {
 
     public void setFriend_ids(ArrayList<Integer> friend_ids) {
         this.friend_ids = friend_ids;
-    }
-
-    public ArrayList<Achievement> getAchievements() {
-        return achievements;
-    }
-
-    public void setAchievements(ArrayList<Achievement> achievements) {
-        this.achievements = achievements;
     }
 
     public String getPasswordHash() {
