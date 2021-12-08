@@ -204,7 +204,7 @@ public class SessionActivity extends AppCompatActivity {
                     session.setElevationPoints(Elevation.getElevations(session.getLocations()));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    MotionToast.Companion.createColorToast(
+                    runOnUiThread(()-> MotionToast.Companion.createColorToast(
                             this,
                             getString(R.string.no_elevation_failed),
                             getString(R.string.failed_elevation_server),
@@ -212,7 +212,7 @@ public class SessionActivity extends AppCompatActivity {
                             MotionToast.GRAVITY_BOTTOM,
                             MotionToast.LONG_DURATION,
                             ResourcesCompat.getFont(this, R.font.roboto)
-                    );
+                    ));
                     session.getElevationPoints().clear();
                 }
 
