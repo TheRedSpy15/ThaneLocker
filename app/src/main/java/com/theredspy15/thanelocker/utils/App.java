@@ -78,6 +78,10 @@ public class App extends Application {
         return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
+    public static String removeImageFromJson(String json) {
+        return json.replaceAll("image\":(.*?)]","image omitted");
+    }
+
     public static <T> T mostCommon(List<T> list) {
         Map<T, Integer> map = new HashMap<>();
 

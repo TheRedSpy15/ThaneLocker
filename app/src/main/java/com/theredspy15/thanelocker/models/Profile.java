@@ -48,7 +48,7 @@ public class Profile implements Serializable {
 
         String json = MainActivity.preferences.getString("localProfile", null);
         if (json != null) {
-            crashlytics.setCustomKey("profile_json", json); // TODO ignore image
+            crashlytics.setCustomKey("profile_json", App.removeImageFromJson(json));
             localProfile = gson.fromJson(json, new TypeToken<Profile>() {}.getType());
         } else localProfile = new Profile();
 
@@ -63,6 +63,8 @@ public class Profile implements Serializable {
     }
 
     public static void save() {
+        FirebaseCrashlytics.getInstance().log("Saving profile");
+
         SharedPreferences.Editor prefsEditor = MainActivity.preferences.edit();
         Gson gson = new Gson();
 
