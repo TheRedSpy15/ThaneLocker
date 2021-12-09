@@ -77,7 +77,7 @@ public class Session implements Serializable {
             // extra crashlytics keys
             crashlytics.setCustomKey("session_count",savedSessionIds.size());
         } catch (JsonSyntaxException | IllegalStateException e) {
-            MotionToast.Companion.createColorToast(
+            activity.runOnUiThread(()-> MotionToast.Companion.createColorToast(
                     activity,
                     activity.getString(R.string.failed_to_load_sessions),
                     activity.getString(R.string.failed_load_sessions_sum),
@@ -85,7 +85,7 @@ public class Session implements Serializable {
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(activity, R.font.roboto)
-            );
+            ));
             savedSessions = new HashMap<>();
             savedSessionIds = new ArrayList<>();
         }
