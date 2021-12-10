@@ -101,27 +101,31 @@ public class App extends Application {
     }
 
     public static void cleanBoards() { // TODO: clean hashmap, duplicates
-        FirebaseCrashlytics.getInstance().log("cleaning boards - ids");
+        new Thread(()->{
+            FirebaseCrashlytics.getInstance().log("cleaning boards - ids");
 
-        ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
-        for (int id : Board.savedBoardIds) {
-            if (Board.savedBoards.get(id) == null) {
-                list.add(id);
+            ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
+            for (int id : Board.savedBoardIds) {
+                if (Board.savedBoards.get(id) == null) {
+                    list.add(id);
+                }
             }
-        }
-        for (int id : list) Board.savedBoardIds.remove((Integer) id);
+            for (int id : list) Board.savedBoardIds.remove((Integer) id);
+        }).start();
     }
 
     public static void cleanSessions() { // TODO: clean hashmap, duplicates
-        FirebaseCrashlytics.getInstance().log("cleaning sessions - ids");
+        new Thread(()->{
+            FirebaseCrashlytics.getInstance().log("cleaning sessions - ids");
 
-        ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
-        for (int id : Session.savedSessionIds) {
-            if (Session.savedSessions.get(id) == null) {
-                list.add(id);
+            ArrayList<Integer> list = new ArrayList<>(); // ids to null objects
+            for (int id : Session.savedSessionIds) {
+                if (Session.savedSessions.get(id) == null) {
+                    list.add(id);
+                }
             }
-        }
-        for (int id : list) Session.savedSessionIds.remove((Integer) id);
+            for (int id : list) Session.savedSessionIds.remove((Integer) id);
+        }).start();
     }
 
     public static void updateTheme() {
