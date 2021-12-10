@@ -43,8 +43,8 @@ public class ProfileFragment extends Fragment {
 
     private final Profile profile = Profile.localProfile;
 
-    private final ArrayList<Session> sessions = Profile.sessionsWithLocalProfile();
-    private final ArrayList<Board> boards = Profile.boardsWithLocalProfile();
+    private ArrayList<Session> sessions;
+    private ArrayList<Board> boards;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -57,12 +57,15 @@ public class ProfileFragment extends Fragment {
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         //binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
 
-        loadAllData();
+        new Thread(this::loadAllData).start();
 
         return root;
     }
 
-    private void loadAllData() { // TODO: multi-thread this
+    private void loadAllData() {
+        sessions = Profile.sessionsWithLocalProfile();
+        boards = Profile.boardsWithLocalProfile();
+
         binding.editProfileButton.setOnClickListener(this::loadEditProfile);
         //binding.viewAchievementsButton.setOnClickListener(this::loadAchievements);
         if (profile.getName() != null) binding.nameText.setText(profile.getName());
@@ -70,14 +73,14 @@ public class ProfileFragment extends Fragment {
 
         if (profile.getImage() != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(profile.getImage(), 0, profile.getImage().length);
-            Glide.with(requireActivity()).load(bitmap).into(binding.profilePictureView);
+            requireActivity().runOnUiThread(()-> Glide.with(requireActivity()).load(bitmap).into(binding.profilePictureView));
         }
 
         loadFavoriteBoard();
         loadXpBar();
 
         if (sessions.isEmpty()) {
-            binding.chartsLayout.setVisibility(View.GONE);
+            requireActivity().runOnUiThread(()-> binding.chartsLayout.setVisibility(View.GONE));
         } else {
             loadSpeedsChart();
             loadTopSpeedsChart();
@@ -88,8 +91,10 @@ public class ProfileFragment extends Fragment {
     }
 
     void loadXpBar() {
-        binding.xpView.setProgress((int) profile.getLevel_xp());
-        binding.levelView.setText(getString(R.string.level)+" "+profile.getLevel());
+        requireActivity().runOnUiThread(()->{
+            binding.xpView.setProgress(profile.getLevel_xp());
+            binding.levelView.setText(getString(R.string.level)+" "+profile.getLevel());
+        });
     }
 
     public void loadEditProfile(View view) {
@@ -109,11 +114,15 @@ public class ProfileFragment extends Fragment {
         for (Session session : sessions) {
             // fastest speed
             if (Float.parseFloat(session.getTopSpeed()) > topSpeed) topSpeed = Float.parseFloat(session.getTopSpeed());
-            binding.topSpeedView.setText(App.getSpeedFormatted(topSpeed,resources));
+
+            float finalTopSpeed = topSpeed;
+            requireActivity().runOnUiThread(()-> binding.topSpeedView.setText(App.getSpeedFormatted(finalTopSpeed,resources)));
 
             // furthest distance
             if (Float.parseFloat(session.getTotalDistance()) > topDistance) topDistance = Float.parseFloat(session.getTotalDistance());
-            binding.furthestDistanceView.setText(App.getDistanceFormatted(topDistance,resources));
+
+            float finalTopDistance = topDistance;
+            requireActivity().runOnUiThread(()-> binding.furthestDistanceView.setText(App.getDistanceFormatted(finalTopDistance,resources)));
 
            tDistance += Float.parseFloat(session.getTotalDistance());
            tAvgDistance += Float.parseFloat(session.getTotalDistance());
@@ -122,9 +131,14 @@ public class ProfileFragment extends Fragment {
         tAvgSpeed = tAvgSpeed / sessions.size();
         tAvgDistance = tAvgDistance / sessions.size();
 
-        binding.totalDistanceView.setText(App.getDistanceFormatted(tDistance,resources));
-        binding.avgDistanceView.setText(App.getDistanceFormatted(tAvgDistance,resources));
-        binding.avgSpeedView.setText(App.getSpeedFormatted(tAvgSpeed,resources));
+        float finalTDistance = tDistance;
+        float finalTAvgDistance = tAvgDistance;
+        float finalTAvgSpeed = tAvgSpeed;
+        requireActivity().runOnUiThread(()->{
+            binding.totalDistanceView.setText(App.getDistanceFormatted(finalTDistance,resources));
+            binding.avgDistanceView.setText(App.getDistanceFormatted(finalTAvgDistance,resources));
+            binding.avgSpeedView.setText(App.getSpeedFormatted(finalTAvgSpeed,resources));
+        });
     }
 
     private void loadFavoriteBoard() {
@@ -162,7 +176,8 @@ public class ProfileFragment extends Fragment {
             button.setPadding(0,0,0,0);
             button.setAllCaps(false);
         }
-        linearLayout.addView(button,9,layout);
+
+        requireActivity().runOnUiThread(()->linearLayout.addView(button,9,layout));
     }
 
     /*public void loadAchievements(View view) {
@@ -200,7 +215,7 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
-        chart.animateX(3000);
+        requireActivity().runOnUiThread(()->chart.animateX(0));
 
         // coloring chart
         Description description = new Description();
@@ -244,7 +259,7 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
-        chart.animateX(3000);
+        requireActivity().runOnUiThread(()->chart.animateX(0));
 
         // coloring chart
         Description description = new Description();
@@ -288,7 +303,7 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
-        chart.animateX(3000);
+        requireActivity().runOnUiThread(()->chart.animateX(0));
 
         // coloring chart
         Description description = new Description();
@@ -332,7 +347,7 @@ public class ProfileFragment extends Fragment {
 
         // set data
         chart.setData(data);
-        chart.animateX(3000);
+        requireActivity().runOnUiThread(()->chart.animateX(0));
 
         // coloring chart
         Description description = new Description();
