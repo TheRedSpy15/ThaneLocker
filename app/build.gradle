@@ -13,8 +13,8 @@ android {
         applicationId "com.theredspy15.thanelocker"
         minSdk 24
         targetSdk 31
-        versionCode 28
-        versionName "1.997"
+        versionCode 29
+        versionName "1.998"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
