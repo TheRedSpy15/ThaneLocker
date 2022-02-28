@@ -53,7 +53,7 @@ dependencies {
     implementation 'com.prof18.rssparser:rssparser:4.0.2'
     implementation 'com.github.AppIntro:AppIntro:6.1.0'
     implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.3'
-    implementation 'com.airbnb.android:lottie:4.2.2'
+    implementation 'com.airbnb.android:lottie:5.0.1'
     implementation 'com.robinhood.ticker:ticker:2.0.4'
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
     implementation 'com.github.chivorns:smartmaterialspinner:1.5.0'
